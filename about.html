@@ -5,14 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sobre — Explore Portugal Experience</title>
   <link rel="stylesheet" href="/explore-portugal-experience/assets/css/style.css" />
-  <link rel="icon" type="image/svg+xml" href="/explore-portugal-experience/assets/icons/star-full.svg" />
+  <link rel="icon" type="image/x-icon" href="/explore-portugal-experience/assets/icons/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/explore-portugal-experience/assets/icons/star-full.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/explore-portugal-experience/assets/images/apple-touch-icon.png">
 </head>
 
 <body>
 
 <header class="header">
   <a class="logo-area" href="/explore-portugal-experience/" aria-label="Início — Explore Portugal Experience">
-    <img class="brand-mark" src="/explore-portugal-experience/assets/icons/star-full.svg" alt="" aria-hidden="true" />
+    <!-- Bússola animada (rotação suave em hover desktop) -->
+    <svg class="brand-mark compass-animated" width="34" height="34" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="128" cy="128" r="102" fill="none" stroke="#C9A562" stroke-width="8"/>
+      <polygon fill="#C9A562" points="128,38 167,97 238,100 185,144 200,214 128,178 56,214 71,144 18,100 89,97"/>
+    </svg>
     <span class="logo-text">Explore Portugal Experience</span>
   </a>
 
@@ -26,6 +32,7 @@
   </nav>
 </header>
 
+<!-- PAGE HERO -->
 <section class="page-hero">
   <div class="hero-content">
     <img src="/explore-portugal-experience/assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience — logotipo" class="logo-img-hero" />
@@ -57,7 +64,7 @@
 </footer>
 
 <script>
-  // Mobile menu
+  // Menu mobile
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.nav');
   toggle.addEventListener('click', () => {
