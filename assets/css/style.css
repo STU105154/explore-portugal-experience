@@ -1,167 +1,298 @@
+/* ----------------------------------------------------
+   ESTILOS GERAIS
+---------------------------------------------------- */
+
 :root{
-  --gold:#C9A562; --black:#111111; --soft:#F5F5F5; --muted:#6E6E6E; --maxw:1120px;
+  --gold: #C9A562;
+  --bg: #0f0f0f;
+  --text: #eeeeee;
+  --muted: #b8b8b8;
+  --container-width: 1280px;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+
+html{
+  scroll-behavior: smooth;
+}
+
 body{
-  margin:0; background:var(--black); color:var(--soft);
-  font-family:Montserrat,system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial;
-  line-height:1.65; font-size:16px; text-rendering:optimizeLegibility;
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Montserrat', sans-serif;
+  font-weight:400;
+  line-height:1.6;
 }
 
-/* Typography */
-h1,h2,h3,.brand{font-family:"Playfair Display", Georgia, serif; letter-spacing:.2px}
-h1,h2{margin:0 0 14px}
-h1{font-size:52px; font-weight:600}
-h2{font-size:28px; font-weight:600}
-p{margin:0 0 14px}
-
-/* Layout */
-.container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
-header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(120%) blur(6px);
-  background:rgba(17,17,17,.8); border-bottom:1px solid rgba(201,165,98,.12)}
-.nav{display:flex; align-items:center; justify-content:space-between; height:72px}
-.brand{display:flex; align-items:center; gap:14px; color:var(--soft); text-decoration:none}
-.brand-mark{width:36px; height:36px}
-.brand-title{font-size:18px; font-weight:600}
-
-nav ul{display:flex; gap:26px; list-style:none; margin:0; padding:0}
-nav a{color:var(--soft); text-decoration:none; font-weight:500}
-nav a:hover{color:var(--gold)}
-
-.btn{display:inline-block; padding:12px 20px; border:1px solid var(--gold);
-  color:var(--soft); text-decoration:none; border-radius:8px; transition:transform .15s ease}
-.btn:hover{background:rgba(201,165,98,.08); transform:translateY(-1px)}
-.btn.gold{background:var(--gold); border-color:var(--gold); color:#121212}
-.btn.gold:hover{filter:brightness(1.05)}
-
-/* Hero */
-.hero{position:relative; overflow:hidden; border-bottom:1px solid rgba(201,165,98,.12); padding:56px 0 72px}
-.hero-title{font-size:44px; margin-bottom:6px}
-.hero-subtitle{font-size:18px; color:#d7d7d7}
-.ill-card{padding:20px; border:1px solid rgba(201,165,98,.18); border-radius:16px;
-  background:linear-gradient(180deg, rgba(201,165,98,.04), rgba(17,17,17,0)); margin-top:26px}
-.illustration{width:100%; height:auto}
-
-/* Sections */
-section{padding:72px 0}
-section:first-of-type.hero{padding-top:56px}
-.muted{color:var(--muted)}
-
-/* Footer */
-footer{border-top:1px solid rgba(201,165,98,.12); padding:26px 0 40px; color:#bdbdbd}
-
-/* Responsive */
-@media (max-width:920px){
-  h1{font-size:40px}
-  .hero-title{font-size:34px}
+/* Container padrão */
+.container{
+  max-width:var(--container-width);
+  margin:0 auto;
+  padding:40px 20px;
 }
-form {
-  display: grid;
-  gap: 14px;
-  max-width: 420px;
+
+/* ----------------------------------------------------
+   HEADER
+---------------------------------------------------- */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:rgba(15,15,15,.95);
+  border-bottom:1px solid transparent;
+  transition:background .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+
+header.scrolled{
+  background:rgba(17,17,17,.92);
+  border-bottom-color:rgba(201,165,98,.22);
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand-logo{
+  height:44px;
+  width:auto;
+  display:block;
+  filter:drop-shadow(0 0 2px rgba(0,0,0,.5));
+  transition:filter .25s ease;
+}
+
+.brand-logo:hover{
+  filter:drop-shadow(0 0 6px rgba(201,165,98,.4));
+}
+
+/* ----------------------------------------------------
+   NAVIGATION MENU
+---------------------------------------------------- */
+
+nav ul{
+  display:flex;
+  gap:30px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  font-weight:500;
+  position:relative;
+  padding-bottom:4px;
+  transition:color .2s ease;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+nav a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  transform:scaleX(0);
+  transform-origin:center;
+  transition:transform .25s ease;
+}
+
+nav a:hover::after,
+nav a:focus-visible::after{
+  transform:scaleX(1);
+}
+
+/* ----------------------------------------------------
+   HERO
+---------------------------------------------------- */
+
+.hero{
+  padding:80px 20px;
+  text-align:center;
+}
+
+.hero-title{
+  font-family:'Playfair Display', serif;
+  font-size:3.2rem;
+  margin-bottom:10px;
+}
+
+.hero-subtitle{
+  font-size:1.2rem;
+  color:var(--muted);
+  margin-bottom:40px;
+}
+
+.hero-card{
+  background:transparent;
+  border:none;
+  padding:0;
+}
+
+.logo-hero{
+  display:block;
+  margin:10px auto 0;
+  width:min(320px,60%);
+  height:auto;
+  filter:drop-shadow(0 2px 0 rgba(0,0,0,.25));
+  transition:transform .25s ease, opacity .25s ease, filter .25s ease;
+}
+
+.logo-hero:hover{
+  transform:translateY(-2px);
+  opacity:.98;
+  filter:drop-shadow(0 4px 0 rgba(0,0,0,.35));
+}
+
+/* ----------------------------------------------------
+   SEÇÕES
+---------------------------------------------------- */
+
+section{
+  padding:60px 20px;
+}
+
+h2{
+  font-family:'Playfair Display', serif;
+  font-size:2.4rem;
+  margin-bottom:10px;
+}
+
+.muted{
+  color:var(--muted);
+  max-width:650px;
+}
+
+/* ----------------------------------------------------
+   GALERIA (placeholder)
+---------------------------------------------------- */
+
+#galeria{
+  min-height:200px;
+}
+
+/* ----------------------------------------------------
+   FORMULÁRIO
+---------------------------------------------------- */
+
+form{
+  display:grid;
+  gap:14px;
+  max-width:420px;
 }
 
 form input,
-form textarea {
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 8px;
-  border: 1px solid rgba(201,165,98,.4);
-  background: #ffffff;
-  color: #111;
-  font-family: inherit;
+form textarea{
+  width:100%;
+  padding:12px 14px;
+  border-radius:8px;
+  border:1px solid rgba(201,165,98,.4);
+  background:#ffffff;
+  color:#111;
+  font:inherit;
 }
 
-form textarea {
+form textarea{
   min-height:120px;
-  resize: vertical;
+  resize:vertical;
 }
 
-form button {
-  align-self: start;
-  padding: 12px 20px;
-}
-/* ========= Micro-interações & animações premium ========= */
-
-/* Transições suaves de cor e movimento */
-:root { --gold:#C9A562; }
-a, .btn, .brand-logo, nav a { transition: color .2s ease, opacity .2s ease, transform .2s ease, filter .2s ease; }
-
-/* Header ao fazer scroll: mais opaco e com leve sombra */
-header.scrolled {
-  background: rgba(17,17,17,.92);
-  border-bottom-color: rgba(201,165,98,.22);
-  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+.btn.gold{
+  background:var(--gold);
+  color:#000;
+  border:none;
+  padding:12px 20px;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+  transition:background .25s ease, transform .25s ease;
 }
 
-/* Menu com sublinhado elegante no hover/focus */
-nav a {
-  position: relative;
-  padding-bottom: 4px;
-}
-nav a::after {
-  content:"";
-  position:absolute; left:0; bottom:0;
-  width:100%; height:2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform .25s ease;
-}
-nav a:hover::after, nav a:focus-visible::after { transform: scaleX(1); }
-
-/* Botão dourado com brilho sutil */
-.btn.gold {
-  box-shadow: 0 0 0 rgba(201,165,98,0);
-}
-.btn.gold:hover {
-  filter: brightness(1.06);
-  box-shadow: 0 10px 30px rgba(201,165,98,.16);
+.btn.gold:hover{
+  background:#d9b77a;
+  transform:translateY(-2px);
 }
 
-/* Ilustração com leve hover (não intrusivo) */
-.ill-card:hover .illustration { transform: translateY(-2px); }
+/* ----------------------------------------------------
+   FOOTER
+---------------------------------------------------- */
 
-/* ===== Fade-in premium ao entrar no viewport ===== */
-.reveal { 
-  opacity: 0; transform: translateY(14px);
-  will-change: transform, opacity;
-}
-.reveal.show { 
-  opacity: 1; transform: translateY(0);
-  transition: opacity .6s ease, transform .6s ease;
-}
-
-/* Delay escalonado para elementos marcados */
-.reveal.delay-1 { transition-delay: .08s; }
-.reveal.delay-2 { transition-delay: .16s; }
-.reveal.delay-3 { transition-delay: .24s; }
-
-/* Animação de “gold shimmer” muito discreta para headlines/CTA */
-.gold-shimmer {
-  background: linear-gradient(90deg, #b9975a, #e3c891, #b9975a);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  background-size: 200% 100%;
-  animation: shimmer 4s ease infinite;
-}
-@keyframes shimmer {
-  0%,100% { background-position: 0% 50%; }
-  50%     { background-position: 100% 50%; }
+footer{
+  text-align:center;
+  padding:40px 0;
+  color:var(--muted);
+  font-size:.9rem;
+  border-top:1px solid rgba(255,255,255,.05);
 }
 
-/* Form elegante (do ajuste anterior) */
-form { display:grid; gap:14px; max-width:420px; }
-form input, form textarea {
-  width:100%; padding:12px 14px; border-radius:8px;
-  border:1px solid rgba(201,165,98,.4); background:#fff; color:#111; font:inherit;
-}
-form textarea{ min-height:120px; resize:vertical; }
-form button{ align-self:start; padding:12px 20px; }
+/* ----------------------------------------------------
+   ANIMAÇÕES PREMIUM
+---------------------------------------------------- */
 
-/* Acessibilidade: respeita “reduzir movimento” */
-@media (prefers-reduced-motion: reduce){
-  *{ animation: none!important; transition: none!important }
+/* Fade suave ao entrar */
+.reveal{
+  opacity:0;
+  transform:translateY(14px);
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+  transition:opacity .6s ease, transform .6s ease;
+}
+
+.reveal.delay-1{
+  transition-delay:.1s;
+}
+.reveal.delay-2{
+  transition-delay:.2s;
+}
+
+/* Shimmer dourado no título */
+.gold-shimmer{
+  background:linear-gradient(90deg,#b9975a,#e3c891,#b9975a);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  background-size:200% 100%;
+  animation:shimmer 4s ease infinite;
+}
+
+@keyframes shimmer{
+  0%,100%{ background-position:0% 50%; }
+  50%{ background-position:100% 50%; }
+}
+
+/* ----------------------------------------------------
+   RESPONSIVIDADE
+---------------------------------------------------- */
+
+@media (max-width:920px){
+  .brand-logo{ height:38px; }
+  .hero-title{ font-size:2.4rem; }
+  nav ul{ gap:18px; }
+}
+
+@media (max-width:600px){
+  .hero-title{ font-size:2rem; }
+}
+
+/* ----------------------------------------------------
+   ACESSIBILIDADE
+---------------------------------------------------- */
+
+@media (prefers-reduced-motion:reduce){
+  *{
+    animation:none !important;
+    transition:none !important;
+  }
 }
