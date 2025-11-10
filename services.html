@@ -1,41 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Serviços — Explore Portugal Experience</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="/explore-portugal-experience/assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="/explore-portugal-experience/assets/icons/star-full.svg" />
 </head>
 
 <body>
 
-  <nav>
-    <a href="index.html">Sobre</a>
-    <a href="services.html">Serviços</a>
-    <a href="about.html">Galeria</a>
-    <a href="#contact">Contacto</a>
+<header class="header">
+  <a class="logo-area" href="/explore-portugal-experience/index.html" aria-label="Início — Explore Portugal Experience">
+    <img class="brand-mark" src="/explore-portugal-experience/assets/icons/star-full.svg" alt="" aria-hidden="true" />
+    <span class="logo-text">Explore Portugal Experience</span>
+  </a>
+  <nav class="nav" aria-label="Principal">
+    <a href="/explore-portugal-experience/about.html">Sobre</a>
+    <a href="/explore-portugal-experience/services.html" aria-current="page">Serviços</a>
+    <a href="/explore-portugal-experience/index.html#contacto">Contacto</a>
   </nav>
+</header>
 
-  <header>
-    <h1>Serviços Premium</h1>
-    <p>
-      Transfers privados, tours personalizados e experiências de luxo feitas à tua medida.
-    </p>
-  </header>
+<main class="page-content">
+  <div style="text-align:center; margin-bottom:20px;">
+    <img src="/explore-portugal-experience/assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience — logotipo" style="width:320px; max-width:90%;" />
+  </div>
 
-  <section>
-    <h2 class="section-title">Reserva o teu Transfer</h2>
+  <h1>Serviços</h1>
+  <p class="lead">Soluções sob medida para quem procura conforto, discrição e detalhe. Transfers privados, tours exclusivos e experiências premium em Portugal.</p>
 
-    <form style="max-width:600px; margin:0 auto;">
-      <input type="text" placeholder="Ponto de recolha" style="width:100%; padding:12px; margin:10px 0;">
-      <input type="text" placeholder="Destino" style="width:100%; padding:12px; margin:10px 0;">
-      <input type="date" style="width:100%; padding:12px; margin:10px 0;">
-      <button class="btn" type="submit">Reservar</button>
-    </form>
-  </section>
+  <div class="cards-3">
+    <div class="card">
+      <h3>Transfers Privados</h3>
+      <p>Pontualidade, segurança e conforto em veículos premium. Aeroporto, hotel, eventos e inter-cidades.</p>
+      <p class="muted">Sedans & Vans executivas · Motoristas profissionais · Água e Wi-Fi</p>
+      <a class="btn-gold" href="/explore-portugal-experience/index.html#booking">Pedir Orçamento</a>
+    </div>
 
-  <footer>
-    © 2025 Explore Portugal Experience
-  </footer>
+    <div class="card">
+      <h3>Tours Exclusivos</h3>
+      <p>Roteiros personalizados: Lisboa, Sintra, Cascais, Évora, Douro, Porto e mais.</p>
+      <p class="muted">Guia privado · Ritmo flexível · Gastronomia local</p>
+      <a class="btn-gold" href="/explore-portugal-experience/index.html#booking">Planear Tour</a>
+    </div>
+
+    <div class="card">
+      <h3>Experiências Premium</h3>
+      <p>Provas no Douro, experiências gastronómicas, cultura e natureza — com curadoria.</p>
+      <p class="muted">Parcerias locais · Acesso privilegiado · Detalhe e discrição</p>
+      <a class="btn-gold" href="/explore-portugal-experience/index.html#booking">Criar Experiência</a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2025 Explore Portugal Experience. Todos os direitos reservados.</p>
+    <p class="rnaat">RNAAT n.º 17/2018 · Turismo de Portugal, I.P.</p>
+  </div>
+</footer>
 
 </body>
 </html>
