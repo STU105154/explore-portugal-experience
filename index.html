@@ -1,40 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Explore Portugal Experience</title>
-  <meta name="description" content="Transfers privados, tours exclusivos e experiências premium em Portugal. Elegância, conforto e precisão." />
 
-  <!-- Styles -->
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <!-- Favicon (mais tarde colocamos o SVG) -->
+  <link rel="icon" type="image/png" href="assets/images/logo-explore-portugal-experience.png" />
 </head>
-<body id="top">
 
-  <!-- HEADER -->
-  <header>
-    <div class="container nav">
+<body>
+
+  <!-- Header -->
+  <header id="top">
+    <div class="nav container">
+
       <a class="brand" href="#top">
-        <!-- Mini logo (monograma) -->
-        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" role="img">
-          <g fill="none" stroke="#C9A562" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 38h54" />
-            <path d="M16 20v18M48 20v18" />
-            <path d="M8 26c8-6 16-6 24 0s16 6 24 0" />
-            <rect x="24" y="40" width="16" height="10" rx="2" />
-            <circle cx="28" cy="54" r="2" />
-            <circle cx="36" cy="54" r="2" />
-          </g>
-        </svg>
-        <span class="brand-title">Explore Portugal Experience</span>
+        <img src="assets/images/logo-explore-portugal-experience.png" 
+             alt="Explore Portugal Experience" class="brand-logo">
       </a>
 
-      <nav aria-label="Principal">
+      <nav>
         <ul>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#servicos">Serviços</a></li>
@@ -42,88 +31,72 @@
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
+
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- Hero -->
   <section class="hero">
     <div class="container">
       <h1 class="hero-title">Experiências Premium em Portugal</h1>
-      <p class="hero-subtitle">
-        Transfers privados, tours exclusivos e serviço de excelência.
-      </p>
+      <p class="hero-subtitle">Transfers privados, tours exclusivos e serviço de excelência.</p>
 
       <div class="ill-card">
-        <div style="width:60%; margin:0 auto;">
-          <!-- Ilustração SVG -->
-          <svg class="illustration" viewBox="0 0 400 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g stroke="#C9A562" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="20" y1="120" x2="380" y2="120" />
-              <line x1="80" y1="60" x2="80" y2="120" />
-              <line x1="320" y1="60" x2="320" y2="120" />
-              <path d="M40 80 C120 30, 280 30, 360 80" />
-              <path d="M80 60 L40 120" />
-              <path d="M80 60 L120 120" />
-              <path d="M320 60 L280 120" />
-              <path d="M320 60 L360 120" />
-            </g>
-            <g stroke="#C9A562" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="150" y="130" width="100" height="35" rx="6" />
-              <rect x="165" y="140" width="20" height="15" rx="3" />
-              <rect x="195" y="140" width="20" height="15" rx="3" />
-              <rect x="225" y="140" width="20" height="15" rx="3" />
-              <circle cx="175" cy="170" r="6" />
-              <circle cx="225" cy="170" r="6" />
-            </g>
-          </svg>
-        </div>
+        <img src="assets/images/logo-explore-portugal-experience.png" 
+             alt="Explore Portugal Experience" class="illustration">
       </div>
     </div>
   </section>
 
-  <!-- SOBRE -->
+  <!-- Sobre -->
   <section id="sobre">
     <div class="container">
       <h2>Sobre</h2>
-      <p>Serviço exclusivo, conforto absoluto e atenção ao detalhe.</p>
+      <p class="muted">
+        A Explore Portugal Experience oferece experiências personalizadas e de luxo,
+        com foco em conforto, segurança e exclusividade.
+      </p>
     </div>
   </section>
 
-  <!-- SERVIÇOS -->
+  <!-- Serviços -->
   <section id="servicos">
     <div class="container">
       <h2>Serviços</h2>
-      <p>Transfers privados, tours exclusivos e experiências premium.</p>
+      <p>
+        Transfers privados, tours personalizados, visita a vinícolas, passeios 
+        guiados, experiências gastronómicas e serviços VIP.
+      </p>
     </div>
   </section>
 
-  <!-- GALERIA -->
+  <!-- Galeria -->
   <section id="galeria">
     <div class="container">
       <h2>Galeria</h2>
-      <p>Fotos e momentos captados durante os tours.</p>
+      <p class="muted">Fotos e momentos captados durante os tours.</p>
     </div>
   </section>
 
-  <!-- CONTACTO -->
+  <!-- Contacto -->
   <section id="contacto">
     <div class="container">
       <h2>Contacto</h2>
 
-      <form action="https://formspree.io/f/https://formspree.io/f/abcxyz" method="POST">
-        <input type="text" name="nome" placeholder="Nome" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <textarea name="mensagem" placeholder="Mensagem" required></textarea>
-        <button class="btn gold" type="submit">Enviar</button>
+      <form action="SEU_ENDPOINT_AQUI" method="POST">
+        <input type="text" name="Nome" placeholder="Nome" required />
+        <input type="email" name="Email" placeholder="Email" required />
+        <textarea name="Mensagem" placeholder="Mensagem" required></textarea>
+        <button type="submit" class="btn gold">Enviar</button>
       </form>
 
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>© 2025 Explore Portugal Experience. Todos os direitos reservados.</p>
+      © 2025 Explore Portugal Experience. Todos os direitos reservados.
     </div>
   </footer>
 
