@@ -56,3 +56,29 @@ footer{border-top:1px solid rgba(201,165,98,.12); padding:26px 0 40px; color:#bd
   h1{font-size:40px}
   .hero-title{font-size:34px}
 }
+form {
+  display: grid;
+  gap: 14px;
+  max-width: 420px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(201,165,98,.4);
+  background: #ffffff;
+  color: #111;
+  font-family: inherit;
+}
+
+form textarea {
+  min-height:120px;
+  resize: vertical;
+}
+
+form button {
+  align-self: start;
+  padding: 12px 20px;
+}
