@@ -11,45 +11,50 @@
 <body>
 
 <header class="header">
-  <a class="logo-area" href="/explore-portugal-experience/index.html" aria-label="Início — Explore Portugal Experience">
+  <a class="logo-area" href="/explore-portugal-experience/" aria-label="Início — Explore Portugal Experience">
     <img class="brand-mark" src="/explore-portugal-experience/assets/icons/star-full.svg" alt="" aria-hidden="true" />
     <span class="logo-text">Explore Portugal Experience</span>
   </a>
+
+  <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+
   <nav class="nav" aria-label="Principal">
     <a href="/explore-portugal-experience/about.html">Sobre</a>
     <a href="/explore-portugal-experience/services.html" aria-current="page">Serviços</a>
-    <a href="/explore-portugal-experience/index.html#contacto">Contacto</a>
+    <a href="/explore-portugal-experience/#galeria">Galeria</a>
+    <a href="/explore-portugal-experience/#contacto">Contacto</a>
   </nav>
 </header>
 
-<main class="page-content">
-  <div style="text-align:center; margin-bottom:20px;">
-    <img src="/explore-portugal-experience/assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience — logotipo" style="width:320px; max-width:90%;" />
+<section class="page-hero">
+  <div class="hero-content">
+    <img src="/explore-portugal-experience/assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience — logotipo" class="logo-img-hero" />
+    <h1>Serviços</h1>
+    <p class="lead">Soluções sob medida para quem procura conforto, discrição e detalhe. Transfers privados, tours exclusivos e experiências premium em Portugal.</p>
   </div>
+</section>
 
-  <h1>Serviços</h1>
-  <p class="lead">Soluções sob medida para quem procura conforto, discrição e detalhe. Transfers privados, tours exclusivos e experiências premium em Portugal.</p>
-
+<main class="page-content">
   <div class="cards-3">
     <div class="card">
       <h3>Transfers Privados</h3>
       <p>Pontualidade, segurança e conforto em veículos premium. Aeroporto, hotel, eventos e inter-cidades.</p>
       <p class="muted">Sedans & Vans executivas · Motoristas profissionais · Água e Wi-Fi</p>
-      <a class="btn-gold" href="/explore-portugal-experience/index.html#booking">Pedir Orçamento</a>
+      <a class="btn-gold" href="/explore-portugal-experience/#booking">Pedir Orçamento</a>
     </div>
 
     <div class="card">
       <h3>Tours Exclusivos</h3>
       <p>Roteiros personalizados: Lisboa, Sintra, Cascais, Évora, Douro, Porto e mais.</p>
       <p class="muted">Guia privado · Ritmo flexível · Gastronomia local</p>
-      <a class="btn-gold" href="/explore-portugal-experience/index.html#booking">Planear Tour</a>
+      <a class="btn-gold" href="/explore-portugal-experience/#booking">Planear Tour</a>
     </div>
 
     <div class="card">
       <h3>Experiências Premium</h3>
       <p>Provas no Douro, experiências gastronómicas, cultura e natureza — com curadoria.</p>
       <p class="muted">Parcerias locais · Acesso privilegiado · Detalhe e discrição</p>
-      <a class="btn-gold" href="/explore-portugal-experience/index.html#booking">Criar Experiência</a>
+      <a class="btn-gold" href="/explore-portugal-experience/#booking">Criar Experiência</a>
     </div>
   </div>
 </main>
@@ -60,6 +65,16 @@
     <p class="rnaat">RNAAT n.º 17/2018 · Turismo de Portugal, I.P.</p>
   </div>
 </footer>
+
+<script>
+  // Mobile menu
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.nav');
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
 
 </body>
 </html>
