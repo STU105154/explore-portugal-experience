@@ -4,239 +4,172 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Explore Portugal Experience — Transfers e Experiências Premium</title>
-  <meta name="description" content="Transfers privados, tours exclusivos e experiências premium em Portugal. Elegância, conforto e discrição.">
-  <link rel="stylesheet" href="/explore-portugal-experience/assets/css/style.css" />
-  <!-- Ícones -->
-  <link rel="icon" type="image/x-icon" href="/explore-portugal-experience/assets/icons/favicon.ico">
-  <link rel="icon" type="image/svg+xml" href="/explore-portugal-experience/assets/icons/star-full.svg">
-  <link rel="apple-touch-icon" sizes="180x180" href="/explore-portugal-experience/assets/images/apple-touch-icon.png">
-  <meta name="theme-color" content="#0d0d0d" />
+  <meta name="description" content="Transfers privados, tours exclusivos e experiências premium em Portugal. Elegância, conforto e detalhe.">
+
+  <link rel="stylesheet" href="/explore-portugal-experience/assets/css/style.css?v=3" />
+
+  <link rel="icon" type="image/svg+xml" href="/explore-portugal-experience/assets/icons/compass-gold-solid.svg">
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="header" id="top">
-    <a class="logo-area" href="/explore-portugal-experience/" aria-label="Início — Explore Portugal Experience">
-      <!-- Bússola traço fino -->
-      <svg class="brand-mark compass-thin" width="34" height="34" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="128" cy="128" r="102" fill="none" stroke="#C9A562" stroke-width="3"/>
-        <polygon fill="none" stroke="#C9A562" stroke-width="3" points="128,38 167,97 238,100 185,144 200,214 128,178 56,214 71,144 18,100 89,97"/>
-      </svg>
-      <span class="logo-text">Explore Portugal Experience</span>
-    </a>
+<header class="header" id="top">
+  <a class="logo-area" href="/explore-portugal-experience/">
+    <svg class="brand-mark compass-animated" width="34" height="34" viewBox="0 0 256 256">
+      <circle cx="128" cy="128" r="102" fill="none" stroke="#C9A562" stroke-width="8"/>
+      <polygon fill="#C9A562" points="128,38 167,97 238,100 185,144 200,214 128,178 56,214 71,144 18,100 89,97"/>
+    </svg>
+    <span class="logo-text">Explore Portugal Experience</span>
+  </a>
 
-    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+  <button class="nav-toggle" aria-expanded="false">☰</button>
 
-    <nav class="nav" aria-label="Principal">
-      <a href="/explore-portugal-experience/about.html">Sobre</a>
-      <a href="/explore-portugal-experience/services.html">Serviços</a>
-      <a href="/explore-portugal-experience/#galeria">Galeria</a>
-      <a id="link-contacto" href="/explore-portugal-experience/#contacto">Contacto</a>
-    </nav>
-  </header>
+  <nav class="nav">
+    <a href="/explore-portugal-experience/about.html">Sobre</a>
+    <a href="/explore-portugal-experience/services.html">Serviços</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#contacto" id="link-contacto">Contacto</a>
+  </nav>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <img src="/explore-portugal-experience/assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience — logotipo" class="logo-img-hero" />
-      <h1>Transfers e Experiências Premium em Portugal</h1>
-      <p class="lead">Elegância, conforto e detalhe. Descobre Portugal ao teu ritmo com serviço exclusivo e personalizado.</p>
-      <div class="hero-buttons">
-        <a class="btn-gold" href="/explore-portugal-experience/services.html">Explorar Tours</a>
-        <a class="btn-dark" href="#booking">Reservar Transfer</a>
+<section class="hero">
+  <div class="hero-content">
+    <img src="/explore-portugal-experience/assets/images/logo-explore-portugal-experience.png" class="logo-img-hero" alt="Explore Portugal Experience">
+    <h1>Transfers e Experiências Premium</h1>
+    <p class="lead">Elegância, conforto e detalhe — Portugal ao teu ritmo.</p>
+
+    <div class="hero-buttons">
+      <a class="btn-gold" href="/explore-portugal-experience/services.html">Explorar Tours</a>
+      <a class="btn-dark" href="#booking">Reservar</a>
+    </div>
+  </div>
+</section>
+
+<section class="stories" id="historias">
+  <div class="container">
+    <div class="section-head">
+      <h2>Histórias</h2>
+      <span class="muted">Momentos criados</span>
+    </div>
+
+    <div class="stories-grid">
+      <div class="story-card">
+        <h3>Sintra</h3>
+        <p>Palácios, jardins e vista Atlântico.</p>
+      </div>
+
+      <div class="story-card">
+        <h3>Douro</h3>
+        <p>Quintas, provas e gastronomia.</p>
+      </div>
+
+      <div class="story-card">
+        <h3>Évora</h3>
+        <p>Silêncio alentejano e autenticidade.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- HISTÓRIAS -->
-  <section class="stories" id="historias">
-    <div class="container">
-      <div class="section-head">
-        <h2>Histórias</h2>
-        <span class="muted">Momentos que criámos para clientes</span>
-      </div>
-      <div class="stories-grid">
-        <div class="story-card">
-          <h3>Sintra ao Ritmo Certo</h3>
-          <p>Palácios, jardins e recantos locais — sem pressas. Sunset no Atlântico.</p>
-          <p class="muted">Tour privado · 8h · Pick-up Lisboa</p>
-        </div>
-        <div class="story-card">
-          <h3>Douro com Curadoria</h3>
-          <p>Quintas familiares, provas e almoço de autor com vista rio.</p>
-          <p class="muted">Transfer Porto ↔ Douro · 10h</p>
-        </div>
-        <div class="story-card">
-          <h3>Évora & Monsaraz</h3>
-          <p>Património, silêncio alentejano e mesa impecável.</p>
-          <p class="muted">Tour privado · 9h · Pick-up Lisboa</p>
-        </div>
-      </div>
+<section class="booking-section" id="booking">
+  <div class="container">
+    <div class="section-head">
+      <h2>Reserva</h2>
+      <span class="muted">Pedido rápido</span>
     </div>
-  </section>
 
-  <!-- BOOKING -->
-  <section class="booking-section" id="booking">
-    <div class="container">
-      <div class="section-head">
-        <h2>Reserva</h2>
-        <span class="muted">Pede já o teu transfer</span>
-      </div>
+    <form action="https://formspree.io/f/SEU_ENDPOINT" method="POST" id="booking-form" class="booking-form">
+      <input type="text" name="_gotcha" style="display:none" />
 
-      <form action="https://formspree.io/f/SEU_ENDPOINT" method="POST" id="booking-form" class="booking-form">
-        <input type="text" name="_gotcha" style="display:none" autocomplete="off" />
+      <div class="booking-grid">
 
-        <div class="booking-grid">
-          <!-- Itinerário -->
-          <div class="card">
-            <h3>Itinerário</h3>
-            <input type="text" name="pickup" placeholder="Local de recolha" required />
-            <input type="text" name="dropoff" placeholder="Destino" required />
-            <div class="two-cols">
-              <input type="date" name="date" required />
-              <input type="time" name="time" required />
-            </div>
-            <div class="two-cols">
-              <label><input type="radio" name="trip_type" value="oneway" checked /> Só ida</label>
-              <label><input type="radio" name="trip_type" value="return" /> Ida e volta</label>
-            </div>
-            <div id="return-fields" class="hidden" style="margin-top:8px;">
-              <div class="muted">Detalhes da volta</div>
-              <div class="two-cols">
-                <input type="date" name="return_date" />
-                <input type="time" name="return_time" />
-              </div>
-            </div>
+        <div class="card">
+          <h3>Itinerário</h3>
+          <input type="text" name="pickup" placeholder="Recolha" required>
+          <input type="text" name="dropoff" placeholder="Destino" required>
+
+          <div class="two-cols">
+            <input type="date" name="date" required>
+            <input type="time" name="time" required>
           </div>
 
-          <!-- Preferências -->
-          <div class="card">
-            <h3>Preferências</h3>
-            <div class="two-cols">
-              <input type="number" name="passengers" placeholder="Passageiros" min="1" max="8" required />
-              <input type="number" name="luggage" placeholder="Bagagem" min="0" max="10" />
-            </div>
-            <select name="vehicle" required>
-              <option disabled selected>Tipo de veículo</option>
-              <option>Sedan Executivo</option>
-              <option>Van Executiva</option>
-              <option>SUV Premium</option>
-            </select>
-            <textarea name="notes" placeholder="Extras (cadeiras criança, espera no aeroporto, etc.)"></textarea>
+          <div class="two-cols">
+            <label><input type="radio" name="trip_type" value="oneway" checked> Só ida</label>
+            <label><input type="radio" name="trip_type" value="return"> Ida e volta</label>
           </div>
 
-          <!-- Contacto -->
-          <div class="card">
-            <h3>Contacto</h3>
-            <input type="text" name="name" placeholder="Nome" required />
-            <input type="email" name="email" placeholder="Email" required />
-            <input type="tel" name="phone" placeholder="Telefone (opcional)" />
-            <input type="hidden" name="site" value="Explore Portugal Experience" />
-            <label class="muted small">
-              <input type="checkbox" required /> Concordo com o tratamento dos meus dados.
-            </label>
-            <button class="btn-gold" type="submit" style="margin-top:10px;">Pedir Orçamento</button>
-            <p id="booking-status" class="muted" style="margin-top:8px;"></p>
+          <div id="return-fields" class="hidden">
+            <input type="date" name="return_date">
+            <input type="time" name="return_time">
           </div>
         </div>
-      </form>
-    </div>
-  </section>
 
-  <!-- GALERIA -->
-  <section id="galeria">
-    <div class="container">
-      <div class="section-head">
-        <h2>Galeria</h2>
-        <span class="muted">Momentos de Portugal</span>
+        <div class="card">
+          <h3>Preferências</h3>
+
+          <div class="two-cols">
+            <input type="number" name="passengers" placeholder="Passageiros" min="1" max="8" required>
+            <input type="number" name="luggage" placeholder="Bagagem" min="0" max="10">
+          </div>
+
+          <select name="vehicle" required>
+            <option disabled selected>Tipo de veículo</option>
+            <option>Sedan Executivo</option>
+            <option>Van Executiva</option>
+            <option>SUV Premium</option>
+          </select>
+
+          <textarea name="notes" placeholder="Extras"></textarea>
+        </div>
+
+        <div class="card card-contact">
+          <h3>Contacto</h3>
+          <input type="text" name="name" placeholder="Nome" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="tel" name="phone" placeholder="Telefone (opcional)">
+          <label class="muted small"><input type="checkbox" required> Concordo com os dados</label>
+          <button class="btn-gold" type="submit">Enviar</button>
+        </div>
+
       </div>
-      <div class="gallery">
-        <div></div><div></div><div></div>
-        <div></div><div></div><div></div>
-        <div></div><div></div><div></div>
-      </div>
+    </form>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="container">
+    <div class="section-head"><h2>Galeria</h2></div>
+
+    <div class="gallery">
+      <div></div><div></div><div></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACTO -->
-  <section id="contacto">
-    <div class="container">
-      <div class="section-head">
-        <h2>Contacto</h2>
-        <span class="muted">Fala connosco</span>
-      </div>
-      <p class="lead">Estamos sempre disponíveis para ajudar a planear a tua experiência.</p>
-      <p>Email: info@exploreportugalexperience.com</p>
-      <p>Telefone: +351 962 516 005</p>
-    </div>
-  </section>
+<section id="contacto">
+  <div class="container">
+    <div class="section-head"><h2>Contacto</h2></div>
+    <p>Email: info@exploreportugalexperience.com</p>
+    <p>Telefone: +351 962 516 005</p>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 Explore Portugal Experience. Todos os direitos reservados.</p>
-      <p class="rnaat">RNAAT n.º 17/2018 · Turismo de Portugal, I.P.</p>
-    </div>
-  </footer>
+<footer class="footer">
+  <div class="container">
+    <p>© 2025 Explore Portugal Experience</p>
+    <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
+  </div>
+</footer>
 
-  <script>
-    // Menu mobile
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.nav');
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.nav');
+  toggle.addEventListener('click',()=>nav.classList.toggle('open'));
 
-    // Evitar abrir diretamente em #contacto se alguém partilhou a home com hash antigo
-    (function(){
-      const isHome = location.pathname.endsWith('/') || location.pathname.endsWith('/index.html');
-      if (isHome && location.hash && !sessionStorage.getItem('fromContactLink')) {
-        history.replaceState(null, '', location.pathname);
-        window.scrollTo(0,0);
-      }
-      const linkC = document.getElementById('link-contacto');
-      if (linkC) linkC.addEventListener('click', () => {
-        sessionStorage.setItem('fromContactLink', '1');
-      });
-    })();
-
-    // Booking submit
-    (function(){
-      const form = document.getElementById("booking-form");
-      const statusEl = document.getElementById("booking-status");
-      const returnFields = document.getElementById("return-fields");
-
-      form.trip_type.forEach(r => {
-        r.addEventListener("change", () => {
-          const show = (r.value === "return" && r.checked);
-          returnFields.classList.toggle("hidden", !show);
-        });
-      });
-
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        statusEl.textContent = "A enviar…";
-        try {
-          const res = await fetch(form.action, {
-            method: form.method,
-            body: new FormData(form),
-            headers: { "Accept": "application/json" }
-          });
-          if (res.ok) {
-            statusEl.textContent = "Obrigado! Vamos responder em breve.";
-            form.reset();
-            returnFields.classList.add("hidden");
-          } else {
-            statusEl.textContent = "Não foi possível enviar agora. Tenta mais tarde.";
-          }
-        } catch {
-          statusEl.textContent = "Erro de ligação. Tenta novamente.";
-        }
-      });
-    })();
-  </script>
+  const radios = document.querySelectorAll('input[name="trip_type"]');
+  const returnFields = document.getElementById('return-fields');
+  radios.forEach(r=>r.addEventListener('change',()=>returnFields.classList.toggle('hidden', r.value!=='return')));
+</script>
 
 </body>
 </html>
