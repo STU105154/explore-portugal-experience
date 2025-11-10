@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Serviços — Explore Portugal Experience</title>
-  <link rel="stylesheet" href="/explore-portugal-experience/assets/css/style.css" />
-  <link rel="icon" type="image/x-icon" href="/explore-portugal-experience/assets/icons/favicon.ico">
-  <link rel="icon" type="image/svg+xml" href="/explore-portugal-experience/assets/icons/star-full.svg">
-  <link rel="apple-touch-icon" sizes="180x180" href="/explore-portugal-experience/assets/images/apple-touch-icon.png">
+  <link rel="stylesheet" href="/explore-portugal-experience/assets/css/style.css?v=3">
+  <link rel="icon" type="image/svg+xml" href="/explore-portugal-experience/assets/icons/compass-gold-solid.svg">
 </head>
 
 <body>
 
 <header class="header">
-  <a class="logo-area" href="/explore-portugal-experience/" aria-label="Início — Explore Portugal Experience">
-    <!-- Bússola traço fino -->
-    <svg class="brand-mark compass-thin" width="34" height="34" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="128" cy="128" r="102" fill="none" stroke="#C9A562" stroke-width="3"/>
-      <polygon fill="none" stroke="#C9A562" stroke-width="3" points="128,38 167,97 238,100 185,144 200,214 128,178 56,214 71,144 18,100 89,97"/>
+  <a class="logo-area" href="/explore-portugal-experience/">
+    <svg class="brand-mark compass-animated" width="34" height="34" viewBox="0 0 256 256">
+      <circle cx="128" cy="128" r="102" fill="none" stroke="#C9A562" stroke-width="8"/>
+      <polygon fill="#C9A562" points="128,38 167,97 238,100 185,144 200,214 128,178 56,214 71,144 18,100 89,97"/>
     </svg>
     <span class="logo-text">Explore Portugal Experience</span>
   </a>
 
-  <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+  <button class="nav-toggle">☰</button>
 
-  <nav class="nav" aria-label="Principal">
+  <nav class="nav">
     <a href="/explore-portugal-experience/about.html">Sobre</a>
     <a href="/explore-portugal-experience/services.html" aria-current="page">Serviços</a>
     <a href="/explore-portugal-experience/#galeria">Galeria</a>
@@ -32,55 +29,59 @@
   </nav>
 </header>
 
-<!-- PAGE HERO -->
 <section class="page-hero">
   <div class="hero-content">
-    <img src="/explore-portugal-experience/assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience — logotipo" class="logo-img-hero" />
     <h1>Serviços</h1>
-    <p class="lead">Soluções sob medida para quem procura conforto, discrição e detalhe. Transfers privados, tours exclusivos e experiências premium em Portugal.</p>
+    <p class="lead">Transfers privados, tours exclusivos e experiências premium em Portugal.</p>
   </div>
 </section>
 
 <main class="page-content">
-  <div class="cards-3">
-    <div class="card">
+
+  <div class="cards-3 services-cards">
+    
+    <div class="card service-card">
       <h3>Transfers Privados</h3>
-      <p>Pontualidade, segurança e conforto em veículos premium. Aeroporto, hotel, eventos e inter-cidades.</p>
-      <p class="muted">Sedans & Vans executivas · Motoristas profissionais · Água e Wi-Fi</p>
-      <a class="btn-gold" href="/explore-portugal-experience/#booking">Pedir Orçamento</a>
+      <p>Pontualidade, segurança e conforto em veículos premium.</p>
+      <p class="muted">Sedans & Vans · Motoristas profissionais</p>
+      <div class="btn-wrap">
+        <a class="btn-gold" href="/explore-portugal-experience/#booking">Pedir Orçamento</a>
+      </div>
     </div>
 
-    <div class="card">
+    <div class="card service-card">
       <h3>Tours Exclusivos</h3>
-      <p>Roteiros personalizados: Lisboa, Sintra, Cascais, Évora, Douro, Porto e mais.</p>
-      <p class="muted">Guia privado · Ritmo flexível · Gastronomia local</p>
-      <a class="btn-gold" href="/explore-portugal-experience/#booking">Planear Tour</a>
+      <p>Roteiros personalizados por Lisboa, Sintra, Cascais, Évora, Douro e mais.</p>
+      <p class="muted">Guia privado · Gastronomia local</p>
+      <div class="btn-wrap">
+        <a class="btn-gold" href="/explore-portugal-experience/#booking">Planear Tour</a>
+      </div>
     </div>
 
-    <div class="card">
+    <div class="card service-card">
       <h3>Experiências Premium</h3>
-      <p>Provas no Douro, experiências gastronómicas, cultura e natureza — com curadoria.</p>
-      <p class="muted">Parcerias locais · Acesso privilegiado · Detalhe e discrição</p>
-      <a class="btn-gold" href="/explore-portugal-experience/#booking">Criar Experiência</a>
+      <p>Provas, gastronomia, cultura e acesso privilegiado.</p>
+      <p class="muted">Curadoria exclusiva</p>
+      <div class="btn-wrap">
+        <a class="btn-gold" href="/explore-portugal-experience/#booking">Criar Experiência</a>
+      </div>
     </div>
+
   </div>
+
 </main>
 
 <footer class="footer">
   <div class="container">
-    <p>© 2025 Explore Portugal Experience. Todos os direitos reservados.</p>
-    <p class="rnaat">RNAAT n.º 17/2018 · Turismo de Portugal, I.P.</p>
+    <p>© 2025 Explore Portugal Experience</p>
+    <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
   </div>
 </footer>
 
 <script>
-  // Menu mobile
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.nav');
-  toggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
+  toggle.addEventListener('click',()=>nav.classList.toggle('open'));
 </script>
 
 </body>
