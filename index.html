@@ -4,26 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Explore Portugal Experience</title>
+  <meta name="description" content="Transfers privados, tours exclusivos e experiências premium em Portugal. Elegância, conforto e precisão." />
 
   <!-- Stylesheet principal -->
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/logo-explore-portugal-experience.png">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Favicon provisório (trocaremos por SVG depois) -->
+  <link rel="icon" type="image/png" href="assets/images/logo-explore-portugal-experience.png" />
 </head>
 
-<body>
+<body id="top">
 
   <!-- Header -->
-  <header id="top">
+  <header>
     <div class="nav container">
-
-      <a class="brand" href="#top">
+      <a class="brand" href="#top" aria-label="Início">
         <img src="assets/images/logo-explore-portugal-experience.png"
-             alt="Logo Explore Portugal Experience" class="brand-logo">
+             alt="Logo Explore Portugal Experience" class="brand-logo" />
       </a>
 
-      <nav>
+      <nav aria-label="Principal">
         <ul>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#servicos">Serviços</a></li>
@@ -31,7 +36,6 @@
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
-
     </div>
   </header>
 
@@ -41,9 +45,9 @@
       <h1 class="hero-title reveal gold-shimmer">Experiências Premium em Portugal</h1>
       <p class="hero-subtitle reveal delay-1">Transfers privados, tours exclusivos e serviço de excelência.</p>
 
-      <div class="ill-card reveal delay-2">
+      <div class="ill-card hero-card reveal delay-2">
         <img src="assets/images/logo-explore-portugal-experience.png"
-             alt="Explore Portugal Experience" class="illustration">
+             alt="Explore Portugal Experience" class="logo-hero" />
       </div>
     </div>
   </section>
@@ -54,8 +58,8 @@
       <h2>Sobre</h2>
       <p class="muted">
         A Explore Portugal Experience oferece experiências personalizadas e de luxo,
-        com foco em conforto, segurança e exclusividade. Cada detalhe é pensado
-        para proporcionar uma viagem inesquecível.
+        com foco em conforto, segurança e exclusividade. Cada detalhe é pensado para
+        proporcionar uma viagem inesquecível.
       </p>
     </div>
   </section>
@@ -65,9 +69,8 @@
     <div class="container reveal">
       <h2>Serviços</h2>
       <p>
-        Transfers privados, tours personalizados, visitas a vinícolas,
-        passeios guiados, experiências gastronómicas e serviços VIP
-        para quem procura excelência.
+        Transfers privados, tours personalizados, visitas a vinícolas, passeios guiados,
+        experiências gastronómicas e serviços VIP para quem procura excelência.
       </p>
     </div>
   </section>
@@ -77,7 +80,7 @@
     <div class="container reveal">
       <h2>Galeria</h2>
       <p class="muted">Fotos e momentos captados durante os tours.</p>
-      <!-- placeholder futuro de fotos -->
+      <!-- em breve: grelha 3x3 com hover premium -->
     </div>
   </section>
 
@@ -86,13 +89,13 @@
     <div class="container reveal">
       <h2>Contacto</h2>
 
+      <!-- Troca SEU_ENDPOINT_AQUI pelo endpoint do Formspree -->
       <form action="SEU_ENDPOINT_AQUI" method="POST">
         <input type="text" name="Nome" placeholder="Nome" required />
         <input type="email" name="Email" placeholder="Email" required />
         <textarea name="Mensagem" placeholder="Mensagem" required></textarea>
         <button type="submit" class="btn gold">Enviar</button>
       </form>
-
     </div>
   </section>
 
@@ -103,21 +106,18 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Interações & animações -->
   <script>
-    // Header com efeito "scrolled"
+    // Header: estado scrolled
     const header = document.querySelector('header');
     const onScroll = () => {
-      if (window.scrollY > 8) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+      if (window.scrollY > 8) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
     };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    // Fade-in premium
+    // Fade-in premium ao entrar no viewport
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -126,9 +126,7 @@
         }
       });
     }, { threshold: 0.18 });
-
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   </script>
-
 </body>
 </html>
