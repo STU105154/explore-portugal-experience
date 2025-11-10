@@ -5,49 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Explore Portugal Experience — Transfers e Experiências Premium</title>
   <meta name="description" content="Transfers privados, tours exclusivos e experiências premium em Portugal. Elegância, conforto e discrição.">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="/explore-portugal-experience/assets/css/style.css" />
-
-  <!-- Favicon (bússola) -->
   <link rel="icon" type="image/svg+xml" href="/explore-portugal-experience/assets/icons/star-full.svg" />
   <meta name="theme-color" content="#111111" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
 
   <!-- HEADER -->
   <header class="header" id="top">
-    <a class="logo-area" href="/explore-portugal-experience/index.html" aria-label="Início — Explore Portugal Experience">
+    <a class="logo-area" href="/explore-portugal-experience/" aria-label="Início — Explore Portugal Experience">
       <img class="brand-mark" src="/explore-portugal-experience/assets/icons/star-full.svg" alt="" aria-hidden="true" />
       <span class="logo-text">Explore Portugal Experience</span>
     </a>
 
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+
     <nav class="nav" aria-label="Principal">
       <a href="/explore-portugal-experience/about.html">Sobre</a>
       <a href="/explore-portugal-experience/services.html">Serviços</a>
-      <a href="#galeria">Galeria</a>
-      <a href="#contacto">Contacto</a>
+      <a href="/explore-portugal-experience/#galeria">Galeria</a>
+      <a id="link-contacto" href="/explore-portugal-experience/#contacto">Contacto</a>
     </nav>
   </header>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <div style="max-width:560px; margin:0 auto 20px;">
-        <img src="/explore-portugal-experience/assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience — logotipo" class="logo-img-hero" />
-      </div>
-
+      <img src="/explore-portugal-experience/assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience — logotipo" class="logo-img-hero" />
       <h1>Transfers e Experiências Premium em Portugal</h1>
       <p class="lead">
         Elegância, conforto e detalhe. Descobre Portugal ao teu ritmo com serviço exclusivo e personalizado.
       </p>
-
       <div class="hero-buttons">
         <a class="btn-gold" href="/explore-portugal-experience/services.html">Explorar Tours</a>
         <a class="btn-dark" href="#booking">Reservar Transfer</a>
@@ -102,17 +91,14 @@
             <h3>Itinerário</h3>
             <input type="text" name="pickup" placeholder="Local de recolha" required />
             <input type="text" name="dropoff" placeholder="Destino" required />
-
             <div class="two-cols">
               <input type="date" name="date" required />
               <input type="time" name="time" required />
             </div>
-
             <div class="two-cols">
               <label><input type="radio" name="trip_type" value="oneway" checked /> Só ida</label>
               <label><input type="radio" name="trip_type" value="return" /> Ida e volta</label>
             </div>
-
             <div id="return-fields" class="hidden" style="margin-top:8px;">
               <div class="muted">Detalhes da volta</div>
               <div class="two-cols">
@@ -193,6 +179,30 @@
   </footer>
 
   <script>
+    // Mobile menu
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // Evitar abrir diretamente em #contacto quando a home é partilhada com hash antigo
+    (function(){
+      const isHome = location.pathname.endsWith('/') || location.pathname.endsWith('/index.html');
+      // Se aterra na home com hash mas o utilizador não clicou no link "Contacto" desta sessão, volta ao topo
+      if (isHome && location.hash && !sessionStorage.getItem('fromContactLink')) {
+        history.replaceState(null, '', location.pathname);
+        window.scrollTo(0,0);
+      }
+      // Quando o utilizador clicar no Contacto, marcamos a intenção
+      const linkC = document.getElementById('link-contacto');
+      if (linkC) linkC.addEventListener('click', () => {
+        sessionStorage.setItem('fromContactLink', '1');
+      });
+    })();
+
+    // Booking submit
     (function(){
       const form = document.getElementById("booking-form");
       const statusEl = document.getElementById("booking-status");
