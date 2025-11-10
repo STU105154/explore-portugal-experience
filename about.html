@@ -11,30 +11,38 @@
 <body>
 
 <header class="header">
-  <a class="logo-area" href="/explore-portugal-experience/index.html" aria-label="Início — Explore Portugal Experience">
+  <a class="logo-area" href="/explore-portugal-experience/" aria-label="Início — Explore Portugal Experience">
     <img class="brand-mark" src="/explore-portugal-experience/assets/icons/star-full.svg" alt="" aria-hidden="true" />
     <span class="logo-text">Explore Portugal Experience</span>
   </a>
+
+  <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+
   <nav class="nav" aria-label="Principal">
     <a href="/explore-portugal-experience/about.html" aria-current="page">Sobre</a>
     <a href="/explore-portugal-experience/services.html">Serviços</a>
-    <a href="/explore-portugal-experience/index.html#contacto">Contacto</a>
+    <a href="/explore-portugal-experience/#galeria">Galeria</a>
+    <a href="/explore-portugal-experience/#contacto">Contacto</a>
   </nav>
 </header>
 
-<main class="page-content">
-  <div style="text-align:center; margin-bottom:20px;">
-    <img src="/explore-portugal-experience/assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience — logotipo" style="width:360px; max-width:90%;" />
+<section class="page-hero">
+  <div class="hero-content">
+    <img src="/explore-portugal-experience/assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience — logotipo" class="logo-img-hero" />
+    <h1>Sobre Nós</h1>
+    <p class="lead">
+      Criamos experiências privadas e transfers de luxo, com serviço de excelência e atenção ao detalhe.
+      Classic, elegante e sóbrio.
+    </p>
   </div>
+</section>
 
-  <h1>Sobre Nós</h1>
-  <p class="lead">Criamos experiências privadas e transfers de luxo, com serviço de excelência e atenção ao detalhe. Classic, elegante e sóbrio.</p>
-
+<main class="page-content">
   <h2>A nossa filosofia</h2>
   <p>Equilíbrio entre conforto, autenticidade e ritmo calmo. Serviço personalizado, motoristas profissionais, veículos premium e curadoria pensada ao teu tempo.</p>
 
   <h2>Valores</h2>
-  <ul>
+  <ul class="centered-list">
     <li><strong>Discrição</strong> — Presença elegante, respeito pela privacidade.</li>
     <li><strong>Precisão</strong> — Pontualidade, segurança e comunicação clara.</li>
     <li><strong>Autenticidade</strong> — Mostrar o melhor de Portugal, sem clichés.</li>
@@ -47,6 +55,16 @@
     <p class="rnaat">RNAAT n.º 17/2018 · Turismo de Portugal, I.P.</p>
   </div>
 </footer>
+
+<script>
+  // Mobile menu
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.nav');
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
 
 </body>
 </html>
