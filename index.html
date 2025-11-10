@@ -6,8 +6,11 @@
   <title>Explore Portugal Experience — Transfers e Experiências Premium</title>
   <meta name="description" content="Transfers privados, tours exclusivos e experiências premium em Portugal. Elegância, conforto e discrição.">
   <link rel="stylesheet" href="/explore-portugal-experience/assets/css/style.css" />
-  <link rel="icon" type="image/svg+xml" href="/explore-portugal-experience/assets/icons/star-full.svg" />
-  <meta name="theme-color" content="#111111" />
+  <!-- Ícones -->
+  <link rel="icon" type="image/x-icon" href="/explore-portugal-experience/assets/icons/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/explore-portugal-experience/assets/icons/star-full.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/explore-portugal-experience/assets/images/apple-touch-icon.png">
+  <meta name="theme-color" content="#0d0d0d" />
 </head>
 
 <body>
@@ -15,7 +18,11 @@
   <!-- HEADER -->
   <header class="header" id="top">
     <a class="logo-area" href="/explore-portugal-experience/" aria-label="Início — Explore Portugal Experience">
-      <img class="brand-mark" src="/explore-portugal-experience/assets/icons/star-full.svg" alt="" aria-hidden="true" />
+      <!-- Bússola traço fino -->
+      <svg class="brand-mark compass-thin" width="34" height="34" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="128" cy="128" r="102" fill="none" stroke="#C9A562" stroke-width="3"/>
+        <polygon fill="none" stroke="#C9A562" stroke-width="3" points="128,38 167,97 238,100 185,144 200,214 128,178 56,214 71,144 18,100 89,97"/>
+      </svg>
       <span class="logo-text">Explore Portugal Experience</span>
     </a>
 
@@ -34,9 +41,7 @@
     <div class="hero-content">
       <img src="/explore-portugal-experience/assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience — logotipo" class="logo-img-hero" />
       <h1>Transfers e Experiências Premium em Portugal</h1>
-      <p class="lead">
-        Elegância, conforto e detalhe. Descobre Portugal ao teu ritmo com serviço exclusivo e personalizado.
-      </p>
+      <p class="lead">Elegância, conforto e detalhe. Descobre Portugal ao teu ritmo com serviço exclusivo e personalizado.</p>
       <div class="hero-buttons">
         <a class="btn-gold" href="/explore-portugal-experience/services.html">Explorar Tours</a>
         <a class="btn-dark" href="#booking">Reservar Transfer</a>
@@ -51,23 +56,20 @@
         <h2>Histórias</h2>
         <span class="muted">Momentos que criámos para clientes</span>
       </div>
-
       <div class="stories-grid">
         <div class="story-card">
           <h3>Sintra ao Ritmo Certo</h3>
-          <p>Palácios, jardins e recantos locais — sem pressas. O dia terminou com sunset no Atlântico.</p>
+          <p>Palácios, jardins e recantos locais — sem pressas. Sunset no Atlântico.</p>
           <p class="muted">Tour privado · 8h · Pick-up Lisboa</p>
         </div>
-
         <div class="story-card">
           <h3>Douro com Curadoria</h3>
-          <p>Quintas familiares, provas e almoço de autor com vista rio — sempre com tempo para respirar.</p>
+          <p>Quintas familiares, provas e almoço de autor com vista rio.</p>
           <p class="muted">Transfer Porto ↔ Douro · 10h</p>
         </div>
-
         <div class="story-card">
           <h3>Évora & Monsaraz</h3>
-          <p>Património, silêncio alentejano e mesa impecável. Luxo discreto.</p>
+          <p>Património, silêncio alentejano e mesa impecável.</p>
           <p class="muted">Tour privado · 9h · Pick-up Lisboa</p>
         </div>
       </div>
@@ -179,7 +181,7 @@
   </footer>
 
   <script>
-    // Mobile menu
+    // Menu mobile
     const toggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.nav');
     toggle.addEventListener('click', () => {
@@ -187,15 +189,13 @@
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
 
-    // Evitar abrir diretamente em #contacto quando a home é partilhada com hash antigo
+    // Evitar abrir diretamente em #contacto se alguém partilhou a home com hash antigo
     (function(){
       const isHome = location.pathname.endsWith('/') || location.pathname.endsWith('/index.html');
-      // Se aterra na home com hash mas o utilizador não clicou no link "Contacto" desta sessão, volta ao topo
       if (isHome && location.hash && !sessionStorage.getItem('fromContactLink')) {
         history.replaceState(null, '', location.pathname);
         window.scrollTo(0,0);
       }
-      // Quando o utilizador clicar no Contacto, marcamos a intenção
       const linkC = document.getElementById('link-contacto');
       if (linkC) linkC.addEventListener('click', () => {
         sessionStorage.setItem('fromContactLink', '1');
