@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Favicon provisório (trocaremos por SVG depois) -->
+  <!-- Favicon provisório -->
   <link rel="icon" type="image/png" href="assets/images/logo-explore-portugal-experience.png" />
 </head>
 
@@ -58,8 +58,7 @@
       <h2>Sobre</h2>
       <p class="muted">
         A Explore Portugal Experience oferece experiências personalizadas e de luxo,
-        com foco em conforto, segurança e exclusividade. Cada detalhe é pensado para
-        proporcionar uma viagem inesquecível.
+        com foco em conforto, segurança e exclusividade.
       </p>
     </div>
   </section>
@@ -70,7 +69,7 @@
       <h2>Serviços</h2>
       <p>
         Transfers privados, tours personalizados, visitas a vinícolas, passeios guiados,
-        experiências gastronómicas e serviços VIP para quem procura excelência.
+        experiências gastronómicas e serviços VIP.
       </p>
     </div>
   </section>
@@ -80,7 +79,6 @@
     <div class="container reveal">
       <h2>Galeria</h2>
       <p class="muted">Fotos e momentos captados durante os tours.</p>
-      <!-- em breve: grelha 3x3 com hover premium -->
     </div>
   </section>
 
@@ -89,13 +87,13 @@
     <div class="container reveal">
       <h2>Contacto</h2>
 
-      <!-- Troca SEU_ENDPOINT_AQUI pelo endpoint do Formspree -->
       <form action="SEU_ENDPOINT_AQUI" method="POST">
         <input type="text" name="Nome" placeholder="Nome" required />
         <input type="email" name="Email" placeholder="Email" required />
         <textarea name="Mensagem" placeholder="Mensagem" required></textarea>
         <button type="submit" class="btn gold">Enviar</button>
       </form>
+
     </div>
   </section>
 
@@ -106,9 +104,9 @@
     </div>
   </footer>
 
-  <!-- Interações & animações -->
+  <!-- Scripts -->
   <script>
-    // Header: estado scrolled
+    // Header: só mostra o logo quando há scroll
     const header = document.querySelector('header');
     const onScroll = () => {
       if (window.scrollY > 8) header.classList.add('scrolled');
@@ -128,5 +126,6 @@
     }, { threshold: 0.18 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   </script>
+
 </body>
 </html>
