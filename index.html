@@ -1,90 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Explore Portugal Experience — Transfers e Experiências Premium</title>
-  <meta name="description" content="Transfers privados, tours exclusivos e experiências premium em Portugal. Elegância, conforto e discrição.">
-  <link rel="stylesheet" href="/explore-portugal-experience/assets/css/style.css" />
-  <link rel="icon" type="image/svg+xml" href="/explore-portugal-experience/assets/icons/star-full.svg" />
-  <meta name="theme-color" content="#111111" />
+  <meta charset="UTF-8">
+  <title>Explore Portugal Experience</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="header" id="top">
-    <a class="logo-area" href="/explore-portugal-experience/index.html" aria-label="Início — Explore Portugal Experience">
-      <img class="brand-mark" src="/explore-portugal-experience/assets/icons/star-full.svg" alt="" aria-hidden="true" />
-      <span class="logo-text">Explore Portugal Experience</span>
-    </a>
+  <nav>
+    <a href="index.html">Sobre</a>
+    <a href="services.html">Serviços</a>
+    <a href="about.html">Galeria</a>
+    <a href="#contact">Contacto</a>
+  </nav>
 
-    <nav class="nav" aria-label="Principal">
-      <a href="/explore-portugal-experience/about.html">Sobre</a>
-      <a href="/explore-portugal-experience/services.html">Serviços</a>
-      <a href="/explore-portugal-experience/index.html#galeria">Galeria</a>
-      <a href="/explore-portugal-experience/index.html#contacto">Contacto</a>
-    </nav>
+  <img src="assets/images/logo-explore-portugal-experience.png" alt="Logo" class="logo">
+
+  <header>
+    <h1>Transfers e Experiências Premium em Portugal</h1>
+    <p>
+      Elegância, conforto e detalhe. Descobre Portugal ao teu ritmo com serviço exclusivo e personalizado.
+    </p>
+
+    <a href="#" class="btn">Explorar Tours</a>
+    <a href="#" class="btn">Reservar Transfer</a>
   </header>
 
-  <!-- HERO (CENTRADO) -->
-  <section class="hero">
-    <div class="hero-content">
-      <img src="/explore-portugal-experience/assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience — logotipo" class="logo-img-hero" />
-      <h1>Transfers e Experiências Premium em Portugal</h1>
-      <p class="lead">
-        Elegância, conforto e detalhe. Descobre Portugal ao teu ritmo com serviço exclusivo e personalizado.
-      </p>
-      <div class="hero-buttons">
-        <a class="btn-gold" href="/explore-portugal-experience/services.html">Explorar Tours</a>
-        <a class="btn-dark" href="#booking">Reservar Transfer</a>
-      </div>
+  <h2 class="section-title">Histórias</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Sintra ao Ritmo Certo</h3>
+      <p>Palácios, jardins e recantos mágicos... sem pressas.</p>
     </div>
-  </section>
 
-  <!-- HISTÓRIAS -->
-  <section class="stories" id="historias">
-    <div class="container">
-      <div class="section-head">
-        <h2>Histórias</h2>
-        <span class="muted">Momentos que criámos para clientes</span>
-      </div>
-
-      <div class="stories-grid">
-        <div class="story-card">
-          <h3>Sintra ao Ritmo Certo</h3>
-          <p>Palácios, jardins e recantos locais — sem pressas. O dia terminou com sunset no Atlântico.</p>
-          <p class="muted">Tour privado · 8h · Pick-up Lisboa</p>
-        </div>
-
-        <div class="story-card">
-          <h3>Douro com Curadoria</h3>
-          <p>Quintas familiares, provas e almoço de autor com vista rio — sempre com tempo para respirar.</p>
-          <p class="muted">Transfer Porto ↔ Douro · 10h</p>
-        </div>
-
-        <div class="story-card">
-          <h3>Évora & Monsaraz</h3>
-          <p>Património, silêncio alentejano e mesa impecável. Luxo discreto.</p>
-          <p class="muted">Tour privado · 9h · Pick-up Lisboa</p>
-        </div>
-      </div>
+    <div class="card">
+      <h3>Douro com Curadoria</h3>
+      <p>Quintas familiares, prova de vinhos e almoço com vista rio.</p>
     </div>
-  </section>
 
-  <!-- BOOKING -->
-  <section class="booking-section" id="booking">
-    <div class="container">
-      <div class="section-head">
-        <h2>Reserva</h2>
-        <span class="muted">Pede já o teu transfer</span>
-      </div>
+    <div class="card">
+      <h3>Évora & Monsaraz</h3>
+      <p>Património, silêncio alentejano e luxos discretos.</p>
+    </div>
+  </div>
 
-      <form action="https://formspree.io/f/SEU_ENDPOINT" method="POST" id="booking-form" class="booking-form">
-        <input type="text" name="_gotcha" style="display:none" autocomplete="off" />
+  <footer>
+    © 2025 Explore Portugal Experience
+  </footer>
 
-        <div class="booking-grid">
-          <!-- Itinerário -->
-          <div class="card">
-            <h3>Itinerário</h3>
-            <input type="text" name="pickup" placeholder="Local de recolha" required
+</body>
+</html>
