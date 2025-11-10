@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Explore Portugal Experience</title>
 
-  <!-- Stylesheet -->
+  <!-- Stylesheet principal -->
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <!-- Favicon (mais tarde colocamos o SVG) -->
-  <link rel="icon" type="image/png" href="assets/images/logo-explore-portugal-experience.png" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo-explore-portugal-experience.png">
 </head>
 
 <body>
@@ -19,8 +19,8 @@
     <div class="nav container">
 
       <a class="brand" href="#top">
-        <img src="assets/images/logo-explore-portugal-experience.png" 
-             alt="Explore Portugal Experience" class="brand-logo">
+        <img src="assets/images/logo-explore-portugal-experience.png"
+             alt="Logo Explore Portugal Experience" class="brand-logo">
       </a>
 
       <nav>
@@ -38,49 +38,52 @@
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <h1 class="hero-title">Experiências Premium em Portugal</h1>
-      <p class="hero-subtitle">Transfers privados, tours exclusivos e serviço de excelência.</p>
+      <h1 class="hero-title reveal gold-shimmer">Experiências Premium em Portugal</h1>
+      <p class="hero-subtitle reveal delay-1">Transfers privados, tours exclusivos e serviço de excelência.</p>
 
-      <div class="ill-card">
-        <img src="assets/images/logo-explore-portugal-experience.png" 
+      <div class="ill-card reveal delay-2">
+        <img src="assets/images/logo-explore-portugal-experience.png"
              alt="Explore Portugal Experience" class="illustration">
       </div>
     </div>
   </section>
 
-  <!-- Sobre -->
+  <!-- SOBRE -->
   <section id="sobre">
-    <div class="container">
+    <div class="container reveal">
       <h2>Sobre</h2>
       <p class="muted">
         A Explore Portugal Experience oferece experiências personalizadas e de luxo,
-        com foco em conforto, segurança e exclusividade.
+        com foco em conforto, segurança e exclusividade. Cada detalhe é pensado
+        para proporcionar uma viagem inesquecível.
       </p>
     </div>
   </section>
 
-  <!-- Serviços -->
+  <!-- SERVIÇOS -->
   <section id="servicos">
-    <div class="container">
+    <div class="container reveal">
       <h2>Serviços</h2>
       <p>
-        Transfers privados, tours personalizados, visita a vinícolas, passeios 
-        guiados, experiências gastronómicas e serviços VIP.
+        Transfers privados, tours personalizados, visitas a vinícolas,
+        passeios guiados, experiências gastronómicas e serviços VIP
+        para quem procura excelência.
       </p>
     </div>
   </section>
 
-  <!-- Galeria -->
+  <!-- GALERIA -->
   <section id="galeria">
-    <div class="container">
+    <div class="container reveal">
       <h2>Galeria</h2>
       <p class="muted">Fotos e momentos captados durante os tours.</p>
+      <!-- placeholder futuro de fotos -->
     </div>
   </section>
 
-  <!-- Contacto -->
+  <!-- CONTACTO -->
   <section id="contacto">
-    <div class="container">
+    <div class="container reveal">
       <h2>Contacto</h2>
 
       <form action="SEU_ENDPOINT_AQUI" method="POST">
@@ -93,12 +96,39 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       © 2025 Explore Portugal Experience. Todos os direitos reservados.
     </div>
   </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Header com efeito "scrolled"
+    const header = document.querySelector('header');
+    const onScroll = () => {
+      if (window.scrollY > 8) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Fade-in premium
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('show');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.18 });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
 
 </body>
 </html>
