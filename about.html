@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sobre — Explore Portugal Experience</title>
-  <link rel="stylesheet" href="/explore-portugal-experience/assets/css/style.css" />
-  <link rel="icon" type="image/x-icon" href="/explore-portugal-experience/assets/icons/favicon.ico">
-  <link rel="icon" type="image/svg+xml" href="/explore-portugal-experience/assets/icons/star-full.svg">
-  <link rel="apple-touch-icon" sizes="180x180" href="/explore-portugal-experience/assets/images/apple-touch-icon.png">
+  <link rel="stylesheet" href="/explore-portugal-experience/assets/css/style.css?v=3">
+  <link rel="icon" type="image/svg+xml" href="/explore-portugal-experience/assets/icons/compass-gold-solid.svg">
 </head>
 
 <body>
 
 <header class="header">
-  <a class="logo-area" href="/explore-portugal-experience/" aria-label="Início — Explore Portugal Experience">
-    <!-- Bússola animada (rotação suave em hover desktop) -->
-    <svg class="brand-mark compass-animated" width="34" height="34" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <a class="logo-area" href="/explore-portugal-experience/">
+    <svg class="brand-mark compass-animated" width="34" height="34" viewBox="0 0 256 256">
       <circle cx="128" cy="128" r="102" fill="none" stroke="#C9A562" stroke-width="8"/>
       <polygon fill="#C9A562" points="128,38 167,97 238,100 185,144 200,214 128,178 56,214 71,144 18,100 89,97"/>
     </svg>
     <span class="logo-text">Explore Portugal Experience</span>
   </a>
 
-  <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+  <button class="nav-toggle">☰</button>
 
-  <nav class="nav" aria-label="Principal">
+  <nav class="nav">
     <a href="/explore-portugal-experience/about.html" aria-current="page">Sobre</a>
     <a href="/explore-portugal-experience/services.html">Serviços</a>
     <a href="/explore-portugal-experience/#galeria">Galeria</a>
@@ -32,45 +29,39 @@
   </nav>
 </header>
 
-<!-- PAGE HERO -->
 <section class="page-hero">
   <div class="hero-content">
-    <img src="/explore-portugal-experience/assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience — logotipo" class="logo-img-hero" />
     <h1>Sobre Nós</h1>
-    <p class="lead">
-      Criamos experiências privadas e transfers de luxo, com serviço de excelência e atenção ao detalhe.
-      Classic, elegante e sóbrio.
-    </p>
+    <p class="lead">Elegância, detalhe e ritmo calmo. Serviço premium em Portugal.</p>
   </div>
 </section>
 
 <main class="page-content">
-  <h2>A nossa filosofia</h2>
-  <p>Equilíbrio entre conforto, autenticidade e ritmo calmo. Serviço personalizado, motoristas profissionais, veículos premium e curadoria pensada ao teu tempo.</p>
+  <h2>Filosofia</h2>
+  <p>Conforto, autenticidade e discrição. Cada cliente tem o seu ritmo e estilo.</p>
+
+  <h2>Compromisso</h2>
+  <p>Motoristas profissionais, veículos premium e curadoria personalizada.</p>
 
   <h2>Valores</h2>
   <ul class="centered-list">
-    <li><strong>Discrição</strong> — Presença elegante, respeito pela privacidade.</li>
-    <li><strong>Precisão</strong> — Pontualidade, segurança e comunicação clara.</li>
-    <li><strong>Autenticidade</strong> — Mostrar o melhor de Portugal, sem clichés.</li>
+    <li>Discrição</li>
+    <li>Precisão</li>
+    <li>Autenticidade</li>
   </ul>
 </main>
 
 <footer class="footer">
   <div class="container">
-    <p>© 2025 Explore Portugal Experience. Todos os direitos reservados.</p>
-    <p class="rnaat">RNAAT n.º 17/2018 · Turismo de Portugal, I.P.</p>
+    <p>© 2025 Explore Portugal Experience</p>
+    <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
   </div>
 </footer>
 
 <script>
-  // Menu mobile
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.nav');
-  toggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
+  toggle.addEventListener('click',()=>nav.classList.toggle('open'));
 </script>
 
 </body>
