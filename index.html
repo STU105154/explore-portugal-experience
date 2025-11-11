@@ -13,12 +13,20 @@
   <div class="translate-bar"><span>Idioma:</span><div id="google_translate_element"></div></div>
 
   <header class="header">
+    <!-- Estrela animada -->
     <a class="home-star" href="./index.html" aria-label="Início">
       <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
         <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
       </svg>
     </a>
-    <a class="logo-area" href="./index.html"><span class="logo-text">Explore Portugal Experience</span></a>
+
+    <!-- Logotipo completo (imagem) -->
+    <a class="logo-area" href="./index.html" aria-label="Explore Portugal Experience">
+      <!-- Atualiza o src para o nome exato do teu ficheiro (case-sensitive) -->
+      <img class="logo-img" src="./assets/images/logo-explore-portugal-experience.png"
+           alt="Explore Portugal Experience" width="240" height="36" decoding="async">
+    </a>
+
     <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
     <nav class="nav" aria-label="Principal">
       <a href="./about.html">Sobre</a>
@@ -36,7 +44,7 @@
     <div class="hero-content">
       <h1 class="section-title">Serviço privado com assinatura</h1>
       <p class="lead">Condução serena, comunicação clara e um país inteiro a descoberto — desde 2018.</p>
-      <a href="./services.html" class="btn">Ver Serviços</a>
+      <!-- Botão removido como pediste -->
     </div>
   </section>
 
@@ -45,34 +53,42 @@
     <p class="lead">Cada percurso é pensado à mão: tempo, conforto e o detalhe certo no momento certo.</p>
   </section>
 
-  <!-- Galeria com tamanho uniforme -->
+  <!-- Galeria com tiles 4:3 e dimensões fixas para evitar layout shift -->
   <section id="galeria" class="about-block">
     <h2 class="section-title">Galeria</h2>
     <p class="lead">Alguns momentos das nossas experiências.</p>
 
     <div class="gallery-grid">
       <div class="tile">
-        <img src="./assets/images/sintra-palacio.jpg"
-             data-full="./assets/images/sintra-palacio.jpg"
-             alt="Palácio de Sintra ao pôr do sol" loading="lazy" decoding="async">
+        <img
+          src="./assets/images/sintra-palacio.jpg"
+          data-full="./assets/images/sintra-palacio.jpg"
+          alt="Palácio de Sintra ao pôr do sol"
+          width="1600" height="1200" loading="lazy" decoding="async">
       </div>
 
       <div class="tile">
-        <img src="./assets/images/porto-ponte-luis-i.jpg"
-             data-full="./assets/images/porto-ponte-luis-i.jpg"
-             alt="Ribeira do Porto e ponte D. Luís I" loading="lazy" decoding="async">
+        <img
+          src="./assets/images/porto-ponte-luis-i.jpg"
+          data-full="./assets/images/porto-ponte-luis-i.jpg"
+          alt="Ribeira do Porto e ponte D. Luís I"
+          width="1600" height="1200" loading="lazy" decoding="async">
       </div>
 
       <div class="tile">
-        <img src="./assets/images/esculturas-noite.jpg"
-             data-full="./assets/images/esculturas-noite.jpg"
-             alt="Esculturas à noite em Lisboa" loading="lazy" decoding="async">
+        <img
+          src="./assets/images/esculturas-noite.jpg"
+          data-full="./assets/images/esculturas-noite.jpg"
+          alt="Esculturas à noite em Lisboa"
+          width="1600" height="1200" loading="lazy" decoding="async">
       </div>
 
       <div class="tile">
-        <img src="./assets/images/lisboa-letters-selfie.jpg"
-             data-full="./assets/images/lisboa-letters-selfie.jpg"
-             alt="Letras de Lisboa — selfie" loading="lazy" decoding="async">
+        <img
+          src="./assets/images/lisboa-letters-selfie.jpg"
+          data-full="./assets/images/lisboa-letters-selfie.jpg"
+          alt="Letras de Lisboa — selfie"
+          width="1600" height="1200" loading="lazy" decoding="async">
       </div>
     </div>
   </section>
@@ -94,7 +110,9 @@
   </footer>
 
   <script>
-    function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'pt'}, 'google_translate_element');}
+    function googleTranslateElementInit(){
+      new google.translate.TranslateElement({pageLanguage:'pt'}, 'google_translate_element');
+    }
   </script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script src="./assets/js/nav.js"></script>
