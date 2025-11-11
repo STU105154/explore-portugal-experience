@@ -10,7 +10,6 @@
 
   const imgEl = overlay.querySelector('img');
   const close = () => overlay.classList.remove('open');
-
   overlay.addEventListener('click', e => {
     if (e.target === overlay || e.target.classList.contains('lightbox-close')) close();
   });
