@@ -4,26 +4,35 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sobre — Explore Portugal Experience</title>
-  <link rel="stylesheet" href="/explore-portugal-experience/assets/css/style.css?v=5" />
-  <link rel="icon" type="image/svg+xml" href="/explore-portugal-experience/assets/icons/compass-gold-solid.svg">
+  <link rel="stylesheet" href="/explore-portugal-experience/assets/css/style.css?v=7" />
+  <link rel="icon" type="image/svg+xml" href="/explore-portugal-experience/assets/icons/star-full.svg">
 </head>
 
 <body>
 
+<div class="translate-bar">
+  <span>Idioma:</span>
+  <div id="google_translate_element"></div>
+</div>
+
 <header class="header">
-  <a class="logo-area" href="/explore-portugal-experience/">
-    <svg class="brand-mark compass-animated" width="34" height="34" viewBox="0 0 256 256" aria-hidden="true">
-      <circle cx="128" cy="128" r="102" fill="none" stroke="#C9A562" stroke-width="8"/>
-      <polygon fill="#C9A562" points="128,38 167,97 238,100 185,144 200,214 128,178 56,214 71,144 18,100 89,97"/>
+  <a class="home-star" href="/explore-portugal-experience/" aria-label="Início">
+    <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
+      <polygon fill="#C9A562" points="128,18 162,92 242,98 184,150 200,230 128,190 56,230 72,150 14,98 94,92"/>
     </svg>
+  </a>
+
+  <a class="logo-area" href="/explore-portugal-experience/">
     <span class="logo-text">Explore Portugal Experience</span>
   </a>
 
   <button class="nav-toggle" aria-expanded="false">☰</button>
 
-  <nav class="nav">
+  <nav class="nav" aria-label="Principal">
     <a href="/explore-portugal-experience/about.html" aria-current="page">Sobre</a>
     <a href="/explore-portugal-experience/services.html">Serviços</a>
+    <a href="/explore-portugal-experience/choose.html">Porquê nós</a>
+    <a href="/explore-portugal-experience/faq.html">FAQ</a>
     <a href="/explore-portugal-experience/#galeria">Galeria</a>
     <a href="/explore-portugal-experience/#contacto">Contacto</a>
   </nav>
@@ -32,23 +41,30 @@
 <section class="page-hero">
   <div class="hero-content">
     <h1>Sobre Nós</h1>
-    <p class="lead">Elegância, detalhe e ritmo calmo. Serviço premium em Portugal.</p>
+    <p class="lead">Desde 2018 a criar experiências privadas com elegância, conforto e discrição.</p>
   </div>
 </section>
 
 <main class="page-content">
-  <h2>Filosofia</h2>
-  <p>Conforto, autenticidade e discrição. Cada cliente tem o seu ritmo e estilo.</p>
+  <section class="about-block">
+    <h2>Quem Somos</h2>
+    <p>A Explore Portugal Experience nasceu em 2018 com uma missão clara: oferecer transfers e experiências personalizadas, combinando conforto, elegância e atenção ao detalhe. Crescemos de forma orgânica, com base em recomendações e parcerias de confiança.</p>
+  </section>
 
-  <h2>Compromisso</h2>
-  <p>Motoristas profissionais, veículos premium e curadoria personalizada.</p>
+  <section class="about-block">
+    <h2>O que nos torna diferentes</h2>
+    <ul class="centered-list">
+      <li><strong>Personalização extrema:</strong> itinerários à medida — nada de pacotes rígidos.</li>
+      <li><strong>Discrição e confiança:</strong> muitos clientes chegam por recomendação direta.</li>
+      <li><strong>Serviço consistente:</strong> pontualidade, conforto e comunicação clara.</li>
+      <li><strong>Motoristas bilíngues:</strong> experiência com clientes internacionais.</li>
+    </ul>
+  </section>
 
-  <h2>Valores</h2>
-  <ul class="centered-list">
-    <li>Discrição</li>
-    <li>Precisão</li>
-    <li>Autenticidade</li>
-  </ul>
+  <section class="about-block">
+    <h2>Pagamentos</h2>
+    <p>Aceitamos Cartão (Visa/Mastercard), PayPal, MB Way e Transferência Bancária. Emitimos recibos/faturas quando necessário.</p>
+  </section>
 </main>
 
 <section id="contacto">
@@ -65,6 +81,13 @@
     <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
   </div>
 </footer>
+
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({ pageLanguage: 'pt', includedLanguages: 'pt,en,es,fr,de,it,pt-BR,en-GB', autoDisplay: false }, 'google_translate_element');
+  }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <script>
   const toggle = document.querySelector('.nav-toggle');
