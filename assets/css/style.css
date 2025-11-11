@@ -19,26 +19,31 @@ img{ display:block; max-width:100%; height:auto }
 a{ color:inherit; text-decoration:none }
 .container{ max-width:var(--maxw); margin:0 auto; padding:0 20px }
 
+/* Translate bar */
+.translate-bar{
+  position:sticky; top:0; z-index:60;
+  display:flex; gap:10px; align-items:center; justify-content:center;
+  padding:6px 10px; background:#0a0a0a; border-bottom:1px solid rgba(255,255,255,.06);
+  font-size:14px; color:#cfcfcf;
+}
+
 /* Header & Nav */
 .header{
-  position:sticky; top:0; z-index:50;
+  position:sticky; top:36px; z-index:50;
   display:flex; align-items:center; justify-content:space-between;
   padding:14px 16px; background:rgba(0,0,0,.86); backdrop-filter:blur(6px);
   border-bottom:1px solid var(--line);
 }
 .logo-area{ display:flex; align-items:center; gap:10px }
 .logo-text{ color:var(--gold); font-weight:600; letter-spacing:.5px }
-.nav{ display:flex; gap:22px }
+.nav{ display:flex; gap:18px; align-items:center }
 .nav a:hover, .nav a[aria-current="page"]{ color:var(--gold) }
-.nav-toggle{
-  display:none; appearance:none; border:1px solid var(--gold); color:var(--gold);
-  background:transparent; border-radius:8px; padding:6px 10px
-}
+.nav-toggle{ display:none; appearance:none; border:1px solid var(--gold); color:var(--gold); background:transparent; border-radius:8px; padding:6px 10px }
 
-/* Ícone animado */
-@keyframes spin360 { to { transform: rotate(360deg); } }
-.compass-animated{ animation: spin360 20s linear infinite; transform-origin:center }
-@media (prefers-reduced-motion: reduce){ .compass-animated{ animation:none } }
+/* Star Home */
+.home-star{ display:flex; align-items:center; margin-right:8px }
+.star-animated{ width:30px; height:30px; animation: spin-slow 20s linear infinite }
+@keyframes spin-slow { to { transform: rotate(360deg) } }
 
 /* Hero */
 .hero{ padding:72px 18px 56px; border-bottom:1px solid var(--line) }
@@ -67,37 +72,25 @@ a{ color:inherit; text-decoration:none }
 .story-card{ border:1px solid var(--line); border-radius:14px; padding:20px }
 .story-card h3{ color:var(--gold); margin:0 0 6px }
 
-/* ===== BOOKING (CLÁSSICO, FUNDO PRETO) ===== */
+/* Booking */
 .booking-section{
-  padding:72px 18px;
-  background:#000;
-  border-top:1px solid rgba(255,255,255,.04);
-  border-bottom:1px solid rgba(255,255,255,.04);
+  padding:72px 18px; background:#000;
+  border-top:1px solid rgba(255,255,255,.04); border-bottom:1px solid rgba(255,255,255,.04);
 }
 .booking-form{ max-width:var(--maxw); margin:0 auto }
 .booking-grid{ display:grid; gap:18px }
 .booking-card{
-  background:#0b0b0b;
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:16px;
-  padding:24px 18px 26px;
-  display:flex; flex-direction:column; gap:14px; text-align:left;
+  background:#0b0b0b; border:1px solid rgba(255,255,255,.06); border-radius:16px;
+  padding:24px 18px 26px; display:flex; flex-direction:column; gap:14px; text-align:left;
   box-shadow: 0 0 0 1px rgba(255,255,255,.02) inset;
 }
-.booking-card h3{
-  color:var(--gold); font-size:18px; margin:0 0 10px; text-align:center; letter-spacing:.2px;
-}
-.booking-card input,
-.booking-card select,
-.booking-card textarea{
-  width:100%; height:44px; background:#0e0e0e; color:#f1f1f1;
-  border:1px solid #232323; border-radius:10px; padding:10px 12px; font:inherit;
+.booking-card h3{ color:var(--gold); font-size:18px; margin:0 0 10px; text-align:center; letter-spacing:.2px }
+.booking-card input, .booking-card select, .booking-card textarea{
+  width:100%; height:44px; background:#0e0e0e; color:#f1f1f1; border:1px solid #232323; border-radius:10px; padding:10px 12px; font:inherit;
 }
 .booking-card textarea{ min-height:120px; height:auto; resize:vertical; line-height:1.5 }
 .booking-card input::placeholder, .booking-card textarea::placeholder{ color:#9a9a9a }
-.booking-card input:focus, .booking-card select:focus, .booking-card textarea:focus{
-  outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(201,165,98,.15);
-}
+.booking-card input:focus, .booking-card select:focus, .booking-card textarea:focus{ outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(201,165,98,.15) }
 .two-cols{ display:grid; grid-template-columns:1fr 1fr; gap:10px }
 .radio-row{ display:flex; gap:18px; align-items:center; padding-top:2px }
 .booking-card label{ color:#d6d6d6; display:flex; align-items:center; gap:8px }
@@ -105,10 +98,31 @@ a{ color:inherit; text-decoration:none }
 .btn-submit{ margin-top:12px }
 .booking-status{ margin-top:10px; font-size:14px; color:#a9a9a9 }
 
+/* About blocks */
+.about-block{ margin:26px 0 }
+.about-block h2{ color:var(--gold); margin-bottom:6px }
+
+/* Reasons */
+.reasons-grid{ display:grid; gap:16px }
+.reason-card{
+  border:1px solid var(--line); border-radius:14px; padding:18px; text-align:left; background:#0b0b0b;
+}
+.reason-card h3{ color:var(--gold); margin:8px 0 6px }
+.reason-icon{ width:36px; height:36px }
+
+/* FAQ */
+.faq details{
+  border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin:10px 0; background:#0b0b0b; text-align:left;
+}
+.faq summary{ cursor:pointer; font-weight:600; color:#e9e9e9; outline:none }
+.faq p{ margin:10px 0 0; color:#d2d2d2 }
+
 /* Galeria */
 #galeria{ padding:56px 18px; border-bottom:1px solid var(--line) }
 .gallery{ display:grid; gap:10px }
-.gallery div{ aspect-ratio:1.25/1; border:1px solid var(--line); border-radius:12px; background:#0f0f0f }
+.gallery figure{ margin:0; border:1px solid var(--line); border-radius:12px; overflow:hidden; background:#0f0f0f }
+.gallery img{ width:100%; height:100%; object-fit:cover; aspect-ratio: 4/3 }
+.gallery figcaption{ padding:8px 10px; font-size:14px; color:#cfcfcf; text-align:left; border-top:1px solid rgba(255,255,255,.06) }
 
 /* Pages genéricas */
 .page-hero{ padding:64px 18px 44px; border-bottom:1px solid var(--line) }
@@ -134,7 +148,7 @@ a{ color:inherit; text-decoration:none }
 @media(max-width:839px){
   .nav-toggle{ display:block }
   .nav{
-    position:absolute; right:16px; top:56px; display:none;
+    position:absolute; right:16px; top:calc(36px + 56px); display:none;
     flex-direction:column; gap:10px; background:#0a0a0a; border:1px solid var(--line); border-radius:10px; padding:12px;
   }
   .nav.open{ display:flex }
@@ -145,7 +159,8 @@ a{ color:inherit; text-decoration:none }
 @media(min-width:840px){
   .stories-grid{ grid-template-columns:repeat(3,1fr) }
   .booking-grid{ grid-template-columns:repeat(3,1fr) }
-  .gallery{ grid-template-columns:repeat(3,1fr) }
+  .gallery{ grid-template-columns:repeat(4,1fr) }
   .cards-3, .services-cards{ grid-template-columns:repeat(3,1fr) }
+  .reasons-grid{ grid-template-columns:repeat(3,1fr) }
   .hero h1{ font-size:42px }
 }
