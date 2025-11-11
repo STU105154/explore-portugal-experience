@@ -1,4 +1,3 @@
-// Lightbox minimalista para .gallery-grid img
 (() => {
   const overlay = document.createElement('div');
   overlay.className = 'lightbox-overlay';
