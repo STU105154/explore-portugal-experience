@@ -1,155 +1,123 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Preços — Explore Portugal Experience</title>
-
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" type="image/svg+xml" href="assets/icons/star-full.svg">
+  <meta name="description" content="Preços transparentes para transfers e tours privados em Portugal." />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/star-full.svg" />
 </head>
-
 <body>
+  <div class="translate-bar"><span>Idioma:</span><div id="google_translate_element"></div></div>
 
-<!-- Barra de tradução -->
-<div class="translate-bar">
-  <span>Idioma:</span>
-  <div id="google_translate_element"></div>
-</div>
+  <header class="header">
+    <a class="home-star" href="./index.html" aria-label="Início">
+      <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
+        <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
+      </svg>
+    </a>
+    <a class="logo-area" href="./index.html"><span class="logo-text">Explore Portugal Experience</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
+    <nav class="nav" aria-label="Principal">
+      <a href="./about.html">Sobre</a>
+      <a href="./services.html">Serviços</a>
+      <a href="./choose.html">Porquê nós</a>
+      <a href="./pricing.html" aria-current="page">Preços</a>
+      <a href="./faq.html">FAQ</a>
+      <a href="./index.html#galeria">Galeria</a>
+      <a href="./index.html#contacto">Contacto</a>
+    </nav>
+  </header>
 
-<header class="header">
-  <a class="home-star" href="index.html">
-    <svg viewBox="0 0 256 256" class="star-animated">
-      <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92" />
-    </svg>
-  </a>
-
-  <a class="logo-area" href="index.html">
-    <span class="logo-text">Explore Portugal Experience</span>
-  </a>
-
-  <button class="nav-toggle">☰</button>
-
-  <nav class="nav">
-    <a href="about.html">Sobre</a>
-    <a href="services.html">Serviços</a>
-    <a href="choose.html">Porquê nós</a>
-    <a href="pricing.html" class="active">Preços</a>
-    <a href="faq.html">FAQ</a>
-    <a href="index.html#galeria">Galeria</a>
-    <a href="index.html#contacto">Contacto</a>
-  </nav>
-</header>
-
-<section class="pricing-section">
-  <h1 class="section-title">Preços</h1>
-  <p class="pricing-lead">Valores "a partir de", transparentes e justos</p>
-
-  <div class="pricing-table">
-
-    <div class="price-card">
-      <h3>Aeroporto → Lisboa</h3>
-      <p class="price">a partir de <strong>35€</strong></p>
-      <p>1 a 3 passageiros · Bagagem incluída</p>
+  <section class="page-hero">
+    <div class="hero-content">
+      <h1 class="section-title">Preços</h1>
+      <p class="lead">Transparência e conforto — escolhe a opção certa para o teu plano.</p>
     </div>
+  </section>
 
-    <div class="price-card">
-      <h3>Lisboa → Sintra</h3>
-      <p class="price">a partir de <strong>45€</strong></p>
-      <p>Transfer direto</p>
-    </div>
+  <main class="page-content">
+    <!-- Tabelas de preço -->
+    <section class="about-block">
+      <div class="pricing-grid">
+        <article class="price-card">
+          <h3>Transfer Urbano</h3>
+          <p class="price">desde 45€</p>
+          <ul class="list">
+            <li>Até 3 pax (sedã premium)</li>
+            <li>Inclui 2 malas grandes</li>
+            <li>Acompanhamento do voo</li>
+          </ul>
+          <a class="btn" href="./services.html#reserva">Pedir Orçamento</a>
+        </article>
 
-    <div class="price-card">
-      <h3>Lisboa → Cascais</h3>
-      <p class="price">a partir de <strong>40€</strong></p>
-      <p>Sedã premium</p>
-    </div>
+        <article class="price-card featured">
+          <h3>Tour 4 horas</h3>
+          <p class="price">desde 180€</p>
+          <ul class="list">
+            <li>Roteiro personalizado</li>
+            <li>Motorista bilíngue</li>
+            <li>Paragens a pedido</li>
+          </ul>
+          <a class="btn" href="./services.html#reserva">Planear Tour</a>
+        </article>
 
-    <div class="price-card">
-      <h3>Motorista à hora</h3>
-      <p class="price"><strong>30€ / hora</strong></p>
-      <p>Mínimo 3 horas</p>
-    </div>
-
-  </div>
-
-  <div style="text-align:center;margin-top:30px;">
-    <a class="btn-gold" href="mailto:nomadaeuforia@gmail.com">Enviar Pedido (Email)</a>
-    <a class="btn-dark" href="https://wa.me/351962516005" target="_blank">WhatsApp</a>
-  </div>
-
-</section>
-
-<!-- BLOCO DE PAGAMENTOS COMPLETO -->
-<section id="pagamentos" class="payments-section">
-  <h2 class="section-title">Métodos de Pagamento</h2>
-
-  <div class="payments-grid">
-
-    <div class="pay-card">
-      <div class="pay-icon">
-        <svg viewBox="0 0 64 40" width="54" height="34">
-          <rect x="2" y="6" width="60" height="28" rx="4" fill="#0f0f0f" stroke="#C9A562" />
-          <rect x="5" y="14" width="54" height="4" fill="#C9A562"/>
-        </svg>
+        <article class="price-card">
+          <h3>Tour dia inteiro</h3>
+          <p class="price">desde 320€</p>
+          <ul class="list">
+            <li>8 horas de serviço</li>
+            <li>Água a bordo</li>
+            <li>Recolha e devolução</li>
+          </ul>
+          <a class="btn" href="./services.html#reserva">Planear Tour</a>
+        </article>
       </div>
-      <h3>Visa / Mastercard</h3>
-      <p>Cartão de crédito / débito</p>
-    </div>
+    </section>
 
-    <div class="pay-card">
-      <div class="pay-icon">
-        <svg viewBox="0 0 64 64" width="42" height="42">
-          <rect x="20" y="6" width="24" height="52" rx="4" fill="#0f0f0f" stroke="#C9A562"/>
-          <circle cx="32" cy="48" r="2" fill="#C9A562"/>
-        </svg>
+    <!-- Extras -->
+    <section class="about-block">
+      <h2>Extras e condições</h2>
+      <div class="cards-3">
+        <article class="card">
+          <h3>Cadeirinha criança</h3>
+          <p>Incluída mediante pedido no momento da reserva.</p>
+        </article>
+        <article class="card">
+          <h3>Veículos maiores</h3>
+          <p>Van até 7 pax e minibus sob consulta.</p>
+        </article>
+        <article class="card">
+          <h3>Cancelamento</h3>
+          <p>Até 24h sem custos. Depois disso, poderão aplicar-se taxas.</p>
+        </article>
       </div>
-      <h3>MB Way</h3>
-      <p>Pagamento imediato</p>
-    </div>
+    </section>
 
-    <div class="pay-card">
-      <div class="pay-icon">
-        <svg viewBox="0 0 64 64" width="42" height="42">
-          <path fill="#0f0f0f" stroke="#C9A562" d="M18 46l4-28h15c8 0 12 3 11 10-1 6-5 9-12 9h-5l-1 9z" />
-        </svg>
+    <!-- CTA -->
+    <section class="about-block">
+      <div class="pay-strip">
+        <span>Aceitamos:</span>
+        <span class="chip">Visa / Mastercard</span>
+        <span class="chip">MB Way</span>
+        <span class="chip">PayPal</span>
+        <span class="chip">Transferência</span>
       </div>
-      <h3>PayPal</h3>
-      <p>Pagamento seguro online</p>
+      <p class="lead" style="margin-top:8px">Pronto para avançar?</p>
+      <a class="btn" href="./services.html#reserva">Reservar agora</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Explore Portugal Experience</p>
+      <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
     </div>
+  </footer>
 
-    <div class="pay-card">
-      <div class="pay-icon">
-        <svg viewBox="0 0 64 64" width="42" height="42">
-          <polygon points="8,26 32,12 56,26" fill="#0f0f0f" stroke="#C9A562"/>
-        </svg>
-      </div>
-      <h3>Transferência Bancária</h3>
-      <p>IBAN enviado após pedido</p>
-    </div>
-
-  </div>
-
-  <ul class="payments-notes">
-    <li>Fatura/recibo disponível</li>
-    <li>Moeda: EUR</li>
-    <li>Pagamento na reserva ou início do serviço</li>
-  </ul>
-</section>
-
-<footer class="footer">
-  <p>© Explore Portugal Experience</p>
-</footer>
-
-<!-- Google Translate -->
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({ pageLanguage: 'pt' }, 'google_translate_element');
-}
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-<script src="assets/js/nav.js"></script>
-
+  <script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'pt'}, 'google_translate_element');}</script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src="./assets/js/nav.js"></script>
 </body>
 </html>
