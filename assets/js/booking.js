@@ -2,49 +2,31 @@
   const f = document.getElementById('booking-form');
   if (!f) return;
 
-  const phoneIntl = '+351962516005'; // WhatsApp
+  const phoneIntl = '+351962516005';
   const businessEmail = 'nomadaeuforia@gmail.com';
 
-  function getVal(name) { return (f.elements[name]?.value || '').trim(); }
-  function getRadio(name){ return (new FormData(f).get(name) || '').toString(); }
-  function assertConsent() {
-    if (!f.elements['consent'].checked) {
-      alert('Por favor, aceita o envio dos dados para podermos responder.');
-      return false;
-    }
-    return true;
-  }
-  function buildMessage() {
-    const lines = [
-      'Pedido de Reserva — Explore Portugal Experience',
-      '',
-      `Nome: ${getVal('name')}`,
-      `Email: ${getVal('email')}`,
-      `Telefone: ${getVal('phone') || '-'}`,
-      '',
-      `Itinerário: ${getVal('pickup')} → ${getVal('dropoff')}`,
-      `Data/Hora: ${getVal('date')} ${getVal('time')}`,
-      `Tipo de viagem: ${getRadio('triptype')}`,
-      '',
-      `Passageiros: ${getVal('passengers')}`,
-      `Bagagem: ${getVal('luggage') || '0'}`,
-      `Veículo: ${getVal('vehicle')}`,
-      `Extras: ${getVal('extras') || '-'}`,
-    ];
-    return lines.join('\n');
+  const v = n => (f.elements[n]?.value || '').trim();
+  const r = n => (new FormData(f).get(n) || '').toString();
+  const ok = () => f.elements['consent'].checked || (alert('Por favor, aceita o envio dos dados.'), false);
+
+  function msg(){
+    return [
+      'Pedido de Reserva — Explore Portugal Experience','',
+      `Nome: ${v('name')}`, `Email: ${v('email')}`, `Telefone: ${v('phone') || '-'}`, '',
+      `Itinerário: ${v('pickup')} → ${v('dropoff')}`,
+      `Data/Hora: ${v('date')} ${v('time')}`, `Tipo de viagem: ${r('triptype')}`, '',
+      `Passageiros: ${v('passengers')}`, `Bagagem: ${v('luggage') || '0'}`,
+      `Veículo: ${v('vehicle')}`, `Extras: ${v('extras') || '-'}`
+    ].join('\n');
   }
 
-  document.getElementById('send-email')?.addEventListener('click', () => {
-    if (!f.reportValidity() || !assertConsent()) return;
-    const subject = encodeURIComponent('Pedido de Reserva');
-    const body = encodeURIComponent(buildMessage());
-    window.location.href = `mailto:${businessEmail}?subject=${subject}&body=${body}`;
+  document.getElementById('send-email')?.addEventListener('click', ()=>{
+    if(!f.reportValidity() || !ok()) return;
+    location.href = `mailto:${businessEmail}?subject=${encodeURIComponent('Pedido de Reserva')}&body=${encodeURIComponent(msg())}`;
   });
 
-  document.getElementById('send-whatsapp')?.addEventListener('click', () => {
-    if (!f.reportValidity() || !assertConsent()) return;
-    const text = encodeURIComponent(buildMessage());
-    const url = `https://wa.me/${phoneIntl.replace(/\D/g,'')}?text=${text}`;
-    window.open(url, '_blank', 'noopener');
+  document.getElementById('send-whatsapp')?.addEventListener('click', ()=>{
+    if(!f.reportValidity() || !ok()) return;
+    window.open(`https://wa.me/${phoneIntl.replace(/\D/g,'')}?text=${encodeURIComponent(msg())}`,'_blank','noopener');
   });
 })();
