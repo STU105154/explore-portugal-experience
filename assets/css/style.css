@@ -354,3 +354,50 @@ textarea{ min-height: 110px; resize: vertical; }
 =========================== */
 .centered-list{ list-style: none; padding: 0; margin: 6px auto 0; width: min(840px, 92%); }
 .centered-list li{ margin: 6px 0; color: var(--muted); }
+/* ---- BOOKING ---- */
+.booking-section{ padding:34px 16px; }
+.booking-form{ width:min(1120px,92%); margin:0 auto; }
+.booking-grid{ display:grid; gap:16px; grid-template-columns:repeat(3,1fr); }
+@media (max-width:960px){ .booking-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:640px){ .booking-grid{ grid-template-columns:1fr; } }
+
+.booking-card{
+  background:#0f0f0f;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;
+  padding:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+.booking-card h3{ color:#C9A562; margin-bottom:10px; }
+.booking-card label{ display:block; margin-top:10px; }
+.booking-card input,
+.booking-card select,
+.booking-card textarea{
+  width:100%; margin-top:6px;
+  background:#0e0e0e; color:#eee;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:10px; padding:10px 12px;
+}
+.booking-card textarea{ min-height:110px; resize:vertical; }
+.radio-row{ display:flex; gap:14px; margin-top:6px; }
+.booking-status{ margin-top:10px; color:#bfbfbf; font-size:14px; }
+
+/* util */
+.two-cols{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+@media (max-width:560px){ .two-cols{ grid-template-columns:1fr; } }
+.btn-submit{ width:100%; }
+
+/* ---- PAY STRIP ---- */
+.pay-strip{
+  display:inline-flex; gap:8px; align-items:center; flex-wrap:wrap;
+  background:rgba(255,255,255,.02);
+  padding:10px 12px; border-radius:999px;
+  border:1px solid rgba(201,165,98,.35);
+}
+.pay-strip > span:first-child{ color:#C9A562; font-weight:700; }
+.chip{
+  border:1px solid rgba(201,165,98,.55);
+  color:#f0f0f0; border-radius:999px;
+  padding:6px 10px; font-size:13px;
+  background:linear-gradient(180deg, rgba(201,165,98,.08), rgba(201,165,98,.02));
+}
