@@ -4,20 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Explore Portugal Experience — Transfers e Experiências Premium</title>
-  <meta name="description" content="Transfers privados, tours exclusivos e experiências premium em Portugal. Elegância, conforto e discrição.">
-  <link rel="stylesheet" href="/explore-portugal-experience/assets/css/style.css?v=5" />
-  <link rel="icon" type="image/svg+xml" href="/explore-portugal-experience/assets/icons/compass-gold-solid.svg">
+  <meta name="description" content="Transfers privados, tours exclusivos e experiências premium em Portugal, desde 2018. Elegância, conforto e discrição.">
+  <link rel="stylesheet" href="/explore-portugal-experience/assets/css/style.css?v=7" />
+  <link rel="icon" type="image/svg+xml" href="/explore-portugal-experience/assets/icons/star-full.svg">
   <meta name="theme-color" content="#0d0d0d" />
 </head>
 
 <body>
 
+<!-- Barra de tradução -->
+<div class="translate-bar">
+  <span>Idioma:</span>
+  <div id="google_translate_element"></div>
+</div>
+
 <header class="header" id="top">
-  <a class="logo-area" href="/explore-portugal-experience/" aria-label="Início — Explore Portugal Experience">
-    <svg class="brand-mark compass-animated" width="34" height="34" viewBox="0 0 256 256" aria-hidden="true">
-      <circle cx="128" cy="128" r="102" fill="none" stroke="#C9A562" stroke-width="8"/>
-      <polygon fill="#C9A562" points="128,38 167,97 238,100 185,144 200,214 128,178 56,214 71,144 18,100 89,97"/>
+  <!-- Estrela = Home -->
+  <a class="home-star" href="/explore-portugal-experience/" aria-label="Início">
+    <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
+      <polygon fill="#C9A562" points="128,18 162,92 242,98 184,150 200,230 128,190 56,230 72,150 14,98 94,92"/>
     </svg>
+  </a>
+
+  <a class="logo-area" href="/explore-portugal-experience/" aria-label="Início — Explore Portugal Experience">
     <span class="logo-text">Explore Portugal Experience</span>
   </a>
 
@@ -26,8 +35,11 @@
   <nav class="nav" aria-label="Principal">
     <a href="/explore-portugal-experience/about.html">Sobre</a>
     <a href="/explore-portugal-experience/services.html">Serviços</a>
+    <a href="/explore-portugal-experience/choose.html">Porquê nós</a>
+    <a href="/explore-portugal-experience/pricing.html">Preços</a>
+    <a href="/explore-portugal-experience/faq.html">FAQ</a>
     <a href="#galeria">Galeria</a>
-    <a href="#contacto" id="link-contacto">Contacto</a>
+    <a href="#contacto">Contacto</a>
   </nav>
 </header>
 
@@ -35,7 +47,7 @@
   <div class="hero-content">
     <img src="/explore-portugal-experience/assets/images/logo-explore-portugal-experience.png" class="logo-img-hero" alt="Explore Portugal Experience">
     <h1>Transfers e Experiências Premium</h1>
-    <p class="lead">Elegância, conforto e detalhe — Portugal ao teu ritmo.</p>
+    <p class="lead">Desde 2018, elegância, conforto e detalhe — Portugal ao teu ritmo.</p>
     <div class="hero-buttons">
       <a class="btn-gold" href="/explore-portugal-experience/services.html">Explorar Tours</a>
       <a class="btn-dark" href="#booking">Reservar</a>
@@ -51,23 +63,14 @@
     </div>
 
     <div class="stories-grid">
-      <div class="story-card">
-        <h3>Sintra</h3>
-        <p>Palácios, jardins e vista Atlântico.</p>
-      </div>
-      <div class="story-card">
-        <h3>Douro</h3>
-        <p>Quintas, provas e gastronomia.</p>
-      </div>
-      <div class="story-card">
-        <h3>Évora</h3>
-        <p>Silêncio alentejano e autenticidade.</p>
-      </div>
+      <div class="story-card"><h3>Sintra</h3><p>Palácios, jardins e vista Atlântico.</p></div>
+      <div class="story-card"><h3>Douro</h3><p>Quintas, provas e gastronomia.</p></div>
+      <div class="story-card"><h3>Évora</h3><p>Silêncio alentejano e autenticidade.</p></div>
     </div>
   </div>
 </section>
 
-<!-- RESERVA (clássico, fundo preto) -->
+<!-- RESERVA -->
 <section class="booking-section" id="booking">
   <div class="container">
     <div class="section-head">
@@ -77,25 +80,19 @@
 
     <form action="https://formspree.io/f/SEU_ENDPOINT" method="POST" id="booking-form" class="booking-form">
       <input type="text" name="_gotcha" style="display:none" autocomplete="off" />
-
       <div class="booking-grid">
-
-        <!-- Itinerário -->
         <div class="booking-card">
           <h3>Itinerário</h3>
           <input type="text" name="pickup" placeholder="Local de recolha" required>
           <input type="text" name="dropoff" placeholder="Destino" required>
-
           <div class="two-cols">
             <input type="date" name="date" required>
             <input type="time" name="time" required>
           </div>
-
           <div class="two-cols radio-row">
             <label><input type="radio" name="trip_type" value="oneway" checked> Só ida</label>
             <label><input type="radio" name="trip_type" value="return"> Ida e volta</label>
           </div>
-
           <div id="return-fields" class="return-hidden">
             <div class="two-cols">
               <input type="date" name="return_date">
@@ -104,7 +101,6 @@
           </div>
         </div>
 
-        <!-- Preferências -->
         <div class="booking-card">
           <h3>Preferências</h3>
           <div class="two-cols">
@@ -120,7 +116,6 @@
           <textarea name="notes" placeholder="Extras (cadeiras criança, espera aeroporto…)"></textarea>
         </div>
 
-        <!-- Contacto -->
         <div class="booking-card contact-card">
           <h3>Contacto</h3>
           <input type="text" name="name" placeholder="Nome" required>
@@ -130,25 +125,43 @@
           <button class="btn-gold btn-submit" type="submit">Enviar pedido</button>
           <p id="booking-status" class="booking-status"></p>
         </div>
-
       </div>
     </form>
   </div>
 </section>
 
+<!-- GALERIA (com as tuas 4 fotos) -->
 <section id="galeria">
   <div class="container">
     <div class="section-head"><h2>Galeria</h2></div>
-    <div class="gallery"><div></div><div></div><div></div></div>
+
+    <div class="gallery">
+      <figure>
+        <img loading="lazy" decoding="async" src="/explore-portugal-experience/assets/images/gallery/sintra-palacio.jpg" alt="Palacete em Sintra" />
+        <figcaption>Sintra</figcaption>
+      </figure>
+
+      <figure>
+        <img loading="lazy" decoding="async" src="/explore-portugal-experience/assets/images/gallery/esculturas-noite.jpg" alt="Esculturas iluminadas à noite" />
+        <figcaption>Noite • Arte & História</figcaption>
+      </figure>
+
+      <figure>
+        <img loading="lazy" decoding="async" src="/explore-portugal-experience/assets/images/gallery/porto-ponte-luis-i.jpg" alt="Ponte Luís I no Porto" />
+        <figcaption>Porto • Ponte Luís I</figcaption>
+      </figure>
+
+      <figure>
+        <img loading="lazy" decoding="async" src="/explore-portugal-experience/assets/images/gallery/lisboa-letters-selfie.jpg" alt="Letreiro LISBOA no Parque Eduardo VII" />
+        <figcaption>Lisboa</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
 <section id="contacto">
   <div class="container">
-    <div class="section-head">
-      <h2>Contacto</h2>
-      <span class="muted">Fala connosco</span>
-    </div>
+    <div class="section-head"><h2>Contacto</h2><span class="muted">Fala connosco</span></div>
     <p class="lead"><a href="mailto:nomadaeuforia@gmail.com" class="contact-link">nomadaeuforia@gmail.com</a></p>
     <p class="lead"><a href="tel:+351962516005" class="contact-link">+351 962 516 005</a></p>
   </div>
@@ -161,8 +174,20 @@
   </div>
 </footer>
 
+<!-- Google Translate -->
 <script>
-  // Mobile menu
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'pt',
+      includedLanguages: 'pt,en,es,fr,de,it,pt-BR,en-GB',
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+  // Menu mobile
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.nav');
   toggle.addEventListener('click', () => {
@@ -170,14 +195,14 @@
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 
-  // Ida e volta
+  // Ida/volta
   const radios = document.querySelectorAll('input[name="trip_type"]');
   const returnFields = document.getElementById('return-fields');
   radios.forEach(r => r.addEventListener('change', () => {
     returnFields.classList.toggle('return-hidden', r.value !== 'return' || !r.checked);
   }));
 
-  // Submissão simples
+  // Submit
   (function(){
     const form = document.getElementById("booking-form");
     const statusEl = document.getElementById("booking-status");
