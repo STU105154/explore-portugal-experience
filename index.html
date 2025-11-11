@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Explore Portugal Experience — Transfers e Experiências Premium</title>
-  <meta name="description" content="Transfers privados, tours exclusivos e experiências premium em Portugal, desde 2018. Elegância, conforto e discrição.">
-  <link rel="stylesheet" href="/explore-portugal-experience/assets/css/style.css?v=7" />
-  <link rel="icon" type="image/svg+xml" href="/explore-portugal-experience/assets/icons/star-full.svg">
-  <meta name="theme-color" content="#0d0d0d" />
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Portugal Experience</title>
+  <meta name="description" content="Transfers privados, tours exclusivos e experiências premium em Portugal." />
 
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/star-full.svg">
+</head>
 <body>
 
 <!-- Barra de tradução -->
@@ -18,216 +18,136 @@
   <div id="google_translate_element"></div>
 </div>
 
-<header class="header" id="top">
-  <!-- Estrela = Home -->
+<!-- Header -->
+<header class="header">
   <a class="home-star" href="/explore-portugal-experience/" aria-label="Início">
-    <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
-      <polygon fill="#C9A562" points="128,18 162,92 242,98 184,150 200,230 128,190 56,230 72,150 14,98 94,92"/>
+    <svg viewBox="0 0 256 256" class="star-animated">
+      <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92" />
     </svg>
   </a>
 
-  <a class="logo-area" href="/explore-portugal-experience/" aria-label="Início — Explore Portugal Experience">
+  <a class="logo-area" href="/explore-portugal-experience/">
     <span class="logo-text">Explore Portugal Experience</span>
   </a>
 
-  <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
+  <button class="nav-toggle">☰</button>
 
-  <nav class="nav" aria-label="Principal">
-    <a href="/explore-portugal-experience/about.html">Sobre</a>
-    <a href="/explore-portugal-experience/services.html">Serviços</a>
-    <a href="/explore-portugal-experience/choose.html">Porquê nós</a>
-    <a href="/explore-portugal-experience/pricing.html">Preços</a>
-    <a href="/explore-portugal-experience/faq.html">FAQ</a>
+  <nav class="nav">
+    <a href="about.html">Sobre</a>
+    <a href="services.html">Serviços</a>
+    <a href="about.html#porque-nos">Porquê nós</a>
+    <a href="pricing.html">Preços</a>
+    <a href="faq.html">FAQ</a>
     <a href="#galeria">Galeria</a>
-    <a href="#contacto">Contacto</a>
+    <a href="services.html#contacto">Contacto</a>
   </nav>
 </header>
 
+<!-- Hero -->
 <section class="hero">
-  <div class="hero-content">
-    <img src="/explore-portugal-experience/assets/images/logo-explore-portugal-experience.png" class="logo-img-hero" alt="Explore Portugal Experience">
-    <h1>Transfers e Experiências Premium</h1>
-    <p class="lead">Desde 2018, elegância, conforto e detalhe — Portugal ao teu ritmo.</p>
-    <div class="hero-buttons">
-      <a class="btn-gold" href="/explore-portugal-experience/services.html">Explorar Tours</a>
-      <a class="btn-dark" href="#booking">Reservar</a>
+  <img src="assets/images/logo-explore-portugal-experience.png" alt="Logo" class="hero-logo">
+</section>
+
+<!-- Galeria -->
+<section id="galeria" class="gallery-section">
+  <h2 class="section-title">Galeria</h2>
+  
+  <div class="gallery-grid">
+
+    <div class="gallery-card">
+      <img src="assets/images/sintra-palacio.jpg" alt="Palacete em Sintra">
+      <h3>Palacete em Sintra</h3>
     </div>
+
+    <div class="gallery-card">
+      <img src="assets/images/esculturas-noite.jpg" alt="Esculturas iluminadas à noite">
+      <h3>Esculturas iluminadas à noite</h3>
+    </div>
+
+    <div class="gallery-card">
+      <img src="assets/images/porto-ponte-luis-i.jpg" alt="Ponte Luís I no Porto">
+      <h3>Ponte Luís I no Porto</h3>
+    </div>
+
+    <div class="gallery-card">
+      <img src="assets/images/lisboa-letters-selfie.jpg" alt="Letreiro LISBOA no Parque Eduardo VII">
+      <h3>Letreiro LISBOA no Parque Eduardo VII</h3>
+    </div>
+
   </div>
 </section>
 
-<section class="stories" id="historias">
+<!-- MÉTODOS DE PAGAMENTO -->
+<section id="pagamentos" class="payments-section">
   <div class="container">
-    <div class="section-head">
-      <h2>Histórias</h2>
-      <span class="muted">Momentos criados</span>
-    </div>
+    <h2 class="section-title">Métodos de Pagamento</h2>
 
-    <div class="stories-grid">
-      <div class="story-card"><h3>Sintra</h3><p>Palácios, jardins e vista Atlântico.</p></div>
-      <div class="story-card"><h3>Douro</h3><p>Quintas, provas e gastronomia.</p></div>
-      <div class="story-card"><h3>Évora</h3><p>Silêncio alentejano e autenticidade.</p></div>
-    </div>
-  </div>
-</section>
+    <div class="payments-grid">
 
-<!-- RESERVA -->
-<section class="booking-section" id="booking">
-  <div class="container">
-    <div class="section-head">
-      <h2>Reserva</h2>
-      <span class="muted">Pedido rápido, discreto e confortável</span>
-    </div>
-
-    <form action="https://formspree.io/f/SEU_ENDPOINT" method="POST" id="booking-form" class="booking-form">
-      <input type="text" name="_gotcha" style="display:none" autocomplete="off" />
-      <div class="booking-grid">
-        <div class="booking-card">
-          <h3>Itinerário</h3>
-          <input type="text" name="pickup" placeholder="Local de recolha" required>
-          <input type="text" name="dropoff" placeholder="Destino" required>
-          <div class="two-cols">
-            <input type="date" name="date" required>
-            <input type="time" name="time" required>
-          </div>
-          <div class="two-cols radio-row">
-            <label><input type="radio" name="trip_type" value="oneway" checked> Só ida</label>
-            <label><input type="radio" name="trip_type" value="return"> Ida e volta</label>
-          </div>
-          <div id="return-fields" class="return-hidden">
-            <div class="two-cols">
-              <input type="date" name="return_date">
-              <input type="time" name="return_time">
-            </div>
-          </div>
+      <div class="pay-card">
+        <div class="pay-icon">
+          <svg viewBox="0 0 64 40" width="54" height="34">
+            <rect x="2" y="6" width="60" height="28" rx="4" fill="#0f0f0f" stroke="#C9A562" />
+            <rect x="5" y="14" width="54" height="4" fill="#C9A562"/>
+            <rect x="8" y="22" width="16" height="4" fill="#C9A562" opacity=".55"/>
+          </svg>
         </div>
-
-        <div class="booking-card">
-          <h3>Preferências</h3>
-          <div class="two-cols">
-            <input type="number" name="passengers" placeholder="Passageiros" min="1" max="8" required>
-            <input type="number" name="luggage" placeholder="Bagagem" min="0" max="10">
-          </div>
-          <select name="vehicle" required>
-            <option disabled selected>Tipo de veículo</option>
-            <option>Sedan Executivo</option>
-            <option>Van Executiva</option>
-            <option>SUV Premium</option>
-          </select>
-          <textarea name="notes" placeholder="Extras (cadeiras criança, espera aeroporto…)"></textarea>
-        </div>
-
-        <div class="booking-card contact-card">
-          <h3>Contacto</h3>
-          <input type="text" name="name" placeholder="Nome" required>
-          <input type="email" name="email" placeholder="Email" required>
-          <input type="tel" name="phone" placeholder="Telefone (opcional)">
-          <label class="muted small"><input type="checkbox" required> Concordo com o tratamento de dados</label>
-          <button class="btn-gold btn-submit" type="submit">Enviar pedido</button>
-          <p id="booking-status" class="booking-status"></p>
-        </div>
+        <h3>Cartão</h3>
+        <p>Visa • Mastercard • Amex</p>
       </div>
-    </form>
-  </div>
-</section>
 
-<!-- GALERIA (com as tuas 4 fotos) -->
-<section id="galeria">
-  <div class="container">
-    <div class="section-head"><h2>Galeria</h2></div>
+      <div class="pay-card">
+        <div class="pay-icon">
+          <svg viewBox="0 0 64 64" width="42" height="42">
+            <rect x="20" y="6" width="24" height="52" rx="4" fill="#0f0f0f" stroke="#C9A562"/>
+            <rect x="24" y="12" width="16" height="28" fill="#121212" stroke="#C9A562" opacity=".5"/>
+            <circle cx="32" cy="48" r="2" fill="#C9A562"/>
+          </svg>
+        </div>
+        <h3>MB Way</h3>
+        <p>Pagamento rápido via app</p>
+      </div>
 
-   <section id="galeria" class="gallery-section">
-  <div class="container">
-    <h2 class="section-title">Galeria</h2>
+      <div class="pay-card">
+        <div class="pay-icon">
+          <svg viewBox="0 0 64 64" width="42" height="42">
+            <path d="M18 46l4-28c.2-1.6 1.6-2.8 3.2-2.8h12.2c8.4 0 12.8 3.8 11.4 10.7-1.1 5.8-5.2 8.7-12.1 8.7H30l-1.3 8.8c-.2 1.6-1.6 2.8-3.2 2.8H18z"
+                  fill="#0f0f0f" stroke="#C9A562"/>
+          </svg>
+        </div>
+        <h3>PayPal</h3>
+        <p>Pagamento seguro online</p>
+      </div>
 
-    <div class="gallery-grid">
-
-      <figure class="gallery-item">
-        <img src="assets/images/sintra-palacio.jpg" alt="Palacete em Sintra">
-        <figcaption>Palacete em Sintra</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <img src="assets/images/esculturas-noite.jpg" alt="Esculturas iluminadas à noite">
-        <figcaption>Esculturas iluminadas à noite</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <img src="assets/images/porto-ponte-luis-i.jpg" alt="Ponte Luís I no Porto">
-        <figcaption>Ponte Luís I no Porto</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <img src="assets/images/lisboa-letters-selfie.jpg" alt="Letreiro LISBOA no Parque Eduardo VII">
-        <figcaption>Lisboa — Parque Eduardo VII</figcaption>
-      </figure>
+      <div class="pay-card">
+        <div class="pay-icon">
+          <svg viewBox="0 0 64 64" width="42" height="42">
+            <polygon points="8,26 32,12 56,26" fill="#0f0f0f" stroke="#C9A562"/>
+            <rect x="14" y="26" width="36" height="20" fill="#0f0f0f" stroke="#C9A562"/>
+          </svg>
+        </div>
+        <h3>Transferência</h3>
+        <p>IBAN enviado na confirmação</p>
+      </div>
 
     </div>
-  </div>
-</section>
 
-
-<section id="contacto">
-  <div class="container">
-    <div class="section-head"><h2>Contacto</h2><span class="muted">Fala connosco</span></div>
-    <p class="lead"><a href="mailto:nomadaeuforia@gmail.com" class="contact-link">nomadaeuforia@gmail.com</a></p>
-    <p class="lead"><a href="tel:+351962516005" class="contact-link">+351 962 516 005</a></p>
   </div>
 </section>
 
 <footer class="footer">
-  <div class="container">
-    <p>© 2025 Explore Portugal Experience</p>
-    <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
-  </div>
+  <p>© Explore Portugal Experience</p>
 </footer>
 
 <!-- Google Translate -->
-<script>
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'pt',
-      includedLanguages: 'pt,en,es,fr,de,it,pt-BR,en-GB',
-      autoDisplay: false
-    }, 'google_translate_element');
-  }
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({ pageLanguage: 'pt' }, 'google_translate_element');
+}
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-<script>
-  // Menu mobile
-  const toggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.nav');
-  toggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-
-  // Ida/volta
-  const radios = document.querySelectorAll('input[name="trip_type"]');
-  const returnFields = document.getElementById('return-fields');
-  radios.forEach(r => r.addEventListener('change', () => {
-    returnFields.classList.toggle('return-hidden', r.value !== 'return' || !r.checked);
-  }));
-
-  // Submit
-  (function(){
-    const form = document.getElementById("booking-form");
-    const statusEl = document.getElementById("booking-status");
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      statusEl.textContent = "A enviar…";
-      try {
-        const res = await fetch(form.action, {
-          method: form.method,
-          body: new FormData(form),
-          headers: { "Accept": "application/json" }
-        });
-        statusEl.textContent = res.ok ? "Obrigado! Vamos responder em breve." : "Não foi possível enviar agora.";
-        if (res.ok) { form.reset(); returnFields.classList.add("return-hidden"); }
-      } catch { statusEl.textContent = "Erro de ligação. Tenta novamente."; }
-    });
-  })();
-</script>
+<script src="assets/js/nav.js"></script>
 
 </body>
 </html>
