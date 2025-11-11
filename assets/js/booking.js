@@ -2,11 +2,11 @@
   const f = document.getElementById('booking-form');
   if (!f) return;
 
-  const phoneIntl = '+351962516005'; // altera para o teu WhatsApp
-  const businessEmail = 'nomadaeuforia@gmail.com'; // altera para o teu email
+  const phoneIntl = '+351962516005'; // WhatsApp
+  const businessEmail = 'nomadaeuforia@gmail.com';
 
   function getVal(name) { return (f.elements[name]?.value || '').trim(); }
-  function getRadio(name) { return (new FormData(f).get(name) || '').toString(); }
+  function getRadio(name){ return (new FormData(f).get(name) || '').toString(); }
   function assertConsent() {
     if (!f.elements['consent'].checked) {
       alert('Por favor, aceita o envio dos dados para podermos responder.');
