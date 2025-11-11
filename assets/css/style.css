@@ -510,3 +510,12 @@ textarea{ min-height: 110px; resize: vertical; }
 .card{ background:#0f0f0f; border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:18px; text-align:left; }
 .card h3{ color:#C9A562; margin-bottom:6px; }
 
+/* --- Pricing --- */
+.pricing-grid{ width:min(1120px,92%); margin:0 auto; display:grid; gap:18px; grid-template-columns:repeat(3,1fr); }
+@media (max-width:960px){ .pricing-grid{ grid-template-columns:repeat(2,1fr);} }
+@media (max-width:640px){ .pricing-grid{ grid-template-columns:1fr;} }
+.price-card{ background:#0f0f0f; border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:18px; text-align:left; }
+.price-card h3{ color:#C9A562; margin:0 0 8px; }
+.price{ font-size:1.8rem; font-weight:800; margin:6px 0 12px; }
+.price-card .list{ padding-left:18px; margin:0 0 14px; color:#e6e6e6; }
+.price-card.featured{ border-color:rgba(201,165,98,.55); box-shadow:0 0 0 1px rgba(201,165,98,.25) inset; }
