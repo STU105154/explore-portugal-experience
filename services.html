@@ -41,7 +41,7 @@
   </nav>
 </header>
 
-<!-- Hero topo -->
+<!-- Hero -->
 <section class="page-hero">
   <div class="hero-content">
     <h1 class="section-title">Serviços</h1>
@@ -167,9 +167,100 @@
     </div>
   </section>
 
+  <!-- BOOKING -->
+  <section id="booking" class="booking-section">
+    <h2 class="section-title" style="text-align:center">Reserva</h2>
+    <p class="centered muted" style="margin-bottom:14px">Pedido rápido — recebe resposta por email/WhatsApp.</p>
+
+    <form id="bookingForm" class="booking-form" onsubmit="return false;">
+      <div class="booking-grid">
+
+        <!-- Itinerário -->
+        <div class="booking-card">
+          <h3>Itinerário</h3>
+          <label>Recolha
+            <input type="text" id="pickup" placeholder="Local de recolha" required>
+          </label>
+          <label>Destino
+            <input type="text" id="dropoff" placeholder="Destino" required>
+          </label>
+
+          <div class="two-cols">
+            <label>Data
+              <input type="date" id="date" required>
+            </label>
+            <label>Hora
+              <input type="time" id="time" required>
+            </label>
+          </div>
+
+          <div class="radio-row" style="margin-top:8px">
+            <label><input type="radio" name="trip" value="Só ida" checked> Só ida</label>
+            <label><input type="radio" name="trip" value="Ida e volta"> Ida e volta</label>
+          </div>
+        </div>
+
+        <!-- Preferências -->
+        <div class="booking-card">
+          <h3>Preferências</h3>
+
+          <div class="two-cols">
+            <label>Passageiros
+              <input type="number" id="pax" min="1" max="16" value="2">
+            </label>
+            <label>Bagagem
+              <input type="number" id="bags" min="0" max="16" value="2">
+            </label>
+          </div>
+
+          <label>Tipo de veículo
+            <select id="vehicle">
+              <option>Sedã premium</option>
+              <option>Van (até 7 pax)</option>
+              <option>Minibus</option>
+            </select>
+          </label>
+
+          <label>Extras
+            <textarea id="extras" placeholder="Cadeirinha, paragens, notas importantes…"></textarea>
+          </label>
+        </div>
+
+        <!-- Contacto -->
+        <div class="booking-card">
+          <h3>Contacto</h3>
+
+          <label>Nome
+            <input type="text" id="name" placeholder="O teu nome" required>
+          </label>
+
+          <label>Email
+            <input type="email" id="email" placeholder="O teu email" required>
+          </label>
+
+          <label>Telefone (opcional)
+            <input type="tel" id="phone" placeholder="+351 …">
+          </label>
+
+          <label class="small" style="display:flex;gap:8px;align-items:center;margin-top:6px;">
+            <input type="checkbox" id="consent" required> Concordo com o envio dos dados para resposta ao meu pedido.
+          </label>
+
+          <div class="btn-wrap" style="margin-top:12px">
+            <button class="btn-gold btn-submit" onclick="sendEmail()">Enviar por Email</button>
+            <button class="btn-dark btn-submit" onclick="sendWhatsApp()">Enviar por WhatsApp</button>
+          </div>
+
+          <p id="bookingStatus" class="booking-status"></p>
+        </div>
+
+      </div>
+    </form>
+  </section>
+
 </main>
 
-<!-- Contacto -->
+<!-- Contacto simples (ancora) -->
 <section id="contacto" class="about-block">
   <h2>Contacto</h2>
   <p class="centered lead"><a class="contact-link" href="mailto:nomadaeuforia@gmail.com">nomadaeuforia@gmail.com</a></p>
@@ -190,6 +281,64 @@
   }
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- Envio Email / WhatsApp (sem backend) -->
+<script>
+  const toEmail = "nomadaeuforia@gmail.com";
+  const waNumber = "351962516005";
+
+  function buildMessage(){
+    const get = id => document.getElementById(id).value.trim();
+    const pick   = get("pickup");
+    const drop   = get("dropoff");
+    const date   = get("date");
+    const time   = get("time");
+    const trip   = [...document.querySelectorAll('input[name="trip"]')].find(r=>r.checked).value;
+    const pax    = get("pax");
+    const bags   = get("bags");
+    const veh    = get("vehicle");
+    const extras = get("extras");
+    const name   = get("name");
+    const email  = get("email");
+    const phone  = get("phone");
+
+    return {
+      subject: `Pedido de reserva — ${name || "Cliente"} (${date} ${time})`,
+      body:
+`Reserva:
+• Itinerário: ${pick} → ${drop} (${trip})
+• Data/Hora: ${date} ${time}
+• Pax / Bagagem: ${pax} pax / ${bags} bag
+• Veículo: ${veh}
+• Extras: ${extras || "-"}
+—
+Contacto:
+• Nome: ${name}
+• Email: ${email}
+• Telefone: ${phone || "-"}`
+    };
+  }
+
+  function sendEmail(){
+    if(!document.getElementById("consent").checked){
+      document.getElementById("bookingStatus").textContent = "Confirma o consentimento para enviar os dados.";
+      return;
+    }
+    const m = buildMessage();
+    const mailto = `mailto:${toEmail}?subject=${encodeURIComponent(m.subject)}&body=${encodeURIComponent(m.body)}`;
+    window.location.href = mailto;
+  }
+
+  function sendWhatsApp(){
+    if(!document.getElementById("consent").checked){
+      document.getElementById("bookingStatus").textContent = "Confirma o consentimento para enviar os dados.";
+      return;
+    }
+    const m = buildMessage();
+    const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(m.body)}`;
+    window.open(url, "_blank");
+  }
+</script>
 
 <!-- Menu mobile -->
 <script src="assets/js/nav.js"></script>
