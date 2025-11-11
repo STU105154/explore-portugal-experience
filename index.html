@@ -4,11 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Explore Portugal Experience</title>
-  <meta name="description" content="Transfers e tours privados em Portugal — conforto, segurança e experiência desde 2018.">
+  <meta name="description" content="Transfers e tours privados em Portugal — requinte, segurança e atenção ao detalhe desde 2018.">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="icon" type="image/svg+xml" href="./assets/icons/star-full.svg">
 </head>
 <body>
+
   <div class="translate-bar"><span>Idioma:</span><div id="google_translate_element"></div></div>
 
   <header class="header">
@@ -27,61 +28,62 @@
       <a href="./faq.html">FAQ</a>
       <a href="#galeria">Galeria</a>
       <a href="#contacto">Contacto</a>
+      <a href="./partners.html">Parcerias</a>
     </nav>
   </header>
 
   <section class="hero">
     <div class="hero-content">
-      <h1 class="section-title">Experiências Privadas em Portugal</h1>
-      <p class="lead">Transfers, tours e roteiros personalizados — elegância, conforto e detalhe.</p>
+      <h1 class="section-title">Serviço privado com assinatura</h1>
+      <p class="lead">Condução serena, comunicação clara e um país inteiro a descoberto — desde 2018.</p>
       <a href="./services.html" class="btn">Ver Serviços</a>
     </div>
   </section>
 
   <section class="about-block">
-    <h2 class="section-title">Desde 2018 a guiar quem nos escolhe</h2>
-    <p class="lead">Frota premium, motoristas bilíngues, experiência local e curadoria personalizada.</p>
+    <h2 class="section-title">Elegância com propósito</h2>
+    <p class="lead">Cada percurso é pensado à mão: tempo, conforto e o detalhe certo no momento certo.</p>
   </section>
 
-  <!-- GALERIA -->
+  <!-- Galeria com tamanho uniforme -->
   <section id="galeria" class="about-block">
     <h2 class="section-title">Galeria</h2>
     <p class="lead">Alguns momentos das nossas experiências.</p>
 
     <div class="gallery-grid">
-      <img src="./assets/images/sintra-palacio.jpg?v=2"
-           data-full="./assets/images/sintra-palacio.jpg?v=2"
-           alt="Palácio de Sintra ao pôr do sol" loading="lazy" decoding="async" width="1400" height="933">
+      <div class="tile">
+        <img src="./assets/images/sintra-palacio.jpg"
+             data-full="./assets/images/sintra-palacio.jpg"
+             alt="Palácio de Sintra ao pôr do sol" loading="lazy" decoding="async">
+      </div>
 
-      <img src="./assets/images/porto-ponte-luis-i.jpg?v=2"
-           data-full="./assets/images/porto-ponte-luis-i.jpg?v=2"
-           alt="Ribeira do Porto e ponte D. Luís I" loading="lazy" decoding="async" width="1400" height="933">
+      <div class="tile">
+        <img src="./assets/images/porto-ponte-luis-i.jpg"
+             data-full="./assets/images/porto-ponte-luis-i.jpg"
+             alt="Ribeira do Porto e ponte D. Luís I" loading="lazy" decoding="async">
+      </div>
 
-      <img src="./assets/images/esculturas-noite.jpg?v=2"
-           data-full="./assets/images/esculturas-noite.jpg?v=2"
-           alt="Esculturas à noite em Lisboa" loading="lazy" decoding="async" width="1400" height="933">
+      <div class="tile">
+        <img src="./assets/images/esculturas-noite.jpg"
+             data-full="./assets/images/esculturas-noite.jpg"
+             alt="Esculturas à noite em Lisboa" loading="lazy" decoding="async">
+      </div>
 
-      <img src="./assets/images/lisboa-letters-selfie.jpg?v=2"
-           data-full="./assets/images/lisboa-letters-selfie.jpg?v=2"
-           alt="Letras de Lisboa — selfie" loading="lazy" decoding="async" width="1400" height="933">
+      <div class="tile">
+        <img src="./assets/images/lisboa-letters-selfie.jpg"
+             data-full="./assets/images/lisboa-letters-selfie.jpg"
+             alt="Letras de Lisboa — selfie" loading="lazy" decoding="async">
+      </div>
     </div>
   </section>
 
-  <!-- Pagamento -->
-  <section class="about-block">
-    <h2 class="section-title">Métodos de Pagamento</h2>
-    <div class="cards-3">
-      <article class="card"><p><strong>Cartão</strong></p><p class="muted small">Visa • Mastercard • Amex</p></article>
-      <article class="card"><p><strong>MB Way</strong></p><p class="muted small">Pagamento rápido via app</p></article>
-      <article class="card"><p><strong>PayPal</strong></p><p class="muted small">Pagamento seguro online</p></article>
-      <article class="card"><p><strong>Transferência</strong></p><p class="muted small">IBAN enviado na confirmação</p></article>
-    </div>
-  </section>
-
-  <!-- Contacto -->
   <section id="contacto" class="about-block">
     <h2 class="section-title">Contacto</h2>
-    <p class="lead">Email: nomadaeuforia@gmail.com<br>WhatsApp: +351 962 516 005</p>
+    <p class="lead">
+      Email: <a href="mailto:nomadaeuforia@gmail.com">nomadaeuforia@gmail.com</a><br>
+      WhatsApp: <a href="https://wa.me/351962516005" target="_blank" rel="noopener">+351 962 516 005</a><br>
+      Atendimento 24/7.
+    </p>
   </section>
 
   <footer class="footer">
@@ -91,7 +93,9 @@
     </div>
   </footer>
 
-  <script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'pt'}, 'google_translate_element');}</script>
+  <script>
+    function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'pt'}, 'google_translate_element');}
+  </script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script src="./assets/js/nav.js"></script>
   <script src="./assets/js/lightbox.js"></script>
