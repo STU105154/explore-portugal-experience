@@ -1,136 +1,356 @@
-/* ======= GLOBAL ======= */
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  background:#050505;
-  color:#f2f2f2;
-  font-family:Arial, Helvetica, sans-serif;
-  line-height:1.5;
+/* ===========================
+   BASE / RESET
+=========================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  background: #0a0a0a;
+  color: #f2f2f2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
 }
-a{text-decoration:none;color:#f2f2f2}
-img{max-width:100%;display:block}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible, button:focus-visible { outline: 2px solid #C9A562; outline-offset: 2px; }
+.container { width: min(1120px, 92%); margin-inline: auto; }
 
-/* ======= TRADUÇÃO ======= */
+/* ===========================
+   CORES / TOKENS
+=========================== */
+:root{
+  --bg: #0a0a0a;
+  --panel: #0f0f0f;
+  --panel-2: #111;
+  --text: #f2f2f2;
+  --muted: #bfbfbf;
+  --line: rgba(255,255,255,.08);
+  --gold: #C9A562;
+  --gold-2: #b79355;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+/* ===========================
+   BARRA DE TRADUÇÃO
+=========================== */
 .translate-bar{
-  background:#000;
-  padding:8px;
-  text-align:center;
-  font-size:14px;
-  border-bottom:1px solid rgba(255,255,255,.08);
+  width: 100%;
+  background: #050505;
+  border-bottom: 1px solid var(--line);
+  padding: 8px 12px;
+  color: var(--muted);
+  font-size: 14px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
 }
-.translate-bar span{margin-right:6px}
 
-/* ======= HEADER ======= */
+/* ===========================
+   HEADER / NAV
+=========================== */
 .header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:12px 20px;
-  border-bottom:1px solid rgba(255,255,255,.08);
-  position:sticky;
-  top:0;
-  background:#050505;
-  z-index:999;
+  position: sticky; top: 0; z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
 }
-.home-star{width:40px;display:block}
-.star-animated{animation:spin 4s linear infinite;width:40px}
-@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.home-star{ width: 40px; display: inline-block; }
+.star-animated{ width: 40px; height: 40px; animation: spin 10s linear infinite; }
+@keyframes spin{ to{ transform: rotate(360deg); } }
 
-.logo-area .logo-text{
-  font-size:20px;
-  font-weight:600;
-  letter-spacing:1px;
+.logo-area{ justify-self: start; }
+.logo-text{
+  font-size: clamp(18px, 2.4vw, 22px);
+  letter-spacing: .5px;
+  font-weight: 700;
+  color: var(--text);
 }
 
-.nav{display:flex;gap:20px}
-.nav a:hover{color:#C9A562}
+.nav{
+  display: flex; gap: 20px; align-items: center;
+}
+.nav a{
+  padding: 8px 6px;
+  border-radius: 8px;
+  color: #eaeaea;
+  transition: color .2s ease, background .2s ease;
+}
+.nav a:hover{ color: var(--gold); background: rgba(201,165,98,.08); }
+.nav a[aria-current="page"], .nav a.active{ color: var(--gold); }
 
 .nav-toggle{
-  display:none;
-  background:none;
-  border:none;
-  font-size:26px;
-  color:#fff;
+  display: none;
+  justify-self: end;
+  font-size: 26px;
+  background: none; color: var(--text); border: 0;
+  padding: 6px 10px; border-radius: 10px;
 }
 
-/* ======= HERO ======= */
+/* mobile nav */
+@media (max-width: 900px){
+  .header{ grid-template-columns: 48px 1fr 48px; }
+  .nav{ 
+    position: fixed; inset: 62px 0 auto 0;
+    background: rgba(10,10,10,.98);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    display: none;
+    flex-direction: column;
+    padding: 14px 16px;
+    gap: 8px;
+  }
+  .nav.open{ display: flex; }
+  .nav-toggle{ display: inline-block; }
+}
+
+/* ===========================
+   HERO / PAGE HERO
+=========================== */
 .hero{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:60px 0;
+  display: grid; place-items: center;
+  padding: 56px 16px 26px;
 }
-.hero-logo{width:420px;max-width:85vw}
+.hero-logo{ width: min(420px, 80vw); filter: drop-shadow(0 8px 25px rgba(0,0,0,.45)); }
 
-/* ======= GALERIA ======= */
-.gallery-section{padding:50px 20px}
-.section-title{
-  text-align:center;
-  font-size:32px;
-  color:#C9A562;
-  margin-bottom:30px;
+.page-hero{
+  border-bottom: 1px solid var(--line);
+  background: radial-gradient(1200px 300px at 50% -50%, rgba(201,165,98,.08), transparent 60%);
+  padding: 38px 16px 26px;
+  text-align: center;
 }
+.section-title{
+  font-size: clamp(26px, 4.5vw, 36px);
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.lead{ color: #ddd; font-size: clamp(15px, 2.4vw, 18px); }
+
+/* ===========================
+   BLOCOS / TIPOGRAFIA
+=========================== */
+.page-content{ padding-bottom: 48px; }
+.about-block{
+  width: min(1120px, 92%); margin: 28px auto;
+  text-align: center;
+}
+.about-block > h2{
+  color: var(--text);
+  font-size: clamp(22px, 3.8vw, 28px);
+  margin-bottom: 10px;
+}
+.centered{ text-align: center; }
+.muted{ color: var(--muted); }
+.small{ font-size: 13px; }
+
+/* ===========================
+   CARDS / GRIDS
+=========================== */
+.cards-3{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 14px;
+}
+@media (max-width: 960px){
+  .cards-3{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px){
+  .cards-3{ grid-template-columns: 1fr; }
+}
+
+.card{
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px;
+  text-align: left;
+  box-shadow: var(--shadow);
+}
+.card h3{
+  color: var(--gold);
+  font-size: clamp(18px, 2.6vw, 20px);
+  margin-bottom: 6px;
+}
+.card p{ color: #dedede; }
+
+.service-card .btn-wrap{
+  display: flex; gap: 10px; flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* ===========================
+   BOTÕES
+=========================== */
+.btn-gold, .btn-dark{
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: .2px;
+  transition: transform .15s ease, background .2s ease, color .2s ease, border-color .2s ease;
+}
+.btn-gold{
+  background: linear-gradient(180deg, #d9b66f, #C9A562);
+  color: #121212;
+  border: 1px solid #b99249;
+}
+.btn-gold:hover{ transform: translateY(-1px); filter: brightness(1.04); }
+
+.btn-dark{
+  background: #151515;
+  border: 1px solid var(--gold);
+  color: #f7f7f7;
+}
+.btn-dark:hover{ background: #1b1b1b; }
+
+.btn-submit{ width: 100%; }
+
+/* ===========================
+   GALERIA
+=========================== */
+.gallery-section{ padding: 40px 16px; }
 .gallery-grid{
-  display:grid;
-  gap:20px;
-  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+  width: min(1120px, 92%); margin: 0 auto;
+  display: grid; gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 .gallery-card{
-  background:#0b0b0b;
-  border:1px solid rgba(255,255,255,.05);
-  border-radius:12px;
-  overflow:hidden;
-  padding-bottom:10px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
 }
 .gallery-card img{
-  height:200px;
-  object-fit:cover;
-  width:100%;
+  height: 220px; width: 100%;
+  object-fit: cover;
 }
-.gallery-card h3{text-align:center;margin-top:10px}
+.gallery-card h3{
+  text-align: center; padding: 10px 10px 14px;
+  color: var(--gold);
+}
 
-/* ======= MÉTODOS DE PAGAMENTO ======= */
-.payments-section{padding:56px 18px;border-top:1px solid rgba(255,255,255,.08)}
+/* ===========================
+   PAGAMENTOS (BLOCO GRANDE)
+=========================== */
+.payments-section{
+  padding: 48px 16px;
+  border-top: 1px solid var(--line);
+  background: radial-gradient(1000px 260px at 50% -40%, rgba(201,165,98,.06), transparent 60%);
+}
+.payments-section .section-title{ text-align: center; }
+
 .payments-grid{
-  display:grid;gap:16px;max-width:1120px;margin:0 auto;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  width: min(1120px, 92%); margin: 14px auto 0;
+  display: grid; gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 .pay-card{
-  background:#0b0b0b;
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:14px;
-  padding:18px;
-  text-align:center;
-  transition:.25s ease;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
-.pay-card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,.35)}
-.pay-card h3{color:#C9A562;margin:6px 0}
-.pay-card p{color:#ccc}
+.pay-card:hover{ transform: translateY(-4px); box-shadow: var(--shadow); }
+.pay-icon{ display:flex; justify-content:center; align-items:center; margin-bottom: 8px; }
+.pay-card h3{ color: var(--gold); margin: 4px 0 2px; }
+.pay-card p{ color: var(--muted); }
 
-/* ======= PRICING ======= */
-.pricing-section{padding:40px 20px}
-.pricing-lead{text-align:center;margin-bottom:20px;color:#bbb}
-.pricing-table{
-  display:grid;
-  gap:20px;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+.payments-notes{
+  list-style: none; padding: 0; margin: 14px auto 0;
+  color: var(--muted); width: min(900px, 92%);
 }
-.price-card{
-  padding:20px;
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:12px;
-  background:#0b0b0b;
+.payments-notes li{ margin: 6px 0; }
+
+/* ===========================
+   PAGAMENTOS (LINHA COMPACTA)
+=========================== */
+.pay-strip{
+  display: inline-flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  background: rgba(255,255,255,.02);
+  padding: 10px 12px; border-radius: 999px;
+  border: 1px solid rgba(201,165,98,.35);
 }
-.price{
-  color:#C9A562;
-  font-size:20px;
-  margin:10px 0;
+.pay-strip > span:first-child{
+  color: var(--gold); font-weight: 700; margin-right: 2px;
+}
+.chip{
+  border: 1px solid rgba(201,165,98,.55);
+  color: #f0f0f0;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 13px;
+  background: linear-gradient(180deg, rgba(201,165,98,.08), rgba(201,165,98,.02));
 }
 
-/* ======= FOOTER ======= */
-.footer{text-align:center;padding:20px;color:#999;border-top:1px solid rgba(255,255,255,.08)}
-
-/* ======= MOBILE ======= */
-@media(max-width:800px){
-  .nav{display:none;flex-direction:column;gap:10px}
-  .nav-toggle{display:block}
+/* ===========================
+   CONTACTOS
+=========================== */
+.contact-link{
+  color: var(--gold);
+  border-bottom: 1px dashed rgba(201,165,98,.55);
 }
+.contact-link:hover{ color: #e3c281; }
+
+/* ===========================
+   FOOTER
+=========================== */
+.footer{
+  border-top: 1px solid var(--line);
+  padding: 18px 16px 26px;
+  text-align: center;
+  color: var(--muted);
+}
+.footer .rnaat{ margin-top: 6px; }
+
+/* ===========================
+   UTILIDADES
+=========================== */
+.two-cols{ display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 560px){ .two-cols{ grid-template-columns: 1fr; } }
+.return-hidden{ display: none; }
+
+/* ===========================
+   FORM (caso uses)
+=========================== */
+.booking-section{ padding: 34px 16px; }
+.booking-form{ width: min(1120px, 92%); margin: 0 auto; }
+.booking-grid{
+  display: grid; gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 960px){ .booking-grid{ grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px){ .booking-grid{ grid-template-columns: 1fr; } }
+
+.booking-card{
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+}
+.booking-card h3{ color: var(--gold); margin-bottom: 10px; }
+
+input, select, textarea{
+  width: 100%; background: #0e0e0e; color: #eee;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 10px; padding: 10px 12px;
+}
+textarea{ min-height: 110px; resize: vertical; }
+
+.radio-row{ display: flex; gap: 14px; }
+.radio-row input{ width: auto; }
+
+.booking-status{ margin-top: 10px; color: var(--muted); }
+
+/* ===========================
+   TABELAS / LISTAS (pricing)
+=========================== */
+.centered-list{ list-style: none; padding: 0; margin: 6px auto 0; width: min(840px, 92%); }
+.centered-list li{ margin: 6px 0; color: var(--muted); }
