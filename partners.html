@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Parcerias — Explore Portugal Experience</title>
+  <meta name="description" content="Registo de parceiros — hotéis, restaurantes, quintas e empresas." />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/star-full.svg" />
+</head>
+<body>
+  <div class="translate-bar"><span>Idioma:</span><div id="google_translate_element"></div></div>
+
+  <header class="header">
+    <a class="home-star" href="./index.html" aria-label="Início">
+      <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
+        <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
+      </svg>
+    </a>
+    <a class="logo-area" href="./index.html"><span class="logo-text">Explore Portugal Experience</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
+    <nav class="nav" aria-label="Principal">
+      <a href="./about.html">Sobre</a>
+      <a href="./services.html">Serviços</a>
+      <a href="./choose.html">Porquê nós</a>
+      <a href="./pricing.html">Preços</a>
+      <a href="./faq.html">FAQ</a>
+      <a href="./partners.html" aria-current="page">Parcerias</a>
+    </nav>
+  </header>
+
+  <main class="page-content">
+    <section class="page-hero">
+      <div class="hero-content">
+        <h1 class="section-title">Parcerias</h1>
+        <p class="lead">Elegância, confiança e resultados. Se a tua marca vive neste tom, falamos a mesma língua.</p>
+      </div>
+    </section>
+
+    <section class="about-block">
+      <h2 class="section-title">Regista a tua empresa</h2>
+      <p class="lead">Hotéis, restaurantes, quintas, agências e empresas — vamos trabalhar juntos.</p>
+
+      <form id="partners-form" class="booking-grid" novalidate>
+        <fieldset class="field-set">
+          <legend>Empresa</legend>
+          <div class="grid-3">
+            <label><span>Nome da empresa</span><input type="text" name="company" required></label>
+            <label><span>NIF / VAT</span><input type="text" name="vat"></label>
+            <label><span>Website / Redes</span><input type="text" name="web" placeholder="https://..."></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="field-set">
+          <legend>Contacto</legend>
+          <div class="grid-3">
+            <label><span>Pessoa de contacto</span><input type="text" name="contact" required></label>
+            <label><span>Email</span><input type="email" name="email" required></label>
+            <label><span>Telefone</span><input type="tel" name="phone" inputmode="tel" placeholder="+351 ..."></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="field-set">
+          <legend>Interesse</legend>
+          <label><span>Tipo de parceria</span>
+            <select name="ptype" required>
+              <option value="Hotel">Hotel</option>
+              <option value="Restaurante">Restaurante</option>
+              <option value="Quinta / Eventos">Quinta / Eventos</option>
+              <option value="Agência / Operador">Agência / Operador</option>
+              <option value="Empresa">Empresa</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </label>
+          <label><span>Mensagem</span><textarea name="message" rows="5" placeholder="Conta-me como posso acrescentar valor aos teus hóspedes/clientes."></textarea></label>
+          <label class="consent"><input type="checkbox" name="consent" required> <span>Concordo com o envio dos dados para resposta ao meu pedido.</span></label>
+        </fieldset>
+
+        <div class="actions">
+          <button type="button" class="btn" id="partner-email">Enviar por Email</button>
+          <button type="button" class="btn outline" id="partner-whatsapp">Enviar por WhatsApp</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Explore Portugal Experience</p>
+      <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
+    </div>
+  </footer>
+
+  <script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'pt'}, 'google_translate_element');}</script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/partners.js" defer></script>
+</body>
+</html>
