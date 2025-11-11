@@ -130,3 +130,25 @@ a:hover{text-decoration:underline}
 .footer{border-top:1px solid var(--border);padding:18px 12px;margin-top:12px}
 .footer .container{width:min(1120px,92%);margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
 .small{font-size:.92rem}.muted{color:var(--muted)}
+/* ——— Estrela animada (giro suave) ——— */
+@keyframes star-spin { from { transform: rotate(0deg) } to { transform: rotate(360deg) } }
+.star-animated{
+  width:28px; height:28px;
+  filter:drop-shadow(0 2px 8px rgba(201,165,98,.35));
+  transform-origin:50% 50%;
+  animation: star-spin 18s linear infinite;
+}
+@media (prefers-reduced-motion: reduce){
+  .star-animated{ animation: none }
+}
+
+/* ——— Logotipo imagem ——— */
+.logo-img{
+  display:block;
+  height:36px;      /* controla a altura do logo; ajusta à vontade */
+  width:auto;
+  image-rendering:-webkit-optimize-contrast;
+}
+@media (max-width:480px){
+  .logo-img{ height:28px; }
+}
