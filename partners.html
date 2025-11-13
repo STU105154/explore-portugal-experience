@@ -1,78 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Parcerias — Explore Portugal Experience</title>
-  <meta name="description" content="Registo de parceiros — hotéis, restaurantes, quintas e empresas.">
-  <link rel="stylesheet" href="./assets/css/style.css"><link rel="icon" type="image/svg+xml" href="./assets/icons/star-full.svg">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Partners — Explore Portugal Experience</title>
+    <meta name="description" content="Registo de motoristas profissionais e empresas de transfer para colaboração com a Explore Portugal Experience.">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" type="image/png" href="assets/images/logo-explore-portugal-experience.png" />
 </head>
 <body>
-  <div class="translate-bar"><span>Idioma:</span><div id="google_translate_element"></div></div>
 
-  <!-- Header -->
-  <header class="header">
-    <a class="home-star" href="./index.html" aria-label="Início"><svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true"><polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/></svg></a>
-    <a class="logo-area" href="./index.html" aria-label="Explore Portugal Experience"><img class="logo-img" src="./assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience" width="260" height="40" decoding="async"></a>
+<div class="translate-bar">
+    <span>Idioma:</span>
+    <div id="google_translate_element"></div>
+</div>
+
+<header class="header">
+    <a class="home-star" href="index.html" aria-label="Início">
+        <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
+            <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
+        </svg>
+    </a>
+    <a class="logo-area" href="index.html">
+        <span class="logo-text">Explore Portugal Experience</span>
+    </a>
     <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
     <nav class="nav" aria-label="Principal">
-      <a href="./about.html">Sobre</a><a href="./services.html">Serviços</a><a href="./choose.html">Porquê nós</a>
-      <a href="./pricing.html">Preços</a><a href="./faq.html">FAQ</a><a href="./gallery.html">Galeria</a>
-      <a href="./partners.html" aria-current="page">Parcerias</a><a href="./index.html#contacto">Contacto</a>
+        <a href="about.html">Sobre</a>
+        <a href="services.html">Serviços</a>
+        <a href="choose.html">Porquê nós</a>
+        <a href="pricing.html">Preços</a>
+        <a href="faq.html">FAQ</a>
+        <a href="partners.html" aria-current="page">Partners</a>
+        <a href="index.html#contacto">Contacto</a>
     </nav>
-  </header>
+</header>
 
-  <main class="page-content">
-    <section class="page-hero"><div class="hero-content"><h1 class="section-title">Parcerias</h1><p class="lead">Elegância, confiança e resultados. Se a tua marca vive neste tom, falamos a mesma língua.</p></div></section>
+<main class="page-content">
+    <section class="partners">
+        <h1>Registo de Motoristas & Empresas de Transfer</h1>
+        <p>
+            Este formulário é exclusivo para parceiros profissionais — motoristas licenciados e
+            empresas de transfer que pretendam trabalhar connosco.
+            Preenche e faz o upload de todos os documentos obrigatórios.
+        </p>
 
-    <section class="about-block">
-      <h2 class="section-title">Regista a tua empresa</h2>
-      <p class="lead">Hotéis, restaurantes, quintas, agências e empresas — vamos trabalhar juntos.</p>
+        <form class="upload-form" action="send_form.php" method="POST" enctype="multipart/form-data">
 
-      <form id="partners-form" class="booking-grid" novalidate>
-        <fieldset class="field-set"><legend>Empresa</legend>
-          <div class="grid-3">
-            <label><span>Nome da empresa</span><input type="text" name="company" required></label>
-            <label><span>NIF / VAT</span><input type="text" name="vat"></label>
-            <label><span>Website / Redes</span><input type="text" name="web" placeholder="https://..."></label>
-          </div>
-        </fieldset>
+            <h3>Dados de contacto</h3>
 
-        <fieldset class="field-set"><legend>Contacto</legend>
-          <div class="grid-3">
-            <label><span>Pessoa de contacto</span><input type="text" name="contact" required></label>
-            <label><span>Email</span><input type="email" name="email" required></label>
-            <label><span>Telefone</span><input type="tel" name="phone" inputmode="tel" placeholder="+351 ..."></label>
-          </div>
-        </fieldset>
+            <label>Nome da empresa / motorista
+                <input type="text" name="partner_name" required>
+            </label>
 
-        <fieldset class="field-set"><legend>Interesse</legend>
-          <label><span>Tipo de parceria</span>
-            <select name="ptype" required>
-              <option value="Hotel">Hotel</option>
-              <option value="Restaurante">Restaurante</option>
-              <option value="Quinta / Eventos">Quinta / Eventos</option>
-              <option value="Agência / Operador">Agência / Operador</option>
-              <option value="Empresa">Empresa</option>
-              <option value="Outro">Outro</option>
-            </select>
-          </label>
-          <label><span>Mensagem</span><textarea name="message" rows="5" placeholder="Conta-me como posso acrescentar valor aos teus hóspedes/clientes."></textarea></label>
-          <label class="consent"><input type="checkbox" name="consent" required> <span>Concordo com o envio dos dados para resposta ao meu pedido.</span></label>
-        </fieldset>
+            <label>Email de contacto
+                <input type="email" name="partner_email" required>
+            </label>
 
-        <div class="actions">
-          <button type="button" class="btn" id="partner-email">Enviar por Email</button>
-          <button type="button" class="btn outline" id="partner-whatsapp">Enviar por WhatsApp</button>
-        </div>
-      </form>
+            <label>Telefone / WhatsApp
+                <input type="text" name="partner_phone" required>
+            </label>
+
+            <h3>Documentos da organização</h3>
+
+            <label>Professional Liability Insurance Policy
+                <input type="file" name="insurance_policy">
+            </label>
+
+            <label>Invoice/Receipt for Civil and Professional Liability Insurance
+                <input type="file" name="insurance_invoice">
+            </label>
+
+            <label>Personal Accident Insurance Invoice/Receipt
+                <input type="file" name="accident_invoice">
+            </label>
+
+            <label>Personal Accident Insurance Policy (Specific Conditions)
+                <input type="file" name="accident_policy">
+            </label>
+
+            <label>Certificate of Incorporation for your Business
+                <input type="file" name="certificate_incorporation">
+            </label>
+
+            <label>Bank Statement
+                <input type="file" name="bank_statement">
+            </label>
+
+            <label>Photo ID for Board Member / Authorized Representative
+                <input type="file" name="board_member_id">
+            </label>
+
+            <label>Photo ID from every individual that owns 25% or more of your business
+                <input type="file" name="owner_id">
+            </label>
+
+            <h3>Documentos do motorista</h3>
+
+            <label>Driving License
+                <input type="file" name="driver_license">
+            </label>
+
+            <label>TVDE Driver Certificate
+                <input type="file" name="tvde_certificate">
+            </label>
+
+            <label>Criminal Record Certificate
+                <input type="file" name="criminal_record">
+            </label>
+
+            <label>Valid European Union Citizen Registration Certificate or Residence Permit/Authorization
+                <input type="file" name="residency_permit">
+            </label>
+
+            <h3>Documentos do veículo</h3>
+
+            <label>DUA — Documento de registo do veículo (frente e verso)
+                <input type="file" name="dua_document">
+            </label>
+
+            <label>Seguro automóvel de Portugal (Carta Verde)
+                <input type="file" name="car_insurance">
+            </label>
+
+            <label>Seguro automóvel de Portugal (Condições especiais)
+                <input type="file" name="car_special_conditions">
+            </label>
+
+            <label>Inspeção técnica periódica (veículos com mais de 1 ano)
+                <input type="file" name="car_inspection">
+            </label>
+
+            <button type="submit" class="submit-btn">Enviar Documentos</button>
+
+        </form>
     </section>
-  </main>
+</main>
 
-  <footer class="footer"><div class="container"><p>© 2025 Explore Portugal Experience</p><p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p></div></footer>
+<footer class="footer">
+    <div class="container">
+        <p>© 2025 Explore Portugal Experience</p>
+        <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
+    </div>
+</footer>
 
-  <script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'pt'}, 'google_translate_element');}</script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script src="./assets/js/nav.js"></script>
-  <script src="./assets/js/partners.js" defer></script>
+<script>
+function googleTranslateElementInit(){
+    new google.translate.TranslateElement({pageLanguage:'pt'}, 'google_translate_element');
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="assets/js/nav.js"></script>
+
 </body>
 </html>
