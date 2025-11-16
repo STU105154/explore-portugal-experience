@@ -1,24 +1,34 @@
-(() => {
-  const overlay = document.createElement('div');
-  overlay.className = 'lightbox-overlay';
-  overlay.innerHTML = `
-    <button class="lightbox-close" aria-label="Fechar">×</button>
-    <img alt="">
-  `;
-  document.body.appendChild(overlay);
+// Lightbox minimalista para .gallery-grid img
+(function () {
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.innerHTML = `
+        <button class="lightbox-close" aria-label="Fechar">×</button>
+        <img alt="">
+    `;
+    document.body.appendChild(overlay);
 
-  const imgEl = overlay.querySelector('img');
-  const close = () => overlay.classList.remove('open');
+    const imgEl = overlay.querySelector('img');
 
-  overlay.addEventListener('click', e => {
-    if (e.target === overlay || e.target.classList.contains('lightbox-close')) close();
-  });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+    const close = () => overlay.classList.remove('open');
 
-  document.addEventListener('click', e => {
-    const img = e.target.closest('.gallery-grid img');
-    if (!img) return;
-    imgEl.src = img.getAttribute('data-full') || img.src;
-    overlay.classList.add('open');
-  });
+    overlay.addEventListener('click', e => {
+        if (e.target === overlay || e.target.classList.contains('lightbox-close')) {
+            close();
+        }
+    });
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            close();
+        }
+    });
+
+    // delegação: qualquer imagem dentro da .gallery-grid
+    document.addEventListener('click', e => {
+        const img = e.target.closest('.gallery-grid img');
+        if (!img) return;
+        imgEl.src = img.getAttribute('data-full') || img.src;
+        overlay.classList.add('open');
+    });
 })();
