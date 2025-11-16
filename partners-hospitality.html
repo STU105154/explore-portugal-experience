@@ -1,1 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Partners Hospitality — Explore Portugal Experience</title>
+    <meta name="description" content="Parcerias com hotéis, restaurantes, quintas e empresas que procuram transporte premium para os seus clientes.">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" type="image/png" href="assets/images/logo-explore-portugal-experience.png" />
+</head>
+<body>
+
+<div class="translate-bar">
+    <span>Idioma:</span>
+    <div id="google_translate_element"></div>
+</div>
+
+<header class="header">
+    <a class="home-star" href="index.html" aria-label="Início">
+        <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
+            <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
+        </svg>
+    </a>
+    <a class="logo-area" href="index.html">
+        <span class="logo-text">Explore Portugal Experience</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
+    <nav class="nav" aria-label="Principal">
+        <a href="about.html">Sobre</a>
+        <a href="services.html">Serviços</a>
+        <a href="choose.html">Porquê nós</a>
+        <a href="pricing.html">Preços</a>
+        <a href="faq.html">FAQ</a>
+        <a href="partners-drivers.html">Partners Drivers</a>
+        <a href="partners-hospitality.html" aria-current="page">Partners Hospitality</a>
+        <a href="booking.html">Reservas</a>
+        <a href="gallery.html">Galeria</a>
+        <a href="index.html#contacto">Contacto</a>
+    </nav>
+</header>
+
+<section class="page-hero">
+    <div class="hero-content">
+        <h1 class="section-title">Partners Hospitality</h1>
+        <p class="lead">
+            Restaurantes, hotéis, quintas, enoturismo e empresas que querem garantir um serviço de transporte
+            à altura dos seus clientes.
+        </p>
+    </div>
+</section>
+
+<main class="page-content">
+
+    <section class="about-block">
+        <h2>Com quem trabalhamos</h2>
+        <p>
+            Trabalhamos com unidades que valorizam conforto, pontualidade, comunicação clara e atenção ao detalhe.
+            Oferecemos soluções de transporte dedicadas para hóspedes, convidados e equipas.
+        </p>
+
+        <div class="cards-3" style="margin-top:22px;">
+            <article class="card">
+                <h3>Hotéis &amp; Alojamentos</h3>
+                <p>
+                    Transfers de/para aeroporto, city tours, transporte para restaurantes, eventos ou visitas guiadas,
+                    sempre com motorista profissional.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Restaurantes &amp; Quintas</h3>
+                <p>
+                    Transporte para reservas especiais, enoturismo, casamentos, experiências gastronómicas e eventos privados.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Agências &amp; Empresas</h3>
+                <p>
+                    Apoio a operadores turísticos, agências de viagens e empresas que recebem clientes internacionais
+                    e executivos em viagem.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section class="about-block">
+        <h2>Formulário de parceria</h2>
+        <p>
+            Preenche os dados abaixo. Ao submeter, abrimos o teu programa de email com a mensagem pronta, dirigida a
+            <strong>exploreportugalexperience.pt@gmail.com</strong>, para continuarmos a conversa.
+        </p>
+
+        <form class="booking-form" id="partner-hosp-form" style="margin-top:20px;">
+            <div class="booking-grid">
+
+                <label>
+                    Nome da empresa*
+                    <input type="text" name="company" required>
+                </label>
+
+                <label>
+                    Nome de contacto*
+                    <input type="text" name="contact_name" required>
+                </label>
+
+                <label>
+                    Email*
+                    <input type="email" name="email" required>
+                </label>
+
+                <label>
+                    Telefone*
+                    <input type="text" name="phone" required>
+                </label>
+
+                <label class="full-width">
+                    Tipo de parceiro*
+                    <select name="partner_type" required>
+                        <option value="">Seleciona...</option>
+                        <option value="Hotel / Alojamento">Hotel / Alojamento</option>
+                        <option value="Restaurante / Quinta">Restaurante / Quinta</option>
+                        <option value="Agência / Operador Turístico">Agência / Operador Turístico</option>
+                        <option value="Empresa / Corporate">Empresa / Corporate</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </label>
+
+                <label class="full-width">
+                    Localização (cidade / zona)*
+                    <input type="text" name="location" required>
+                </label>
+
+                <label class="full-width">
+                    Mensagem / Descrição da necessidade*
+                    <textarea name="message" rows="5" required
+                              placeholder="Fala-nos do teu tipo de cliente, volumes, horários, zonas, eventos, etc."></textarea>
+                </label>
+
+            </div>
+
+            <p class="booking-note">
+                * Campos obrigatórios. Documentos formais (contratos, condições, etc.) podem ser enviados depois por email.
+            </p>
+
+            <button type="submit" class="submit-btn">Enviar proposta de parceria</button>
+        </form>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2018 Explore Portugal Experience</p>
+        <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
+    </div>
+</footer>
+
+<script>
+function googleTranslateElementInit(){
+    new google.translate.TranslateElement({pageLanguage:'pt'}, 'google_translate_element');
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="assets/js/nav.js"></script>
+
+<script>
+// Enviar formulário via mailto
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('partner-hosp-form');
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const data = new FormData(form);
+
+        const texto =
+            'Pedido de parceria - Hospitality\n\n' +
+            'Empresa: ' + (data.get('company') || '') + '\n' +
+            'Contacto: ' + (data.get('contact_name') || '') + '\n' +
+            'Email: ' + (data.get('email') || '') + '\n' +
+            'Telefone: ' + (data.get('phone') || '') + '\n\n' +
+            'Tipo de parceiro: ' + (data.get('partner_type') || '') + '\n' +
+            'Localização: ' + (data.get('location') || '') + '\n\n' +
+            'Mensagem:\n' + (data.get('message') || '');
+
+        const mailto = 'mailto:exploreportugalexperience.pt@gmail.com'
+            + '?subject=' + encodeURIComponent('Novo partner hospitality')
+            + '&body=' + encodeURIComponent(texto);
+
+        window.location.href = mailto;
+    });
+});
+</script>
+
+</body>
+</html>
 
