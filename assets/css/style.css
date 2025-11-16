@@ -208,8 +208,9 @@ a:hover {
         width: 100%;
     }
 
+    /* aumenta para caberem todas as páginas no telemóvel */
     .nav.nav-open {
-        max-height: 260px;
+        max-height: 520px;
     }
 }
 
@@ -674,6 +675,32 @@ a:hover {
 .upload-form input[type="file"] {
     margin-top: 6px;
     font-size: 0.9rem;
+}
+
+/* -------------------------------------------------------
+   EM MEMÓRIA
+-------------------------------------------------------- */
+
+.in-memoriam {
+    margin-top: 26px;
+    padding: 18px 18px 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(212,175,55,0.7);
+    background: radial-gradient(circle at top, rgba(212,175,55,0.18), rgba(5,5,5,0.98));
+    text-align: left;
+}
+
+.in-memoriam h2 {
+    font-size: 1.1rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #f6e27a;
+    margin-bottom: 10px;
+}
+
+.in-memoriam p {
+    font-size: 0.95rem;
+    color: #f2f2f2;
 }
 
 /* -------------------------------------------------------
