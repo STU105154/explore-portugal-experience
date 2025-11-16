@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="revGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5f5cff"/>
+      <stop offset="1" stop-color="#ff2fbf"/>
+    </linearGradient>
+  </defs>
+
+  <!-- fundo arredondado -->
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="#050816"/>
+  <rect x="8" y="8" width="48" height="48" rx="14" fill="url(#revGrad)"/>
+
+  <!-- R estilizado (não é o logo oficial, é um desenho próprio) -->
+  <path
+      d="M26 18h10c3.8 0 6.6.8 8.6 2.5 1.9 1.7 2.9 4 2.9 7.1 0 3.4-1.1 5.9-3.3 7.6-1.9 1.5-4.6 2.3-7.9 2.3l6.5 8.5h-5.4l-6.2-8.3h-3.3l-1.4 8.3h-5L26 18zm7.7 14.2c2.4 0 4.1-.4 5.3-1.4 1.1-.9 1.7-2.3 1.7-4.1 0-1.6-.5-2.8-1.5-3.6-1-.8-2.6-1.1-4.8-1.1h-5.5l-1.6 10.2h6.4z"
+      fill="#ffffff" />
+</svg>
