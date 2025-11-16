@@ -4,12 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Reservas — Explore Portugal Experience</title>
-  <meta name="description" content="Formulário de reserva de transfers e tours privados com a Explore Portugal Experience." />
+  <meta name="description" content="Reserva de transfers e tours privados com a Explore Portugal Experience. Contacto direto por WhatsApp ou formulário." />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="icon" type="image/svg+xml" href="assets/icons/star-full.svg" />
 </head>
 <body>
-
   <div class="translate-bar">
     <span>Idioma:</span>
     <div id="google_translate_element"></div>
@@ -21,20 +20,20 @@
         <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
       </svg>
     </a>
-
     <a class="logo-area" href="index.html">
       <span class="logo-text">Explore Portugal Experience</span>
     </a>
-
     <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
-
     <nav class="nav" aria-label="Principal">
       <a href="about.html">Sobre</a>
       <a href="services.html">Serviços</a>
       <a href="choose.html">Porquê nós</a>
       <a href="pricing.html">Preços</a>
       <a href="faq.html">FAQ</a>
+      <a href="gallery.html">Galeria</a>
+      <a href="booking.html" aria-current="page">Reservas</a>
       <a href="partners-drivers.html">Partners Drivers</a>
+      <a href="partners-hospitality.html">Partners Hospitality</a>
     </nav>
   </header>
 
@@ -42,43 +41,56 @@
     <div class="hero-content">
       <h1 class="section-title">Reservas</h1>
       <p class="lead">
-        Envia o teu pedido de forma simples. Respondemos com a confirmação,
-        valor final e link seguro de pagamento.
+        Podes reservar por WhatsApp ou através do formulário abaixo.
+        Recebes sempre confirmação personalizada antes de qualquer pagamento.
       </p>
     </div>
   </section>
 
   <main class="page-content">
-    <section class="about-block booking-whatsapp">
+
+    <section class="about-block">
       <h2>WhatsApp direto</h2>
-      <div class="booking-whatsapp-inner" style="margin-top:14px;">
+      <div class="booking-whatsapp-inner">
         <div class="booking-contact">
           <p>
-            Para pedidos rápidos, podes enviar mensagem direta:
-            <br/>
+            Para pedidos rápidos, esclarecimento de dúvidas ou reservas simples,
+            o contacto mais imediato é por WhatsApp.
+          </p>
+          <p>
+            <strong>WhatsApp:</strong>
             <a href="https://wa.me/351910784548" target="_blank" rel="noopener">
               +351 910 784 548
             </a>
           </p>
           <p class="booking-note">
-            Indica datas, horários aproximados, número de pessoas e local de
-            pick-up. A partir daí tratamos de tudo contigo.
+            Envia a data, horário aproximado, local de recolha, destino e número de pessoas.
+            Respondemos com a proposta e o valor final.
           </p>
         </div>
+
         <div class="booking-qr-box">
-          <img src="assets/images/whatsapp-qr.png"
+          <img src="assets/images/frame.png"
                alt="QR Code para WhatsApp"
                class="booking-qr-img" />
-          <p class="small muted">Scaneia para abrir o WhatsApp.</p>
+          <p class="small muted">Scaneia para falar connosco via WhatsApp.</p>
         </div>
       </div>
     </section>
 
-    <section class="about-block booking-form">
+    <section class="about-block">
       <h2>Formulário de reserva</h2>
+      <p>
+        Ideal para pedidos com mais detalhe, planeamento de vários dias ou
+        grupo com necessidades específicas.
+      </p>
 
-      <form class="booking-grid" action="mailto:exploreportugalexperience.pt@gmail.com" method="post" enctype="text/plain">
-        <div>
+      <form class="booking-grid"
+            action="mailto:exploreportugalexperience.pt@gmail.com"
+            method="post"
+            enctype="text/plain">
+
+        <div class="full-width">
           <label>Nome completo
             <input type="text" name="nome" required />
           </label>
@@ -97,65 +109,70 @@
         </div>
 
         <div>
-          <label>Número de pessoas
-            <input type="number" name="pessoas" min="1" max="7" required />
-          </label>
-        </div>
-
-        <div>
           <label>Data do serviço
             <input type="date" name="data" required />
           </label>
         </div>
 
         <div>
-          <label>Hora de início (aproximada)
+          <label>Hora aproximada
             <input type="time" name="hora" />
+          </label>
+        </div>
+
+        <div>
+          <label>Número de pessoas
+            <input type="number" name="pessoas" min="1" max="8" />
+          </label>
+        </div>
+
+        <div>
+          <label>Local de recolha
+            <input type="text" name="pickup" required />
+          </label>
+        </div>
+
+        <div>
+          <label>Destino principal
+            <input type="text" name="destino" required />
           </label>
         </div>
 
         <div class="full-width">
           <label>Tipo de serviço
             <select name="tipo-servico" required>
-              <option value="">Escolher…</option>
-              <option value="transfer-aeroporto">Transfer aeroporto</option>
-              <option value="tour-lisboa">Tour Lisboa</option>
-              <option value="tour-sintra-cascais">Tour Sintra &amp; Cascais</option>
-              <option value="tour-fatima-nazare">Tour Fátima &amp; Nazaré</option>
-              <option value="tour-obidos-nazare">Tour Óbidos &amp; Nazaré</option>
-              <option value="lisboa-porto">Lisboa &gt; Porto (ou inverso)</option>
-              <option value="outro">Outro itinerário à medida</option>
+              <option value="">Selecionar…</option>
+              <option>Transfer aeroporto</option>
+              <option>Tour Lisboa histórica &amp; miradouros</option>
+              <option>Tour Belém</option>
+              <option>Tour Sintra &amp; Cascais</option>
+              <option>Tour Fátima &amp; Nazaré</option>
+              <option>Tour Óbidos &amp; Nazaré</option>
+              <option>Lisboa &lt;&gt; Porto com paragens</option>
+              <option>Serviço corporativo</option>
+              <option>Outro (descrever em baixo)</option>
             </select>
           </label>
         </div>
 
         <div class="full-width">
-          <label>Local de pick-up
-            <input type="text" name="pickup" placeholder="Hotel, morada ou ponto de encontro" required />
+          <label>Mensagem / detalhes adicionais
+            <textarea name="mensagem" rows="4" placeholder="Datas adicionais, horários, interesses específicos, necessidades especiais…"></textarea>
           </label>
         </div>
 
         <div class="full-width">
-          <label>Mensagem / detalhes
-            <textarea name="mensagem" rows="4" placeholder="Indica voos, horários, locais que gostarias de visitar, etc."></textarea>
-          </label>
+          <p class="small muted">
+            Ao enviar este formulário, autorizas o uso dos dados apenas para efeitos de
+            resposta ao teu pedido e gestão da reserva, de acordo com a
+            <a href="privacy.html">Política de privacidade</a>.
+          </p>
         </div>
 
         <div class="full-width">
-          <button type="submit" class="submit-btn">Enviar pedido</button>
+          <button type="submit" class="submit-btn">Enviar pedido de reserva</button>
         </div>
       </form>
-
-      <p class="booking-note">
-        Ao submeter o pedido, não estás a efetuar nenhum pagamento. Receberás
-        primeiro a nossa resposta com a proposta e, só depois, o link de
-        pagamento pelo método escolhido (MB Way, PayPal, Revolut, etc.).
-      </p>
-
-      <p class="booking-cancel">
-        Política de cancelamento: cancelamentos até 48h antes da data do
-        serviço não têm custos; após esse prazo poderão aplicar-se taxas.
-      </p>
     </section>
   </main>
 
@@ -163,6 +180,7 @@
     <div class="container">
       <p>© 2018 Explore Portugal Experience</p>
       <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
+      <p><a href="privacy.html">Política de privacidade</a></p>
     </div>
   </footer>
 
@@ -172,6 +190,6 @@
     }
   </script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script src="assets/js/nav.js"></script>
+    <script src="assets/js/nav.js"></script>
 </body>
 </html>
