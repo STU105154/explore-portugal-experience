@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reservas — Explore Portugal Experience</title>
-  <meta name="description" content="Reserva de transfers e tours privados com a Explore Portugal Experience. Contacto direto por WhatsApp ou formulário." />
+  <title>Galeria — Explore Portugal Experience</title>
+  <meta name="description" content="Alguns registos visuais de percursos, locais e momentos dos tours da Explore Portugal Experience." />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="icon" type="image/svg+xml" href="assets/icons/star-full.svg" />
 </head>
@@ -30,8 +30,8 @@
       <a href="choose.html">Porquê nós</a>
       <a href="pricing.html">Preços</a>
       <a href="faq.html">FAQ</a>
-      <a href="gallery.html">Galeria</a>
-      <a href="booking.html" aria-current="page">Reservas</a>
+      <a href="gallery.html" aria-current="page">Galeria</a>
+      <a href="booking.html">Reservas</a>
       <a href="partners-drivers.html">Partners Drivers</a>
       <a href="partners-hospitality.html">Partners Hospitality</a>
     </nav>
@@ -39,140 +39,23 @@
 
   <section class="page-hero">
     <div class="hero-content">
-      <h1 class="section-title">Reservas</h1>
-      <p class="lead">
-        Podes reservar por WhatsApp ou através do formulário abaixo.
-        Recebes sempre confirmação personalizada antes de qualquer pagamento.
-      </p>
+      <h1 class="section-title">Galeria</h1>
+      <p class="lead">Alguns momentos de estrada, natureza, cidade e detalhes do nosso trabalho.</p>
     </div>
   </section>
 
   <main class="page-content">
-
     <section class="about-block">
-      <h2>WhatsApp direto</h2>
-      <div class="booking-whatsapp-inner">
-        <div class="booking-contact">
-          <p>
-            Para pedidos rápidos, esclarecimento de dúvidas ou reservas simples,
-            o contacto mais imediato é por WhatsApp.
-          </p>
-          <p>
-            <strong>WhatsApp:</strong>
-            <a href="https://wa.me/351910784548" target="_blank" rel="noopener">
-              +351 910 784 548
-            </a>
-          </p>
-          <p class="booking-note">
-            Envia a data, horário aproximado, local de recolha, destino e número de pessoas.
-            Respondemos com a proposta e o valor final.
-          </p>
-        </div>
-
-        <div class="booking-qr-box">
-          <img src="assets/images/frame.png"
-               alt="QR Code para WhatsApp"
-               class="booking-qr-img" />
-          <p class="small muted">Scaneia para falar connosco via WhatsApp.</p>
-        </div>
+      <div class="gallery-grid">
+        <img src="assets/images/gallery-1.jpg"
+             alt="Ponte de madeira em trilho natural em Portugal" />
+        <img src="assets/images/gallery-2.jpg"
+             alt="Torre histórica no Porto" />
+        <img src="assets/images/gallery-3.jpg"
+             alt="Garrafeira com vinhos do Porto antigos" />
+        <img src="assets/images/gallery-4.jpg"
+             alt="Cristo Rei em Almada com vista sobre o Tejo" />
       </div>
-    </section>
-
-    <section class="about-block">
-      <h2>Formulário de reserva</h2>
-      <p>
-        Ideal para pedidos com mais detalhe, planeamento de vários dias ou
-        grupo com necessidades específicas.
-      </p>
-
-      <form class="booking-grid"
-            action="mailto:exploreportugalexperience.pt@gmail.com"
-            method="post"
-            enctype="text/plain">
-
-        <div class="full-width">
-          <label>Nome completo
-            <input type="text" name="nome" required />
-          </label>
-        </div>
-
-        <div>
-          <label>E-mail
-            <input type="email" name="email" required />
-          </label>
-        </div>
-
-        <div>
-          <label>Telefone / WhatsApp
-            <input type="text" name="telefone" required />
-          </label>
-        </div>
-
-        <div>
-          <label>Data do serviço
-            <input type="date" name="data" required />
-          </label>
-        </div>
-
-        <div>
-          <label>Hora aproximada
-            <input type="time" name="hora" />
-          </label>
-        </div>
-
-        <div>
-          <label>Número de pessoas
-            <input type="number" name="pessoas" min="1" max="8" />
-          </label>
-        </div>
-
-        <div>
-          <label>Local de recolha
-            <input type="text" name="pickup" required />
-          </label>
-        </div>
-
-        <div>
-          <label>Destino principal
-            <input type="text" name="destino" required />
-          </label>
-        </div>
-
-        <div class="full-width">
-          <label>Tipo de serviço
-            <select name="tipo-servico" required>
-              <option value="">Selecionar…</option>
-              <option>Transfer aeroporto</option>
-              <option>Tour Lisboa histórica &amp; miradouros</option>
-              <option>Tour Belém</option>
-              <option>Tour Sintra &amp; Cascais</option>
-              <option>Tour Fátima &amp; Nazaré</option>
-              <option>Tour Óbidos &amp; Nazaré</option>
-              <option>Lisboa &lt;&gt; Porto com paragens</option>
-              <option>Serviço corporativo</option>
-              <option>Outro (descrever em baixo)</option>
-            </select>
-          </label>
-        </div>
-
-        <div class="full-width">
-          <label>Mensagem / detalhes adicionais
-            <textarea name="mensagem" rows="4" placeholder="Datas adicionais, horários, interesses específicos, necessidades especiais…"></textarea>
-          </label>
-        </div>
-
-        <div class="full-width">
-          <p class="small muted">
-            Ao enviar este formulário, autorizas o uso dos dados apenas para efeitos de
-            resposta ao teu pedido e gestão da reserva, de acordo com a
-            <a href="privacy.html">Política de privacidade</a>.
-          </p>
-        </div>
-
-        <div class="full-width">
-          <button type="submit" class="submit-btn">Enviar pedido de reserva</button>
-        </div>
-      </form>
     </section>
   </main>
 
@@ -190,6 +73,7 @@
     }
   </script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script src="assets/js/nav.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/lightbox.js"></script>
 </body>
 </html>
