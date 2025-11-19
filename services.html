@@ -1,260 +1,197 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
   <title>Serviços — Explore Portugal Experience</title>
-  <meta name="description" content="Serviço privado de motorista em Portugal e Europa. Transfers, tours e experiências sob medida com conforto e elegância." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" type="image/svg+xml" href="assets/icons/star-full.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: "pt",
+          includedLanguages: "pt,en,es,fr,de,it",
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        },
+        "google_translate_element"
+      );
+    }
+  </script>
+  <script
+    type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+  ></script>
 </head>
 <body>
+  <div class="page-wrapper">
+    <div class="top-language-bar">
+      <label for="google_translate_element">Idioma:</label>
+      <div id="google_translate_element"></div>
+    </div>
 
-  <!-- Barra de idioma / Google Translate -->
-  <div class="translate-bar">
-    <span>Idioma:</span>
-    <div id="google_translate_element"></div>
-  </div>
-
-  <!-- Cabeçalho -->
-  <header class="header">
-    <a class="home-star" href="index.html" aria-label="Início">
-      <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
-        <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
-      </svg>
-    </a>
-
-    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">
-      ☰
-    </button>
-
-    <nav class="nav" aria-label="Principal">
-      <a href="about.html">Sobre</a>
-      <a href="services.html" aria-current="page">Serviços</a>
-      <a href="choose.html">Porquê nós</a>
-      <a href="pricing.html">Preços</a>
-      <a href="faq.html">FAQ</a>
-      <a href="partners-drivers.html">Partners Drivers</a>
-    </nav>
-  </header>
-
-  <main>
-
-    <!-- HERO SERVIÇOS -->
-    <section class="page-hero">
-      <div class="hero-content">
-        <h1 class="section-title">Serviços</h1>
-        <p class="lead">
-          Transfers privados, tours personalizados e acompanhamento dedicado em Portugal e Europa.
-          Cada serviço é ajustado ao seu ritmo, interesses e tempo disponível.
-        </p>
-      </div>
-    </section>
-
-    <!-- BLOCO: COMO TRABALHAMOS -->
-    <section class="about-block">
-      <h2>Como trabalhamos</h2>
-      <p class="lead">
-        O ponto de partida é sempre o mesmo: ouvir o que você precisa, entender o que pretende
-        conhecer e sugerir o percurso mais elegante, confortável e seguro. A partir daí,
-        cada detalhe é tratado com calma — horários, paragens, recomendações e tempos de visita —
-        para que a experiência seja tranquila do início ao fim.
-      </p>
-    </section>
-
-    <!-- TOURS PRINCIPAIS -->
-    <section class="about-block">
-      <h2>Experiências e tours privados</h2>
-
-      <div class="cards-3">
-        <!-- Lisboa histórico & miradouros -->
-        <article class="card">
-          <h3>Lisboa histórico & miradouros</h3>
-          <p>
-            Tour privado pela zona histórica de Lisboa, miradouros das sete colinas, passagem pela
-            Ponte 25 de Abril e visita ao Cristo Rei.
-          </p>
-          <p>
-            Duração aproximada: 8h<br />
-            Inclui: motorista profissional, viatura privada, água a bordo e pontos de paragem
-            sugeridos. Itinerário totalmente ajustável.
-          </p>
-        </article>
-
-        <!-- Belém clássico -->
-        <article class="card">
-          <h3>Belém: história & sabores</h3>
-          <p>
-            Torre de Belém, Mosteiro dos Jerónimos, Palácio da Ajuda e paragem para degustar o
-            tradicional Pastel de Belém, com visita à fábrica.
-          </p>
-          <p>
-            Duração aproximada: 4h a 6h<br />
-            Inclui: motorista profissional, viatura privada e apoio na gestão de horários de visita.
-          </p>
-        </article>
-
-        <!-- Sintra & Cascais -->
-        <article class="card">
-          <h3>Sintra & Cascais</h3>
-          <p>
-            Palácios e jardins de Sintra, passagem pelo Cabo da Roca e tempo livre em Cascais.
-            Um dia pensado com calma, para apreciar cada vista.
-          </p>
-          <p>
-            Duração aproximada: 8h<br />
-            Inclui: motorista profissional, viatura privada, sugestão de paragens e apoio na compra
-            de bilhetes. Itinerário ajustável.
-          </p>
-        </article>
-      </div>
-
-      <div class="cards-3">
-        <!-- Fátima & Nazaré -->
-        <article class="card">
-          <h3>Fátima & Nazaré</h3>
-          <p>
-            Visita ao Santuário de Fátima e passagem por Nazaré, com tempo para apreciar a vila e a
-            vista sobre o Atlântico.
-          </p>
-          <p>
-            Duração aproximada: 8h<br />
-            Inclui: motorista profissional, viatura privada e paragens planeadas com tempo confortável.
-          </p>
-        </article>
-
-        <!-- Óbidos & Nazaré -->
-        <article class="card">
-          <h3>Óbidos & Nazaré</h3>
-          <p>
-            Vila medieval de Óbidos, com as suas muralhas e ruas estreitas, combinada com o mar de
-            Nazaré. Um contraste elegante entre história e oceano.
-          </p>
-          <p>
-            Duração aproximada: 8h<br />
-            Inclui: motorista profissional, viatura privada e recomendação de paragens especiais.
-          </p>
-        </article>
-
-        <!-- Lisboa & Porto com paragens -->
-        <article class="card">
-          <h3>Lisboa & Porto com paragens</h3>
-          <p>
-            Transfer entre Lisboa e Porto com duas paragens sugeridas (por exemplo, Fátima, Coimbra
-            ou Aveiro), para transformar o percurso numa experiência completa.
-          </p>
-          <p>
-            Duração aproximada: 8h (dependendo das paragens)<br />
-            Inclui: motorista profissional, viatura privada e sugestão de locais para pequenas visitas.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- TRANSFERS PRIVADOS -->
-    <section class="about-block">
-      <h2>Transfers privados</h2>
-      <p class="lead">
-        Transfers de e para aeroportos, hotéis, eventos, empresas e moradas particulares. Sempre com
-        monitorização de voos, ajuda com bagagem e tempo de espera razoável incluído. O objetivo é
-        simples: que a chegada e a partida sejam tão elegantes quanto a estadia.
-      </p>
-    </section>
-
-    <!-- RESERVAS & PAGAMENTOS -->
-    <section class="about-block">
-      <h2>Reservas & pagamentos</h2>
-      <p class="lead">
-        Para reservar, você pode enviar uma mensagem direta por WhatsApp ou utilizar o formulário na
-        página de Reservas. Após confirmação de disponibilidade, são enviados todos os detalhes do
-        serviço e as opções de pagamento.
-      </p>
-
-      <!-- Botões de ação -->
-      <div class="hero-actions hero-actions-center">
-        <a
-          href="https://wa.me/351910784548"
-          target="_blank"
-          rel="noopener"
-          class="btn-primary"
-        >
-          Falar via WhatsApp
-        </a>
-        <a href="booking.html" class="btn-secondary">Abrir formulário de reserva</a>
-      </div>
-
-      <!-- Ícones de pagamento -->
-      <div class="hero-payments hero-payments-inner">
-        <p class="hero-payments-title">Métodos de pagamento disponíveis</p>
-        <p class="hero-payments-text">
-          Após a reserva, enviaremos os dados necessários para cada método escolhido.
-        </p>
-
-        <div class="payment-icons-row">
-          <!-- WhatsApp (para combinar detalhes, não é pagamento em si) -->
-          <a
-            href="https://wa.me/351910784548"
-            target="_blank"
-            rel="noopener"
-            aria-label="Contactar via WhatsApp"
-          >
-            <img src="assets/icons/whatsapp.svg" alt="WhatsApp" class="payment-icon" />
+    <header class="site-header">
+      <nav class="navbar">
+        <div class="nav-left">
+          <a href="index.html" class="nav-star" aria-label="Início">
+            <img
+              src="assets/icons/star-full.svg"
+              alt="Ícone estrela"
+              class="star-animated"
+            />
           </a>
-
-          <!-- MB Way -->
-          <a
-            href="tel:00351962516005"
-            aria-label="Pagamento via MB Way"
-          >
-            <img src="assets/icons/mbway.svg" alt="MB Way" class="payment-icon" />
-          </a>
-
-          <!-- PayPal -->
-          <a
-            href="mailto:dalilauber75@gmail.com?subject=Pagamento%20PayPal%20-%20Explore%20Portugal%20Experience"
-            target="_blank"
-            rel="noopener"
-            aria-label="Pagamento via PayPal"
-          >
-            <img src="assets/icons/paypal.svg" alt="PayPal" class="payment-icon" />
-          </a>
-
-          <!-- Revolut -->
-          <a
-            href="https://revolut.me/dalilav7js"
-            target="_blank"
-            rel="noopener"
-            aria-label="Pagamento via Revolut"
-          >
-            <img src="assets/icons/revolut.svg" alt="Revolut" class="payment-icon" />
+          <a href="index.html" class="nav-logo">
+            <img
+              src="assets/images/logo-explore-portugal-experience.png"
+              alt="Logotipo Explore Portugal Experience"
+              class="nav-logo-img"
+            />
           </a>
         </div>
 
-        <p class="hero-payments-text small">
-          Política de cancelamento: cancelamentos até 48 horas antes da data do serviço não têm custos;
-          após esse prazo, poderá ser aplicada uma taxa de cancelamento.
-        </p>
+        <ul class="nav-menu">
+          <li><a class="nav-link" href="about.html">Sobre</a></li>
+          <li><a class="nav-link" href="services.html">Serviços</a></li>
+          <li><a class="nav-link" href="choose.html">Porquê nós</a></li>
+          <li><a class="nav-link" href="pricing.html">Preços</a></li>
+          <li><a class="nav-link" href="faq.html">FAQ</a></li>
+          <li><a class="nav-link" href="partners-drivers.html">Partners Drivers</a></li>
+          <li><a class="nav-link" href="booking.html">Reservas</a></li>
+        </ul>
+
+        <div class="hamburger" aria-label="Abrir menu" role="button">
+          <span></span><span></span><span></span>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="section-inner">
+          <h1 class="section-title">Serviços</h1>
+          <p class="section-lead">
+            Transfers, tours privados e acompanhamento em eventos, sempre com
+            motorista profissional, veículo preparado e atenção ao detalhe.
+          </p>
+
+          <div class="cards">
+            <article class="card">
+              <h2 class="card-title">Tour Lisboa histórica e miradouros</h2>
+              <p>
+                Percurso pelas sete colinas de Lisboa, com paragens em miradouros
+                emblemáticos e zonas históricas. Inclui passagem pela Ponte 25 de Abril
+                e visita ao Cristo Rei.
+              </p>
+              <p>
+                Duração: 8 horas  
+                Itinerário ajustável ao ritmo do cliente, com tempo para fotografias,
+                pequenas pausas e sugestões de paragens.
+              </p>
+            </article>
+
+            <article class="card">
+              <h2 class="card-title">Belém e zona monumental</h2>
+              <p>
+                Tour dedicado à zona de Belém: Torre de Belém, Mosteiro dos Jerónimos,
+                Palácio da Ajuda e visita à fábrica dos Pastéis de Belém, com prova
+                incluída no percurso.
+              </p>
+              <p>
+                Duração: meio-dia ou dia completo  
+                Inclui tempo para visitar cada local de forma confortável.
+              </p>
+            </article>
+
+            <article class="card">
+              <h2 class="card-title">Tour Sintra &amp; Cascais</h2>
+              <p>
+                Dia completo entre palácios, serra e mar. Possibilidade de visita a
+                palácios em Sintra, passagem pelo Cabo da Roca e paragem em Cascais,
+                com sugestões de restaurantes e passeios à beira-mar.
+              </p>
+              <p>
+                Duração: 8 horas  
+                Itinerário personalizável, consoante os interesses do cliente.
+              </p>
+            </article>
+
+            <article class="card">
+              <h2 class="card-title">Fátima &amp; Nazaré</h2>
+              <p>
+                Transfer e acompanhamento até Fátima, com tempo para visita ao Santuário
+                com tranquilidade. Continuação até Nazaré, com paragens nos miradouros
+                sobre o mar e tempo livre na vila.
+              </p>
+              <p>
+                Duração: dia completo  
+                Possibilidade de adaptar horários de acordo com necessidades específicas.
+              </p>
+            </article>
+
+            <article class="card">
+              <h2 class="card-title">Óbidos &amp; Nazaré</h2>
+              <p>
+                Visita à vila medieval de Óbidos, com o seu castelo, ruas estreitas e
+                ambiente histórico. Continuação até Nazaré, com um percurso que combina
+                história, mar e gastronomia.
+              </p>
+              <p>
+                Duração: dia completo  
+                Inclui tempo livre para passeio, compras e refeições.
+              </p>
+            </article>
+
+            <article class="card">
+              <h2 class="card-title">Lisboa &amp; Porto com paragens</h2>
+              <p>
+                Transfer entre Lisboa e Porto com duas paragens a definir
+                (por exemplo, Coimbra, Aveiro ou Fátima), para que a viagem
+                seja também uma experiência, e não apenas deslocação.
+              </p>
+              <p>
+                Duração aproximada: dia completo, ajustável em função das paragens.
+              </p>
+            </article>
+          </div>
+
+          <p style="margin-top: 2rem; text-align: center; color: #e2e2e2;">
+            Todos os serviços podem ser personalizados.  
+            Poderá indicar necessidades específicas no momento da reserva.
+          </p>
+
+          <div style="text-align: center; margin-top: 1.5rem;">
+            <a href="booking.html" class="btn">Fazer pedido de reserva</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-main-line">
+          © 2018 Explore Portugal Experience — RNAAT n.º 17/2018 — Turismo de Portugal
+        </div>
+        <div>Todos os direitos reservados.</div>
+
+        <div class="footer-mk">
+          <div>Powered by MkDesign — Portugal</div>
+          <img
+            src="assets/images/mkdesign-logo.png"
+            alt="MkDesign — Gabinete de Design, Marketing &amp; Publicidade"
+          />
+        </div>
       </div>
-    </section>
+    </footer>
+  </div>
 
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>© 2018 Explore Portugal Experience</p>
-      <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
-    </div>
-  </footer>
-
-  <!-- Google Translate -->
-  <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({ pageLanguage: 'pt' }, 'google_translate_element');
-    }
-  </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-  <!-- Navegação -->
   <script src="assets/js/nav.js"></script>
 </body>
 </html>
