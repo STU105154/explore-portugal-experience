@@ -1,245 +1,166 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Explore Portugal Experience — Private Tours & Transfers</title>
-  <meta name="description" content="Serviço privado de motorista em Portugal e Europa. Turismo com conforto, elegância e atenção ao detalhe — desde 2018." />
+  <meta charset="UTF-8" />
+  <title>Explore Portugal Experience — Serviço Privado com Assinatura</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" type="image/svg+xml" href="assets/icons/star-full.svg" />
+
+  <!-- Google Fonts opcional -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: "pt",
+          includedLanguages: "pt,en,es,fr,de,it",
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        },
+        "google_translate_element"
+      );
+    }
+  </script>
+  <script
+    type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+  ></script>
 </head>
 <body>
+  <div class="page-wrapper">
+    <!-- LANGUAGE BAR -->
+    <div class="top-language-bar">
+      <label for="google_translate_element">Idioma:</label>
+      <div id="google_translate_element"></div>
+    </div>
 
-  <!-- Barra de idioma / Google Translate -->
-  <div class="translate-bar">
-    <span>Idioma:</span>
-    <div id="google_translate_element"></div>
-  </div>
+    <!-- HEADER / NAVBAR -->
+    <header class="site-header">
+      <nav class="navbar">
+        <div class="nav-left">
+          <a href="index.html" class="nav-star" aria-label="Voltar à página inicial">
+            <img src="assets/icons/star.svg" alt="Ícone estrela" />
+          </a>
 
-  <!-- Cabeçalho principal -->
-  <header class="header">
-    <a class="home-star" href="index.html" aria-label="Início">
-      <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
-        <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
-      </svg>
-    </a>
+          <a href="index.html" class="nav-logo" aria-label="Explore Portugal Experience — Início">
+            <img
+              src="assets/images/logo-explore-portugal-experience.png"
+              alt="Logotipo Explore Portugal Experience"
+              class="nav-logo-img"
+            />
+          </a>
+        </div>
 
-    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">
-      ☰
-    </button>
+        <ul class="nav-menu">
+          <li><a class="nav-link" href="about.html">Sobre</a></li>
+          <li><a class="nav-link" href="services.html">Serviços</a></li>
+          <li><a class="nav-link" href="choose.html">Porquê nós</a></li>
+          <li><a class="nav-link" href="pricing.html">Preços</a></li>
+          <li><a class="nav-link" href="faq.html">FAQ</a></li>
+          <li><a class="nav-link" href="partners-drivers.html">Partners Drivers</a></li>
+          <li><a class="nav-link" href="booking.html">Reservas</a></li>
+        </ul>
 
-    <nav class="nav" aria-label="Principal">
-      <a href="about.html">Sobre</a>
-      <a href="services.html">Serviços</a>
-      <a href="choose.html">Porquê nós</a>
-      <a href="pricing.html">Preços</a>
-      <a href="faq.html">FAQ</a>
-      <a href="partners-drivers.html">Partners Drivers</a>
-    </nav>
-  </header>
+        <div class="hamburger" aria-label="Abrir menu" role="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
 
-  <main>
-
-    <!-- HERO COM LOGOTIPO, QR E PAGAMENTOS -->
-    <section class="hero hero-home">
-      <div class="hero-inner">
-        <!-- Logotipo central -->
+    <main>
+      <!-- HERO -->
+      <section class="hero">
         <div class="hero-logo-wrapper">
           <img
             src="assets/images/logo-explore-portugal-experience.png"
-            alt="Logotipo Explore Portugal Experience"
-            class="hero-logo-main"
+            alt="Explore Portugal Experience"
           />
         </div>
 
         <p class="hero-tagline">
-          Motorista profissional — Turismo em Portugal e Europa.
+          <span class="gold">Motorista profissional</span> — Turismo em Portugal e Europa.
         </p>
+
         <p class="hero-subtagline">
-          Condução serena, comunicação clara e um país inteiro à sua espera — desde 2018.
+          Condução serena, comunicação clara e um país inteiro à sua espera —
+          desde 2018.
         </p>
 
-        <div class="hero-actions">
-          <a href="booking.html" class="btn-primary">Reservas</a>
-          <a href="services.html" class="btn-secondary">Ver serviços</a>
+        <div class="hero-cta-group">
+          <a href="booking.html" class="btn">Reservar agora</a>
+          <a href="services.html" class="btn" style="background: transparent; border: 1px solid #e8d28f; color: #e8d28f;">
+            Ver serviços
+          </a>
         </div>
+      </section>
 
-        <!-- QR Code WhatsApp -->
-        <div class="hero-qr">
-          <p class="hero-qr-title">
-            QR Code para contacto direto via WhatsApp
+      <!-- O QUE NOS DISTINGUE (exemplo) -->
+      <section class="section section-alt" id="destaques">
+        <div class="section-inner">
+          <h2 class="section-title">O que nos distingue</h2>
+          <p class="section-lead">
+            Atendimento com atenção ao detalhe, calma e profissionalismo.
+            Excelência é fazer o percurso parecer simples: condução serena,
+            comunicação clara e espaço para os imprevistos bons.
           </p>
-          <img
-            src="assets/images/frame.png"
-            alt="Código QR para contacto direto via WhatsApp"
-            class="hero-qr-img"
-          />
-          <p class="hero-qr-caption">
-            Scaneie para iniciar, de imediato, uma conversa via WhatsApp com a Explore Portugal Experience.
-          </p>
-        </div>
 
-        <!-- Métodos de pagamento (apenas ícones) -->
-        <div class="hero-payments">
-          <p class="hero-payments-title">Métodos de pagamento disponíveis</p>
-          <div class="payment-icons-row">
-            <!-- WhatsApp -->
-            <a
-              href="https://wa.me/351910784548"
-              target="_blank"
-              rel="noopener"
-              aria-label="Contactar via WhatsApp"
-            >
-              <img src="assets/icons/whatsapp.svg" alt="WhatsApp" class="payment-icon" />
-            </a>
+          <div class="cards">
+            <article class="card">
+              <h3 class="card-title">Serviço com assinatura</h3>
+              <p>
+                Horários planeados com margem, sem pressas desnecessárias.
+                Paragens, desvios elegantes e tempo para desfrutar do caminho —
+                não apenas do destino.
+              </p>
+            </article>
 
-            <!-- MB Way -->
-            <a
-              href="tel:00351962516005"
-              aria-label="Pagamento via MB Way"
-            >
-              <img src="assets/icons/mbway.svg" alt="MB Way" class="payment-icon" />
-            </a>
+            <article class="card">
+              <h3 class="card-title">Confiança e discrição</h3>
+              <p>
+                Comunicação objetiva, acompanhamento atento e respeito absoluto
+                pela privacidade. Segurança e serenidade em cada quilómetro.
+              </p>
+            </article>
 
-            <!-- PayPal -->
-            <a
-              href="mailto:dalilauber75@gmail.com?subject=Pagamento%20PayPal%20-%20Explore%20Portugal%20Experience"
-              target="_blank"
-              rel="noopener"
-              aria-label="Pagamento via PayPal"
-            >
-              <img src="assets/icons/paypal.svg" alt="PayPal" class="payment-icon" />
-            </a>
-
-            <!-- Revolut -->
-            <a
-              href="https://revolut.me/dalilav7js"
-              target="_blank"
-              rel="noopener"
-              aria-label="Pagamento via Revolut"
-            >
-              <img src="assets/icons/revolut.svg" alt="Revolut" class="payment-icon" />
-            </a>
+            <article class="card">
+              <h3 class="card-title">Conhecimento local</h3>
+              <p>
+                Sugestões de restaurantes, miradouros, paragens especiais e
+                pequenas experiências que fazem Portugal valer ainda mais a pena.
+              </p>
+            </article>
           </div>
         </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-main-line">
+          © 2018 Explore Portugal Experience — RNAAT n.º 17/2018 — Turismo de Portugal
+        </div>
+        <div>Todos os direitos reservados.</div>
+
+        <div class="footer-mk">
+          <div>Powered by MkDesign — Portugal</div>
+          <img
+            src="assets/images/mkdesign-logo.png"
+            alt="MkDesign — Gabinete de Design, Marketing &amp; Publicidade"
+          />
+        </div>
       </div>
-    </section>
+    </footer>
+  </div>
 
-    <!-- O QUE NOS DISTINGUE -->
-    <section class="about-block">
-      <h2 class="section-title">O que nos distingue</h2>
-      <p class="lead">
-        Atendimento com atenção ao detalhe, calma e profissionalismo. Excelência é fazer o percurso
-        parecer simples: condução serena, comunicação clara e espaço para os bons imprevistos.
-      </p>
-
-      <div class="cards-3">
-        <article class="card">
-          <h3>Serviço com assinatura</h3>
-          <p>
-            Cada percurso é planeado com tempo e com margem, sem pressas desnecessárias.
-            Comunicação antes e durante o serviço, para que tudo aconteça com naturalidade.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Conforto e discrição</h3>
-          <p>
-            Viaturas confortáveis, ambiente cuidado e uma condução pensada para que você possa
-            relaxar, trabalhar ou simplesmente apreciar o caminho — sem ruído desnecessário.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Conhecimento local</h3>
-          <p>
-            Sugestões de restaurantes, miradouros, paragens especiais e pequenos desvios que tornam
-            o dia mais rico, sempre respeitando o seu ritmo e o tempo disponível.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- TESTEMUNHOS -->
-    <section class="about-block">
-      <h2 class="section-title">O que dizem os nossos clientes</h2>
-
-      <div class="cards-3">
-        <article class="card">
-          <p>
-            “Serviço impecável desde o primeiro contacto. Sentimo-nos cuidados e seguros em todo o percurso.
-            Atenção, calma e elegância em cada detalhe.”
-          </p>
-          <p class="small muted">— Carolina &amp; Marcelo, Brasil</p>
-        </article>
-
-        <article class="card">
-          <p>
-            “Viajámos com três crianças pequenas e foi, sem dúvida, a experiência de transporte mais tranquila
-            que já tivemos na Europa. Profissionalismo absoluto e uma simpatia rara.”
-          </p>
-          <p class="small muted">— Sarah W., USA</p>
-        </article>
-
-        <article class="card">
-          <p>
-            “Precisava de um serviço pontual, discreto e flexível para reuniões entre Porto e Lisboa.
-            Não é apenas condução — é confiança e excelência.”
-          </p>
-          <p class="small muted">— Miguel A., Portugal</p>
-        </article>
-
-        <article class="card">
-          <p>
-            “Um verdadeiro serviço de acolhimento. As minhas visitas internacionais ficaram impressionadas
-            com o nível de cuidado e conforto.”
-          </p>
-          <p class="small muted">— Jean-Paul F., França</p>
-        </article>
-
-        <article class="card">
-          <p>
-            “Fátima foi muito especial para mim. A serenidade e respeito durante toda a viagem
-            tornaram este dia inesquecível.”
-          </p>
-          <p class="small muted">— Teresa G., Espanha</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- CHAMADA PARA GALERIA E RESERVAS -->
-    <section class="about-block">
-      <h2 class="section-title">Como trabalhamos</h2>
-      <p class="lead">
-        A Explore Portugal Experience nasceu para quem valoriza elegância, serenidade e discrição.
-        O objetivo é simples: que cada viagem seja agradável, segura e memorável — desde o primeiro
-        contacto até ao regresso.
-      </p>
-
-      <div class="hero-actions hero-actions-center">
-        <a href="gallery.html" class="btn-secondary">Ver momentos de viagem</a>
-        <a href="booking.html" class="btn-primary">Fazer uma reserva</a>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>© 2018 Explore Portugal Experience</p>
-      <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
-    </div>
-  </footer>
-
-  <!-- Google Translate -->
-  <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({ pageLanguage: 'pt' }, 'google_translate_element');
-    }
-  </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-  <!-- Navegação -->
-  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/nav.js" defer></script>
 </body>
 </html>
