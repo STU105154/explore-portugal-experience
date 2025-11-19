@@ -29,14 +29,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   hamburger.addEventListener("click", toggleMenu);
 
-  // Fecha o menu quando se clica num link
   document.querySelectorAll(".nav-link").forEach(link => {
     link.addEventListener("click", () => {
       closeMenu();
     });
   });
 
-  // Fecha o menu se a janela for redimensionada para desktop
   window.addEventListener("resize", () => {
     if (window.innerWidth > 900) {
       closeMenu();
