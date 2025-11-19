@@ -1,39 +1,48 @@
-// Lightbox minimalista para as imagens da .gallery-grid
-(() => {
-  const overlay = document.createElement('div');
-  overlay.className = 'lightbox-overlay';
+// lightbox.js
+document.addEventListener("DOMContentLoaded", () => {
+  const galleryImages = document.querySelectorAll(".gallery-item img");
+  if (!galleryImages.length) return;
+
+  // criar overlay
+  const overlay = document.createElement("div");
+  overlay.className = "lightbox-overlay";
   overlay.innerHTML = `
-    <button class="lightbox-close" aria-label="Fechar imagem">×</button>
-    <img alt="">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" aria-label="Fechar imagem">&times;</button>
+      <img src="" alt="Imagem de galeria ampliada">
+    </div>
   `;
   document.body.appendChild(overlay);
 
-  const imgEl = overlay.querySelector('img');
+  const overlayImg = overlay.querySelector("img");
+  const closeBtn = overlay.querySelector(".lightbox-close");
 
-  const close = () => {
-    overlay.classList.remove('open');
-  };
+  function open(src, alt) {
+    overlayImg.src = src;
+    overlayImg.alt = alt || "Imagem de galeria ampliada";
+    overlay.classList.add("open");
+  }
 
-  overlay.addEventListener('click', e => {
-    if (e.target === overlay || e.target.classList.contains('lightbox-close')) {
+  function close() {
+    overlay.classList.remove("open");
+    overlayImg.src = "";
+  }
+
+  galleryImages.forEach((img) => {
+    img.addEventListener("click", () => {
+      open(img.src, img.alt);
+    });
+  });
+
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) close();
+  });
+
+  closeBtn.addEventListener("click", close);
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && overlay.classList.contains("open")) {
       close();
     }
   });
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      close();
-    }
-  });
-
-  // Qualquer imagem dentro de .gallery-grid
-  document.addEventListener('click', e => {
-    const img = e.target.closest('.gallery-grid img');
-    if (!img) return;
-
-    const full = img.getAttribute('data-full') || img.src;
-    imgEl.src = full;
-    imgEl.alt = img.alt || '';
-    overlay.classList.add('open');
-  });
-})();
+});
