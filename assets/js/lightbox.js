@@ -1,48 +1,36 @@
-// lightbox.js
-document.addEventListener("DOMContentLoaded", () => {
-  const galleryImages = document.querySelectorAll(".gallery-item img");
-  if (!galleryImages.length) return;
-
-  // criar overlay
+// Lightbox simples para qualquer imagem dentro de .gallery-grid
+(function () {
   const overlay = document.createElement("div");
   overlay.className = "lightbox-overlay";
   overlay.innerHTML = `
-    <div class="lightbox-inner">
-      <button class="lightbox-close" aria-label="Fechar imagem">&times;</button>
-      <img src="" alt="Imagem de galeria ampliada">
-    </div>
+    <button class="lightbox-close" aria-label="Fechar">×</button>
+    <img alt="">
   `;
   document.body.appendChild(overlay);
 
-  const overlayImg = overlay.querySelector("img");
-  const closeBtn = overlay.querySelector(".lightbox-close");
-
-  function open(src, alt) {
-    overlayImg.src = src;
-    overlayImg.alt = alt || "Imagem de galeria ampliada";
-    overlay.classList.add("open");
-  }
+  const imgEl = overlay.querySelector("img");
 
   function close() {
     overlay.classList.remove("open");
-    overlayImg.src = "";
+    imgEl.removeAttribute("src");
   }
 
-  galleryImages.forEach((img) => {
-    img.addEventListener("click", () => {
-      open(img.src, img.alt);
-    });
-  });
-
   overlay.addEventListener("click", (e) => {
-    if (e.target === overlay) close();
-  });
-
-  closeBtn.addEventListener("click", close);
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && overlay.classList.contains("open")) {
+    if (e.target === overlay || e.target.classList.contains("lightbox-close")) {
       close();
     }
   });
-});
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
+
+  document.addEventListener("click", (e) => {
+    const img = e.target.closest(".gallery-grid img");
+    if (!img) return;
+    e.preventDefault();
+    const full = img.getAttribute("data-full") || img.src;
+    imgEl.src = full;
+    overlay.classList.add("open");
+  });
+})();
