@@ -1,190 +1,163 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Explore Portugal Experience — Serviço Privado de Turismo</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Explore Portugal Experience — Motorista privado em Portugal</title>
+  <meta name="description" content="Motorista profissional privado em Portugal e Europa. Transfers, tours e serviço à medida, com conforto, elegância e atenção ao detalhe — desde 2018." />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/icons/star-full.svg" />
 </head>
-
 <body>
-  <!-- BARRA GOOGLE TRANSLATE -->
   <div class="translate-bar">
     <span>Idioma:</span>
     <div id="google_translate_element"></div>
   </div>
 
-  <!-- HEADER / NAV -->
   <header class="header">
-    <a href="index.html" class="home-star" aria-label="Página inicial">
-      <img
-        src="assets/images/frame.png"
-        alt="Voltar à página inicial"
-        class="star-animated"
-      />
+    <a class="home-star" href="index.html" aria-label="Início">
+      <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
+        <polygon fill="#C9A562"
+                 points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92" />
+      </svg>
     </a>
 
-    <nav class="nav" id="mainNav" aria-label="Navegação principal">
+    <a class="logo-area" href="index.html">
+      <span class="logo-text">Explore Portugal Experience</span>
+    </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
+
+    <nav class="nav" aria-label="Principal">
       <a href="about.html">Sobre</a>
       <a href="services.html">Serviços</a>
       <a href="choose.html">Porquê nós</a>
       <a href="pricing.html">Preços</a>
-      <a href="gallery.html">Galeria</a>
       <a href="faq.html">FAQ</a>
+      <a href="gallery.html">Galeria</a>
+      <a href="booking.html">Reservas</a>
       <a href="partners-drivers.html">Partners Drivers</a>
-      <a href="privacy.html">Privacidade</a>
+      <a href="partners-hospitality.html">Partners Hospitality</a>
     </nav>
-
-    <button
-      class="nav-toggle"
-      id="navToggle"
-      aria-label="Abrir ou fechar menu"
-      aria-expanded="false"
-    >
-      <span></span>
-      <span></span>
-    </button>
   </header>
 
-  <main>
-    <!-- HERO PRINCIPAL -->
-    <section class="home-hero">
-      <img
-        src="assets/images/logo-explore-portugal-experience.png"
-        alt="Logotipo Explore Portugal Experience"
-        class="home-logo"
-      />
+  <section class="hero-main">
+    <div class="hero-main-inner">
+      <div class="hero-logo-wrapper">
+        <img src="assets/images/logo-explore-portugal-experience.png"
+             alt="Logotipo Explore Portugal Experience"
+             class="hero-main-logo" />
+      </div>
 
       <p class="hero-tagline">
-        Motorista profissional certificado há mais de 10 anos. Desde 2018, a
-        Explore Portugal Experience oferece serviço privado de turismo em
-        Portugal e Europa, com conforto, discrição e atenção absoluta ao detalhe.
+        Motorista profissional — Turismo em Portugal e Europa.
       </p>
+      <p class="hero-subtagline">
+        Condução serena, comunicação clara e um país inteiro à tua espera — desde 2018.
+      </p>
+    </div>
+  </section>
 
-      <a href="booking.html" class="btn-primary">
-        Reservar o seu percurso
-      </a>
-
-      <div class="hero-qr-wrap">
-        <img
-          src="assets/images/frame.png"
-          alt="QR Code para contacto direto via WhatsApp"
-          class="home-qr"
-        />
-        <p class="hero-qr-caption">
-          Scaneie para falar connosco diretamente via WhatsApp
-          (+351&nbsp;910&nbsp;784&nbsp;548).
+  <section class="qr-section">
+    <div class="qr-card">
+      <div class="qr-text">
+        <h2>Contacto imediato via WhatsApp</h2>
+        <p>Scaneia o QR Code ou clica no botão para iniciar conversa direta no WhatsApp.</p>
+        <p class="qr-phone">
+          WhatsApp direto:
+          <a href="https://wa.me/351910784548" target="_blank" rel="noopener">
+            +351 910 784 548
+          </a>
         </p>
+        <a class="btn-primary" href="https://wa.me/351910784548" target="_blank" rel="noopener">
+          Falar via WhatsApp
+        </a>
+      </div>
+
+      <div class="qr-image-wrapper">
+        <img src="assets/images/frame.png"
+             alt="QR Code para contacto direto via WhatsApp"
+             class="qr-image" />
+        <p class="qr-caption">Scaneia para falar connosco via WhatsApp.</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="page-content">
+    <section class="about-block">
+      <h2>O que nos distingue</h2>
+      <p>
+        Atendimento com atenção ao detalhe, calma e profissionalismo.
+        Excelência é fazer o percurso parecer simples: condução serena, comunicação clara
+        e espaço para os imprevistos bons.
+      </p>
+    </section>
+
+    <section class="about-block">
+      <div class="cards-3">
+        <article class="card">
+          <h3>Discrição &amp; conforto</h3>
+          <p>
+            Viatura cuidada, condução suave e ambiente preparado para trabalhar, descansar
+            ou simplesmente apreciar a paisagem.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Planeamento à medida</h3>
+          <p>
+            Transfers simples ou dias completos em rota. Ajustamos horários, paragens e
+            detalhes ao teu ritmo e às tuas necessidades.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Ligação humana</h3>
+          <p>
+            Mais do que chegar ao destino, importa a forma como lá chegamos:
+            conversa quando apetece, silêncio quando é preciso, respeito sempre.
+          </p>
+        </article>
       </div>
     </section>
 
-    <!-- O QUE NOS DISTINGUE -->
-    <section class="section section-dark">
-      <div class="section-inner">
-        <h2 class="section-title">O que nos distingue</h2>
-        <p class="section-lead">
-          Atendimento com atenção ao detalhe, calma e profissionalismo.
-          Excelência é fazer o percurso parecer simples: condução serena,
-          comunicação clara e espaço para os imprevistos bons.
-        </p>
+    <section class="about-block">
+      <div class="cards-3">
+        <article class="card">
+          <h3>Serviços</h3>
+          <p>Transfers, tours e serviço privado para empresas e particulares.</p>
+          <p><a href="services.html">Ver serviços</a></p>
+        </article>
 
-        <div class="cards-3">
-          <article class="card">
-            <h3>Elegância com propósito</h3>
-            <p>
-              Viagens pensadas para quem valoriza tempo, conforto e discrição.
-              Cada percurso é preparado de forma personalizada, para que possa
-              concentrar-se apenas em apreciar o caminho.
-            </p>
-          </article>
+        <article class="card">
+          <h3>Reservas</h3>
+          <p>Marca o teu percurso por WhatsApp ou através do formulário dedicado.</p>
+          <p><a href="booking.html">Ir para reservas</a></p>
+        </article>
 
-          <article class="card">
-            <h3>Segurança e serenidade</h3>
-            <p>
-              Condutor profissional certificado, com experiência em longas
-              distâncias e diferentes condições de estrada. Condução tranquila,
-              previsível e focada no bem-estar de cada passageiro.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Conhecimento local</h3>
-            <p>
-              Sugestões de restaurantes, miradouros, paragens especiais e
-              pequenos desvios que transformam o transfer ou tour numa
-              experiência completa — sempre ao seu ritmo.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESERVAS RÁPIDAS -->
-    <section class="section section-reservas" id="reservas">
-      <div class="section-inner">
-        <h2 class="section-title">Reservas</h2>
-        <p class="section-lead">
-          Pode contactar diretamente por WhatsApp ou usar o formulário de
-          reserva. Receberá sempre confirmação com horário, ponto de encontro e
-          valor final antes de qualquer pagamento.
-        </p>
-
-        <div class="reservas-grid">
-          <article class="reservas-card">
-            <h3>WhatsApp direto</h3>
-            <p class="reservas-phone">+351&nbsp;910&nbsp;784&nbsp;548</p>
-            <a
-              href="https://wa.me/351910784548"
-              class="btn-secondary"
-              target="_blank"
-              rel="noopener"
-            >
-              Falar no WhatsApp
-            </a>
-          </article>
-
-          <article class="reservas-card">
-            <h3>Formulário de reserva</h3>
-            <p>
-              Ideal para reservas com antecedência, itinerários personalizados
-              ou pedidos especiais de serviço.
-            </p>
-            <a href="booking.html" class="btn-outline">
-              Abrir formulário de reserva
-            </a>
-          </article>
-        </div>
-
-        <p class="reservas-note">
-          Pagamentos realizados apenas após confirmação de disponibilidade e
-          envio de todos os detalhes por escrito.
-        </p>
+        <article class="card">
+          <h3>Galeria</h3>
+          <p>Alguns momentos, locais e detalhes de experiências anteriores.</p>
+          <p><a href="gallery.html">Abrir galeria</a></p>
+        </article>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
-    <p>© 2018 Explore Portugal Experience — Turismo em Portugal</p>
-    <p>RNAAT n.º 17/2018 — Turismo de Portugal</p>
-    <p>Powered by: MkDesign — Portugal</p>
+    <div class="container">
+      <p>© 2018 Explore Portugal Experience</p>
+      <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
+      <p><a href="privacy.html">Política de privacidade</a></p>
+    </div>
   </footer>
 
-  <!-- JS -->
-  <script src="assets/js/nav.js"></script>
-
-  <!-- GOOGLE TRANSLATE SCRIPT -->
   <script>
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        {
-          pageLanguage: "pt",
-          includedLanguages: "pt,en,es,fr,de",
-        },
-        "google_translate_element"
-      );
+      new google.translate.TranslateElement({ pageLanguage: 'pt' }, 'google_translate_element');
     }
   </script>
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src="assets/js/nav.js"></script>
 </body>
 </html>
