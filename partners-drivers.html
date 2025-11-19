@@ -1,185 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Partners Drivers — Explore Portugal Experience</title>
-  <meta name="description" content="Área para motoristas profissionais e empresas de transfer interessadas em parceria com a Explore Portugal Experience." />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" type="image/svg+xml" href="assets/icons/star-full.svg" />
 </head>
+
 <body>
 
-  <!-- Barra de idioma -->
-  <div class="translate-bar">
-    <span>Idioma:</span>
-    <div id="google_translate_element"></div>
-  </div>
-
-  <!-- HEADER -->
+  <!-- HEADER COMPACTO (SEM NAV) -->
   <header class="header">
-    <a class="home-star" href="index.html" aria-label="Início">
-      <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
-        <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
-      </svg>
+    <a href="index.html" class="home-star" aria-label="Página inicial">
+      <img src="assets/images/frame.png" alt="Star" class="star-animated" />
     </a>
-
-    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
-
-    <nav class="nav" aria-label="Principal">
-      <a href="about.html">Sobre</a>
-      <a href="services.html">Serviços</a>
-      <a href="choose.html">Porquê nós</a>
-      <a href="pricing.html">Preços</a>
-      <a href="faq.html">FAQ</a>
-      <a href="partners-drivers.html" aria-current="page">Partners Drivers</a>
-    </nav>
+    <h2 style="margin:0;font-size:18px;font-weight:600;">Partners — Drivers</h2>
   </header>
 
   <!-- HERO -->
   <section class="page-hero">
-    <div class="hero-content">
-      <h1 class="section-title">Partners Drivers</h1>
-      <p class="lead">
-        Área dedicada a motoristas profissionais e empresas de transfer que pretendem
-        colaborar em serviços premium com a Explore Portugal Experience.
-      </p>
+    <h1 class="page-hero-title">Candidaturas Drivers</h1>
+    <p class="page-hero-subtitle">
+      Colabore connosco e faça parte de uma equipa onde a excelência, a elegância e o profissionalismo definem cada viagem.
+    </p>
+  </section>
+
+  <!-- FORMULÁRIO -->
+  <section class="page-content">
+    <div class="page-inner">
+
+      <form class="form-partners" id="driversForm" method="post" enctype="multipart/form-data">
+
+        <div class="form-row">
+          <label>Nome completo</label>
+          <input type="text" name="nome" required />
+        </div>
+
+        <div class="form-row">
+          <label>Email</label>
+          <input type="email" name="email" required />
+        </div>
+
+        <div class="form-row">
+          <label>Telefone</label>
+          <input type="tel" name="telefone" required />
+        </div>
+
+        <div class="form-row">
+          <label>Cidade / Zona de atuação</label>
+          <input type="text" name="zona" required />
+        </div>
+
+        <div class="form-row">
+          <label>Tipo de serviço disponível</label>
+          <select name="servico" required>
+            <option value="">Selecione</option>
+            <option>Transfer Aeroporto</option>
+            <option>Day Tours</option>
+            <option>Disponibilidade por hora</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label>Licença TVDE / Profissional (upload PDF / JPG)</label>
+          <input type="file" name="licenca" accept=".pdf,.jpg,.jpeg,.png" required />
+        </div>
+
+        <div class="form-row">
+          <label>Documentos adicionais (opcional)</label>
+          <input type="file" name="extra" accept=".pdf,.jpg,.jpeg,.png" multiple />
+        </div>
+
+        <div class="form-row">
+          <label>Mensagem</label>
+          <textarea name="mensagem" rows="6"></textarea>
+        </div>
+
+        <button class="btn-primary" type="submit">Enviar candidatura</button>
+
+      </form>
+
     </div>
   </section>
 
-  <main>
-
-    <!-- PERFIL DE PARCERIA -->
-    <section class="about-block">
-      <h2>Perfil de parceria</h2>
-      <p class="lead">
-        Procuramos profissionais e empresas que partilhem a mesma forma de receber:
-        elegância, pontualidade, discrição e respeito absoluto pelo passageiro.
-      </p>
-      <p>
-        Valorizamos:
-      </p>
-      <ul>
-        <li>Motoristas com experiência em turismo e transporte privado</li>
-        <li>Documentação em dia e seguros adequados à atividade</li>
-        <li>Viaturas em excelente estado de conservação, limpas e confortáveis</li>
-        <li>Boa apresentação, comunicação calma e cordial</li>
-        <li>Conhecimento local e gosto em acolher quem nos visita</li>
-      </ul>
-    </section>
-
-    <!-- FORMULÁRIO -->
-    <section class="about-block">
-      <h2>Registo de interesse</h2>
-      <p class="lead">
-        Preencha o formulário abaixo com os seus dados principais. Pode indicar links
-        para pastas partilhadas (drive, wetransfer, etc.) onde estejam os documentos
-        relevantes, ou informar que os enviará por e-mail.
-      </p>
-      <p>
-        E-mail direto:
-        <a href="mailto:exploreportugalexperience.pt@gmail.com">
-          exploreportugalexperience.pt@gmail.com
-        </a>
-      </p>
-
-      <form
-        class="upload-form"
-        action="mailto:exploreportugalexperience.pt@gmail.com"
-        method="post"
-        enctype="text/plain"
-      >
-        <h3>Dados da entidade</h3>
-
-        <label>Nome da empresa / motorista independente
-          <input type="text" name="nome-entidade" required />
-        </label>
-
-        <label>NIF / Número fiscal
-          <input type="text" name="nif" />
-        </label>
-
-        <label>Cidade / zona principal de operação
-          <input type="text" name="zona" required />
-        </label>
-
-        <label>E-mail
-          <input type="email" name="email" required />
-        </label>
-
-        <label>Telefone / WhatsApp
-          <input type="text" name="telefone" required />
-        </label>
-
-        <h3>Documentação (links ou referências)</h3>
-
-        <label>Professional Liability Insurance Policy
-          <input type="text" name="liability-policy" placeholder="Link ou referência" />
-        </label>
-
-        <label>Personal Accident Insurance Policy
-          <input type="text" name="personal-accident" placeholder="Link ou referência" />
-        </label>
-
-        <label>TVDE Operator License (DRETT) / Alvará equivalente
-          <input type="text" name="tvde-operator" placeholder="Número / validade" />
-        </label>
-
-        <label>TVDE Driver Certificate (se aplicável)
-          <input type="text" name="tvde-driver" placeholder="Número / validade" />
-        </label>
-
-        <label>Carta de condução
-          <input type="text" name="driving-license" placeholder="Categoria / validade" />
-        </label>
-
-        <label>Seguro automóvel (Carta Verde)
-          <input type="text" name="seguro-auto" placeholder="Matrícula / validade" />
-        </label>
-
-        <label>Inspeção periódica (se aplicável)
-          <input type="text" name="inspecao" placeholder="Data / observações" />
-        </label>
-
-        <h3>Frota & notas adicionais</h3>
-
-        <label>Descrição da frota (marca, modelo, ano, lotação)
-          <textarea name="frota" rows="3"></textarea>
-        </label>
-
-        <label>Idiomas falados
-          <input type="text" name="idiomas" placeholder="Português, inglês, outros…" />
-        </label>
-
-        <label>Notas adicionais
-          <textarea name="notas" rows="4" placeholder="Links para documentos, disponibilidade, tipologia de serviços, etc."></textarea>
-        </label>
-
-        <p class="small muted">
-          Os dados indicados serão utilizados apenas para efeitos de análise de parceria
-          e contacto de resposta, de acordo com a nossa Política de privacidade.
-        </p>
-
-        <button type="submit" class="submit-btn">Enviar registo</button>
-      </form>
-    </section>
-
-  </main>
-
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container">
-      <p>© 2018 Explore Portugal Experience</p>
-      <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
-    </div>
+    <p>© 2025 Explore Portugal Experience</p>
+    <p>Powered by: MkDesign — Portugal</p>
   </footer>
 
-  <!-- Google Translate -->
-  <script>
-    function googleTranslateElementInit(){
-      new google.translate.TranslateElement({pageLanguage:'pt'}, 'google_translate_element');
-    }
-  </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script src="assets/js/nav.js"></script>
 
 </body>
