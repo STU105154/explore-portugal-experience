@@ -4,100 +4,76 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Galeria — Explore Portugal Experience</title>
-  <meta name="description" content="Alguns registos visuais de percursos, paisagens, cidades e momentos dos tours da Explore Portugal Experience." />
+  <meta name="description" content="Alguns registos visuais de percursos, locais e momentos dos tours da Explore Portugal Experience." />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="icon" type="image/svg+xml" href="assets/icons/star-full.svg" />
 </head>
 <body>
-
-  <!-- Barra de idioma / Google Translate -->
   <div class="translate-bar">
     <span>Idioma:</span>
     <div id="google_translate_element"></div>
   </div>
 
-  <!-- Cabeçalho -->
   <header class="header">
     <a class="home-star" href="index.html" aria-label="Início">
       <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
         <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
       </svg>
     </a>
-
-    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">
-      ☰
-    </button>
-
+    <a class="logo-area" href="index.html">
+      <span class="logo-text">Explore Portugal Experience</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
     <nav class="nav" aria-label="Principal">
       <a href="about.html">Sobre</a>
       <a href="services.html">Serviços</a>
       <a href="choose.html">Porquê nós</a>
       <a href="pricing.html">Preços</a>
       <a href="faq.html">FAQ</a>
+      <a href="gallery.html" aria-current="page">Galeria</a>
+      <a href="booking.html">Reservas</a>
       <a href="partners-drivers.html">Partners Drivers</a>
+      <a href="partners-hospitality.html">Partners Hospitality</a>
     </nav>
   </header>
 
-  <!-- HERO GALERIA -->
   <section class="page-hero">
     <div class="hero-content">
       <h1 class="section-title">Galeria</h1>
-      <p class="lead">
-        Um registo discreto de alguns dos lugares, luzes e momentos que fazem parte do caminho.
-        Imagens de trabalho real, sem excessos, tal como gostamos de receber.
-      </p>
+      <p class="lead">Alguns momentos de estrada, natureza, cidade e detalhes do nosso trabalho.</p>
     </div>
   </section>
 
-  <main>
-
-    <!-- GRELHA DE FOTOGRAFIAS -->
+  <main class="page-content">
     <section class="about-block">
       <div class="gallery-grid">
-        <img
-          src="assets/images/gallery-1.jpg"
-          alt="Estrada e natureza em Portugal"
-        />
-        <img
-          src="assets/images/gallery-2.jpg"
-          alt="Vista urbana com torre histórica"
-        />
-        <img
-          src="assets/images/gallery-3.jpg"
-          alt="Detalhe de garrafeira com vinhos portugueses"
-        />
-        <img
-          src="assets/images/gallery-4.jpg"
-          alt="Monumento Cristo Rei com vista sobre o Tejo"
-        />
+        <img src="assets/images/gallery-1.jpg"
+             alt="Ponte de madeira em trilho natural em Portugal" />
+        <img src="assets/images/gallery-2.jpg"
+             alt="Torre histórica no Porto" />
+        <img src="assets/images/gallery-3.jpg"
+             alt="Garrafeira com vinhos do Porto antigos" />
+        <img src="assets/images/gallery-4.jpg"
+             alt="Cristo Rei em Almada com vista sobre o Tejo" />
       </div>
-      <p class="small muted" style="margin-top:16px;">
-        As imagens são meramente ilustrativas de ambientes, percursos e atmosferas
-        que podem fazer parte da sua experiência. Cada serviço é sempre desenhado à medida.
-      </p>
     </section>
-
   </main>
 
   <footer class="footer">
     <div class="container">
       <p>© 2018 Explore Portugal Experience</p>
       <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
+      <p><a href="privacy.html">Política de privacidade</a></p>
     </div>
   </footer>
 
-  <!-- Google Translate -->
   <script>
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({ pageLanguage: 'pt' }, 'google_translate_element');
+      new google.translate.TranslateElement({pageLanguage: 'pt'}, 'google_translate_element');
     }
   </script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-  <!-- Navegação -->
   <script src="assets/js/nav.js"></script>
-
-  <!-- Lightbox (para abrir as imagens ao clique) -->
   <script src="assets/js/lightbox.js"></script>
 </body>
 </html>
