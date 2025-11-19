@@ -1,198 +1,159 @@
-
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Partners Drivers — Explore Portugal Experience</title>
-<meta name="description" content="Área para motoristas profissionais e empresas de transfer interessadas em parceria com a Explore Portugal Experience." />
-<link rel="stylesheet" href="assets/css/style.css" />
-<link rel="icon" type="image/svg+xml" href="assets/icons/star-full.svg" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Partners Drivers — Explore Portugal Experience</title>
+    <meta name="description" content="Registo de motoristas profissionais e empresas de transfer para colaboração com a Explore Portugal Experience.">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" type="image/png" href="assets/images/logo-explore-portugal-experience.png" />
 </head>
 <body>
+
 <div class="translate-bar">
-<span>Idioma:</span>
-<div id="google_translate_element"></div>
+    <span>Idioma:</span>
+    <div id="google_translate_element"></div>
 </div>
 
 <header class="header">
-<a class="home-star" href="index.html" aria-label="Início">
-<svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
-<polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
-</svg>
-</a>
-<a class="logo-area" href="index.html">
-<span class="logo-text">Explore Portugal Experience</span>
-</a>
-<button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
-<nav class="nav" aria-label="Principal">
-<a href="about.html">Sobre</a>
-<a href="services.html">Serviços</a>
-<a href="choose.html">Porquê nós</a>
-<a href="pricing.html">Preços</a>
-<a href="faq.html">FAQ</a>
-<a href="gallery.html">Galeria</a>
-<a href="booking.html">Reservas</a>
-<a href="partners-drivers.html" aria-current="page">Partners Drivers</a>
-<a href="partners-hospitality.html">Partners Hospitality</a>
-</nav>
+    <a class="home-star" href="index.html" aria-label="Início">
+        <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
+            <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
+        </svg>
+    </a>
+    <a class="logo-area" href="index.html">
+        <span class="logo-text">Explore Portugal Experience</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
+    <nav class="nav" aria-label="Principal">
+        <a href="about.html">Sobre</a>
+        <a href="services.html">Serviços</a>
+        <a href="choose.html">Porquê nós</a>
+        <a href="pricing.html">Preços</a>
+        <a href="faq.html">FAQ</a>
+        <a href="partners-drivers.html" aria-current="page">Partners Drivers</a>
+        <a href="partners-hospitality.html">Partners Hospitality</a>
+        <a href="booking.html">Reservas</a>
+        <a href="index.html#contacto">Contacto</a>
+    </nav>
 </header>
 
-<section class="page-hero">
-<div class="hero-content">
-<h1 class="section-title">Partners Drivers</h1>
-<p class="lead">
-Área para motoristas profissionais e empresas de transfer que
-pretendem colaborar em serviços premium com a Explore Portugal Experience.
-</p>
-</div>
-</section>
-
 <main class="page-content">
-<section class="about-block">
-<h2>Perfil de parceria</h2>
-<p>
-Procuramos motoristas certificados e empresas de transporte com viaturas
-em excelente estado, gosto pelo atendimento discreto e pontual e atenção
-aos detalhes que definem um serviço de topo.
-</p>
-<p>
-Valorizamos experiência em turismo, inglês funcional (outros idiomas são
-bem-vindos), boa apresentação e documentação em dia.
-</p>
-</section>
+    <section class="partners">
+        <h1>Registo de Motoristas &amp; Empresas de Transfer</h1>
+        <p>
+            Este formulário é exclusivo para parceiros profissionais — motoristas licenciados e
+            empresas de transfer que pretendam trabalhar connosco em regime de confiança, requinte e
+            serviço premium.
+        </p>
 
-<section class="about-block">
-<h2>Registo de interesse</h2>
-<p class="booking-note">
-Podes anexar documentos principais diretamente neste formulário
-(sujeito ao comportamento do teu cliente de e-mail) ou indicar
-links para partilhas online (Drive, WeTransfer, etc.). 
-Também podes enviar tudo por e-mail para:
-<a href="mailto:exploreportugalexperience.pt@gmail.com">
-exploreportugalexperience.pt@gmail.com
-</a>
-</p>
+        <form class="upload-form" action="send_form.php" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="form_type" value="drivers">
 
-<form class="upload-form"
-action="mailto:exploreportugalexperience.pt@gmail.com"
-method="post"
-enctype="multipart/form-data">
+            <h3>Dados de contacto</h3>
 
-<h3>Dados da entidade</h3>
+            <label>Nome da empresa / motorista
+                <input type="text" name="partner_name" required>
+            </label>
 
-<label>Nome da empresa / motorista independente
-<input type="text" name="nome-entidade" required />
-</label>
+            <label>Email de contacto
+                <input type="email" name="partner_email" required>
+            </label>
 
-<label>NIF / Número fiscal
-<input type="text" name="nif" />
-</label>
+            <label>Telefone / WhatsApp
+                <input type="text" name="partner_phone" required>
+            </label>
 
-<label>Cidade / zona principal de operação
-<input type="text" name="zona" required />
-</label>
+            <h3>Documentos da organização</h3>
 
-<label>E-mail
-<input type="email" name="email" required />
-</label>
+            <label>Professional Liability Insurance Policy
+                <input type="file" name="insurance_policy">
+            </label>
 
-<label>Telefone / WhatsApp
-<input type="text" name="telefone" required />
-</label>
+            <label>Invoice/Receipt for Civil and Professional Liability Insurance
+                <input type="file" name="insurance_invoice">
+            </label>
 
-<h3>Documentação (upload ou link)</h3>
+            <label>Personal Accident Insurance Invoice/Receipt
+                <input type="file" name="accident_invoice">
+            </label>
 
-<label>Professional Liability Insurance Policy (upload)
-<input type="file" name="liability-file" />
-</label>
+            <label>Personal Accident Insurance Policy (Specific Conditions)
+                <input type="file" name="accident_policy">
+            </label>
 
-<label>Link para Professional Liability Insurance Policy
-<input type="text" name="liability-link" placeholder="Link para documento online (opcional)" />
-</label>
+            <label>Certificate of Incorporation for your Business
+                <input type="file" name="certificate_incorporation">
+            </label>
 
-<label>Personal Accident Insurance Policy (upload)
-<input type="file" name="personal-accident-file" />
-</label>
+            <label>Bank Statement
+                <input type="file" name="bank_statement">
+            </label>
 
-<label>Link para Personal Accident Insurance Policy
-<input type="text" name="personal-accident-link" placeholder="Link para documento online (opcional)" />
-</label>
+            <label>Photo ID for Board Member / Authorized Representative
+                <input type="file" name="board_member_id">
+            </label>
 
-<label>TVDE Operator License (upload)
-<input type="file" name="tvde-operator-file" />
-</label>
+            <label>Photo ID from every individual that owns 25% or more of your business
+                <input type="file" name="owner_id">
+            </label>
 
-<label>TVDE Operator License (número / validade)
-<input type="text" name="tvde-operator" placeholder="Número / validade" />
-</label>
+            <h3>Documentos do motorista</h3>
 
-<label>TVDE Driver Certificate (upload)
-<input type="file" name="tvde-driver-file" />
-</label>
+            <label>Driving License
+                <input type="file" name="driver_license">
+            </label>
 
-<label>TVDE Driver Certificate (número / validade)
-<input type="text" name="tvde-driver" placeholder="Número / validade" />
-</label>
+            <label>TVDE Driver Certificate
+                <input type="file" name="tvde_certificate">
+            </label>
 
-<label>Carta de condução (upload)
-<input type="file" name="driving-license-file" />
-</label>
+            <label>Criminal Record Certificate
+                <input type="file" name="criminal_record">
+            </label>
 
-<label>Carta de condução (categoria / validade)
-<input type="text" name="driving-license" placeholder="Categoria / validade" />
-</label>
+            <label>Valid EU Citizen Registration Certificate / Residence Permit
+                <input type="file" name="residency_permit">
+            </label>
 
-<label>Seguro automóvel (Carta Verde) — upload
-<input type="file" name="seguro-auto-file" />
-</label>
+            <h3>Documentos do veículo</h3>
 
-<label>Seguro automóvel (dados)
-<input type="text" name="seguro-auto" placeholder="Matrícula / validade" />
-</label>
+            <label>DUA — Documento de registo do veículo (frente e verso)
+                <input type="file" name="dua_document">
+            </label>
 
-<label>Inspeção periódica (upload)
-<input type="file" name="inspecao-file" />
-</label>
+            <label>Seguro automóvel (Carta Verde)
+                <input type="file" name="car_insurance">
+            </label>
 
-<label>Inspeção periódica (data / observações)
-<input type="text" name="inspecao" placeholder="Data / observações" />
-</label>
+            <label>Seguro automóvel (Condições especiais)
+                <input type="file" name="car_special_conditions">
+            </label>
 
-<h3>Frota &amp; notas</h3>
+            <label>Inspeção técnica periódica
+                <input type="file" name="car_inspection">
+            </label>
 
-<label>Descrição da frota (marca, modelo, ano, lotação)
-<textarea name="frota" rows="3"></textarea>
-</label>
+            <button type="submit" class="submit-btn">Enviar Documentos</button>
 
-<label>Idiomas falados
-<input type="text" name="idiomas" placeholder="Português, inglês, outros…" />
-</label>
-
-<label>Notas adicionais
-<textarea name="notas" rows="3" placeholder="Links para documentos, disponibilidade, outros detalhes…"></textarea>
-</label>
-
-<button type="submit" class="submit-btn">Enviar registo</button>
-</form>
-</section>
+        </form>
+    </section>
 </main>
 
 <footer class="footer">
-<div class="container">
-<p>© 2018 Explore Portugal Experience</p>
-<p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
-<p><a href="privacy.html">Política de privacidade</a></p>
-</div>
+    <div class="container">
+        <p>© 2018 Explore Portugal Experience</p>
+        <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
+    </div>
 </footer>
 
 <script>
-function googleTranslateElementInit() {
-new google.translate.TranslateElement({pageLanguage: 'pt'}, 'google_translate_element');
+function googleTranslateElementInit(){
+    new google.translate.TranslateElement({pageLanguage:'pt'}, 'google_translate_element');
 }
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script src="assets/js/nav.js"></script>
+
 </body>
 </html>
-
