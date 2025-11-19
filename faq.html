@@ -1,239 +1,138 @@
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FAQ — Explore Portugal Experience</title>
-  <meta name="description" content="Perguntas frequentes sobre reservas, pagamentos, cancelamentos e serviços da Explore Portugal Experience." />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" type="image/svg+xml" href="assets/icons/star-full.svg" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FAQ — Explore Portugal Experience</title>
+<meta name="description" content="Perguntas frequentes sobre reservas, pagamentos, cancelamentos e serviços da Explore Portugal Experience." />
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="icon" type="image/svg+xml" href="assets/icons/star-full.svg" />
 </head>
 <body>
+<div class="translate-bar">
+<span>Idioma:</span>
+<div id="google_translate_element"></div>
+</div>
 
-  <!-- Barra de idioma / Google Translate -->
-  <div class="translate-bar">
-    <span>Idioma:</span>
-    <div id="google_translate_element"></div>
-  </div>
+<header class="header">
+<a class="home-star" href="index.html" aria-label="Início">
+<svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
+<polygon fill="#C9A562"
+points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
+</svg>
+</a>
+<a class="logo-area" href="index.html">
+<span class="logo-text">Explore Portugal Experience</span>
+</a>
+<button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
+<nav class="nav" aria-label="Principal">
+<a href="about.html">Sobre</a>
+<a href="services.html">Serviços</a>
+<a href="choose.html">Porquê nós</a>
+<a href="pricing.html">Preços</a>
+<a href="faq.html" aria-current="page">FAQ</a>
+<a href="gallery.html">Galeria</a>
+<a href="booking.html">Reservas</a>
+<a href="partners-drivers.html">Partners Drivers</a>
+<a href="partners-hospitality.html">Partners Hospitality</a>
+</nav>
+</header>
 
-  <!-- Cabeçalho -->
-  <header class="header">
-    <a class="home-star" href="index.html" aria-label="Início">
-      <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
-        <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
-      </svg>
-    </a>
+<section class="page-hero">
+<div class="hero-content">
+<h1 class="section-title">FAQ</h1>
+<p class="lead">As respostas às questões que mais nos colocam.</p>
+</div>
+</section>
 
-    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">
-      ☰
-    </button>
+<main class="page-content">
+<section class="about-block">
+<div class="faq">
+<details class="faq-item" open>
+<summary>Como posso fazer uma reserva?</summary>
+<div class="faq-body">
+<p>
+Podes reservar por WhatsApp, através do número
+<a href="https://wa.me/351910784548" target="_blank" rel="noopener">+351 910 784 548</a>,
+ou através do formulário de reservas disponível na página
+<a href="booking.html">Reservas</a>.
+</p>
+</div>
+</details>
 
-    <nav class="nav" aria-label="Principal">
-      <a href="about.html">Sobre</a>
-      <a href="services.html">Serviços</a>
-      <a href="choose.html">Porquê nós</a>
-      <a href="pricing.html">Preços</a>
-      <a href="faq.html" aria-current="page">FAQ</a>
-      <a href="partners-drivers.html">Partners Drivers</a>
-    </nav>
-  </header>
+<details class="faq-item">
+<summary>Os valores apresentados no site são finais?</summary>
+<div class="faq-body">
+<p>
+Os valores apresentados na página de Preços são indicativos.
+O valor final é sempre confirmado por escrito, após partilhares
+as datas, horários e detalhes do serviço.
+</p>
+</div>
+</details>
 
-  <main>
+<details class="faq-item">
+<summary>Que métodos de pagamento aceitam?</summary>
+<div class="faq-body">
+<p>
+Trabalhamos com métodos digitais seguros, como MB Way, PayPal e Revolut.
+Após confirmação da reserva, enviamos o link ou instruções de pagamento
+correspondentes ao método escolhido.
+</p>
+</div>
+</details>
 
-    <!-- HERO FAQ -->
-    <section class="page-hero">
-      <div class="hero-content">
-        <h1 class="section-title">FAQ</h1>
-        <p class="lead">
-          Respostas claras às perguntas mais frequentes sobre reservas, pagamentos,
-          cancelamentos e funcionamento do serviço.
-        </p>
-      </div>
-    </section>
+<details class="faq-item">
+<summary>Posso personalizar o itinerário?</summary>
+<div class="faq-body">
+<p>
+Sim. Todos os tours podem ser adaptados: horários, paragens, pontos
+de interesse e ritmo do dia são ajustados ao que faz sentido para ti.
+</p>
+</div>
+</details>
 
-    <!-- BLOCO FAQ -->
-    <section class="about-block">
-      <div class="faq">
+<details class="faq-item">
+<summary>Têm cadeirinha para criança?</summary>
+<div class="faq-body">
+<p>
+Mediante pedido prévio na reserva, podemos disponibilizar cadeira
+de criança, sujeita a disponibilidade. Recomenda-se indicar idade
+e peso aproximado da criança.
+</p>
+</div>
+</details>
 
-        <!-- 1: Como reservar -->
-        <details class="faq-item" open>
-          <summary>Como posso fazer uma reserva?</summary>
-          <div class="faq-body">
-            <p>
-              A forma mais imediata é por WhatsApp, através do número
-              <a href="https://wa.me/351910784548" target="_blank" rel="noopener">
-                +351 910 784 548
-              </a>.
-            </p>
-            <p>
-              Se preferir, pode também utilizar o formulário de reserva disponível na
-              página <a href="booking.html">Reservas</a>. Em qualquer dos casos, receberá
-              sempre resposta personalizada com proposta e confirmação de disponibilidade.
-            </p>
-          </div>
-        </details>
+<details class="faq-item">
+<summary>Qual é a vossa política de cancelamento?</summary>
+<div class="faq-body">
+<p>
+Cancelamentos até 48h antes da data do serviço não têm custos.
+Após esse prazo, pode ser aplicada taxa de cancelamento, comunicada
+no momento da reserva.
+</p>
+</div>
+</details>
+</div>
+</section>
+</main>
 
-        <!-- 2: Que dados devo enviar -->
-        <details class="faq-item">
-          <summary>Que informações devo enviar no pedido?</summary>
-          <div class="faq-body">
-            <p>
-              Para podermos apresentar uma proposta clara e adequada, é muito útil indicar:
-            </p>
-            <ul>
-              <li>Data e horário aproximados do serviço</li>
-              <li>Local de origem e destino</li>
-              <li>Número de passageiros</li>
-              <li>Tipo de serviço (transfer, tour, serviço à medida)</li>
-              <li>Eventuais necessidades especiais (bagagem extra, cadeira de criança, etc.)</li>
-            </ul>
-          </div>
-        </details>
+<footer class="footer">
+<div class="container">
+<p>© 2018 Explore Portugal Experience</p>
+<p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
+<p><a href="privacy.html">Política de privacidade</a></p>
+</div>
+</footer>
 
-        <!-- 3: Métodos de pagamento -->
-        <details class="faq-item">
-          <summary>Quais são os métodos de pagamento disponíveis?</summary>
-          <div class="faq-body">
-            <p>
-              Trabalhamos com métodos de pagamento digitais seguros, como MB Way, PayPal
-              e Revolut. Após a confirmação da reserva, enviamos os dados específicos para
-              o método selecionado.
-            </p>
-            <p>
-              Em alguns casos, pode também ser combinada outra forma de pagamento
-              previamente acordada, desde que respeite as condições de reserva.
-            </p>
-          </div>
-        </details>
-
-        <!-- 4: O que está incluído -->
-        <details class="faq-item">
-          <summary>O que está incluído nos valores apresentados?</summary>
-          <div class="faq-body">
-            <p>
-              Como regra geral, os valores incluem motorista profissional certificado,
-              viatura privada, combustível, portagens e seguros obrigatórios de acordo
-              com a atividade.
-            </p>
-            <p>
-              Não estão incluídos, salvo indicação expressa em contrário:
-            </p>
-            <ul>
-              <li>Entradas em monumentos, museus e palácios</li>
-              <li>Refeições, bebidas e provas</li>
-              <li>Guias locais dedicados</li>
-              <li>Despesas pessoais do cliente</li>
-            </ul>
-          </div>
-        </details>
-
-        <!-- 5: Personalização -->
-        <details class="faq-item">
-          <summary>Os tours podem ser personalizados?</summary>
-          <div class="faq-body">
-            <p>
-              Sim. Todos os tours podem ser ajustados em função dos seus interesses,
-              tempo disponível e ritmo preferido. Podemos adaptar horários, número
-              de paragens, pontos de visita e até sugerir alternativas caso o dia
-              esteja condicionado por meteorologia ou outros fatores.
-            </p>
-          </div>
-        </details>
-
-        <!-- 6: Crianças / cadeirinha -->
-        <details class="faq-item">
-          <summary>Têm cadeirinha para criança?</summary>
-          <div class="faq-body">
-            <p>
-              Mediante pedido prévio, é possível disponibilizar cadeira de criança,
-              sujeita a disponibilidade. Recomendamos indicar idade e peso aproximado
-              da criança no momento do pedido.
-            </p>
-          </div>
-        </details>
-
-        <!-- 7: Política de cancelamento -->
-        <details class="faq-item">
-          <summary>Qual é a vossa política de cancelamento?</summary>
-          <div class="faq-body">
-            <p>
-              Cancelamentos efetuados até 48 horas antes da data do serviço não têm
-              qualquer custo.
-            </p>
-            <p>
-              Após esse prazo, poderá ser aplicada uma taxa de cancelamento, comunicada
-              no momento da reserva, em função do tipo de serviço, época do ano e
-              condições previamente acordadas.
-            </p>
-          </div>
-        </details>
-
-        <!-- 8: Seguro -->
-        <details class="faq-item">
-          <summary>Os serviços incluem seguro?</summary>
-          <div class="faq-body">
-            <p>
-              Sim. Os serviços são realizados com seguros adequados à atividade,
-              incluindo responsabilidade civil e seguro obrigatório de passageiros,
-              em conformidade com a legislação em vigor.
-            </p>
-          </div>
-        </details>
-
-        <!-- 9: Faturação -->
-        <details class="faq-item">
-          <summary>É possível emitir fatura?</summary>
-          <div class="faq-body">
-            <p>
-              Sim. Sempre que necessário, podem ser emitidos os documentos fiscais
-              correspondentes ao serviço realizado. Para isso, poderemos solicitar
-              nome, NIF e morada completos.
-            </p>
-          </div>
-        </details>
-
-        <!-- 10: Outra questão -->
-        <details class="faq-item">
-          <summary>E se tiver outra questão que não está aqui?</summary>
-          <div class="faq-body">
-            <p>
-              Estaremos sempre disponíveis para esclarecer qualquer dúvida adicional.
-              Pode contactar por WhatsApp ou e-mail:
-            </p>
-            <p>
-              WhatsApp:
-              <a href="https://wa.me/351910784548" target="_blank" rel="noopener">
-                +351 910 784 548
-              </a><br />
-              E-mail:
-              <a href="mailto:exploreportugalexperience.pt@gmail.com">
-                exploreportugalexperience.pt@gmail.com
-              </a>
-            </p>
-          </div>
-        </details>
-
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>© 2018 Explore Portugal Experience</p>
-      <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
-    </div>
-  </footer>
-
-  <!-- Google Translate -->
-  <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({ pageLanguage: 'pt' }, 'google_translate_element');
-    }
-  </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-  <!-- Navegação -->
-  <script src="assets/js/nav.js"></script>
+<script>
+function googleTranslateElementInit() {
+new google.translate.TranslateElement({pageLanguage: 'pt'}, 'google_translate_element');
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="assets/js/nav.js"></script>
 </body>
 </html>
+
