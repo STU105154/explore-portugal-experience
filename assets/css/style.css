@@ -754,3 +754,35 @@ body.nav-open .nav {
   color: #fff;
   cursor: pointer;
 }
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 25px 10px;
+    margin-top: 40px;
+    background: #000;
+    color: #d4c29a;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.mkdesign {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.mkdesign img {
+    height: 35px;
+    width: auto;
+    opacity: 0.9;
+    filter: brightness(0.9);
+}
+
+.mkdesign span {
+    font-size: 12px;
+    color: #c9b07a;
+    font-weight: 500;
+}
+
