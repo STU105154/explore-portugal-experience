@@ -1,36 +1,201 @@
-/* LIGHTBOX (para gallery.html) */
-.lightbox-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.86);
+/* =========================
+   FONTES E BASE GERAL
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #e5e5e5;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* =========================
+   CONTAINERS E TÍTULOS
+========================= */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding-top: 40px;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.4rem;
+  color: #f5deb3;
+}
+
+/* =========================
+   HEADER E MENU
+========================= */
+
+header {
+  width: 100%;
+  padding: 10px 0;
+  background: #000;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+nav {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-  z-index: 9999;
 }
 
-.lightbox-overlay.open {
-  opacity: 1;
-  pointer-events: auto;
+.nav-links {
+  display: flex;
+  gap: 22px;
 }
 
-.lightbox-overlay img {
-  max-width: 90vw;
-  max-height: 85vh;
-  border-radius: 12px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 14px;
-  right: 18px;
-  font-size: 28px;
-  border: 0;
-  background: transparent;
+.nav-links a {
   color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #f5deb3;
+}
+
+/* HAMBURGER MENU */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
   cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 28px;
+  height: 3px;
+  background: #fff;
+}
+
+/* MENU MOBILE */
+@media (max-width: 900px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    background: #000;
+    padding: 20px 0;
+    display: none;
+    text-align: center;
+  }
+  .nav-links.active { display: flex; }
+  .menu-toggle { display: flex; }
+}
+
+/* =========================
+   HERO / LOGO / QR
+========================= */
+
+.hero {
+  text-align: center;
+  padding: 40px 0 0;
+}
+
+.hero img.main-logo {
+  width: 260px;
+  height: auto;
+  margin: auto;
+  display: block;
+}
+
+.hero img.qr {
+  margin-top: 25px;
+  width: 220px;
+  border-radius: 14px;
+  border: 1px solid #f5deb3;
+}
+
+/* =========================
+   ESTRELA ANIMADA
+========================= */
+.star {
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  width: 28px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.25); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+
+/* =========================
+   TRIBUTO AGAPITO
+========================= */
+
+.tribute {
+  margin-top: 40px;
+  padding: 30px;
+  border: 1px solid #f5deb3;
+  border-radius: 12px;
+  background: rgba(255,215,0,0.05);
+}
+
+.tribute h2 {
+  color: #f5deb3;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.tribute p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.tribute img {
+  width: 260px;
+  border-radius: 14px;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: #000;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 40px;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(255,215,0,0.25);
+}
+
+footer span {
+  color: #f5deb3;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+  h1 { font-size: 1.9rem; }
+  .hero img.main-logo { width: 200px; }
+  .hero img.qr { width: 180px; }
 }
