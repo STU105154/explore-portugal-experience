@@ -10,18 +10,21 @@
 </head>
 <body>
 
-<div class="translate-bar" style="background:#000;padding:4px 12px;font-size:0.8rem;display:flex;justify-content:flex-end;gap:8px;">
+<div class="translate-bar">
     <span>Idioma:</span>
     <div id="google_translate_element"></div>
 </div>
 
 <header class="header">
-    <div class="logo-area">
-        <a href="index.html" class="logo-text">Explore Portugal Experience</a>
-    </div>
-
-    <button class="nav-toggle" aria-label="Abrir menu">☰</button>
-
+    <a class="home-star" href="index.html" aria-label="Início">
+        <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
+            <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
+        </svg>
+    </a>
+    <a class="logo-area" href="index.html">
+        <span class="logo-text">Explore Portugal Experience</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
     <nav class="nav" aria-label="Principal">
         <a href="about.html">Sobre</a>
         <a href="services.html">Serviços</a>
@@ -36,44 +39,48 @@
     </nav>
 </header>
 
-<section class="page-hero">
-    <div class="hero-content">
-        <h1 class="section-title">Transfers & Tours Privados</h1>
-        <p class="lead">
-            Motorista profissional certificado há mais de 10 anos, ao serviço do turismo de Portugal.
-            Desde 2018, experiências discretas, seguras e elegantes.
-        </p>
+<section class="hero hero-with-logo">
+    <div class="hero-inner">
         <img src="assets/images/logo-explore-portugal-experience.png"
              alt="Explore Portugal Experience"
-             style="max-width:260px;margin:22px auto 10px;display:block;">
-        <p class="lead" style="margin-top:8px;">
-            Reserva imediata por WhatsApp:
-            <a href="https://wa.me/351910784548" target="_blank" style="color:#C9A562;text-decoration:none;">
-                +351 910 784 548
-            </a>
+             class="hero-logo-main">
+
+        <p class="hero-tagline">
+            Motorista profissional certificado há mais de 10 anos. Desde 2018 a receber
+            hóspedes, famílias e empresas com segurança, elegância e calma.
         </p>
+
+        <div class="hero-qr">
+            <p>Reserva imediata por WhatsApp</p>
+            <img src="assets/images/qr-whatsapp.png"
+                 alt="QR Code WhatsApp Explore Portugal Experience"
+                 class="hero-qr-img">
+            <p>
+                ou toca aqui:
+                <a href="https://wa.me/351910784548" target="_blank">+351 910 784 548</a>
+            </p>
+        </div>
     </div>
 </section>
 
 <main class="page-content">
 
-    <!-- Secção destaque serviços -->
     <section class="about-block">
         <h2>O teu motorista em Portugal</h2>
         <p class="lead" style="margin-bottom:20px;">
-            Transfers, tours e serviços à medida, com atenção ao detalhe, calma e profissionalismo.
+            Transfers, tours e serviços à medida, com atenção ao detalhe, discrição e profissionalismo.
         </p>
 
         <div class="cards-3">
             <article class="card">
                 <h3>Transfers privados</h3>
-                <p>Chegadas e partidas com total discrição. Aeroporto, hotel, eventos, cidade a cidade.</p>
+                <p>Chegadas e partidas com total conforto e segurança — aeroporto, hotel, eventos, cidade a cidade.</p>
                 <p><a href="services.html" class="btn-link">Ver serviços</a></p>
             </article>
 
             <article class="card">
                 <h3>Tours exclusivos</h3>
-                <p>Lisboa, Sintra, Cascais, Fátima, Nazaré, Óbidos, Porto e muito mais — ao teu ritmo.</p>
+                <p>Lisboa, Sintra, Cascais, Fátima, Nazaré, Óbidos, Porto e muito mais — sempre ao teu ritmo.</p>
                 <p><a href="pricing.html" class="btn-link">Ver preços</a></p>
             </article>
 
@@ -85,7 +92,6 @@
         </div>
     </section>
 
-    <!-- Chamada para reservas -->
     <section class="about-block">
         <h2>Reservas simples e seguras</h2>
         <p>
@@ -93,18 +99,18 @@
             e só depois enviamos os detalhes finais e métodos de pagamento.
         </p>
 
-        <div class="payments-grid">
-            <div class="card">
+        <div class="cards-3" style="margin-top:22px;">
+            <article class="card">
                 <h3>Contactar</h3>
                 <p>WhatsApp, email ou formulário de reserva — tu escolhes a forma mais cómoda.</p>
                 <p style="margin-top:10px;">
                     <a class="btn-link" href="booking.html">Ir para Reservas</a>
                 </p>
-            </div>
-            <div class="card">
+            </article>
+            <article class="card">
                 <h3>Métodos de pagamento</h3>
                 <p>MB Way, PayPal, Revolut e acordos personalizados para empresas.</p>
-                <div class="payments-grid" style="margin-top:12px;justify-content:flex-start;">
+                <div class="payments-logos" style="margin-top:12px;">
                     <a class="pay-logo" href="https://wa.me/351910784548" target="_blank">
                         <img src="assets/icons/whatsapp.svg" alt="WhatsApp">
                     </a>
@@ -118,15 +124,14 @@
                         <img src="assets/icons/revolut.svg" alt="Revolut">
                     </a>
                 </div>
-            </div>
-            <div class="card">
+            </article>
+            <article class="card">
                 <h3>Desde 2018</h3>
-                <p>Experiência com clientes individuais, famílias, grupos pequenos e empresas, com seguro e licença RNAAT.</p>
-            </div>
+                <p>Licença RNAAT, seguro adequado e experiência com clientes individuais, famílias e empresas.</p>
+            </article>
         </div>
     </section>
 
-    <!-- Contacto -->
     <section class="about-block" id="contacto">
         <h2>Contacto</h2>
         <p class="lead">
