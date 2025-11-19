@@ -10,18 +10,21 @@
 </head>
 <body>
 
-<div class="translate-bar" style="background:#000;padding:4px 12px;font-size:0.8rem;display:flex;justify-content:flex-end;gap:8px;">
+<div class="translate-bar">
     <span>Idioma:</span>
     <div id="google_translate_element"></div>
 </div>
 
 <header class="header">
-    <div class="logo-area">
-        <a href="index.html" class="logo-text">Explore Portugal Experience</a>
-    </div>
-
-    <button class="nav-toggle" aria-label="Abrir menu">☰</button>
-
+    <a class="home-star" href="index.html" aria-label="Início">
+        <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
+            <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
+        </svg>
+    </a>
+    <a class="logo-area" href="index.html">
+        <span class="logo-text">Explore Portugal Experience</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
     <nav class="nav" aria-label="Principal">
         <a href="about.html">Sobre</a>
         <a href="services.html">Serviços</a>
