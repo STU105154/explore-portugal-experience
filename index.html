@@ -1,66 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Explore Portugal Experience — Serviço privado com requinte</title>
-  <meta name="description" content="Serviço privado de motorista profissional em Portugal, com segurança, conforto e elegância — desde 2018." />
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Portugal Experience — Serviço Privado de Turismo</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" type="image/png" href="assets/icons/star-full.svg" />
 </head>
-<body>
 
-  <!-- Barra de idioma -->
+<body>
+  <!-- BARRA GOOGLE TRANSLATE -->
   <div class="translate-bar">
     <span>Idioma:</span>
     <div id="google_translate_element"></div>
   </div>
 
-  <!-- Cabeçalho -->
+  <!-- HEADER / NAV -->
   <header class="header">
-    <a class="home-star" href="index.html" aria-label="Início">
-      <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
-        <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
-      </svg>
+    <a href="index.html" class="home-star" aria-label="Página inicial">
+      <img
+        src="assets/images/frame.png"
+        alt="Voltar à página inicial"
+        class="star-animated"
+      />
     </a>
 
-    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav class="nav" aria-label="Principal">
+    <nav class="nav" id="mainNav" aria-label="Navegação principal">
       <a href="about.html">Sobre</a>
       <a href="services.html">Serviços</a>
       <a href="choose.html">Porquê nós</a>
       <a href="pricing.html">Preços</a>
-      <a href="faq.html">FAQ</a>
       <a href="gallery.html">Galeria</a>
+      <a href="faq.html">FAQ</a>
       <a href="partners-drivers.html">Partners Drivers</a>
+      <a href="privacy.html">Privacidade</a>
     </nav>
+
+    <button
+      class="nav-toggle"
+      id="navToggle"
+      aria-label="Abrir ou fechar menu"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+    </button>
   </header>
 
   <main>
-
-    <!-- HERO: LOGO + QR -->
+    <!-- HERO PRINCIPAL -->
     <section class="home-hero">
       <img
         src="assets/images/logo-explore-portugal-experience.png"
-        alt="Explore Portugal Experience"
+        alt="Logotipo Explore Portugal Experience"
         class="home-logo"
       />
 
       <p class="hero-tagline">
-        Motorista profissional certificado — turismo em Portugal e Europa, desde 2018.
+        Motorista profissional certificado há mais de 10 anos. Desde 2018, a
+        Explore Portugal Experience oferece serviço privado de turismo em
+        Portugal e Europa, com conforto, discrição e atenção absoluta ao detalhe.
       </p>
 
-      <a
-        class="btn-primary"
-        href="https://wa.me/351910784548?text=Ol%C3%A1%2C%20gostaria%20de%20informações%20sobre%20serviços%20e%20disponibilidade."
-        target="_blank"
-        rel="noopener"
-      >
-        Reservar via WhatsApp
+      <a href="booking.html" class="btn-primary">
+        Reservar o seu percurso
       </a>
 
       <div class="hero-qr-wrap">
@@ -70,122 +72,119 @@
           class="home-qr"
         />
         <p class="hero-qr-caption">
-          Scaneie para iniciar conversa direta via WhatsApp.
+          Scaneie para falar connosco diretamente via WhatsApp
+          (+351&nbsp;910&nbsp;784&nbsp;548).
         </p>
       </div>
     </section>
 
     <!-- O QUE NOS DISTINGUE -->
     <section class="section section-dark">
-      <div class="section-inner narrow">
+      <div class="section-inner">
         <h2 class="section-title">O que nos distingue</h2>
         <p class="section-lead">
           Atendimento com atenção ao detalhe, calma e profissionalismo.
-          Excelência significa fazer o percurso parecer simples:
-          condução serena, comunicação clara e espaço para os imprevistos bons.
+          Excelência é fazer o percurso parecer simples: condução serena,
+          comunicação clara e espaço para os imprevistos bons.
         </p>
 
         <div class="cards-3">
           <article class="card">
-            <h3>Calma &amp; discrição</h3>
+            <h3>Elegância com propósito</h3>
             <p>
-              Cada viagem é pensada para que a pessoa se sinta em segurança e em paz.
-              Condução suave, ritmo confortável e total respeito pelo silêncio quando é necessário.
+              Viagens pensadas para quem valoriza tempo, conforto e discrição.
+              Cada percurso é preparado de forma personalizada, para que possa
+              concentrar-se apenas em apreciar o caminho.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Segurança e serenidade</h3>
+            <p>
+              Condutor profissional certificado, com experiência em longas
+              distâncias e diferentes condições de estrada. Condução tranquila,
+              previsível e focada no bem-estar de cada passageiro.
             </p>
           </article>
 
           <article class="card">
             <h3>Conhecimento local</h3>
             <p>
-              Sugestões de restaurantes, miradouros, paragens especiais e pequenos desvios
-              que fazem a diferença em cada dia.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Rigor &amp; detalhe</h3>
-            <p>
-              Pontualidade, viatura preparada, água fresca, conforto a bordo e acompanhamento
-              desde o primeiro contacto até ao final do serviço.
+              Sugestões de restaurantes, miradouros, paragens especiais e
+              pequenos desvios que transformam o transfer ou tour numa
+              experiência completa — sempre ao seu ritmo.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- RESERVAS -->
-    <section id="contacto" class="section section-reservas">
-      <div class="section-inner narrow">
+    <!-- RESERVAS RÁPIDAS -->
+    <section class="section section-reservas" id="reservas">
+      <div class="section-inner">
         <h2 class="section-title">Reservas</h2>
         <p class="section-lead">
-          Pode enviar uma mensagem direta por WhatsApp ou, se preferir,
-          utilizar o formulário de reserva. Em ambos os casos receberá uma resposta
-          personalizada com horário, ponto de encontro e valor final antes de qualquer pagamento.
+          Pode contactar diretamente por WhatsApp ou usar o formulário de
+          reserva. Receberá sempre confirmação com horário, ponto de encontro e
+          valor final antes de qualquer pagamento.
         </p>
 
         <div class="reservas-grid">
-          <div class="reservas-card">
+          <article class="reservas-card">
             <h3>WhatsApp direto</h3>
-            <p class="reservas-phone">+351 910 784 548</p>
+            <p class="reservas-phone">+351&nbsp;910&nbsp;784&nbsp;548</p>
             <a
+              href="https://wa.me/351910784548"
               class="btn-secondary"
-              href="https://wa.me/351910784548?text=Ol%C3%A1%2C%20gostaria%20de%20informações%20sobre%20serviços%20e%20disponibilidade."
               target="_blank"
               rel="noopener"
             >
-              Abrir conversa no WhatsApp
+              Falar no WhatsApp
             </a>
-          </div>
+          </article>
 
-          <div class="reservas-card">
+          <article class="reservas-card">
             <h3>Formulário de reserva</h3>
             <p>
-              Para reservas planeadas com mais detalhe, pode utilizar o formulário:
-              data, número de pessoas, local de pick-up e preferências.
+              Ideal para reservas com antecedência, itinerários personalizados
+              ou pedidos especiais de serviço.
             </p>
-            <a class="btn-outline" href="booking.html">
+            <a href="booking.html" class="btn-outline">
               Abrir formulário de reserva
             </a>
-          </div>
-        </div>
-
-        <div class="reservas-qr-inline">
-          <img
-            src="assets/images/frame.png"
-            alt="QR Code para WhatsApp da Explore Portugal Experience"
-            class="home-qr"
-          />
-          <div class="reservas-qr-text">
-            <p><strong>QR Code para WhatsApp</strong></p>
-            <p>Scaneie para iniciar conversa direta com a Explore Portugal Experience.</p>
-          </div>
+          </article>
         </div>
 
         <p class="reservas-note">
-          Sempre que possível, as mensagens são respondidas no próprio dia.
+          Pagamentos realizados apenas após confirmação de disponibilidade e
+          envio de todos os detalhes por escrito.
         </p>
       </div>
     </section>
-
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-inner">
-      <p>© 2018 Explore Portugal Experience</p>
-      <p>RNAAT n.º 17/2018 — Turismo de Portugal</p>
-      <p class="footer-powered">Powered by MKDesign – Portugal</p>
-    </div>
+    <p>© 2018 Explore Portugal Experience — Turismo em Portugal</p>
+    <p>RNAAT n.º 17/2018 — Turismo de Portugal</p>
+    <p>Powered by: MkDesign — Portugal</p>
   </footer>
 
-  <!-- Google Translate -->
+  <!-- JS -->
+  <script src="assets/js/nav.js"></script>
+
+  <!-- GOOGLE TRANSLATE SCRIPT -->
   <script>
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'pt'}, 'google_translate_element');
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: "pt",
+          includedLanguages: "pt,en,es,fr,de",
+        },
+        "google_translate_element"
+      );
     }
   </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-  <!-- Navegação + lightbox (se necessário noutras páginas) -->
-  <script src="assets/js/nav.js"></script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
