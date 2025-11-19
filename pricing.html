@@ -1,289 +1,187 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
   <title>Preços — Explore Portugal Experience</title>
-  <meta name="description" content="Tabela de preços indicativos para transfers e tours privados em Portugal. Valores por viatura, serviço premium e ajustável." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" type="image/svg+xml" href="assets/icons/star-full.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: "pt",
+          includedLanguages: "pt,en,es,fr,de,it",
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        },
+        "google_translate_element"
+      );
+    }
+  </script>
+  <script
+    type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+  ></script>
 </head>
 <body>
+  <div class="page-wrapper">
+    <div class="top-language-bar">
+      <label for="google_translate_element">Idioma:</label>
+      <div id="google_translate_element"></div>
+    </div>
 
-  <!-- Barra de idioma / Google Translate -->
-  <div class="translate-bar">
-    <span>Idioma:</span>
-    <div id="google_translate_element"></div>
-  </div>
-
-  <!-- Cabeçalho -->
-  <header class="header">
-    <a class="home-star" href="index.html" aria-label="Início">
-      <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
-        <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
-      </svg>
-    </a>
-
-    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">
-      ☰
-    </button>
-
-    <nav class="nav" aria-label="Principal">
-      <a href="about.html">Sobre</a>
-      <a href="services.html">Serviços</a>
-      <a href="choose.html">Porquê nós</a>
-      <a href="pricing.html" aria-current="page">Preços</a>
-      <a href="faq.html">FAQ</a>
-      <a href="partners-drivers.html">Partners Drivers</a>
-    </nav>
-  </header>
-
-  <main>
-
-    <!-- HERO PREÇOS -->
-    <section class="page-hero">
-      <div class="hero-content">
-        <h1 class="section-title">Preços indicativos</h1>
-        <p class="lead">
-          Valores pensados para refletir a qualidade do serviço, o conforto da viatura
-          e a dedicação de um acompanhamento verdadeiramente privado.
-        </p>
-      </div>
-    </section>
-
-    <!-- NOTA GERAL -->
-    <section class="about-block">
-      <h2>Como ler esta tabela</h2>
-      <p class="lead">
-        Os valores abaixo são <strong>indicativos por viatura</strong> (até 3–4 passageiros com bagagem),
-        para serviços privados e ajustáveis. 
-        O preço final é sempre confirmado por mensagem ou email, após análise do seu pedido:
-        horários, ponto de partida, época do ano, número de pessoas e eventuais pedidos especiais.
-      </p>
-    </section>
-
-    <!-- TABELA EM CARTÕES -->
-    <section class="about-block">
-      <h2>Exemplos de serviços & valores</h2>
-
-      <div class="cards-3">
-        <!-- Lisboa histórico meio dia -->
-        <article class="card">
-          <h3>Lisboa histórico & miradouros<br><span class="small muted">meio dia (4h)</span></h3>
-          <p>
-            Percurso pela zona histórica de Lisboa e principais miradouros, com paragens
-            para fotografias e pequenos passeios a pé.
-          </p>
-          <p class="price-highlight">
-            Desde 160€ — 4h<br />
-            Serviço privado, valor por viatura
-          </p>
-        </article>
-
-        <!-- Lisboa histórico dia inteiro -->
-        <article class="card">
-          <h3>Lisboa histórico & Belém<br><span class="small muted">dia inteiro (8h)</span></h3>
-          <p>
-            Lisboa histórico, miradouros e zona de Belém (Torre de Belém, Mosteiro dos Jerónimos,
-            Palácio da Ajuda), com tempo para degustar o Pastel de Belém.
-          </p>
-          <p class="price-highlight">
-            Desde 280€ — 8h<br />
-            Serviço privado, valor por viatura
-          </p>
-        </article>
-
-        <!-- Sintra & Cascais -->
-        <article class="card">
-          <h3>Sintra & Cascais<br><span class="small muted">dia inteiro (8h)</span></h3>
-          <p>
-            Palácios de Sintra, Cabo da Roca e vila de Cascais, com itinerário ajustado ao ritmo do cliente.
-          </p>
-          <p class="price-highlight">
-            Desde 300€ — 8h<br />
-            Serviço privado, valor por viatura
-          </p>
-        </article>
-      </div>
-
-      <div class="cards-3">
-        <!-- Fátima & Nazaré -->
-        <article class="card">
-          <h3>Fátima & Nazaré<br><span class="small muted">dia inteiro (8h)</span></h3>
-          <p>
-            Visita ao Santuário de Fátima e passagem por Nazaré, com tempo para apreciar a vila
-            e o Atlântico.
-          </p>
-          <p class="price-highlight">
-            Desde 320€ — 8h<br />
-            Serviço privado, valor por viatura
-          </p>
-        </article>
-
-        <!-- Óbidos & Nazaré -->
-        <article class="card">
-          <h3>Óbidos & Nazaré<br><span class="small muted">dia inteiro (8h)</span></h3>
-          <p>
-            Vila medieval de Óbidos combinada com o mar de Nazaré. 
-          </p>
-          <p class="price-highlight">
-            Desde 320€ — 8h<br />
-            Serviço privado, valor por viatura
-          </p>
-        </article>
-
-        <!-- Lisboa & Porto com paragens -->
-        <article class="card">
-          <h3>Lisboa & Porto com paragens<br><span class="small muted">1 dia</span></h3>
-          <p>
-            Transfer entre Lisboa e Porto com duas paragens sugeridas (por exemplo Fátima, Coimbra ou Aveiro),
-            transformando o trajeto num tour.
-          </p>
-          <p class="price-highlight">
-            Desde 380€<br />
-            Serviço privado, valor por viatura
-          </p>
-        </article>
-      </div>
-
-      <div class="cards-3">
-        <!-- Transfer aeroporto Lisboa -->
-        <article class="card">
-          <h3>Transfer Aeroporto de Lisboa</h3>
-          <p>
-            Transfer privado entre o Aeroporto de Lisboa e hotel ou morada na cidade ou arredores
-            imediatos, com monitorização de voo e ajuda com bagagem.
-          </p>
-          <p class="price-highlight">
-            Desde 40€ por percurso<br />
-            Valor por viatura até 3–4 passageiros
-          </p>
-        </article>
-
-        <!-- Serviço à medida -->
-        <article class="card">
-          <h3>Serviço à medida</h3>
-          <p>
-            Precisa de algo diferente — vários dias, eventos, corporate, wedding guest shuttle
-            ou outro formato? Planeamos consigo e apresentamos uma proposta dedicada.
-          </p>
-          <p class="price-highlight">
-            Orçamentos sob consulta<br />
-            Resposta personalizada a cada pedido
-          </p>
-        </article>
-
-        <!-- Informação adicional -->
-        <article class="card">
-          <h3>Informação importante</h3>
-          <p>
-            Os valores indicados não incluem bilhetes de entrada em monumentos, refeições,
-            guias locais ou outras despesas pessoais.
-          </p>
-          <p>
-            Todos os serviços incluem motorista profissional certificado, viatura confortável,
-            água a bordo e seguro de responsabilidade civil e passageiros de acordo com a legislação em vigor.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- CHAMADA PARA RESERVAS -->
-    <section class="about-block">
-      <h2>Pedido de orçamento & reservas</h2>
-      <p class="lead">
-        Para garantir que o serviço corresponde exatamente ao que procura, cada reserva é tratada de forma
-        individual. Indique datas, horários aproximados, número de pessoas e locais que gostaria de visitar;
-        teremos todo o gosto em enviar uma proposta clara e elegante, sem qualquer compromisso.
-      </p>
-
-      <div class="hero-actions hero-actions-center">
-        <a
-          href="https://wa.me/351910784548"
-          target="_blank"
-          rel="noopener"
-          class="btn-primary"
-        >
-          Falar via WhatsApp
-        </a>
-        <a href="booking.html" class="btn-secondary">Formulário de reserva</a>
-      </div>
-    </section>
-
-    <!-- MÉTODOS DE PAGAMENTO (ÍCONES) -->
-    <section class="about-block">
-      <div class="hero-payments hero-payments-inner">
-        <p class="hero-payments-title">Métodos de pagamento</p>
-        <p class="hero-payments-text">
-          Após confirmar a reserva, serão enviados os dados para pagamento de forma segura
-          através de um dos métodos abaixo.
-        </p>
-
-        <div class="payment-icons-row">
-          <!-- WhatsApp (coordenação) -->
-          <a
-            href="https://wa.me/351910784548"
-            target="_blank"
-            rel="noopener"
-            aria-label="Contactar via WhatsApp"
-          >
-            <img src="assets/icons/whatsapp.svg" alt="WhatsApp" class="payment-icon" />
+    <header class="site-header">
+      <nav class="navbar">
+        <div class="nav-left">
+          <a href="index.html" class="nav-star" aria-label="Início">
+            <img
+              src="assets/icons/star-full.svg"
+              alt="Ícone estrela"
+              class="star-animated"
+            />
           </a>
-
-          <!-- MB Way -->
-          <a
-            href="tel:00351962516005"
-            aria-label="Pagamento via MB Way"
-          >
-            <img src="assets/icons/mbway.svg" alt="MB Way" class="payment-icon" />
-          </a>
-
-          <!-- PayPal -->
-          <a
-            href="mailto:dalilauber75@gmail.com?subject=Pagamento%20PayPal%20-%20Explore%20Portugal%20Experience"
-            target="_blank"
-            rel="noopener"
-            aria-label="Pagamento via PayPal"
-          >
-            <img src="assets/icons/paypal.svg" alt="PayPal" class="payment-icon" />
-          </a>
-
-          <!-- Revolut -->
-          <a
-            href="https://revolut.me/dalilav7js"
-            target="_blank"
-            rel="noopener"
-            aria-label="Pagamento via Revolut"
-          >
-            <img src="assets/icons/revolut.svg" alt="Revolut" class="payment-icon" />
+          <a href="index.html" class="nav-logo">
+            <img
+              src="assets/images/logo-explore-portugal-experience.png"
+              alt="Logotipo Explore Portugal Experience"
+              class="nav-logo-img"
+            />
           </a>
         </div>
 
-        <p class="hero-payments-text small">
-          Política de cancelamento: cancelamentos até 48 horas antes da data do serviço não têm custos;
-          após esse prazo, poderá ser aplicada uma taxa de cancelamento.
-        </p>
+        <ul class="nav-menu">
+          <li><a class="nav-link" href="about.html">Sobre</a></li>
+          <li><a class="nav-link" href="services.html">Serviços</a></li>
+          <li><a class="nav-link" href="choose.html">Porquê nós</a></li>
+          <li><a class="nav-link" href="pricing.html">Preços</a></li>
+          <li><a class="nav-link" href="faq.html">FAQ</a></li>
+          <li><a class="nav-link" href="partners-drivers.html">Partners Drivers</a></li>
+          <li><a class="nav-link" href="booking.html">Reservas</a></li>
+        </ul>
+
+        <div class="hamburger" aria-label="Abrir menu" role="button">
+          <span></span><span></span><span></span>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="section-inner">
+          <h1 class="section-title">Preços</h1>
+          <p class="section-lead">
+            Os valores abaixo são indicativos e podem variar em função da época,
+            do número de passageiros, do tipo de viatura e de pedidos especiais.
+            Cada proposta é enviada com orçamento detalhado antes da confirmação.
+          </p>
+
+          <div class="cards">
+            <article class="card">
+              <h2 class="card-title">Transfers aeroporto Lisboa</h2>
+              <p>
+                Zona central de Lisboa (hotel ou alojamento): a partir de
+                <span class="gold">€45</span> por percurso.
+              </p>
+              <p>
+                Inclui receção no aeroporto, ajuda com bagagem e monitorização
+                de voo em caso de atraso.
+              </p>
+            </article>
+
+            <article class="card">
+              <h2 class="card-title">Tour Lisboa histórica &amp; miradouros (8h)</h2>
+              <p>
+                Dia completo com motorista privado e viatura dedicada:
+                a partir de <span class="gold">€280</span>.
+              </p>
+              <p>
+                Não inclui entradas em monumentos, refeições ou despesas pessoais.
+              </p>
+            </article>
+
+            <article class="card">
+              <h2 class="card-title">Tour Sintra &amp; Cascais (8h)</h2>
+              <p>
+                Circuito entre serra e costa, com paragens em palácios e
+                miradouros: a partir de <span class="gold">€320</span>.
+              </p>
+              <p>
+                Itinerário adaptado ao perfil do cliente e às condições do dia.
+              </p>
+            </article>
+
+            <article class="card">
+              <h2 class="card-title">Fátima &amp; Nazaré</h2>
+              <p>
+                Percurso com visita ao Santuário de Fátima e paragem em Nazaré:
+                a partir de <span class="gold">€350</span>.
+              </p>
+              <p>
+                Inclui viagem em viatura confortável, climatizada e com água a bordo.
+              </p>
+            </article>
+
+            <article class="card">
+              <h2 class="card-title">Lisboa &amp; Porto com duas paragens</h2>
+              <p>
+                Transfer inter-cidades com duas paragens intermédias:
+                a partir de <span class="gold">€480</span>.
+              </p>
+              <p>
+                Ideal para transformar a viagem numa experiência mais completa,
+                com descanso e pequenas visitas pelo caminho.
+              </p>
+            </article>
+
+            <article class="card">
+              <h2 class="card-title">Serviços à medida</h2>
+              <p>
+                Eventos, casamentos, deslocações empresariais ou vários dias
+                em viagem. Cada pedido é analisado individualmente e orçamentado
+                de acordo com o percurso, horários e exigência logística.
+              </p>
+            </article>
+          </div>
+
+          <p style="margin-top: 2rem; text-align: center; color: #e2e2e2;">
+            Os valores apresentados são indicativos.  
+            Será sempre enviado um orçamento personalizado antes da confirmação
+            de qualquer serviço.
+          </p>
+
+          <div style="text-align: center; margin-top: 1.5rem;">
+            <a href="booking.html" class="btn">Pedir orçamento</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-main-line">
+          © 2018 Explore Portugal Experience — RNAAT n.º 17/2018 — Turismo de Portugal
+        </div>
+        <div>Todos os direitos reservados.</div>
+
+        <div class="footer-mk">
+          <div>Powered by MkDesign — Portugal</div>
+          <img
+            src="assets/images/mkdesign-logo.png"
+            alt="MkDesign — Gabinete de Design, Marketing &amp; Publicidade"
+          />
+        </div>
       </div>
-    </section>
+    </footer>
+  </div>
 
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>© 2018 Explore Portugal Experience</p>
-      <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
-    </div>
-  </footer>
-
-  <!-- Google Translate -->
-  <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({ pageLanguage: 'pt' }, 'google_translate_element');
-    }
-  </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-  <!-- Navegação -->
   <script src="assets/js/nav.js"></script>
 </body>
 </html>
