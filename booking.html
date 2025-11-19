@@ -1,196 +1,177 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Reservas — Explore Portugal Experience</title>
-    <meta name="description" content="Reserva de transfers e tours privados com motorista profissional em Portugal e Europa.">
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="icon" type="image/png" href="assets/images/logo-explore-portugal-experience.png" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reservas — Explore Portugal Experience</title>
+  <meta name="description" content="Formulário de reserva de transfers e tours privados com a Explore Portugal Experience." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/icons/star-full.svg" />
 </head>
 <body>
 
-<div class="translate-bar">
+  <div class="translate-bar">
     <span>Idioma:</span>
     <div id="google_translate_element"></div>
-</div>
+  </div>
 
-<header class="header">
+  <header class="header">
     <a class="home-star" href="index.html" aria-label="Início">
-        <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
-            <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
-        </svg>
+      <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
+        <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
+      </svg>
     </a>
+
     <a class="logo-area" href="index.html">
-        <span class="logo-text">Explore Portugal Experience</span>
+      <span class="logo-text">Explore Portugal Experience</span>
     </a>
+
     <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
+
     <nav class="nav" aria-label="Principal">
-        <a href="about.html">Sobre</a>
-        <a href="services.html">Serviços</a>
-        <a href="choose.html">Porquê nós</a>
-        <a href="pricing.html">Preços</a>
-        <a href="faq.html">FAQ</a>
-        <a href="partners-drivers.html">Partners Drivers</a>
-        <a href="partners-hospitality.html">Partners Hospitality</a>
-        <a href="booking.html" aria-current="page">Reservas</a>
-        <a href="index.html#contacto">Contacto</a>
+      <a href="about.html">Sobre</a>
+      <a href="services.html">Serviços</a>
+      <a href="choose.html">Porquê nós</a>
+      <a href="pricing.html">Preços</a>
+      <a href="faq.html">FAQ</a>
+      <a href="partners-drivers.html">Partners Drivers</a>
     </nav>
-</header>
+  </header>
 
-<section class="page-hero">
+  <section class="page-hero">
     <div class="hero-content">
-        <h1 class="section-title">Reservas</h1>
-        <p class="lead">Marca o teu transfer ou tour privado de forma simples e segura.</p>
+      <h1 class="section-title">Reservas</h1>
+      <p class="lead">
+        Envia o teu pedido de forma simples. Respondemos com a confirmação,
+        valor final e link seguro de pagamento.
+      </p>
     </div>
-</section>
+  </section>
 
-<main class="page-content">
-
+  <main class="page-content">
     <section class="about-block booking-whatsapp">
-        <div class="booking-whatsapp-inner">
-            <div>
-                <h2>Reserva imediata por WhatsApp</h2>
-                <p>Podes enviar-nos uma mensagem direta com o teu pedido de reserva. Respondemos o mais breve possível.</p>
-                <p class="booking-contact">
-                    WhatsApp: <a href="https://wa.me/351910784548" target="_blank">+351 910 784 548</a>
-                </p>
-            </div>
-            <div class="booking-qr-box">
-                <p>Scan para WhatsApp</p>
-                <a href="https://wa.me/351910784548" target="_blank" aria-label="Contactar via WhatsApp">
-                    <img src="assets/images/qr-whatsapp.png" alt="QR Code WhatsApp" class="booking-qr-img">
-                </a>
-            </div>
+      <h2>WhatsApp direto</h2>
+      <div class="booking-whatsapp-inner" style="margin-top:14px;">
+        <div class="booking-contact">
+          <p>
+            Para pedidos rápidos, podes enviar mensagem direta:
+            <br/>
+            <a href="https://wa.me/351910784548" target="_blank" rel="noopener">
+              +351 910 784 548
+            </a>
+          </p>
+          <p class="booking-note">
+            Indica datas, horários aproximados, número de pessoas e local de
+            pick-up. A partir daí tratamos de tudo contigo.
+          </p>
         </div>
+        <div class="booking-qr-box">
+          <img src="assets/images/whatsapp-qr.png"
+               alt="QR Code para WhatsApp"
+               class="booking-qr-img" />
+          <p class="small muted">Scaneia para abrir o WhatsApp.</p>
+        </div>
+      </div>
     </section>
 
-    <section class="about-block">
-        <h2>Pedido de reserva</h2>
-        <p>Preenche o formulário abaixo. Vamos confirmar a disponibilidade e responder por email ou WhatsApp.</p>
+    <section class="about-block booking-form">
+      <h2>Formulário de reserva</h2>
 
-        <form class="booking-form" action="send_booking.php" method="POST">
-            <div class="booking-grid">
-
-                <label>
-                    Nome completo*
-                    <input type="text" name="name" required>
-                </label>
-
-                <label>
-                    Email*
-                    <input type="email" name="email" required>
-                </label>
-
-                <label>
-                    Telefone / WhatsApp*
-                    <input type="text" name="phone" required>
-                </label>
-
-                <label>
-                    Tipo de serviço*
-                    <select name="service_type" required>
-                        <option value="">Seleciona...</option>
-                        <option value="transfer-aeroporto">Transfer Aeroporto</option>
-                        <option value="transfer-lisboa-porto">Transfer Lisboa — Porto</option>
-                        <option value="tour-lisboa">Tour Lisboa (4h/8h)</option>
-                        <option value="tour-sintra-cascais">Tour Sintra &amp; Cascais</option>
-                        <option value="tour-fatima-nazare">Tour Fátima &amp; Nazaré</option>
-                        <option value="tour-obidos-nazare">Tour Óbidos &amp; Nazaré</option>
-                        <option value="outro">Outro (descrever em notas)</option>
-                    </select>
-                </label>
-
-                <label>
-                    Data do serviço*
-                    <input type="date" name="date" required>
-                </label>
-
-                <label>
-                    Hora de pickup*
-                    <input type="time" name="time" required>
-                </label>
-
-                <label>
-                    Local de pickup*
-                    <input type="text" name="pickup_location" required placeholder="Hotel, aeroporto, morada...">
-                </label>
-
-                <label>
-                    Destino*
-                    <input type="text" name="dropoff_location" required placeholder="Cidade, zona, hotel...">
-                </label>
-
-                <label>
-                    Nº de passageiros*
-                    <input type="number" name="passengers" min="1" max="7" required>
-                </label>
-
-                <label>
-                    Nº de malas*
-                    <input type="number" name="luggage" min="0" max="10" required>
-                </label>
-
-                <label class="full-width">
-                    Notas adicionais (voo, preferências, crianças, etc.)
-                    <textarea name="notes" rows="4" placeholder="Nº de voo, cadeiras de criança, paragens, horários flexíveis, etc."></textarea>
-                </label>
-            </div>
-
-            <p class="booking-note">
-                * Campos obrigatórios. O envio deste formulário não confirma automaticamente a reserva — vais receber primeiro uma confirmação nossa.
-            </p>
-
-            <button type="submit" class="submit-btn">Enviar pedido de reserva</button>
-        </form>
-    </section>
-
-    <section class="about-block">
-        <h2>Pagamentos</h2>
-        <p>
-            Após confirmarmos a tua reserva, enviamos os dados de pagamento de forma clara e segura.
-            Trabalhamos com métodos simples e conhecidos.
-        </p>
-
-        <div class="payments-grid">
-            <div class="payment-card">
-                <h3>Cartão</h3>
-                <p>Pagamento com cartão Visa e Mastercard, efetuado de forma segura mediante link enviado após confirmação da reserva.</p>
-            </div>
-            <div class="payment-card">
-                <h3>MB Way</h3>
-                <p>Podes pagar via MB Way para o número indicado na confirmação da reserva.</p>
-            </div>
-            <div class="payment-card">
-                <h3>PayPal</h3>
-                <p>
-                    Também aceitamos pagamento via PayPal para:<br>
-                    <strong>exploreportugalexperience.pt@gmail.com</strong>
-                </p>
-            </div>
+      <form class="booking-grid" action="mailto:exploreportugalexperience.pt@gmail.com" method="post" enctype="text/plain">
+        <div>
+          <label>Nome completo
+            <input type="text" name="nome" required />
+          </label>
         </div>
 
-        <p class="booking-cancel">
-            Política de cancelamento: cancelamentos até 48h antes da data do serviço não têm custos; após esse prazo poderá ser cobrado até 50% do valor total.
-        </p>
+        <div>
+          <label>E-mail
+            <input type="email" name="email" required />
+          </label>
+        </div>
+
+        <div>
+          <label>Telefone / WhatsApp
+            <input type="text" name="telefone" required />
+          </label>
+        </div>
+
+        <div>
+          <label>Número de pessoas
+            <input type="number" name="pessoas" min="1" max="7" required />
+          </label>
+        </div>
+
+        <div>
+          <label>Data do serviço
+            <input type="date" name="data" required />
+          </label>
+        </div>
+
+        <div>
+          <label>Hora de início (aproximada)
+            <input type="time" name="hora" />
+          </label>
+        </div>
+
+        <div class="full-width">
+          <label>Tipo de serviço
+            <select name="tipo-servico" required>
+              <option value="">Escolher…</option>
+              <option value="transfer-aeroporto">Transfer aeroporto</option>
+              <option value="tour-lisboa">Tour Lisboa</option>
+              <option value="tour-sintra-cascais">Tour Sintra &amp; Cascais</option>
+              <option value="tour-fatima-nazare">Tour Fátima &amp; Nazaré</option>
+              <option value="tour-obidos-nazare">Tour Óbidos &amp; Nazaré</option>
+              <option value="lisboa-porto">Lisboa &gt; Porto (ou inverso)</option>
+              <option value="outro">Outro itinerário à medida</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="full-width">
+          <label>Local de pick-up
+            <input type="text" name="pickup" placeholder="Hotel, morada ou ponto de encontro" required />
+          </label>
+        </div>
+
+        <div class="full-width">
+          <label>Mensagem / detalhes
+            <textarea name="mensagem" rows="4" placeholder="Indica voos, horários, locais que gostarias de visitar, etc."></textarea>
+          </label>
+        </div>
+
+        <div class="full-width">
+          <button type="submit" class="submit-btn">Enviar pedido</button>
+        </div>
+      </form>
+
+      <p class="booking-note">
+        Ao submeter o pedido, não estás a efetuar nenhum pagamento. Receberás
+        primeiro a nossa resposta com a proposta e, só depois, o link de
+        pagamento pelo método escolhido (MB Way, PayPal, Revolut, etc.).
+      </p>
+
+      <p class="booking-cancel">
+        Política de cancelamento: cancelamentos até 48h antes da data do
+        serviço não têm custos; após esse prazo poderão aplicar-se taxas.
+      </p>
     </section>
+  </main>
 
-</main>
-
-<footer class="footer">
+  <footer class="footer">
     <div class="container">
-        <p>© 2018 Explore Portugal Experience</p>
-        <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
+      <p>© 2018 Explore Portugal Experience</p>
+      <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
     </div>
-</footer>
+  </footer>
 
-<script>
-function googleTranslateElementInit(){
-    new google.translate.TranslateElement({pageLanguage:'pt'}, 'google_translate_element');
-}
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script src="assets/js/nav.js"></script>
-
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'pt'}, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src="assets/js/nav.js"></script>
 </body>
 </html>
