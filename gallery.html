@@ -1,55 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Galeria — Explore Portugal Experience</title>
-  <meta name="description" content="Alguns momentos das nossas experiências.">
-  <link rel="stylesheet" href="./assets/css/style.css"><link rel="icon" type="image/svg+xml" href="./assets/icons/star-full.svg">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Galeria — Explore Portugal Experience</title>
+    <meta name="description" content="Alguns momentos das experiências privadas em Portugal — natureza, cidade, património e detalhes de Vinho do Porto.">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" type="image/png" href="assets/images/logo-explore-portugal-experience.png" />
 </head>
 <body>
-  <div class="translate-bar"><span>Idioma:</span><div id="google_translate_element"></div></div>
 
-  <!-- Header unificado -->
-  <header class="header">
-    <a class="home-star" href="./index.html" aria-label="Início">
-      <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
-        <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
-      </svg>
+<div class="translate-bar">
+    <span>Idioma:</span>
+    <div id="google_translate_element"></div>
+</div>
+
+<header class="header">
+    <a class="home-star" href="index.html" aria-label="Início">
+        <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
+            <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
+        </svg>
     </a>
-    <a class="logo-area" href="./index.html" aria-label="Explore Portugal Experience">
-      <img class="logo-img" src="./assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience" width="260" height="40" decoding="async">
+    <a class="logo-area" href="index.html">
+        <span class="logo-text">Explore Portugal Experience</span>
     </a>
     <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
     <nav class="nav" aria-label="Principal">
-      <a href="./about.html">Sobre</a><a href="./services.html">Serviços</a><a href="./choose.html">Porquê nós</a>
-      <a href="./pricing.html">Preços</a><a href="./faq.html">FAQ</a><a href="./gallery.html" aria-current="page">Galeria</a>
-      <a href="./partners.html">Parcerias</a><a href="./index.html#contacto">Contacto</a>
+        <a href="about.html">Sobre</a>
+        <a href="services.html">Serviços</a>
+        <a href="choose.html">Porquê nós</a>
+        <a href="pricing.html">Preços</a>
+        <a href="faq.html">FAQ</a>
+        <a href="partners-drivers.html">Partners Drivers</a>
+        <a href="partners-hospitality.html">Partners Hospitality</a>
+        <a href="booking.html">Reservas</a>
+        <a href="gallery.html" aria-current="page">Galeria</a>
+        <a href="index.html#contacto">Contacto</a>
     </nav>
-  </header>
+</header>
 
-  <section class="page-hero">
+<section class="page-hero">
     <div class="hero-content">
-      <h1 class="section-title">Galeria</h1>
-      <p class="lead">Alguns momentos das nossas experiências.</p>
+        <h1 class="section-title">Galeria</h1>
+        <p class="lead">Alguns momentos das nossas experiências — natureza, cidade, vinho e devoção.</p>
     </div>
-  </section>
+</section>
 
-  <main class="page-content">
+<main class="page-content">
+
     <section class="about-block">
-      <div class="gallery-grid">
-        <div class="tile"><img src="./assets/images/sintra-palacio.jpg" data-full="./assets/images/sintra-palacio.jpg" alt="Palácio de Sintra ao pôr do sol" width="1600" height="1200" loading="lazy" decoding="async"></div>
-        <div class="tile"><img src="./assets/images/porto-ponte-luis-i.jpg" data-full="./assets/images/porto-ponte-luis-i.jpg" alt="Ribeira do Porto e ponte D. Luís I" width="1600" height="1200" loading="lazy" decoding="async"></div>
-        <div class="tile"><img src="./assets/images/esculturas-noite.jpg" data-full="./assets/images/esculturas-noite.jpg" alt="Esculturas à noite em Lisboa" width="1600" height="1200" loading="lazy" decoding="async"></div>
-        <div class="tile"><img src="./assets/images/lisboa-letters-selfie.jpg" data-full="./assets/images/lisboa-letters-selfie.jpg" alt="Letras de Lisboa — selfie" width="1600" height="1200" loading="lazy" decoding="async"></div>
-      </div>
+        <div class="gallery-grid">
+            <figure class="gallery-item">
+                <img src="assets/images/galeria-passadiço.jpg"
+                     data-full="assets/images/galeria-passadiço.jpg"
+                     alt="Passadiço em madeira no meio da natureza em Portugal">
+                <figcaption>Trilhos secretos em plena natureza.</figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="assets/images/galeria-clerigos.jpg"
+                     data-full="assets/images/galeria-clerigos.jpg"
+                     alt="Torre dos Clérigos ao final do dia">
+                <figcaption>Porto visto lá de cima.</figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="assets/images/galeria-vinho-porto.jpg"
+                     data-full="assets/images/galeria-vinho-porto.jpg"
+                     alt="Garrafas antigas de Vinho do Porto em exposição">
+                <figcaption>Vinhos com histórias de outras décadas.</figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="assets/images/galeria-cristo-rei.jpg"
+                     data-full="assets/images/galeria-cristo-rei.jpg"
+                     alt="Cristo Rei com o céu limpo ao fundo">
+                <figcaption>Cristo Rei — horizonte aberto sobre Lisboa.</figcaption>
+            </figure>
+        </div>
     </section>
-  </main>
 
-  <footer class="footer"><div class="container"><p>© 2025 Explore Portugal Experience</p><p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p></div></footer>
+</main>
 
-  <script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'pt'}, 'google_translate_element');}</script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script src="./assets/js/nav.js"></script>
-  <script src="./assets/js/lightbox.js"></script>
+<footer class="footer">
+    <div class="container">
+        <p>© 2018 Explore Portugal Experience</p>
+        <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
+    </div>
+</footer>
+
+<script>
+function googleTranslateElementInit(){
+    new google.translate.TranslateElement({pageLanguage:'pt'}, 'google_translate_element');
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/lightbox.js"></script>
+
 </body>
 </html>
