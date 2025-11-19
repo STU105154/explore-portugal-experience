@@ -1,43 +1,41 @@
-// assets/js/nav.js
+// nav.js
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector(".header");
+  const navToggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".nav");
 
-document.addEventListener("DOMContentLoaded", function () {
-  const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector(".nav-menu");
-  const body = document.body;
+  if (!header || !navToggle || !nav) return;
 
-  if (!hamburger || !navMenu) return;
+  const links = nav.querySelectorAll("a");
 
-  function openMenu() {
-    navMenu.classList.add("active");
-    hamburger.classList.add("active");
-    body.classList.add("no-scroll");
+  function closeNav() {
+    header.classList.remove("nav-open");
+    navToggle.setAttribute("aria-expanded", "false");
   }
 
-  function closeMenu() {
-    navMenu.classList.remove("active");
-    hamburger.classList.remove("active");
-    body.classList.remove("no-scroll");
-  }
-
-  function toggleMenu() {
-    if (navMenu.classList.contains("active")) {
-      closeMenu();
+  navToggle.addEventListener("click", () => {
+    const expanded = navToggle.getAttribute("aria-expanded") === "true";
+    if (expanded) {
+      closeNav();
     } else {
-      openMenu();
+      header.classList.add("nav-open");
+      navToggle.setAttribute("aria-expanded", "true");
     }
-  }
+  });
 
-  hamburger.addEventListener("click", toggleMenu);
-
-  document.querySelectorAll(".nav-link").forEach(link => {
+  links.forEach((link) => {
     link.addEventListener("click", () => {
-      closeMenu();
+      // fecha menu em mobile depois de escolher página
+      if (window.innerWidth <= 960) {
+        closeNav();
+      }
     });
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 900) {
-      closeMenu();
+    if (window.innerWidth > 960) {
+      header.classList.remove("nav-open");
+      navToggle.setAttribute("aria-expanded", "false");
     }
   });
 });
