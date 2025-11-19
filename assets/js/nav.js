@@ -1,41 +1,24 @@
-// nav.js
-document.addEventListener("DOMContentLoaded", () => {
-  const header = document.querySelector(".header");
+document.addEventListener("DOMContentLoaded", function () {
   const navToggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector(".nav");
+  const navLinks = document.querySelectorAll(".nav a");
 
-  if (!header || !navToggle || !nav) return;
+  if (!navToggle || !nav) return;
 
-  const links = nav.querySelectorAll("a");
-
-  function closeNav() {
-    header.classList.remove("nav-open");
-    navToggle.setAttribute("aria-expanded", "false");
+  function toggleNav() {
+    const expanded = navToggle.getAttribute("aria-expanded") === "true";
+    navToggle.setAttribute("aria-expanded", String(!expanded));
+    nav.classList.toggle("nav-open", !expanded);
   }
 
-  navToggle.addEventListener("click", () => {
-    const expanded = navToggle.getAttribute("aria-expanded") === "true";
-    if (expanded) {
-      closeNav();
-    } else {
-      header.classList.add("nav-open");
-      navToggle.setAttribute("aria-expanded", "true");
-    }
-  });
+  navToggle.addEventListener("click", toggleNav);
 
-  links.forEach((link) => {
+  // Fecha o menu ao clicar num link (em mobile)
+  navLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      // fecha menu em mobile depois de escolher página
-      if (window.innerWidth <= 960) {
-        closeNav();
+      if (nav.classList.contains("nav-open")) {
+        toggleNav();
       }
     });
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 960) {
-      header.classList.remove("nav-open");
-      navToggle.setAttribute("aria-expanded", "false");
-    }
   });
 });
