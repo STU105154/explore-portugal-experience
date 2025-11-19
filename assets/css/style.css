@@ -1,6 +1,4 @@
-/* assets/css/style.css */
-
-/* ---------- RESET BÁSICO ---------- */
+/* =============== RESET BÁSICO =============== */
 
 *,
 *::before,
@@ -35,8 +33,6 @@ a {
   text-decoration: none;
 }
 
-/* ---------- LAYOUT GLOBAL ---------- */
-
 .page-wrapper {
   min-height: 100vh;
   display: flex;
@@ -47,11 +43,7 @@ main {
   flex: 1 0 auto;
 }
 
-.site-footer {
-  flex-shrink: 0;
-}
-
-/* ---------- UTILITÁRIOS ---------- */
+/* =============== UTILITÁRIOS =============== */
 
 .gold {
   color: #e8d28f;
@@ -81,8 +73,6 @@ main {
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.7);
 }
 
-/* Versão outline dourada */
-
 .btn-outline {
   background: transparent;
   border: 1px solid #e8d28f;
@@ -94,14 +84,13 @@ main {
   background: rgba(232, 210, 143, 0.1);
 }
 
-/* ---------- BARRA DE IDIOMA / GOOGLE TRANSLATE ---------- */
+/* =============== BARRA DE IDIOMA =============== */
 
 .top-language-bar {
   background: #050505;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   padding: 0.4rem 4vw;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   gap: 0.75rem;
   font-size: 0.85rem;
@@ -118,7 +107,7 @@ main {
   display: inline-block;
 }
 
-/* ---------- HEADER E NAVBAR ---------- */
+/* =============== HEADER / NAV =============== */
 
 .site-header {
   position: sticky;
@@ -138,7 +127,7 @@ main {
   position: relative;
 }
 
-/* Esquerda: estrela + logo */
+/* esquerda: estrela + logo */
 
 .nav-left {
   display: flex;
@@ -147,28 +136,41 @@ main {
 }
 
 .nav-star {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
 }
 
-.nav-star img {
+.star-animated {
   width: 100%;
   height: 100%;
+  animation: star-spin 6s linear infinite;
+  filter: drop-shadow(0 0 12px rgba(201, 165, 98, 0.8));
+}
+
+@keyframes star-spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
 }
 
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
 }
 
 .nav-logo-img {
-  height: 48px;
+  height: 50px;
   width: auto;
 }
 
-/* Menu desktop */
+/* menu desktop */
 
 .nav-menu {
   list-style: none;
@@ -200,7 +202,7 @@ main {
   width: 100%;
 }
 
-/* Hamburger (mobile) */
+/* hamburger */
 
 .hamburger {
   display: none;
@@ -230,7 +232,7 @@ main {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* ---------- HERO (HOME) ---------- */
+/* =============== HERO (HOME) =============== */
 
 .hero {
   padding: 3.2rem 1.5rem 3.5rem;
@@ -242,7 +244,7 @@ main {
 }
 
 .hero-logo-wrapper {
-  max-width: 420px;
+  max-width: 430px;
   margin: 0 auto 1.7rem;
 }
 
@@ -274,7 +276,7 @@ main {
   margin-top: 1.5rem;
 }
 
-/* ---------- SECÇÕES GENÉRICAS ---------- */
+/* =============== SECÇÕES GENÉRICAS =============== */
 
 .section {
   padding: 3rem 1.5rem 3.5rem;
@@ -304,7 +306,7 @@ main {
   color: #e2e2e2;
 }
 
-/* Cards (usados em várias páginas) */
+/* cards reutilizáveis */
 
 .cards {
   display: grid;
@@ -325,48 +327,7 @@ main {
   color: #f9f4da;
 }
 
-/* ---------- TRIBUTO / ABOUT ---------- */
-
-.tribute-block {
-  margin-top: 2.5rem;
-  padding: 2rem 1.5rem;
-  border-radius: 20px;
-  border: 1px solid rgba(232, 210, 143, 0.5);
-  background: radial-gradient(circle at top, rgba(232, 210, 143, 0.06), #050505 55%);
-  text-align: center;
-}
-
-.tribute-title {
-  font-size: 1.4rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #e8d28f;
-  margin-bottom: 1rem;
-}
-
-.tribute-text {
-  max-width: 760px;
-  margin: 0 auto;
-  color: #f4f4f4;
-  font-size: 0.98rem;
-}
-
-.tribute-divider {
-  width: 120px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #e8d28f, transparent);
-  margin: 1.5rem auto 2rem;
-}
-
-.tribute-photo {
-  margin: 0 auto 1.5rem;
-  max-width: 260px;
-  border-radius: 999px;
-  overflow: hidden;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.85);
-}
-
-/* ---------- FOOTER ---------- */
+/* =============== FOOTER =============== */
 
 .site-footer {
   margin-top: auto;
@@ -401,11 +362,10 @@ main {
   opacity: 0.9;
 }
 
-/* =========================================================
-   RESPONSIVE: DESKTOP / TABLET / MOBILE
-   ========================================================= */
+/* =============== RESPONSIVE =============== */
 
-/* ---- Tablet pequeno / mobile grande ---- */
+/* tablet pequeno / mobile grande */
+
 @media (min-width: 600px) {
   .hero {
     padding-top: 3.5rem;
@@ -422,7 +382,8 @@ main {
   }
 }
 
-/* ---- Tablet e desktop médio ---- */
+/* tablet médio */
+
 @media (min-width: 768px) {
   .cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -437,7 +398,8 @@ main {
   }
 }
 
-/* ---- Desktop largo ---- */
+/* desktop largo */
+
 @media (min-width: 1100px) {
   .cards {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -452,13 +414,9 @@ main {
   }
 }
 
-/* =========================================================
-   NAVBAR MOBILE (até 900px) 
-   ========================================================= */
+/* NAVBAR mobile (até 900px) */
 
 @media (max-width: 900px) {
-  /* Menu vira painel lateral */
-
   .nav-menu {
     position: fixed;
     top: 0;
