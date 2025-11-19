@@ -1,171 +1,286 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <title>Explore Portugal Experience — Serviço Privado com Assinatura</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Explore Portugal Experience — Serviço privado com assinatura</title>
+  <meta name="description" content="Serviço de motorista privado em Portugal com requinte, discrição e conforto. Transfers, tours e experiências sob medida, desde 2018." />
 
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/icons/star-full.svg" />
+</head>
+<body>
 
-  <!-- Google Fonts opcional -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <!-- Barra de tradução -->
+  <div class="translate-bar">
+    <span>Idioma:</span>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <!-- Cabeçalho -->
+  <header class="header">
+    <a class="home-star" href="index.html" aria-label="Início">
+      <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
+        <polygon fill="#C9A562" points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92" />
+      </svg>
+    </a>
+
+    <a class="logo-area" href="index.html" aria-label="Página inicial">
+      <span class="logo-text">Explore Portugal Experience</span>
+    </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">
+      ☰
+    </button>
+
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="about.html">Sobre</a>
+      <a href="services.html">Serviços</a>
+      <a href="choose.html">Porquê nós</a>
+      <a href="pricing.html">Preços</a>
+      <a href="faq.html">FAQ</a>
+      <a href="partners-drivers.html">Partners Drivers</a>
+    </nav>
+  </header>
+
+  <!-- HERO PRINCIPAL COM LOGO E QR -->
+  <main>
+    <section class="hero-main">
+      <div class="hero-inner">
+        <div class="hero-logo-block">
+          <img
+            src="assets/images/logo-explore-portugal-experience.png"
+            alt="Logótipo Explore Portugal Experience"
+            class="hero-logo-main"
+          />
+          <p class="hero-tagline">
+            Motorista profissional — Turismo em Portugal e Europa.&nbsp;  
+            Condução serena, comunicação clara e um país inteiro à sua espera — desde 2018.
+          </p>
+        </div>
+
+        <div class="hero-contact-box">
+          <h2 class="hero-contact-title">Contacto direto</h2>
+          <p class="hero-contact-text">
+            Pode iniciar a sua reserva de forma imediata através de WhatsApp.  
+            Basta tocar no botão abaixo ou utilizar o QR Code.
+          </p>
+
+          <a
+            href="https://wa.me/351910784548"
+            class="btn-primary hero-whatsapp-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Falar connosco via WhatsApp
+          </a>
+
+          <div class="hero-qr-block">
+            <img
+              src="assets/images/frame.png"
+              alt="QR Code para contacto direto via WhatsApp"
+              class="hero-qr-image"
+            />
+            <p class="hero-qr-caption">
+              Scaneie para iniciar conversa no WhatsApp com a Explore Portugal Experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECÇÃO: O QUE NOS DISTINGUE -->
+    <section class="page-section">
+      <div class="section-inner">
+        <h2 class="section-title">O que nos distingue</h2>
+        <p class="section-lead">
+          Atendimento com atenção ao detalhe, calma e profissionalismo.  
+          Excelência é fazer o percurso parecer simples: condução serena, comunicação clara e espaço para os imprevistos bons.
+        </p>
+
+        <div class="cards-3">
+          <article class="card">
+            <h3>Conforto com assinatura</h3>
+            <p>
+              Viaturas elegantes, climatizadas e cuidadas ao pormenor.  
+              Cada chegada é pensada para que você se sinta sempre acolhido.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Ritmo ao seu tempo</h3>
+            <p>
+              Paragens para apreciar a vista, fotografar, respirar.  
+              O relógio existe, mas o tempo é seu.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Discrição e confiança</h3>
+            <p>
+              Comunicação tranquila, respeito absoluto pela sua privacidade  
+              e acompanhamento atento em cada etapa do percurso.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECÇÃO: COMO TRABALHAMOS -->
+    <section class="page-section alt">
+      <div class="section-inner">
+        <h2 class="section-title">Como trabalhamos</h2>
+
+        <div class="cards-3">
+          <article class="card">
+            <h3>Planeamento sereno</h3>
+            <p>
+              Cada serviço começa com uma conversa: horários, pontos de encontro, bagagem,
+              preferências pessoais. A partir daí, tratamos de tudo com discrição e método.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Conhecimento local</h3>
+            <p>
+              Sugestões de restaurantes, miradouros, paragens especiais e pequenos desvios
+              que fazem a diferença entre “ver” e “sentir” Portugal.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Serviço contínuo</h3>
+            <p>
+              Durante o percurso, acompanha-lo sempre a mesma pessoa:  
+              um motorista profissional, atento, disponível e calmo.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECÇÃO: RESERVAS / MÉTODOS DE PAGAMENTO (ÍCONES) -->
+    <section class="page-section">
+      <div class="section-inner">
+        <h2 class="section-title">Reservas & Pagamento</h2>
+        <p class="section-lead">
+          Após a confirmação da sua reserva, recebe sempre, por escrito, os detalhes do serviço  
+          e um link seguro com as opções de pagamento disponíveis.
+        </p>
+
+        <div class="payments-layout">
+          <div class="payments-text">
+            <h3>Como reservar</h3>
+            <p>
+              Pode reservar através de WhatsApp ou pelo formulário na página de reservas.  
+              Iremos confirmar consigo horário, percurso, pontos de encontro e valor final,  
+              antes de qualquer pagamento.
+            </p>
+
+            <a
+              href="booking.html"
+              class="btn-secondary"
+            >
+              Abrir página de reservas
+            </a>
+          </div>
+
+          <div class="payments-icons-block">
+            <h3>Métodos de pagamento</h3>
+            <p class="payments-note">
+              Métodos disponíveis mediante confirmação de reserva:
+            </p>
+
+            <div class="payments-icons-row" aria-label="Métodos de pagamento disponíveis">
+              <a
+                href="https://wa.me/351910784548"
+                class="pay-icon-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+              >
+                <img src="assets/icons/whatsapp.svg" alt="WhatsApp" class="pay-icon-img" />
+              </a>
+
+              <a
+                href="https://www.mbway.pt/"
+                class="pay-icon-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="MB Way"
+              >
+                <img src="assets/icons/mbway.svg" alt="MB Way" class="pay-icon-img" />
+              </a>
+
+              <a
+                href="https://www.paypal.com/"
+                class="pay-icon-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="PayPal"
+              >
+                <img src="assets/icons/paypal.svg" alt="PayPal" class="pay-icon-img" />
+              </a>
+
+              <a
+                href="https://revolut.me/dalilav7js"
+                class="pay-icon-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Revolut"
+              >
+                <img src="assets/icons/revolut.svg" alt="Revolut" class="pay-icon-img" />
+              </a>
+            </div>
+
+            <p class="payments-small">
+              Os dados concretos para cada método são partilhados apenas consigo,  
+              de forma privada e protegida.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECÇÃO: CHAMADA PARA SERVIÇOS -->
+    <section class="page-section alt">
+      <div class="section-inner">
+        <h2 class="section-title">Serviço privado com assinatura</h2>
+        <p class="section-lead">
+          Transfers, tours de dia inteiro e percursos à medida, com elegância discreta  
+          e atenção ao detalhe, desde o primeiro contacto até ao último quilómetro.
+        </p>
+
+        <div class="cta-row">
+          <a href="services.html" class="btn-primary">Ver serviços</a>
+          <a href="pricing.html" class="btn-ghost">Consultar preços indicativos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>© 2018 Explore Portugal Experience</p>
+      <p>RNAAT n.º 17/2018 — Turismo de Portugal</p>
+      <p class="footer-powered">Powered by: MkDesign - Portugal</p>
+    </div>
+  </footer>
 
   <!-- Google Translate -->
-  <script type="text/javascript">
+  <script>
     function googleTranslateElementInit() {
       new google.translate.TranslateElement(
-        {
-          pageLanguage: "pt",
-          includedLanguages: "pt,en,es,fr,de,it",
-          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        },
-        "google_translate_element"
+        { pageLanguage: 'pt' },
+        'google_translate_element'
       );
     }
   </script>
-  <script
-    type="text/javascript"
-    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-  ></script>
-</head>
-<body>
-  <div class="page-wrapper">
-    <!-- BARRA DE IDIOMA -->
-    <div class="top-language-bar">
-      <label for="google_translate_element">Idioma:</label>
-      <div id="google_translate_element"></div>
-    </div>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- HEADER / NAVBAR -->
-    <header class="site-header">
-      <nav class="navbar">
-        <div class="nav-left">
-          <a href="index.html" class="nav-star" aria-label="Início">
-            <img
-              src="assets/icons/star-full.svg"
-              alt="Ícone estrela"
-              class="star-animated"
-            />
-          </a>
-
-          <a href="index.html" class="nav-logo" aria-label="Explore Portugal Experience — Início">
-            <img
-              src="assets/images/logo-explore-portugal-experience.png"
-              alt="Logotipo Explore Portugal Experience"
-              class="nav-logo-img"
-            />
-          </a>
-        </div>
-
-        <ul class="nav-menu">
-          <li><a class="nav-link" href="about.html">Sobre</a></li>
-          <li><a class="nav-link" href="services.html">Serviços</a></li>
-          <li><a class="nav-link" href="choose.html">Porquê nós</a></li>
-          <li><a class="nav-link" href="pricing.html">Preços</a></li>
-          <li><a class="nav-link" href="faq.html">FAQ</a></li>
-          <li><a class="nav-link" href="partners-drivers.html">Partners Drivers</a></li>
-          <li><a class="nav-link" href="booking.html">Reservas</a></li>
-        </ul>
-
-        <div class="hamburger" aria-label="Abrir menu" role="button">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <!-- HERO -->
-      <section class="hero">
-        <div class="hero-logo-wrapper">
-          <img
-            src="assets/images/logo-explore-portugal-experience.png"
-            alt="Explore Portugal Experience"
-          />
-        </div>
-
-        <p class="hero-tagline">
-          <span class="gold">Motorista profissional</span> — turismo privado em Portugal e Europa.
-        </p>
-
-        <p class="hero-subtagline">
-          Condução serena, comunicação clara e um país inteiro à sua espera —
-          desde 2018. Serviço discreto, elegante e verdadeiramente dedicado a quem confia em nós.
-        </p>
-
-        <div class="hero-cta-group">
-          <a href="booking.html" class="btn">Reservar agora</a>
-          <a href="services.html" class="btn btn-outline">Ver serviços</a>
-        </div>
-      </section>
-
-      <!-- O QUE NOS DISTINGUE -->
-      <section class="section section-alt" id="destaques">
-        <div class="section-inner">
-          <h2 class="section-title">O que nos distingue</h2>
-          <p class="section-lead">
-            Atendimento com atenção ao detalhe, calma e profissionalismo.
-            Excelência é fazer o percurso parecer simples: condução tranquila,
-            comunicação clara e espaço para os bons imprevistos.
-          </p>
-
-          <div class="cards">
-            <article class="card">
-              <h3 class="card-title">Serviço com assinatura</h3>
-              <p>
-                Horários planeados com margem, sem pressas desnecessárias.
-                Cada percurso é pensado para que a experiência seja confortável,
-                elegante e adaptada ao ritmo de quem viaja.
-              </p>
-            </article>
-
-            <article class="card">
-              <h3 class="card-title">Confiança e discrição</h3>
-              <p>
-                Comunicação objetiva, acompanhamento atento e respeito absoluto
-                pela privacidade. A presença certa, no momento certo, sempre com
-                serenidade e descrição.
-              </p>
-            </article>
-
-            <article class="card">
-              <h3 class="card-title">Conhecimento local</h3>
-              <p>
-                Sugestões de restaurantes, miradouros, paragens especiais e
-                experiências que revelam um Portugal mais autêntico, para além
-                do óbvio.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-main-line">
-          © 2018 Explore Portugal Experience — RNAAT n.º 17/2018 — Turismo de Portugal
-        </div>
-        <div>Todos os direitos reservados.</div>
-
-        <div class="footer-mk">
-          <div>Powered by MkDesign — Portugal</div>
-          <img
-            src="assets/images/mkdesign-logo.png"
-            alt="MkDesign — Gabinete de Design, Marketing &amp; Publicidade"
-          />
-        </div>
-      </div>
-    </footer>
-  </div>
-
+  <!-- Navegação / outros scripts -->
   <script src="assets/js/nav.js"></script>
+  <script src="assets/js/lightbox.js"></script>
 </body>
 </html>
