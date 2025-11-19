@@ -1,19 +1,25 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const navToggle = document.querySelector('.nav-toggle');
+// assets/js/nav.js
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
   const body = document.body;
-  const navLinks = document.querySelectorAll('.nav a');
 
-  if (!navToggle) return;
+  if (!hamburger || !navMenu) return;
 
-  navToggle.addEventListener('click', () => {
-    const open = body.classList.toggle('nav-open');
-    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
+  const toggleMenu = () => {
+    navMenu.classList.toggle("active");
+    hamburger.classList.toggle("active");
+    body.classList.toggle("no-scroll");
+  };
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      body.classList.remove('nav-open');
-      navToggle.setAttribute('aria-expanded', 'false');
+  hamburger.addEventListener("click", toggleMenu);
+
+  document.querySelectorAll(".nav-link").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+      hamburger.classList.remove("active");
+      body.classList.remove("no-scroll");
     });
   });
 });
