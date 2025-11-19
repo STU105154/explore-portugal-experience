@@ -1,40 +1,23 @@
-// partners.js
-document.addEventListener("DOMContentLoaded", () => {
-  const partnersForms = document.querySelectorAll("form.partners-form");
-  if (!partnersForms.length) return;
+(function(){
+  const f = document.getElementById('partners-form');
+  if(!f) return;
+  const phoneIntl = '+351962516005';
+  const businessEmail = 'nomadaeuforia@gmail.com';
+  const g = n => (f.elements[n]?.value || '').trim();
+  const ok = () => f.elements['consent'].checked || (alert('Por favor, aceita o envio dos dados.'), false);
+  const msg = () => [
+    'Registo de Parceiro — Explore Portugal Experience','',
+    `Empresa: ${g('company')}`, `NIF/VAT: ${g('vat')||'-'}`, `Website/Redes: ${g('web')||'-'}`,
+    `Segmento: ${g('ptype')}`, '', `Contacto: ${g('contact')} | ${g('email')} | ${g('phone')||'-'}`, '',
+    `Mensagem:`, g('message')||'-'
+  ].join('\n');
 
-  partnersForms.forEach((form) => {
-    const messageEl = form.querySelector(".form-message");
-
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      const required = form.querySelectorAll("[data-required]");
-      let valid = true;
-
-      required.forEach((field) => {
-        if (!field.value || !field.value.trim()) {
-          valid = false;
-          field.classList.add("is-invalid");
-        } else {
-          field.classList.remove("is-invalid");
-        }
-      });
-
-      if (!valid) {
-        if (messageEl) {
-          messageEl.textContent =
-            "Por favor, confirme se todos os campos obrigatórios estão preenchidos antes de enviar.";
-        }
-        return;
-      }
-
-      if (messageEl) {
-        messageEl.textContent =
-          "Obrigado pelo seu interesse em colaborar connosco. Entraremos em contacto após análise dos dados enviados.";
-      }
-
-      form.reset();
-    });
+  document.getElementById('partner-email')?.addEventListener('click', ()=>{
+    if(!f.reportValidity() || !ok()) return;
+    location.href = `mailto:${businessEmail}?subject=${encodeURIComponent('Registo de Parceria')}&body=${encodeURIComponent(msg())}`;
   });
-});
+  document.getElementById('partner-whatsapp')?.addEventListener('click', ()=>{
+    if(!f.reportValidity() || !ok()) return;
+    window.open(`https://wa.me/${phoneIntl.replace(/\D/g,'')}?text=${encodeURIComponent(msg())}`,'_blank','noopener');
+  });
+})();
