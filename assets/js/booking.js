@@ -1,32 +1,40 @@
-(function () {
-  const f = document.getElementById('booking-form');
-  if (!f) return;
+// booking.js
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("#booking-form");
+  if (!form) return;
 
-  const phoneIntl = '+351962516005';
-  const businessEmail = 'nomadaeuforia@gmail.com';
+  const messageEl = form.querySelector(".form-message");
 
-  const v = n => (f.elements[n]?.value || '').trim();
-  const r = n => (new FormData(f).get(n) || '').toString();
-  const ok = () => f.elements['consent'].checked || (alert('Por favor, aceita o envio dos dados.'), false);
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-  function msg(){
-    return [
-      'Pedido de Reserva — Explore Portugal Experience','',
-      `Nome: ${v('name')}`, `Email: ${v('email')}`, `Telefone: ${v('phone') || '-'}`, '',
-      `Itinerário: ${v('pickup')} → ${v('dropoff')}`,
-      `Data/Hora: ${v('date')} ${v('time')}`, `Tipo de viagem: ${r('triptype')}`, '',
-      `Passageiros: ${v('passengers')}`, `Bagagem: ${v('luggage') || '0'}`,
-      `Veículo: ${v('vehicle')}`, `Extras: ${v('extras') || '-'}`
-    ].join('\n');
-  }
+    // validação mínima
+    const required = form.querySelectorAll("[data-required]");
+    let valid = true;
 
-  document.getElementById('send-email')?.addEventListener('click', ()=>{
-    if(!f.reportValidity() || !ok()) return;
-    location.href = `mailto:${businessEmail}?subject=${encodeURIComponent('Pedido de Reserva')}&body=${encodeURIComponent(msg())}`;
+    required.forEach((field) => {
+      if (!field.value || !field.value.trim()) {
+        valid = false;
+        field.classList.add("is-invalid");
+      } else {
+        field.classList.remove("is-invalid");
+      }
+    });
+
+    if (!valid) {
+      if (messageEl) {
+        messageEl.textContent =
+          "Por favor, confirme se todos os campos obrigatórios estão preenchidos.";
+      }
+      return;
+    }
+
+    if (messageEl) {
+      messageEl.textContent =
+        "Obrigado pelo seu pedido. Iremos responder com a proposta detalhada o mais brevemente possível.";
+    }
+
+    // como é um site estático, não há envio real:
+    form.reset();
   });
-
-  document.getElementById('send-whatsapp')?.addEventListener('click', ()=>{
-    if(!f.reportValidity() || !ok()) return;
-    window.open(`https://wa.me/${phoneIntl.replace(/\D/g,'')}?text=${encodeURIComponent(msg())}`,'_blank','noopener');
-  });
-})();
+});
