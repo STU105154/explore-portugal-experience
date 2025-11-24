@@ -1,317 +1,278 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>Explore Portugal Experience · Private Tours & Transfers</title>
-    <meta
-      name="description"
-      content="Explore Portugal Experience — tours e transfers privados em Portugal, com motorista profissional, elegância e atenção ao detalhe."
-    />
+<head>
+  <meta charset="UTF-8">
+  <title>Explore Portugal Experience · Premium Tours & Private Transfers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-Y30ME05MQY");
-    </script>
+  <meta name="description" content="Explore Portugal Experience — premium tours e private transfers em Portugal, com motorista profissional, conforto e atenção ao detalhe.">
 
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="assets/icons/star-gold.png"
-    />
+  <link rel="stylesheet" href="assets/css/style.css">
 
-    <script src="assets/js/nav.js" defer></script>
-  </head>
-  <body>
-    <!-- Barra de idioma -->
-    <div class="translate-bar">
-      <span>Idioma:</span>
-      <div id="google_translate_element"></div>
-    </div>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Y30ME05MQY');
+  </script>
+</head>
+<body>
+  <!-- Barra de idioma / Google Translate -->
+  <div class="translate-bar">
+    <span>Idioma:</span>
+    <div id="google_translate_element"></div>
+  </div>
 
-    <!-- Cabeçalho -->
-    <header class="header">
-      <a
-        href="index.html"
-        class="home-star"
-        aria-label="Página inicial"
-      >
+  <!-- HEADER COM ESTRELA E MENU -->
+  <header class="header">
+    <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
+      <!-- usamos um ícone que existe mesmo na pasta icons -->
+      <img src="assets/icons/compass-gold-64.png" alt="Explorar Portugal" class="star-animated">
+    </a>
+
+    <nav class="nav" aria-label="Navegação principal">
+      <ul class="nav-menu">
+        <li><a href="about.html">Sobre</a></li>
+        <li><a href="services.html">Serviços</a></li>
+        <li><a href="choose.html">Porquê nós</a></li>
+        <li><a href="pricing.html">Preços</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="partners-drivers.html">Partners Drivers</a></li>
+        <li><a href="partners-hospitality.html">Partners Hospitality</a></li>
+        <li><a href="gallery.html">Galeria</a></li>
+        <li><a href="booking.html">Reservas</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+      </ul>
+    </nav>
+
+    <button class="nav-toggle" type="button" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- HERO / HOME -->
+    <section class="home-hero section-dark">
+      <img
+        src="assets/images/logo-explore-portugal-experience.png"
+        alt="Logotipo Explore Portugal Experience"
+        class="home-logo">
+
+      <p class="hero-tagline">
+        Premium Tours & Private Transfers em Portugal, com motorista profissional,
+        conforto absoluto e atenção personalizada a cada detalhe.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://wa.me/351910784548" class="btn-primary" target="_blank" rel="noopener">
+          Falar por WhatsApp
+        </a>
+        <a href="booking.html" class="btn-outline">
+          Pedir proposta personalizada
+        </a>
+      </div>
+
+      <div class="hero-qr-wrap">
         <img
-          src="assets/icons/star-gold.png"
-          alt="Explore Portugal Experience"
-          class="star-animated"
-        />
-      </a>
-
-      <nav class="nav" aria-label="Navegação principal">
-        <a href="about.html">Sobre</a>
-        <a href="services.html">Serviços</a>
-        <a href="choose.html">Porquê nós</a>
-        <a href="pricing.html">Preços</a>
-        <a href="faq.html">FAQ</a>
-        <a href="partners-drivers.html">Partners Drivers</a>
-        <a href="partners-hospitality.html">Partners Hospitality</a>
-        <a href="booking.html">Reservas</a>
-        <a href="contactos.html">Contactos</a>
-      </nav>
-
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-label="Abrir menu"
-        aria-expanded="false"
-      >
-        <span></span><span></span><span></span>
-      </button>
-    </header>
-
-    <main>
-      <!-- HERO PRINCIPAL -->
-      <section class="home-hero section-dark">
-        <div class="section-inner narrow">
-          <img
-            src="assets/images/logo-explore-portugal-experience.png"
-            alt="Explore Portugal Experience"
-            class="home-logo"
-          />
-
-          <p class="hero-tagline">
-            Tours e transfers privados em Portugal, com motorista
-            profissional, segurança, discrição e requinte — desde 2018.
-          </p>
-
-          <div style="margin-top: 16px;">
-            <a href="booking.html" class="btn-primary">
-              Pedir proposta personalizada
-            </a>
-          </div>
-
-          <div class="hero-qr-wrap">
-            <img
-              src="assets/images/frame.png"
-              alt="QR code para WhatsApp Explore Portugal Experience"
-              class="home-qr"
-            />
-            <p class="hero-qr-caption">
-              Aponte a câmara ao QR code para iniciar conversação imediata
-              via WhatsApp.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- PORQUÊ NÓS RESUMO -->
-      <section class="section section-dark">
-        <div class="section-inner">
-          <h2 class="section-title">Elegância em movimento</h2>
-          <p class="section-lead">
-            Cada percurso é pensado para que o tempo em estrada seja parte
-            da experiência: confortável, calmo e cuidado ao detalhe — do
-            primeiro contacto à chegada ao destino.
-          </p>
-
-          <div class="cards-3">
-            <article class="card">
-              <h3>Motorista profissional</h3>
-              <p>
-                Mais de 10 anos de experiência em turismo, condução
-                responsável e atendimento discreto. Português e inglês.
-              </p>
-            </article>
-
-            <article class="card">
-              <h3>Serviço à medida</h3>
-              <p>
-                Itinerários ajustados ao seu ritmo, horários flexíveis e
-                apoio antes, durante e após a viagem.
-              </p>
-            </article>
-
-            <article class="card">
-              <h3>Conforto &amp; segurança</h3>
-              <p>
-                Viaturas cuidadas, seguro adequado e uma condução calma,
-                para que possa simplesmente desfrutar da viagem.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- SERVIÇOS EM DESTAQUE -->
-      <section class="section">
-        <div class="section-inner">
-          <h2 class="section-title">Serviços em destaque</h2>
-          <p class="section-lead">
-            Transfers privados, tours de dia inteiro e percursos
-            personalizados em Lisboa, Sintra, Cascais, Fátima, Douro e
-            outras regiões de Portugal.
-          </p>
-
-          <div class="cards-3">
-            <article class="card">
-              <h3>Tours privados</h3>
-              <p>
-                Tours em Lisboa, Sintra/Cascais, Fátima, Óbidos e outras
-                regiões, com paragens ajustadas aos seus interesses.
-              </p>
-              <p style="margin-top: 10px;">
-                <a href="services.html" class="btn-outline">
-                  Ver todos os serviços
-                </a>
-              </p>
-            </article>
-
-            <article class="card">
-              <h3>Transfers dedicados</h3>
-              <p>
-                Transfers entre aeroporto, hotel, eventos, cidades e
-                rotas longas, com disponibilidade para espera e
-                acompanhamento.
-              </p>
-              <p style="margin-top: 10px;">
-                <a href="pricing.html" class="btn-outline">
-                  Ver preços indicativos
-                </a>
-              </p>
-            </article>
-
-            <article class="card">
-              <h3>Parcerias</h3>
-              <p>
-                Soluções pensadas para hotéis, agências, wedding planners
-                e empresas com necessidades regulares de transporte
-                premium.
-              </p>
-              <p style="margin-top: 10px;">
-                <a href="partners-hospitality.html" class="btn-outline">
-                  Saber mais
-                </a>
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- CHAMADA PARA RESERVAS -->
-      <section class="section section-dark">
-        <div class="section-inner narrow">
-          <h2 class="section-title">Reservas &amp; pedidos especiais</h2>
-          <p class="section-lead">
-            Seja para um transfer simples, um tour de dia inteiro ou um
-            itinerário mais complexo, teremos todo o gosto em preparar
-            uma proposta à sua medida.
-          </p>
-
-          <div class="cards-3">
-            <article class="card">
-              <h3>WhatsApp</h3>
-              <p>
-                Mensagens rápidas para pedidos diretos, coordenação de
-                horários e apoio durante o serviço.
-              </p>
-              <p style="margin-top: 8px;">
-                <a
-                  href="https://wa.me/351910784548"
-                  class="btn-primary"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Falar via WhatsApp
-                </a>
-              </p>
-            </article>
-
-            <article class="card">
-              <h3>Formulário de reservas</h3>
-              <p>
-                Ideal para enviar todos os detalhes da sua viagem: datas,
-                número de pessoas, bagagem e preferências.
-              </p>
-              <p style="margin-top: 8px;">
-                <a href="booking.html" class="btn-secondary">
-                  Aceder ao formulário
-                </a>
-              </p>
-            </article>
-
-            <article class="card">
-              <h3>Contactos</h3>
-              <p>
-                Para dúvidas gerais, parcerias ou informações adicionais,
-                pode utilizar a página de contactos.
-              </p>
-              <p style="margin-top: 8px;">
-                <a href="contactos.html" class="btn-outline">
-                  Ver contactos
-                </a>
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Rodapé -->
-    <footer class="site-footer">
-      <div class="section-inner">
-        <p>
-          © 2018–2025 Explore Portugal Experience — Turismo em Portugal ·
-          RNAAT n.º 17/2018 — Turismo de Portugal
-        </p>
-
-        <p>Powered by: MkDesign – Portugal</p>
-
-        <div class="footer-social">
-          <p>Siga-nos:</p>
-          <p>
-            <a
-              href="https://www.instagram.com/exploreportugal2025"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram @exploreportugal2025
-            </a>
-            <br />
-            <a
-              href="https://www.tiktok.com/@explore.portugal24"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              TikTok @explore.portugal24
-            </a>
-          </p>
-        </div>
-
-        <p class="footer-small">
-          Este site utiliza cookies e ferramentas analíticas para
-          melhorar a experiência de navegação.
+          src="assets/images/frame.png"
+          alt="QR Code para contacto direto via WhatsApp"
+          class="home-qr">
+        <p class="hero-qr-caption">
+          Aponte a câmara ao QR Code para iniciar conversa direta via WhatsApp.
         </p>
       </div>
-    </footer>
+    </section>
 
-    <!-- Google Translate -->
-    <script>
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          { pageLanguage: "pt" },
-          "google_translate_element"
-        );
-      }
-    </script>
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  </body>
+    <!-- O QUE NOS DISTINGUE -->
+    <section class="section section-dark">
+      <div class="section-inner">
+        <h2 class="section-title">O que nos distingue</h2>
+        <p class="section-lead">
+          Condução serena, discrição e profissionalismo. A missão é simples:
+          fazer o percurso parecer fácil, para que a experiência seja memorável.
+        </p>
+
+        <div class="cards-3">
+          <article class="card">
+            <h3>Calma &amp; segurança</h3>
+            <p>
+              Motorista profissional certificado, condução suave e focada no seu conforto,
+              com atenção às suas preferências e ao ritmo da sua viagem.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Serviço à medida</h3>
+            <p>
+              Itinerários ajustados aos seus interesses, horários e estilo — desde passeios
+              descontraídos a viagens de trabalho com agenda apertada.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Detalhe &amp; discrição</h3>
+            <p>
+              Comunicação clara antes e durante o serviço, apoio em vários idiomas e total
+              respeito pela sua privacidade.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO TRABALHAMOS / CONHECIMENTO LOCAL -->
+    <section class="section section-dark">
+      <div class="section-inner">
+        <h2 class="section-title">Como trabalhamos</h2>
+        <p class="section-lead">
+          Tudo é planeado com margem, sem pressas desnecessárias. Desde o primeiro contacto
+          até ao final do percurso, tem sempre um ponto de apoio disponível.
+        </p>
+
+        <div class="cards-3">
+          <article class="card">
+            <h3>Planeamento antecipado</h3>
+            <p>
+              Recolha de informação essencial sobre horários, bagagem, preferências e
+              necessidades específicas, para que no dia tudo seja simples.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Acompanhamento permanente</h3>
+            <p>
+              Atualização de horários, acompanhamento de voos e contacto direto consigo,
+              para que em qualquer imprevisto exista sempre uma solução serena.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Conhecimento local</h3>
+            <p>
+              Sugestões de restaurantes, miradouros, paragens especiais e pequenos desvios
+              que transformam um simples transfer numa experiência em Portugal.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESERVAS RÁPIDAS NA HOME -->
+    <section class="section section-reservas">
+      <div class="section-inner">
+        <h2 class="section-title">Reservas &amp; contacto direto</h2>
+        <p class="section-lead">
+          Pode enviar uma mensagem direta por WhatsApp, email ou utilizar o formulário de reservas.
+          Receberá sempre confirmação personalizada com detalhes de horário, ponto de encontro
+          e valor final antes de qualquer pagamento.
+        </p>
+
+        <div class="reservas-grid">
+          <article class="reservas-card">
+            <h3>WhatsApp direto</h3>
+            <p class="reservas-phone">+351 910 784 548</p>
+            <a href="https://wa.me/351910784548" class="btn-secondary" target="_blank" rel="noopener">
+              Iniciar conversa via WhatsApp
+            </a>
+          </article>
+
+          <article class="reservas-card">
+            <h3>Pedido de reserva</h3>
+            <p>
+              Para pedidos mais detalhados (várias datas, grupos ou itinerários especiais),
+              utilize o formulário na página de reservas.
+            </p>
+            <a href="booking.html" class="btn-outline">
+              Abrir formulário de reserva
+            </a>
+          </article>
+        </div>
+
+        <p class="reservas-note">
+          Para qualquer questão específica, também pode escrever para
+          <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER COM CONTACTOS + REDES + MKDESIGN -->
+  <footer class="section footer">
+    <div class="section-inner footer-inner">
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h3>Contactos</h3>
+          <p>
+            Email:
+            <a href="mailto:info@exploreportugalexperience.com">
+              info@exploreportugalexperience.com
+            </a>
+            <br>
+            Telemóvel / WhatsApp: +351 910 784 548
+          </p>
+          <p>
+            Explore Portugal Experience<br>
+            Lisboa · Portugal
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Redes sociais</h3>
+          <p>
+            <a href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener">
+              Instagram · @exploreportugal2025
+            </a><br>
+            <a href="https://www.tiktok.com/@explore.portugal24?_r=1&_t=ZG-91YeXliOakD" target="_blank" rel="noopener">
+              TikTok · @explore.portugal24
+            </a>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Reservas</h3>
+          <p>
+            WhatsApp direto:
+            <a href="https://wa.me/351910784548" target="_blank" rel="noopener">
+              +351 910 784 548
+            </a><br>
+            Formulário online em
+            <a href="booking.html">Reservas</a>.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © 2018–2025 Explore Portugal Experience — Turismo em Portugal.
+        </p>
+        <p class="footer-credit">
+          Powered by: MkDesign - Portugal
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/lightbox.js"></script>
+
+  <!-- Google Translate -->
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: 'pt',
+          includedLanguages: 'en,pt,es,fr,de',
+          autoDisplay: false
+        },
+        'google_translate_element'
+      );
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
 </html>
