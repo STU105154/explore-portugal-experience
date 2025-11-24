@@ -1,136 +1,137 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FAQ — Explore Portugal Experience</title>
-  <meta name="description" content="Perguntas frequentes sobre reservas, pagamentos, cancelamentos e serviços da Explore Portugal Experience." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | Explore Portugal Experience</title>
+  <meta name="description" content="Perguntas frequentes sobre transfers, tours e serviços privados de transporte premium em Portugal.">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Y30ME05MQY');
+  </script>
+
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" type="image/svg+xml" href="assets/icons/star-full.svg" />
+  <link rel="icon" type="image/png" href="assets/icons/star-gold.png" />
+  <script src="assets/js/nav.js" defer></script>
 </head>
+
 <body>
+  <!-- Translate bar -->
   <div class="translate-bar">
     <span>Idioma:</span>
     <div id="google_translate_element"></div>
   </div>
 
+  <!-- Header -->
   <header class="header">
-    <a class="home-star" href="index.html" aria-label="Início">
-      <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
-        <polygon fill="#C9A562"
-                 points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
-      </svg>
+    <a href="index.html" class="home-star" aria-label="Página inicial">
+      <img src="assets/icons/star-gold.png" class="star-animated" alt="Explore Portugal Experience" />
     </a>
-    <a class="logo-area" href="index.html">
-      <span class="logo-text">Explore Portugal Experience</span>
-    </a>
-    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
-    <nav class="nav" aria-label="Principal">
+
+    <nav class="nav" aria-label="Navegação principal">
       <a href="about.html">Sobre</a>
       <a href="services.html">Serviços</a>
       <a href="choose.html">Porquê nós</a>
       <a href="pricing.html">Preços</a>
       <a href="faq.html" aria-current="page">FAQ</a>
-      <a href="gallery.html">Galeria</a>
-      <a href="booking.html">Reservas</a>
       <a href="partners-drivers.html">Partners Drivers</a>
       <a href="partners-hospitality.html">Partners Hospitality</a>
+      <a href="booking.html">Reservas</a>
+      <a href="contactos.html">Contactos</a>
     </nav>
+
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
-  <section class="page-hero">
-    <div class="hero-content">
-      <h1 class="section-title">FAQ</h1>
-      <p class="lead">As respostas às questões que mais nos colocam.</p>
-    </div>
-  </section>
+  <main>
+    <!-- HERO -->
+    <section class="page-hero section-dark">
+      <div class="section-inner narrow">
+        <h1 class="page-hero-title">Perguntas Frequentes</h1>
+        <p class="page-hero-subtitle">
+          Respostas claras e objetivas para que planeie a sua experiência com total tranquilidade.
+        </p>
+      </div>
+    </section>
 
-  <main class="page-content">
-    <section class="about-block">
-      <div class="faq">
-        <details class="faq-item" open>
-          <summary>Como posso fazer uma reserva?</summary>
-          <div class="faq-body">
-            <p>
-              Podes reservar por WhatsApp, através do número
-              <a href="https://wa.me/351910784548" target="_blank" rel="noopener">+351 910 784 548</a>,
-              ou através do formulário de reservas disponível na página
-              <a href="booking.html">Reservas</a>.
-            </p>
-          </div>
-        </details>
+    <!-- FAQ -->
+    <section class="section section-dark">
+      <div class="section-inner narrow faq-list">
 
-        <details class="faq-item">
-          <summary>Os valores apresentados no site são finais?</summary>
-          <div class="faq-body">
-            <p>
-              Os valores apresentados na página de Preços são indicativos.
-              O valor final é sempre confirmado por escrito, após partilhares
-              as datas, horários e detalhes do serviço.
-            </p>
-          </div>
-        </details>
+        <div class="faq-item">
+          <p class="faq-q">Como posso efetuar uma reserva?</p>
+          <p class="faq-a">
+            Pode realizar a sua reserva através de WhatsApp, e-mail ou formulário de reservas no nosso site.
+            Após o pedido, recebe sempre uma confirmação escrita com todos os detalhes do serviço.
+          </p>
+        </div>
 
-        <details class="faq-item">
-          <summary>Que métodos de pagamento aceitam?</summary>
-          <div class="faq-body">
-            <p>
-              Trabalhamos com métodos digitais seguros, como MB Way, PayPal e Revolut.
-              Após confirmação da reserva, enviamos o link ou instruções de pagamento
-              correspondentes ao método escolhido.
-            </p>
-          </div>
-        </details>
+        <div class="faq-item">
+          <p class="faq-q">Quais são os métodos de pagamento disponíveis?</p>
+          <p class="faq-a">
+            Aceitamos pagamentos através de WhatsApp, MB Way, PayPal e Revolut.
+            Clique no método desejado na página de Serviços ou Preços para proceder ao pagamento.
+          </p>
+        </div>
 
-        <details class="faq-item">
-          <summary>Posso personalizar o itinerário?</summary>
-          <div class="faq-body">
-            <p>
-              Sim. Todos os tours podem ser adaptados: horários, paragens, pontos
-              de interesse e ritmo do dia são ajustados ao que faz sentido para ti.
-            </p>
-          </div>
-        </details>
+        <div class="faq-item">
+          <p class="faq-q">Posso personalizar o itinerário de um tour?</p>
+          <p class="faq-a">
+            Sim, todos os tours podem ser totalmente ajustados ao seu ritmo e interesses.
+            Criamos experiências únicas, sem pressa e com flexibilidade total.
+          </p>
+        </div>
 
-        <details class="faq-item">
-          <summary>Têm cadeirinha para criança?</summary>
-          <div class="faq-body">
-            <p>
-              Mediante pedido prévio na reserva, podemos disponibilizar cadeira
-              de criança, sujeita a disponibilidade. Recomenda-se indicar idade
-              e peso aproximado da criança.
-            </p>
-          </div>
-        </details>
+        <div class="faq-item">
+          <p class="faq-q">Existe assistência no aeroporto?</p>
+          <p class="faq-a">
+            Sim. Para transfers de chegada, aguardamos com placa identificativa, acompanhamos até à viatura
+            e ajudamos com bagagem.
+          </p>
+        </div>
 
-        <details class="faq-item">
-          <summary>Qual é a vossa política de cancelamento?</summary>
-          <div class="faq-body">
-            <p>
-              Cancelamentos até 48h antes da data do serviço não têm custos.
-              Após esse prazo, pode ser aplicada taxa de cancelamento, comunicada
-              no momento da reserva.
-            </p>
-          </div>
-        </details>
+        <div class="faq-item">
+          <p class="faq-q">Qual é a vossa política de cancelamento?</p>
+          <p class="faq-a">
+            Cancelamentos até 24 horas antes não têm custos. Após esse prazo, poderá ser aplicada uma taxa
+            até 50% consoante o serviço e época do ano.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">As viaturas incluem água, Wi-Fi e carregadores?</p>
+          <p class="faq-a">
+            Sim, todos os serviços incluem água, Wi-Fi, carregadores e possibilidade de cadeira para criança
+            (sob pedido e sem custos adicionais).
+          </p>
+        </div>
+
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>© 2018 Explore Portugal Experience</p>
-      <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
-      <p><a href="privacy.html">Política de privacidade</a></p>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="section-inner">
+      <p>© 2018–2025 Explore Portugal Experience — RNAAT n.º 17/2018 — Turismo de Portugal</p>
+      <p>Powered by: MkDesign – Portugal</p>
     </div>
   </footer>
 
+  <!-- Translate -->
   <script>
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'pt'}, 'google_translate_element');
+      new google.translate.TranslateElement({ pageLanguage: "pt" }, "google_translate_element");
     }
   </script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script src="assets/js/nav.js"></script>
+
 </body>
 </html>
