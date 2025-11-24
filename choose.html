@@ -1,96 +1,279 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Porquê nós — Explore Portugal Experience</title>
-  <meta name="description" content="O que distingue a Explore Portugal Experience: serviço premium, atenção ao detalhe e conhecimento local." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Porquê nós | Explore Portugal Experience</title>
+  <meta
+    name="description"
+    content="Porque escolher a Explore Portugal Experience: serviço premium, motorista profissional, atenção ao detalhe e elegância em cada percurso."
+  />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Y30ME05MQY');
+  </script>
+
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" type="image/svg+xml" href="assets/icons/star-full.svg" />
+  <link rel="icon" type="image/png" href="assets/icons/star-gold.png" />
+  <script src="assets/js/nav.js" defer></script>
 </head>
+
 <body>
+  <!-- Translate bar -->
   <div class="translate-bar">
     <span>Idioma:</span>
     <div id="google_translate_element"></div>
   </div>
 
+  <!-- Header -->
   <header class="header">
-    <a class="home-star" href="index.html" aria-label="Início">
-      <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
-        <polygon fill="#C9A562"
-          points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92"/>
-      </svg>
+    <a href="index.html" class="home-star" aria-label="Página inicial">
+      <img
+        src="assets/icons/star-gold.png"
+        alt="Explore Portugal Experience"
+        class="star-animated"
+      />
     </a>
-    <a class="logo-area" href="index.html">
-      <span class="logo-text">Explore Portugal Experience</span>
-    </a>
-    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
-    <nav class="nav" aria-label="Principal">
+
+    <nav class="nav" aria-label="Navegação principal">
       <a href="about.html">Sobre</a>
       <a href="services.html">Serviços</a>
       <a href="choose.html" aria-current="page">Porquê nós</a>
       <a href="pricing.html">Preços</a>
       <a href="faq.html">FAQ</a>
-      <a href="gallery.html">Galeria</a>
-      <a href="booking.html">Reservas</a>
       <a href="partners-drivers.html">Partners Drivers</a>
       <a href="partners-hospitality.html">Partners Hospitality</a>
+      <a href="booking.html">Reservas</a>
+      <a href="contactos.html">Contactos</a>
     </nav>
+
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
-  <section class="page-hero">
-    <div class="hero-content">
-      <h1 class="section-title">O que nos distingue</h1>
-      <p class="lead">
-        Charme, elegância e serviço premium — com a calma de quem conhece bem a estrada
-        e respeita o ritmo de cada viagem.
-      </p>
-    </div>
-  </section>
-
-  <main class="page-content">
-    <section class="about-block">
-      <h2>Estilo de atendimento</h2>
-      <p>
-        O foco está sempre na pessoa. Desde a primeira mensagem, o objetivo é que te sintas
-        acompanhado e em boas mãos. Horários claros, respostas diretas e flexibilidade para
-        adaptar o percurso conforme for fazendo sentido.
-      </p>
+  <main>
+    <!-- HERO -->
+    <section class="page-hero section-dark">
+      <div class="section-inner narrow">
+        <h1 class="page-hero-title">Porquê nós</h1>
+        <p class="page-hero-subtitle">
+          Um serviço pensado para quem valoriza tempo, conforto, discrição
+          e a tranquilidade de saber que está em boas mãos.
+        </p>
+      </div>
     </section>
 
-    <section class="about-block">
-      <h2>Excelência no serviço</h2>
-      <div class="cards-3" style="margin-top:18px;">
-        <article class="card">
-          <h3>Condução serena</h3>
-          <p>Trajetos planeados com margem, sem corridas de última hora. Segurança e conforto vêm sempre primeiro.</p>
-        </article>
-        <article class="card">
-          <h3>Comunicação clara</h3>
-          <p>Informação simples, sem complicações: ponto de encontro, contactos diretos e acompanhamento ao longo do dia.</p>
-        </article>
-        <article class="card">
-          <h3>Detalhe &amp; discrição</h3>
-          <p>Veículos cuidados, água a bordo, apoio com bagagem e um ambiente discreto para conversas, descanso ou trabalho.</p>
-        </article>
+    <!-- BLOCO PRINCIPAL -->
+    <section class="section section-dark">
+      <div class="section-inner">
+        <h2 class="section-title">Uma condução com assinatura</h2>
+        <p class="section-lead">
+          Desde 2018 que acompanhamos clientes em Portugal e na Europa com um
+          estilo de serviço assente na elegância, na calma e na atenção ao
+          detalhe. Cada percurso é preparado como se fosse único.
+        </p>
+
+        <div class="cards-3">
+          <article class="card">
+            <h3>Experiência &amp; profissionalismo</h3>
+            <p>
+              Motorista profissional com mais de 10 anos dedicados ao turismo,
+              habituado a receber viajantes de diferentes países, sempre com
+              discrição, respeito e uma condução segura e serena.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Serviço verdadeiramente à medida</h3>
+            <p>
+              Não trabalhamos com “pacotes rígidos”. Ajustamos horários,
+              paragens e percurso ao seu ritmo, preferências e necessidades
+              especiais, mantendo sempre um acompanhamento próximo.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Elegância em cada detalhe</h3>
+            <p>
+              Viatura cuidada, ambiente calmo, comunicação clara, apoio com
+              bagagem, água, Wi-Fi e conforto a bordo. Um serviço pensado
+              para que se sinta sempre bem recebido(a).
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- O QUE OS CLIENTES COSTUMAM DIZER -->
+    <section class="section">
+      <div class="section-inner">
+        <h2 class="section-title">O que os clientes destacam</h2>
+        <p class="section-lead">
+          Mais do que chegar ao destino, importa a forma como se faz o
+          caminho. É isso que os nossos clientes mais valorizam.
+        </p>
+
+        <div class="cards-3">
+          <article class="card">
+            <h3>A tranquilidade</h3>
+            <p>
+              Condução calma, sem pressas desnecessárias, permitindo
+              desfrutar da paisagem, conversar, trabalhar ou simplesmente
+              estar em silêncio.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>A comunicação</h3>
+            <p>
+              Respostas rápidas, informações claras antes do serviço e
+              disponibilidade para esclarecer todas as dúvidas com
+              antecedência.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>A discrição</h3>
+            <p>
+              Um ambiente reservado, sem exposição, com o foco na
+              segurança, no conforto e no respeito pelo seu espaço e
+              privacidade.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPROMISSOS -->
+    <section class="section section-dark">
+      <div class="section-inner narrow">
+        <h2 class="section-title">Compromissos que assumimos consigo</h2>
+        <div class="card">
+          <h3>Antes do serviço</h3>
+          <p>
+            Esclarecemos valores, horários, pontos de partida e chegada,
+            condições especiais e qualquer detalhe relevante, para que não
+            existam surpresas.
+          </p>
+
+          <h3>Durante o percurso</h3>
+          <p>
+            Garantimos pontualidade, conforto a bordo, flexibilidade nas
+            paragens e adaptação ao trânsito ou imprevistos, sempre com
+            comunicação clara.
+          </p>
+
+          <h3>Depois da viagem</h3>
+          <p>
+            Mantemos disponibilidade para apoio adicional, continuidade de
+            serviços ou coordenação de futuras deslocações, caso assim o
+            deseje.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAMADA PARA AÇÃO -->
+    <section class="section">
+      <div class="section-inner narrow">
+        <h2 class="section-title">Próximo passo</h2>
+        <p class="section-lead">
+          Se procura um serviço de transporte privado com elegância, calma
+          e acompanhamento de confiança, teremos todo o gosto em preparar
+          uma proposta à sua medida.
+        </p>
+
+        <div class="cards-3">
+          <article class="card">
+            <h3>Reservas</h3>
+            <p>
+              Para pedidos detalhados com datas, horários e itinerário
+              sugerido, utilize o formulário de reservas.
+            </p>
+            <p style="margin-top: 8px;">
+              <a href="booking.html" class="btn-secondary">Ir para reservas</a>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>WhatsApp</h3>
+            <p>
+              Para um primeiro contacto mais direto, esclarecimento rápido
+              ou pedidos urgentes, utilize o WhatsApp.
+            </p>
+            <p style="margin-top: 8px;">
+              <a
+                href="https://wa.me/351910784548"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-primary"
+              >
+                Falar via WhatsApp
+              </a>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Contactos</h3>
+            <p>
+              Se preferir, pode utilizar a página de contactos para
+              enviar uma mensagem mais detalhada ou formal.
+            </p>
+            <p style="margin-top: 8px;">
+              <a href="contactos.html" class="btn-outline">Ver contactos</a>
+            </p>
+          </article>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>© 2018 Explore Portugal Experience</p>
-      <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
-      <p><a href="privacy.html">Política de privacidade</a></p>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="section-inner">
+      <p>
+        © 2018–2025 Explore Portugal Experience — RNAAT n.º 17/2018 —
+        Turismo de Portugal
+      </p>
+      <p>Powered by: MkDesign – Portugal</p>
+      <div class="footer-social">
+        <p>Siga-nos:</p>
+        <p>
+          <a
+            href="https://www.instagram.com/exploreportugal2025"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Instagram @exploreportugal2025</a>
+          <br />
+          <a
+            href="https://www.tiktok.com/@explore.portugal24"
+            target="_blank"
+            rel="noopener noreferrer"
+          >TikTok @explore.portugal24</a>
+        </p>
+      </div>
+      <p class="footer-small">
+        Este site utiliza cookies e ferramentas analíticas para melhorar a
+        experiência de navegação.
+      </p>
     </div>
   </footer>
 
+  <!-- Google Translate -->
   <script>
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'pt'}, 'google_translate_element');
+      new google.translate.TranslateElement(
+        { pageLanguage: "pt" },
+        "google_translate_element"
+      );
     }
   </script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script src="assets/js/nav.js"></script>
 </body>
 </html>
