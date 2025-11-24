@@ -1,183 +1,262 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sobre — Explore Portugal Experience</title>
-  <meta name="description" content="Motorista profissional privado em Portugal e Europa, com serviço personalizado, discreto e elegante desde 2018." />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" type="image/svg+xml" href="assets/icons/star-full.svg" />
-</head>
-<body>
-  <div class="translate-bar">
-    <span>Idioma:</span>
-    <div id="google_translate_element"></div>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Sobre nós | Explore Portugal Experience</title>
+    <meta
+      name="description"
+      content="Conheça a história da Explore Portugal Experience, o motorista profissional por detrás do volante e o tributo a Agapito, cofundador deste projeto."
+    />
 
-  <header class="header">
-    <a class="home-star" href="index.html" aria-label="Início">
-      <svg viewBox="0 0 256 256" class="star-animated" aria-hidden="true">
-        <polygon fill="#C9A562"
-          points="128,18 162,92 242,96 184,150 200,230 128,185 58,230 72,150 14,96 94,92" />
-      </svg>
-    </a>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Y30ME05MQY');
+    </script>
 
-    <a class="logo-area" href="index.html">
-      <span class="logo-text">Explore Portugal Experience</span>
-    </a>
-
-    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
-
-    <nav class="nav" aria-label="Principal">
-      <a href="about.html" aria-current="page">Sobre</a>
-      <a href="services.html">Serviços</a>
-      <a href="choose.html">Porquê nós</a>
-      <a href="pricing.html">Preços</a>
-      <a href="faq.html">FAQ</a>
-      <a href="gallery.html">Galeria</a>
-      <a href="booking.html">Reservas</a>
-      <a href="partners-drivers.html">Partners Drivers</a>
-      <a href="partners-hospitality.html">Partners Hospitality</a>
-    </nav>
-  </header>
-
-  <section class="page-hero">
-    <div class="hero-content">
-      <h1 class="section-title">Quem somos</h1>
-      <p class="lead">
-        Serviço privado com assinatura: condução serena, tempo bem cuidado e um país inteiro à tua espera — desde 2018.
-      </p>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" type="image/png" href="assets/icons/star-gold.png" />
+    <script src="assets/js/nav.js" defer></script>
+  </head>
+  <body>
+    <!-- Barra de idioma -->
+    <div class="translate-bar">
+      <span>Idioma:</span>
+      <div id="google_translate_element"></div>
     </div>
-  </section>
 
-  <main class="page-content">
+    <!-- Cabeçalho -->
+    <header class="header">
+      <a href="index.html" class="home-star" aria-label="Página inicial">
+        <img
+          src="assets/icons/star-gold.png"
+          alt="Explore Portugal Experience"
+          class="star-animated"
+        />
+      </a>
 
-    <section class="about-block">
-      <h2>Como trabalhamos</h2>
-      <p>
-        A Explore Portugal Experience nasce de mais de uma década ao volante como motorista profissional certificado,
-        com foco total em segurança, conforto e discrição.
-      </p>
-      <p>
-        Cada serviço é planeado à medida: horários com margem, sem correrias desnecessárias, paragens pensadas e
-        comunicação clara antes, durante e depois de cada percurso — para que tudo aconteça com naturalidade.
-      </p>
-    </section>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="about.html" aria-current="page">Sobre</a>
+        <a href="services.html">Serviços</a>
+        <a href="choose.html">Porquê nós</a>
+        <a href="pricing.html">Preços</a>
+        <a href="faq.html">FAQ</a>
+        <a href="partners-drivers.html">Partners Drivers</a>
+        <a href="partners-hospitality.html">Partners Hospitality</a>
+        <a href="booking.html">Reservas</a>
+        <a href="contactos.html">Contactos</a>
+      </nav>
 
-    <section class="about-block">
-      <h2>Serviço com assinatura</h2>
-      <div class="cards-3">
-        <article class="card">
-          <h3>Calma &amp; atenção ao detalhe</h3>
-          <p>
-            Pontualidade, viaturas cuidadas e um ritmo confortável. O foco é que
-            te sintas em casa — mesmo longe de casa.
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="page-hero section-dark">
+        <div class="section-inner narrow">
+          <h1 class="page-hero-title">Sobre nós</h1>
+          <p class="page-hero-subtitle">
+            Um serviço pensado para quem valoriza silêncio, conforto e um
+            motorista que conduz com calma, respeito e atenção ao detalhe.
           </p>
-        </article>
+        </div>
+      </section>
 
-        <article class="card">
-          <h3>Conhecimento local</h3>
-          <p>
-            Sugestões de restaurantes, miradouros, paragens especiais e pequenos
-            desvios que fazem a diferença sem estragar o plano do dia.
+      <!-- HISTÓRIA + TRIBUTO -->
+      <section class="about-section section-dark">
+        <div class="section-inner">
+          <div class="about-grid">
+            <!-- Coluna texto principal -->
+            <div>
+              <h2>Quem está ao volante</h2>
+              <p>
+                A Explore Portugal Experience nasce da paixão por conduzir e da
+                vontade de mostrar Portugal com elegância, tranquilidade e
+                respeito pelo tempo de cada pessoa.
+              </p>
+              <p>
+                Há mais de uma década que o foco está no turismo: acolher quem
+                chega, cuidar de quem se desloca, garantir que cada percurso é
+                tão confortável quanto o destino. A experiência acumulada em
+                transfers, tours privados e viagens longas traduz-se numa
+                condução segura, atenta e serena.
+              </p>
+              <p>
+                Cada serviço é preparado com antecedência: horários, rotas,
+                alternativas, pontos de paragem e pequenos detalhes que fazem a
+                diferença — desde a temperatura a bordo até à música (ou ao
+                silêncio) que acompanha o caminho.
+              </p>
+
+              <h2>Como tudo começou</h2>
+              <p>
+                A empresa nasce oficialmente em 2018, mas a raiz deste projeto é
+                anterior: muitos anos a conduzir profissionalmente, a ouvir
+                histórias de quem visita o país e a aperfeiçoar a arte de guiar
+                sem pressa, com respeito e discrição.
+              </p>
+              <p>
+                A Explore Portugal Experience existe para quem prefere um
+                serviço premium, personalizável, com comunicação clara e
+                acompanhamento próximo — antes, durante e depois da viagem.
+              </p>
+            </div>
+
+            <!-- Coluna tributo Agapito -->
+            <aside class="tribute-block">
+              <div class="tribute-heading">Em memória</div>
+              <div class="tribute-name">Agapito</div>
+              <div class="tribute-subtitle">
+                Cofundador · Motorista profissional
+              </div>
+
+              <div class="tribute-line"></div>
+
+              <div class="tribute-photo">
+                <img
+                  src="assets/images/agapito.jpg"
+                  alt="Agapito, cofundador da Explore Portugal Experience"
+                />
+              </div>
+
+              <p class="tribute-text">
+                A Explore Portugal Experience nasceu do sonho e da visão de
+                alguém extraordinário: Agapito, cofundador deste projeto,
+                motorista profissional certificado e um homem guiado pela paixão
+                pela estrada, pela beleza do nosso país e pelo encontro com
+                pessoas de todas as partes do mundo.
+              </p>
+              <p class="tribute-text">
+                Foi o Agapito que deu o primeiro passo, que acreditou antes de
+                todos, que sonhou alto e sem medo. A sua dedicação, integridade,
+                generosidade e profissionalismo tornaram-se a base desta empresa
+                e definiram o que somos hoje: um serviço com alma, requinte e
+                respeito absoluto por quem confia em nós.
+              </p>
+              <p class="tribute-text">
+                Para ele, conduzir era amar. Era cuidar. Era transformar cada
+                percurso numa experiência humana, tranquila e inesquecível. Quem
+                teve o privilégio de viajar ao seu lado sabe que a sua presença
+                iluminava cada quilómetro e cada conversa.
+              </p>
+              <p class="tribute-text">
+                O Agapito partiu demasiado cedo. Mas nunca partiu de verdade.
+                O seu legado vive nesta estrada que ele começou. Vive em cada
+                cliente que recebemos com atenção e elegância. Vive na forma
+                como honramos o detalhe, o silêncio, o conforto e a arte de
+                guiar.
+              </p>
+              <p class="tribute-text">
+                A cada viagem, continuamos o que ele começou. A cada destino
+                alcançado, levamo-lo connosco.
+              </p>
+
+              <p class="tribute-quote">
+                “A estrada continua contigo.”
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- VALORES -->
+      <section class="section">
+        <div class="section-inner">
+          <h2 class="section-title">O que pode esperar de nós</h2>
+          <p class="section-lead">
+            Mais do que transporte, um acompanhamento discreto e atento, com
+            respeito pelo seu tempo, espaço e conforto.
           </p>
-        </article>
 
-        <article class="card">
-          <h3>Comunicação simples</h3>
+          <div class="cards-3">
+            <article class="card">
+              <h3>Atenção ao detalhe</h3>
+              <p>
+                Pontualidade, viatura preparada, bagagem tratada com cuidado,
+                percurso estudado com antecedência e flexibilidade sempre que
+                necessário.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Profissionalismo</h3>
+              <p>
+                Motorista profissional com experiência em turismo, seguro
+                adequado, documentação em ordem e registo de atividade turística
+                válido em Portugal.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Calma &amp; discrição</h3>
+              <p>
+                Um ambiente tranquilo a bordo, comunicação clara e um serviço
+                pensado para quem valoriza privacidade e um ritmo confortável.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="site-footer">
+      <div class="section-inner">
+        <p>
+          © 2018–2025 Explore Portugal Experience — Turismo em Portugal ·
+          RNAAT n.º 17/2018 — Turismo de Portugal
+        </p>
+
+        <p>Powered by: MkDesign – Portugal</p>
+
+        <div class="footer-social">
+          <p>Siga-nos:</p>
           <p>
-            Falamos contigo em linguagem clara e direta, por WhatsApp, telefone
-            ou e-mail, sempre com confirmação de todos os detalhes antes do serviço.
+            <a
+              href="https://www.instagram.com/exploreportugal2025"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram @exploreportugal2025
+            </a>
+            <br />
+            <a
+              href="https://www.tiktok.com/@explore.portugal24"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              TikTok @explore.portugal24
+            </a>
           </p>
-        </article>
+        </div>
+
+        <p class="footer-small">
+          Este site utiliza cookies e ferramentas analíticas para melhorar a
+          experiência de navegação.
+        </p>
       </div>
-    </section>
+    </footer>
 
-    <section class="about-block tribute-block">
-      <h2 class="tribute-title">Em memória de Agapito</h2>
-
-      <div class="tribute-photo-wrapper">
-        <span class="tribute-line"></span>
-
-        <figure class="tribute-figure">
-          <img src="assets/images/agapito.jpg"
-               alt="Agapito, cofundador da Explore Portugal Experience">
-          <figcaption>Agapito — cofundador</figcaption>
-        </figure>
-
-        <span class="tribute-line"></span>
-      </div>
-
-      <div class="tribute-box">
-        <p>
-          A Explore Portugal Experience nasceu do sonho e da visão de alguém extraordinário:
-          <strong>Agapito</strong>, cofundador deste projeto, motorista profissional certificado e um homem guiado pela
-          paixão pela estrada, pela beleza do nosso país e pelo encontro com pessoas de todas as partes do mundo.
-        </p>
-
-        <p>
-          Foi o Agapito que deu o primeiro passo, que acreditou antes de todos, que sonhou alto e sem medo.
-          A sua dedicação, integridade, generosidade e profissionalismo tornaram-se a base desta empresa
-          e definiram o que somos hoje: um serviço com alma, requinte e respeito absoluto por quem confia em nós.
-        </p>
-
-        <p>
-          Para ele, conduzir era amar.<br>
-          Era cuidar.<br>
-          Era transformar cada percurso numa experiência humana, tranquila e inesquecível.
-        </p>
-
-        <p>
-          Quem teve o privilégio de viajar ao seu lado sabe que a sua presença iluminava cada quilómetro e cada conversa.</p>
-
-        <p>
-          <strong>O Agapito partiu demasiado cedo.<br>
-          Mas nunca partiu de verdade.</strong>
-        </p>
-
-        <p>
-          O seu legado vive nesta estrada que ele começou. Vive em cada cliente que recebemos com atenção e elegância.
-          Vive na forma como honramos o detalhe, o silêncio, o conforto e a arte de guiar.
-        </p>
-
-        <p>
-          A cada viagem, continuamos o que ele começou.<br>
-          A cada destino alcançado, levamo-lo connosco.
-        </p>
-
-        <p>
-          <strong>Obrigado, Agapito.</strong><br>
-          Para sempre parte desta casa, para sempre no volante das nossas memórias.
-        </p>
-
-        <p class="tribute-quote">“A estrada continua contigo.”</p>
-      </div>
-    </section>
-
-    <section class="about-block">
-      <h2>Desde 2018</h2>
-      <p>
-        Operamos com licença RNAAT n.º 17/2018 — Turismo de Portugal, com seguro adequado à atividade
-        e foco absoluto em segurança, conforto e elegância em cada quilómetro.
-      </p>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>© 2018 Explore Portugal Experience</p>
-      <p class="rnaat">RNAAT n.º 17/2018 — Turismo de Portugal</p>
-      <p><a href="privacy.html">Política de privacidade</a></p>
-    </div>
-  </footer>
-
-  <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({ pageLanguage: 'pt' }, 'google_translate_element');
-    }
-  </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script src="assets/js/nav.js"></script>
-</body>
+    <!-- Google Translate -->
+    <script>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "pt" },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  </body>
 </html>
