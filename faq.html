@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQ | Explore Portugal Experience</title>
-  <meta name="description" content="Perguntas frequentes sobre transfers, tours e serviços privados de transporte premium em Portugal.">
+  <meta charset="UTF-8">
+  <title>FAQ · Explore Portugal Experience</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Perguntas frequentes sobre os serviços da Explore Portugal Experience — transfers privados, tours, reservas, pagamentos e cancelamentos.">
+
+  <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
@@ -14,121 +17,292 @@
     gtag('js', new Date());
     gtag('config', 'G-Y30ME05MQY');
   </script>
-
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" type="image/png" href="assets/icons/star-gold.png" />
-  <script src="assets/js/nav.js" defer></script>
 </head>
-
 <body>
-  <!-- Translate bar -->
+  <!-- Barra de idioma -->
   <div class="translate-bar">
     <span>Idioma:</span>
     <div id="google_translate_element"></div>
   </div>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="header">
-    <a href="index.html" class="home-star" aria-label="Página inicial">
-      <img src="assets/icons/star-gold.png" class="star-animated" alt="Explore Portugal Experience" />
+    <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
+      <img src="assets/icons/star-full.svg"
+           alt="Explore Portugal Experience"
+           class="star-animated">
     </a>
 
     <nav class="nav" aria-label="Navegação principal">
-      <a href="about.html">Sobre</a>
-      <a href="services.html">Serviços</a>
-      <a href="choose.html">Porquê nós</a>
-      <a href="pricing.html">Preços</a>
-      <a href="faq.html" aria-current="page">FAQ</a>
-      <a href="partners-drivers.html">Partners Drivers</a>
-      <a href="partners-hospitality.html">Partners Hospitality</a>
-      <a href="booking.html">Reservas</a>
-      <a href="contactos.html">Contactos</a>
+      <ul class="nav-menu">
+        <li><a href="about.html">Sobre</a></li>
+        <li><a href="services.html">Serviços</a></li>
+        <li><a href="choose.html">Porquê nós</a></li>
+        <li><a href="pricing.html">Preços</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="partners-drivers.html">Partners Drivers</a></li>
+        <li><a href="partners-hospitality.html">Partners Hospitality</a></li>
+        <li><a href="gallery.html">Galeria</a></li>
+        <li><a href="booking.html">Reservas</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+      </ul>
     </nav>
 
-    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
+    <button class="nav-toggle" type="button" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </header>
 
   <main>
     <!-- HERO -->
     <section class="page-hero section-dark">
+      <h1 class="page-hero-title">Perguntas frequentes</h1>
+      <p class="page-hero-subtitle">
+        Algumas das questões que mais nos chegam sobre transfers, tours, pagamentos e reservas.
+        Se a sua pergunta não estiver aqui, fale connosco diretamente.
+      </p>
+    </section>
+
+    <!-- FAQ GERAL -->
+    <section class="section">
       <div class="section-inner narrow">
-        <h1 class="page-hero-title">Perguntas Frequentes</h1>
-        <p class="page-hero-subtitle">
-          Respostas claras e objetivas para que planeie a sua experiência com total tranquilidade.
-        </p>
+        <h2 class="section-title">Serviços &amp; reservas</h2>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <p class="faq-q">Como faço um pedido de orçamento?</p>
+            <p class="faq-a">
+              Pode enviar uma mensagem direta por WhatsApp, email ou utilizar o formulário
+              de reservas. O ideal é indicar datas, horários aproximados, número de pessoas
+              e locais de partida/chegada — a partir daí, respondemos com um valor claro
+              e condições simples.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">Com quanta antecedência devo reservar?</p>
+            <p class="faq-a">
+              Quanto mais cedo, melhor, sobretudo em épocas de maior procura (verão, feriados,
+              eventos). No entanto, sempre que possível tentamos acomodar pedidos de última
+              hora, dependendo da disponibilidade nesse dia.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">Fazem transfers fora de Lisboa?</p>
+            <p class="faq-a">
+              Sim. Os serviços têm base em Lisboa, mas realizam-se transfers e dias inteiros
+              para vários pontos do país (Porto, Algarve, Alentejo, Centro, etc.). O valor é
+              calculado em função da distância e do tempo previsto.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- FAQ DIA DO SERVIÇO -->
     <section class="section section-dark">
-      <div class="section-inner narrow faq-list">
+      <div class="section-inner narrow">
+        <h2 class="section-title">No dia do serviço</h2>
 
-        <div class="faq-item">
-          <p class="faq-q">Como posso efetuar uma reserva?</p>
-          <p class="faq-a">
-            Pode realizar a sua reserva através de WhatsApp, e-mail ou formulário de reservas no nosso site.
-            Após o pedido, recebe sempre uma confirmação escrita com todos os detalhes do serviço.
-          </p>
+        <div class="faq-list">
+          <div class="faq-item">
+            <p class="faq-q">Onde encontro o motorista à chegada ao aeroporto?</p>
+            <p class="faq-a">
+              O ponto de encontro é combinado por escrito antes da viagem (ex.: zona de chegadas,
+              junto a um ponto de referência específico). Em transfers com placa, o nome
+              acordado aparece visível à saída.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">Monitorizam o voo em caso de atraso?</p>
+            <p class="faq-a">
+              Sim. Em transfers de/para o aeroporto, o voo é monitorizado e o horário de
+              recolha é ajustado. Em atrasos muito prolongados, voltamos a falar para
+              combinar o que faz mais sentido para ambas as partes.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">É possível adaptar o percurso durante o dia?</p>
+            <p class="faq-a">
+              Dentro do razoável, sim. Em tours e serviço por horas, pode pedir pequenas
+              alterações de percurso, acrescentar uma paragem ou ajustar o ritmo do dia.
+              Mudanças que alterem significativamente o tempo ou distância serão sempre
+              faladas antes.
+            </p>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="faq-item">
-          <p class="faq-q">Quais são os métodos de pagamento disponíveis?</p>
-          <p class="faq-a">
-            Aceitamos pagamentos através de WhatsApp, MB Way, PayPal e Revolut.
-            Clique no método desejado na página de Serviços ou Preços para proceder ao pagamento.
-          </p>
+    <!-- FAQ PAGAMENTOS -->
+    <section class="section">
+      <div class="section-inner narrow">
+        <h2 class="section-title">Pagamentos &amp; cancelamentos</h2>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <p class="faq-q">Que métodos de pagamento aceitam?</p>
+            <p class="faq-a">
+              Dependendo do serviço e da antecedência, podem estar disponíveis MB Way, Revolut,
+              PayPal e outras soluções acordadas caso a caso. Em todos os casos, o método é
+              confirmado por escrito antes da reserva.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">Têm sinal de reserva?</p>
+            <p class="faq-a">
+              Em serviços de maior duração, datas muito concorridas ou pedidos específicos,
+              pode ser solicitado um sinal. O valor e condições são indicados claramente na
+              proposta, antes de qualquer compromisso.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">Como funcionam os cancelamentos?</p>
+            <p class="faq-a">
+              As condições de cancelamento variam consoante o tipo de serviço e a antecedência.
+              Sempre que possível, privilegia-se primeiro a alteração de horário/data.
+              As regras concretas são enviadas com cada proposta, de forma transparente.
+            </p>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="faq-item">
-          <p class="faq-q">Posso personalizar o itinerário de um tour?</p>
-          <p class="faq-a">
-            Sim, todos os tours podem ser totalmente ajustados ao seu ritmo e interesses.
-            Criamos experiências únicas, sem pressa e com flexibilidade total.
-          </p>
+    <!-- FAQ OUTRAS QUESTÕES -->
+    <section class="section section-dark">
+      <div class="section-inner narrow">
+        <h2 class="section-title">Outras questões</h2>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <p class="faq-q">Falam outros idiomas além de português?</p>
+            <p class="faq-a">
+              Sim. A comunicação pode ser feita em português, inglês e, em muitos casos,
+              com compreensão de espanhol e francês. Se tiver uma necessidade específica
+              de idioma, mencione no pedido.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">É possível transportar crianças com cadeiras próprias?</p>
+            <p class="faq-a">
+              Sempre que solicitado com antecedência, pode ser disponibilizada cadeira
+              de criança adequada à idade/peso, dependendo da informação fornecida no
+              momento da reserva.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">E se a minha pergunta não estiver aqui?</p>
+            <p class="faq-a">
+              Envie uma mensagem simples por WhatsApp ou email. Muitas vezes uma resposta
+              curta é suficiente para perceber se o serviço se ajusta ao que procura.
+            </p>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="faq-item">
-          <p class="faq-q">Existe assistência no aeroporto?</p>
-          <p class="faq-a">
-            Sim. Para transfers de chegada, aguardamos com placa identificativa, acompanhamos até à viatura
-            e ajudamos com bagagem.
-          </p>
+    <!-- CALL TO ACTION -->
+    <section class="section section-reservas">
+      <div class="section-inner">
+        <h2 class="section-title">Ainda tem dúvidas?</h2>
+        <p class="section-lead">
+          Fale connosco diretamente e colocamos tudo por escrito de forma clara e tranquila.
+        </p>
+
+        <div class="reservas-grid">
+          <article class="reservas-card">
+            <h3>WhatsApp direto</h3>
+            <p class="reservas-phone">+351 910 784 548</p>
+            <a href="https://wa.me/351910784548" class="btn-secondary" target="_blank" rel="noopener">
+              Falar por WhatsApp
+            </a>
+          </article>
+
+          <article class="reservas-card">
+            <h3>Email</h3>
+            <p>
+              Prefere tudo escrito? Envie-nos a sua questão e respondemos com calma.
+            </p>
+            <a href="mailto:info@exploreportugalexperience.com" class="btn-outline">
+              Escrever email
+            </a>
+          </article>
         </div>
-
-        <div class="faq-item">
-          <p class="faq-q">Qual é a vossa política de cancelamento?</p>
-          <p class="faq-a">
-            Cancelamentos até 24 horas antes não têm custos. Após esse prazo, poderá ser aplicada uma taxa
-            até 50% consoante o serviço e época do ano.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <p class="faq-q">As viaturas incluem água, Wi-Fi e carregadores?</p>
-          <p class="faq-a">
-            Sim, todos os serviços incluem água, Wi-Fi, carregadores e possibilidade de cadeira para criança
-            (sob pedido e sem custos adicionais).
-          </p>
-        </div>
-
       </div>
     </section>
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="section-inner">
-      <p>© 2018–2025 Explore Portugal Experience — RNAAT n.º 17/2018 — Turismo de Portugal</p>
-      <p>Powered by: MkDesign – Portugal</p>
+  <footer class="section footer">
+    <div class="section-inner footer-inner">
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h3>Contactos</h3>
+          <p>
+            Email:
+            <a href="mailto:info@exploreportugalexperience.com">
+              info@exploreportugalexperience.com
+            </a><br>
+            Telemóvel / WhatsApp: +351 910 784 548
+          </p>
+          <p>Lisboa · Portugal</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Redes sociais</h3>
+          <p>
+            <a href="https://www.instagram.com/exploreportugal2025" target="_blank">Instagram</a><br>
+            <a href="https://www.tiktok.com/@explore.portugal24?_r=1&_t=ZG-91YeXliOakD" target="_blank">TikTok</a>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Reservas</h3>
+          <p>
+            WhatsApp:
+            <a href="https://wa.me/351910784548" target="_blank">
+              +351 910 784 548
+            </a><br>
+            <a href="booking.html">Formulário online</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © 2018–2025 Explore Portugal Experience — Turismo em Portugal.
+        </p>
+        <p class="footer-credit">
+          Powered by: MkDesign - Portugal
+        </p>
+      </div>
     </div>
   </footer>
 
-  <!-- Translate -->
+  <!-- JS -->
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/lightbox.js"></script>
+
+  <!-- Google Translate -->
   <script>
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({ pageLanguage: "pt" }, "google_translate_element");
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: 'pt',
+          includedLanguages: 'en,pt,es,fr,de',
+          autoDisplay: false
+        },
+        'google_translate_element'
+      );
     }
   </script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
