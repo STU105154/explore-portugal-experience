@@ -1,94 +1,205 @@
-<main>
-  <section class="section section-dark section-form">
-    <div class="section-inner form-layout">
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <title>Partners Drivers · Explore Portugal Experience</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <h1 class="section-title">Questionário para Motoristas</h1>
-      <p class="section-lead">
-        Os dados são apenas utilizados para avaliar a possibilidade de parceria
-        e não são partilhados com terceiros.
-      </p>
+    <meta name="description"
+          content="Questionário para motoristas parceiros da Explore Portugal Experience – transfers premium e tours privados em Portugal.">
 
-      <!-- Se já tiveres um action/method a funcionar, ajusta aqui -->
-      <form class="partner-form" action="#" method="post">
+    <!-- CSS principal – igual ao das outras páginas -->
+    <link rel="stylesheet" href="assets/css/style.css">
 
-        <div class="form-grid-2">
-          <div class="form-row">
-            <label for="nome-motorista">Nome completo *</label>
-            <input id="nome-motorista" name="nome" type="text" required>
-          </div>
+    <!-- Google Analytics – copia a partir do index.html -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Y30ME05MQY');
+    </script>
+  </head>
 
-          <div class="form-row">
-            <label for="email-motorista">Email *</label>
-            <input id="email-motorista" name="email" type="email" required>
-          </div>
-        </div>
-
-        <div class="form-grid-2">
-          <div class="form-row">
-            <label for="telefone-motorista">Telemóvel / WhatsApp *</label>
-            <input id="telefone-motorista" name="telefone" type="tel" required>
-          </div>
-
-          <div class="form-row">
-            <label for="base-motorista">Base (cidade / zona principal de saída) *</label>
-            <input id="base-motorista" name="base" type="text" required>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <label for="carta-motorista">Tipo de carta / certificados *</label>
-          <input id="carta-motorista" name="carta" type="text"
-                 placeholder="Ex.: Carta B, TVDE, CCM, etc." required>
-        </div>
-
-        <div class="form-row">
-          <label for="viaturas-motorista">Tipo(s) de viatura disponível(veis) *</label>
-          <textarea id="viaturas-motorista" name="viaturas" rows="3" required
-            placeholder="Ex.: Mercedes Classe E, 1 a 3 pax; Minivan 7 pax; etc."></textarea>
-        </div>
-
-        <div class="form-row">
-          <label for="idiomas-motorista">Idiomas que fala à vontade *</label>
-          <textarea id="idiomas-motorista" name="idiomas" rows="2" required
-            placeholder="Ex.: Português, Inglês, Espanhol, etc."></textarea>
-        </div>
-
-        <div class="form-row">
-          <label for="experiencia-motorista">
-            Breve resumo da experiência em transfers / tours *
-          </label>
-          <textarea id="experiencia-motorista" name="experiencia" rows="4" required
-            placeholder="Ex.: anos de experiência, zonas onde trabalha, tipo de serviços, etc."></textarea>
-        </div>
-
-        <div class="form-row">
-          <label for="disponibilidade-motorista">Disponibilidade *</label>
-          <textarea id="disponibilidade-motorista" name="disponibilidade" rows="3" required
-            placeholder="Ex.: Full-time, fins-de-semana, noites, épocas específicas, etc."></textarea>
-        </div>
-
-        <div class="form-row">
-          <label for="zonas-motorista">
-            Zonas onde trabalha com mais frequência
-          </label>
-          <textarea id="zonas-motorista" name="zonas" rows="3"
-            placeholder="Ex.: Lisboa, Cascais, Sintra, Algarve, etc."></textarea>
-        </div>
-
-        <div class="form-row">
-          <label for="extra-motorista">
-            Observações / informação relevante
-          </label>
-          <textarea id="extra-motorista" name="extra" rows="3"
-            placeholder="Condições especiais, preferências de trabalho, etc."></textarea>
-        </div>
-
-        <div class="form-actions">
-          <button type="submit" class="btn-submit">
-            Enviar questionário
-          </button>
-        </div>
-      </form>
+  <body>
+    <!-- Barra de idioma / Google Translate -->
+    <div class="top-bar">
+      <span>Idioma:</span>
+      <div id="google_translate_element"></div>
     </div>
-  </section>
-</main>
+
+    <!-- HEADER + NAV (copiado do index.html) -->
+    <header class="header">
+      <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
+        <img src="assets/icons/star-full.svg"
+             alt="Explore Portugal Experience"
+             class="star-animated">
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <ul class="nav-menu">
+          <li><a href="about.html">Sobre</a></li>
+          <li><a href="services.html">Serviços</a></li>
+          <li><a href="choose.html">Porquê nós</a></li>
+          <li><a href="pricing.html">Preços</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="partners-drivers.html" class="active">Partners Drivers</a></li>
+          <li><a href="partners-hospitality.html">Partners Hospitality</a></li>
+          <li><a href="gallery.html">Galeria</a></li>
+          <li><a href="booking.html">Reservas</a></li>
+          <li><a href="contactos.html">Contactos</a></li>
+        </ul>
+
+        <button class="nav-toggle" type="button" aria-label="Abrir menu">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO / TÍTULO DA PÁGINA -->
+      <section class="page-hero section-dark">
+        <div class="section-inner">
+          <h1 class="page-title">Questionário para Motoristas</h1>
+          <p class="page-intro">
+            Os dados são apenas utilizados para avaliar a possibilidade de parceria
+            e não são partilhados com terceiros.
+          </p>
+        </div>
+      </section>
+
+      <!-- FORMULÁRIO PARA DRIVERS -->
+      <section class="section">
+        <div class="section-inner">
+          <form class="partner-form"
+                action="mailto:info@exploreportugalexperience.com"
+                method="post"
+                enctype="text/plain">
+
+            <div class="form-grid">
+
+              <div class="form-field">
+                <label for="nome">Nome completo *</label>
+                <input type="text" id="nome" name="Nome completo" required>
+              </div>
+
+              <div class="form-field">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="Email" required>
+              </div>
+
+              <div class="form-field">
+                <label for="telefone">Telemóvel / WhatsApp *</label>
+                <input type="tel" id="telefone" name="Telemóvel / WhatsApp" required>
+              </div>
+
+              <div class="form-field">
+                <label for="base">Base (cidade / zona principal de saída) *</label>
+                <input type="text" id="base" name="Base" placeholder="Ex.: Lisboa, Cascais, Porto…" required>
+              </div>
+
+              <div class="form-field">
+                <label for="carta">Tipo de carta / certificados *</label>
+                <textarea id="carta" name="Tipo de carta / certificados" rows="2"
+                          placeholder="Ex.: Carta B, TVDE, CCM, outros…"
+                          required></textarea>
+              </div>
+
+              <div class="form-field">
+                <label for="viatura">Tipo(s) de viatura disponível(veis) *</label>
+                <textarea id="viatura" name="Tipos de viatura" rows="3"
+                          placeholder="Ex.: Mercedes Classe E, 1 a 3 pax; Minivan 7 pax; etc."
+                          required></textarea>
+              </div>
+
+              <div class="form-field">
+                <label for="idiomas">Idiomas que fala à vontade *</label>
+                <textarea id="idiomas" name="Idiomas" rows="2"
+                          placeholder="Ex.: Português, Inglês, Espanhol, Francês…"
+                          required></textarea>
+              </div>
+
+              <div class="form-field">
+                <label for="experiencia">Breve resumo da experiência em transfers / tours *</label>
+                <textarea id="experiencia" name="Experiência" rows="4"
+                          placeholder="Ex.: anos de experiência, zonas onde trabalha, tipo de serviços, etc."
+                          required></textarea>
+              </div>
+
+              <div class="form-field">
+                <label for="disponibilidade">Disponibilidade *</label>
+                <textarea id="disponibilidade" name="Disponibilidade" rows="3"
+                          placeholder="Ex.: Full-time, fins-de-semana, noites, épocas específicas…"
+                          required></textarea>
+              </div>
+
+              <div class="form-field">
+                <label for="zonas">Zonas onde trabalha com mais frequência *</label>
+                <textarea id="zonas" name="Zonas habituais" rows="3"
+                          placeholder="Ex.: Lisboa, Cascais, Sintra, Algarve, etc."
+                          required></textarea>
+              </div>
+
+              <div class="form-field">
+                <label for="observacoes">Observações / informação relevante</label>
+                <textarea id="observacoes" name="Observações" rows="4"
+                          placeholder="Condições especiais, preferências de trabalho, etc."></textarea>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-primary">
+                Enviar questionário
+              </button>
+              <p class="form-note">
+                Ao enviar este formulário, está apenas a manifestar interesse em parceria.
+                Entraremos em contacto caso o perfil se adeque às necessidades atuais.
+              </p>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- BLOCO FINAL / TEXTO DE CONTEXTO (OPCIONAL) -->
+      <section class="section section-dark">
+        <div class="section-inner">
+          <h2 class="section-title">Como trabalhamos com motoristas parceiros</h2>
+          <p class="section-lead">
+            A prioridade é sempre a segurança, o conforto e a comunicação clara com o cliente.
+            Trabalhamos com motoristas que valorizam pontualidade, discrição e cuidado em cada detalhe.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- RODAPÉ IGUAL AO DAS OUTRAS PÁGINAS -->
+    <footer class="site-footer">
+      <div class="section-inner footer-inner">
+        <p>© Explore Portugal Experience. Todos os direitos reservados.</p>
+        <p>
+          Email:
+          <a href="mailto:info@exploreportugalexperience.com">
+            info@exploreportugalexperience.com
+          </a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="assets/js/nav.js"></script>
+    <script src="assets/js/partners.js"></script>
+
+    <!-- Google Translate script -->
+    <script>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'pt',
+          includedLanguages: 'en,pt,es,fr,de',
+          autoDisplay: false
+        }, 'google_translate_element');
+      }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  </body>
+</html>
