@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <title>Partners · Hospitality · Explore Portugal Experience</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Partners Hospitality | Explore Portugal Experience</title>
-  <meta name="description" content="Parcerias premium com hotéis, restaurantes, quintas, agências e empresas de eventos. Transfers e tours privados com serviço distinto.">
+  <meta name="description" content="Informações para hotéis, alojamentos e profissionais de turismo que procuram um parceiro de confiança para transfers e dias privados em Portugal.">
+
+  <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
@@ -15,14 +17,9 @@
     gtag('js', new Date());
     gtag('config', 'G-Y30ME05MQY');
   </script>
-
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" type="image/png" href="assets/icons/star-gold.png" />
-  <script src="assets/js/nav.js" defer></script>
 </head>
-
 <body>
-  <!-- Translate -->
+  <!-- Barra idioma -->
   <div class="translate-bar">
     <span>Idioma:</span>
     <div id="google_translate_element"></div>
@@ -30,24 +27,28 @@
 
   <!-- HEADER -->
   <header class="header">
-    <a href="index.html" class="home-star" aria-label="Página inicial">
-      <img src="assets/icons/star-gold.png" class="star-animated" alt="Explore Portugal Experience" />
+    <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
+      <img src="assets/icons/star-full.svg"
+           alt="Explore Portugal Experience"
+           class="star-animated">
     </a>
 
     <nav class="nav" aria-label="Navegação principal">
-      <a href="about.html">Sobre</a>
-      <a href="services.html">Serviços</a>
-      <a href="choose.html">Porquê nós</a>
-      <a href="pricing.html">Preços</a>
-      <a href="faq.html">FAQ</a>
-      <a href="gallery.html">Galeria</a>
-      <a href="partners-drivers.html">Partners Drivers</a>
-      <a href="partners-hospitality.html" aria-current="page">Partners Hospitality</a>
-      <a href="booking.html">Reservas</a>
-      <a href="contactos.html">Contactos</a>
+      <ul class="nav-menu">
+        <li><a href="about.html">Sobre</a></li>
+        <li><a href="services.html">Serviços</a></li>
+        <li><a href="choose.html">Porquê nós</a></li>
+        <li><a href="pricing.html">Preços</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="partners-drivers.html">Partners Drivers</a></li>
+        <li><a href="partners-hospitality.html">Partners Hospitality</a></li>
+        <li><a href="gallery.html">Galeria</a></li>
+        <li><a href="booking.html">Reservas</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+      </ul>
     </nav>
 
-    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+    <button class="nav-toggle" type="button" aria-label="Abrir menu">
       <span></span><span></span><span></span>
     </button>
   </header>
@@ -55,214 +56,175 @@
   <main>
     <!-- HERO -->
     <section class="page-hero section-dark">
-      <div class="section-inner narrow">
-        <h1 class="page-hero-title">Partners Hospitality</h1>
-        <p class="page-hero-subtitle">
-          Parcerias elegantes e fiáveis com hotéis, restaurantes, quintas,
-          agências e empresas que valorizam um serviço de transporte premium.
-        </p>
-      </div>
+      <h1 class="page-hero-title">Partners · Hospitality</h1>
+      <p class="page-hero-subtitle">
+        Para hotéis, alojamentos locais, agências e projetos de turismo que procuram
+        um parceiro de confiança para transfers e dias privados.
+      </p>
     </section>
 
-    <!-- INTRO -->
-    <section class="section section-dark">
+    <!-- COMO AJUDAMOS -->
+    <section class="section">
       <div class="section-inner">
-        <h2 class="section-title">Um prolongamento da sua hospitalidade</h2>
+        <h2 class="section-title">Como podemos ajudar</h2>
         <p class="section-lead">
-          O transporte é, muitas vezes, o primeiro e o último contacto de um
-          hóspede com o destino. O objetivo é que esse momento esteja à altura
-          da experiência que oferece na sua unidade ou evento.
+          O objetivo é simples: receber bem quem chega, aliviar a pressão da receção
+          e garantir que o percurso entre pontos se faz com calma e profissionalismo.
         </p>
 
         <div class="cards-3">
           <article class="card">
-            <h3>Hotéis &amp; alojamentos</h3>
+            <h3>Transfers dedicados</h3>
             <p>
-              Transfers de e para aeroporto, estações, restaurantes, eventos e
-              tours privados para hóspedes que procuram conforto e discrição.
+              Transfers de/para aeroporto, estações ou outros pontos de chegada, com
+              comunicação direta antes, durante e após o serviço, evitando mal-entendidos
+              no check-in e check-out.
             </p>
           </article>
 
           <article class="card">
-            <h3>Restaurantes &amp; wine experiences</h3>
+            <h3>Dias privados</h3>
             <p>
-              Serviço de transporte dedicado para clientes que desejam desfrutar
-              da experiência gastronómica sem preocupações com condução.
+              Sugestão e organização de dias em Sintra, Cascais, Fátima, Alentejo, entre
+              outros, sempre com foco no ritmo do hóspede e na experiência global.
             </p>
           </article>
 
           <article class="card">
-            <h3>Quintas, eventos &amp; corporate</h3>
+            <h3>Serviços à medida</h3>
             <p>
-              Soluções ajustadas para casamentos, eventos privados, visitas
-              empresariais e clientes VIP, com acompanhamento personalizado.
+              Apoio a eventos, grupos pequenos, visitas técnicas e programas feitos à medida,
+              com briefing claro e reporting posterior quando necessário.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- FORMULÁRIO PARCERIA -->
+    <!-- FORMA DE TRABALHAR -->
     <section class="section section-dark">
-      <div class="section-inner narrow">
-        <h2 class="section-title">Formulário de parceria</h2>
+      <div class="section-inner">
+        <h2 class="section-title">Forma de trabalhar com parceiros</h2>
         <p class="section-lead">
-          Indique, por favor, os dados principais da sua unidade ou projeto.
-          Entraremos em contacto para alinhar condições e formas de colaboração.
+          Cada parceria é ajustada ao perfil do projeto, mantendo sempre três pontos:
+          comunicação, segurança e transparência.
         </p>
 
-        <div class="card" style="margin-top:18px;">
-          <form
-            action="mailto:info@exploreportugalexperience.com"
-            method="post"
-            enctype="text/plain"
-          >
-            <label>
-              Nome da empresa / unidade*
-              <input
-                type="text"
-                name="Empresa"
-                required
-                placeholder="Nome comercial completo"
-                style="width:100%;margin:4px 0 12px;"
-              />
-            </label>
-
-            <label>
-              Tipo de parceiro*
-              <select
-                name="Tipo de parceiro"
-                required
-                style="width:100%;margin:4px 0 12px;"
-              >
-                <option value="">Selecione uma opção</option>
-                <option value="Hotel">Hotel</option>
-                <option value="Alojamento local / Boutique">Alojamento local / Boutique</option>
-                <option value="Restaurante / Wine bar">Restaurante / Wine bar</option>
-                <option value="Quinta / Evento">Quinta / Evento</option>
-                <option value="Agência de viagens / DMC">Agência de viagens / DMC</option>
-                <option value="Empresa / Corporate">Empresa / Corporate</option>
-                <option value="Outro">Outro</option>
-              </select>
-            </label>
-
-            <label>
-              Website (se aplicável)
-              <input
-                type="text"
-                name="Website"
-                placeholder="https://"
-                style="width:100%;margin:4px 0 12px;"
-              />
-            </label>
-
-            <label>
-              Localização*
-              <input
-                type="text"
-                name="Localizacao"
-                required
-                placeholder="Cidade, zona, país"
-                style="width:100%;margin:4px 0 12px;"
-              />
-            </label>
-
-            <label>
-              Pessoa de contacto*
-              <input
-                type="text"
-                name="Contacto"
-                required
-                placeholder="Nome da pessoa responsável"
-                style="width:100%;margin:4px 0 12px;"
-              />
-            </label>
-
-            <label>
-              Email profissional*
-              <input
-                type="email"
-                name="Email"
-                required
-                placeholder="Email para contacto"
-                style="width:100%;margin:4px 0 12px;"
-              />
-            </label>
-
-            <label>
-              Telefone / WhatsApp*
-              <input
-                type="text"
-                name="Telefone"
-                required
-                placeholder="Indicativo + número"
-                style="width:100%;margin:4px 0 12px;"
-              />
-            </label>
-
-            <label>
-              Volume aproximado de pedidos / mês
-              <input
-                type="text"
-                name="Volume"
-                placeholder="Ex.: 5–10 transfers, 2–3 tours..."
-                style="width:100%;margin:4px 0 12px;"
-              />
-            </label>
-
-            <label>
-              Observações / necessidades específicas
-              <textarea
-                name="Mensagem"
-                rows="6"
-                placeholder="Ex.: horários habituais de chegada, perfil de clientes, requisitos específicos, protocolo VIP..."
-                style="width:100%;margin:4px 0 14px;"
-              ></textarea>
-            </label>
-
-            <button type="submit" class="btn-primary" style="margin-top:4px;">
-              Enviar proposta de parceria
-            </button>
-
-            <p style="font-size:13px;color:#d0c9b7;margin-top:10px;text-align:center;">
-              Receberá um contacto de resposta com sugestões de enquadramento da
-              parceria, condições e próximos passos.
+        <div class="cards-3">
+          <article class="card">
+            <h3>Comunicação direta</h3>
+            <p>
+              Contacto direto com receção, concierge ou responsável de reservas,
+              com confirmação de todos os detalhes por escrito sempre que possível.
             </p>
-          </form>
+          </article>
+
+          <article class="card">
+            <h3>Feedback contínuo</h3>
+            <p>
+              Partilha de informação relevante sobre horários, perceção do hóspede e
+              melhorias possíveis, para alinhar expectativas em futuros serviços.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Condições claras</h3>
+            <p>
+              Valores, condições especiais e procedimentos de cancelamento combinados
+              de forma transparente, para evitar surpresas para nenhuma das partes.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAMADA PARA CONTACTO -->
+    <section class="section section-reservas">
+      <div class="section-inner">
+        <h2 class="section-title">Gostaria de estabelecer parceria?</h2>
+        <p class="section-lead">
+          Se representa um hotel, alojamento local, agência ou projeto de turismo,
+          podemos conversar sobre a melhor forma de apoiar os seus hóspedes.
+        </p>
+
+        <div class="reservas-grid">
+          <article class="reservas-card">
+            <h3>Contacto direto</h3>
+            <p class="reservas-phone">+351 910 784 548</p>
+            <a href="https://wa.me/351910784548" class="btn-secondary" target="_blank" rel="noopener">
+              Falar por WhatsApp
+            </a>
+          </article>
+
+          <article class="reservas-card">
+            <h3>Email</h3>
+            <p>
+              Breve apresentação do projeto, localização e tipo de pedidos habituais
+              (transfers, tours, eventos, etc.).
+            </p>
+            <a href="mailto:info@exploreportugalexperience.com" class="btn-outline">
+              Enviar email
+            </a>
+          </article>
         </div>
       </div>
     </section>
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="section-inner">
-      <p>© 2018–2025 Explore Portugal Experience — RNAAT n.º 17/2018 — Turismo de Portugal</p>
-      <p>Powered by: MkDesign – Portugal</p>
-      <div class="footer-social">
-        <p>Siga-nos:</p>
-        <p>
-          <a href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener noreferrer">
-            Instagram @exploreportugal2025
-          </a>
-          <br />
-          <a href="https://www.tiktok.com/@explore.portugal24" target="_blank" rel="noopener noreferrer">
-            TikTok @explore.portugal24
-          </a>
-        </p>
+  <footer class="section footer">
+    <div class="section-inner footer-inner">
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h3>Contactos</h3>
+          <p>
+            Email:
+            <a href="mailto:info@exploreportugalexperience.com">
+              info@exploreportugalexperience.com
+            </a><br>
+            Telemóvel / WhatsApp: +351 910 784 548
+          </p>
+          <p>Lisboa · Portugal</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Redes sociais</h3>
+          <p>
+            <a href="https://www.instagram.com/exploreportugal2025" target="_blank">Instagram</a><br>
+            <a href="https://www.tiktok.com/@explore.portugal24?_r=1&_t=ZG-91YeXliOakD" target="_blank">TikTok</a>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Reservas</h3>
+          <p>
+            WhatsApp:
+            <a href="https://wa.me/351910784548" target="_blank">
+              +351 910 784 548
+            </a><br>
+            <a href="booking.html">Formulário online</a>
+          </p>
+        </div>
       </div>
-      <p class="footer-small">
-        Este site utiliza cookies e ferramentas analíticas para melhorar a experiência de navegação.
-      </p>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © 2018–2025 Explore Portugal Experience — Turismo em Portugal.
+        </p>
+        <p class="footer-credit">Powered by: MkDesign - Portugal</p>
+      </div>
     </div>
   </footer>
+
+  <!-- JS -->
+  <script src="assets/js/nav.js"></script>
 
   <!-- Google Translate -->
   <script>
     function googleTranslateElementInit() {
       new google.translate.TranslateElement(
-        { pageLanguage: "pt" },
-        "google_translate_element"
+        {pageLanguage:'pt',includedLanguages:'en,pt,es,fr,de'},
+        'google_translate_element'
       );
     }
   </script>
