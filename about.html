@@ -19,18 +19,22 @@
   </script>
 </head>
 <body>
-  <!-- Barra de idioma / Google Translate -->
+
+  <!-- BARRA DE IDIOMA / GOOGLE TRANSLATE -->
   <div class="translate-bar">
-    <span>Idioma:</span>
+    <span class="translate-label">Idioma:</span>
     <div id="google_translate_element"></div>
   </div>
 
-  <!-- HEADER COM ÍCONE E MENU -->
+  <!-- HEADER COM ESTRELA E MENU -->
   <header class="header">
     <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
+      <img src="assets/icons/star-gold.svg"
+           alt="Explorar Portugal"
+           class="star-animated">
       <img src="assets/icons/star-full.svg"
            alt="Explore Portugal Experience"
-           class="star-animated">
+           class="star-animated star-full">
     </a>
 
     <nav class="nav" aria-label="Navegação principal">
@@ -44,16 +48,23 @@
         <li><a href="partners-hospitality.html">Partners Hospitality</a></li>
         <li><a href="gallery.html">Galeria</a></li>
         <li><a href="booking.html">Reservas</a></li>
-        <li><a href="contactos.html">Contactos</a></li>
+        <li><a href="contacts.html">Contactos</a></li>
       </ul>
-    </nav>
 
-    <button class="nav-toggle" type="button" aria-label="Abrir menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+      <!-- Botão hambúrguer mobile -->
+      <button class="nav-toggle"
+              type="button"
+              aria-label="Abrir navegação">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
+    </nav>
   </header>
+
+  <!-- A PARTIR DAQUI COMEÇA O CONTEÚDO DA PÁGINA -->
+  <main>
+    <!-- (o resto do conteúdo da página fica exatamente como está) -->
 
   <main>
     <!-- HERO / SOBRE -->
