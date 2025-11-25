@@ -2,152 +2,74 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>Galeria · Explore Portugal Experience</title>
+  <title>Galeria · Em Manutenção</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Galeria Explore Portugal Experience — neste momento em manutenção.">
-  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #22170e 0, #050505 50%, #000 100%);
+      color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 25px;
+    }
+
+    .box {
+      max-width: 600px;
+      background: rgba(0,0,0,0.65);
+      padding: 35px 30px;
+      border-radius: 22px;
+      border: 1px solid rgba(231,193,105,0.6);
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      letter-spacing: 0.2rem;
+      margin-bottom: 10px;
+      color: #e7c169;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 10px 28px;
+      border-radius: 50px;
+      background: radial-gradient(circle at 20% 20%, #f5e6b3, #e7c169);
+      color: #2b1a09;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.5rem; }
+      p { font-size: 0.9rem; }
+      .box { padding: 25px 18px; }
+    }
+  </style>
 </head>
 <body>
-  <!-- Barra de idioma / Google Translate (se tiveres noutras páginas, podes manter aqui também) -->
-  <div class="translate-bar">
-    <span>Idioma:</span>
-    <div id="google_translate_element"></div>
+  <div class="box">
+    <h1>Em Manutenção</h1>
+    <p>A Galeria está temporariamente em atualização.<br>
+    Voltamos em breve com novas imagens e experiências inesquecíveis.</p>
+    <p>Obrigado pela compreensão.</p>
+
+    <a class="btn" href="index.html">Voltar ao início</a>
   </div>
-
-  <!-- HEADER COM ESTRELA E MENU -->
-  <header class="header">
-    <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
-      <img src="assets/icons/star-gold.svg" alt="Explorar Portugal" class="star-animated">
-    </a>
-
-    <nav class="nav" aria-label="Navegação principal">
-      <ul class="nav-menu">
-        <li><a href="about.html">Sobre</a></li>
-        <li><a href="services.html">Serviços</a></li>
-        <li><a href="choose.html">Porquê nós</a></li>
-        <li><a href="pricing.html">Preços</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="partners-drivers.html">Partners Drivers</a></li>
-        <li><a href="partners-hospitality.html">Partners Hospitality</a></li>
-        <li><a href="gallery.html" aria-current="page">Galeria</a></li>
-        <li><a href="booking.html">Reservas</a></li>
-        <li><a href="contactos.html">Contactos</a></li>
-      </ul>
-    </nav>
-
-    <button class="nav-toggle" type="button" aria-label="Abrir menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </header>
-
-  <main>
-    <!-- HERO DA GALERIA EM MANUTENÇÃO -->
-    <section class="section section-dark">
-      <div class="section-inner">
-        <h1 class="section-title">Galeria em manutenção</h1>
-        <p class="section-lead">
-          Estamos a preparar uma seleção de momentos especiais em Portugal — com calma,
-          detalhe e atenção à experiência, tal como fazemos em cada transfer e tour.
-        </p>
-
-        <div class="card" style="max-width: 680px; margin: 0 auto; text-align: center;">
-          <h3>Brevemente</h3>
-          <p style="margin-top: 8px;">
-            Em breve, esta página vai mostrar fotografias reais de percursos, paisagens,
-            detalhes e pequenos gestos que fazem parte da Explore Portugal Experience.
-          </p>
-          <p style="margin-top: 8px;">
-            Até lá, se quiser receber exemplos de tours e sugestões,
-            pode falar diretamente por WhatsApp ou pedir uma proposta personalizada.
-          </p>
-
-          <div style="margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-            <a href="https://wa.me/351910784548" class="btn-primary" target="_blank" rel="noopener">
-              Falar por WhatsApp
-            </a>
-            <a href="booking.html" class="btn-outline">
-              Pedir proposta personalizada
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER COM CONTACTOS + REDES + MKDESIGN -->
-  <footer class="section footer">
-    <div class="section-inner footer-inner">
-      <div class="footer-cols">
-        <div class="footer-col">
-          <h3>Contactos</h3>
-          <p>
-            Email:
-            <a href="mailto:info@exploreportugalexperience.com">
-              info@exploreportugalexperience.com
-            </a>
-            <br>
-            Telemóvel / WhatsApp: +351 910 784 548
-          </p>
-          <p>
-            Explore Portugal Experience<br>
-            Lisboa · Portugal
-          </p>
-        </div>
-
-        <div class="footer-col">
-          <h3>Redes sociais</h3>
-          <p>
-            <a href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener">
-              Instagram · @exploreportugal2025
-            </a><br>
-            <a href="https://www.tiktok.com/@explore.portugal24?_r=1&_t=ZG-91YeXliOakD" target="_blank" rel="noopener">
-              TikTok · @explore.portugal24
-            </a>
-          </p>
-        </div>
-
-        <div class="footer-col">
-          <h3>Reservas</h3>
-          <p>
-            WhatsApp direto:
-            <a href="https://wa.me/351910784548" target="_blank" rel="noopener">
-              +351 910 784 548
-            </a><br>
-            Formulário online em
-            <a href="booking.html">Reservas</a>.
-          </p>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="footer-copy">
-          © 2018–2025 Explore Portugal Experience — Turismo em Portugal.
-        </p>
-        <p class="footer-credit">
-          Powered by: MkDesign - Portugal
-        </p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- JS -->
-  <script src="assets/js/nav.js"></script>
-
-  <!-- Google Translate -->
-  <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        {
-          pageLanguage: 'pt',
-          includedLanguages: 'en,pt,es,fr,de',
-          autoDisplay: false
-        },
-        'google_translate_element'
-      );
-    }
-  </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
