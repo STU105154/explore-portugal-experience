@@ -208,3 +208,130 @@
     animation: none;
   }
 }
+/* ==========================================================================
+   STYLE RESPONSIVO — PÁGINA DE MANUTENÇÃO
+   ========================================================================== */
+
+.maintenance-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: #E5D0A6;
+}
+
+.maintenance-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.maintenance-logo-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #000;
+  border: 2px solid #E5D0A6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.maintenance-logo-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: maintenance-logo-spin 25s linear infinite;
+}
+
+@keyframes maintenance-logo-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.maintenance-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.maintenance-text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.maintenance-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.maintenance-btn {
+  padding: 14px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  display: block;
+  text-align: center;
+  border: 2px solid #E5D0A6;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #E5BF64, #B38A42);
+  color: #000;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #E5D0A6;
+}
+
+.maintenance-contact {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #E5D0A6;
+}
+
+.maintenance-footer {
+  margin-top: 25px;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: #a08f6d;
+}
+
+
+/* ==========================================================================
+   MOBILE FIXES — FORÇAR 1 COLUNA
+   ========================================================================== */
+@media (max-width: 768px) {
+  .maintenance-wrapper {
+    padding: 30px 15px;
+  }
+
+  .maintenance-title {
+    font-size: 1.4rem;
+  }
+
+  .maintenance-buttons {
+    width: 100%;
+  }
+
+  .maintenance-btn {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .maintenance-text {
+    font-size: 1rem;
+  }
+}
