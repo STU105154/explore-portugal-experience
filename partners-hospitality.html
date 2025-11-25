@@ -1,109 +1,204 @@
-<main>
-  <section class="section section-dark section-form">
-    <div class="section-inner form-layout">
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Partners Hospitality · Explore Portugal Experience</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <h1 class="section-title">Questionário para Hospitality</h1>
-      <p class="section-lead">
-        Este formulário ajuda a perceber se a Explore Portugal Experience é
-        a melhor solução para o perfil do seu alojamento. Os dados não são
-        partilhados com terceiros.
-      </p>
+  <meta name="description" content="Questionário para hotéis, alojamentos e parceiros de hospitalidade da Explore Portugal Experience.">
 
-      <form class="partner-form" action="#" method="post">
+  <link rel="stylesheet" href="assets/css/style.css">
 
-        <div class="form-grid-2">
-          <div class="form-row">
-            <label for="nome-alojamento">Nome do alojamento / empresa *</label>
-            <input id="nome-alojamento" name="nome" type="text" required>
-          </div>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Y30ME05MQY');
+  </script>
+</head>
+<body>
 
-          <div class="form-row">
-            <label for="tipo-propriedade">Tipo de propriedade *</label>
-            <input id="tipo-propriedade" name="tipo" type="text" required
-              placeholder="Ex.: Hotel, guest house, AL, boutique hotel, etc.">
-          </div>
-        </div>
-
-        <div class="form-grid-2">
-          <div class="form-row">
-            <label for="localizacao-alojamento">Localização *</label>
-            <input id="localizacao-alojamento" name="localizacao" type="text" required
-              placeholder="Cidade, zona, pontos de referência">
-          </div>
-
-          <div class="form-row">
-            <label for="contacto-alojamento">Pessoa de contacto *</label>
-            <input id="contacto-alojamento" name="contacto" type="text" required>
-          </div>
-        </div>
-
-        <div class="form-grid-2">
-          <div class="form-row">
-            <label for="email-alojamento">Email *</label>
-            <input id="email-alojamento" name="email" type="email" required>
-          </div>
-
-          <div class="form-row">
-            <label for="telefone-alojamento">Telefone / WhatsApp *</label>
-            <input id="telefone-alojamento" name="telefone" type="tel" required>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <label for="perfil-hospedes">
-            Perfil principal de hóspedes *
-          </label>
-          <textarea id="perfil-hospedes" name="perfil" rows="3" required
-            placeholder="Ex.: Lazer em casal, famílias, corporate, grupos pequenos, etc."></textarea>
-        </div>
-
-        <div class="form-row">
-          <label for="necessidades-transfers">
-            Necessidades principais de transfers / tours *
-          </label>
-          <textarea id="necessidades-transfers" name="necessidades" rows="3" required
-            placeholder="Ex.: transfers aeroporto, city tours, day trips específicas, etc."></textarea>
-        </div>
-
-        <div class="form-row">
-          <label for="volume-mensal">
-            Volume aproximado mensal de pedidos *
-          </label>
-          <textarea id="volume-mensal" name="volume" rows="2" required
-            placeholder="Ex.: nº médio de pedidos de transfer por mês."></textarea>
-        </div>
-
-        <div class="form-row">
-          <label for="como-trabalha">
-            Como trabalha atualmente estes serviços?
-          </label>
-          <textarea id="como-trabalha" name="como_trabalha" rows="3"
-            placeholder="Equipa interna, vários parceiros, plataformas online, etc."></textarea>
-        </div>
-
-        <div class="form-row">
-          <label for="condicoes-importantes">
-            Condições / pontos importantes para si
-          </label>
-          <textarea id="condicoes-importantes" name="condicoes" rows="3"
-            placeholder="Comissão, forma de faturação, tempos de resposta, idioma do atendimento, etc."></textarea>
-        </div>
-
-        <div class="form-row">
-          <label for="extra-hosp">
-            Observações adicionais
-          </label>
-          <textarea id="extra-hosp" name="extra" rows="3"
-            placeholder="Qualquer detalhe relevante sobre o alojamento ou expectativas."></textarea>
-        </div>
-
-        <div class="form-actions">
-          <button type="submit" class="btn-submit">
-            Enviar questionário
-          </button>
-        </div>
-
-      </form>
+  <!-- TOPBAR IDIOMA -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span>Idioma:</span>
+      <div id="google_translate_element"></div>
     </div>
-  </section>
-</main>
+  </div>
+
+  <!-- HEADER + NAV -->
+  <header class="header">
+    <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
+      <img src="assets/icons/star-gold.svg" alt="Explorar Portugal" class="star-animated">
+      <img src="assets/icons/star-full.svg" alt="Explore Portugal Experience" class="star-animated">
+    </a>
+
+    <nav class="nav" aria-label="Navegação principal">
+      <button class="nav-toggle" type="button" aria-label="Abrir menu">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
+
+      <ul class="nav-menu">
+        <li><a href="about.html">Sobre</a></li>
+        <li><a href="services.html">Serviços</a></li>
+        <li><a href="choose.html">Porquê nós</a></li>
+        <li><a href="pricing.html">Preços</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="partners-drivers.html">Partners Drivers</a></li>
+        <li><a href="partners-hospitality.html" class="active">Partners Hospitality</a></li>
+        <li><a href="gallery.html">Galeria</a></li>
+        <li><a href="booking.html">Reservas</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO HOSPITALITY -->
+    <section class="section section-dark">
+      <div class="section-inner">
+        <h1 class="section-title">Partners Hospitality</h1>
+        <p class="section-lead">
+          Trabalhamos com hotéis, guest houses, alojamentos locais e operadores de turismo
+          que valorizam um serviço de transfers e tours discreto, pontual e alinhado com a
+          experiência que oferecem aos seus hóspedes.
+        </p>
+      </div>
+    </section>
+
+    <!-- FORMULÁRIO HOSPITALITY -->
+    <section class="section">
+      <div class="section-inner">
+        <h2 class="section-title">Questionário para parceiros de hospitalidade</h2>
+        <p class="section-lead">
+          Partilhe alguns detalhes sobre a sua operação. Usamos esta informação apenas para
+          preparar uma proposta de parceria adequada ao perfil do seu espaço.
+        </p>
+
+        <form class="partner-form" method="post" action="mailto:info@exploreportugalexperience.com" enctype="text/plain">
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="hotel-name">Nome do alojamento / empresa *</label>
+              <input type="text" id="hotel-name" name="Nome do alojamento" required>
+            </div>
+
+            <div class="form-field">
+              <label for="hotel-type">Tipo de propriedade *</label>
+              <input type="text" id="hotel-type" name="Tipo de propriedade" placeholder="Hotel, guest house, AL, boutique, etc." required>
+            </div>
+
+            <div class="form-field">
+              <label for="hotel-location">Localização *</label>
+              <input type="text" id="hotel-location" name="Localização" placeholder="Cidade, zona, principais pontos de referência" required>
+            </div>
+
+            <div class="form-field">
+              <label for="hotel-contact-name">Pessoa de contacto *</label>
+              <input type="text" id="hotel-contact-name" name="Pessoa de contacto" required>
+            </div>
+
+            <div class="form-field">
+              <label for="hotel-email">Email *</label>
+              <input type="email" id="hotel-email" name="Email" required>
+            </div>
+
+            <div class="form-field">
+              <label for="hotel-phone">Telefone / WhatsApp *</label>
+              <input type="tel" id="hotel-phone" name="Telemóvel" required>
+            </div>
+
+            <div class="form-field">
+              <label for="hotel-guests">Perfil principal de hóspedes *</label>
+              <textarea id="hotel-guests" name="Perfil de hóspedes" rows="3" placeholder="Ex.: Lazer em casal, famílias, corporate, grupos pequenos, etc." required></textarea>
+            </div>
+
+            <div class="form-field">
+              <label for="hotel-needs">Necessidades principais de transfers / tours *</label>
+              <textarea id="hotel-needs" name="Necessidades" rows="3" placeholder="Ex.: Transfers aeroporto, city tours, day trips específicas…" required></textarea>
+            </div>
+
+            <div class="form-field">
+              <label for="hotel-volume">Volume aproximado mensal</label>
+              <textarea id="hotel-volume" name="Volume aproximado" rows="2" placeholder="Ex.: Nº médio de pedidos de transfer / tours por mês."></textarea>
+            </div>
+
+            <div class="form-field">
+              <label for="hotel-how-work">Como trabalha atualmente estes serviços?</label>
+              <textarea id="hotel-how-work" name="Como trabalha atualmente" rows="3" placeholder="Equipa interna, vários parceiros, plataformas online, etc."></textarea>
+            </div>
+
+            <div class="form-field">
+              <label for="hotel-conditions">Condições / pontos importantes para si</label>
+              <textarea id="hotel-conditions" name="Condições importantes" rows="3" placeholder="Comissão, forma de faturação, tempos de resposta, idioma do motorista…"></textarea>
+            </div>
+
+            <div class="form-field">
+              <label for="hotel-message">Mensagem adicional</label>
+              <textarea id="hotel-message" name="Mensagem" rows="4" placeholder="Qualquer detalhe extra que considere relevante."></textarea>
+            </div>
+          </div>
+
+          <p class="form-note">
+            Ao submeter este formulário, aceita ser contactado pela Explore Portugal Experience
+            exclusivamente para efeitos de parceria profissional.
+          </p>
+
+          <button type="submit" class="btn-primary">Enviar questionário de hospitality</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-column">
+        <h3>Explore Portugal Experience</h3>
+        <p>Premium tours & private transfers com motorista profissional, segurança e atenção ao detalhe.</p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contacto</h3>
+        <p><strong>WhatsApp:</strong> +351 910 784 548</p>
+        <p><strong>Email:</strong> <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a></p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Ligação rápida</h3>
+        <ul>
+          <li><a href="booking.html">Reservas</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="privacy.html">Política de privacidade</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; Explore Portugal Experience. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/partners.js"></script>
+
+  <!-- Google Translate -->
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: 'pt',
+          includedLanguages: 'en,pt,es,fr,de',
+          autoDisplay: false
+        },
+        'google_translate_element'
+      );
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
