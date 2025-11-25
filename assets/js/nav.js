@@ -1,20 +1,37 @@
-// NAV MOBILE TOGGLE
-document.addEventListener("DOMContentLoaded", function () {
-  const navToggle = document.querySelector(".nav-toggle");
-  const navMenu = document.querySelector(".nav-menu");
+<!-- GOOGLE TRANSLATE -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'pt',
+      includedLanguages: 'en,pt,es,fr,de',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
 
-  if (!navToggle || !navMenu) return;
+<script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
 
-  navToggle.addEventListener("click", () => {
-    navToggle.classList.toggle("open");
-    navMenu.classList.toggle("open");
-  });
+<!-- NAV MOBILE (HAMBÚRGUER) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
 
-  // Fechar menu quando se clica num link (mobile)
-  navMenu.addEventListener("click", (event) => {
-    if (event.target.tagName.toLowerCase() === "a") {
-      navToggle.classList.remove("open");
-      navMenu.classList.remove("open");
+    if (toggle && navMenu) {
+      toggle.addEventListener('click', function () {
+        navMenu.classList.toggle('nav-menu-open');
+      });
+
+      // fechar menu ao clicar num link
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('nav-menu-open');
+        });
+      });
     }
   });
-});
+</script>
+</body>
+</html>
