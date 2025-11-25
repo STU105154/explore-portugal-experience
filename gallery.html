@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Galeria | Explore Portugal Experience</title>
-  <meta
-    name="description"
-    content="Galeria de momentos, paisagens e detalhes dos tours e transfers privados da Explore Portugal Experience."
-  />
+  <meta charset="UTF-8">
+  <title>Galeria · Explore Portugal Experience</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Galeria de imagens da Explore Portugal Experience — momentos de viagens, estradas, cidades e paisagens de Portugal durante transfers e tours privados.">
+
+  <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
@@ -17,179 +17,200 @@
     gtag('js', new Date());
     gtag('config', 'G-Y30ME05MQY');
   </script>
-
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" type="image/png" href="assets/icons/star-gold.png" />
-  <script src="assets/js/nav.js" defer></script>
-  <script src="assets/js/lightbox.js" defer></script>
 </head>
-
 <body>
-  <!-- Translate bar -->
+  <!-- Barra de idioma -->
   <div class="translate-bar">
     <span>Idioma:</span>
     <div id="google_translate_element"></div>
   </div>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="header">
-    <a href="index.html" class="home-star" aria-label="Página inicial">
-      <img
-        src="assets/icons/star-gold.png"
-        alt="Explore Portugal Experience"
-        class="star-animated"
-      />
+    <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
+      <img src="assets/icons/star-full.svg"
+           alt="Explore Portugal Experience"
+           class="star-animated">
     </a>
 
     <nav class="nav" aria-label="Navegação principal">
-      <a href="about.html">Sobre</a>
-      <a href="services.html">Serviços</a>
-      <a href="choose.html">Porquê nós</a>
-      <a href="pricing.html">Preços</a>
-      <a href="faq.html">FAQ</a>
-      <a href="gallery.html" aria-current="page">Galeria</a>
-      <a href="partners-drivers.html">Partners Drivers</a>
-      <a href="partners-hospitality.html">Partners Hospitality</a>
-      <a href="booking.html">Reservas</a>
-      <a href="contactos.html">Contactos</a>
+      <ul class="nav-menu">
+        <li><a href="about.html">Sobre</a></li>
+        <li><a href="services.html">Serviços</a></li>
+        <li><a href="choose.html">Porquê nós</a></li>
+        <li><a href="pricing.html">Preços</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="partners-drivers.html">Partners Drivers</a></li>
+        <li><a href="partners-hospitality.html">Partners Hospitality</a></li>
+        <li><a href="gallery.html">Galeria</a></li>
+        <li><a href="booking.html">Reservas</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+      </ul>
     </nav>
 
-    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
+    <button class="nav-toggle" type="button" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </header>
 
   <main>
     <!-- HERO -->
     <section class="page-hero section-dark">
-      <div class="section-inner narrow">
-        <h1 class="page-hero-title">Galeria</h1>
-        <p class="page-hero-subtitle">
-          Registos discretos de alguns momentos em estrada, paisagens e detalhes
-          das experiências em Portugal.
-        </p>
-      </div>
+      <h1 class="page-hero-title">Galeria</h1>
+      <p class="page-hero-subtitle">
+        Pequenos momentos de estrada, cidades, miradouros e detalhes de viagens em Portugal.
+      </p>
     </section>
 
     <!-- GALERIA -->
-    <section class="gallery-section section-dark">
+    <section class="gallery-section">
       <div class="section-inner">
-        <h2 class="section-title">Um olhar sobre o percurso</h2>
-        <p class="section-lead">
-          Cada imagem representa um fragmento da experiência: a luz de Lisboa,
-          a elegância dos trajetos, a serenidade de quem viaja em conforto.
-        </p>
-
         <div class="gallery-grid">
-          <!-- Foto 1 -->
+
+          <!-- Exemplo de imagens.
+               IMPORTANTE:
+               Depois podemos trocar os ficheiros (gallery-01.jpg, etc.)
+               pelos nomes reais das tuas fotos em assets/images.
+          -->
+
           <figure>
-            <img
-              src="assets/images/gallery-1.jpg"
-              data-full="assets/images/gallery-1.jpg"
-              alt="Viatura preparada para um transfer privado em Lisboa"
-            />
-            <figcaption>Viatura pronta para um transfer privado em Lisboa.</figcaption>
+            <img src="assets/images/gallery-01.jpg" alt="Estrada em Portugal ao amanhecer">
+            <figcaption>Estradas tranquilas ao amanhecer.</figcaption>
           </figure>
 
-          <!-- Foto 2 -->
           <figure>
-            <img
-              src="assets/images/gallery-2.jpg"
-              data-full="assets/images/gallery-2.jpg"
-              alt="Estrada costeira com vista sobre o mar"
-            />
-            <figcaption>Estradas costeiras e vistas amplas sobre o Atlântico.</figcaption>
+            <img src="assets/images/gallery-02.jpg" alt="Vista de Lisboa e rio Tejo">
+            <figcaption>Vistas sobre Lisboa e o Tejo.</figcaption>
           </figure>
 
-          <!-- Foto 3 -->
           <figure>
-            <img
-              src="assets/images/gallery-3.jpg"
-              data-full="assets/images/gallery-3.jpg"
-              alt="Detalhe de interior de viatura com ambiente cuidado"
-            />
-            <figcaption>Detalhes de interior pensados para conforto e tranquilidade.</figcaption>
+            <img src="assets/images/gallery-03.jpg" alt="Centro histórico de cidade portuguesa">
+            <figcaption>Centros históricos com tempo para caminhar.</figcaption>
           </figure>
 
-          <!-- Foto 4 -->
           <figure>
-            <img
-              src="assets/images/gallery-4.jpg"
-              data-full="assets/images/gallery-4.jpg"
-              alt="Zona histórica de uma vila portuguesa"
-            />
-            <figcaption>Centros históricos que fazem parte de muitos dos nossos percursos.</figcaption>
+            <img src="assets/images/gallery-04.jpg" alt="Miradouro com vista para o mar">
+            <figcaption>Paragens em miradouros junto ao mar.</figcaption>
           </figure>
 
-          <!-- Foto 5 -->
           <figure>
-            <img
-              src="assets/images/gallery-5.jpg"
-              data-full="assets/images/gallery-5.jpg"
-              alt="Paisagem de estrada ao amanhecer"
-            />
-            <figcaption>Amanhecer em estrada, com o tempo certo para apreciar a paisagem.</figcaption>
+            <img src="assets/images/gallery-05.jpg" alt="Cidade iluminada à noite">
+            <figcaption>Noites calmas depois de um dia cheio.</figcaption>
           </figure>
 
-          <!-- Foto 6 -->
           <figure>
-            <img
-              src="assets/images/gallery-6.jpg"
-              data-full="assets/images/gallery-6.jpg"
-              alt="Detalhe de bagagem organizada e cuidada"
-            />
-            <figcaption>Bagagem tratada com atenção e cuidado em cada serviço.</figcaption>
+            <img src="assets/images/gallery-06.jpg" alt="Paisagem rural em Portugal">
+            <figcaption>Portugal fora dos roteiros óbvios.</figcaption>
           </figure>
+
+          <figure>
+            <img src="assets/images/gallery-07.jpg" alt="Estrada entre árvores">
+            <figcaption>Caminhos rodeados de natureza.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/images/gallery-08.jpg" alt="Detalhe de cidade costeira">
+            <figcaption>Pequenos detalhes à beira-mar.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/images/gallery-09.jpg" alt="Praça central em cidade portuguesa">
+            <figcaption>Praças, cafés e paragens sem pressa.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/images/gallery-10.jpg" alt="Estrada com pôr do sol">
+            <figcaption>Pôr do sol visto da estrada.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/images/gallery-11.jpg" alt="Paisagem de vinhas em Portugal">
+            <figcaption>Regiões de vinho e colinas verdes.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/images/gallery-12.jpg" alt="Interior de carro preparado para transfer">
+            <figcaption>Conforto dentro e fora do carro.</figcaption>
+          </figure>
+
         </div>
-
-        <p class="section-lead" style="margin-top: 24px;">
-          As imagens aqui apresentadas são meramente ilustrativas e respeitam a
-          privacidade de todos os clientes.
-        </p>
       </div>
     </section>
   </main>
 
+  <!-- LIGHTBOX CONTAINER (se o teu lightbox.js usar isto) -->
+  <div class="lightbox-overlay" id="lightbox-overlay">
+    <button class="lightbox-close" type="button" aria-label="Fechar">×</button>
+    <img src="" alt="Imagem em destaque">
+  </div>
+
   <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="section-inner">
-      <p>
-        © 2018–2025 Explore Portugal Experience — RNAAT n.º 17/2018 —
-        Turismo de Portugal
-      </p>
-      <p>Powered by: MkDesign – Portugal</p>
-      <div class="footer-social">
-        <p>Siga-nos:</p>
-        <p>
-          <a
-            href="https://www.instagram.com/exploreportugal2025"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Instagram @exploreportugal2025</a>
-          <br />
-          <a
-            href="https://www.tiktok.com/@explore.portugal24"
-            target="_blank"
-            rel="noopener noreferrer"
-          >TikTok @explore.portugal24</a>
+  <footer class="section footer">
+    <div class="section-inner footer-inner">
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h3>Contactos</h3>
+          <p>
+            Email:
+            <a href="mailto:info@exploreportugalexperience.com">
+              info@exploreportugalexperience.com
+            </a><br>
+            Telemóvel / WhatsApp: +351 910 784 548
+          </p>
+          <p>Lisboa · Portugal</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Redes sociais</h3>
+          <p>
+            <a href="https://www.instagram.com/exploreportugal2025" target="_blank">Instagram</a><br>
+            <a href="https://www.tiktok.com/@explore.portugal24?_r=1&_t=ZG-91YeXliOakD" target="_blank">TikTok</a>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Reservas</h3>
+          <p>
+            WhatsApp:
+            <a href="https://wa.me/351910784548" target="_blank">
+              +351 910 784 548
+            </a><br>
+            <a href="booking.html">Formulário online</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © 2018–2025 Explore Portugal Experience — Turismo em Portugal.
+        </p>
+        <p class="footer-credit">
+          Powered by: MkDesign - Portugal
         </p>
       </div>
-      <p class="footer-small">
-        Este site utiliza cookies e ferramentas analíticas para melhorar a
-        experiência de navegação.
-      </p>
     </div>
   </footer>
+
+  <!-- JS -->
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/lightbox.js"></script>
 
   <!-- Google Translate -->
   <script>
     function googleTranslateElementInit() {
       new google.translate.TranslateElement(
-        { pageLanguage: "pt" },
-        "google_translate_element"
+        {
+          pageLanguage: 'pt',
+          includedLanguages: 'en,pt,es,fr,de',
+          autoDisplay: false
+        },
+        'google_translate_element'
       );
     }
   </script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
