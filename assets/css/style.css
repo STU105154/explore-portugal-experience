@@ -1242,3 +1242,146 @@ main {
   }
 }
 
+/* =========================================================
+   QUESTIONÁRIOS – DRIVERS + HOSPITALITY
+   ========================================================= */
+
+.questionnaire-page {
+  padding: 7rem 1.5rem 5rem;
+}
+
+.questionnaire-intro {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  text-align: left;
+}
+
+.questionnaire-intro h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.questionnaire-intro p {
+  font-size: 1rem;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* FORM LAYOUT */
+
+.questionnaire-form {
+  max-width: 820px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: block;
+}
+
+.form-group-inline {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.questionnaire-form label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.questionnaire-form input,
+.questionnaire-form textarea,
+.questionnaire-form select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+  font: inherit;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.questionnaire-form input::placeholder,
+.questionnaire-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.questionnaire-form input:focus,
+.questionnaire-form textarea:focus,
+.questionnaire-form select:focus {
+  border-color: #f7d492;
+  box-shadow: 0 0 0 1px rgba(247, 212, 146, 0.6);
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.questionnaire-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.form-actions .btn-primary {
+  padding-inline: 2.5rem;
+}
+
+/* RESPONSIVO – TABLET & MOBILE */
+
+@media (max-width: 900px) {
+  .questionnaire-page {
+    padding-top: 6rem;
+  }
+
+  .questionnaire-intro h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .questionnaire-page {
+    padding: 5.5rem 1.25rem 4rem;
+  }
+
+  .form-group-inline {
+    grid-template-columns: 1fr;
+  }
+
+  .questionnaire-form {
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .questionnaire-page {
+    padding: 5.2rem 1rem 3.5rem;
+  }
+
+  .questionnaire-intro h2 {
+    font-size: 1.25rem;
+  }
+
+  .questionnaire-form label {
+    font-size: 0.9rem;
+  }
+
+  .questionnaire-form input,
+  .questionnaire-form textarea {
+    font-size: 0.9rem;
+  }
+
+  .form-actions .btn-primary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
