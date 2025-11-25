@@ -1,3 +1,101 @@
+/* =========================
+   FORMULÁRIOS DE PARCEIROS
+   ========================= */
+
+.section-form {
+  padding: 4rem 1.5rem 5rem;
+}
+
+.form-layout {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.form-layout .section-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form-layout .section-lead {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+/* layout geral do form */
+.partner-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* grupos de campos */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-row label {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* inputs / textarea */
+.partner-form input,
+.partner-form textarea,
+.partner-form select {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font: inherit;
+}
+
+.partner-form input::placeholder,
+.partner-form textarea::placeholder {
+  color: #999;
+}
+
+/* grid 2 colunas em ecrãs grandes */
+.form-grid-2 {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .form-grid-2 {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+
+/* botão do formulário */
+.partner-form .form-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.partner-form .btn-submit {
+  padding: 0.85rem 2.4rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  background: #c79a3b;
+  color: #000;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+              background 0.15s ease;
+}
+
+.partner-form .btn-submit:hover {
+  background: #e0b550;
+  box-shadow: 0 0 18px rgba(199, 154, 59, 0.35);
+  transform: translateY(-1px);
+}
 /* =========================================
    BASE & LAYOUT
 ========================================= */
