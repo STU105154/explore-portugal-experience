@@ -28,7 +28,7 @@
   <!-- HEADER COM ESTRELA E MENU -->
   <header class="header">
     <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
-      <img src="assets/icons/star-gold.svg" alt="Explorar Portugal" class="star-animated">
+      <img src="assets/icons/star-full.svg" alt="Explorar Portugal" class="star-animated">
     </a>
 
     <nav class="nav" aria-label="Navegação principal">
@@ -44,7 +44,7 @@
       <a href="contacts.html">Contactos</a>
     </nav>
 
-    <button class="nav-toggle" type="button" aria-label="Abrir menu">
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
@@ -121,7 +121,7 @@
       </div>
     </section>
 
-    <!-- COMO TRABALHAMOS / CONHECIMENTO LOCAL -->
+    <!-- COMO TRABALHAMOS -->
     <section class="section section-dark">
       <div class="section-inner">
         <h2 class="section-title">Como trabalhamos</h2>
@@ -197,7 +197,7 @@
     </section>
   </main>
 
-  <!-- FOOTER COM CONTACTOS + REDES + MKDESIGN -->
+  <!-- FOOTER -->
   <footer class="section footer">
     <div class="section-inner footer-inner">
       <div class="footer-cols">
@@ -207,8 +207,7 @@
             Email:
             <a href="mailto:info@exploreportugalexperience.com">
               info@exploreportugalexperience.com
-            </a>
-            <br>
+            </a><br>
             Telemóvel / WhatsApp: +351 910 784 548
           </p>
           <p>
@@ -253,23 +252,25 @@
     </div>
   </footer>
 
-  <!-- JS -->
+  <!-- JS NAV + LIGHTBOX (se usares) -->
   <script src="assets/js/nav.js"></script>
   <script src="assets/js/lightbox.js"></script>
 
-  <!-- Google Translate -->
-  <script>
+  <!-- GOOGLE TRANSLATE -->
+  <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement(
         {
           pageLanguage: 'pt',
           includedLanguages: 'en,pt,es,fr,de',
-          autoDisplay: false
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
         },
         'google_translate_element'
       );
     }
   </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script type="text/javascript"
+          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+  </script>
 </body>
 </html>
