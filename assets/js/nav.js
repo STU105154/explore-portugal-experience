@@ -1,37 +1,30 @@
-<!-- GOOGLE TRANSLATE -->
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'pt',
-      includedLanguages: 'en,pt,es,fr,de',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-  }
-</script>
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".nav");
 
-<script type="text/javascript"
-        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-</script>
+  if (!toggle || !nav) return;
 
-<!-- NAV MOBILE (HAMBÚRGUER) -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const toggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+  // abre / fecha o menu ao clicar no hambúrguer
+  toggle.addEventListener("click", function () {
+    document.body.classList.toggle("nav-open");
 
-    if (toggle && navMenu) {
-      toggle.addEventListener('click', function () {
-        navMenu.classList.toggle('nav-menu-open');
-      });
+    const isOpen = document.body.classList.contains("nav-open");
+    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
 
-      // fechar menu ao clicar num link
-      navMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          navMenu.classList.remove('nav-menu-open');
-        });
-      });
+  // fecha o menu ao clicar num link
+  nav.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      document.body.classList.remove("nav-open");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  // se a janela aumentar para desktop, garante que o menu mobile não fica “preso”
+  window.addEventListener("resize", function () {
+    if (window.innerWidth >= 900 && document.body.classList.contains("nav-open")) {
+      document.body.classList.remove("nav-open");
+      toggle.setAttribute("aria-expanded", "false");
     }
   });
-</script>
-</body>
-</html>
+});
