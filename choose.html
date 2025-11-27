@@ -305,8 +305,9 @@
     </section>
   </main>
 
-  <!-- CAIXA FIXA PARA DEIXAR REVIEW (SEMPRE VISÍVEL) -->
+  <!-- CAIXA FIXA PARA DEIXAR REVIEW (SEMPRE VISÍVEL / PODE MINIMIZAR) -->
   <div class="floating-review-box">
+    <button class="floating-close" type="button" aria-label="Fechar caixa de reviews">×</button>
     <p class="floating-title">Gostou da experiência?</p>
     <div class="floating-stars" aria-hidden="true">★★★★★</div>
     <p class="floating-text">
@@ -328,6 +329,11 @@
       </a>
     </div>
   </div>
+
+  <!-- PÍLULA MINIMIZADA PARA REABRIR A CAIXA -->
+  <button class="floating-review-puck" type="button" aria-label="Abrir caixa de reviews">
+    ★ Deixar review
+  </button>
 
   <!-- FOOTER COM CONTACTOS + REDES + MKDESIGN -->
   <footer class="section footer">
@@ -403,5 +409,26 @@
     }
   </script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!-- JS da caixa de reviews fixa -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var box  = document.querySelector('.floating-review-box');
+      var closeBtn = box ? box.querySelector('.floating-close') : null;
+      var puck = document.querySelector('.floating-review-puck');
+
+      if (!box || !closeBtn || !puck) return;
+
+      closeBtn.addEventListener('click', function () {
+        box.classList.add('is-minimized');
+        puck.classList.add('is-visible');
+      });
+
+      puck.addEventListener('click', function () {
+        box.classList.remove('is-minimized');
+        puck.classList.remove('is-visible');
+      });
+    });
+  </script>
 </body>
 </html>
