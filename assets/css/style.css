@@ -966,3 +966,28 @@ body.nav-open .nav-toggle span:nth-child(3) {
   margin-top: .6rem;
   text-align: center;
 }
+.payment-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.6rem;
+  margin: 1.4rem auto 1rem;
+  flex-wrap: wrap;
+}
+
+.payment-icons img {
+  height: 44px;
+  width: auto;
+  opacity: 0.85;
+  transition: transform .18s ease, opacity .18s ease;
+}
+
+.payment-icons img:hover {
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+.payment-info {
+  text-align: center;
+  margin-top: .6rem;
+  color: var(--muted);
+}
