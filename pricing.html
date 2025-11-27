@@ -2,9 +2,9 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>Pagamentos · Explore Portugal Experience</title>
+  <title>Preços · Explore Portugal Experience</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Métodos de pagamento para reservas e serviços Explore Portugal Experience – seguro, elegante e personalizado.">
+  <meta name="description" content="Preços transparentes e métodos de pagamento Explore Portugal Experience. Confiança, elegância e comunicação clara.">
 
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png">
@@ -20,106 +20,62 @@
 </head>
 
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
-        <img src="assets/icons/star-full.svg" alt="" class="star-animated">
-      </a>
 
-      <nav class="nav">
-        <a href="about.html">Sobre nós</a>
-        <a href="services.html">Serviços</a>
-        <a href="choose.html">Porquê nós</a>
-        <a href="pricing.html" aria-current="page">Preços</a>
-        <a href="faq.html">FAQ</a>
-        <a href="partners-drivers.html">Partners Drivers</a>
-        <a href="partners-hospitality.html">Partners Hospitality</a>
-        <a href="gallery.html">Galeria</a>
-        <a href="booking.html">Reservas</a>
-        <a href="contactos.html">Contactos</a>
-      </nav>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="home-star">
+      <img src="assets/icons/star-full.svg" class="star-animated" alt="">
+    </a>
+    <nav class="nav">
+      <a href="about.html">Sobre nós</a>
+      <a href="services.html">Serviços</a>
+      <a href="choose.html">Porquê nós</a>
+      <a href="pricing.html" aria-current="page">Preços</a>
+      <a href="faq.html">FAQ</a>
+      <a href="partners-drivers.html">Partners Drivers</a>
+      <a href="partners-hospitality.html">Partners Hospitality</a>
+      <a href="gallery.html">Galeria</a>
+      <a href="booking.html">Reservas</a>
+      <a href="contactos.html">Contactos</a>
+    </nav>
+    <button class="nav-toggle"><span></span><span></span><span></span></button>
+  </div>
+</header>
 
-      <button class="nav-toggle" type="button"><span></span><span></span><span></span></button>
-    </div>
-  </header>
+<section class="page-hero section-dark">
+  <h1 class="page-hero-title">Preços & Métodos de pagamento</h1>
+  <p class="page-hero-subtitle">
+    Valores sempre comunicados de forma clara antes de qualquer pagamento.
+  </p>
+</section>
 
-  <!-- HERO -->
-  <section class="page-hero section-dark">
-    <h1 class="page-hero-title">Pagamento seguro</h1>
-    <p class="page-hero-subtitle">
-      Escolha o seu método preferido. O formulário abaixo está disponível para pagamento com cartão Visa / Mastercard.
+<section class="section section-dark">
+  <div class="section-inner narrow">
+    <h2 class="section-title">Métodos Disponíveis</h2>
+    <p style="text-align:center; margin-bottom:1.5rem;">
+      Escolha o método de pagamento preferido para finalizar a sua reserva.
     </p>
-  </section>
 
-  <!-- MÉTODOS ALTERNATIVOS -->
-  <section class="section section-dark">
-    <div class="section-inner">
-      <h2 class="section-title">Métodos alternativos</h2>
-
-      <div class="payment-icons">
-        <a href="https://www.mbway.pt" target="_blank"><img src="assets/icons/mbway.svg" alt="MB Way"></a>
-        <a href="https://www.revolut.com" target="_blank"><img src="assets/icons/revolut.svg" alt="Revolut"></a>
-        <a href="https://www.paypal.com" target="_blank"><img src="assets/icons/paypal.svg" alt="PayPal"></a>
-      </div>
-
-      <p class="payment-info">Disponíveis todos os dias. Resposta imediata.</p>
+    <div class="payment-icons">
+      <a href="https://www.mbway.pt" target="_blank"><img src="assets/icons/mbway.svg" alt="MBWay"></a>
+      <a href="https://revolut.com" target="_blank"><img src="assets/icons/revolut.svg" alt="Revolut"></a>
+      <a href="https://paypal.com" target="_blank"><img src="assets/icons/paypal.svg" alt="PayPal"></a>
+      <a href="https://wa.me/351910784548" target="_blank"><img src="assets/icons/whatsapp.svg" alt="WhatsApp"></a>
     </div>
-  </section>
 
-  <!-- FORM VISA / MASTERCARD -->
-  <section class="section">
-    <div class="section-inner">
-      <div class="payment-card">
-        <h2 class="section-title">Pagamento com cartão</h2>
+    <p class="payment-info">
+      Confirmações imediatas · Pagamentos seguros · Suporte direto 24/7
+    </p>
+  </div>
+</section>
 
-        <form class="card-form" action="#" method="post">
-          <div class="form-row">
-            <label>Nome no cartão</label>
-            <input type="text" required>
-          </div>
-
-          <div class="form-row">
-            <label>Email de confirmação</label>
-            <input type="email" required>
-          </div>
-
-          <div class="form-row">
-            <label>Valor a pagar (€)</label>
-            <input type="number" required>
-          </div>
-
-          <div class="form-row">
-            <label>Número do cartão</label>
-            <input type="text" maxlength="19" placeholder="0000 0000 0000 0000" required>
-          </div>
-
-          <div class="form-grid">
-            <div>
-              <label>Validade</label>
-              <input type="text" maxlength="5" placeholder="MM/AA" required>
-            </div>
-            <div>
-              <label>CVC</label>
-              <input type="text" maxlength="3" required>
-            </div>
-          </div>
-
-          <button type="submit" class="btn-primary">Pagar agora</button>
-        </form>
-
-        <p class="payment-protect">
-          Transação protegida. Nunca guardamos os dados do seu cartão.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <footer class="site-footer">
+<footer class="footer">
+  <div class="footer-inner">
     <p>© 2018–2025 Explore Portugal Experience — Turismo em Portugal.</p>
     <p>Powered by MkDesign - Portugal</p>
-  </footer>
+  </div>
+</footer>
 
-  <script src="assets/js/nav.js"></script>
+<script src="assets/js/nav.js"></script>
 </body>
 </html>
