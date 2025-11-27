@@ -1,224 +1,481 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Drivers Partners – Explore Portugal Experience</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Candidate-se para ser motorista parceiro da Explore Portugal Experience – tours e transfers premium em Portugal."
+    />
 
-html {
-  scroll-behavior: smooth;
-}
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="assets/css/style.css" />
 
-body {
-  font-family: "Helvetica", Arial, sans-serif;
-  background: #0c0c0c;
-  color: #fff;
-  line-height: 1.6;
-}
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-Y30ME05MQY");
+    </script>
+  </head>
 
-/* LINKS */
-a {
-  color: #c9a952;
-  text-decoration: none;
-}
+  <body>
+    <!-- Barra de tradução -->
+    <div class="translate-bar">
+      <span>Idioma:</span>
+      <div id="google_translate_element"></div>
+    </div>
 
-a:hover {
-  opacity: 0.7;
-}
+    <!-- Header / Navegação -->
+    <header class="header">
+      <a
+        href="index.html"
+        class="home-star"
+        aria-label="Voltar à página inicial"
+      >
+        <img
+          src="assets/icons/star-gold.svg"
+          alt=""
+          class="star-animated"
+        />
+      </a>
 
-/* LAYOUT */
-.section {
-  padding: 80px 20px;
-}
-.section-dark {
-  background: #000;
-}
-.section-inner {
-  max-width: 1200px;
-  margin: auto;
-  text-align: center;
-}
+      <nav class="nav" id="mainNav">
+        <a href="about.html">Sobre</a>
+        <a href="services.html">Serviços</a>
+        <a href="choose.html">Porquê nós</a>
+        <a href="pricing.html">Preços</a>
+        <a href="faq.html">FAQ</a>
+        <a href="gallery.html">Galeria</a>
+        <a href="booking.html">Reservas</a>
+        <a href="partners-drivers.html" aria-current="page">Drivers</a>
+        <a href="partners-hospitality.html">Hospitality</a>
+        <a href="contactos.html">Contactos</a>
+      </nav>
 
-.section-title {
-  font-size: 32px;
-  margin-bottom: 16px;
-  color: #c9a952;
-}
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="mainNav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
 
-.section-lead {
-  font-size: 18px;
-  margin-bottom: 40px;
-}
+    <main>
+      <!-- Hero da página -->
+      <section class="page-hero section-dark">
+        <div class="section-inner narrow">
+          <h1 class="page-hero-title">Drivers Partners</h1>
+          <p class="page-hero-subtitle">
+            Junte-se à Explore Portugal Experience como motorista parceiro
+            e ofereça uma experiência de luxo, com total discrição e
+            profissionalismo, a clientes de todo o mundo.
+          </p>
+        </div>
+      </section>
 
-/* HEADER */
-.site-header {
-  background: #000;
-  width: 100%;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid #c9a95233;
-}
+      <!-- Informação resumida -->
+      <section class="section">
+        <div class="section-inner narrow">
+          <div class="cards-3">
+            <article class="card">
+              <h3>Perfil que procuramos</h3>
+              <p>
+                Motoristas experientes, com apresentação cuidada, inglês
+                funcional (ou superior) e atitude orientada para o serviço
+                ao cliente.
+              </p>
+            </article>
 
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-}
+            <article class="card">
+              <h3>O que oferecemos</h3>
+              <p>
+                Trabalho em parceria, tours selecionados, transfers privados,
+                apoio de back-office e foco em experiências premium.
+              </p>
+            </article>
 
-.header-logo img {
-  height: 48px;
-}
+            <article class="card">
+              <h3>Como funciona</h3>
+              <p>
+                Preencha o formulário, envie os documentos obrigatórios e a
+                nossa equipa entrará em contacto para a próxima etapa.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-/* HOME STAR LOGO (ROTATION) */
-.home-star img {
-  height: 52px;
-  width: 52px;
-  animation: spin 6s linear infinite;
-}
+      <!-- Formulário de candidatura Drivers -->
+      <section class="section section-dark">
+        <div class="section-inner narrow">
+          <h2 class="section-title">Formulário de Candidatura</h2>
+          <p class="section-lead">
+            Por favor preencha com o máximo de detalhe. Utilizaremos esta
+            informação apenas para avaliação da parceria.
+          </p>
 
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+          <form
+            class="form-card"
+            action="mailto:info@exploreportugalexperience.com"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <!-- Dados pessoais -->
+            <h3 class="form-section-title">Dados pessoais</h3>
 
-/* NAV DESKTOP */
-.nav {
-  display: flex;
-  gap: 28px;
-}
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="nome">
+                  Nome completo
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  required
+                />
+              </div>
 
-.nav a {
-  font-size: 16px;
-  font-weight: 500;
-}
+              <div class="form-group">
+                <label class="form-label" for="email">
+                  Email
+                </label>
+                <input
+                  class="form-input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
 
-/* BURGER BUTTON */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
+              <div class="form-group">
+                <label class="form-label" for="telefone">
+                  Telemóvel / WhatsApp
+                </label>
+                <input
+                  class="form-input"
+                  type="tel"
+                  id="telefone"
+                  name="telefone"
+                  required
+                />
+              </div>
 
-.nav-toggle span {
-  width: 28px;
-  height: 3px;
-  background: #c9a952;
-}
+              <div class="form-group">
+                <label class="form-label" for="cidade">
+                  Cidade base em Portugal
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="cidade"
+                  name="cidade"
+                  placeholder="Ex.: Lisboa, Porto, Faro"
+                />
+              </div>
 
-/* MOBILE NAV */
-@media (max-width: 900px) {
-  .nav {
-    display: none;
-    position: absolute;
-    top: 72px;
-    right: 0;
-    width: 100%;
-    background: #000;
-    flex-direction: column;
-    padding: 20px 0;
-    gap: 20px;
-    border-top: 1px solid #c9a95244;
-  }
+              <div class="form-group">
+                <label class="form-label" for="nacionalidade">
+                  Nacionalidade
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="nacionalidade"
+                  name="nacionalidade"
+                />
+              </div>
 
-  .nav.show {
-    display: flex;
-  }
+              <div class="form-group">
+                <label class="form-label" for="idiomas">
+                  Idiomas que domina
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="idiomas"
+                  name="idiomas"
+                  placeholder="Ex.: Português, Inglês, Espanhol, Francês"
+                />
+              </div>
+            </div>
 
-  .nav-toggle {
-    display: flex;
-  }
+            <!-- Experiência e viatura -->
+            <h3 class="form-section-title">Experiência e viatura</h3>
 
-  .header-logo img {
-    height: 40px;
-  }
-}
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="anos-experiencia">
+                  Anos de experiência como motorista profissional
+                </label>
+                <input
+                  class="form-input"
+                  type="number"
+                  min="0"
+                  id="anos-experiencia"
+                  name="anos-experiencia"
+                />
+              </div>
 
-/* HERO */
-.home-hero {
-  padding: 100px 20px;
-}
+              <div class="form-group">
+                <label class="form-label" for="tipo-licenca">
+                  Tipo de carta / licença
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="tipo-licenca"
+                  name="tipo-licenca"
+                  placeholder="Ex.: B, TVDE, outros"
+                />
+              </div>
 
-.home-logo {
-  width: 280px;
-  margin: auto;
-}
+              <div class="form-group">
+                <label class="form-label" for="tem-viatura">
+                  Possui viatura própria para serviço?
+                </label>
+                <select
+                  class="form-select"
+                  id="tem-viatura"
+                  name="tem-viatura"
+                >
+                  <option value="">Selecione uma opção</option>
+                  <option value="sim">Sim</option>
+                  <option value="nao">Não</option>
+                </select>
+              </div>
 
-.hero-tagline {
-  margin: 28px auto;
-  max-width: 600px;
-  font-size: 20px;
-}
+              <div class="form-group">
+                <label class="form-label" for="tipo-viatura">
+                  Se sim, tipo de viatura
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="tipo-viatura"
+                  name="tipo-viatura"
+                  placeholder="Ex.: Mercedes Classe E, 2022, preto"
+                />
+              </div>
 
-/* BUTTONS */
-.btn-primary,
-.btn-outline,
-.btn-secondary {
-  display: inline-block;
-  padding: 14px 26px;
-  margin: 8px;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 16px;
-}
+              <div class="form-group">
+                <label class="form-label" for="disponibilidade">
+                  Disponibilidade
+                </label>
+                <select
+                  class="form-select"
+                  id="disponibilidade"
+                  name="disponibilidade"
+                >
+                  <option value="">Selecione uma opção</option>
+                  <option value="full-time">Full-time</option>
+                  <option value="part-time">Part-time</option>
+                  <option value="ocasional">Ocasional / por projeto</option>
+                </select>
+              </div>
 
-.btn-primary {
-  background: #c9a952;
-  color: #000;
-}
+              <div class="form-group">
+                <label class="form-label" for="zonas">
+                  Zonas preferenciais de serviço
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="zonas"
+                  name="zonas"
+                  placeholder="Ex.: Lisboa, Cascais, Sintra, Alentejo"
+                />
+              </div>
+            </div>
 
-.btn-outline {
-  border: 2px solid #c9a952;
-}
+            <!-- Informação adicional -->
+            <h3 class="form-section-title">Mais informações</h3>
 
-.btn-secondary {
-  background: #111;
-  border: 1px solid #c9a952;
-}
+            <div class="form-group">
+              <label class="form-label" for="sobre-si">
+                Conte-nos, em poucas linhas, sobre a sua experiência e
+                motivação para trabalhar connosco
+              </label>
+              <textarea
+                class="form-textarea"
+                id="sobre-si"
+                name="sobre-si"
+                rows="4"
+              ></textarea>
+            </div>
 
-/* CARDS */
-.cards-3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
-}
+            <div class="form-group">
+              <label class="form-label" for="como-soube">
+                Como soube da Explore Portugal Experience?
+              </label>
+              <input
+                class="form-input"
+                type="text"
+                id="como-soube"
+                name="como-soube"
+                placeholder="Recomendação, redes sociais, hotel, outro..."
+              />
+            </div>
 
-.card {
-  background: #111;
-  border-radius: 8px;
-  padding: 26px;
-  border: 1px solid #333;
-}
+            <!-- Documentos obrigatórios -->
+            <h3 class="form-section-title">Documentos obrigatórios</h3>
+            <p class="form-note">
+              Poderá anexar os documentos principais abaixo ou enviá-los mais
+              tarde por email para
+              <a href="mailto:info@exploreportugalexperience.com"
+                >info@exploreportugalexperience.com</a
+              >.
+            </p>
 
-/* FOOTER */
-.site-footer {
-  background: #000;
-  padding: 60px 20px 20px;
-}
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="doc-carta-frente">
+                  Carta de condução – frente
+                </label>
+                <input
+                  class="form-file"
+                  type="file"
+                  id="doc-carta-frente"
+                  name="doc-carta-frente"
+                  accept=".jpg,.jpeg,.png,.pdf"
+                />
+              </div>
 
-.footer-inner {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  text-align: center;
-}
+              <div class="form-group">
+                <label class="form-label" for="doc-carta-verso">
+                  Carta de condução – verso
+                </label>
+                <input
+                  class="form-file"
+                  type="file"
+                  id="doc-carta-verso"
+                  name="doc-carta-verso"
+                  accept=".jpg,.jpeg,.png,.pdf"
+                />
+              </div>
 
-.footer-title {
-  font-size: 18px;
-  font-weight: bold;
-  color: #c9a952;
-  margin-bottom: 10px;
-}
+              <div class="form-group">
+                <label class="form-label" for="doc-id">
+                  Documento de identificação (BI/CC/Passaporte)
+                </label>
+                <input
+                  class="form-file"
+                  type="file"
+                  id="doc-id"
+                  name="doc-id"
+                  accept=".jpg,.jpeg,.png,.pdf"
+                />
+              </div>
 
-.footer-bottom {
-  margin-top: 30px;
-  text-align: center;
-  font-size: 14px;
-  opacity: 0.6;
-}
+              <div class="form-group">
+                <label class="form-label" for="doc-morada">
+                  Comprovativo de morada
+                </label>
+                <input
+                  class="form-file"
+                  type="file"
+                  id="doc-morada"
+                  name="doc-morada"
+                  accept=".jpg,.jpeg,.png,.pdf"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="doc-seguro">
+                  Seguro da viatura (se aplicável)
+                </label>
+                <input
+                  class="form-file"
+                  type="file"
+                  id="doc-seguro"
+                  name="doc-seguro"
+                  accept=".jpg,.jpeg,.png,.pdf"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="doc-outros">
+                  Outros documentos relevantes
+                </label>
+                <input
+                  class="form-file"
+                  type="file"
+                  id="doc-outros"
+                  name="doc-outros"
+                  accept=".jpg,.jpeg,.png,.pdf"
+                />
+              </div>
+            </div>
+
+            <!-- Botões -->
+            <div class="form-actions">
+              <button type="submit" class="btn-primary">
+                Enviar candidatura
+              </button>
+              <p class="form-smallprint">
+                Ao enviar, confirma que autoriza o tratamento destes dados
+                para efeitos de análise da parceria, de acordo com a nossa
+                política de privacidade.
+              </p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <p class="footer-title">Explore Portugal Experience</p>
+          <p class="footer-tagline">
+            Premium Tours &amp; Private Transfers em Portugal, com motorista.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a
+            href="https://www.instagram.com/exploreportugal2025"
+            target="_blank"
+            rel="noopener"
+          >
+            Instagram
+          </a>
+          <span class="footer-sep">•</span>
+          <a
+            href="https://www.tiktok.com/@explore.portugal24"
+            target="_blank"
+            rel="noopener"
+          >
+            TikTok
+          </a>
+          <span class="footer-sep">•</span>
+          <a href="contactos.html">Contactos</a>
+        </div>
+
+        <div class="footer-credit">
+          Powered by: <span>MkDesign - Portugal</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS do menu (se ainda não estiver incluído noutras páginas) -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
