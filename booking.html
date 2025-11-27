@@ -1,140 +1,153 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <title>Reservas · Explore Portugal Experience</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reservas | Explore Portugal Experience</title>
+    <meta name="description" content="Reserve transfers e tours privados com motorista profissional certificado." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta name="description" content="Faça um pedido de reserva para transfers privados e tours em Portugal. Resposta personalizada e confirmação clara antes de qualquer pagamento.">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-Y30ME05MQY");
+    </script>
 
-  <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-Y30ME05MQY');
-  </script>
-</head>
-<body>
-  <!-- Barra idioma -->
-  <div class="translate-bar">
-    <span>Idioma:</span>
-    <div id="google_translate_element"></div>
-  </div>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="home-star" aria-label="Home">
+          <img src="assets/images/frame.png" alt="Home" />
+        </a>
 
-  <!-- HEADER -->
-  <header class="header">
-    <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
-      <img src="assets/icons/star-full.svg" class="star-animated" alt="">
-    </a>
+        <a href="index.html" class="header-logo">
+          <img src="assets/images/logo-explore-portugal-experience.png"
+               alt="Explore Portugal Experience" />
+        </a>
 
-    <nav class="nav" aria-label="Navegação principal">
-      <ul class="nav-menu">
-        <li><a href="about.html">Sobre</a></li>
-        <li><a href="services.html">Serviços</a></li>
-        <li><a href="choose.html">Porquê nós</a></li>
-        <li><a href="pricing.html">Preços</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="partners-drivers.html">Partners Drivers</a></li>
-        <li><a href="partners-hospitality.html">Partners Hospitality</a></li>
-        <li><a href="gallery.html">Galeria</a></li>
-        <li><a href="booking.html">Reservas</a></li>
-        <li><a href="contactos.html">Contactos</a></li>
-      </ul>
-    </nav>
+        <nav class="nav" id="mainNav">
+          <a href="about.html">Sobre</a>
+          <a href="services.html">Serviços</a>
+          <a href="choose.html">Porquê nós</a>
+          <a href="pricing.html">Preços</a>
+          <a href="faq.html">FAQ</a>
+          <a href="gallery.html">Galeria</a>
+          <a href="booking.html" class="active">Reservas</a>
+          <a href="partners-drivers.html">Drivers</a>
+          <a href="partners-hospitality.html">Hospitality</a>
+          <a href="contactos.html">Contactos</a>
+        </nav>
 
-    <button class="nav-toggle" type="button">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
+        <button class="nav-toggle" id="navToggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
 
-  <!-- HERO -->
-  <section class="page-hero section-dark">
-    <h1 class="page-hero-title">Reservas</h1>
-    <p class="page-hero-subtitle">
-      Envie o seu pedido de forma simples. Respondemos com uma proposta clara e transparente.
-    </p>
-  </section>
+    <!-- HERO -->
+    <section class="section section-dark">
+      <div class="section-inner">
+        <h1 class="section-title">Solicitar Reserva</h1>
+        <p class="section-lead">
+          Responda ao formulário para receber confirmação personalizada e valor final sem compromisso.
+        </p>
+      </div>
+    </section>
 
-  <!-- FORM -->
-  <section class="contact-section">
-    <div class="section-inner contact-grid">
+    <!-- FORM -->
+    <section class="section">
+      <div class="section-inner page-inner">
+        <form action="https://formsubmit.co/info@exploreportugalexperience.com"
+              method="POST"
+              class="form-block">
 
-      <!-- Formulário -->
-      <article class="contact-card">
-        <h3>Pedido de reserva</h3>
+          <!-- Hidden -->
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_subject" value="Nova Solicitação de Reserva" />
+          <input type="hidden" name="_next" value="https://exploreportugalexperience.com/contactos.html" />
 
-        <form class="contact-form" action="mailto:info@exploreportugalexperience.com" method="post" enctype="text/plain">
+          <label>Nome completo *</label>
+          <input type="text" name="Nome" required />
 
-          <label>Nome completo</label>
-          <input type="text" name="Nome" required>
+          <label>Email *</label>
+          <input type="email" name="Email" required />
 
-          <label>Email</label>
-          <input type="email" name="Email" required>
+          <label>Telefone / WhatsApp *</label>
+          <input type="tel" name="Telefone" required />
 
-          <label>WhatsApp / Telefone</label>
-          <input type="text" name="Telefone" required>
+          <label>Serviço Pretendido *</label>
+          <select name="Serviço" required>
+            <option value="">Selecione...</option>
+            <option>Transfer Aeroporto</option>
+            <option>Tour Lisboa 4h</option>
+            <option>Tour Lisboa 8h</option>
+            <option>Tour Sintra / Cascais</option>
+            <option>Tour Fátima / Nazaré</option>
+            <option>Tour Óbidos / Nazaré</option>
+            <option>Lisboa / Porto</option>
+            <option>Personalizado</option>
+          </select>
 
-          <label>Data do serviço</label>
-          <input type="date" name="Data" required>
+          <label>Data *</label>
+          <input type="date" name="Data" required />
 
-          <label>Hora de início</label>
-          <input type="time" name="Hora">
+          <label>Hora *</label>
+          <input type="time" name="Hora" required />
 
-          <label>Origem</label>
-          <input type="text" name="Origem" placeholder="Ex.: Aeroporto de Lisboa" required>
+          <label>Número de passageiros *</label>
+          <input type="number" name="Passageiros" required min="1" />
 
-          <label>Destino</label>
-          <input type="text" name="Destino" placeholder="Cidade, hotel ou endereço" required>
+          <label>Local de Recolha *</label>
+          <input type="text" name="Pickup" required />
 
-          <label>Número de pessoas</label>
-          <input type="number" name="Pessoas" min="1" max="8" required>
+          <label>Destino / Descrição adicional</label>
+          <textarea name="Mensagem" rows="4"
+            placeholder="Detalhes adicionais, paragens, preferências, cadeiras de criança, etc."></textarea>
 
-          <label>Mensagem</label>
-          <textarea name="Mensagem" placeholder="Datas adicionais, paragens, cadeirinhas, bagagem..." required></textarea>
-
-          <button type="submit" class="btn-primary">Enviar pedido</button>
+          <button type="submit" class="btn-primary" style="margin-top:20px;">
+            Enviar pedido de reserva
+          </button>
         </form>
-      </article>
 
-      <!-- CTA -->
-      <article class="contact-card">
-        <h3>Resposta rápida</h3>
-        <p>Se preferir falar diretamente, escolha WhatsApp:</p>
-
-        <div class="social-row">
-          <a href="https://wa.me/351910784548" target="_blank" class="social-pill">
-            WhatsApp · +351 910 784 548
+        <div style="text-align:center;margin-top:30px;">
+          <p><strong>Ou se preferir:</strong></p>
+          <a href="https://wa.me/351910784548" target="_blank" class="btn-outline">
+            Contactar via WhatsApp
           </a>
         </div>
+      </div>
+    </section>
 
-        <p>Disponível todos os dias.</p>
-      </article>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-title">Explore Portugal Experience</div>
+          Premium Tours & Private Transfers desde 2018
+        </div>
 
-    </div>
-  </section>
+        <div>
+          <div class="footer-title">Contactos</div>
+          +351 910 784 548<br />
+          info@exploreportugalexperience.com
+        </div>
 
-  <!-- FOOTER -->
-  <footer class="section footer">
-    <div class="section-inner footer-inner">
-      <p class="footer-copy">© 2018–2025 Explore Portugal Experience — Turismo em Portugal.</p>
-      <p class="footer-credit">Powered by: MkDesign - Portugal</p>
-    </div>
-  </footer>
+        <div>
+          <div class="footer-title">Redes Sociais</div>
+          Instagram | TikTok | WhatsApp
+        </div>
+      </div>
 
-  <!-- JS -->
-  <script src="assets/js/nav.js"></script>
+      <div class="footer-bottom">Powered by: MkDesign — Portugal</div>
+    </footer>
 
-  <!-- Google Translate -->
-  <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage:'pt',includedLanguages:'en,pt,es,fr,de'}, 'google_translate_element');
-    }
-  </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-</body>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
