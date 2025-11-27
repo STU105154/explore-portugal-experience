@@ -1383,10 +1383,46 @@ body.nav-open .nav-toggle span:nth-child(3) {
   z-index: 1200;
 }
 
+.floating-review-box.is-minimized {
+  display: none;
+}
+
+.floating-close {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.45rem;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(247, 243, 232, 0.75);
+  background: transparent;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease,
+    border-color 0.2s ease;
+}
+
+.floating-close:hover {
+  background: var(--gold-soft);
+  color: #1a1308;
+  border-color: var(--gold-soft);
+  transform: scale(1.05);
+}
+
 .floating-title {
   margin: 0 0 0.1rem;
   font-size: 0.95rem;
   font-weight: 600;
+  padding-right: 1.2rem; /* espaço para o X */
 }
 
 .floating-stars {
@@ -1413,7 +1449,32 @@ body.nav-open .nav-toggle span:nth-child(3) {
   font-size: 0.8rem;
 }
 
-/* Ajustes mobile para a caixa fixa */
+/* Pílula minimizada */
+
+.floating-review-puck {
+  position: fixed;
+  right: 1.4rem;
+  bottom: 1.4rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 165, 98, 0.8);
+  background: rgba(5, 5, 5, 0.95);
+  color: var(--gold-soft);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  z-index: 1100;
+}
+
+.floating-review-puck.is-visible {
+  display: inline-flex;
+}
+
+/* Ajustes mobile para a caixa fixa e pílula */
 
 @media (max-width: 640px) {
   .floating-review-box {
@@ -1421,6 +1482,12 @@ body.nav-open .nav-toggle span:nth-child(3) {
     right: 0.9rem;
     bottom: 0.9rem;
     max-width: none;
+  }
+
+  .floating-review-puck {
+    left: 0.9rem;
+    right: auto;
+    bottom: 0.9rem;
   }
 
   .floating-actions {
