@@ -754,3 +754,140 @@ body.nav-open .nav-toggle span:nth-child(3) {
   margin-top: 2rem;
   color: var(--gold-soft);
 }
+/* ================== FORMULÁRIOS GERAIS (PRETO & DOURADO) ================== */
+
+.contact-form,
+.payment-form,
+.questionnaire-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-row label {
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.contact-form input,
+.contact-form textarea,
+.payment-form input,
+.payment-form textarea,
+.payment-form select,
+.questionnaire-form input,
+.questionnaire-form textarea {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid #333;
+  background: #050505;
+  color: var(--text);
+  font-size: 0.95rem;
+  outline: none;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.payment-form textarea,
+.contact-form textarea,
+.questionnaire-form textarea {
+  border-radius: 18px;
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.payment-form input:focus,
+.payment-form textarea:focus,
+.payment-form select:focus,
+.questionnaire-form input:focus,
+.questionnaire-form textarea:focus {
+  border-color: var(--gold-soft);
+  box-shadow: 0 0 0 1px rgba(201, 165, 98, 0.6);
+  background: #080808;
+}
+
+.payment-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* ================== SECÇÃO PAGAMENTO – LAYOUT ================== */
+
+.payment-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 2.2rem;
+  align-items: flex-start;
+}
+
+.payment-column {
+  min-width: 0;
+}
+
+.payment-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 1.5rem;
+  font-size: 0.97rem;
+}
+
+.payment-list li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.payment-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--gold-soft);
+  font-size: 1.1rem;
+}
+
+.payment-card {
+  background: linear-gradient(150deg, #151515, #050505);
+  border-radius: 18px;
+  border: 1px solid rgba(201, 165, 98, 0.35);
+  box-shadow: var(--shadow-soft);
+  padding: 1.7rem 1.5rem 1.9rem;
+}
+
+.payment-form-title {
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin: 0 0 0.4rem;
+}
+
+.payment-form-text {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin: 0 0 1.2rem;
+}
+
+.payment-form-text.small {
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+/* responsivo */
+
+@media (max-width: 900px) {
+  .payment-section {
+    grid-template-columns: 1fr;
+  }
+}
