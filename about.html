@@ -1,106 +1,127 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <title>Sobre · Explore Portugal Experience</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sobre · Explore Portugal Experience</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta name="description" content="Saiba mais sobre a Explore Portugal Experience e o legado de Agapito, cofundador e motorista profissional que inspirou este projeto.">
+    <meta
+      name="description"
+      content="Saiba mais sobre a Explore Portugal Experience e o legado de Agapito, cofundador e motorista profissional que inspirou este projeto."
+    />
 
-  <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png" />
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-Y30ME05MQY');
-  </script>
-</head>
-<body>
-  <!-- Barra de idioma -->
-  <div class="translate-bar">
-    <span>Idioma:</span>
-    <div id="google_translate_element"></div>
-  </div>
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-Y30ME05MQY");
+    </script>
+  </head>
 
-  <!-- HEADER COM ESTRELA E MENU -->
-  <header class="header">
-    <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
-      <img src="assets/icons/star-gold.svg" alt="Explorar Portugal" class="star-animated">
-    </a>
+  <body>
+    <!-- Barra de idioma -->
+    <div class="translate-bar">
+      <span>Idioma:</span>
+      <div id="google_translate_element"></div>
+    </div>
 
-    <nav class="nav" aria-label="Navegação principal">
-      <a href="about.html">Sobre</a>
-      <a href="services.html">Serviços</a>
-      <a href="choose.html">Porquê nós</a>
-      <a href="pricing.html">Preços</a>
-      <a href="faq.html">FAQ</a>
-      <a href="partners-drivers.html">Partners Drivers</a>
-      <a href="partners-hospitality.html">Partners Hospitality</a>
-      <a href="gallery.html">Galeria</a>
-      <a href="booking.html">Reservas</a>
-      <a href="contacts.html">Contactos</a>
-    </nav>
+    <!-- HEADER COM ESTRELA E MENU (igual ao resto do site) -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
+          <img
+            src="assets/icons/star-full.svg"
+            alt="Explore Portugal Experience"
+            class="star-animated"
+          />
+        </a>
 
-    <button class="nav-toggle" type="button" aria-label="Abrir menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </header>
+        <nav class="nav" id="mainNav" aria-label="Navegação principal">
+          <a href="about.html" aria-current="page">Sobre nós</a>
+          <a href="services.html">Serviços</a>
+          <a href="choose.html">Porquê nós</a>
+          <a href="pricing.html">Preços</a>
+          <a href="faq.html">FAQ</a>
+          <a href="gallery.html">Galeria</a>
+          <a href="booking.html">Reservas</a>
+          <a href="partners-drivers.html">Partners Drivers</a>
+          <a href="partners-hospitality.html">Partners Hospitality</a>
+          <a href="contactos.html">Contactos</a>
+        </nav>
 
-  <main>
-    <!-- HERO DA PÁGINA -->
-    <section class="page-hero section-dark">
-      <h1 class="page-hero-title">Sobre nós</h1>
-      <p class="page-hero-subtitle">
-        Uma experiência de condução com alma, calma e profissionalismo — nascida do sonho
-        de acolher cada pessoa em Portugal com elegância, cuidado e atenção ao detalhe.
-      </p>
-    </section>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
 
-    <!-- BLOCO SOBRE A EMPRESA -->
-    <section class="section section-dark about-section">
-      <div class="section-inner narrow">
-        <div class="about-grid">
-          <div>
-            <h2>Explore Portugal Experience</h2>
-            <p>
-              A Explore Portugal Experience nasceu para oferecer um serviço de tours
-              e private transfers em Portugal que fosse, acima de tudo, humano,
-              tranquilo e verdadeiramente personalizado.
-            </p>
-            <p>
-              Cada percurso é planeado consigo: horários confortáveis, pontos de
-              encontro claros, margens para imprevistos bons e atenção às suas
-              preferências — seja na escolha do itinerário, dos restaurantes ou das
-              paragens para fotografar.
-            </p>
-            <p>
-              O objetivo é simples: que se sinta sempre bem acompanhado, em segurança
-              e com tempo para desfrutar do caminho, em vez de se preocupar com ele.
-            </p>
-            <p>
-              Trabalhamos com clientes individuais, famílias, pequenos grupos e
-              parceiros profissionais (hotéis, empresas e operadores), sempre com a
-              mesma base: respeito absoluto por quem confia em nós.
-            </p>
-          </div>
+    <main>
+      <!-- HERO DA PÁGINA -->
+      <section class="page-hero section-dark">
+        <div class="section-inner narrow">
+          <h1 class="page-hero-title">Sobre nós</h1>
+          <p class="page-hero-subtitle">
+            Uma experiência de condução com alma, calma e profissionalismo — nascida do
+            sonho de acolher cada pessoa em Portugal com elegância, cuidado e atenção ao
+            detalhe.
+          </p>
+        </div>
+      </section>
 
-          <!-- TRIBUTO AGAPITO -->
-          <aside class="tribute-block" aria-label="Tributo a Agapito">
+      <!-- BLOCO SOBRE A EMPRESA -->
+      <section class="section section-dark">
+        <div class="section-inner narrow">
+          <h2>Explore Portugal Experience</h2>
+          <p>
+            A Explore Portugal Experience nasceu para oferecer um serviço de tours
+            e private transfers em Portugal que fosse, acima de tudo, humano,
+            tranquilo e verdadeiramente personalizado.
+          </p>
+          <p>
+            Cada percurso é planeado consigo: horários confortáveis, pontos de
+            encontro claros, margens para imprevistos bons e atenção às suas
+            preferências — seja na escolha do itinerário, dos restaurantes ou das
+            paragens para fotografar.
+          </p>
+          <p>
+            O objetivo é simples: que se sinta sempre bem acompanhado, em segurança
+            e com tempo para desfrutar do caminho, em vez de se preocupar com ele.
+          </p>
+          <p>
+            Trabalhamos com clientes individuais, famílias, pequenos grupos e
+            parceiros profissionais (hotéis, empresas e operadores), sempre com a
+            mesma base: respeito absoluto por quem confia em nós.
+          </p>
+        </div>
+      </section>
+
+      <!-- TRIBUTO AO AGAPITO – FOTO CIRCULAR DOURADA + TEXTO -->
+      <section class="section">
+        <div class="section-inner narrow">
+          <article class="contact-card about-agapito" aria-label="Tributo a Agapito">
+            <img
+              src="assets/images/agapito.jpg"
+              alt="Fotografia de Agapito, cofundador da Explore Portugal Experience"
+              class="agapito-photo"
+            />
+
             <p class="tribute-heading">Em memória</p>
             <p class="tribute-name">Agapito</p>
-            <p class="tribute-subtitle">Cofundador · Motorista profissional · Alma da estrada</p>
-
-            <div class="tribute-line"></div>
-
-            <div class="tribute-photo">
-              <!-- atualiza o ficheiro se for outra foto nova -->
-              <img src="assets/images/agapito.jpg" alt="Fotografia de Agapito, cofundador da Explore Portugal Experience">
-            </div>
+            <p class="tribute-subtitle">
+              Cofundador · Motorista profissional · Alma da estrada
+            </p>
 
             <div class="tribute-text">
               <p>
@@ -140,85 +161,72 @@
             </div>
 
             <p class="tribute-quote">“A estrada continua consigo.”</p>
-          </aside>
+          </article>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
-  <!-- FOOTER COM CONTACTOS + REDES + MKDESIGN -->
-  <footer class="section footer">
-    <div class="section-inner footer-inner">
-      <div class="footer-cols">
+    <!-- FOOTER (igual ao resto do site) -->
+    <footer class="site-footer">
+      <div class="footer-inner">
         <div class="footer-col">
-          <h3>Contactos</h3>
+          <p class="footer-title">Explore Portugal Experience</p>
+          <p>
+            Premium Tours &amp; Private Transfers em Portugal, com motorista profissional.
+            Conforto, elegância e discrição em cada percurso.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-title">Contactos</p>
+          <p>
+            Telemóvel / WhatsApp:
+            <a href="https://wa.me/351910784548" target="_blank">+351 910 784 548</a>
+          </p>
           <p>
             Email:
-            <a href="mailto:info@exploreportugalexperience.com">
-              info@exploreportugalexperience.com
-            </a>
-            <br>
-            Telemóvel / WhatsApp: +351 910 784 548
-          </p>
-          <p>
-            Explore Portugal Experience<br>
-            Lisboa · Portugal
+            <a href="mailto:info@exploreportugalexperience.com"
+              >info@exploreportugalexperience.com</a
+            >
           </p>
         </div>
 
         <div class="footer-col">
-          <h3>Redes sociais</h3>
+          <p class="footer-title">Siga-nos</p>
           <p>
-            <a href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener">
-              Instagram · @exploreportugal2025
-            </a><br>
-            <a href="https://www.tiktok.com/@explore.portugal24?_r=1&_t=ZG-91YeXliOakD" target="_blank" rel="noopener">
-              TikTok · @explore.portugal24
-            </a>
-          </p>
-        </div>
-
-        <div class="footer-col">
-          <h3>Reservas</h3>
-          <p>
-            WhatsApp direto:
-            <a href="https://wa.me/351910784548" target="_blank" rel="noopener">
-              +351 910 784 548
-            </a><br>
-            Formulário online em
-            <a href="booking.html">Reservas</a>.
+            <a href="https://www.instagram.com/exploreportugal2025" target="_blank"
+              >Instagram</a
+            ><br />
+            <a href="https://www.tiktok.com/@explore.portugal24" target="_blank"
+              >TikTok</a
+            >
           </p>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p class="footer-copy">
-          © 2018–2025 Explore Portugal Experience — Turismo em Portugal.
-        </p>
-        <p class="footer-credit">
-          Powered by: MkDesign - Portugal
-        </p>
+        <p>© 2018–2025 Explore Portugal Experience — Turismo em Portugal.</p>
+        <p>Powered by: MkDesign - Portugal</p>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- JS -->
-  <script src="assets/js/nav.js"></script>
-  <script src="assets/js/lightbox.js"></script>
+    <!-- JS -->
+    <script src="assets/js/nav.js"></script>
+    <script src="assets/js/lightbox.js"></script>
 
-  <!-- Google Translate -->
-  <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        {
-          pageLanguage: 'pt',
-          includedLanguages: 'en,pt,es,fr,de',
-          autoDisplay: false
-        },
-        'google_translate_element'
-      );
-    }
-  </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</body>
+    <!-- Google Translate -->
+    <script>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "pt",
+            includedLanguages: "en,pt,es,fr,de",
+            autoDisplay: false,
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  </body>
 </html>
