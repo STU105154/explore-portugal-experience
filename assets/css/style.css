@@ -103,8 +103,8 @@ main {
 }
 
 .star-animated {
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
   filter: drop-shadow(0 0 10px rgba(201, 165, 98, 0.6));
   animation: star-spin 18s linear infinite;
   transform-origin: center;
@@ -229,6 +229,12 @@ body.nav-open .nav-toggle span:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
 }
 
+/* esconder logo topo só na home */
+
+.home-page .header-logo {
+  display: none;
+}
+
 /* ================== SEÇÕES GENÉRICAS ================== */
 
 .section {
@@ -293,9 +299,12 @@ body.nav-open .nav-toggle span:nth-child(3) {
 
 .home-hero {
   padding: 4rem 1.4rem 3rem;
+  min-height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  display: grid;
-  place-items: center;
 }
 
 .home-logo {
@@ -600,7 +609,7 @@ body.nav-open .nav-toggle span:nth-child(3) {
   transform: translateY(-1px);
 }
 
-/* ================== CONTACT HERO (se precisares) ================== */
+/* ================== CONTACT HERO ================== */
 
 .contact-hero {
   background: #050505;
@@ -654,8 +663,7 @@ body.nav-open .nav-toggle span:nth-child(3) {
   }
 }
 
-/* ================== ABOUT – AGAPITO ================== */
-/* Para usar no about.html quando lá chegarmos */
+/* ================== ABOUT – AGAPITO (para usar depois) ================== */
 
 .about-agapito {
   text-align: center;
