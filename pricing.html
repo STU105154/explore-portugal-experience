@@ -1,81 +1,211 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <title>Preços · Explore Portugal Experience</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Preços transparentes e métodos de pagamento Explore Portugal Experience. Confiança, elegância e comunicação clara.">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Preços | Explore Portugal Experience</title>
+    <meta
+      name="description"
+      content="Preços e condições dos nossos transfers e tours privados em Portugal com motorista profissional."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-Y30ME05MQY");
+    </script>
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-Y30ME05MQY');
-  </script>
-</head>
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-<body>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="home-star" aria-label="Home">
+          <img src="assets/icons/star-full.svg"
+               alt="Explore Portugal Experience"
+               class="star-animated" />
+        </a>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a href="index.html" class="home-star">
-      <img src="assets/icons/star-full.svg" class="star-animated" alt="">
-    </a>
-    <nav class="nav">
-      <a href="about.html">Sobre nós</a>
-      <a href="services.html">Serviços</a>
-      <a href="choose.html">Porquê nós</a>
-      <a href="pricing.html" aria-current="page">Preços</a>
-      <a href="faq.html">FAQ</a>
-      <a href="partners-drivers.html">Partners Drivers</a>
-      <a href="partners-hospitality.html">Partners Hospitality</a>
-      <a href="gallery.html">Galeria</a>
-      <a href="booking.html">Reservas</a>
-      <a href="contactos.html">Contactos</a>
-    </nav>
-    <button class="nav-toggle"><span></span><span></span><span></span></button>
-  </div>
-</header>
+        <nav class="nav" id="mainNav">
+          <a href="about.html">Sobre</a>
+          <a href="services.html">Serviços</a>
+          <a href="choose.html">Porquê nós</a>
+          <a href="pricing.html" class="active">Preços</a>
+          <a href="faq.html">FAQ</a>
+          <a href="gallery.html">Galeria</a>
+          <a href="booking.html">Reservas</a>
+          <a href="partners-drivers.html">Drivers</a>
+          <a href="partners-hospitality.html">Hospitality</a>
+          <a href="contactos.html">Contactos</a>
+        </nav>
 
-<section class="page-hero section-dark">
-  <h1 class="page-hero-title">Preços & Métodos de pagamento</h1>
-  <p class="page-hero-subtitle">
-    Valores sempre comunicados de forma clara antes de qualquer pagamento.
-  </p>
-</section>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu toggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
 
-<section class="section section-dark">
-  <div class="section-inner narrow">
-    <h2 class="section-title">Métodos Disponíveis</h2>
-    <p style="text-align:center; margin-bottom:1.5rem;">
-      Escolha o método de pagamento preferido para finalizar a sua reserva.
-    </p>
+    <!-- HERO -->
+    <section class="section section-dark">
+      <div class="section-inner">
+        <h1 class="section-title">Preços &amp; Condições</h1>
+        <p class="section-lead">
+          Transfers e tours privados com motorista profissional. Serviço premium com transparência total.
+        </p>
+      </div>
+    </section>
 
-    <div class="payment-icons">
-      <a href="https://www.mbway.pt" target="_blank"><img src="assets/icons/mbway.svg" alt="MBWay"></a>
-      <a href="https://revolut.com" target="_blank"><img src="assets/icons/revolut.svg" alt="Revolut"></a>
-      <a href="https://paypal.com" target="_blank"><img src="assets/icons/paypal.svg" alt="PayPal"></a>
-      <a href="https://wa.me/351910784548" target="_blank"><img src="assets/icons/whatsapp.svg" alt="WhatsApp"></a>
-    </div>
+    <!-- Tabela de preços -->
+    <section class="section">
+      <div class="section-inner" style="max-width:1000px;margin:0 auto;text-align:center;">
+        <h2 style="color:#c9a952;margin-bottom:24px;">Transfers Principais</h2>
 
-    <p class="payment-info">
-      Confirmações imediatas · Pagamentos seguros · Suporte direto 24/7
-    </p>
-  </div>
-</section>
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Origem / Destino</th>
+              <th>1–3 Pessoas</th>
+              <th>4–7 Pessoas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Aeroporto Lisboa ➝ Lisboa</td>
+              <td>€45</td>
+              <td>€60</td>
+            </tr>
+            <tr>
+              <td>Lisboa ➝ Cascais</td>
+              <td>€60</td>
+              <td>€75</td>
+            </tr>
+            <tr>
+              <td>Lisboa ➝ Sintra</td>
+              <td>€80</td>
+              <td>€95</td>
+            </tr>
+            <tr>
+              <td>Lisboa ➝ Porto</td>
+              <td>€350</td>
+              <td>€420</td>
+            </tr>
+          </tbody>
+        </table>
 
-<footer class="footer">
-  <div class="footer-inner">
-    <p>© 2018–2025 Explore Portugal Experience — Turismo em Portugal.</p>
-    <p>Powered by MkDesign - Portugal</p>
-  </div>
-</footer>
+        <p style="margin-top:18px;"><em>Valores incluem motorista profissional, água e assistência personalizada.</em></p>
 
-<script src="assets/js/nav.js"></script>
-</body>
+        <a href="booking.html" class="btn-primary" style="margin-top:24px;">Reservar agora</a>
+      </div>
+    </section>
+
+    <!-- Tours privados -->
+    <section class="section section-dark">
+      <div class="section-inner" style="max-width:900px;margin:0 auto;text-align:center;">
+        <h2 class="section-title">Tours Privados</h2>
+        <p style="margin-bottom:20px;">Passeios personalizados em viatura premium com motorista certificado</p>
+
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Tour</th>
+              <th>Duração</th>
+              <th>Preço desde</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lisboa Highlights</td>
+              <td>4 horas</td>
+              <td>€120</td>
+            </tr>
+            <tr>
+              <td>Sintra + Cabo da Roca + Cascais</td>
+              <td>8 horas</td>
+              <td>€250</td>
+            </tr>
+            <tr>
+              <td>Fátima + Nazaré + Óbidos</td>
+              <td>9 horas</td>
+              <td>€320</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <a href="booking.html" class="btn-primary" style="margin-top:24px;">Agendar Tour</a>
+      </div>
+    </section>
+
+    <!-- Notas adicionais + métodos de pagamento -->
+    <section class="section">
+      <div class="section-inner" style="max-width:800px;margin:0 auto;text-align:center;">
+        <h2 style="color:#c9a952;">Informação Importante</h2>
+        <ul style="text-align:left;max-width:600px;margin:0 auto 1.5rem;">
+          <li>Valores finais confirmados antes da reserva</li>
+          <li>Cadeiras para crianças disponíveis</li>
+          <li>Cancelamento gratuito até 48h antes</li>
+          <li>Pagamentos via cartão, MBWay ou transferência bancária</li>
+        </ul>
+
+        <!-- Ícones de pagamento pequenos (já tens o CSS certo) -->
+        <h3 style="color:#c9a952;margin-top:10px;margin-bottom:10px;">Métodos de pagamento</h3>
+        <div class="payment-icons">
+          <a href="https://www.mbway.pt" target="_blank" rel="noopener">
+            <img src="assets/icons/mbway.svg" alt="MB Way" />
+          </a>
+          <a href="https://www.revolut.com" target="_blank" rel="noopener">
+            <img src="assets/icons/revolut.svg" alt="Revolut" />
+          </a>
+          <a href="https://www.paypal.com" target="_blank" rel="noopener">
+            <img src="assets/icons/paypal.svg" alt="PayPal" />
+          </a>
+        </div>
+        <p class="payment-info">
+          Se tiver dúvidas sobre pagamentos, pode sempre contactar-nos por WhatsApp ou email.
+        </p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-title">Explore Portugal Experience</div>
+          <p>
+            Premium Tours & Private Transfers em Portugal.<br />
+            Conforto e elegância em cada viagem.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-title">Contactos</div>
+          <p>
+            +351 910 784 548<br />
+            info@exploreportugalexperience.com<br />
+            exploreportugalexperience.com
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-title">Redes sociais</div>
+          <p>
+            Instagram @exploreportugal2025<br />
+            TikTok @explore.portugal24
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        Powered by: MkDesign — Portugal
+      </div>
+    </footer>
+
+    <script src="assets/js/nav.js"></script>
+  </body>
 </html>
