@@ -2,15 +2,21 @@
 <html lang="pt">
   <head>
     <meta charset="UTF-8" />
-    <title>Preços | Explore Portugal Experience</title>
+    <title>Serviços | Explore Portugal Experience</title>
     <meta
       name="description"
-      content="Preços e condições dos nossos transfers e tours privados em Portugal com motorista profissional."
+      content="Tours privados e transfers premium em Portugal, com motorista profissional. Lisboa, Sintra, Cascais, Porto, Fátima, Nazaré e muito mais."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png" />
+
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -19,178 +25,261 @@
       gtag("js", new Date());
       gtag("config", "G-Y30ME05MQY");
     </script>
-
-    <!-- CSS principal -->
-    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
   <body>
-    <!-- HEADER -->
+    <!-- Barra de idioma -->
+    <div class="translate-bar">
+      <span>Idioma:</span>
+      <div id="google_translate_element"></div>
+    </div>
+
+    <!-- HEADER NOVO -->
     <header class="site-header">
       <div class="header-inner">
-        <a href="index.html" class="home-star" aria-label="Home">
-          <img src="assets/images/frame.png" alt="Home" />
+        <!-- Estrela / botão home -->
+        <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
+          <img src="assets/icons/star-full.svg" alt="Home" class="star-animated" />
         </a>
 
-        <a href="index.html" class="header-logo">
-          <img src="assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience" />
-        </a>
-
-        <nav class="nav" id="mainNav">
-          <a href="about.html">Sobre</a>
-          <a href="services.html">Serviços</a>
+        <!-- Navegação -->
+        <nav class="nav" id="mainNav" aria-label="Navegação principal">
+          <a href="about.html">Sobre nós</a>
+          <a href="services.html" aria-current="page">Serviços</a>
           <a href="choose.html">Porquê nós</a>
-          <a href="pricing.html" class="active">Preços</a>
+          <a href="pricing.html">Preços</a>
           <a href="faq.html">FAQ</a>
           <a href="gallery.html">Galeria</a>
           <a href="booking.html">Reservas</a>
-          <a href="partners-drivers.html">Drivers</a>
-          <a href="partners-hospitality.html">Hospitality</a>
+          <a href="partners-drivers.html">Partners Drivers</a>
+          <a href="partners-hospitality.html">Partners Hospitality</a>
           <a href="contactos.html">Contactos</a>
         </nav>
 
-        <button class="nav-toggle" id="navToggle" aria-label="Menu toggle">
+        <!-- Burger mobile -->
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Abrir menu de navegação"
+          type="button"
+        >
           <span></span><span></span><span></span>
         </button>
       </div>
     </header>
 
-    <!-- HERO -->
-    <section class="section section-dark">
-      <div class="section-inner">
-        <h1 class="section-title">Preços & Condições</h1>
-        <p class="section-lead">
-          Transfers e tours privados com motorista profissional. Serviço premium com transparência total.
-        </p>
-      </div>
-    </section>
+    <main>
+      <!-- HERO SERVIÇOS -->
+      <section class="section section-dark">
+        <div class="section-inner">
+          <h1 class="section-title">Serviços</h1>
+          <p class="section-lead">
+            Tours privados e transfers premium, com motorista profissional e um serviço
+            pensado para quem valoriza conforto, elegância e tempo bem cuidado.
+          </p>
+        </div>
+      </section>
 
-    <!-- Tabela de preços -->
-    <section class="section">
-      <div class="section-inner" style="max-width:1000px;margin:0 auto;text-align:center;">
-        <h2 style="color:#c9a952;margin-bottom:24px;">Transfers Principais</h2>
+      <!-- TOURS PRINCIPAIS -->
+      <section class="section">
+        <div class="section-inner">
+          <h2 class="section-title">Tours privados</h2>
+          <p class="section-lead">
+            Itinerários desenhados à medida, com tempo para apreciar cada paragem, sem
+            pressa e com toda a tranquilidade.
+          </p>
 
-        <table class="pricing-table">
-          <thead>
-            <tr>
-              <th>Origem / Destino</th>
-              <th>1–3 Pessoas</th>
-              <th>4–7 Pessoas</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Aeroporto Lisboa ➝ Lisboa</td>
-              <td>€45</td>
-              <td>€60</td>
-            </tr>
-            <tr>
-              <td>Lisboa ➝ Cascais</td>
-              <td>€60</td>
-              <td>€75</td>
-            </tr>
-            <tr>
-              <td>Lisboa ➝ Sintra</td>
-              <td>€80</td>
-              <td>€95</td>
-            </tr>
-            <tr>
-              <td>Lisboa ➝ Porto</td>
-              <td>€350</td>
-              <td>€420</td>
-            </tr>
-          </tbody>
-        </table>
+          <div class="cards-3">
+            <article class="card">
+              <h3>Lisboa Histórica &amp; Miradouros</h3>
+              <p>
+                Percurso pelas sete colinas de Lisboa, com paragens em miradouros
+                emblemáticos, bairro histórico e margens do Tejo. Ideal para um primeiro
+                contacto com a cidade, com tempo para fotografar, descobrir e respirar
+                Lisboa com calma.
+              </p>
+            </article>
 
-        <p style="margin-top:18px;"><em>Valores incluem motorista profissional, água e assistência personalizada.</em></p>
+            <article class="card">
+              <h3>Sintra • Cabo da Roca • Cascais</h3>
+              <p>
+                Um dia completo entre palácios, serra e mar. Sintra romântica, o ponto
+                mais ocidental da Europa e a elegância de Cascais. Um tour pensado para
+                quem quer ver muito, mas sempre com conforto e sem correrias.
+              </p>
+            </article>
 
-        <a href="booking.html" class="btn-primary" style="margin-top:24px;">Reservar agora</a>
-      </div>
-    </section>
+            <article class="card">
+              <h3>Fátima • Nazaré • Óbidos</h3>
+              <p>
+                Roteiro que combina espiritualidade, paisagens de mar e um vilarejo
+                medieval cheio de charme. Uma forma distinta de conhecer o centro de
+                Portugal, com acompanhamento atento em cada etapa.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-    <!-- Tours privados -->
-    <section class="section section-dark">
-      <div class="section-inner" style="max-width:900px;margin:0 auto;text-align:center;">
-        <h2 class="section-title">Tours Privados</h2>
-        <p style="margin-bottom:20px;">Passeios personalizados em viatura premium com motorista certificado</p>
+      <!-- TRANSFERS & SERVIÇOS CORPORATE -->
+      <section class="section section-dark">
+        <div class="section-inner">
+          <h2 class="section-title">Transfers &amp; serviços à medida</h2>
+          <p class="section-lead">
+            Do aeroporto ao hotel, de cidade em cidade, de evento em evento – com a
+            certeza de chegar com pontualidade, descrição e elegância.
+          </p>
 
-        <table class="pricing-table">
-          <thead>
-            <tr>
-              <th>Tour</th>
-              <th>Duração</th>
-              <th>Preço desde</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lisboa Highlights</td>
-              <td>4 horas</td>
-              <td>€120</td>
-            </tr>
-            <tr>
-              <td>Sintra + Cabo da Roca + Cascais</td>
-              <td>8 horas</td>
-              <td>€250</td>
-            </tr>
-            <tr>
-              <td>Fátima + Nazaré + Óbidos</td>
-              <td>9 horas</td>
-              <td>€320</td>
-            </tr>
-          </tbody>
-        </table>
+          <div class="cards-3">
+            <article class="card">
+              <h3>Transfers aeroporto</h3>
+              <p>
+                Chegadas e partidas em Lisboa com receção personalizada, ajuda com
+                bagagem e acompanhamento até ao hotel ou residência. Ideal para quem
+                procura tranquilidade logo à chegada.
+              </p>
+            </article>
 
-        <a href="booking.html" class="btn-primary" style="margin-top:24px;">Agendar Tour</a>
-      </div>
-    </section>
+            <article class="card">
+              <h3>City to City</h3>
+              <p>
+                Transfers privados entre cidades (Lisboa–Porto, Lisboa–Évora,
+                Lisboa–Algarve e outros), com possibilidade de paragens pelo caminho para
+                visitas rápidas ou refeições.
+              </p>
+            </article>
 
-    <!-- Notas adicionais -->
-    <section class="section">
-      <div class="section-inner" style="max-width:800px;margin:0 auto;text-align:center;">
-        <h2 style="color:#c9a952;">Informação Importante</h2>
-        <ul style="text-align:left;max-width:600px;margin:0 auto;">
-          <li>Valores finais confirmados antes da reserva</li>
-          <li>Cadeiras para crianças disponíveis</li>
-          <li>Cancelamento gratuito até 48h antes</li>
-          <li>Pagamentos via cartão, MBWay ou transferência bancária</li>
-        </ul>
-      </div>
-    </section>
+            <article class="card">
+              <h3>Eventos &amp; Corporate</h3>
+              <p>
+                Serviço de motorista para eventos, reuniões, roadshows, grupos de trabalho
+                e visitas técnicas. Logística discreta, cuidada e pontual para equipas e
+                convidados.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-    <!-- FOOTER -->
+      <!-- FROTA / ESTILO DE SERVIÇO -->
+      <section class="section">
+        <div
+          class="section-inner"
+          style="max-width: 900px; margin: 0 auto; text-align: left"
+        >
+          <h2 class="section-title">Estilo de serviço</h2>
+          <p class="section-lead" style="text-align: left">
+            Elegância, requinte e atenção ao detalhe em cada viagem.
+          </p>
+
+          <p style="margin-bottom: 12px">
+            Trabalhamos com viaturas confortáveis, climatizadas e cuidadosamente
+            mantidas, com motorista profissional certificado e experiência em turismo.
+          </p>
+          <p style="margin-bottom: 12px">
+            Durante o serviço, o foco é sempre o seu conforto: condução suave, ritmo
+            adaptado ao seu tempo, flexibilidade para ajustar o percurso e total
+            disponibilidade para ajudar com recomendações locais, paragens adicionais ou
+            pedidos especiais.
+          </p>
+          <p style="margin-bottom: 0">
+            A comunicação é feita de forma clara, respeitosa e profissional. O objetivo
+            é simples: que cada cliente sinta que está em boas mãos, desde o primeiro
+            contacto até ao regresso.
+          </p>
+        </div>
+      </section>
+
+      <!-- CALL TO ACTION -->
+      <section class="section section-dark">
+        <div class="section-inner">
+          <h2 class="section-title">Como reservar</h2>
+          <p class="section-lead">
+            Pode enviar um pedido de reserva através do formulário, por email ou
+            diretamente por WhatsApp. Terá sempre uma resposta personalizada.
+          </p>
+          <div style="margin-top: 10px">
+            <a href="booking.html" class="btn-primary">Formulário de reserva</a>
+            <a
+              href="https://wa.me/351910784548"
+              target="_blank"
+              rel="noopener"
+              class="btn-outline"
+              >Contactar via WhatsApp</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER UNIFICADO -->
     <footer class="site-footer">
       <div class="footer-inner">
-        <div>
-          <div class="footer-title">Explore Portugal Experience</div>
+        <div class="footer-col">
+          <p class="footer-title">Explore Portugal Experience</p>
           <p>
-            Premium Tours & Private Transfers em Portugal.<br />
-            Conforto e elegância em cada viagem.
+            Premium Tours &amp; Private Transfers em Portugal, com motorista profissional.
+            Conforto, elegância e discrição em cada percurso.
           </p>
         </div>
 
-        <div>
-          <div class="footer-title">Contactos</div>
+        <div class="footer-col">
+          <p class="footer-title">Contactos</p>
           <p>
-            +351 910 784 548<br />
-            info@exploreportugalexperience.com<br />
-            exploreportugalexperience.com
+            Tel / WhatsApp:
+            <a href="https://wa.me/351910784548" target="_blank">+351 910 784 548</a
+            ><br />
+            Email:
+            <a href="mailto:info@exploreportugalexperience.com"
+              >info@exploreportugalexperience.com</a
+            ><br />
+            Website:
+            <a href="https://www.exploreportugalexperience.com"
+              >exploreportugalexperience.com</a
+            >
           </p>
         </div>
 
-        <div>
-          <div class="footer-title">Redes sociais</div>
+        <div class="footer-col">
+          <p class="footer-title">Siga-nos</p>
           <p>
-            Instagram @exploreportugal2025<br />
-            TikTok @explore.portugal24
+            Instagram:
+            <a
+              href="https://www.instagram.com/exploreportugal2025"
+              target="_blank"
+              >@exploreportugal2025</a
+            ><br />
+            TikTok:
+            <a
+              href="https://www.tiktok.com/@explore.portugal24"
+              target="_blank"
+              >@explore.portugal24</a
+            >
           </p>
         </div>
       </div>
+
       <div class="footer-bottom">
-        Powered by: MkDesign — Portugal
+        <p>© 2018–2025 Explore Portugal Experience — Turismo em Portugal.</p>
+        <p>Powered by: MkDesign – Portugal</p>
       </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <!-- JS MENU NOVO -->
+    <script src="assets/js/nav.js"></script>
+
+    <!-- Google Translate -->
+    <script>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "pt",
+            includedLanguages: "en,pt,es,fr,de",
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </body>
 </html>
