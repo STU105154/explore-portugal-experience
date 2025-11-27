@@ -34,12 +34,12 @@
       <div id="google_translate_element"></div>
     </div>
 
-    <!-- HEADER COM ESTRELA E MENU -->
+    <!-- HEADER -->
     <header class="site-header">
       <div class="header-inner">
         <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
           <img
-            src="assets/icons/compass-gold-64.png"
+            src="assets/icons/star-full.svg"
             alt="Explore Portugal Experience"
             class="star-animated"
           />
@@ -60,7 +60,7 @@
           <a href="faq.html">FAQ</a>
           <a href="gallery.html">Galeria</a>
           <a href="booking.html">Reservas</a>
-          <a href="contacts.html">Contactos</a>
+          <a href="contactos.html" aria-current="page">Contactos</a>
         </nav>
 
         <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
@@ -99,7 +99,7 @@
               <p>Serviço disponível em todo o território de Portugal Continental.</p>
 
               <p>
-                Siga-nos em:
+                Siga-nos:
                 <br />
                 <a href="https://www.instagram.com/exploreportugal2025" target="_blank"
                   >Instagram</a
@@ -119,18 +119,18 @@
                 method="post"
                 enctype="text/plain"
               >
-                <div>
-                  <label for="name">Nome</label>
+                <div class="form-row">
+                  <label for="nome">Nome</label>
                   <input
                     type="text"
-                    id="name"
+                    id="nome"
                     name="Nome"
                     placeholder="O seu nome"
                     required
                   />
                 </div>
 
-                <div>
+                <div class="form-row">
                   <label for="email">Email</label>
                   <input
                     type="email"
@@ -141,7 +141,7 @@
                   />
                 </div>
 
-                <div>
+                <div class="form-row">
                   <label for="phone">Telemóvel (opcional)</label>
                   <input
                     type="tel"
@@ -151,7 +151,7 @@
                   />
                 </div>
 
-                <div>
+                <div class="form-row">
                   <label for="message">Mensagem</label>
                   <textarea
                     id="message"
@@ -169,7 +169,7 @@
       </section>
     </main>
 
-    <!-- FOOTER EM TODAS AS PÁGINAS -->
+    <!-- FOOTER -->
     <footer class="site-footer">
       <div class="footer-inner">
         <div class="footer-col">
