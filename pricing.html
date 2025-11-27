@@ -1,300 +1,125 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Preços & Métodos de pagamento · Explore Portugal Experience</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <meta charset="UTF-8">
+  <title>Pagamentos · Explore Portugal Experience</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Métodos de pagamento para reservas e serviços Explore Portugal Experience – seguro, elegante e personalizado.">
 
-    <meta
-      name="description"
-      content="Informação sobre valores indicativos e métodos de pagamento para tours privados e transfers em Portugal."
-    />
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png">
 
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Y30ME05MQY');
+  </script>
+</head>
 
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-Y30ME05MQY");
-    </script>
-  </head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
+        <img src="assets/icons/star-full.svg" alt="" class="star-animated">
+      </a>
 
-  <body>
-    <!-- Barra idioma -->
-    <div class="translate-bar">
-      <span>Idioma:</span>
-      <div id="google_translate_element"></div>
+      <nav class="nav">
+        <a href="about.html">Sobre nós</a>
+        <a href="services.html">Serviços</a>
+        <a href="choose.html">Porquê nós</a>
+        <a href="pricing.html" aria-current="page">Preços</a>
+        <a href="faq.html">FAQ</a>
+        <a href="partners-drivers.html">Partners Drivers</a>
+        <a href="partners-hospitality.html">Partners Hospitality</a>
+        <a href="gallery.html">Galeria</a>
+        <a href="booking.html">Reservas</a>
+        <a href="contactos.html">Contactos</a>
+      </nav>
+
+      <button class="nav-toggle" type="button"><span></span><span></span><span></span></button>
     </div>
+  </header>
 
-    <!-- HEADER -->
-    <header class="site-header">
-      <div class="header-inner">
-        <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
-          <img
-            src="assets/icons/star-full.svg"
-            alt="Explore Portugal Experience"
-            class="star-animated"
-          />
-        </a>
+  <!-- HERO -->
+  <section class="page-hero section-dark">
+    <h1 class="page-hero-title">Pagamento seguro</h1>
+    <p class="page-hero-subtitle">
+      Escolha o seu método preferido. O formulário abaixo está disponível para pagamento com cartão Visa / Mastercard.
+    </p>
+  </section>
 
-        <nav class="nav" id="mainNav" aria-label="Navegação principal">
-          <a href="about.html">Sobre nós</a>
-          <a href="services.html">Serviços</a>
-          <a href="choose.html">Porquê nós</a>
-          <a href="pricing.html" aria-current="page">Preços</a>
-          <a href="faq.html">FAQ</a>
-          <a href="partners-drivers.html">Partners Drivers</a>
-          <a href="partners-hospitality.html">Partners Hospitality</a>
-          <a href="gallery.html">Galeria</a>
-          <a href="booking.html">Reservas</a>
-          <a href="contactos.html">Contactos</a>
-        </nav>
+  <!-- MÉTODOS ALTERNATIVOS -->
+  <section class="section section-dark">
+    <div class="section-inner">
+      <h2 class="section-title">Métodos alternativos</h2>
 
-        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
-          <span></span><span></span><span></span>
-        </button>
+      <div class="payment-icons">
+        <a href="https://www.mbway.pt" target="_blank"><img src="assets/icons/mbway.svg" alt="MB Way"></a>
+        <a href="https://www.revolut.com" target="_blank"><img src="assets/icons/revolut.svg" alt="Revolut"></a>
+        <a href="https://www.paypal.com" target="_blank"><img src="assets/icons/paypal.svg" alt="PayPal"></a>
       </div>
-    </header>
 
-    <main>
-      <!-- HERO -->
-      <section class="page-hero section-dark">
-        <div class="section-inner">
-          <h1 class="page-hero-title">Preços &amp; condições</h1>
-          <p class="page-hero-subtitle">
-            Os valores são sempre comunicados de forma clara, com tudo incluído, antes
-            de qualquer pagamento. Cada pedido é analisado com base em distância,
-            duração, número de pessoas e personalização do serviço.
-          </p>
-        </div>
-      </section>
+      <p class="payment-info">Disponíveis todos os dias. Resposta imediata.</p>
+    </div>
+  </section>
 
-      <!-- SECÇÃO PREÇOS & CONDIÇÕES -->
-      <section class="section section-dark">
-        <div class="section-inner">
-          <h2 class="section-title">Como calculamos os valores</h2>
-          <p class="section-lead">
-            Não trabalhamos com tabelas escondidas nem surpresas finais. Cada orçamento
-            é preparado à medida do pedido: horário, data, época do ano, número de
-            passageiros, bagagem, pontos extra de paragem e qualquer necessidade
-            especial (cadeirinhas, horários noturnos, etc.).
-          </p>
+  <!-- FORM VISA / MASTERCARD -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="payment-card">
+        <h2 class="section-title">Pagamento com cartão</h2>
 
-          <div class="cards-3">
-            <article class="card">
-              <h3>Transfers privados</h3>
-              <p>
-                Transfers porta-a-porta entre aeroportos, hotéis, alojamentos e eventos.
-                Inclui acompanhamento de voo, espera e apoio à chegada/partida.
-              </p>
-            </article>
-
-            <article class="card">
-              <h3>Tours &amp; day trips</h3>
-              <p>
-                Passeios de meio dia ou dia inteiro (Sintra, Cascais, Fátima, Óbidos,
-                Évora, Douro, entre outros). Sempre em privado, sem partilha com
-                desconhecidos.
-              </p>
-            </article>
-
-            <article class="card">
-              <h3>Serviços à medida</h3>
-              <p>
-                Programas personalizados, eventos, corporate, roadtrips e acompanhamento
-                por vários dias. Tudo alinhado consigo antes da confirmação.
-              </p>
-            </article>
+        <form class="card-form" action="#" method="post">
+          <div class="form-row">
+            <label>Nome no cartão</label>
+            <input type="text" required>
           </div>
 
-          <p class="reservas-note">
-            Para receber um valor concreto, por favor use o formulário de
-            <a href="booking.html">Reservas</a> ou contacte-nos por WhatsApp:
-            <a href="https://wa.me/351910784548" target="_blank">+351 910 784 548</a>.
-          </p>
-        </div>
-      </section>
-
-      <!-- SECÇÃO PAGAMENTO & MÉTODOS -->
-      <section class="section">
-        <div class="section-inner payment-section">
-          <div class="payment-column">
-            <h2 class="section-title">Pagamento &amp; métodos</h2>
-            <p class="section-lead">
-              Trabalhamos com métodos de pagamento simples e seguros. Em muitos casos,
-              o pagamento é feito apenas após a confirmação do serviço e envio de
-              orçamento por escrito.
-            </p>
-
-            <ul class="payment-list">
-              <li>MB Way</li>
-              <li>Transferência bancária</li>
-              <li>Revolut</li>
-              <li>PayPal</li>
-              <li>Cartão de crédito / débito (Visa, Mastercard) — via link seguro</li>
-            </ul>
-
-            <p class="payment-note">
-              Nunca pedimos dados completos de cartão por WhatsApp ou email. Quando é
-              necessário pagamento com cartão, o processo é feito através de link seguro
-              ou terminal certificado.
-            </p>
+          <div class="form-row">
+            <label>Email de confirmação</label>
+            <input type="email" required>
           </div>
 
-          <div class="payment-column">
-            <div class="payment-card">
-              <h3 class="payment-form-title">Preferência de pagamento</h3>
-              <p class="payment-form-text">
-                Se quiser, pode indicar já como prefere pagar. Iremos considerar esta
-                informação quando respondermos ao seu pedido.
-              </p>
+          <div class="form-row">
+            <label>Valor a pagar (€)</label>
+            <input type="number" required>
+          </div>
 
-              <form
-                class="payment-form"
-                action="mailto:info@exploreportugalexperience.com"
-                method="post"
-                enctype="text/plain"
-              >
-                <div class="form-row">
-                  <label for="nome">Nome</label>
-                  <input
-                    type="text"
-                    id="nome"
-                    name="Nome"
-                    placeholder="O seu nome completo"
-                    required
-                  />
-                </div>
+          <div class="form-row">
+            <label>Número do cartão</label>
+            <input type="text" maxlength="19" placeholder="0000 0000 0000 0000" required>
+          </div>
 
-                <div class="form-row">
-                  <label for="email">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="Email"
-                    placeholder="O seu email"
-                    required
-                  />
-                </div>
-
-                <div class="form-row">
-                  <label for="reserva-ref">Reserva / serviço</label>
-                  <input
-                    type="text"
-                    id="reserva-ref"
-                    name="Reserva / serviço"
-                    placeholder="Ex.: Transfer aeroporto Lisboa, Tour Sintra, etc."
-                  />
-                </div>
-
-                <div class="form-row">
-                  <label for="metodo">Método de pagamento preferido</label>
-                  <select id="metodo" name="Método preferido" required>
-                    <option value="">Selecione uma opção</option>
-                    <option value="MB Way">MB Way</option>
-                    <option value="Transferência bancária">
-                      Transferência bancária
-                    </option>
-                    <option value="Revolut">Revolut</option>
-                    <option value="PayPal">PayPal</option>
-                    <option value="Cartão (Visa/Mastercard)">
-                      Cartão (Visa / Mastercard)
-                    </option>
-                  </select>
-                </div>
-
-                <div class="form-row">
-                  <label for="mensagem">Notas adicionais</label>
-                  <textarea
-                    id="mensagem"
-                    name="Notas"
-                    placeholder="Qualquer detalhe adicional que queira indicar."
-                  ></textarea>
-                </div>
-
-                <p class="payment-form-text small">
-                  Este formulário não recolhe dados de cartão. Serve apenas para indicar
-                  a sua preferência de pagamento.
-                </p>
-
-                <button type="submit" class="btn-primary">
-                  Enviar preferência
-                </button>
-              </form>
+          <div class="form-grid">
+            <div>
+              <label>Validade</label>
+              <input type="text" maxlength="5" placeholder="MM/AA" required>
+            </div>
+            <div>
+              <label>CVC</label>
+              <input type="text" maxlength="3" required>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-col">
-          <p class="footer-title">Explore Portugal Experience</p>
-          <p>
-            Premium Tours &amp; Private Transfers em Portugal, com motorista profissional.
-            Conforto, elegância e discrição em cada percurso.
-          </p>
-        </div>
+          <button type="submit" class="btn-primary">Pagar agora</button>
+        </form>
 
-        <div class="footer-col">
-          <p class="footer-title">Contactos</p>
-          <p>
-            Telemóvel / WhatsApp:
-            <a href="https://wa.me/351910784548" target="_blank">+351 910 784 548</a>
-          </p>
-          <p>
-            Email:
-            <a href="mailto:info@exploreportugalexperience.com"
-              >info@exploreportugalexperience.com</a
-            >
-          </p>
-        </div>
-
-        <div class="footer-col">
-          <p class="footer-title">Siga-nos</p>
-          <p>
-            <a href="https://www.instagram.com/exploreportugal2025" target="_blank"
-              >Instagram</a
-            ><br />
-            <a href="https://www.tiktok.com/@explore.portugal24" target="_blank"
-              >TikTok</a
-            >
-          </p>
-        </div>
+        <p class="payment-protect">
+          Transação protegida. Nunca guardamos os dados do seu cartão.
+        </p>
       </div>
+    </div>
+  </section>
 
-      <div class="footer-bottom">
-        <p>© 2018–2025 Explore Portugal Experience — Turismo em Portugal.</p>
-        <p>Powered by: MkDesign - Portugal</p>
-      </div>
-    </footer>
+  <footer class="site-footer">
+    <p>© 2018–2025 Explore Portugal Experience — Turismo em Portugal.</p>
+    <p>Powered by MkDesign - Portugal</p>
+  </footer>
 
-    <!-- JS -->
-    <script src="assets/js/nav.js"></script>
-
-    <!-- Google Translate -->
-    <script>
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          {
-            pageLanguage: "pt",
-            includedLanguages: "en,pt,es,fr,de",
-          },
-          "google_translate_element"
-        );
-      }
-    </script>
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  </body>
+  <script src="assets/js/nav.js"></script>
+</body>
 </html>
