@@ -991,3 +991,57 @@ body.nav-open .nav-toggle span:nth-child(3) {
   margin-top: .6rem;
   color: var(--muted);
 }
+/* PRICING LUXURY STYLE */
+.center {text-align:center;}
+.gold {color:#c9a952;}
+
+.pricing-box {
+  border:1px solid #c9a952;
+  border-radius:20px;
+  padding:35px;
+  margin-top:25px;
+  background:#0e0e0e;
+}
+
+.pricing-table.clean th,
+.pricing-table.clean td {
+  padding:14px 22px;
+  border-bottom:1px solid rgba(201,169,82,0.2);
+}
+
+.pricing-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+  margin-top:30px;
+}
+
+.pricing-card {
+  border:1px solid #c9a952;
+  border-radius:16px;
+  padding:26px;
+  background:#111;
+  text-align:center;
+}
+
+.pricing-card .price {
+  margin-top:12px;
+  font-size:18px;
+  color:#c9a952;
+}
+
+.btn-center {
+  display:inline-block;
+  margin-top:28px;
+}
+
+/* Payment icons */
+.payment-icons.small img {
+  width:60px;
+  opacity:0.9;
+  margin:0 10px;
+}
+.payment-icons.small img:hover {
+  opacity:1;
+  transform:scale(1.08);
+}
