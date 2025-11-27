@@ -2,123 +2,234 @@
 <html lang="pt">
   <head>
     <meta charset="UTF-8" />
-    <title>Contactos | Explore Portugal Experience</title>
-    <meta name="description" content="Contacte-nos para reservas de transfers e tours privados em Portugal." />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contactos – Explore Portugal Experience</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contactos Explore Portugal Experience – Premium Tours & Private Transfers em Portugal."
+    />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png" />
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() {
+        dataLayer.push(arguments);
+      }
       gtag("js", new Date());
       gtag("config", "G-Y30ME05MQY");
     </script>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
   <body>
-    <!-- HEADER -->
+    <!-- Barra de tradução -->
+    <div class="translate-bar">
+      <span>Idioma:</span>
+      <div id="google_translate_element"></div>
+    </div>
+
+    <!-- HEADER COM ESTRELA E MENU -->
     <header class="site-header">
       <div class="header-inner">
-        <a href="index.html" class="home-star" aria-label="Home">
-          <img src="assets/images/frame.png" alt="Home" />
+        <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
+          <img
+            src="assets/icons/compass-gold-64.png"
+            alt="Explore Portugal Experience"
+            class="star-animated"
+          />
         </a>
 
         <a href="index.html" class="header-logo">
-          <img src="assets/images/logo-explore-portugal-experience.png"
-               alt="Explore Portugal Experience" />
+          <img
+            src="assets/images/logo-explore-portugal-experience.png"
+            alt="Explore Portugal Experience"
+          />
         </a>
 
         <nav class="nav" id="mainNav">
-          <a href="about.html">Sobre</a>
+          <a href="about.html">Sobre nós</a>
           <a href="services.html">Serviços</a>
           <a href="choose.html">Porquê nós</a>
           <a href="pricing.html">Preços</a>
           <a href="faq.html">FAQ</a>
           <a href="gallery.html">Galeria</a>
           <a href="booking.html">Reservas</a>
-          <a href="partners-drivers.html">Drivers</a>
-          <a href="partners-hospitality.html">Hospitality</a>
-          <a href="contactos.html" class="active">Contactos</a>
+          <a href="contacts.html">Contactos</a>
         </nav>
 
-        <button class="nav-toggle" id="navToggle">
-          <span></span><span></span><span></span>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </div>
     </header>
 
-    <!-- HERO -->
-    <section class="section section-dark">
-      <div class="section-inner">
-        <h1 class="section-title">Contactos</h1>
-        <p class="section-lead">
-          Fale connosco e teremos todo o gosto em ajudar com requinte, profissionalismo e atenção ao detalhe.
-        </p>
-      </div>
-    </section>
+    <main>
+      <section class="section contact-hero">
+        <div class="section-inner">
+          <h1 class="section-title">Contactos</h1>
+          <p class="section-lead">
+            Fale connosco para reservas, pedidos especiais, parcerias ou qualquer questão
+            sobre os nossos serviços.
+          </p>
 
-    <!-- CONTACT GRID -->
-    <section class="section">
-      <div class="section-inner page-inner" style="text-align:center;">
+          <div class="contact-grid">
+            <div class="contact-card contact-details">
+              <h3>Contactos diretos</h3>
+              <p>
+                Telemóvel / WhatsApp:
+                <a href="https://wa.me/351910784548" target="_blank"
+                  >+351 910 784 548</a
+                >
+              </p>
+              <p>
+                Email:
+                <a href="mailto:info@exploreportugalexperience.com"
+                  >info@exploreportugalexperience.com</a
+                >
+              </p>
+              <p>Horário: 08h00 – 22h00 (hora de Lisboa)</p>
+              <p>Serviço disponível em todo o território de Portugal Continental.</p>
 
-        <h2 class="section-title">Sinta-se à vontade para contactar</h2>
+              <p>
+                Siga-nos em:
+                <br />
+                <a href="https://www.instagram.com/exploreportugal2025" target="_blank"
+                  >Instagram</a
+                >
+                ·
+                <a href="https://www.tiktok.com/@explore.portugal24" target="_blank"
+                  >TikTok</a
+                >
+              </p>
+            </div>
 
-        <p class="section-lead">Disponível 24h / 7 dias por semana</p>
+            <div class="contact-card">
+              <h3>Envie-nos uma mensagem</h3>
+              <form
+                class="contact-form"
+                action="mailto:info@exploreportugalexperience.com"
+                method="post"
+                enctype="text/plain"
+              >
+                <div>
+                  <label for="name">Nome</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="Nome"
+                    placeholder="O seu nome"
+                    required
+                  />
+                </div>
 
-        <h3>WhatsApp</h3>
-        <p><a href="https://wa.me/351910784548" target="_blank" class="btn-primary">
-          Contactar via WhatsApp
-        </a></p>
+                <div>
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="Email"
+                    placeholder="O seu email"
+                    required
+                  />
+                </div>
 
-        <img src="assets/images/qr-whatsapp.png"
-             alt="QR WhatsApp"
-             style="max-width:160px;margin:18px auto;display:block;border-radius:12px;" />
+                <div>
+                  <label for="phone">Telemóvel (opcional)</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="Telemóvel"
+                    placeholder="+351 ..."
+                  />
+                </div>
 
-        <p><strong>Telefone:</strong> <a href="tel:+351910784548">+351 910 784 548</a></p>
-        <p><strong>Email:</strong> <a href="mailto:info@exploreportugalexperience.com">
-            info@exploreportugalexperience.com</a>
-        </p>
+                <div>
+                  <label for="message">Mensagem</label>
+                  <textarea
+                    id="message"
+                    name="Mensagem"
+                    placeholder="Conte-nos o que procura: datas, tipo de serviço, nº de pessoas..."
+                    required
+                  ></textarea>
+                </div>
 
-        <br />
+                <button type="submit" class="btn-primary">Enviar mensagem</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-        <h3>Redes sociais</h3>
-        <p>
-          <a href="https://www.instagram.com/exploreportugal2025" target="_blank">Instagram</a> •
-          <a href="https://www.tiktok.com/@explore.portugal24" target="_blank">TikTok</a>
-        </p>
-
-      </div>
-    </section>
-
-    <!-- FOOTER -->
+    <!-- FOOTER EM TODAS AS PÁGINAS -->
     <footer class="site-footer">
       <div class="footer-inner">
-        <div>
-          <div class="footer-title">Explore Portugal Experience</div>
-          Premium Tours & Private Transfers desde 2018
+        <div class="footer-col">
+          <p class="footer-title">Explore Portugal Experience</p>
+          <p>
+            Premium Tours &amp; Private Transfers em Portugal, com motorista profissional.
+            Conforto, elegância e discrição em cada percurso.
+          </p>
         </div>
 
-        <div>
-          <div class="footer-title">Contactos</div>
-          +351 910 784 548<br />
-          info@exploreportugalexperience.com
+        <div class="footer-col">
+          <p class="footer-title">Contactos</p>
+          <p>
+            Telemóvel / WhatsApp:
+            <a href="https://wa.me/351910784548" target="_blank">+351 910 784 548</a>
+          </p>
+          <p>
+            Email:
+            <a href="mailto:info@exploreportugalexperience.com"
+              >info@exploreportugalexperience.com</a
+            >
+          </p>
         </div>
 
-        <div>
-          <div class="footer-title">Redes Sociais</div>
-          Instagram | TikTok | WhatsApp
+        <div class="footer-col">
+          <p class="footer-title">Siga-nos</p>
+          <p>
+            <a href="https://www.instagram.com/exploreportugal2025" target="_blank"
+              >Instagram</a
+            ><br />
+            <a href="https://www.tiktok.com/@explore.portugal24" target="_blank"
+              >TikTok</a
+            >
+          </p>
         </div>
       </div>
 
       <div class="footer-bottom">
-        Powered by: MkDesign — Portugal
+        <p>Powered by: MkDesign – Portugal</p>
       </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/nav.js"></script>
+
+    <!-- Google Translate -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "pt",
+            includedLanguages: "en,pt,fr,es,de,it",
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
   </body>
 </html>
