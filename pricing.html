@@ -9,8 +9,14 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png" />
+
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -19,35 +25,41 @@
       gtag("js", new Date());
       gtag("config", "G-Y30ME05MQY");
     </script>
-
-    <!-- CSS principal -->
-    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
   <body>
-    <!-- HEADER -->
+    <!-- Barra idioma -->
+    <div class="translate-bar">
+      <span>Idioma:</span>
+      <div id="google_translate_element"></div>
+    </div>
+
+    <!-- HEADER NOVO -->
     <header class="site-header">
       <div class="header-inner">
         <a href="index.html" class="home-star" aria-label="Home">
-          <img src="assets/icons/star-full.svg"
-               alt="Explore Portugal Experience"
-               class="star-animated" />
+          <img src="assets/icons/star-full.svg" alt="Home" class="star-animated" />
         </a>
 
-        <nav class="nav" id="mainNav">
-          <a href="about.html">Sobre</a>
+        <nav class="nav" id="mainNav" aria-label="Navegação principal">
+          <a href="about.html">Sobre nós</a>
           <a href="services.html">Serviços</a>
           <a href="choose.html">Porquê nós</a>
-          <a href="pricing.html" class="active">Preços</a>
+          <a href="pricing.html" aria-current="page">Preços</a>
           <a href="faq.html">FAQ</a>
+          <a href="partners-drivers.html">Partners Drivers</a>
+          <a href="partners-hospitality.html">Partners Hospitality</a>
           <a href="gallery.html">Galeria</a>
           <a href="booking.html">Reservas</a>
-          <a href="partners-drivers.html">Drivers</a>
-          <a href="partners-hospitality.html">Hospitality</a>
           <a href="contactos.html">Contactos</a>
         </nav>
 
-        <button class="nav-toggle" id="navToggle" aria-label="Menu toggle">
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Menu toggle"
+          type="button"
+        >
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -58,15 +70,19 @@
       <div class="section-inner">
         <h1 class="section-title">Preços &amp; Condições</h1>
         <p class="section-lead">
-          Transfers e tours privados com motorista profissional. Serviço premium com transparência total.
+          Transfers e tours privados com motorista profissional. Serviço premium com
+          transparência total.
         </p>
       </div>
     </section>
 
     <!-- Tabela de preços -->
     <section class="section">
-      <div class="section-inner" style="max-width:1000px;margin:0 auto;text-align:center;">
-        <h2 style="color:#c9a952;margin-bottom:24px;">Transfers Principais</h2>
+      <div
+        class="section-inner"
+        style="max-width: 1000px; margin: 0 auto; text-align: center"
+      >
+        <h2 style="color: #c9a952; margin-bottom: 24px">Transfers Principais</h2>
 
         <table class="pricing-table">
           <thead>
@@ -100,17 +116,28 @@
           </tbody>
         </table>
 
-        <p style="margin-top:18px;"><em>Valores incluem motorista profissional, água e assistência personalizada.</em></p>
+        <p style="margin-top: 18px">
+          <em
+            >Valores incluem motorista profissional, água e assistência personalizada.</em
+          >
+        </p>
 
-        <a href="booking.html" class="btn-primary" style="margin-top:24px;">Reservar agora</a>
+        <a href="booking.html" class="btn-primary" style="margin-top: 24px"
+          >Reservar agora</a
+        >
       </div>
     </section>
 
     <!-- Tours privados -->
     <section class="section section-dark">
-      <div class="section-inner" style="max-width:900px;margin:0 auto;text-align:center;">
+      <div
+        class="section-inner"
+        style="max-width: 900px; margin: 0 auto; text-align: center"
+      >
         <h2 class="section-title">Tours Privados</h2>
-        <p style="margin-bottom:20px;">Passeios personalizados em viatura premium com motorista certificado</p>
+        <p style="margin-bottom: 20px">
+          Passeios personalizados em viatura premium com motorista certificado
+        </p>
 
         <table class="pricing-table">
           <thead>
@@ -139,24 +166,39 @@
           </tbody>
         </table>
 
-        <a href="booking.html" class="btn-primary" style="margin-top:24px;">Agendar Tour</a>
+        <a href="booking.html" class="btn-primary" style="margin-top: 24px"
+          >Agendar Tour</a
+        >
       </div>
     </section>
 
-    <!-- Notas adicionais + métodos de pagamento -->
+    <!-- Notas adicionais -->
     <section class="section">
-      <div class="section-inner" style="max-width:800px;margin:0 auto;text-align:center;">
-        <h2 style="color:#c9a952;">Informação Importante</h2>
-        <ul style="text-align:left;max-width:600px;margin:0 auto 1.5rem;">
+      <div
+        class="section-inner"
+        style="max-width: 800px; margin: 0 auto; text-align: center"
+      >
+        <h2 style="color: #c9a952">Informação Importante</h2>
+        <ul style="text-align: left; max-width: 600px; margin: 0 auto">
           <li>Valores finais confirmados antes da reserva</li>
           <li>Cadeiras para crianças disponíveis</li>
           <li>Cancelamento gratuito até 48h antes</li>
           <li>Pagamentos via cartão, MBWay ou transferência bancária</li>
         </ul>
+      </div>
+    </section>
 
-        <!-- Ícones de pagamento pequenos (já tens o CSS certo) -->
-        <h3 style="color:#c9a952;margin-top:10px;margin-bottom:10px;">Métodos de pagamento</h3>
+    <!-- MÉTODOS DE PAGAMENTO – ÍCONES PEQUENOS (mantém os teus ficheiros) -->
+    <section class="section section-dark">
+      <div class="section-inner narrow">
+        <h2 class="section-title">Métodos de pagamento</h2>
+        <p class="section-lead" style="text-align: center">
+          Os seguintes métodos estão disponíveis. Para detalhes, serão sempre enviadas
+          instruções claras na confirmação da reserva.
+        </p>
+
         <div class="payment-icons">
+          <!-- ajusta os src se os nomes forem diferentes, mas mantém a estrutura -->
           <a href="https://www.mbway.pt" target="_blank" rel="noopener">
             <img src="assets/icons/mbway.svg" alt="MB Way" />
           </a>
@@ -166,26 +208,28 @@
           <a href="https://www.paypal.com" target="_blank" rel="noopener">
             <img src="assets/icons/paypal.svg" alt="PayPal" />
           </a>
+          <!-- se tiveres mais (ex.: whatsapp), podes acrescentar aqui -->
         </div>
+
         <p class="payment-info">
-          Se tiver dúvidas sobre pagamentos, pode sempre contactar-nos por WhatsApp ou email.
+          Confirmações por escrito · Pagamentos seguros · Suporte direto
         </p>
       </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER UNIFICADO -->
     <footer class="site-footer">
       <div class="footer-inner">
-        <div>
-          <div class="footer-title">Explore Portugal Experience</div>
+        <div class="footer-col">
+          <p class="footer-title">Explore Portugal Experience</p>
           <p>
-            Premium Tours & Private Transfers em Portugal.<br />
+            Premium Tours &amp; Private Transfers em Portugal.<br />
             Conforto e elegância em cada viagem.
           </p>
         </div>
 
-        <div>
-          <div class="footer-title">Contactos</div>
+        <div class="footer-col">
+          <p class="footer-title">Contactos</p>
           <p>
             +351 910 784 548<br />
             info@exploreportugalexperience.com<br />
@@ -193,8 +237,8 @@
           </p>
         </div>
 
-        <div>
-          <div class="footer-title">Redes sociais</div>
+        <div class="footer-col">
+          <p class="footer-title">Redes sociais</p>
           <p>
             Instagram @exploreportugal2025<br />
             TikTok @explore.portugal24
@@ -202,10 +246,25 @@
         </div>
       </div>
       <div class="footer-bottom">
-        Powered by: MkDesign — Portugal
+        <p>© 2018–2025 Explore Portugal Experience — Turismo em Portugal.</p>
+        <p>Powered by: MkDesign — Portugal</p>
       </div>
     </footer>
 
     <script src="assets/js/nav.js"></script>
+
+    <!-- Google Translate -->
+    <script>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "pt",
+            includedLanguages: "en,pt,es,fr,de",
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </body>
 </html>
