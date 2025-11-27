@@ -1,146 +1,143 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <title>Partners Drivers · Explore Portugal Experience</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Parcerias com motoristas parceiros – Explore Portugal Experience.">
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body class="page-dark">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Drivers Partners | Explore Portugal Experience</title>
+    <meta name="description" content="Torne-se parceiro profissional de transfer e tours privados. Candidatura para motoristas certificados." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- HEADER COM ESTRELA E MENU -->
-  <header class="header">
-    <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
-      <img src="assets/icons/star-full.svg" alt="Explore Portugal Experience" class="star-animated">
-    </a>
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-Y30ME05MQY");
+    </script>
 
-    <nav class="nav" aria-label="Navegação principal">
-      <ul class="nav-menu">
-        <li><a href="about.html">Sobre</a></li>
-        <li><a href="services.html">Serviços</a></li>
-        <li><a href="choose.html">Porquê nós</a></li>
-        <li><a href="pricing.html">Preços</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="partners-drivers.html" aria-current="page">Partners Drivers</a></li>
-        <li><a href="partners-hospitality.html">Partners Hospitality</a></li>
-        <li><a href="gallery.html">Galeria</a></li>
-        <li><a href="booking.html">Reservas</a></li>
-        <li><a href="contacts.html">Contactos</a></li>
-      </ul>
-    </nav>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-    <button class="nav-toggle" type="button" aria-label="Abrir menu">
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-    </button>
-  </header>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="home-star" aria-label="Home">
+          <img src="assets/images/frame.png" alt="Home" />
+        </a>
 
-  <main class="questionnaire-page section section-dark">
-    <div class="section-inner">
+        <a href="index.html" class="header-logo">
+          <img src="assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience" />
+        </a>
 
-      <h1 class="section-title">Questionário para Motoristas</h1>
-      <p class="section-lead">
-        Os dados são apenas utilizados para avaliar a possibilidade de parceria e
-        não são partilhados com terceiros.
-      </p>
+        <nav class="nav" id="mainNav">
+          <a href="about.html">Sobre</a>
+          <a href="services.html">Serviços</a>
+          <a href="choose.html">Porquê nós</a>
+          <a href="pricing.html">Preços</a>
+          <a href="faq.html">FAQ</a>
+          <a href="gallery.html">Galeria</a>
+          <a href="booking.html">Reservas</a>
+          <a href="partners-drivers.html" class="active">Drivers</a>
+          <a href="partners-hospitality.html">Hospitality</a>
+          <a href="contactos.html">Contactos</a>
+        </nav>
 
-      <!-- TEXTO DE INTRODUÇÃO / COMO TRABALHAMOS (CIMA) -->
-      <section class="questionnaire-intro">
-        <h2>Como trabalhamos com motoristas parceiros</h2>
-        <p>
-          Procuramos motoristas profissionais, com viatura própria e foco na
-          experiência do cliente. As parcerias são pensadas para garantir
-          comunicação clara, pontualidade e conforto em cada serviço.
+        <button class="nav-toggle" id="navToggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="section section-dark">
+      <div class="section-inner">
+        <h1 class="section-title">Junte-se à nossa equipa de Motoristas Profissionais</h1>
+        <p class="section-lead">
+          Procuramos motoristas certificados que ofereçam um serviço Premium, com atenção ao detalhe,
+          elegância no atendimento e foco total na experiência do cliente.
         </p>
-      </section>
+      </div>
+    </section>
 
-      <!-- FORMULÁRIO -->
-      <!-- Se estiveres a usar Formspree ou outro serviço, troca o action pelo URL correto -->
-      <form class="questionnaire-form" method="post" action="">
-        <!-- 1. Dados principais -->
-        <div class="form-group">
-          <label for="nome">Nome completo *</label>
-          <input type="text" id="nome" name="Nome completo" required>
+    <!-- FORM DRIVERS -->
+    <section class="section">
+      <div class="section-inner page-inner">
+        <h2 class="section-title">Formulário de Candidatura</h2>
+        <p class="section-lead">Será contactado após análise. Todos os dados são confidenciais.</p>
+
+        <form action="https://formsubmit.co/info@exploreportugalexperience.com" method="POST" enctype="multipart/form-data" class="form-block">
+
+          <!-- REQUIRED SETTINGS -->
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_subject" value="Nova candidatura Driver Partner" />
+
+          <label>Nome completo *</label>
+          <input type="text" name="Nome" required />
+
+          <label>Email *</label>
+          <input type="email" name="Email" required />
+
+          <label>Telefone / WhatsApp *</label>
+          <input type="tel" name="Telefone" required />
+
+          <label>Cidade onde opera *</label>
+          <input type="text" name="Cidade" required />
+
+          <label>Idiomas falados *</label>
+          <input type="text" name="Idiomas" required />
+
+          <label>Experiência na área *</label>
+          <textarea name="Experiência" rows="3" required></textarea>
+
+          <label>Apresentação pessoal (curta)</label>
+          <textarea name="Mensagem" rows="3"></textarea>
+
+          <h3 class="section-title">Documentos obrigatórios</h3>
+
+          <label>Carta de Condução *</label>
+          <input type="file" name="Carta" required />
+
+          <label>Certificado Motorista TVDE *</label>
+          <input type="file" name="TVDE" required />
+
+          <label>Seguro de Passageiros *</label>
+          <input type="file" name="Seguro" required />
+
+          <label>Documento do Veículo (DUA) *</label>
+          <input type="file" name="DUA" required />
+
+          <label>Fotografia do veículo (exterior/interior) *</label>
+          <input type="file" name="FotosVeiculo" required />
+
+          <button type="submit" class="btn-primary" style="margin-top:20px;">Enviar candidatura</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-title">Explore Portugal Experience</div>
+          Premium Tours & Private Transfers
         </div>
-
-        <div class="form-group form-group-inline">
-          <div>
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="Email" required>
-          </div>
-
-          <div>
-            <label for="telefone">Telemóvel / WhatsApp *</label>
-            <input type="text" id="telefone" name="Telemóvel / WhatsApp" required>
-          </div>
+        <div>
+          <div class="footer-title">Contactos</div>
+          +351 910 784 548<br />
+          info@exploreportugalexperience.com
         </div>
-
-        <div class="form-group">
-          <label for="base">Base (cidade / zona principal de saída) *</label>
-          <input type="text" id="base" name="Base / zona principal" placeholder="Ex.: Lisboa, Cascais, Algarve…" required>
+        <div>
+          <div class="footer-title">Redes Sociais</div>
+          Instagram & TikTok
         </div>
+      </div>
+      <div class="footer-bottom">
+        Powered by: MkDesign — Portugal
+      </div>
+    </footer>
 
-        <div class="form-group">
-          <label for="carta">Tipo de carta / certificados *</label>
-          <textarea id="carta" name="Tipo de carta / certificados" rows="2"
-            placeholder="Ex.: Carta B, TVDE, CCM, outros."></textarea>
-        </div>
-
-        <!-- 2. Viatura, idiomas, experiência -->
-        <div class="form-group">
-          <label for="viaturas">Tipo(s) de viatura disponível(veis) *</label>
-          <textarea id="viaturas" name="Tipos de viatura disponíveis" rows="3"
-            placeholder="Ex.: Mercedes Classe E 1–3 pax; Minivan 7 pax; etc." required></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="idiomas">Idiomas que fala à vontade *</label>
-          <textarea id="idiomas" name="Idiomas" rows="2"
-            placeholder="Ex.: Português, Inglês, Espanhol…"></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="experiencia">Breve resumo da experiência em transfers / tours *</label>
-          <textarea id="experiencia" name="Experiência em transfers / tours" rows="4"
-            placeholder="Ex.: anos de experiência, zonas onde trabalha, tipo de serviços, etc." required></textarea>
-        </div>
-
-        <!-- 3. Disponibilidade, zonas, notas -->
-        <div class="form-group">
-          <label for="disponibilidade">Disponibilidade *</label>
-          <textarea id="disponibilidade" name="Disponibilidade" rows="3"
-            placeholder="Ex.: Full-time, fins-de-semana, noites, épocas específicas, etc." required></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="zonas">Zonas onde trabalha com mais frequência *</label>
-          <textarea id="zonas" name="Zonas onde trabalha" rows="3"
-            placeholder="Ex.: Lisboa, Sintra, Cascais, Algarve, etc." required></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="observacoes">Observações / informação relevante</label>
-          <textarea id="observacoes" name="Observações" rows="4"
-            placeholder="Qualquer nota adicional que considere importante."></textarea>
-        </div>
-
-        <div class="form-actions">
-          <button type="submit" class="btn-primary">Enviar questionário</button>
-        </div>
-      </form>
-
-    </div>
-  </main>
-
-  <!-- FOOTER SIMPLE -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <p>© Explore Portugal Experience</p>
-    </div>
-  </footer>
-
-  <script src="assets/js/nav.js"></script>
-</body>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
