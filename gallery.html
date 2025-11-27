@@ -1,75 +1,122 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <title>Galeria · Em Manutenção</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+/* ================== GALERIA ================== */
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background: radial-gradient(circle at top, #22170e 0, #050505 50%, #000 100%);
-      color: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 25px;
-    }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.4rem;
+  margin-top: 2rem;
+}
 
-    .box {
-      max-width: 600px;
-      background: rgba(0,0,0,0.65);
-      padding: 35px 30px;
-      border-radius: 22px;
-      border: 1px solid rgba(231,193,105,0.6);
-    }
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(201, 165, 98, 0.6);
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+}
 
-    h1 {
-      font-size: 1.8rem;
-      letter-spacing: 0.2rem;
-      margin-bottom: 10px;
-      color: #e7c169;
-      text-transform: uppercase;
-    }
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease,
+    opacity 0.35s ease;
+}
 
-    p {
-      font-size: 1rem;
-      line-height: 1.6rem;
-    }
+.gallery-item::after {
+  content: "Ver imagem";
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0)
+  );
+  color: var(--gold-soft);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 22px;
-      padding: 10px 28px;
-      border-radius: 50px;
-      background: radial-gradient(circle at 20% 20%, #f5e6b3, #e7c169);
-      color: #2b1a09;
-      text-decoration: none;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.15rem;
-      font-size: 0.9rem;
-    }
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
 
-    @media (max-width: 600px) {
-      h1 { font-size: 1.5rem; }
-      p { font-size: 0.9rem; }
-      .box { padding: 25px 18px; }
-    }
-  </style>
-</head>
-<body>
-  <div class="box">
-    <h1>Em Manutenção</h1>
-    <p>A Galeria está temporariamente em atualização.<br>
-    Voltamos em breve com novas imagens e experiências inesquecíveis.</p>
-    <p>Obrigado pela compreensão.</p>
+.gallery-item:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    <a class="btn" href="index.html">Voltar ao início</a>
-  </div>
-</body>
-</html>
+/* Lightbox overlay */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 1000;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 18px;
+  border: 1px solid rgba(201, 165, 98, 0.8);
+  box-shadow: var(--shadow-soft);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.4rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(247, 243, 232, 0.7);
+  background: rgba(0, 0, 0, 0.85);
+  color: var(--text);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    border-color 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: var(--gold-soft);
+  border-color: var(--gold-soft);
+  color: #1a1308;
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
