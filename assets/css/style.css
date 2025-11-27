@@ -697,3 +697,60 @@ body.nav-open .nav-toggle span:nth-child(3) {
   display: block;
   margin: 0 auto 1rem;
 }
+/* Tributo Agapito — card premium com aro dourado */
+.about-agapito {
+  border: 2px solid var(--gold-soft);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  margin: 4rem auto;
+  background: rgba(20, 20, 20, 0.6);
+  box-shadow: 0 0 25px rgba(255, 215, 115, 0.25);
+  max-width: 850px;
+}
+
+/* Foto circular premium */
+.agapito-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 4px solid var(--gold-soft);
+  box-shadow: 0 0 20px rgba(255, 215, 115, 0.4);
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1.5rem;
+}
+
+/* Títulos e texto */
+.tribute-heading {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  color: var(--gold-soft);
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+}
+
+.tribute-name {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--gold-soft);
+}
+
+.tribute-subtitle {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+  color: #fff;
+}
+
+.tribute-text p {
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+}
+
+.tribute-quote {
+  font-size: 1.3rem;
+  font-style: italic;
+  margin-top: 2rem;
+  color: var(--gold-soft);
+}
