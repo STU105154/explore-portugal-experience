@@ -8,7 +8,6 @@
   <meta name="description" content="Porquê escolher a Explore Portugal Experience — serviço sereno, profissional, discreto e à medida, para transfers e tours privados em Portugal.">
 
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
@@ -20,25 +19,27 @@
   </script>
 </head>
 <body>
-  <!-- Barra de idioma / Google Translate -->
+  <!-- Barra de idioma -->
   <div class="translate-bar">
     <span>Idioma:</span>
     <div id="google_translate_element"></div>
   </div>
 
-  <!-- HEADER UNIFICADO -->
+  <!-- HEADER GLOBAL -->
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
-        <img src="assets/icons/star-full.svg"
-             alt="Explore Portugal Experience"
-             class="star-animated">
+        <img src="assets/icons/star-full.svg" alt="Explore Portugal Experience" class="star-animated">
+      </a>
+
+      <a href="index.html" class="header-logo">
+        <img src="assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience">
       </a>
 
       <nav class="nav" id="mainNav" aria-label="Navegação principal">
-        <a href="about.html">Sobre</a>
+        <a href="about.html">Sobre nós</a>
         <a href="services.html">Serviços</a>
-        <a href="choose.html" aria-current="page">Porquê nós</a>
+        <a href="choose.html" class="active">Porquê nós</a>
         <a href="pricing.html">Preços</a>
         <a href="faq.html">FAQ</a>
         <a href="partners-drivers.html">Partners Drivers</a>
@@ -49,70 +50,89 @@
       </nav>
 
       <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
   <main>
-    <!-- HERO DA PÁGINA -->
+    <!-- HERO -->
     <section class="page-hero section-dark">
       <h1 class="page-hero-title">Porquê escolher a Explore Portugal</h1>
       <p class="page-hero-subtitle">
-        Porque quem viaja merece calma, clareza e respeito pelo tempo. Cada percurso é
-        preparado com atenção verdadeira às pessoas, e não apenas aos quilómetros.
+        Porque quem viaja merece calma, clareza e respeito pelo tempo. Cada percurso é preparado
+        com atenção verdadeira às pessoas, e não apenas aos quilómetros.
       </p>
     </section>
 
-    <!-- VISITED / REVIEWS DESTACADOS (PEQUENO, NO INÍCIO) -->
-    <section class="section section-dark section-reviews-highlight">
+    <!-- STRIP VISITED / REVIEWS NO TOPO -->
+    <section class="section section-dark reviews-strip">
+      <div class="section-inner narrow reviews-strip-inner">
+        <div class="reviews-strip-main">
+          <p class="reviews-strip-label">Visitado &amp; recomendado</p>
+          <div class="reviews-strip-stars" aria-label="Classificação média 5 em 5 estrelas">
+            <span>★★★★★</span>
+          </div>
+          <p class="reviews-strip-score">5.0 · serviço privado premium</p>
+        </div>
+
+        <div class="reviews-strip-logos">
+          <a href="https://www.google.com/maps" target="_blank" rel="noopener" class="reviews-logo">
+            <span class="reviews-logo-badge">G</span>
+            <span>Google Reviews</span>
+          </a>
+          <a href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener" class="reviews-logo">
+            <span class="reviews-logo-badge">IG</span>
+            <span>Instagram</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTEMUNHOS EM CARTÕES -->
+    <section class="section">
       <div class="section-inner narrow">
-        <p class="reviews-badge">Visitado &amp; recomendado</p>
+        <h2 class="section-title">O que dizem os nossos clientes</h2>
         <p class="section-lead">
-          Mais de <strong>250 viajantes</strong> já confiaram na Explore Portugal Experience
-          para cuidar dos seus dias em Portugal.
+          Alguns dos comentários de quem já confiou na Explore Portugal Experience para transfers
+          e dias inteiros em Portugal.
         </p>
 
-        <div class="reviews-grid">
-          <article class="review-card">
-            <div class="review-stars" aria-label="5 em 5 estrelas">
-              ★★★★★
-            </div>
+        <div class="cards-3 reviews-grid">
+          <article class="card review-card">
+            <p class="review-name">Marta &amp; João · Lisboa</p>
+            <p class="review-stars">★★★★★</p>
             <p class="review-text">
-              “Foi como viajar com alguém da família, mas com profissionalismo de hotel
-              de cinco estrelas. Tudo explicado antes, zero surpresas.”
+              “Chegámos cansados depois de um voo longo e, a partir do momento em que vimos a placa
+              com o nosso nome, sentimo-nos imediatamente em casa. Tudo calmo, sem pressas, com
+              explicações claras e um cuidado enorme com as crianças.”
             </p>
-            <p class="review-author">Mariana &amp; João · Brasil</p>
           </article>
 
-          <article class="review-card">
-            <div class="review-stars" aria-label="5 em 5 estrelas">
-              ★★★★★
-            </div>
+          <article class="card review-card">
+            <p class="review-name">Sarah &amp; David · UK</p>
+            <p class="review-stars">★★★★★</p>
             <p class="review-text">
-              “Serviço discreto, impecável e sempre a horas. Pude focar-me nas reuniões,
-              o resto ficou totalmente entregue.”
+              “We booked two days between Lisbon, Sintra and Cascais. Professional, discreet and
+              incredibly kind. It felt like travelling with someone from the family, but with all
+              the comfort of a premium service.”
             </p>
-            <p class="review-author">David R. · Reino Unido</p>
           </article>
 
-          <article class="review-card">
-            <div class="review-stars" aria-label="5 em 5 estrelas">
-              ★★★★★
-            </div>
+          <article class="card review-card">
+            <p class="review-name">Ana · Corporate guest</p>
+            <p class="review-stars">★★★★★</p>
             <p class="review-text">
-              “Dia em família que não vamos esquecer. Sem pressas, com paragens certas
-              e sugestões que não vêm nos guias.”
+              “Agenda apertada, várias reuniões e voos diferentes no mesmo dia. Tudo correu com
+              uma serenidade rara. WhatsApp antes, durante e depois, sempre com alternativas quando
+              necessário. Serviço realmente à medida.”
             </p>
-            <p class="review-author">Ana &amp; Miguel · Portugal</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 3 PILARES -->
+    <!-- PILARES -->
     <section class="section">
       <div class="section-inner">
         <h2 class="section-title">Os nossos pilares</h2>
@@ -152,7 +172,7 @@
       </div>
     </section>
 
-    <!-- COMO RECEBEMOS QUEM VIAJA -->
+    <!-- COMO RECEBEMOS -->
     <section class="section section-dark">
       <div class="section-inner">
         <h2 class="section-title">Como recebemos quem viaja</h2>
@@ -277,8 +297,7 @@
         <h2 class="section-title">Quer saber se somos a escolha certa para si?</h2>
         <p class="section-lead">
           Envie uma mensagem simples com datas, número de pessoas e o que tem em mente.
-          A partir daí, ajudamos a perceber se faz sentido avançar connosco ou se há
-          outra solução que encaixa melhor.
+          A partir daí, ajudamos a perceber se faz sentido avançar connosco.
         </p>
 
         <div class="reservas-grid">
@@ -303,39 +322,31 @@
         </div>
       </div>
     </section>
+
+    <!-- WIDGET FLOANTE DE REVIEWS (DIREITA) -->
+    <div class="review-widget" id="reviewWidget" aria-label="Caixa de reviews">
+      <button class="review-widget-close" id="reviewWidgetClose" aria-label="Fechar reviews">×</button>
+      <p class="review-widget-title">★★★★★</p>
+      <p class="review-widget-text">
+        Gostou do serviço? Deixe uma review e ajude outras pessoas a escolher com confiança.
+      </p>
+      <div class="review-widget-actions">
+        <a href="https://www.google.com/maps" target="_blank" rel="noopener" class="btn-primary btn-small">
+          Review no Google
+        </a>
+        <a href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener" class="btn-outline btn-small">
+          Ver stories
+        </a>
+      </div>
+    </div>
+
+    <!-- ÍCONE MINI QUANDO A CAIXA ESTÁ FECHADA -->
+    <button class="review-widget-toggle" id="reviewWidgetToggle" aria-label="Abrir reviews">
+      ★ Reviews
+    </button>
   </main>
 
-  <!-- CAIXA FIXA PARA DEIXAR REVIEW (SEMPRE VISÍVEL / PODE MINIMIZAR) -->
-  <div class="floating-review-box">
-    <button class="floating-close" type="button" aria-label="Fechar caixa de reviews">×</button>
-    <p class="floating-title">Gostou da experiência?</p>
-    <div class="floating-stars" aria-hidden="true">★★★★★</div>
-    <p class="floating-text">
-      Deixe o seu review e ajude outros viajantes a escolher com confiança.
-    </p>
-    <div class="floating-actions">
-      <!-- ATUALIZA O LINK DO GOOGLE QUANDO TIVERES O URL DAS REVIEWS -->
-      <a href="https://www.google.com/maps"
-         target="_blank"
-         rel="noopener"
-         class="btn-primary btn-small">
-        Review no Google
-      </a>
-      <a href="https://www.instagram.com/exploreportugal2025"
-         target="_blank"
-         rel="noopener"
-         class="btn-outline btn-small">
-        Mensagem no Instagram
-      </a>
-    </div>
-  </div>
-
-  <!-- PÍLULA MINIMIZADA PARA REABRIR A CAIXA -->
-  <button class="floating-review-puck" type="button" aria-label="Abrir caixa de reviews">
-    ★ Deixar review
-  </button>
-
-  <!-- FOOTER COM CONTACTOS + REDES + MKDESIGN -->
+  <!-- FOOTER -->
   <footer class="section footer">
     <div class="section-inner footer-inner">
       <div class="footer-cols">
@@ -345,8 +356,7 @@
             Email:
             <a href="mailto:info@exploreportugalexperience.com">
               info@exploreportugalexperience.com
-            </a>
-            <br>
+            </a><br>
             Telemóvel / WhatsApp: +351 910 784 548
           </p>
           <p>
@@ -409,26 +419,5 @@
     }
   </script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-  <!-- JS da caixa de reviews fixa -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var box  = document.querySelector('.floating-review-box');
-      var closeBtn = box ? box.querySelector('.floating-close') : null;
-      var puck = document.querySelector('.floating-review-puck');
-
-      if (!box || !closeBtn || !puck) return;
-
-      closeBtn.addEventListener('click', function () {
-        box.classList.add('is-minimized');
-        puck.classList.add('is-visible');
-      });
-
-      puck.addEventListener('click', function () {
-        box.classList.remove('is-minimized');
-        puck.classList.remove('is-visible');
-      });
-    });
-  </script>
 </body>
 </html>
