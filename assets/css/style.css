@@ -1495,3 +1495,174 @@ body.nav-open .nav-toggle span:nth-child(3) {
     align-items: stretch;
   }
 }
+/* ================== REVIEWS STRIP ================== */
+
+.reviews-strip-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+
+.reviews-strip-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.reviews-strip-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  margin: 0;
+}
+
+.reviews-strip-stars span {
+  font-size: 1.4rem;
+  letter-spacing: 0.25em;
+  color: var(--gold-soft);
+}
+
+.reviews-strip-score {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.reviews-strip-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.reviews-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 165, 98, 0.55);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.reviews-logo-badge {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: var(--gold-soft);
+  color: #1a1308;
+  font-weight: 700;
+}
+
+/* ================== REVIEW CARDS ================== */
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.review-name {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  margin: 0;
+}
+
+.review-stars {
+  margin: 0;
+  color: var(--gold-soft);
+  letter-spacing: 0.18em;
+}
+
+.review-text {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* ================== REVIEW WIDGET FLOANTE (DIREITA) ================== */
+
+.review-widget {
+  position: fixed;
+  right: 1.4rem;
+  bottom: 1.6rem;
+  width: 260px;
+  max-width: 75vw;
+  background: rgba(5, 5, 5, 0.96);
+  border-radius: 18px;
+  border: 1px solid rgba(201, 165, 98, 0.65);
+  box-shadow: var(--shadow-soft);
+  padding: 1.1rem 1.1rem 1.2rem;
+  z-index: 1200;
+}
+
+.review-widget-title {
+  margin: 0 0 0.3rem;
+  color: var(--gold-soft);
+  letter-spacing: 0.25em;
+  font-size: 1.05rem;
+}
+
+.review-widget-text {
+  margin: 0 0 0.7rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.review-widget-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.btn-small {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+}
+
+.review-widget-close {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.45rem;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* Botão mini quando fechado */
+
+.review-widget-toggle {
+  position: fixed;
+  right: 1.4rem;
+  bottom: 1.6rem;
+  z-index: 1199;
+  display: none;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 165, 98, 0.7);
+  background: #050505;
+  color: var(--gold-soft);
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Em ecrãs muito pequenos, baixar ligeiramente */
+
+@media (max-width: 480px) {
+  .review-widget,
+  .review-widget-toggle {
+    right: 0.8rem;
+    bottom: 0.9rem;
+  }
+}
