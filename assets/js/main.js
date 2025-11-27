@@ -1,5 +1,3 @@
-// Menu mobile: abrir / fechar ao clicar no botão
-
 document.addEventListener("DOMContentLoaded", function () {
   const nav = document.getElementById("mainNav");
   const toggle = document.querySelector(".nav-toggle");
