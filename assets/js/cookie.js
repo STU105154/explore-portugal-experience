@@ -1,55 +1,83 @@
-// assets/js/cookies.js
-(function () {
-  const STORAGE_KEY = "epe_cookie_choice_v1";
+// assets/js/cookie.js
+(() => {
+  const KEY = "epe_cookie_choice_v3"; // muda versão se quiseres forçar reaparecer
 
-  function $(id) {
-    return document.getElementById(id);
-  }
+  const getLS = () => {
+    try { return localStorage.getItem(KEY) || ""; }
+    catch { return ""; }
+  };
 
-  function hide(banner) {
-    if (!banner) return;
-    banner.classList.add("hide");
-    banner.setAttribute("aria-hidden", "true");
-  }
+  const setLS = (v) => {
+    try { localStorage.setItem(KEY, v); }
+    catch { /* ignore */ }
+  };
 
-  function show(banner) {
-    if (!banner) return;
-    banner.classList.remove("hide");
-    banner.setAttribute("aria-hidden", "false");
-  }
+  const getCookie = (name) => {
+    const m = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
+    return m ? decodeURIComponent(m[2]) : "";
+  };
 
-  function init() {
-    const banner = $("cookieBanner");
-    const accept = $("cookieAccept");
-    const decline = $("cookieDecline");
+  const setCookie = (name, value, days = 365) => {
+    const d = new Date();
+    d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie =
+      `${name}=${encodeURIComponent(value)}; expires=${d.toUTCString()}; path=/; SameSite=Lax`;
+  };
 
-    // Se não existir banner nesta página, sai sem erro
-    if (!banner) return;
+  const getSaved = () => getLS() || getCookie(KEY);
+  const saveChoice = (v) => { setLS(v); setCookie(KEY, v, 365); };
 
-    // Debug: se vires isto no Console, sabes que o JS está a correr
-    // console.log("[cookies] init ok");
+  const qs = (id) => document.getElementById(id);
 
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) hide(banner);
-    else show(banner);
+  const show = (el) => {
+    if (!el) return;
+    el.classList.remove("hide");
+    el.setAttribute("aria-hidden", "false");
+  };
 
-    // Remover listeners antigos (caso o browser esteja a fazer hot reload / cache estranho)
-    if (accept) {
-      accept.onclick = () => {
-        localStorage.setItem(STORAGE_KEY, "accepted");
-        hide(banner);
-      };
+  const hide = (el) => {
+    if (!el) return;
+    el.classList.add("hide");
+    el.setAttribute("aria-hidden", "true");
+  };
+
+  const bindClick = (btn, handler) => {
+    if (!btn) return;
+    btn.addEventListener("click", handler);
+    // alguns Androids “atrapalham-se” com overlays — isto ajuda:
+    btn.addEventListener("touchstart", handler, { passive: true });
+  };
+
+  const init = () => {
+    const banner = qs("cookieBanner");
+    const accept = qs("cookieAccept");
+    const decline = qs("cookieDecline");
+
+    // Se não existir HTML do banner, não faz nada
+    if (!banner || !accept || !decline) return;
+
+    const saved = getSaved();
+    if (saved) {
+      hide(banner);
+    } else {
+      show(banner);
     }
 
-    if (decline) {
-      decline.onclick = () => {
-        localStorage.setItem(STORAGE_KEY, "declined");
-        hide(banner);
-      };
-    }
-  }
+    bindClick(accept, (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      saveChoice("accepted");
+      hide(banner);
+    });
 
-  // Garante que o DOM existe antes de tentar apanhar os botões
+    bindClick(decline, (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      saveChoice("declined");
+      hide(banner);
+    });
+  };
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
   } else {
