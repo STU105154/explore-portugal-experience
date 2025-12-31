@@ -1,479 +1,185 @@
-/* ================== BASE / RESET ================== */
-*,
-*::before,
-*::after { box-sizing: border-box; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Explore Portugal Experience – Premium Tours & Private Transfers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Premium private tours & transfers in Portugal with professional drivers. Book quickly: pick-up, drop-off and dates." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png" />
+  <link rel="canonical" href="https://www.exploreportugalexperience.com/">
 
-:root{
-  --bg:#000;
-  --bg-soft:#0b0b0b;
-  --panel:#101010;
-  --gold:#c9a562;
-  --gold-soft:#e2c685;
-  --text:#f7f3e8;
-  --muted:#b3a899;
-  --radius:18px;
-  --shadow:0 14px 40px rgba(0,0,0,.65);
-  --max:1100px;
-  --font: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-Y30ME05MQY");
+  </script>
 
-html,body{ margin:0; padding:0; }
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:var(--font);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
+  <meta name="google-site-verification" content="VHksr5nV7fuvYpF8l_3l1WEAeH832Yh-rorToxtVSnA" />
+</head>
 
-a{ color:inherit; text-decoration:none; }
-a:hover{ color:var(--gold-soft); }
+<body class="home-page">
+  <div class="translate-bar">
+    <span>Language:</span>
+    <div id="google_translate_element"></div>
+  </div>
 
-main{ min-height:60vh; }
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="home-star" aria-label="Home">
+        <img src="assets/icons/compass-gold-solid.svg" alt="Explore Portugal Experience" class="star-animated"/>
+      </a>
 
-/* ================== TRANSLATE BAR (discreto, com Language + setinha) ================== */
-.translate-bar{
-  background:#000;
-  border-bottom:1px solid #111;
-  display:flex;
-  align-items:center;
-  gap:.5rem;
-  padding:.28rem .8rem;
-  font-size:.82rem;
-  opacity:.95;
-}
+      <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="choose.html">Why us</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="booking.html">Bookings</a>
+        <a href="contactos.html">Contact</a>
+      </nav>
 
-.translate-bar span{
-  color:var(--muted);
-  font-weight:500;
-}
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-/* widget do Google */
-.translate-bar .goog-te-gadget{
-  font-size:0 !important; /* remove texto extra feio */
-}
+  <main>
+    <section class="home-hero section-dark">
+      <div class="section-inner narrow">
+        <img
+          src="assets/images/logo-explore-portugal-experience.png"
+          alt="Explore Portugal Experience"
+          class="home-logo"
+        />
 
-.translate-bar .goog-te-gadget select{
-  font-size:.8rem !important;
-  background:#0b0b0b;
-  color:var(--text);
-  border:1px solid #222;
-  border-radius:10px;
-  padding:.25rem .55rem;
-  outline:none;
-  cursor:pointer;
-}
+        <p class="hero-tagline">
+          Premium private tours & transfers in Portugal — professional drivers, comfort and discretion.
+        </p>
 
-/* esconder o banner feio do Google */
-.goog-te-banner-frame.skiptranslate{ display:none !important; }
-body{ top:0 !important; }
-.skiptranslate{ color:inherit !important; }
+        <form class="quick-book" action="booking.html" method="GET">
+          <h2>Book in 30 seconds</h2>
 
-/* ================== HEADER / NAV ================== */
-.site-header{
-  position:sticky;
-  top:0;
-  z-index:999;
-  background:linear-gradient(to bottom,#000 0, rgba(0,0,0,.92) 45%, transparent 100%);
-}
+          <div class="quick-grid">
+            <div>
+              <label for="service">Service</label>
+              <select id="service" name="service" required>
+                <option value="" selected>Select…</option>
+                <option value="airport_transfer">Airport transfer</option>
+                <option value="private_tour">Private tour</option>
+                <option value="day_trip">Day trip</option>
+                <option value="custom">Custom programme</option>
+              </select>
+            </div>
 
-.header-inner{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:.6rem 1.1rem;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:.8rem;
-}
+            <div>
+              <label for="pax">Guests</label>
+              <select id="pax" name="pax" required>
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6+</option>
+              </select>
+            </div>
 
-/* estrela */
-.home-star{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  flex:0 0 auto;
-}
+            <div>
+              <label for="from">Pick-up (From)</label>
+              <input id="from" name="from" type="text" placeholder="Lisbon Airport, Hotel, City…" required>
+            </div>
 
-.star-animated{
-  width:44px;
-  height:44px;
-  filter:drop-shadow(0 0 10px rgba(201,165,98,.6));
-  animation:star-spin 18s linear infinite;
-  transform-origin:center;
-}
+            <div>
+              <label for="to">Drop-off (To)</label>
+              <input id="to" name="to" type="text" placeholder="Porto, Sintra, Hotel…" required>
+            </div>
 
-@keyframes star-spin{
-  from{ transform:rotate(0deg); }
-  to{ transform:rotate(360deg); }
-}
+            <div>
+              <label for="date">Date</label>
+              <input id="date" name="date" type="date" required>
+            </div>
 
-/* REMOVER logo pequenino do header em TODAS as páginas */
-.header-logo{ display:none !important; }
+            <div>
+              <label for="time">Time</label>
+              <input id="time" name="time" type="time" required>
+            </div>
 
-/* nav desktop */
-.nav{
-  display:flex;
-  gap:1.35rem;
-  font-size:.95rem;
-}
+            <div class="full">
+              <div class="quick-actions">
+                <button type="submit" class="btn-primary">Book now</button>
+                <a class="btn-outline" href="https://wa.me/351910784548" target="_blank" rel="noopener">
+                  WhatsApp us
+                </a>
+              </div>
+            </div>
+          </div>
+        </form>
 
-.nav a{
-  white-space:nowrap;
-  position:relative;
-  padding-bottom:.12rem;
-}
+        <!-- QR WhatsApp -->
+        <div class="hero-qr-wrap">
+          <img
+            src="assets/images/IMG-20251221-WA0018.jpg"
+            alt="WhatsApp QR code"
+            class="home-qr"
+            loading="lazy"
+          />
+          <p class="hero-qr-caption">Scan to open WhatsApp and book fast.</p>
+        </div>
 
-.nav a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:0;
-  width:0;
-  height:2px;
-  background:var(--gold-soft);
-  transition:width .2s ease;
-}
-.nav a:hover::after{ width:100%; }
+      </div>
+    </section>
+  </main>
 
-/* burger */
-.nav-toggle{
-  background:none;
-  border:none;
-  cursor:pointer;
-  display:none;
-  flex-direction:column;
-  gap:4px;
-  width:30px;
-  height:26px;
-  padding:0;
-  flex:0 0 auto;
-}
+  <!-- FOOTER (já sem WhatsApp no texto — só telemóvel PT) -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <p class="footer-title">Explore Portugal Experience</p>
+        <p>Premium private tours & transfers in Portugal.</p>
+      </div>
 
-.nav-toggle span{
-  height:2px;
-  width:100%;
-  background:var(--text);
-  border-radius:999px;
-  transition:transform .2s ease, opacity .2s ease;
-}
+      <div class="footer-col">
+        <p class="footer-title">Contact</p>
+        <p>
+          Phone (Portugal): <a href="tel:+351962516005">+351 962 516 005</a><br>
+          Email: <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
+        </p>
+      </div>
 
-/* mobile nav */
-@media (max-width:900px){
-  .nav{
-    position:absolute;
-    top:100%;
-    left:0;
-    right:0;
-    display:none;
-    flex-direction:column;
-    background:rgba(0,0,0,.97);
-    padding:1rem 1.1rem 1.2rem;
-    border-bottom:1px solid #111;
-    gap:.9rem;
-  }
-  body.nav-open .nav{ display:flex; }
-  .nav-toggle{ display:flex; }
-}
+      <div class="footer-col">
+        <p class="footer-title">Follow</p>
+        <p>
+          <a href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener">Instagram</a><br>
+          <a href="https://www.tiktok.com/@explore.portugal24" target="_blank" rel="noopener">TikTok</a>
+        </p>
+      </div>
+    </div>
 
-/* burger animation */
-body.nav-open .nav-toggle span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
-body.nav-open .nav-toggle span:nth-child(2){ opacity:0; }
-body.nav-open .nav-toggle span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
+    <div class="footer-bottom">
+      <p>Powered by MkDesign – London</p>
+    </div>
+  </footer>
 
-/* ================== LAYOUT ================== */
-.section{ padding:3rem 1.1rem; }
-.section-dark{ background:#050505; }
+  <script src="assets/js/nav.js"></script>
 
-.section-inner{ max-width:var(--max); margin:0 auto; }
-.section-inner.narrow{ max-width:820px; }
-
-.section-title{
-  font-size:1.5rem;
-  margin:0 0 .8rem;
-  text-transform:uppercase;
-  letter-spacing:.18em;
-}
-
-.section-lead{
-  margin:0 0 2rem;
-  max-width:760px;
-  color:var(--muted);
-  font-size:1rem;
-}
-
-/* ================== BUTTONS ================== */
-.btn-primary,.btn-outline,.btn-secondary{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:.78rem 1.6rem;
-  border-radius:999px;
-  font-size:.95rem;
-  border:1px solid transparent;
-  cursor:pointer;
-  transition:transform .12s ease, box-shadow .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
-  white-space:nowrap;
-}
-
-.btn-primary{
-  background:linear-gradient(90deg,#c9a562,#f2d181);
-  color:#1a1308;
-  font-weight:650;
-}
-.btn-primary:hover{ transform:translateY(-1px); box-shadow:var(--shadow); }
-
-.btn-outline{
-  background:transparent;
-  border-color:var(--gold-soft);
-  color:var(--gold-soft);
-}
-.btn-outline:hover{
-  background:var(--gold-soft);
-  color:#1a1308;
-}
-
-.btn-secondary{
-  background:#101010;
-  border-color:#333;
-  color:var(--text);
-}
-.btn-secondary:hover{ background:#1a1a1a; }
-
-/* ================== HOME HERO ================== */
-.home-hero{
-  padding:1.6rem 1rem 2rem;
-  min-height:auto;
-  display:flex;
-  align-items:flex-start;
-  justify-content:center;
-  text-align:center;
-}
-
-.home-logo{
-  width:min(82vw, 280px);
-  height:auto;
-  margin: .4rem 0 1rem;
-}
-
-@media (max-width:600px){
-  .home-logo{ width:min(78vw, 240px); }
-}
-
-.hero-tagline{
-  max-width:660px;
-  margin:0 auto 1rem;
-  color:var(--muted);
-  font-size:1rem;
-}
-
-/* QUICK BOOK */
-.quick-book{
-  margin:1rem auto 1rem;
-  max-width:820px;
-  background:linear-gradient(150deg,#141414,#070707);
-  border:1px solid rgba(201,165,98,.35);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:1rem 1rem 1.15rem;
-  text-align:left;
-}
-
-.quick-book h2{
-  margin:0 0 .7rem;
-  font-size:1rem;
-  color:var(--gold-soft);
-  letter-spacing:.12em;
-  text-transform:uppercase;
-}
-
-.quick-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:.75rem;
-}
-
-.quick-grid .full{ grid-column:1 / -1; }
-
-.quick-book label{
-  display:block;
-  font-size:.76rem;
-  color:var(--muted);
-  margin:0 0 .25rem;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-}
-
-.quick-book input, .quick-book select{
-  width:100%;
-  padding:.68rem .8rem;
-  border-radius:12px;
-  border:1px solid #333;
-  background:#050505;
-  color:var(--text);
-  font:inherit;
-}
-
-.quick-actions{
-  display:flex;
-  gap:.65rem;
-  margin-top:.85rem;
-  flex-wrap:wrap;
-}
-
-@media (max-width:700px){
-  .quick-grid{ grid-template-columns:1fr; }
-  .quick-book{ padding:.95rem .9rem 1.05rem; }
-}
-
-/* QR (FORÇAR VISIBILIDADE + tamanho correto) */
-.hero-qr-wrap{
-  margin-top:1.1rem;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:.65rem;
-}
-
-.home-qr{
-  display:block;                 /* <- garante que aparece */
-  width:min(86vw, 260px);
-  max-width:260px;
-  height:auto;
-  border-radius:14px;
-  background:#fff;
-  padding:8px;
-  box-shadow:var(--shadow);
-}
-
-/* se a imagem falhar, pelo menos não colapsa o layout */
-.home-qr[alt]{ min-height:120px; }
-
-.hero-qr-caption{
-  color:var(--muted);
-  font-size:.9rem;
-  max-width:520px;
-  margin:0;
-}
-
-/* ================== CARDS ================== */
-.cards-3{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:1.2rem;
-}
-
-.card{
-  background:linear-gradient(150deg,#151515,#050505);
-  border-radius:var(--radius);
-  border:1px solid rgba(201,165,98,.28);
-  box-shadow:var(--shadow);
-  padding:1.25rem 1.1rem 1.4rem;
-}
-
-.card h3{
-  margin:0 0 .6rem;
-  color:var(--gold-soft);
-  font-size:1.05rem;
-}
-.card p{ margin:0; }
-
-/* ================== CONTACT / BOOKING ================== */
-.contact-grid{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-  gap:1.6rem;
-}
-@media (max-width:900px){
-  .contact-grid{ grid-template-columns:1fr; }
-}
-
-.contact-card{
-  background:#0b0b0b;
-  border:1px solid rgba(201,165,98,.35);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:1.5rem 1.35rem;
-}
-
-.contact-form{
-  display:flex;
-  flex-direction:column;
-  gap:.9rem;
-}
-.form-row{ display:flex; flex-direction:column; gap:.25rem; }
-
-.contact-form label{
-  font-size:.82rem;
-  color:var(--muted);
-  text-transform:uppercase;
-  letter-spacing:.08em;
-}
-
-.contact-form input,
-.contact-form textarea,
-.contact-form select{
-  width:100%;
-  border-radius:12px;
-  border:1px solid #333;
-  padding:.72rem .85rem;
-  background:#050505;
-  color:var(--text);
-  font:inherit;
-}
-
-.contact-form textarea{
-  border-radius:16px;
-  min-height:130px;
-  resize:vertical;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus,
-.contact-form select:focus{
-  outline:none;
-  border-color:var(--gold-soft);
-  box-shadow:0 0 0 1px rgba(201,165,98,.55);
-  background:#000;
-}
-
-.form-note{
-  margin:.35rem 0 1rem;
-  color:var(--muted);
-  font-size:.88rem;
-}
-
-/* ================== FOOTER ================== */
-.site-footer{
-  background:#020202;
-  border-top:1px solid #111;
-  padding:2.2rem 1.1rem 2rem;
-  font-size:.9rem;
-}
-
-.footer-inner{
-  max-width:var(--max);
-  margin:0 auto 1.2rem;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:1.4rem;
-}
-
-.footer-title{
-  margin:0 0 .7rem;
-  color:var(--gold-soft);
-  text-transform:uppercase;
-  letter-spacing:.12em;
-}
-
-.footer-col p{ margin:0 0 .55rem; color:#d0ccc3; }
-
-.footer-bottom{
-  max-width:var(--max);
-  margin:0 auto;
-  display:flex;
-  justify-content:space-between;
-  gap:.7rem;
-  flex-wrap:wrap;
-  color:var(--muted);
-}
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          includedLanguages: "en,pt,fr,es,de,it",
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        },
+        "google_translate_element"
+      );
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
