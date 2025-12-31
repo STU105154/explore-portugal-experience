@@ -1,25 +1,32 @@
 (function () {
+  const key = "epe_cookie_choice";
   const banner = document.getElementById("cookieBanner");
-  const acceptBtn = document.getElementById("cookieAccept");
-  const declineBtn = document.getElementById("cookieDecline");
+  const accept = document.getElementById("cookieAccept");
+  const decline = document.getElementById("cookieDecline");
 
-  if (!banner || !acceptBtn || !declineBtn) return;
+  function hide() {
+    if (banner) banner.classList.add("hide");
+  }
 
-  const KEY = "epe_cookie_consent"; // "accepted" | "declined"
+  function show() {
+    if (banner) banner.classList.remove("hide");
+  }
 
-  function hide() { banner.style.display = "none"; }
-  function show() { banner.style.display = "block"; }
-
-  const saved = localStorage.getItem(KEY);
+  const saved = localStorage.getItem(key);
   if (!saved) show();
+  else hide();
 
-  acceptBtn.addEventListener("click", () => {
-    localStorage.setItem(KEY, "accepted");
-    hide();
-  });
+  if (accept) {
+    accept.addEventListener("click", () => {
+      localStorage.setItem(key, "accepted");
+      hide();
+    });
+  }
 
-  declineBtn.addEventListener("click", () => {
-    localStorage.setItem(KEY, "declined");
-    hide();
-  });
+  if (decline) {
+    decline.addEventListener("click", () => {
+      localStorage.setItem(key, "declined");
+      hide();
+    });
+  }
 })();
