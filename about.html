@@ -3,30 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <title>Sobre · Explore Portugal Experience</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta
       name="description"
       content="Saiba mais sobre a Explore Portugal Experience e o legado de Agapito, cofundador e motorista profissional que inspirou este projeto."
     />
+    <link rel="canonical" href="https://www.exploreportugalexperience.com/about.html" />
 
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="icon" type="image/png" href="assets/icons/apple-touch-icon.png" />
 
+    <!-- Pequenos fixes só desta página (não mexe no teu CSS global) -->
+    <style>
+      /* Evita “castanho”/overlays por elementos sticky/fixed por cima */
+      body { -webkit-tap-highlight-color: transparent; }
+
+      /* Barra de idioma: deixa-a sempre legível e sem tapar o header */
+      .translate-bar{
+        position: sticky;
+        top: 0;
+        z-index: 999;
+      }
+
+      /* Garante que o header fica acima do conteúdo e abaixo da translate bar */
+      .site-header{
+        position: sticky;
+        top: 44px; /* altura típica da translate-bar; ajusta se necessário */
+        z-index: 998;
+      }
+
+      /* Se a tua translate-bar for mais alta/baixa, muda estes 44px */
+      @media (min-width: 768px){
+        .site-header{ top: 46px; }
+      }
+    </style>
+
     <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+      function gtag(){ dataLayer.push(arguments); }
       gtag("js", new Date());
       gtag("config", "G-Y30ME05MQY");
     </script>
-     <link rel="canonical" href="https://www.exploreportugalexperience.com/about.html">
   </head>
 
   <body>
@@ -36,29 +56,34 @@
       <div id="google_translate_element"></div>
     </div>
 
-   <!-- HEADER COM ESTRELA E MENU -->
-<header class="site-header">
-  <div class="header-inner">
-    <!-- Botão Home com estrela a rodar -->
-    <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
-      <img
-        src="assets/icons/compass-gold-solid.svg"
-        alt="Explore Portugal Experience"
-        class="star-animated"
-      />
-    </a>
+    <!-- HEADER + NAV (estrutura correta) -->
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- Botão Home com estrela a rodar -->
+        <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
+          <img
+            src="assets/icons/compass-gold-solid.svg"
+            alt="Explore Portugal Experience"
+            class="star-animated"
+          />
+        </a>
 
-    <!-- Logotipo pequeno topo (fica escondido na home via CSS) -->
-    <a href="index.html" class="header-logo">
-      <img
-        src="assets/images/logo-explore-portugal-experience.png"
-        alt="Explore Portugal Experience"
-      />
-    </a>
-  </div>
-</header>
+        <!-- Logotipo pequeno topo -->
+        <a href="index.html" class="header-logo" aria-label="Explore Portugal Experience">
+          <img
+            src="assets/images/logo-explore-portugal-experience.png"
+            alt="Explore Portugal Experience"
+          />
+        </a>
 
+        <!-- Botão hambúrguer (mobile) -->
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
+        <!-- NAV -->
         <nav class="nav" id="mainNav" aria-label="Navegação principal">
           <a href="about.html" aria-current="page">Sobre nós</a>
           <a href="services.html">Serviços</a>
@@ -69,15 +94,8 @@
           <a href="booking.html">Reservas</a>
           <a href="partners-drivers.html">Partners Drivers</a>
           <a href="partners-hospitality.html">Parceiros Comerciais</a>
-
           <a href="contactos.html">Contactos</a>
         </nav>
-
-        <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
     </header>
 
@@ -121,7 +139,7 @@
         </div>
       </section>
 
-      <!-- TRIBUTO AO AGAPITO – FOTO CIRCULAR DOURADA + TEXTO -->
+      <!-- TRIBUTO AO AGAPITO -->
       <section class="section">
         <div class="section-inner narrow">
           <article class="contact-card about-agapito" aria-label="Tributo a Agapito">
@@ -180,7 +198,7 @@
       </section>
     </main>
 
-    <!-- FOOTER (igual ao resto do site) -->
+    <!-- FOOTER -->
     <footer class="site-footer">
       <div class="footer-inner">
         <div class="footer-col">
@@ -195,25 +213,19 @@
           <p class="footer-title">Contactos</p>
           <p>
             Telemóvel / WhatsApp:
-            <a href="https://wa.me/351910784548" target="_blank">+351 910 784 548</a>
+            <a href="https://wa.me/351910784548" target="_blank" rel="noopener">+351 910 784 548</a>
           </p>
           <p>
             Email:
-            <a href="mailto:info@exploreportugalexperience.com"
-              >info@exploreportugalexperience.com</a
-            >
+            <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
           </p>
         </div>
 
         <div class="footer-col">
           <p class="footer-title">Siga-nos</p>
           <p>
-            <a href="https://www.instagram.com/exploreportugal2025" target="_blank"
-              >Instagram</a
-            ><br />
-            <a href="https://www.tiktok.com/@explore.portugal24" target="_blank"
-              >TikTok</a
-            >
+            <a href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener">Instagram</a><br />
+            <a href="https://www.tiktok.com/@explore.portugal24" target="_blank" rel="noopener">TikTok</a>
           </p>
         </div>
       </div>
@@ -224,8 +236,13 @@
       </div>
     </footer>
 
+    <!-- Cookies (mesmo em todas as páginas) -->
+    <script src="assets/js/cookie.js"></script>
+
     <!-- JS -->
     <script src="assets/js/nav.js"></script>
+
+    <!-- lightbox só se a página tiver galeria; se não tiver, podes remover -->
     <script src="assets/js/lightbox.js"></script>
 
     <!-- Google Translate -->
