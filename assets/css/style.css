@@ -663,7 +663,7 @@ body.nav-open .nav-toggle span:nth-child(3) {
   }
 }
 
-/* ================== ABOUT – AGAPITO (para usar depois) ================== */
+/* ================== ABOUT – AGAPITO ================== */
 
 .about-agapito {
   text-align: center;
@@ -681,22 +681,7 @@ body.nav-open .nav-toggle span:nth-child(3) {
   display: block;
   margin: 0 auto 1rem;
 }
-.about-agapito {
-  text-align: center;
-  max-width: 620px;
-  margin: 0 auto 3rem;
-}
 
-.agapito-photo {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 3px solid var(--gold-soft);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 1rem;
-}
 /* Tributo Agapito — card premium com aro dourado */
 .about-agapito {
   border: 2px solid var(--gold-soft);
@@ -754,6 +739,7 @@ body.nav-open .nav-toggle span:nth-child(3) {
   margin-top: 2rem;
   color: var(--gold-soft);
 }
+
 /* ================== FORMULÁRIOS GERAIS (PRETO & DOURADO) ================== */
 
 .contact-form,
@@ -891,6 +877,7 @@ body.nav-open .nav-toggle span:nth-child(3) {
     grid-template-columns: 1fr;
   }
 }
+
 .payment-icons {
   display: flex;
   justify-content: center;
@@ -903,7 +890,7 @@ body.nav-open .nav-toggle span:nth-child(3) {
   height: 38px;
   width: auto;
   opacity: 0.9;
-  transition: transform .18s ease, opacity .18s ease;
+  transition: transform 0.18s ease, opacity 0.18s ease;
 }
 
 .payment-icons img:hover {
@@ -913,18 +900,18 @@ body.nav-open .nav-toggle span:nth-child(3) {
 
 .payment-info {
   text-align: center;
-  margin-top: .8rem;
+  margin-top: 0.8rem;
   color: var(--muted);
 }
 
 .payment-card {
   background: #080808;
-  border: 1px solid rgba(201,165,98,.4);
+  border: 1px solid rgba(201, 165, 98, 0.4);
   padding: 2rem;
   border-radius: 18px;
   max-width: 520px;
   margin: 0 auto;
-  box-shadow: 0 0 22px rgba(0,0,0,.6);
+  box-shadow: 0 0 22px rgba(0, 0, 0, 0.6);
 }
 
 .card-form {
@@ -934,24 +921,24 @@ body.nav-open .nav-toggle span:nth-child(3) {
 }
 
 .card-form label {
-  font-size: .85rem;
+  font-size: 0.85rem;
   color: var(--muted);
   text-transform: uppercase;
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
 }
 
 .card-form input {
   background: black;
   border: 1px solid #333;
   border-radius: 12px;
-  padding: .75rem 1rem;
+  padding: 0.75rem 1rem;
   color: var(--text);
-  font-size: .97rem;
+  font-size: 0.97rem;
 }
 
 .card-form input:focus {
   border-color: var(--gold-soft);
-  box-shadow: 0 0 0 1px rgba(201,165,98,.6);
+  box-shadow: 0 0 0 1px rgba(201, 165, 98, 0.6);
 }
 
 .form-grid {
@@ -961,90 +948,23 @@ body.nav-open .nav-toggle span:nth-child(3) {
 }
 
 .payment-protect {
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: var(--muted);
-  margin-top: .6rem;
+  margin-top: 0.6rem;
   text-align: center;
 }
-.payment-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.6rem;
-  margin: 1.4rem auto 1rem;
-  flex-wrap: wrap;
-}
 
-.payment-icons img {
-  height: 44px;
-  width: auto;
-  opacity: 0.85;
-  transition: transform .18s ease, opacity .18s ease;
-}
-
-.payment-icons img:hover {
-  opacity: 1;
-  transform: scale(1.12);
-}
-
-.payment-info {
-  text-align: center;
-  margin-top: .6rem;
-  color: var(--muted);
-}
-/* PRICING LUXURY STYLE */
-.center {text-align:center;}
-.gold {color:#c9a952;}
-
-.pricing-box {
-  border:1px solid #c9a952;
-  border-radius:20px;
-  padding:35px;
-  margin-top:25px;
-  background:#0e0e0e;
-}
-
-.pricing-table.clean th,
-.pricing-table.clean td {
-  padding:14px 22px;
-  border-bottom:1px solid rgba(201,169,82,0.2);
-}
-
-.pricing-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:24px;
-  margin-top:30px;
-}
-
-.pricing-card {
-  border:1px solid #c9a952;
-  border-radius:16px;
-  padding:26px;
-  background:#111;
-  text-align:center;
-}
-
-.pricing-card .price {
-  margin-top:12px;
-  font-size:18px;
-  color:#c9a952;
-}
-
-.btn-center {
-  display:inline-block;
-  margin-top:28px;
-}
-
-/* Payment icons */
 .payment-icons.small img {
-  width:60px;
-  opacity:0.9;
-  margin:0 10px;
+  width: 60px;
+  opacity: 0.9;
+  margin: 0 10px;
 }
+
 .payment-icons.small img:hover {
-  opacity:1;
-  transform:scale(1.08);
+  opacity: 1;
+  transform: scale(1.08);
 }
+
 /* ===========================
    PRICING / TABELAS PREMIUM VIP
    =========================== */
@@ -1132,7 +1052,7 @@ body.nav-open .nav-toggle span:nth-child(3) {
   transform: scale(1.1);
 }
 
-/* --------- MOBILE FIXES ---------- */
+/* --------- MOBILE FIXES PRICING ---------- */
 
 @media (max-width: 768px) {
   .pricing-box {
@@ -1178,6 +1098,7 @@ body.nav-open .nav-toggle span:nth-child(3) {
     font-size: 1.4rem;
   }
 }
+
 /* ================== GALERIA - versão compacta ================== */
 
 .gallery-grid {
@@ -1194,7 +1115,7 @@ body.nav-open .nav-toggle span:nth-child(3) {
   border-radius: 14px;
   border: 1px solid rgba(201, 165, 98, 0.5);
   cursor: pointer;
-  aspect-ratio: 4 / 3; /* controla o tamanho visual */
+  aspect-ratio: 4 / 3;
   background: #000;
 }
 
@@ -1216,7 +1137,7 @@ body.nav-open .nav-toggle span:nth-child(3) {
   text-align: center;
   text-transform: uppercase;
   opacity: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
   color: var(--gold-soft);
   transform: translateY(6px);
   transition: opacity 0.25s ease, transform 0.25s ease;
@@ -1233,6 +1154,7 @@ body.nav-open .nav-toggle span:nth-child(3) {
 }
 
 /* Lightbox */
+
 .lightbox-img {
   max-width: 80vw;
   max-height: 70vh;
@@ -1251,7 +1173,6 @@ body.nav-open .nav-toggle span:nth-child(3) {
     max-height: 70vh;
   }
 }
-
 
 /* Lightbox overlay */
 
@@ -1316,6 +1237,7 @@ body.nav-open .nav-toggle span:nth-child(3) {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   }
 }
+
 /* ================== CHOOSE / REVIEWS ================== */
 
 .section-reviews-highlight {
@@ -1422,7 +1344,7 @@ body.nav-open .nav-toggle span:nth-child(3) {
   margin: 0 0 0.1rem;
   font-size: 0.95rem;
   font-weight: 600;
-  padding-right: 1.2rem; /* espaço para o X */
+  padding-right: 1.2rem;
 }
 
 .floating-stars {
@@ -1495,99 +1417,8 @@ body.nav-open .nav-toggle span:nth-child(3) {
     align-items: stretch;
   }
 }
-/* ================== REVIEWS STRIP ================== */
 
-.reviews-strip-inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.2rem;
-}
-
-.reviews-strip-main {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-}
-
-.reviews-strip-label {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--muted);
-  margin: 0;
-}
-
-.reviews-strip-stars span {
-  font-size: 1.4rem;
-  letter-spacing: 0.25em;
-  color: var(--gold-soft);
-}
-
-.reviews-strip-score {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--text);
-}
-
-.reviews-strip-logos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-}
-
-.reviews-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid rgba(201, 165, 98, 0.55);
-  font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
-
-.reviews-logo-badge {
-  width: 20px;
-  height: 20px;
-  border-radius: 999px;
-  display: grid;
-  place-items: center;
-  background: var(--gold-soft);
-  color: #1a1308;
-  font-weight: 700;
-}
-
-/* ================== REVIEW CARDS ================== */
-
-.review-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.review-name {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--muted);
-  margin: 0;
-}
-
-.review-stars {
-  margin: 0;
-  color: var(--gold-soft);
-  letter-spacing: 0.18em;
-}
-
-.review-text {
-  margin: 0;
-  font-size: 0.95rem;
-}
-
-/* ================== REVIEW WIDGET FLOANTE (DIREITA) ================== */
+/* ================== REVIEW WIDGET DIREITA ================== */
 
 .review-widget {
   position: fixed;
@@ -1622,11 +1453,6 @@ body.nav-open .nav-toggle span:nth-child(3) {
   gap: 0.5rem;
 }
 
-.btn-small {
-  padding: 0.4rem 0.9rem;
-  font-size: 0.8rem;
-}
-
 .review-widget-close {
   position: absolute;
   top: 0.2rem;
@@ -1657,12 +1483,78 @@ body.nav-open .nav-toggle span:nth-child(3) {
   cursor: pointer;
 }
 
-/* Em ecrãs muito pequenos, baixar ligeiramente */
-
 @media (max-width: 480px) {
   .review-widget,
   .review-widget-toggle {
     right: 0.8rem;
     bottom: 0.9rem;
+  }
+}
+
+/* ================== GOOGLE TRANSLATE – MAIS DISCRETO ================== */
+
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+.goog-te-gadget-icon,
+.goog-te-gadget-simple img {
+  display: none !important;
+}
+
+#google_translate_element .goog-te-gadget-simple {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  font-size: 14px !important;
+  font-family: inherit !important;
+  color: #ccc !important;
+  cursor: pointer;
+}
+
+#google_translate_element select {
+  background: #000 !important;
+  color: #ccc !important;
+  border: 1px solid #333 !important;
+  border-radius: 6px;
+  padding: 4px 6px;
+  font-size: 14px;
+}
+
+/* ================== MOBILE TWEAKS – HERO + ESPAÇOS ================== */
+
+@media (max-width: 768px) {
+  .home-hero {
+    padding-top: 2.4rem;
+    padding-bottom: 2rem;
+    min-height: auto;
+  }
+
+  .home-logo {
+    max-width: 260px;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-tagline {
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    margin-bottom: 1.4rem;
+  }
+
+  .section {
+    padding-top: 2.3rem;
+    padding-bottom: 2.3rem;
+  }
+
+  .section-reservas {
+    padding-top: 1.6rem;
   }
 }
