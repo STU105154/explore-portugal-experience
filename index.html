@@ -1,197 +1,314 @@
 <!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <title>Explore Portugal Experience · Premium Tours & Private Transfers</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Explore Portugal Experience – Premium Tours & Private Transfers</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="Premium tours and private transfers in Portugal with professional drivers. Tailor-made experiences, comfort, safety and elegance in every journey."
+    />
 
-  <meta name="description"
-        content="Explore Portugal Experience — premium tours e private transfers em Portugal, com motorista profissional, conforto e atenção ao detalhe.">
+    <link rel="stylesheet" href="assets/css/style.css" />
 
-  <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png" />
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-Y30ME05MQY');
-  </script>
-  <meta name="google-site-verification" content="VHksr5nV7fuvYpF8l_3l1WEAeH832Yh-rorToxtVSnA" />
-  <link rel="canonical" href="https://www.exploreportugalexperience.com/">
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-Y30ME05MQY");
+    </script>
 
+    <meta
+      name="google-site-verification"
+      content="VHksr5nV7fuvYpF8l_3l1WEAeH832Yh-rorToxtVSnA"
+    />
+    <link rel="canonical" href="https://www.exploreportugalexperience.com/" />
+  </head>
 
-</head>
+  <body class="home-page">
+    <!-- Language bar -->
+    <div class="translate-bar">
+      <span>Language:</span>
+      <div id="google_translate_element"></div>
+    </div>
 
-<body>
-
-  <!-- BARRA DE IDIOMA -->
-  <div class="translate-bar">
-    <span>Idioma:</span>
-    <div id="google_translate_element"></div>
-  </div>
-
-  <!-- HEADER -->
-  <header class="header">
-    <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
-      <img
-        src="assets/icons/star-full.svg"
-        alt="Explore Portugal Experience"
-        class="star-animated">
-    </a>
-
-    <nav class="nav" aria-label="Navegação principal">
-      <a href="about.html">Sobre</a>
-      <a href="services.html">Serviços</a>
-      <a href="choose.html">Porquê nós</a>
-      <a href="pricing.html">Preços</a>
-      <a href="faq.html">FAQ</a>
-      <a href="partners-drivers.html">Partners Drivers</a>
-      <a href="partners-hospitality.html">Partners Hospitality</a>
-      <a href="gallery.html">Galeria</a>
-      <a href="booking.html">Reservas</a>
-      <a href="contacts.html">Contactos</a>
-    </nav>
-
-    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </header>
-
-  <main>
-
-    <!-- HERO -->
-    <section class="home-hero section-dark">
-
-      <img
-        src="assets/images/logo-explore-portugal-experience.png"
-        alt="Logotipo Explore Portugal Experience"
-        class="home-logo">
-
-      <p class="hero-tagline">
-        Premium Tours & Private Transfers em Portugal, com motorista profissional,
-        conforto absoluto e atenção personalizada a cada detalhe.
-      </p>
-
-      <div class="hero-actions">
-        <a href="booking.html" class="btn-primary">Reservar agora</a>
-
-        <a href="https://wa.me/351910784548"
-           class="btn-outline"
-           target="_blank"
-           rel="noopener">
-          WhatsApp direto
+    <!-- HEADER WITH STAR & MENU -->
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- Home button with rotating star (brand signature) -->
+        <a
+          href="index.html"
+          class="home-star"
+          aria-label="Back to homepage"
+        >
+          <img
+            src="assets/icons/compass-gold-solid.svg"
+            alt="Explore Portugal Experience"
+            class="star-animated"
+          />
         </a>
+
+        <!-- Small logo in the header (we can hide or remove later via CSS if needed) -->
+        <a href="index.html" class="header-logo">
+          <img
+            src="assets/images/logo-explore-portugal-experience.png"
+            alt="Explore Portugal Experience"
+          />
+        </a>
+
+        <nav class="nav" id="mainNav" aria-label="Main navigation">
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="choose.html">Why us</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="faq.html">FAQ</a>
+          <a href="partners-drivers.html">Driver partners</a>
+          <a href="partners-hospitality.html">Hospitality partners</a>
+          <a href="gallery.html" aria-current="page">Gallery</a>
+          <a href="booking.html">Bookings</a>
+          <a href="contactos.html">Contact</a>
+        </nav>
+
+        <!-- Mobile burger -->
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
+    </header>
 
-      <!-- QR CODE -->
-      <div class="hero-qr-wrap">
-        <img
-          src="assets/images/qr-whatsapp.png"
-          alt="QR Code Reservas Explore Portugal Experience"
-          class="home-qr">
+    <main>
+      <!-- HERO -->
+      <section class="home-hero section-dark">
+        <div class="section-inner narrow">
+          <img
+            src="assets/images/logo-explore-portugal-experience.png"
+            alt="Explore Portugal Experience"
+            class="home-logo"
+          />
 
-        <p class="hero-qr-caption">
-          Aponte a câmara do telemóvel para reservar de forma rápida e segura.
-        </p>
-      </div>
+          <p class="hero-tagline">
+            Premium tours and private transfers in Portugal with professional drivers.
+            Comfort, elegance and discretion in every journey.
+          </p>
 
-    </section>
+          <div class="hero-actions">
+            <a href="booking.html" class="btn-primary">Book now</a>
+            <a
+              href="https://wa.me/351910784548"
+              target="_blank"
+              rel="noopener"
+              class="btn-outline"
+            >
+              WhatsApp us
+            </a>
+          </div>
 
-    <!-- O QUE NOS DISTINGUE -->
-    <section class="section section-dark">
-      <div class="section-inner">
-        <h2 class="section-title">O que nos distingue</h2>
-
-        <p class="section-lead">
-          Condução serena, discrição e profissionalismo.
-          A missão é simples: fazer o percurso parecer fácil.
-        </p>
-
-        <div class="cards-3">
-          <article class="card">
-            <h3>Calma & segurança</h3>
-            <p>Motorista profissional certificado, foco total no conforto e tranquilidade.</p>
-          </article>
-
-          <article class="card">
-            <h3>Serviço à medida</h3>
-            <p>Itinerários personalizados de acordo com o seu ritmo e interesses.</p>
-          </article>
-
-          <article class="card">
-            <h3>Detalhe & discrição</h3>
-            <p>Atenção total aos detalhes, comunicação clara e respeito pela privacidade.</p>
-          </article>
+          <div class="hero-qr-wrap">
+            <img
+              src="assets/images/IMG-20251221-WA0018.jpg"
+              alt="QR code for fast booking with Explore Portugal Experience"
+              class="home-qr"
+            />
+            <p class="hero-qr-caption">
+              Point your phone camera to book quickly and securely.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-  </main>
+      <!-- WHY EXPLORE PORTUGAL EXPERIENCE -->
+      <section class="section">
+        <div class="section-inner">
+          <h2 class="section-title">Why Explore Portugal Experience?</h2>
+          <p class="section-lead">
+            More than a transfer service. We design private, tailor-made experiences
+            for travellers who value time, comfort and detail.
+          </p>
 
-  <!-- FOOTER -->
-  <footer class="section footer">
-    <div class="section-inner footer-inner">
+          <div class="cards-3">
+            <article class="card">
+              <h3>Professional drivers</h3>
+              <p>
+                Certified drivers with luxury tourism experience, fluent in English and
+                fully focused on your safety and comfort.
+              </p>
+            </article>
 
-      <div class="footer-cols">
+            <article class="card">
+              <h3>Tailor-made service</h3>
+              <p>
+                Private tours, airport transfers, day trips and custom itineraries across
+                Portugal, designed around your plans.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Discreet & elegant</h3>
+              <p>
+                Premium vehicles, personal support and discreet service from arrival to
+                departure.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- BOOKINGS -->
+      <section class="section section-reservas">
+        <div class="section-inner">
+          <h2 class="section-title">Bookings & special requests</h2>
+          <p class="section-lead">
+            Use our booking form, send us an email or contact us directly via WhatsApp.
+            We reply as quickly as possible.
+          </p>
+
+          <div class="reservas-grid">
+            <div class="reservas-card">
+              <h3>Online bookings</h3>
+              <p>
+                Private tours, airport transfers, day trips, corporate events and
+                tailor-made programmes across Portugal.
+              </p>
+              <a href="booking.html" class="btn-secondary">Booking form</a>
+            </div>
+
+            <div class="reservas-card">
+              <h3>Partners & hospitality</h3>
+              <p>
+                Hotels, travel agencies, DMCs and companies looking for a reliable
+                partner for premium private transfers and services.
+              </p>
+              <a href="partners-hospitality.html" class="btn-outline">
+                Learn more about partnerships
+              </a>
+            </div>
+          </div>
+
+          <p class="reservas-note">
+            You can also reach us by email:
+            <a href="mailto:info@exploreportugalexperience.com">
+              info@exploreportugalexperience.com
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <!-- DRIVERS -->
+      <section class="section">
+        <div class="section-inner narrow">
+          <h2 class="section-title">Drivers & local partners</h2>
+          <p class="section-lead">
+            If you are a professional driver with your own vehicle and experience in
+            tourism, you can apply to work with us.
+          </p>
+
+          <div class="form-card">
+            <h3>Join our driver network</h3>
+            <p>
+              We are looking for professional, responsible drivers who take pride in
+              welcoming visitors to Portugal.
+            </p>
+            <a href="partners-drivers.html" class="btn-primary">
+              Driver application
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
         <div class="footer-col">
-          <h3>Contactos</h3>
+          <p class="footer-title">Explore Portugal Experience</p>
+          <p>
+            Premium tours and private transfers in Portugal with professional drivers.
+            Comfort, elegance and discretion in every journey.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-title">Contacts</p>
+          <p>
+            WhatsApp:
+            <a href="https://wa.me/351910784548" target="_blank">
+              +351 910 784 548
+            </a>
+          </p>
           <p>
             Email:
             <a href="mailto:info@exploreportugalexperience.com">
               info@exploreportugalexperience.com
-            </a><br>
-            WhatsApp: +351 910 784 548
+            </a>
           </p>
-          <p>Lisboa · Portugal</p>
+          <!-- Later we can add a separate phone number here if you want:
+          <p>
+            Phone:
+            <a href="tel:+351XXXXXXXXX">+351 XXX XXX XXX</a>
+          </p>
+          -->
         </div>
 
         <div class="footer-col">
-          <h3>Redes sociais</h3>
+          <p class="footer-title">Follow us</p>
           <p>
-            <a href="https://www.instagram.com/exploreportugal2025" target="_blank">Instagram</a><br>
-            <a href="https://www.tiktok.com/@explore.portugal24" target="_blank">TikTok</a>
-          </p>
-        </div>
-
-        <div class="footer-col">
-          <h3>Reservas</h3>
-          <p>
-            <a href="booking.html">Formulário online</a><br>
-            <a href="https://wa.me/351910784548" target="_blank">WhatsApp direto</a>
+            <a
+              href="https://www.instagram.com/exploreportugal2025"
+              target="_blank"
+              rel="noopener"
+            >
+              Instagram
+            </a>
+            <br />
+            <a
+              href="https://www.tiktok.com/@explore.portugal24"
+              target="_blank"
+              rel="noopener"
+            >
+              TikTok
+            </a>
           </p>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>© 2018–2025 Explore Portugal Experience</p>
-        <p>Powered by MkDesign · London</p>
+        <p>Powered by: MkDesign – London</p>
       </div>
+    </footer>
 
-    </div>
-  </footer>
+    <!-- Menu JS -->
+    <script src="assets/js/nav.js"></script>
 
-  <!-- JS -->
-  <script src="assets/js/nav.js"></script>
-  <script src="assets/js/lightbox.js"></script>
-
-  <!-- GOOGLE TRANSLATE -->
-  <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        {
-          pageLanguage: 'pt',
-          includedLanguages: 'en,pt,es,fr,de',
-          autoDisplay: false
-        },
-        'google_translate_element'
-      );
-    }
-  </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-</body>
+    <!-- Google Translate -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            includedLanguages: "en,pt,fr,es,de,it",
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+  </body>
 </html>
