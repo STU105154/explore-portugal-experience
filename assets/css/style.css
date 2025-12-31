@@ -740,7 +740,7 @@ body.nav-open .nav-toggle span:nth-child(3) {
   color: var(--gold-soft);
 }
 
-/* ================== FORMULÁRIOS GERAIS (PRETO & DOURADO) ================== */
+/* ================== FORMULÁRIOS GERAIS ================== */
 
 .contact-form,
 .payment-form,
@@ -1099,7 +1099,7 @@ body.nav-open .nav-toggle span:nth-child(3) {
   }
 }
 
-/* ================== GALERIA - versão compacta ================== */
+/* ================== GALERIA ================== */
 
 .gallery-grid {
   display: grid;
@@ -1154,27 +1154,6 @@ body.nav-open .nav-toggle span:nth-child(3) {
 }
 
 /* Lightbox */
-
-.lightbox-img {
-  max-width: 80vw;
-  max-height: 70vh;
-  border-radius: 18px;
-  border: 1px solid rgba(201, 165, 98, 0.8);
-}
-
-@media (max-width: 600px) {
-  .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 0.9rem;
-  }
-
-  .lightbox-img {
-    max-width: 90vw;
-    max-height: 70vh;
-  }
-}
-
-/* Lightbox overlay */
 
 .lightbox {
   position: fixed;
@@ -1234,11 +1213,17 @@ body.nav-open .nav-toggle span:nth-child(3) {
 
 @media (max-width: 600px) {
   .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.9rem;
+  }
+
+  .lightbox-img {
+    max-width: 90vw;
+    max-height: 70vh;
   }
 }
 
-/* ================== CHOOSE / REVIEWS ================== */
+/* ================== REVIEWS ================== */
 
 .section-reviews-highlight {
   padding-top: 2.5rem;
@@ -1290,7 +1275,7 @@ body.nav-open .nav-toggle span:nth-child(3) {
   font-size: 0.82rem;
 }
 
-/* ================== CAIXA FIXA DE REVIEWS ================== */
+/* ================== REVIEW WIDGET / FLOATING ================== */
 
 .floating-review-box {
   position: fixed;
@@ -1396,8 +1381,6 @@ body.nav-open .nav-toggle span:nth-child(3) {
   display: inline-flex;
 }
 
-/* Ajustes mobile para a caixa fixa e pílula */
-
 @media (max-width: 640px) {
   .floating-review-box {
     left: 0.9rem;
@@ -1418,80 +1401,7 @@ body.nav-open .nav-toggle span:nth-child(3) {
   }
 }
 
-/* ================== REVIEW WIDGET DIREITA ================== */
-
-.review-widget {
-  position: fixed;
-  right: 1.4rem;
-  bottom: 1.6rem;
-  width: 260px;
-  max-width: 75vw;
-  background: rgba(5, 5, 5, 0.96);
-  border-radius: 18px;
-  border: 1px solid rgba(201, 165, 98, 0.65);
-  box-shadow: var(--shadow-soft);
-  padding: 1.1rem 1.1rem 1.2rem;
-  z-index: 1200;
-}
-
-.review-widget-title {
-  margin: 0 0 0.3rem;
-  color: var(--gold-soft);
-  letter-spacing: 0.25em;
-  font-size: 1.05rem;
-}
-
-.review-widget-text {
-  margin: 0 0 0.7rem;
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-
-.review-widget-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.review-widget-close {
-  position: absolute;
-  top: 0.2rem;
-  right: 0.45rem;
-  background: none;
-  border: none;
-  color: var(--muted);
-  font-size: 1.1rem;
-  cursor: pointer;
-}
-
-/* Botão mini quando fechado */
-
-.review-widget-toggle {
-  position: fixed;
-  right: 1.4rem;
-  bottom: 1.6rem;
-  z-index: 1199;
-  display: none;
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid rgba(201, 165, 98, 0.7);
-  background: #050505;
-  color: var(--gold-soft);
-  font-size: 0.82rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-@media (max-width: 480px) {
-  .review-widget,
-  .review-widget-toggle {
-    right: 0.8rem;
-    bottom: 0.9rem;
-  }
-}
-
-/* ================== GOOGLE TRANSLATE – MAIS DISCRETO ================== */
+/* ================== GOOGLE TRANSLATE – DISCRETO ================== */
 
 .goog-te-banner-frame.skiptranslate,
 .goog-te-banner-frame {
@@ -1526,39 +1436,7 @@ body {
   font-size: 14px;
 }
 
-/* ================== MOBILE TWEAKS – HERO + ESPAÇOS ================== */
-
-@media (max-width: 768px) {
-  .home-hero {
-    padding-top: 2.4rem;
-    padding-bottom: 2rem;
-    min-height: auto;
-  }
-
-  .home-logo {
-    max-width: 260px;
-    margin-bottom: 1.2rem;
-  }
-
-  .hero-tagline {
-    margin-bottom: 1.2rem;
-    font-size: 1rem;
-  }
-
-  .hero-actions {
-    margin-bottom: 1.4rem;
-  }
-
-  .section {
-    padding-top: 2.3rem;
-    padding-bottom: 2.3rem;
-  }
-
-  .section-reservas {
-    padding-top: 1.6rem;
-  }
-}
-/* ================== MOBILE TWEAKS – HERO + ESPAÇOS ================== */
+/* ================== MOBILE TWEAKS – HERO, ESPAÇOS & BOTÕES ================== */
 
 @media (max-width: 768px) {
   .home-hero {
@@ -1590,14 +1468,18 @@ body {
     padding-top: 1.6rem;
   }
 
-  /* BOTÕES MOBILE 100% LARGURA (não saem fora do card) */
-  .btn-primary,
-  .btn-outline,
-  .btn-secondary {
-    width: 100%;
-    max-width: 100%;
-    white-space: normal;
-    text-align: center;
+  /* Cartões de reservas em coluna e botões mais pequenos */
+  .reservas-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .reservas-card .btn-outline,
+  .reservas-card .btn-secondary {
+    font-size: 0.9rem;
+    padding: 0.65rem 1.2rem;
+    white-space: normal;      /* deixa o texto partir em 2 linhas */
   }
 }
-
