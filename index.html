@@ -1,308 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Explore Portugal Experience – Premium Tours & Private Transfers</title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
-    <meta
-      name="description"
-      content="Premium tours and private transfers in Portugal with professional drivers. Tailor-made experiences, comfort, safety and elegance in every journey."
-    />
+<head>
+  <meta charset="UTF-8" />
+  <title>Explore Portugal Experience – Premium Tours & Private Transfers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Premium private tours & transfers in Portugal with professional drivers. Book quickly: pick-up, drop-off and dates." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png" />
+  <link rel="canonical" href="https://www.exploreportugalexperience.com/">
 
-    <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-Y30ME05MQY");
+  </script>
 
-    <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png" />
+  <meta name="google-site-verification" content="VHksr5nV7fuvYpF8l_3l1WEAeH832Yh-rorToxtVSnA" />
+</head>
 
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-Y30ME05MQY");
-    </script>
+<body class="home-page">
+  <div class="translate-bar">
+    <span>Language:</span>
+    <div id="google_translate_element"></div>
+  </div>
 
-    <meta
-      name="google-site-verification"
-      content="VHksr5nV7fuvYpF8l_3l1WEAeH832Yh-rorToxtVSnA"
-    />
-    <link rel="canonical" href="https://www.exploreportugalexperience.com/" />
-  </head>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="home-star" aria-label="Home">
+        <img src="assets/icons/compass-gold-solid.svg" alt="Explore Portugal Experience" class="star-animated"/>
+      </a>
 
-  <body class="home-page">
-    <!-- Language bar -->
-    <div class="translate-bar">
-      <span>Language:</span>
-      <div id="google_translate_element"></div>
+      <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="choose.html">Why us</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="booking.html">Bookings</a>
+        <a href="contactos.html">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="home-hero section-dark">
+      <div class="section-inner narrow">
+        <img src="assets/images/logo-explore-portugal-experience.png"
+             alt="Explore Portugal Experience" class="home-logo"/>
+
+        <p class="hero-tagline">
+          Premium private tours & transfers in Portugal — professional drivers, comfort and discretion.
+        </p>
+
+        <!-- RESERVA RÁPIDA -->
+        <form class="quick-book" action="booking.html" method="GET">
+          <h2>Book in 30 seconds</h2>
+
+          <div class="quick-grid">
+            <div>
+              <label for="service">Service</label>
+              <select id="service" name="service" required>
+                <option value="" selected>Select…</option>
+                <option value="airport_transfer">Airport transfer</option>
+                <option value="private_tour">Private tour</option>
+                <option value="day_trip">Day trip</option>
+                <option value="custom">Custom programme</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="pax">Guests</label>
+              <select id="pax" name="pax" required>
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6+</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="from">Pick-up (From)</label>
+              <input id="from" name="from" type="text" placeholder="Lisbon Airport, Hotel, City…" required>
+            </div>
+
+            <div>
+              <label for="to">Drop-off (To)</label>
+              <input id="to" name="to" type="text" placeholder="Porto, Sintra, Hotel…" required>
+            </div>
+
+            <div>
+              <label for="date">Date</label>
+              <input id="date" name="date" type="date" required>
+            </div>
+
+            <div>
+              <label for="time">Time</label>
+              <input id="time" name="time" type="time" required>
+            </div>
+
+            <div class="full">
+              <div class="quick-actions">
+                <button type="submit" class="btn-primary">Book now</button>
+                <a class="btn-outline" href="https://wa.me/351910784548" target="_blank" rel="noopener">WhatsApp us</a>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div class="hero-qr-wrap">
+          <img src="assets/images/IMG-20251221-WA0018.jpg"
+               alt="QR Code WhatsApp Explore Portugal Experience" class="home-qr"/>
+          <p class="hero-qr-caption">Point your camera to open WhatsApp and book quickly.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <h2 class="section-title">Why Explore Portugal Experience</h2>
+        <p class="section-lead">Private service, premium vehicles and a team that respects your time.</p>
+
+        <div class="cards-3">
+          <article class="card">
+            <h3>Professional drivers</h3>
+            <p>Experienced, discreet and English-speaking.</p>
+          </article>
+          <article class="card">
+            <h3>Tailor-made</h3>
+            <p>Transfers, tours and custom itineraries across Portugal.</p>
+          </article>
+          <article class="card">
+            <h3>Premium comfort</h3>
+            <p>Elegant vehicles and a smooth end-to-end experience.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <p class="footer-title">Explore Portugal Experience</p>
+        <p>Premium private tours & transfers in Portugal.</p>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-title">Contacts</p>
+        <p>
+          WhatsApp: <a href="https://wa.me/351910784548" target="_blank">+351 910 784 548</a><br>
+          Email: <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-title">Follow</p>
+        <p>
+          <a href="https://www.instagram.com/exploreportugal2025" target="_blank">Instagram</a><br>
+          <a href="https://www.tiktok.com/@explore.portugal24" target="_blank">TikTok</a>
+        </p>
+      </div>
     </div>
 
-    <!-- HEADER WITH STAR & MENU -->
-    <header class="site-header">
-      <div class="header-inner">
-        <!-- Home button with rotating star (brand signature) -->
-        <a
-          href="index.html"
-          class="home-star"
-          aria-label="Back to homepage"
-        >
-          <img
-            src="assets/icons/compass-gold-solid.svg"
-            alt="Explore Portugal Experience"
-            class="star-animated"
-          />
-        </a>
+    <div class="footer-bottom">
+      <p>Powered by MkDesign – London</p>
+    </div>
+  </footer>
 
-        <!-- Small logo in the header (hidden on home via CSS) -->
-        <a href="index.html" class="header-logo">
-          <img
-            src="assets/images/logo-explore-portugal-experience.png"
-            alt="Explore Portugal Experience"
-          />
-        </a>
+  <script src="assets/js/nav.js"></script>
 
-        <nav class="nav" id="mainNav" aria-label="Main navigation">
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="choose.html">Why us</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="faq.html">FAQ</a>
-          <a href="partners-drivers.html">Driver partners</a>
-          <a href="partners-hospitality.html">Hospitality partners</a>
-          <a href="gallery.html" aria-current="page">Gallery</a>
-          <a href="booking.html">Bookings</a>
-          <a href="contactos.html">Contact</a>
-        </nav>
-
-        <!-- Mobile burger -->
-        <button class="nav-toggle" id="navToggle" aria-label="Open menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </header>
-
-    <main>
-      <!-- HERO -->
-      <section class="home-hero section-dark">
-        <div class="section-inner narrow">
-          <img
-            src="assets/images/logo-explore-portugal-experience.png"
-            alt="Explore Portugal Experience"
-            class="home-logo"
-          />
-
-          <p class="hero-tagline">
-            Premium tours and private transfers in Portugal with professional drivers.
-            Comfort, elegance and discretion in every journey.
-          </p>
-
-          <div class="hero-actions">
-            <a href="booking.html" class="btn-primary">Book now</a>
-            <a
-              href="https://wa.me/351910784548"
-              target="_blank"
-              rel="noopener"
-              class="btn-outline"
-            >
-              WhatsApp us
-            </a>
-          </div>
-
-          <div class="hero-qr-wrap">
-            <img
-              src="assets/images/qr-whatsapp.png"
-              alt="QR code for booking via WhatsApp – Explore Portugal Experience"
-              class="home-qr"
-            />
-            <p class="hero-qr-caption">
-              Point your phone camera to start a WhatsApp conversation and book quickly.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- WHY EXPLORE PORTUGAL EXPERIENCE -->
-      <section class="section">
-        <div class="section-inner">
-          <h2 class="section-title">Why Explore Portugal Experience?</h2>
-          <p class="section-lead">
-            More than a transfer service. We design private, tailor-made experiences
-            for travellers who value time, comfort and detail.
-          </p>
-
-          <div class="cards-3">
-            <article class="card">
-              <h3>Professional drivers</h3>
-              <p>
-                Certified drivers with luxury tourism experience, fluent in English and
-                fully focused on your safety and comfort.
-              </p>
-            </article>
-
-            <article class="card">
-              <h3>Tailor-made service</h3>
-              <p>
-                Private tours, airport transfers, day trips and custom itineraries across
-                Portugal, designed around your plans.
-              </p>
-            </article>
-
-            <article class="card">
-              <h3>Discreet & elegant</h3>
-              <p>
-                Premium vehicles, personal support and discreet service from arrival to
-                departure.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- BOOKINGS -->
-      <section class="section section-reservas">
-        <div class="section-inner">
-          <h2 class="section-title">Bookings & special requests</h2>
-          <p class="section-lead">
-            Use our booking form, send us an email or contact us directly via WhatsApp.
-            We reply as quickly as possible.
-          </p>
-
-          <div class="reservas-grid">
-            <div class="reservas-card">
-              <h3>Online bookings</h3>
-              <p>
-                Private tours, airport transfers, day trips, corporate events and
-                tailor-made programmes across Portugal.
-              </p>
-              <a href="booking.html" class="btn-secondary">Booking form</a>
-            </div>
-
-            <div class="reservas-card">
-              <h3>Partners & hospitality</h3>
-              <p>
-                Hotels, travel agencies, DMCs and companies looking for a reliable
-                partner for premium private transfers and services.
-              </p>
-              <a href="partners-hospitality.html" class="btn-outline">
-                Learn more about partnerships
-              </a>
-            </div>
-          </div>
-
-          <p class="reservas-note">
-            You can also reach us by email:
-            <a href="mailto:info@exploreportugalexperience.com">
-              info@exploreportugalexperience.com
-            </a>
-          </p>
-        </div>
-      </section>
-
-      <!-- DRIVERS -->
-      <section class="section">
-        <div class="section-inner narrow">
-          <h2 class="section-title">Drivers & local partners</h2>
-          <p class="section-lead">
-            If you are a professional driver with your own vehicle and experience in
-            tourism, you can apply to work with us.
-          </p>
-
-          <div class="form-card">
-            <h3>Join our driver network</h3>
-            <p>
-              We are looking for professional, responsible drivers who take pride in
-              welcoming visitors to Portugal.
-            </p>
-            <a href="partners-drivers.html" class="btn-primary">
-              Driver application
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-col">
-          <p class="footer-title">Explore Portugal Experience</p>
-          <p>
-            Premium tours and private transfers in Portugal with professional drivers.
-            Comfort, elegance and discretion in every journey.
-          </p>
-        </div>
-
-        <div class="footer-col">
-          <p class="footer-title">Contacts</p>
-          <p>
-            WhatsApp:
-            <a href="https://wa.me/351910784548" target="_blank" rel="noopener">
-              +351 910 784 548
-            </a>
-          </p>
-          <p>
-            Email:
-            <a href="mailto:info@exploreportugalexperience.com">
-              info@exploreportugalexperience.com
-            </a>
-          </p>
-        </div>
-
-        <div class="footer-col">
-          <p class="footer-title">Follow us</p>
-          <p>
-            <a
-              href="https://www.instagram.com/exploreportugal2025"
-              target="_blank"
-              rel="noopener"
-            >
-              Instagram
-            </a>
-            <br />
-            <a
-              href="https://www.tiktok.com/@explore.portugal24"
-              target="_blank"
-              rel="noopener"
-            >
-              TikTok
-            </a>
-          </p>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>Powered by: MkDesign – London</p>
-      </div>
-    </footer>
-
-    <!-- Menu JS -->
-    <script src="assets/js/nav.js"></script>
-
-    <!-- Google Translate -->
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          {
-            pageLanguage: "en",
-            includedLanguages: "en,pt,fr,es,de,it",
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-          },
-          "google_translate_element"
-        );
-      }
-    </script>
-    <script
-      type="text/javascript"
-      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    ></script>
-  </body>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        { pageLanguage: "en", includedLanguages: "en,pt,fr,es,de,it",
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+        "google_translate_element"
+      );
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
 </html>
