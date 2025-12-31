@@ -1558,3 +1558,46 @@ body {
     padding-top: 1.6rem;
   }
 }
+/* ================== MOBILE TWEAKS – HERO + ESPAÇOS ================== */
+
+@media (max-width: 768px) {
+  .home-hero {
+    padding-top: 2.4rem;
+    padding-bottom: 2rem;
+    min-height: auto;
+  }
+
+  .home-logo {
+    max-width: 260px;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-tagline {
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    margin-bottom: 1.4rem;
+  }
+
+  .section {
+    padding-top: 2.3rem;
+    padding-bottom: 2.3rem;
+  }
+
+  .section-reservas {
+    padding-top: 1.6rem;
+  }
+
+  /* BOTÕES MOBILE 100% LARGURA (não saem fora do card) */
+  .btn-primary,
+  .btn-outline,
+  .btn-secondary {
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
