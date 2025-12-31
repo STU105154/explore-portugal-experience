@@ -487,3 +487,20 @@ body {
     grid-template-columns: auto auto;
   }
 }
+/* FIX: quebra de texto (email/telefone) para não sair do card */
+.contact-block,
+.contact-block *{
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.contact-lines{
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.contact-lines a{
+  color: rgba(247,243,232,0.92);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201,165,98,0.25);
+}
