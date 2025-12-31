@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
   <head>
     <meta charset="UTF-8" />
     <title>About · Explore Portugal Experience</title>
@@ -7,9 +7,10 @@
 
     <meta
       name="description"
-      content="Learn more about Explore Portugal Experience and Agapito’s legacy, co-founder and professional driver who inspired this project."
+      content="Learn more about Explore Portugal Experience and Agapito’s legacy."
     />
 
+    <!-- CSS (mesmo do index) -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="icon" type="image/png" href="assets/icons/apple-touch-icon.png" />
     <link rel="canonical" href="https://www.exploreportugalexperience.com/about.html" />
@@ -25,12 +26,13 @@
   </head>
 
   <body>
-    <!-- ===== UNIVERSAL HEADER (igual ao index) ===== -->
+    <!-- LANGUAGE BAR (igual ao index) -->
     <div class="translate-bar">
       <span>Language:</span>
       <div id="google_translate_element"></div>
     </div>
 
+    <!-- HEADER (igual ao index) -->
     <header class="site-header">
       <div class="header-inner">
         <a href="index.html" class="home-star" aria-label="Home">
@@ -54,14 +56,17 @@
           <a href="contactos.html">Contact</a>
         </nav>
 
-        <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
         </button>
       </div>
     </header>
-    <!-- ===== /UNIVERSAL HEADER ===== -->
 
     <main>
       <!-- HERO -->
@@ -69,36 +74,39 @@
         <div class="section-inner narrow">
           <h1 class="page-hero-title">About</h1>
           <p class="page-hero-subtitle">
-            A calm, professional, human way of driving — created to welcome every visitor
-            to Portugal with elegance, care and attention to detail.
+            A calm, professional, human way of driving — created to welcome every visitor to Portugal
+            with elegance, care and attention to detail.
           </p>
         </div>
       </section>
 
-      <!-- ABOUT COMPANY -->
+      <!-- ABOUT -->
       <section class="section section-dark">
         <div class="section-inner narrow">
           <h2>Explore Portugal Experience</h2>
+
           <p>
-            Explore Portugal Experience was created to offer premium tours and private transfers
-            with a service that feels human, calm and truly tailored.
+            Explore Portugal Experience was created to offer premium tours and private transfers with a
+            service that feels human, calm and truly tailored.
           </p>
+
           <p>
-            Every journey is planned with you: comfortable schedules, clear meeting points,
-            space for good surprises, and attention to your preferences — itinerary, restaurants
-            and photo stops.
+            Every journey is planned with you: comfortable schedules, clear meeting points, space for good
+            surprises, and attention to your preferences — itinerary, restaurants and photo stops.
           </p>
+
           <p>
             The goal is simple: you feel safe, cared for, and free to enjoy the road — not worry about it.
           </p>
+
           <p>
-            We work with individuals, families, small groups and professional partners
-            (hotels, companies and operators) with the same base: total respect for your trust.
+            We work with individuals, families, small groups and professional partners (hotels, companies and
+            operators) with the same base: total respect for your trust.
           </p>
         </div>
       </section>
 
-      <!-- AGAPITO TRIBUTE -->
+      <!-- TRIBUTE -->
       <section class="section">
         <div class="section-inner narrow">
           <article class="contact-card about-agapito" aria-label="Agapito tribute">
@@ -110,28 +118,19 @@
 
             <p class="tribute-heading">In memory</p>
             <p class="tribute-name">Agapito</p>
-            <p class="tribute-subtitle">
-              Co-founder · Professional driver · The soul of the road
-            </p>
+            <p class="tribute-subtitle">Co-founder · Professional driver · The soul of the road</p>
 
             <div class="tribute-text">
               <p>
                 Explore Portugal Experience was born from the dream and vision of someone extraordinary:
-                Agapito — co-founder, certified professional driver, and a man guided by love for the road,
-                for Portugal’s beauty, and for meeting people from all over the world.
+                Agapito — co-founder, certified professional driver, and a man guided by love for the road.
               </p>
+
               <p>
-                He believed first. He dreamed big. His dedication, integrity and professionalism became the
-                foundation of this company and defined what we are today: a service with soul, refinement and
-                deep respect for every client.
+                His dedication, integrity and professionalism became the foundation of this company and define
+                what we are today: a service with soul, refinement and deep respect for every client.
               </p>
-              <p>
-                For him, driving was caring — turning each route into a calm and unforgettable human experience.
-              </p>
-              <p>
-                Agapito left too soon, but his legacy remains on every journey we deliver: in the detail, the silence,
-                the comfort, and the art of guiding.
-              </p>
+
               <p>
                 Thank you, Agapito. Forever part of this home — forever on the road with us.
               </p>
@@ -143,7 +142,7 @@
       </section>
     </main>
 
-    <!-- ===== UNIVERSAL FOOTER (igual ao index) ===== -->
+    <!-- FOOTER (igual ao index) -->
     <footer class="site-footer">
       <div class="footer-inner">
         <div class="footer-col">
@@ -179,9 +178,8 @@
         <p>Powered by: MkDesign - London</p>
       </div>
     </footer>
-    <!-- ===== /UNIVERSAL FOOTER ===== -->
 
-    <!-- JS (iguais em todas as páginas) -->
+    <!-- JS (iguais ao index) -->
     <script src="assets/js/nav.js"></script>
     <script src="assets/js/cookie.js"></script>
 
@@ -189,7 +187,7 @@
     <script>
       function googleTranslateElementInit() {
         new google.translate.TranslateElement(
-          { pageLanguage: "en", includedLanguages: "en,pt,es,fr,de,it", autoDisplay: false },
+          { pageLanguage: "pt", includedLanguages: "en,pt,es,fr,de,it", autoDisplay: false },
           "google_translate_element"
         );
       }
