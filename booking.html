@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
   <head>
     <meta charset="UTF-8" />
-    <title>Booking – Explore Portugal Experience</title>
+    <title>Reservas – Explore Portugal Experience</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Book private tours & transfers in Portugal. Pick-up, drop-off, date and time — send your request instantly."
+      content="Book in 30 seconds — premium private tours & transfers in Portugal. Choose one-way or return, dates and times."
     />
     <link rel="canonical" href="https://www.exploreportugalexperience.com/booking.html" />
 
-    <!-- CSS (IMPORTANTE: ./assets para GitHub Pages) -->
-    <link rel="stylesheet" href="./assets/css/style.css?v=500" />
-    <link rel="icon" type="image/png" href="./assets/icons/compass-gold-64.png" />
+    <link rel="stylesheet" href="assets/css/style.css?v=910" />
+    <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png" />
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
@@ -25,20 +24,21 @@
   </head>
 
   <body>
-    <!-- Translate bar (discreto + setinha) -->
+    <!-- Translate bar -->
     <div class="translate-bar" role="navigation" aria-label="Language selector">
-      <span class="label">Language</span>
-      <span class="arrow">
+      <span class="translate-label notranslate" translate="no">Language:</span>
+      <div class="translate-wrap">
         <div id="google_translate_element"></div>
-      </span>
+        <span class="translate-caret" aria-hidden="true">▼</span>
+      </div>
     </div>
 
-    <!-- HEADER (igual em todas as páginas) -->
+    <!-- HEADER -->
     <header class="site-header">
       <div class="header-inner">
         <a href="index.html" class="home-star" aria-label="Home">
           <img
-            src="./assets/icons/compass-gold-solid.svg"
+            src="assets/icons/compass-gold-solid.svg"
             alt="Explore Portugal Experience"
             class="star-animated"
           />
@@ -62,136 +62,189 @@
     </header>
 
     <main>
-      <!-- HERO -->
-      <section class="section section-dark">
-        <div class="section-inner">
-          <h1 class="section-title">Bookings</h1>
-          <p class="section-lead">
-            Fill the details below. This will send a pre-written message to WhatsApp with your request.
+      <section class="page-hero section-dark">
+        <div class="section-inner narrow">
+          <h1 class="section-title">Book in 30 seconds</h1>
+          <p class="page-kicker">
+            Choose one-way or return, pick dates & times, then continue to the next step.
           </p>
         </div>
       </section>
 
-      <!-- BOOKING FORM (prioridade) -->
       <section class="section">
         <div class="section-inner narrow">
-          <div class="contact-card" style="border: 1px solid rgba(201,165,98,.35);">
-            <h2 class="section-title" style="margin-bottom:.6rem;">Book in 30 seconds</h2>
-            <p class="section-lead" style="margin-bottom:1.4rem;">
-              Service, from/to, date and time — done. We reply fast.
-            </p>
+          <div class="content-card">
 
-            <form class="contact-form" id="bookingForm">
-              <div class="form-row-2">
-                <div class="form-row">
-                  <label for="service">Service</label>
-                  <select id="service" name="service" required>
-                    <option value="" selected>Select…</option>
-                    <option value="Airport transfer">Airport transfer</option>
-                    <option value="Private tour">Private tour</option>
-                    <option value="Day trip">Day trip</option>
-                    <option value="Custom programme">Custom programme</option>
-                    <option value="Corporate / Events">Corporate / Events</option>
-                  </select>
-                </div>
-
-                <div class="form-row">
-                  <label for="pax">Guests</label>
-                  <select id="pax" name="pax" required>
-                    <option value="" selected>Select…</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6+">6+</option>
-                  </select>
-                </div>
+            <form class="contact-form" action="contactos.html" method="GET" id="bookingForm">
+              <!-- Trip type -->
+              <div class="form-row">
+                <label for="trip_type">Trip type</label>
+                <select id="trip_type" name="trip_type" required>
+                  <option value="one_way" selected>One-way only</option>
+                  <option value="return">Return (round trip)</option>
+                </select>
               </div>
 
+              <!-- Service -->
+              <div class="form-row">
+                <label for="service">Service</label>
+                <select id="service" name="service" required>
+                  <option value="" selected disabled>Select...</option>
+                  <option value="airport_transfer">Airport transfer</option>
+                  <option value="private_tour">Private tour</option>
+                  <option value="day_trip">Day trip</option>
+                  <option value="custom">Custom programme</option>
+                </select>
+              </div>
+
+              <!-- Guests -->
+              <div class="form-row">
+                <label for="pax">Guests</label>
+                <select id="pax" name="pax" required>
+                  <option value="" selected disabled>Select...</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6+</option>
+                </select>
+              </div>
+
+              <!-- Route -->
               <div class="form-row">
                 <label for="from">Pick-up (From)</label>
-                <input id="from" name="from" type="text" placeholder="Lisbon Airport / Hotel / Address…" required />
+                <input
+                  type="text"
+                  id="from"
+                  name="from"
+                  placeholder="Lisbon Airport, Hotel, City..."
+                  required
+                  autocomplete="off"
+                />
               </div>
 
               <div class="form-row">
                 <label for="to">Drop-off (To)</label>
-                <input id="to" name="to" type="text" placeholder="Porto / Sintra / Hotel / Address…" required />
+                <input
+                  type="text"
+                  id="to"
+                  name="to"
+                  placeholder="Porto, Sintra, Hotel..."
+                  required
+                  autocomplete="off"
+                />
               </div>
 
-              <div class="form-row-2">
-                <div class="form-row">
-                  <label for="date">Date</label>
-                  <input id="date" name="date" type="date" required />
-                </div>
-
-                <div class="form-row">
-                  <label for="time">Time</label>
-                  <input id="time" name="time" type="time" required />
-                </div>
+              <!-- Date range + time -->
+              <div class="form-row">
+                <label for="date_start">Date (Start)</label>
+                <input type="date" id="date_start" name="date_start" required />
               </div>
 
-              <div class="form-row-2">
-                <div class="form-row">
-                  <label for="name">Name</label>
-                  <input id="name" name="name" type="text" placeholder="Your name" required />
-                </div>
-
-                <div class="form-row">
-                  <label for="email">Email (optional)</label>
-                  <input id="email" name="email" type="email" placeholder="you@email.com" />
-                </div>
+              <div class="form-row" id="dateEndRow">
+                <label for="date_end">Date (End)</label>
+                <input type="date" id="date_end" name="date_end" required />
               </div>
 
               <div class="form-row">
-                <label for="notes">Notes (optional)</label>
-                <textarea id="notes" name="notes" placeholder="Flight number, luggage, child seat, stops…"></textarea>
+                <label for="flex_days">Flexible dates (optional)</label>
+                <select id="flex_days" name="flex_days">
+                  <option value="0" selected>No flexibility</option>
+                  <option value="1">± 1 day</option>
+                  <option value="2">± 2 days</option>
+                  <option value="3">± 3 days</option>
+                </select>
               </div>
 
-              <button type="submit" class="btn-primary">Send on WhatsApp</button>
+              <div class="form-row">
+                <label for="time_depart">Time (Departure)</label>
+                <!-- input nativo: funciona no Android/iOS -->
+                <input type="time" id="time_depart" name="time_depart" required step="900" />
+                <p style="margin:.5rem 0 0; color:var(--muted); font-size:.88rem;">
+                  Tip: 15-minute steps. If your phone shows a clock, choose the time and press OK.
+                </p>
+              </div>
 
-              <p class="form-note" style="margin-top:.9rem;">
-                Or open WhatsApp directly:
-                <a href="https://wa.me/351910784548" target="_blank" rel="noopener">Chat now</a>
+              <!-- Return fields (only if Return selected) -->
+              <div id="returnFields">
+                <div class="form-row">
+                  <label for="return_from">Return pick-up (From)</label>
+                  <input
+                    type="text"
+                    id="return_from"
+                    name="return_from"
+                    placeholder="Porto, Hotel..."
+                    autocomplete="off"
+                  />
+                </div>
+
+                <div class="form-row">
+                  <label for="return_to">Return drop-off (To)</label>
+                  <input
+                    type="text"
+                    id="return_to"
+                    name="return_to"
+                    placeholder="Lisbon Airport, Hotel..."
+                    autocomplete="off"
+                  />
+                </div>
+
+                <div class="form-row">
+                  <label for="return_date">Return date</label>
+                  <input type="date" id="return_date" name="return_date" />
+                </div>
+
+                <div class="form-row">
+                  <label for="return_time">Return time</label>
+                  <input type="time" id="return_time" name="return_time" step="900" />
+                </div>
+              </div>
+
+              <!-- Buttons -->
+              <div style="display:flex; gap:.8rem; flex-wrap:wrap; margin-top:1rem;">
+                <button type="submit" class="btn-primary">Continue booking</button>
+                <a class="btn-outline" href="contactos.html">Need help?</a>
+              </div>
+
+              <p style="margin:1.2rem 0 0; color:var(--muted);">
+                Or contact us directly:
+                <a href="tel:+351962516005">+351 962 516 005</a>
+                ·
+                <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
               </p>
+
+              <!-- QR WhatsApp -->
+              <div style="margin-top:1.2rem;">
+                <img
+                  src="assets/images/qr-whatsapp.png"
+                  alt="WhatsApp QR code"
+                  style="width:min(92vw,380px); margin:0 auto; border-radius:18px; border:1px solid rgba(201,165,98,.28); background:#fff;"
+                  loading="lazy"
+                />
+                <p style="text-align:center; margin:.7rem 0 0; color:var(--muted); font-size:.9rem;">
+                  Scan to start a WhatsApp conversation and book quickly.
+                </p>
+              </div>
             </form>
-          </div>
-        </div>
-      </section>
 
-      <!-- QR WHATSAPP -->
-      <section class="section section-dark">
-        <div class="section-inner narrow" style="text-align:center;">
-          <h2 class="section-title" style="margin-bottom:.6rem;">QR Booking</h2>
-          <p class="section-lead" style="margin-bottom:1.3rem;">
-            Scan to open WhatsApp and book instantly.
-          </p>
-
-          <div class="hero-qr-wrap">
-            <img
-              src="./assets/images/qr-whatsapp.png"
-              alt="WhatsApp booking QR code"
-              class="home-qr"
-              loading="lazy"
-            />
-            <p class="hero-qr-caption">
-              Point your phone camera at the QR code to start a WhatsApp conversation.
-            </p>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- FOOTER (igual em todas as páginas) -->
+    <!-- FOOTER -->
     <footer class="site-footer">
       <div class="footer-inner">
         <div class="footer-col">
           <p class="footer-title">Explore Portugal Experience</p>
-          <p>Premium private tours &amp; transfers in Portugal — comfort, elegance and discretion.</p>
+          <p>
+            Premium Tours &amp; Private Transfers in Portugal with professional drivers — comfort, elegance and discretion.
+          </p>
         </div>
 
         <div class="footer-col">
-          <p class="footer-title">Contact</p>
+          <p class="footer-title">Contacts</p>
           <p>
             Phone (Portugal):
             <a href="tel:+351962516005">+351 962 516 005</a>
@@ -203,7 +256,7 @@
         </div>
 
         <div class="footer-col">
-          <p class="footer-title">Social</p>
+          <p class="footer-title">Follow</p>
           <p>
             <a href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener">Instagram</a><br />
             <a href="https://www.tiktok.com/@explore.portugal24" target="_blank" rel="noopener">TikTok</a>
@@ -212,117 +265,36 @@
       </div>
 
       <div class="footer-bottom">
+        <p>© 2018–2025 Explore Portugal Experience</p>
         <p>Powered by: MkDesign – London</p>
       </div>
     </footer>
 
-    <!-- COOKIE CONSENT (Accept / Decline) -->
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
+    <!-- COOKIE BANNER -->
+    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie consent">
       <div class="cookie-content">
         <p>
-          We use cookies to improve your experience and analyse traffic.
-          <a href="privacy.html">Learn more</a>.
+          We use cookies to improve your experience and measure performance. You can accept or decline non-essential cookies.
         </p>
         <div class="cookie-actions">
-          <button id="cookie-decline" class="btn-outline small" type="button">Decline</button>
-          <button id="cookie-accept" class="btn-primary small" type="button">Accept</button>
+          <button class="btn-primary small" id="cookieAccept" type="button">Accept</button>
+          <button class="btn-outline small" id="cookieDecline" type="button">Decline</button>
         </div>
       </div>
     </div>
 
-    <!-- JS menu -->
-    <script src="./assets/js/nav.js?v=500"></script>
-
-    <!-- Booking -> WhatsApp -->
-    <script>
-      (function () {
-        const WHATSAPP_NUMBER = "351910784548";
-        const form = document.getElementById("bookingForm");
-
-        const dateInput = document.getElementById("date");
-        if (dateInput) {
-          const today = new Date();
-          const yyyy = today.getFullYear();
-          const mm = String(today.getMonth() + 1).padStart(2, "0");
-          const dd = String(today.getDate()).padStart(2, "0");
-          dateInput.min = `${yyyy}-${mm}-${dd}`;
-        }
-
-        function val(id) {
-          const el = document.getElementById(id);
-          return el ? (el.value || "").trim() : "";
-        }
-
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          const service = val("service");
-          const pax = val("pax");
-          const from = val("from");
-          const to = val("to");
-          const date = val("date");
-          const time = val("time");
-          const name = val("name");
-          const email = val("email");
-          const notes = val("notes");
-
-          const lines = [
-            "Hello! I would like to book with Explore Portugal Experience:",
-            "",
-            `• Service: ${service}`,
-            `• Guests: ${pax}`,
-            `• Pick-up: ${from}`,
-            `• Drop-off: ${to}`,
-            `• Date: ${date}`,
-            `• Time: ${time}`,
-            "",
-            `• Name: ${name}`,
-            email ? `• Email: ${email}` : "",
-            notes ? "" : "",
-            notes ? `• Notes: ${notes}` : "",
-            "",
-            "Thank you!"
-          ].filter(Boolean);
-
-          const message = encodeURIComponent(lines.join("\n"));
-          const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
-          window.open(url, "_blank", "noopener");
-        });
-      })();
-    </script>
-
-    <!-- Cookie consent logic -->
-    <script>
-      (function () {
-        const banner = document.getElementById("cookie-banner");
-        const acceptBtn = document.getElementById("cookie-accept");
-        const declineBtn = document.getElementById("cookie-decline");
-
-        if (!banner || !acceptBtn || !declineBtn) return;
-
-        const consent = localStorage.getItem("cookieConsent");
-        if (!consent) banner.style.display = "block";
-
-        acceptBtn.addEventListener("click", function () {
-          localStorage.setItem("cookieConsent", "accepted");
-          banner.style.display = "none";
-        });
-
-        declineBtn.addEventListener("click", function () {
-          localStorage.setItem("cookieConsent", "declined");
-          banner.style.display = "none";
-        });
-      })();
-    </script>
+    <script src="assets/js/nav.js?v=910"></script>
+    <script src="assets/js/booking.js?v=910"></script>
+    <script src="assets/js/cookie.js?v=910"></script>
 
     <!-- Google Translate -->
     <script>
       function googleTranslateElementInit() {
         new google.translate.TranslateElement(
           {
-            pageLanguage: "en",
+            pageLanguage: "pt",
             includedLanguages: "en,pt,fr,es,de,it",
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
           },
           "google_translate_element"
         );
