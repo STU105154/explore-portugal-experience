@@ -1,98 +1,147 @@
 (function () {
-  const tripType = document.getElementById("trip_type");
-  const returnFields = document.getElementById("returnFields");
+  const cities = [
+    "Lisbon", "Porto", "Sintra", "Cascais", "Faro", "Lagos", "Albufeira", "Coimbra", "Braga", "Aveiro",
+    "Madrid", "Barcelona", "Valencia", "Seville", "Malaga", "Bilbao",
+    "Paris", "Nice", "Lyon", "Marseille",
+    "London", "Manchester", "Edinburgh",
+    "Dublin",
+    "Amsterdam", "Rotterdam",
+    "Brussels",
+    "Berlin", "Munich", "Hamburg", "Frankfurt",
+    "Zurich", "Geneva",
+    "Milan", "Rome", "Florence", "Venice",
+    "Vienna",
+    "Prague",
+    "Budapest",
+    "Warsaw",
+    "Copenhagen",
+    "Stockholm",
+    "Oslo"
+  ];
 
-  const dateStart = document.getElementById("date_start");
-  const dateEnd = document.getElementById("date_end");
-  const dateEndRow = document.getElementById("dateEndRow");
+  function $(id) { return document.getElementById(id); }
+  function pad(n){ return String(n).padStart(2,"0"); }
 
-  const returnDate = document.getElementById("return_date");
-  const returnTime = document.getElementById("return_time");
-  const returnFrom = document.getElementById("return_from");
-  const returnTo = document.getElementById("return_to");
-
-  // Set min dates (today) and sensible max (today + 365 days)
-  const today = new Date();
-  const yyyy = today.getFullYear();
-  const mm = String(today.getMonth() + 1).padStart(2, "0");
-  const dd = String(today.getDate()).padStart(2, "0");
-  const minDate = `${yyyy}-${mm}-${dd}`;
-
-  const max = new Date(today);
-  max.setDate(max.getDate() + 365);
-  const maxDate = `${max.getFullYear()}-${String(max.getMonth() + 1).padStart(2, "0")}-${String(max.getDate()).padStart(2, "0")}`;
-
-  [dateStart, dateEnd, returnDate].forEach((el) => {
-    el.min = minDate;
-    el.max = maxDate;
-  });
-
-  // default end date = start date
-  dateStart.addEventListener("change", () => {
-    if (!dateEnd.value || dateEnd.value < dateStart.value) {
-      dateEnd.value = dateStart.value;
-    }
-    // if return chosen, force return date >= start date
-    if (tripType.value === "return") {
-      if (!returnDate.value || returnDate.value < dateStart.value) {
-        returnDate.value = dateStart.value;
-      }
-    }
-  });
-
-  // keep end date >= start date
-  dateEnd.addEventListener("change", () => {
-    if (dateEnd.value < dateStart.value) dateEnd.value = dateStart.value;
-  });
-
-  function setReturnMode(isReturn) {
-    if (isReturn) {
-      returnFields.style.display = "block";
-
-      // require return fields
-      returnFrom.required = true;
-      returnTo.required = true;
-      returnDate.required = true;
-      returnTime.required = true;
-
-      // show date end (range)
-      dateEndRow.style.display = "block";
-      dateEnd.required = true;
-
-      // sensible defaults
-      if (!dateEnd.value) dateEnd.value = dateStart.value || minDate;
-      if (!returnDate.value) returnDate.value = dateEnd.value || dateStart.value || minDate;
-
-      // auto-fill return route if empty (swap)
-      const from = document.getElementById("from").value || "";
-      const to = document.getElementById("to").value || "";
-      if (!returnFrom.value && to) returnFrom.value = to;
-      if (!returnTo.value && from) returnTo.value = from;
-    } else {
-      returnFields.style.display = "none";
-
-      returnFrom.required = false;
-      returnTo.required = false;
-      returnDate.required = false;
-      returnTime.required = false;
-
-      // date end still exists but keep it equal to start (one-way)
-      dateEndRow.style.display = "none";
-      dateEnd.required = false;
-      if (dateStart.value) dateEnd.value = dateStart.value;
-
-      // clear return values (optional)
-      returnFrom.value = "";
-      returnTo.value = "";
-      returnDate.value = "";
-      returnTime.value = "";
-    }
+  function fillCitySelect(sel) {
+    if (!sel) return;
+    sel.innerHTML = `<option value="" selected>Select a city...</option>` +
+      cities.map(c => `<option value="${c}">${c}</option>`).join("");
   }
 
-  // init
-  setReturnMode(tripType.value === "return");
+  function fillTimeSelect(sel) {
+    if (!sel) return;
+    const step = 15;
+    const opts = [];
+    opts.push(`<option value="" selected>Select...</option>`);
+    for (let h=0; h<24; h++){
+      for (let m=0; m<60; m+=step){
+        const v = `${pad(h)}:${pad(m)}`;
+        opts.push(`<option value="${v}">${v}</option>`);
+      }
+    }
+    sel.innerHTML = opts.join("");
+  }
 
-  tripType.addEventListener("change", () => {
-    setReturnMode(tripType.value === "return");
+  function setReturnEnabled(enabled){
+    const rd = $("returnDate");
+    const rt = $("returnTime");
+    if (rd) rd.disabled = !enabled;
+    if (rt) rt.disabled = !enabled;
+  }
+
+  function buildWhatsAppMessage() {
+    const service = $("service")?.value || "";
+    const guests = $("guests")?.value || "";
+    const from = $("fromCity")?.value || "";
+    const to = $("toCity")?.value || "";
+    const trip = $("tripType")?.value || "oneway";
+    const flex = $("flexible")?.value || "exact";
+    const startDate = $("startDate")?.value || "";
+    const endDate = $("endDate")?.value || "";
+    const depTime = $("depTime")?.value || "";
+    const returnDate = $("returnDate")?.value || "";
+    const returnTime = $("returnTime")?.value || "";
+
+    const lines = [];
+    lines.push("Hello! I'd like to book:");
+    if (service) lines.push(`• Service: ${service}`);
+    if (guests) lines.push(`• Guests: ${guests}`);
+    if (from) lines.push(`• Pick-up: ${from}`);
+    if (to) lines.push(`• Drop-off: ${to}`);
+    lines.push(`• Trip: ${trip === "return" ? "Return (round trip)" : "One way"}`);
+    lines.push(`• Dates: ${flex === "flex2" ? "±2 days" : flex === "flex3" ? "±3 days" : "Exact dates"}`);
+
+    if (startDate) lines.push(`• Date (start): ${startDate}`);
+    if (endDate && trip !== "oneway") lines.push(`• Date (end): ${endDate}`);
+    if (depTime) lines.push(`• Time (departure): ${depTime}`);
+
+    if (trip === "return") {
+      if (returnDate) lines.push(`• Return date: ${returnDate}`);
+      if (returnTime) lines.push(`• Return time: ${returnTime}`);
+    }
+
+    lines.push("");
+    lines.push("Thank you!");
+    return lines.join("\n");
+  }
+
+  function validateBasic(){
+    const required = ["service","guests","fromCity","toCity","startDate","depTime","tripType","flexible"];
+    for (const id of required){
+      const el = $(id);
+      if (!el || !el.value) return false;
+    }
+    const trip = $("tripType")?.value || "oneway";
+    if (trip === "return") {
+      if (!($("returnDate")?.value) || !($("returnTime")?.value)) return false;
+    }
+    return true;
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    fillCitySelect($("fromCity"));
+    fillCitySelect($("toCity"));
+    fillTimeSelect($("depTime"));
+    fillTimeSelect($("returnTime"));
+
+    // default
+    setReturnEnabled(false);
+
+    const tripType = $("tripType");
+    if (tripType) {
+      tripType.addEventListener("change", () => {
+        const isReturn = tripType.value === "return";
+        setReturnEnabled(isReturn);
+        // show/hide return block
+        const block = $("returnBlock");
+        if (block) block.style.display = isReturn ? "block" : "none";
+      });
+    }
+
+    const btnContinue = $("btnContinue");
+    const btnHelp = $("btnHelp");
+
+    if (btnContinue) {
+      btnContinue.addEventListener("click", () => {
+        const ok = validateBasic();
+        if (!ok) {
+          alert("Please fill all required fields (including time).");
+          return;
+        }
+
+        const msg = buildWhatsAppMessage();
+        const phone = "+351962516005";
+        const url = `https://wa.me/${phone.replace(/\D/g,"")}?text=${encodeURIComponent(msg)}`;
+        window.open(url, "_blank");
+      });
+    }
+
+    if (btnHelp) {
+      btnHelp.addEventListener("click", () => {
+        const phone = "+351962516005";
+        const url = `https://wa.me/${phone.replace(/\D/g,"")}?text=${encodeURIComponent("Hi! I need help choosing the right service.")}`;
+        window.open(url, "_blank");
+      });
+    }
   });
 })();
