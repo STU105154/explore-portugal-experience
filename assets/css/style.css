@@ -378,3 +378,181 @@ body.nav-open .nav-toggle span:nth-child(3){ transform:translateY(-6px) rotate(-
   gap:.6rem;
   flex-wrap:wrap;
 }
+/* ===========================
+   INDEX + BOOKING (PATCH PREMIUM)
+   Colar no FIM do style.css
+   =========================== */
+
+/* Translate bar - não sobrepor "Language" */
+.translate-bar{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  padding:.6rem 1rem;
+  position:sticky;
+  top:0;
+  z-index:9999;
+  background:rgba(0,0,0,.55);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid rgba(201,165,98,.18);
+}
+.translate-label{
+  font-size:.85rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  opacity:.85;
+  white-space:nowrap;
+}
+
+/* wrapper do widget + caret fake */
+.translate-wrap{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  max-width: 240px;
+}
+.translate-caret{
+  position:absolute;
+  right:10px;
+  pointer-events:none;
+  opacity:.8;
+  font-size:.75rem;
+}
+
+/* Estilos do Google Translate */
+#google_translate_element{
+  display:block;
+}
+.goog-te-gadget{
+  font-family: inherit !important;
+  font-size: 0 !important;
+}
+.goog-te-gadget .goog-te-combo{
+  font-size:.9rem !important;
+  background:rgba(0,0,0,.35) !important;
+  color: inherit !important;
+  border:1px solid rgba(201,165,98,.35) !important;
+  border-radius:999px !important;
+  padding:.5rem 2rem .5rem .9rem !important; /* espaço para caret */
+  outline:none !important;
+  width: 220px !important;
+  max-width: 220px !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+
+/* esconder branding/elementos chatos do translate */
+.goog-logo-link, .goog-te-gadget span{ display:none !important; }
+.goog-te-banner-frame.skiptranslate{ display:none !important; }
+body{ top:0 !important; }
+
+/* HERO + botões */
+.hero-actions{
+  display:flex;
+  gap: .9rem;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top: 1.2rem;
+}
+.btn-primary, .btn-outline{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height: 52px;
+  padding: .9rem 1.3rem;
+  border-radius: 999px;
+  text-decoration:none;
+  line-height:1;
+}
+
+/* QR - limitar tamanho SEMPRE (o teu estava gigante) */
+.qr-wrap{
+  margin-top: 1.2rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.5rem;
+}
+.qr-img{
+  width: min(320px, 86vw) !important;
+  max-width: 320px !important;
+  height:auto !important;
+  border-radius: 18px;
+  background: #fff;
+  padding: 12px;
+}
+.qr-note{
+  font-size:.9rem;
+  opacity:.8;
+  text-align:center;
+  margin:0;
+}
+
+/* Cartão */
+.content-card{
+  border: 1px solid rgba(201,165,98,.22);
+  background: rgba(0,0,0,.40);
+  border-radius: 22px;
+  padding: 1.2rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,.35);
+}
+
+/* Form booking no index */
+.quick-book{ margin-top: .8rem; }
+.quick-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: .85rem;
+}
+.quick-book label{
+  display:block;
+  margin-bottom:.4rem;
+  opacity:.85;
+}
+.quick-book input,
+.quick-book select{
+  width:100%;
+  min-height:54px;
+  border-radius:18px;
+  border:1px solid rgba(201,165,98,.25);
+  background: rgba(0,0,0,.35);
+  color: inherit;
+  padding: .9rem 1rem;
+  outline:none;
+}
+.quick-book input::placeholder{ opacity:.6; }
+
+.quick-actions{
+  display:flex;
+  gap:.9rem;
+  flex-wrap:wrap;
+  margin-top: 1rem;
+}
+.quick-actions .btn-primary,
+.quick-actions .btn-outline{
+  flex: 1 1 180px;
+}
+
+.quick-note{
+  margin: 1rem 0 0;
+  opacity:.85;
+  line-height:1.5;
+}
+
+/* mini links */
+.mini-links{
+  display:flex;
+  gap:.8rem;
+  flex-wrap:wrap;
+  margin-top: 1rem;
+}
+
+/* Mobile refinements */
+@media (max-width: 520px){
+  .goog-te-gadget .goog-te-combo{
+    width: 200px !important;
+    max-width: 200px !important;
+  }
+  .btn-primary, .btn-outline{ width:auto; }
+}
