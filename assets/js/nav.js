@@ -1,19 +1,41 @@
+// assets/js/nav.js
 (function () {
-  const btn = document.getElementById("navToggle");
-  const nav = document.getElementById("mainNav");
+  const navToggle = document.getElementById("navToggle");
+  const mainNav = document.getElementById("mainNav");
 
-  if (!btn || !nav) return;
+  if (!navToggle || !mainNav) return;
 
-  btn.addEventListener("click", () => {
+  function closeNav() {
+    document.body.classList.remove("nav-open");
+    navToggle.setAttribute("aria-label", "Open menu");
+  }
+
+  function toggleNav() {
     document.body.classList.toggle("nav-open");
+    const isOpen = document.body.classList.contains("nav-open");
+    navToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+  }
+
+  navToggle.addEventListener("click", toggleNav);
+
+  // Fecha ao clicar num link
+  mainNav.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", closeNav);
   });
 
-  nav.addEventListener("click", (e) => {
-    const a = e.target.closest("a");
-    if (a) document.body.classList.remove("nav-open");
+  // Fecha ao clicar fora do menu (mobile)
+  document.addEventListener("click", (e) => {
+    const isOpen = document.body.classList.contains("nav-open");
+    if (!isOpen) return;
+
+    const clickedInside =
+      mainNav.contains(e.target) || navToggle.contains(e.target);
+
+    if (!clickedInside) closeNav();
   });
 
+  // Fecha ao fazer resize para desktop
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 920) document.body.classList.remove("nav-open");
+    if (window.innerWidth > 900) closeNav();
   });
 })();
