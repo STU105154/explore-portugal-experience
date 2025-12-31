@@ -1,43 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Sobre · Explore Portugal Experience</title>
-
+    <title>About · Explore Portugal Experience</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
     <meta
       name="description"
-      content="Saiba mais sobre a Explore Portugal Experience e o legado de Agapito, cofundador e motorista profissional que inspirou este projeto."
+      content="Learn more about Explore Portugal Experience and Agapito’s legacy, co-founder and professional driver who inspired this project."
     />
-    <link rel="canonical" href="https://www.exploreportugalexperience.com/about.html" />
 
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="icon" type="image/png" href="assets/icons/apple-touch-icon.png" />
-
-    <!-- Pequenos fixes só desta página (não mexe no teu CSS global) -->
-    <style>
-      /* Evita “castanho”/overlays por elementos sticky/fixed por cima */
-      body { -webkit-tap-highlight-color: transparent; }
-
-      /* Barra de idioma: deixa-a sempre legível e sem tapar o header */
-      .translate-bar{
-        position: sticky;
-        top: 0;
-        z-index: 999;
-      }
-
-      /* Garante que o header fica acima do conteúdo e abaixo da translate bar */
-      .site-header{
-        position: sticky;
-        top: 44px; /* altura típica da translate-bar; ajusta se necessário */
-        z-index: 998;
-      }
-
-      /* Se a tua translate-bar for mais alta/baixa, muda estes 44px */
-      @media (min-width: 768px){
-        .site-header{ top: 46px; }
-      }
-    </style>
+    <link rel="canonical" href="https://www.exploreportugalexperience.com/about.html" />
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
@@ -50,17 +25,15 @@
   </head>
 
   <body>
-    <!-- Barra de idioma -->
+    <!-- ===== UNIVERSAL HEADER (igual ao index) ===== -->
     <div class="translate-bar">
-      <span>Idioma:</span>
+      <span>Language:</span>
       <div id="google_translate_element"></div>
     </div>
 
-    <!-- HEADER + NAV (estrutura correta) -->
     <header class="site-header">
       <div class="header-inner">
-        <!-- Botão Home com estrela a rodar -->
-        <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
+        <a href="index.html" class="home-star" aria-label="Home">
           <img
             src="assets/icons/compass-gold-solid.svg"
             alt="Explore Portugal Experience"
@@ -68,152 +41,123 @@
           />
         </a>
 
-        <!-- Logotipo pequeno topo -->
-        <a href="index.html" class="header-logo" aria-label="Explore Portugal Experience">
-          <img
-            src="assets/images/logo-explore-portugal-experience.png"
-            alt="Explore Portugal Experience"
-          />
-        </a>
+        <nav class="nav" id="mainNav" aria-label="Main navigation">
+          <a href="about.html" aria-current="page">About</a>
+          <a href="services.html">Services</a>
+          <a href="choose.html">Why us</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="faq.html">FAQ</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="booking.html">Booking</a>
+          <a href="partners-drivers.html">Partners Drivers</a>
+          <a href="partners-hospitality.html">Commercial Partners</a>
+          <a href="contactos.html">Contact</a>
+        </nav>
 
-        <!-- Botão hambúrguer (mobile) -->
-        <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
         </button>
-
-        <!-- NAV -->
-        <nav class="nav" id="mainNav" aria-label="Navegação principal">
-          <a href="about.html" aria-current="page">Sobre nós</a>
-          <a href="services.html">Serviços</a>
-          <a href="choose.html">Porquê nós</a>
-          <a href="pricing.html">Preços</a>
-          <a href="faq.html">FAQ</a>
-          <a href="gallery.html">Galeria</a>
-          <a href="booking.html">Reservas</a>
-          <a href="partners-drivers.html">Partners Drivers</a>
-          <a href="partners-hospitality.html">Parceiros Comerciais</a>
-          <a href="contactos.html">Contactos</a>
-        </nav>
       </div>
     </header>
+    <!-- ===== /UNIVERSAL HEADER ===== -->
 
     <main>
-      <!-- HERO DA PÁGINA -->
+      <!-- HERO -->
       <section class="page-hero section-dark">
         <div class="section-inner narrow">
-          <h1 class="page-hero-title">Sobre nós</h1>
+          <h1 class="page-hero-title">About</h1>
           <p class="page-hero-subtitle">
-            Uma experiência de condução com alma, calma e profissionalismo — nascida do
-            sonho de acolher cada pessoa em Portugal com elegância, cuidado e atenção ao
-            detalhe.
+            A calm, professional, human way of driving — created to welcome every visitor
+            to Portugal with elegance, care and attention to detail.
           </p>
         </div>
       </section>
 
-      <!-- BLOCO SOBRE A EMPRESA -->
+      <!-- ABOUT COMPANY -->
       <section class="section section-dark">
         <div class="section-inner narrow">
           <h2>Explore Portugal Experience</h2>
           <p>
-            A Explore Portugal Experience nasceu para oferecer um serviço de tours
-            e private transfers em Portugal que fosse, acima de tudo, humano,
-            tranquilo e verdadeiramente personalizado.
+            Explore Portugal Experience was created to offer premium tours and private transfers
+            with a service that feels human, calm and truly tailored.
           </p>
           <p>
-            Cada percurso é planeado consigo: horários confortáveis, pontos de
-            encontro claros, margens para imprevistos bons e atenção às suas
-            preferências — seja na escolha do itinerário, dos restaurantes ou das
-            paragens para fotografar.
+            Every journey is planned with you: comfortable schedules, clear meeting points,
+            space for good surprises, and attention to your preferences — itinerary, restaurants
+            and photo stops.
           </p>
           <p>
-            O objetivo é simples: que se sinta sempre bem acompanhado, em segurança
-            e com tempo para desfrutar do caminho, em vez de se preocupar com ele.
+            The goal is simple: you feel safe, cared for, and free to enjoy the road — not worry about it.
           </p>
           <p>
-            Trabalhamos com clientes individuais, famílias, pequenos grupos e
-            parceiros profissionais (hotéis, empresas e operadores), sempre com a
-            mesma base: respeito absoluto por quem confia em nós.
+            We work with individuals, families, small groups and professional partners
+            (hotels, companies and operators) with the same base: total respect for your trust.
           </p>
         </div>
       </section>
 
-      <!-- TRIBUTO AO AGAPITO -->
+      <!-- AGAPITO TRIBUTE -->
       <section class="section">
         <div class="section-inner narrow">
-          <article class="contact-card about-agapito" aria-label="Tributo a Agapito">
+          <article class="contact-card about-agapito" aria-label="Agapito tribute">
             <img
               src="assets/images/agapito.jpg"
-              alt="Fotografia de Agapito, cofundador da Explore Portugal Experience"
+              alt="Agapito, co-founder of Explore Portugal Experience"
               class="agapito-photo"
             />
 
-            <p class="tribute-heading">Em memória</p>
+            <p class="tribute-heading">In memory</p>
             <p class="tribute-name">Agapito</p>
             <p class="tribute-subtitle">
-              Cofundador · Motorista profissional · Alma da estrada
+              Co-founder · Professional driver · The soul of the road
             </p>
 
             <div class="tribute-text">
               <p>
-                A Explore Portugal Experience nasceu do sonho e da visão de alguém
-                extraordinário: Agapito, cofundador deste projeto, motorista
-                profissional certificado e um homem guiado pela paixão pela estrada,
-                pela beleza do nosso país e pelo encontro com pessoas de todas as
-                partes do mundo.
+                Explore Portugal Experience was born from the dream and vision of someone extraordinary:
+                Agapito — co-founder, certified professional driver, and a man guided by love for the road,
+                for Portugal’s beauty, and for meeting people from all over the world.
               </p>
               <p>
-                Foi o Agapito que deu o primeiro passo, que acreditou antes de todos,
-                que sonhou alto e sem medo. A sua dedicação, integridade, generosidade
-                e profissionalismo tornaram-se a base desta empresa e definiram o que
-                somos hoje: um serviço com alma, requinte e respeito absoluto por quem
-                confia em nós.
+                He believed first. He dreamed big. His dedication, integrity and professionalism became the
+                foundation of this company and defined what we are today: a service with soul, refinement and
+                deep respect for every client.
               </p>
               <p>
-                Para ele, conduzir era amar. Era cuidar. Era transformar cada percurso
-                numa experiência humana, tranquila e inesquecível. Quem teve o
-                privilégio de viajar ao seu lado sabe que a sua presença iluminava
-                cada quilómetro e cada conversa.
+                For him, driving was caring — turning each route into a calm and unforgettable human experience.
               </p>
               <p>
-                O Agapito partiu demasiado cedo. Mas nunca partiu de verdade.
-                O seu legado vive nesta estrada que ele começou. Vive em cada cliente
-                que recebemos com atenção e elegância. Vive na forma como honramos o
-                detalhe, o silêncio, o conforto e a arte de guiar.
+                Agapito left too soon, but his legacy remains on every journey we deliver: in the detail, the silence,
+                the comfort, and the art of guiding.
               </p>
               <p>
-                A cada viagem, continuamos o que ele começou. A cada destino alcançado,
-                levamo-lo connosco.
-              </p>
-              <p>
-                Obrigado, Agapito. Para sempre parte desta casa, para sempre
-                no volante das nossas memórias.
+                Thank you, Agapito. Forever part of this home — forever on the road with us.
               </p>
             </div>
 
-            <p class="tribute-quote">“A estrada continua consigo.”</p>
+            <p class="tribute-quote">“The road continues with you.”</p>
           </article>
         </div>
       </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- ===== UNIVERSAL FOOTER (igual ao index) ===== -->
     <footer class="site-footer">
       <div class="footer-inner">
         <div class="footer-col">
           <p class="footer-title">Explore Portugal Experience</p>
           <p>
-            Premium Tours &amp; Private Transfers em Portugal, com motorista profissional.
-            Conforto, elegância e discrição em cada percurso.
+            Premium Tours &amp; Private Transfers in Portugal — comfort, elegance and discretion.
           </p>
         </div>
 
         <div class="footer-col">
-          <p class="footer-title">Contactos</p>
+          <p class="footer-title">Contact</p>
           <p>
-            Telemóvel / WhatsApp:
-            <a href="https://wa.me/351910784548" target="_blank" rel="noopener">+351 910 784 548</a>
+            Phone:
+            <a href="tel:+351962516005">+351 962 516 005</a>
           </p>
           <p>
             Email:
@@ -222,7 +166,7 @@
         </div>
 
         <div class="footer-col">
-          <p class="footer-title">Siga-nos</p>
+          <p class="footer-title">Social</p>
           <p>
             <a href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener">Instagram</a><br />
             <a href="https://www.tiktok.com/@explore.portugal24" target="_blank" rel="noopener">TikTok</a>
@@ -235,25 +179,17 @@
         <p>Powered by: MkDesign - London</p>
       </div>
     </footer>
+    <!-- ===== /UNIVERSAL FOOTER ===== -->
 
-    <!-- Cookies (mesmo em todas as páginas) -->
-    <script src="assets/js/cookie.js"></script>
-
-    <!-- JS -->
+    <!-- JS (iguais em todas as páginas) -->
     <script src="assets/js/nav.js"></script>
-
-    <!-- lightbox só se a página tiver galeria; se não tiver, podes remover -->
-    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/cookie.js"></script>
 
     <!-- Google Translate -->
     <script>
       function googleTranslateElementInit() {
         new google.translate.TranslateElement(
-          {
-            pageLanguage: "pt",
-            includedLanguages: "en,pt,es,fr,de",
-            autoDisplay: false,
-          },
+          { pageLanguage: "en", includedLanguages: "en,pt,es,fr,de,it", autoDisplay: false },
           "google_translate_element"
         );
       }
