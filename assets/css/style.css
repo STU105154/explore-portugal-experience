@@ -556,3 +556,155 @@ body{ top:0 !important; }
   }
   .btn-primary, .btn-outline{ width:auto; }
 }
+/* ===========================
+   PATCH: Translate + Booking stability
+   COLAR NO FIM do style.css
+   =========================== */
+
+/* Translate bar */
+.translate-bar{
+  display:flex;
+  align-items:center;
+  gap:.7rem;
+  padding:.6rem 1rem;
+  position:sticky;
+  top:0;
+  z-index:99999;
+  background:rgba(0,0,0,.55);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid rgba(201,165,98,.18);
+}
+.translate-label{
+  font-size:.85rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  opacity:.9;
+  white-space:nowrap;
+}
+
+/* Wrap do widget e caret */
+.translate-wrap{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  min-width: 190px;
+}
+
+/* caret NÃO pode tapar a palavra "Language" nem o select */
+.translate-caret{
+  position:absolute;
+  right:12px;
+  top:50%;
+  transform: translateY(-50%);
+  pointer-events:none;
+  opacity:.75;
+  font-size:.85rem;
+}
+
+/* Google Translate - força o select com padding à direita */
+.goog-te-gadget{
+  font-family: inherit !important;
+  font-size: 0 !important;
+}
+.goog-te-gadget .goog-te-combo{
+  font-size:.9rem !important;
+  background:rgba(0,0,0,.35) !important;
+  color: #eaeaea !important;
+  border:1px solid rgba(201,165,98,.35) !important;
+  border-radius:999px !important;
+  padding:.55rem 2.2rem .55rem 1rem !important; /* espaço do caret */
+  width: 210px !important;
+  max-width: 210px !important;
+  outline:none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Esconde lixo */
+.goog-logo-link, .goog-te-gadget span{ display:none !important; }
+.goog-te-banner-frame.skiptranslate{ display:none !important; }
+body{ top:0 !important; }
+
+/* Booking fields */
+.quick-book input,
+.quick-book select{
+  width:100%;
+  min-height:54px;
+  border-radius:18px;
+  border:1px solid rgba(201,165,98,.25);
+  background: rgba(0,0,0,.35);
+  color: inherit;
+  padding: .9rem 1rem;
+  outline:none;
+}
+
+/* Para selects não cortar o texto */
+.quick-book select{
+  padding-right: 2.6rem;
+}
+
+/* Hint */
+.hint{
+  margin:.35rem 0 0;
+  font-size:.8rem;
+  opacity:.7;
+}
+
+/* QR nunca gigante */
+.qr-img{
+  width: min(320px, 86vw) !important;
+  max-width: 320px !important;
+  height:auto !important;
+  border-radius: 18px;
+  background: #fff;
+  padding: 12px;
+}
+/* ===== Pricing (from) ===== */
+.price-grid{
+  display:grid;
+  gap:1rem;
+  grid-template-columns: 1fr;
+  margin-top: 1rem;
+}
+.price-card{
+  border:1px solid rgba(201,165,98,.18);
+  border-radius: 18px;
+  padding: 1rem;
+  background: rgba(0,0,0,.25);
+}
+.price-title{
+  margin:0 0 .6rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+.price-list{
+  margin:0;
+  padding-left: 1.1rem;
+}
+.price-list li{
+  margin:.45rem 0;
+  line-height: 1.35;
+}
+.price-note{
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top:1px solid rgba(201,165,98,.18);
+}
+.price-actions{
+  display:flex;
+  gap:.8rem;
+  flex-wrap: wrap;
+  margin: .9rem 0 .4rem;
+}
+.micro{
+  font-size:.85rem;
+  opacity:.75;
+  margin:.6rem 0 0;
+}
+
+/* tablets+ */
+@media (min-width: 900px){
+  .price-grid{
+    grid-template-columns: 1fr 1fr;
+  }
+}
