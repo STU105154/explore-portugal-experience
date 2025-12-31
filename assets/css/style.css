@@ -373,44 +373,81 @@ body { top:0 !important; }
   .powered-by{ text-align:center; }
 }
 
-/* =========================
-   COOKIE BANNER (CLICKABLE)
-========================= */
+/* ==================================
+   COOKIE BANNER (CLICK FIX + MOBILE)
+================================== */
+
+.cookie-banner,
+.cookie-banner *{
+  pointer-events: auto !important;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
 .cookie-banner{
   position: fixed;
   left: 14px;
   right: 14px;
   bottom: 14px;
-  z-index: 99999;              /* MUITO acima de tudo */
-  pointer-events: auto;        /* recebe cliques */
+  z-index: 2147483647; /* máxima prioridade */
 }
-.cookie-banner.hide{ display:none; }
+
+.cookie-banner.hide{ display: none !important; }
 
 .cookie-inner{
-  max-width: 960px;
+  max-width: 980px;
   margin: 0 auto;
   background: rgba(0,0,0,.92);
-  border: 1px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.14);
   border-radius: 18px;
   padding: 14px;
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 12px;
-  box-shadow: var(--shadow);
-  pointer-events: auto;        /* recebe cliques */
 }
 
-.cookie-text{ margin:0; color: var(--muted); }
-.cookie-actions{ display:flex; gap: 10px; flex-wrap: wrap; pointer-events:auto; }
-.cookie-actions .btn{
-  min-width: 120px;
-  padding: 10px 14px;
+.cookie-text{
+  margin: 0;
+  color: #cfcfcf;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.cookie-actions{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* botões (usa as tuas classes se já existirem; isto é fallback) */
+.cookie-actions button{
+  border-radius: 999px;
+  padding: 10px 16px;
+  border: 1px solid rgba(255,255,255,.25);
+  background: transparent;
+  color: #fff;
   cursor: pointer;
-  pointer-events: auto;        /* recebe cliques */
+}
+
+.cookie-actions .btn-primary{
+  background: #d6b36a;
+  border-color: #d6b36a;
+  color: #111;
+}
+
+.cookie-actions .btn-outline{
+  background: transparent;
 }
 
 @media (max-width: 720px){
-  .cookie-inner{ flex-direction: column; align-items: stretch; }
-  .cookie-actions{ justify-content: center; }
+  .cookie-inner{
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  .cookie-actions{
+    justify-content: center;
+  }
 }
