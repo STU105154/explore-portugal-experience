@@ -1,161 +1,108 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en" translate="no">
 <head>
   <meta charset="UTF-8" />
-  <title>Preços | Explore Portugal Experience</title>
-  <meta name="description" content="Preços indicativos e condições dos nossos transfers e tours privados em Portugal com motorista profissional. Serviço premium, transparente e personalizado." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pricing — Explore Portugal Experience</title>
+  <meta name="description" content="Indicative prices for transfers and private tours in Portugal." />
 
-  <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png" />
+  <link rel="stylesheet" href="assets/css/style.css?v=200" />
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+  <!-- Google Translate -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag("js", new Date());
-    gtag("config","G-Y30ME05MQY");
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        { pageLanguage: 'en', autoDisplay: false },
+        'google_translate_element'
+      );
+    }
   </script>
-  <link rel="canonical" href="https://www.exploreportugalexperience.com/pricing.html">
-
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 
-<body>
-  <!-- Barra idioma -->
-  <div class="translate-bar">
-    <span>Idioma:</span>
-    <div id="google_translate_element"></div>
+<body class="page">
+
+  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    <div class="cookie-inner">
+      <p class="cookie-text">We use cookies to improve your experience and measure traffic.</p>
+      <div class="cookie-actions">
+        <button class="btn btn-ghost" id="cookieDecline" type="button">Decline</button>
+        <button class="btn btn-gold" id="cookieAccept" type="button">Accept</button>
+      </div>
+    </div>
   </div>
 
- <!-- HEADER -->
-<header class="site-header">
-  <div class="header-inner">
-
-    <a href="index.html" class="home-star" aria-label="Home">
-      <img 
-        src="assets/icons/compass-gold-solid.svg" 
-        alt="Home" 
-        class="star-animated"
-      />
-    </a>
-
-     <nav class="nav" id="mainNav" aria-label="Navegação principal">
-      <a href="about.html">Sobre</a>
-      <a href="services.html">Serviços</a>
-      <a href="choose.html">Porquê nós</a>
-      <a href="pricing.html">Preços</a>
-      <a href="faq.html">FAQ</a>
-      <a href="partners-drivers.html">Partners Drivers</a>
-      <a href="partners-hospitality.html">Parceiros Comerciais</a>
-      <a href="gallery.html" aria-current="page">Galeria</a>
-      <a href="booking.html">Reservas</a>
-      <a href="contactos.html">Contactos</a>
-    </nav>
-
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="lang notranslate" translate="no">
+        <span class="lang-label">Language</span>
+        <div class="lang-select">
+          <div id="google_translate_element"></div>
+          <span class="lang-chevron" aria-hidden="true">▾</span>
+        </div>
+      </div>
+    </div>
   </div>
-</header>
 
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="home-star" aria-label="Home">
+        <img src="assets/icons/compass-gold-solid.svg" class="star-animated" alt="Home" />
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a class="active" href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contactos.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
   <main>
-    <!-- HERO -->
-    <section class="page-hero section-dark">
-      <h1 class="page-hero-title">Preços & Experiências Privadas</h1>
-      <p class="page-hero-subtitle">Valores indicativos para referência — cada pedido recebe orçamento personalizado antes de qualquer pagamento.</p>
-    </section>
-
-    <!-- TRANSFERS -->
-    <section class="section">
-      <div class="section-inner narrow">
-        <h2 class="section-title center gold">Transfers privados</h2>
-        <p class="section-lead center">Valores base para serviço premium com motorista profissional.</p>
-
-        <div class="pricing-box">
-          <table class="pricing-table clean">
-            <thead>
-              <tr><th>Origem / Destino</th><th>1–3 pessoas</th><th>4–7 pessoas</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Aeroporto Lisboa ⇄ Lisboa</td><td>desde €45</td><td>desde €60</td></tr>
-              <tr><td>Lisboa ⇄ Cascais</td><td>desde €60</td><td>desde €80</td></tr>
-              <tr><td>Lisboa ⇄ Sintra</td><td>desde €80</td><td>desde €95</td></tr>
-              <tr><td>Lisboa ⇄ Évora</td><td>desde €220</td><td>desde €260</td></tr>
-              <tr><td>Lisboa ⇄ Porto</td><td>desde €350</td><td>desde €420</td></tr>
-            </tbody>
-          </table>
-
-          <a href="booking.html" class="btn-primary btn-center">Pedir orçamento</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- TOURS -->
     <section class="section section-dark">
-      <div class="section-inner narrow">
-        <h2 class="section-title center gold">Tours Privados</h2>
-        <p class="section-lead center">Experiências exclusivas com tempo para desfrutar cada momento.</p>
+      <div class="container narrow">
+        <h1 class="h1">Indicative prices</h1>
+        <p class="muted">
+          Prices vary by distance, duration, season and number of guests. Final quote confirmed after details.
+        </p>
 
-        <div class="pricing-grid">
-          <div class="pricing-card">
-            <h3>Lisboa Highlights</h3>
-            <p>Tour 4 horas pelos miradouros e bairros históricos.</p>
-            <p class="price">1–3 pax · <strong>€140</strong><br>4–7 pax · <strong>€180</strong></p>
-            <a href="booking.html" class="btn-secondary">Reservar tour</a>
+        <div class="card">
+          <ul class="price-list">
+            <li><strong>Airport transfer:</strong> from €60</li>
+            <li><strong>Private tour (Half day):</strong> from €220</li>
+            <li><strong>Private tour (Full day):</strong> from €380</li>
+            <li><strong>Custom programme:</strong> on request</li>
+          </ul>
+
+          <div class="price-note">
+            Need a quick quote? WhatsApp: <strong>+351 910 784 548</strong> · Mobile: <strong>+351 962 516 005</strong>
           </div>
-
-          <div class="pricing-card">
-            <h3>Sintra · Cabo da Roca · Cascais</h3>
-            <p>Dia completo entre palácios, serra e mar.</p>
-            <p class="price">1–3 pax · <strong>€260</strong><br>4–7 pax · <strong>€320</strong></p>
-            <a href="booking.html" class="btn-secondary">Reservar tour</a>
-          </div>
-
-          <div class="pricing-card">
-            <h3>Fátima · Nazaré · Óbidos</h3>
-            <p>Tradição, espiritualidade e história.</p>
-            <p class="price">1–3 pax · <strong>€320</strong><br>4–7 pax · <strong>€380</strong></p>
-            <a href="booking.html" class="btn-secondary">Reservar tour</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MÉTODOS DE PAGAMENTO -->
-    <section class="section">
-      <div class="section-inner narrow">
-        <h2 class="section-title center gold">Métodos de pagamento</h2>
-        <p class="center">Simples, seguros e confirmados por escrito.</p>
-
-        <div class="payment-icons small">
-          <a href="#"><img src="assets/icons/mbway.svg" alt="MBWay" /></a>
-          <a href="#"><img src="assets/icons/revolut.svg" alt="Revolut" /></a>
-          <a href="#"><img src="assets/icons/paypal.svg" alt="PayPal" /></a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="footer-inner">
-      <p class="footer-copy">© 2018–2025 Explore Portugal Experience — Turismo em Portugal.</p>
-      <p class="footer-credit">Powered by: MkDesign — London</p>
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p>© 2018–2025 Explore Portugal Experience</p>
+        <p class="muted small">Turismo em Portugal</p>
+      </div>
+      <div class="footer-right">
+        <p class="powered-by">Powered by <span>MkDesign</span></p>
+      </div>
     </div>
   </footer>
 
-  <script src="assets/js/nav.js"></script>
-
-  <!-- Google Translate -->
-  <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage:'pt',includedLanguages:'pt,en,es,fr,it,de'},'google_translate_element');
-    }
-  </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+  <script src="assets/js/cookies.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
