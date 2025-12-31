@@ -1,25 +1,19 @@
 (function () {
-  const toggle = document.getElementById("navToggle");
-  const body = document.body;
+  const btn = document.getElementById("navToggle");
+  const nav = document.getElementById("mainNav");
 
-  if (!toggle) return;
+  if (!btn || !nav) return;
 
-  toggle.addEventListener("click", function () {
-    const isOpen = body.classList.toggle("nav-open");
-    toggle.setAttribute("aria-expanded", String(isOpen));
+  btn.addEventListener("click", () => {
+    document.body.classList.toggle("nav-open");
   });
 
-  // fecha menu ao clicar num link
-  document.addEventListener("click", function (e) {
-    const target = e.target;
-    if (!(target instanceof Element)) return;
+  nav.addEventListener("click", (e) => {
+    const a = e.target.closest("a");
+    if (a) document.body.classList.remove("nav-open");
+  });
 
-    if (body.classList.contains("nav-open")) {
-      const clickedLink = target.closest(".nav a");
-      if (clickedLink) {
-        body.classList.remove("nav-open");
-        toggle.setAttribute("aria-expanded", "false");
-      }
-    }
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 920) document.body.classList.remove("nav-open");
   });
 })();
