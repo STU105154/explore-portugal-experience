@@ -6,20 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Premium private tours and transfers in Portugal with professional drivers. Book quickly: pick-up, drop-off, dates."
+      content="Premium private tours & transfers in Portugal with professional drivers. Book quickly: pick-up, drop-off and dates."
     />
-
-    <!-- CSS (IMPORTANTE: ./assets para GitHub Pages) -->
-    <link rel="stylesheet" href="./assets/css/style.css?v=200" />
-
-    <link rel="icon" type="image/png" href="./assets/icons/compass-gold-64.png" />
     <link rel="canonical" href="https://www.exploreportugalexperience.com/" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css?v=700" />
+    <link rel="icon" type="image/png" href="./assets/icons/compass-gold-64.png" />
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
+      function gtag(){ dataLayer.push(arguments); }
       gtag("js", new Date());
       gtag("config", "G-Y30ME05MQY");
     </script>
@@ -30,11 +29,14 @@
   <body class="home-page">
     <!-- Translate bar (discreto) -->
     <div class="translate-bar" role="navigation" aria-label="Language selector">
-      <span class="translate-label">Language</span>
-      <div id="google_translate_element"></div>
+      <span class="label">Language</span>
+      <div class="translate-wrap">
+        <div id="google_translate_element"></div>
+        <span class="translate-caret" aria-hidden="true">▼</span>
+      </div>
     </div>
 
-    <!-- HEADER (sem logo pequenino) -->
+    <!-- HEADER (estrela + burger, sem logo pequenino) -->
     <header class="site-header">
       <div class="header-inner">
         <a href="index.html" class="home-star" aria-label="Home">
@@ -51,14 +53,12 @@
           <a href="choose.html">Why us</a>
           <a href="pricing.html">Pricing</a>
           <a href="faq.html">FAQ</a>
-          <a href="partners-drivers.html">Driver partners</a>
-          <a href="partners-hospitality.html">Hospitality partners</a>
           <a href="gallery.html">Gallery</a>
           <a href="booking.html">Bookings</a>
           <a href="contactos.html">Contact</a>
         </nav>
 
-        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -72,18 +72,19 @@
             src="./assets/images/logo-explore-portugal-experience.png"
             alt="Explore Portugal Experience"
             class="home-logo"
+            loading="eager"
           />
 
           <p class="hero-tagline">
             Premium private tours &amp; transfers in Portugal — professional drivers, comfort and discretion.
           </p>
 
-          <!-- PRIORIDADE: BOOKING PRIMEIRO (rápido) -->
-          <form class="quick-book" action="booking.html" method="GET">
-            <div class="quick-book-top">
-              <h2>Book in 30 seconds</h2>
-              <p>Pick your service and basic details. You can add extras on the next page.</p>
-            </div>
+          <!-- QUICK BOOK (o que estavas a ver) -->
+          <form class="quick-book" action="booking.html" method="GET" aria-label="Quick booking">
+            <h2>Book in 30 seconds</h2>
+            <p class="qb-sub">
+              Pick the basics now. You can add extras on the next page.
+            </p>
 
             <div class="quick-grid">
               <div class="qb-field">
@@ -105,18 +106,31 @@
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
-                  <option value="5">5+</option>
+                  <option value="5">5</option>
+                  <option value="6+">6+</option>
                 </select>
               </div>
 
-              <div class="qb-field">
+              <div class="qb-field qb-span">
                 <label for="from">Pick-up (From)</label>
-                <input id="from" name="from" type="text" placeholder="Lisbon Airport, Hotel, City…" required />
+                <input
+                  id="from"
+                  name="from"
+                  type="text"
+                  placeholder="Lisbon Airport, Hotel, City..."
+                  required
+                />
               </div>
 
-              <div class="qb-field">
+              <div class="qb-field qb-span">
                 <label for="to">Drop-off (To)</label>
-                <input id="to" name="to" type="text" placeholder="Porto, Sintra, Hotel…" required />
+                <input
+                  id="to"
+                  name="to"
+                  type="text"
+                  placeholder="Porto, Sintra, Hotel..."
+                  required
+                />
               </div>
 
               <div class="qb-field">
@@ -130,22 +144,24 @@
               </div>
             </div>
 
-            <div class="quick-actions">
+            <div class="qb-actions">
               <button type="submit" class="btn-primary">Continue booking</button>
               <a class="btn-outline" href="contactos.html">Need help?</a>
             </div>
 
-            <div class="quick-note">
-              Or contact us directly: <a href="tel:+351962516005">+351 962 516 005</a> ·
+            <p class="qb-help">
+              Or contact us directly:
+              <a href="tel:+351962516005">+351 962 516 005</a>
+              ·
               <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
-            </div>
+            </p>
           </form>
 
           <!-- QR WhatsApp -->
           <div class="hero-qr-wrap">
             <img
               src="./assets/images/qr-whatsapp.png"
-              alt="WhatsApp QR Code"
+              alt="WhatsApp booking QR code"
               class="home-qr"
               loading="lazy"
             />
@@ -155,53 +171,30 @@
           </div>
         </div>
       </section>
-
-      <!-- SECÇÃO curta (menos repetição) -->
-      <section class="section">
-        <div class="section-inner">
-          <h2 class="section-title">Why Explore Portugal Experience</h2>
-          <p class="section-lead">
-            Private service, tailored routes, premium vehicles and discreet professional drivers.
-          </p>
-
-          <div class="cards-3">
-            <article class="card">
-              <h3>Professional drivers</h3>
-              <p>Experienced, reliable, fluent in English. Comfort and safety first.</p>
-            </article>
-
-            <article class="card">
-              <h3>Tailor-made</h3>
-              <p>Airport transfers, day trips, private tours and custom itineraries across Portugal.</p>
-            </article>
-
-            <article class="card">
-              <h3>Premium & discreet</h3>
-              <p>Elegant service with attention to detail from the first message to the last drop-off.</p>
-            </article>
-          </div>
-        </div>
-      </section>
     </main>
 
-    <!-- FOOTER (sem WhatsApp, só telemóvel PT) -->
+    <!-- FOOTER (sem WhatsApp; só telemóvel PT) -->
     <footer class="site-footer">
       <div class="footer-inner">
         <div class="footer-col">
           <p class="footer-title">Explore Portugal Experience</p>
-          <p>Premium private tours &amp; transfers in Portugal.</p>
+          <p>Premium private tours &amp; transfers in Portugal — comfort, elegance and discretion.</p>
         </div>
 
         <div class="footer-col">
           <p class="footer-title">Contact</p>
           <p>
-            Phone (Portugal): <a href="tel:+351962516005">+351 962 516 005</a><br />
-            Email: <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
+            Phone (Portugal):
+            <a href="tel:+351962516005">+351 962 516 005</a>
+          </p>
+          <p>
+            Email:
+            <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
           </p>
         </div>
 
         <div class="footer-col">
-          <p class="footer-title">Follow</p>
+          <p class="footer-title">Social</p>
           <p>
             <a href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener">Instagram</a><br />
             <a href="https://www.tiktok.com/@explore.portugal24" target="_blank" rel="noopener">TikTok</a>
@@ -214,25 +207,59 @@
       </div>
     </footer>
 
-    <!-- JS menu (IMPORTANTE: ./assets) -->
-    <script src="./assets/js/nav.js?v=200"></script>
+    <!-- COOKIE CONSENT -->
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
+      <div class="cookie-content">
+        <p>
+          We use cookies to improve your experience and analyse traffic.
+          <a href="privacy.html">Learn more</a>.
+        </p>
+        <div class="cookie-actions">
+          <button id="cookie-decline" class="btn-outline small" type="button">Decline</button>
+          <button id="cookie-accept" class="btn-primary small" type="button">Accept</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS (menu) -->
+    <script src="./assets/js/nav.js?v=700"></script>
+
+    <!-- Cookie logic -->
+    <script>
+      (function () {
+        const banner = document.getElementById("cookie-banner");
+        const acceptBtn = document.getElementById("cookie-accept");
+        const declineBtn = document.getElementById("cookie-decline");
+        if (!banner || !acceptBtn || !declineBtn) return;
+
+        const consent = localStorage.getItem("cookieConsent");
+        if (!consent) banner.style.display = "block";
+
+        acceptBtn.addEventListener("click", function () {
+          localStorage.setItem("cookieConsent", "accepted");
+          banner.style.display = "none";
+        });
+
+        declineBtn.addEventListener("click", function () {
+          localStorage.setItem("cookieConsent", "declined");
+          banner.style.display = "none";
+        });
+      })();
+    </script>
 
     <!-- Google Translate -->
-    <script type="text/javascript">
+    <script>
       function googleTranslateElementInit() {
         new google.translate.TranslateElement(
           {
             pageLanguage: "en",
             includedLanguages: "en,pt,fr,es,de,it",
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
           },
           "google_translate_element"
         );
       }
     </script>
-    <script
-      type="text/javascript"
-      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    ></script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </body>
 </html>
