@@ -1,52 +1,200 @@
-/* ===================== PREMIUM CONTACT STYLE ===================== */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact – Explore Portugal Experience</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Contact Explore Portugal Experience – Premium private tours & transfers in Portugal." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png" />
+  <link rel="canonical" href="https://www.exploreportugalexperience.com/contactos.html">
 
-.premium-contact {
-  border: 1px solid rgba(201,165,98,0.45);
-  padding: 1.8rem 1.5rem;
-  border-radius: 18px;
-  background: #0b0b0b;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-}
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-Y30ME05MQY");
+  </script>
+</head>
 
-.premium-contact .contact-heading {
-  color: var(--gold-soft);
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  margin: 0 0 1rem;
-}
+<body>
+  <div class="translate-bar">
+    <span>Language:</span>
+    <div id="google_translate_element"></div>
+  </div>
 
-.contact-block {
-  margin-bottom: 1.4rem;
-}
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="home-star" aria-label="Home">
+        <img src="assets/icons/compass-gold-solid.svg" alt="Explore Portugal Experience" class="star-animated"/>
+      </a>
 
-.contact-block h3 {
-  margin: 0 0 0.25rem;
-  font-size: 1rem;
-  color: var(--gold-soft);
-  letter-spacing: 0.08em;
-}
+      <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="choose.html">Why us</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="booking.html">Bookings</a>
+        <a href="contactos.html" aria-current="page">Contact</a>
+      </nav>
 
-.contact-link {
-  color: var(--text);
-  text-decoration: none;
-  font-size: 1rem;
-}
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-.contact-link:hover {
-  color: var(--gold-soft);
-}
+  <main>
+    <section class="section">
+      <div class="section-inner">
+        <h1 class="section-title">Contact</h1>
+        <p class="section-lead">
+          For bookings, special requests or partnerships — message us on WhatsApp or send an email.
+        </p>
 
-.contact-whatsapp {
-  font-weight: 600;
-  color: var(--gold-soft);
-}
+        <div class="contact-grid">
+          <!-- LEFT: PREMIUM CONTACTS -->
+          <div class="contact-card premium-contact">
+            <p class="contact-heading">Direct contacts</p>
 
-/* mobile spacing fixes */
-@media (max-width: 700px) {
-  .premium-contact {
-    padding: 1.4rem;
-  }
-  .contact-block {
-    margin-bottom: 1.2rem;
-  }
-}
+            <div class="contact-block">
+              <h3>WhatsApp (bookings)</h3>
+              <p>
+                <a class="contact-link contact-whatsapp" href="https://wa.me/351910784548" target="_blank" rel="noopener">
+                  +351 910 784 548
+                </a>
+              </p>
+            </div>
+
+            <div class="contact-block">
+              <h3>Phone – Portugal (calls)</h3>
+              <p>
+                <a class="contact-link" href="tel:+351962516005">+351 962 516 005</a>
+              </p>
+            </div>
+
+            <div class="contact-block">
+              <h3>Phone – UK (calls)</h3>
+              <p>
+                <a class="contact-link" href="tel:+447462801601">+44 746 280 1601</a>
+              </p>
+            </div>
+
+            <div class="contact-block">
+              <h3>Email</h3>
+              <p>
+                <a class="contact-link" href="mailto:info@exploreportugalexperience.com">
+                  info@exploreportugalexperience.com
+                </a>
+              </p>
+            </div>
+
+            <div class="contact-block">
+              <h3>Availability</h3>
+              <p>08:00 – 22:00 (Lisbon time)</p>
+            </div>
+
+            <div class="contact-block">
+              <h3>Service area</h3>
+              <p>Mainland Portugal. Tailor-made programmes on request.</p>
+            </div>
+
+            <div class="contact-block">
+              <h3>Follow us</h3>
+              <p>
+                <a href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener">Instagram</a>
+                &nbsp;·&nbsp;
+                <a href="https://www.tiktok.com/@explore.portugal24" target="_blank" rel="noopener">TikTok</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- RIGHT: FORM -->
+          <div class="contact-card">
+            <p class="contact-heading">Send a message</p>
+
+            <p class="form-note">
+              Prefer fast booking? Click:
+              <a href="https://wa.me/351910784548" target="_blank" rel="noopener">WhatsApp</a>
+              ·
+              <a href="mailto:info@exploreportugalexperience.com">Email</a>
+            </p>
+
+            <form class="contact-form" action="mailto:info@exploreportugalexperience.com" method="post" enctype="text/plain">
+              <div class="form-row">
+                <label for="name">Name</label>
+                <input id="name" name="Name" type="text" placeholder="Your name" required />
+              </div>
+
+              <div class="form-row">
+                <label for="email">Email</label>
+                <input id="email" name="Email" type="email" placeholder="your@email.com" required />
+              </div>
+
+              <div class="form-row">
+                <label for="phone">Phone (optional)</label>
+                <input id="phone" name="Phone" type="tel" placeholder="+351 … / +44 …" />
+              </div>
+
+              <div class="form-row">
+                <label for="message">Message</label>
+                <textarea id="message" name="Message" placeholder="Dates, pick-up, drop-off, guests, requests…" required></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary">Send message</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <p class="footer-title">Explore Portugal Experience</p>
+        <p>Premium private tours & transfers in Portugal.</p>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-title">Contacts</p>
+        <p>
+          WhatsApp: <a href="https://wa.me/351910784548" target="_blank" rel="noopener">+351 910 784 548</a><br>
+          Email: <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-title">Follow</p>
+        <p>
+          <a href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener">Instagram</a><br>
+          <a href="https://www.tiktok.com/@explore.portugal24" target="_blank" rel="noopener">TikTok</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Powered by MkDesign – London</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/nav.js"></script>
+
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        { pageLanguage:"en", includedLanguages:"en,pt,fr,es,de,it",
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+        "google_translate_element"
+      );
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
