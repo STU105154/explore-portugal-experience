@@ -1,41 +1,39 @@
-// assets/js/nav.js
 (function () {
-  const navToggle = document.getElementById("navToggle");
-  const mainNav = document.getElementById("mainNav");
+  const burger = document.getElementById("navToggle");
+  const drawer = document.getElementById("drawer");
+  const backdrop = document.getElementById("drawerBackdrop");
+  const closeBtn = document.getElementById("drawerClose");
 
-  if (!navToggle || !mainNav) return;
+  if (!burger || !drawer) return;
 
-  function closeNav() {
-    document.body.classList.remove("nav-open");
-    navToggle.setAttribute("aria-label", "Open menu");
+  function openDrawer() {
+    drawer.classList.add("is-open");
+    burger.setAttribute("aria-expanded", "true");
+    document.documentElement.style.overflow = "hidden";
   }
 
-  function toggleNav() {
-    document.body.classList.toggle("nav-open");
-    const isOpen = document.body.classList.contains("nav-open");
-    navToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+  function closeDrawer() {
+    drawer.classList.remove("is-open");
+    burger.setAttribute("aria-expanded", "false");
+    document.documentElement.style.overflow = "";
   }
 
-  navToggle.addEventListener("click", toggleNav);
-
-  // Fecha ao clicar num link
-  mainNav.querySelectorAll("a").forEach((a) => {
-    a.addEventListener("click", closeNav);
+  burger.addEventListener("click", () => {
+    const isOpen = drawer.classList.contains("is-open");
+    if (isOpen) closeDrawer();
+    else openDrawer();
   });
 
-  // Fecha ao clicar fora do menu (mobile)
-  document.addEventListener("click", (e) => {
-    const isOpen = document.body.classList.contains("nav-open");
-    if (!isOpen) return;
+  backdrop && backdrop.addEventListener("click", closeDrawer);
+  closeBtn && closeBtn.addEventListener("click", closeDrawer);
 
-    const clickedInside =
-      mainNav.contains(e.target) || navToggle.contains(e.target);
-
-    if (!clickedInside) closeNav();
+  // close on ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeDrawer();
   });
 
-  // Fecha ao fazer resize para desktop
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 900) closeNav();
+  // close when clicking a link inside the drawer
+  drawer.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", closeDrawer);
   });
 })();
