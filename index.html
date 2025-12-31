@@ -1,21 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
   <meta charset="UTF-8" />
-  <title>Explore Portugal Experience – Premium Tours & Transfers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Explore Portugal Experience — Premium Tours & Private Transfers</title>
+  <meta name="description" content="Premium private tours & transfers in Portugal — professional drivers, comfort and discretion." />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-        content="Premium private tours & transfers in Portugal. Professional drivers, comfort, elegance and discretion." />
-
-  <!-- CSS -->
+  <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png" />
   <link rel="stylesheet" href="assets/css/style.css?v=200" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png" />
-
   <!-- Google Translate -->
-  <script type="text/javascript">
+  <script>
     function googleTranslateElementInit() {
       new google.translate.TranslateElement(
         { pageLanguage: 'en', autoDisplay: false },
@@ -23,187 +18,206 @@
       );
     }
   </script>
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 
-<body>
+<body class="page home">
 
-<!-- LANGUAGE BAR -->
-<div class="language-bar">
-  <span>Language</span>
-  <div id="google_translate_element"></div>
-</div>
-
-<!-- HEADER -->
-<header class="site-header">
-  <div class="header-inner">
-
-    <!-- Star (home button) -->
-    <a href="index.html" class="home-star" aria-label="Home">
-      <img src="assets/images/compass-gold-solid.svg" alt="Home" />
-    </a>
-
-    <!-- Burger -->
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-
-    <!-- Menu -->
-    <nav class="main-nav" id="mainNav">
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="faq.html">FAQ</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="index.html#booking">Booking</a>
-      <a href="contactos.html">Contact</a>
-    </nav>
-
-  </div>
-</header>
-
-<!-- MAIN -->
-<main>
-
-<!-- HERO -->
-<section class="hero">
-  <img
-    src="assets/images/logo-explore-portugal-experience.png"
-    alt="Explore Portugal Experience"
-    class="hero-logo"
-  />
-
-  <p class="hero-text">
-    Premium private tours & transfers in Portugal — professional drivers,
-    comfort and discretion.
-  </p>
-</section>
-
-<!-- BOOKING -->
-<section id="booking" class="booking-section">
-
-  <h1>Book in 30 seconds</h1>
-  <p class="booking-intro">
-    Pick the essentials now. Final confirmation and pricing will follow.
-  </p>
-
-  <form class="booking-form">
-
-    <!-- SERVICE -->
-    <label>Service</label>
-    <select required>
-      <option value="">Select service</option>
-      <option>Airport transfer</option>
-      <option>Private tour</option>
-      <option>Day trip</option>
-      <option>Custom programme</option>
-    </select>
-
-    <!-- TRIP TYPE -->
-    <label>Trip</label>
-    <select required>
-      <option>One way</option>
-      <option>Return</option>
-    </select>
-
-    <!-- GUESTS -->
-    <label>Guests</label>
-    <select required>
-      <option>1</option><option>2</option><option>3</option>
-      <option>4</option><option>5</option><option>6+</option>
-    </select>
-
-    <!-- FROM -->
-    <label>Pick-up (From)</label>
-    <select required>
-      <option value="">Select city</option>
-      <option>Lisbon</option>
-      <option>Porto</option>
-      <option>Faro</option>
-      <option>Madrid</option>
-      <option>Paris</option>
-      <option>London</option>
-      <option>Rome</option>
-      <option>Barcelona</option>
-    </select>
-
-    <!-- TO -->
-    <label>Drop-off (To)</label>
-    <select required>
-      <option value="">Select city</option>
-      <option>Lisbon</option>
-      <option>Porto</option>
-      <option>Faro</option>
-      <option>Madrid</option>
-      <option>Paris</option>
-      <option>London</option>
-      <option>Rome</option>
-      <option>Barcelona</option>
-    </select>
-
-    <!-- DATE -->
-    <label>Date</label>
-    <input type="date" required />
-
-    <!-- TIME -->
-    <label>Time</label>
-    <input type="time" required />
-
-    <button type="submit" class="btn-primary">
-      Continue booking
-    </button>
-
-  </form>
-
-  <div class="booking-help">
-    <p>Or contact us directly:</p>
-    <p><strong>+351 962 516 005</strong></p>
-    <p>info@exploreportugalexperience.com</p>
-
-    <img
-      src="assets/images/qr-whatsapp.png"
-      alt="WhatsApp QR Code"
-      class="qr-code"
-    />
+  <!-- COOKIE BANNER -->
+  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    <div class="cookie-inner">
+      <p class="cookie-text">
+        We use cookies to improve your experience and measure traffic.
+      </p>
+      <div class="cookie-actions">
+        <button class="btn btn-ghost" id="cookieDecline" type="button">Decline</button>
+        <button class="btn btn-gold" id="cookieAccept" type="button">Accept</button>
+      </div>
+    </div>
   </div>
 
-</section>
+  <!-- TOP BAR (LANGUAGE) -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="lang notranslate" translate="no">
+        <span class="lang-label">Language</span>
+        <div class="lang-select">
+          <div id="google_translate_element"></div>
+          <span class="lang-chevron" aria-hidden="true">▾</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<!-- PRICING -->
-<section class="pricing-section">
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="home-star" aria-label="Home">
+        <img src="assets/icons/compass-gold-solid.svg" class="star-animated" alt="Explore Portugal Experience" />
+      </a>
 
-  <h2>Indicative Prices</h2>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
 
-  <ul class="pricing-list">
-    <li><strong>Airport Transfer:</strong> from €60</li>
-    <li><strong>Private Tour (Half Day):</strong> from €220</li>
-    <li><strong>Private Tour (Full Day):</strong> from €380</li>
-    <li><strong>Custom Programme:</strong> on request</li>
-  </ul>
+      <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contactos.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <p class="pricing-note">
-    Prices depend on distance, duration and number of guests.
-    Final quote confirmed after booking.
-  </p>
+  <!-- MAIN -->
+  <main>
 
-</section>
+    <!-- HERO -->
+    <section class="hero section-dark">
+      <div class="container hero-inner">
+        <img
+          src="assets/images/logo-explore-portugal-experience.png"
+          alt="Explore Portugal Experience"
+          class="hero-logo"
+          loading="eager"
+        />
 
-</main>
+        <p class="hero-tagline">
+          Premium private tours & transfers in Portugal — professional drivers, comfort and discretion.
+        </p>
 
-<!-- FOOTER -->
-<footer class="site-footer">
-  <p>© 2018–2025 Explore Portugal Experience — Turismo em Portugal</p>
-</footer>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="#booking">Book now</a>
+          <a class="btn btn-ghost" href="https://wa.me/351910784548" target="_blank" rel="noopener">WhatsApp us</a>
+        </div>
+      </div>
+    </section>
 
-<!-- BURGER SCRIPT -->
-<script>
-  const toggle = document.getElementById("navToggle");
-  const nav = document.getElementById("mainNav");
+    <!-- BOOKING (NO INDEX) -->
+    <section id="booking" class="section">
+      <div class="container narrow">
 
-  toggle.addEventListener("click", () => {
-    nav.classList.toggle("open");
-  });
-</script>
+        <h2 class="h2">Book in 30 seconds</h2>
+        <p class="muted">
+          Pick the essentials. Final quote confirmed after details.
+        </p>
 
+        <form id="bookingForm" class="card form" novalidate>
+          <div class="grid">
+
+            <div class="field">
+              <label for="service">Service</label>
+              <select id="service" name="service" required>
+                <option value="" selected>Select…</option>
+                <option value="Airport transfer">Airport transfer</option>
+                <option value="Private tour (Half day)">Private tour (Half day)</option>
+                <option value="Private tour (Full day)">Private tour (Full day)</option>
+                <option value="Custom programme">Custom programme</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="guests">Guests</label>
+              <select id="guests" name="guests" required>
+                <option value="" selected>Select…</option>
+                <option>1</option><option>2</option><option>3</option><option>4</option>
+                <option>5</option><option>6</option><option>7</option><option>8</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="fromCity">Pick-up (From)</label>
+              <select id="fromCity" name="from" required></select>
+            </div>
+
+            <div class="field">
+              <label for="toCity">Drop-off (To)</label>
+              <select id="toCity" name="to" required></select>
+            </div>
+
+            <div class="field">
+              <label for="tripType">Trip</label>
+              <select id="tripType" name="tripType" required>
+                <option value="One way" selected>One way</option>
+                <option value="Return">Return</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="dateStart">Date (Start)</label>
+              <input id="dateStart" name="dateStart" type="date" required />
+            </div>
+
+            <div class="field">
+              <label for="flex">Flexible dates (optional)</label>
+              <select id="flex" name="flex">
+                <option value="No" selected>No</option>
+                <option value="± 1 day">± 1 day</option>
+                <option value="± 2 days">± 2 days</option>
+                <option value="± 3 days">± 3 days</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="timeDepart">Time (Departure)</label>
+              <select id="timeDepart" name="timeDepart" required></select>
+              <p class="tip">15-minute steps — always selectable.</p>
+            </div>
+
+          </div>
+
+          <div id="returnFields" class="return-fields" hidden>
+            <div class="grid">
+              <div class="field">
+                <label for="dateReturn">Return date</label>
+                <input id="dateReturn" name="dateReturn" type="date" />
+              </div>
+
+              <div class="field">
+                <label for="timeReturn">Return time</label>
+                <select id="timeReturn" name="timeReturn"></select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-gold" type="submit">Continue booking</button>
+            <a class="btn btn-ghost" href="contactos.html">Need help?</a>
+          </div>
+
+          <p class="contact-inline">
+            Or contact us directly: <strong>+351 962 516 005</strong> ·
+            <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
+          </p>
+
+          <div class="qr-wrap">
+            <img src="assets/img/qr-whatsapp.png" alt="WhatsApp QR" class="qr" loading="lazy">
+            <p class="muted small">Scan to start a WhatsApp conversation.</p>
+          </div>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p>© 2018–2025 Explore Portugal Experience</p>
+        <p class="muted small">Turismo em Portugal</p>
+      </div>
+
+      <div class="footer-right">
+        <p class="powered-by">Powered by <span>MkDesign</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/cookies.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
