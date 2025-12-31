@@ -46,7 +46,43 @@ a:hover{ color:var(--gold-soft); }
   font-size:1rem;
 }
 
-/* ================== TRANSLATE BAR ================== */
+/* ================== FORM CONTROLS (BOOKING ETC) ================== */
+input, select, textarea, button { font-family: inherit; }
+
+input, select, textarea{
+  width:100%;
+  background:#0b0b0b;
+  color:var(--text);
+  border:1px solid rgba(201,165,98,.25);
+  border-radius:12px;
+  padding:.72rem .85rem;
+  outline:none;
+}
+
+select{
+  appearance:none;
+  -webkit-appearance:none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(255,255,255,.7) 50%),
+    linear-gradient(135deg, rgba(255,255,255,.7) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% - 3px),
+    calc(100% - 12px) calc(50% - 3px);
+  background-size:6px 6px, 6px 6px;
+  background-repeat:no-repeat;
+  padding-right:2.4rem;
+}
+
+textarea{ min-height:140px; resize:vertical; }
+
+label{
+  display:block;
+  margin:0 0 .35rem;
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+/* ================== TRANSLATE BAR (FIX) ================== */
 .translate-bar{
   background:#000;
   color:var(--text);
@@ -54,50 +90,64 @@ a:hover{ color:var(--gold-soft); }
   display:flex;
   align-items:center;
   justify-content:flex-start;
-  gap:.65rem;
-  padding:.35rem .9rem;
+  gap:.8rem;
+  padding:.45rem .9rem;
   border-bottom:1px solid #111;
   position:relative;
   z-index:1000;
 }
-.translate-bar .label{
+
+/* importante: impedir o Google de traduzir o label */
+.translate-label{
   letter-spacing:.14em;
   text-transform:uppercase;
   color:var(--muted);
   font-size:.78rem;
+  white-space:nowrap;
 }
+.translate-label.notranslate { unicode-bidi: plaintext; }
+
+/* wrapper do select */
 .translate-wrap{
   position:relative;
   display:inline-flex;
   align-items:center;
 }
+
+/* setinha DENTRO do select */
 .translate-caret{
   position:absolute;
-  right:.6rem;
+  right:.7rem;
   pointer-events:none;
   color:var(--muted);
-  font-size:.75rem;
+  font-size:.72rem;
+  top:50%;
+  transform:translateY(-50%);
 }
 
-/* Google translate discreto + espaço para a setinha */
+/* Google translate discreto */
 #google_translate_element select{
   background:transparent !important;
   color:var(--text) !important;
   border:1px solid rgba(201,165,98,.35) !important;
   border-radius:999px !important;
-  padding:.22rem 2.0rem .22rem .7rem !important; /* MAIS espaço à direita */
+  padding:.28rem 2.2rem .28rem .75rem !important; /* espaço para setinha */
   font-size:.82rem !important;
   outline:none !important;
   appearance:none !important;
   -webkit-appearance:none !important;
-  min-height:30px !important;
+  min-height:32px !important;
+  line-height:1.1 !important;
+  max-width:220px;
 }
+
+/* esconder logo “G” e lixo do widget */
 #google_translate_element img{ display:none !important; }
 .goog-logo-link, .goog-te-gadget span{ display:none !important; }
 .goog-te-gadget{ color:transparent !important; }
 
 @media (max-width:520px){
-  .translate-bar{ gap:.5rem; }
+  #google_translate_element select{ max-width:180px; }
 }
 
 /* ================== HEADER / NAV ================== */
@@ -107,6 +157,7 @@ a:hover{ color:var(--gold-soft); }
   z-index:999;
   background:linear-gradient(to bottom,#000 0,rgba(0,0,0,.94) 55%,rgba(0,0,0,.2) 100%);
 }
+
 .header-inner{
   max-width:var(--max);
   margin:0 auto;
@@ -212,21 +263,24 @@ body.nav-open .nav-toggle span:nth-child(3){ transform:translateY(-6px) rotate(-
   transition:transform .12s ease, background .2s ease, color .2s ease, border-color .2s ease;
   white-space:nowrap;
 }
+
 .btn-primary{
   background:linear-gradient(90deg,#c9a562,#f2d181);
   color:#18120a;
   font-weight:650;
 }
 .btn-primary:hover{ transform:translateY(-1px); box-shadow:var(--shadow); }
+
 .btn-outline{
   background:transparent;
   border-color:var(--gold-soft);
   color:var(--gold-soft);
 }
 .btn-outline:hover{ background:var(--gold-soft); color:#1a1308; }
+
 .small{ padding:.55rem 1rem; font-size:.86rem; }
 
-/* ================== PAGE HERO (logo NÃO fixo) ================== */
+/* ================== PAGE HERO ================== */
 .page-hero{
   padding:2.2rem 1.2rem 1.5rem;
   text-align:center;
@@ -259,7 +313,7 @@ body.nav-open .nav-toggle span:nth-child(3){ transform:translateY(-6px) rotate(-
   margin:0 0 .7rem;
 }
 
-/* ================== FOOTER (IGUAL EM TODAS) ================== */
+/* ================== FOOTER ================== */
 .site-footer{
   background:#020202;
   border-top:1px solid #111;
