@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Book in 30 seconds — premium private tours & transfers in Portugal. Choose one-way or return, dates and times."
+      content="Book in 30 seconds — choose service, trip type (one-way/return), pick-up, drop-off, date and time. Premium tours & transfers."
     />
     <link rel="canonical" href="https://www.exploreportugalexperience.com/booking.html" />
 
@@ -66,7 +66,7 @@
         <div class="section-inner narrow">
           <h1 class="section-title">Book in 30 seconds</h1>
           <p class="page-kicker">
-            Choose one-way or return, pick dates & times, then continue to the next step.
+            Pick the essentials. You can add details/extras after.
           </p>
         </div>
       </section>
@@ -74,22 +74,14 @@
       <section class="section">
         <div class="section-inner narrow">
           <div class="content-card">
+            <p class="mini-title">Trip details</p>
 
-            <form class="contact-form" action="contactos.html" method="GET" id="bookingForm">
-              <!-- Trip type -->
-              <div class="form-row">
-                <label for="trip_type">Trip type</label>
-                <select id="trip_type" name="trip_type" required>
-                  <option value="one_way" selected>One-way only</option>
-                  <option value="return">Return (round trip)</option>
-                </select>
-              </div>
-
-              <!-- Service -->
+            <form class="contact-form" action="contactos.html" method="get" id="quickBook">
+              <!-- SERVICE -->
               <div class="form-row">
                 <label for="service">Service</label>
                 <select id="service" name="service" required>
-                  <option value="" selected disabled>Select...</option>
+                  <option value="" selected>Select…</option>
                   <option value="airport_transfer">Airport transfer</option>
                   <option value="private_tour">Private tour</option>
                   <option value="day_trip">Day trip</option>
@@ -97,137 +89,214 @@
                 </select>
               </div>
 
-              <!-- Guests -->
+              <!-- TRIP TYPE -->
+              <div class="form-row">
+                <label for="tripType">Trip type</label>
+                <select id="tripType" name="tripType" required>
+                  <option value="one_way" selected>One-way</option>
+                  <option value="return">Return</option>
+                </select>
+              </div>
+
+              <!-- GUESTS -->
               <div class="form-row">
                 <label for="pax">Guests</label>
                 <select id="pax" name="pax" required>
-                  <option value="" selected disabled>Select...</option>
+                  <option value="" selected>Select…</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
                   <option value="5">5</option>
-                  <option value="6">6+</option>
+                  <option value="6_plus">6+</option>
                 </select>
               </div>
 
-              <!-- Route -->
+              <!-- FROM (EUROPE CITIES DROPDOWN) -->
               <div class="form-row">
-                <label for="from">Pick-up (From)</label>
-                <input
-                  type="text"
-                  id="from"
-                  name="from"
-                  placeholder="Lisbon Airport, Hotel, City..."
-                  required
-                  autocomplete="off"
-                />
-              </div>
+                <label for="fromCity">Pick-up (From)</label>
+                <select id="fromCity" name="fromCity" required>
+                  <option value="" selected>Select…</option>
 
-              <div class="form-row">
-                <label for="to">Drop-off (To)</label>
-                <input
-                  type="text"
-                  id="to"
-                  name="to"
-                  placeholder="Porto, Sintra, Hotel..."
-                  required
-                  autocomplete="off"
-                />
-              </div>
+                  <optgroup label="Portugal">
+                    <option>Lisbon</option><option>Porto</option><option>Faro</option><option>Braga</option>
+                    <option>Coimbra</option><option>Aveiro</option><option>Sintra</option><option>Cascais</option>
+                    <option>Madeira (Funchal)</option><option>Azores (Ponta Delgada)</option>
+                  </optgroup>
 
-              <!-- Date range + time -->
-              <div class="form-row">
-                <label for="date_start">Date (Start)</label>
-                <input type="date" id="date_start" name="date_start" required />
-              </div>
+                  <optgroup label="Spain">
+                    <option>Madrid</option><option>Barcelona</option><option>Seville</option><option>Valencia</option>
+                    <option>Malaga</option><option>Bilbao</option><option>Granada</option><option>Ibiza</option>
+                  </optgroup>
 
-              <div class="form-row" id="dateEndRow">
-                <label for="date_end">Date (End)</label>
-                <input type="date" id="date_end" name="date_end" required />
-              </div>
+                  <optgroup label="UK & Ireland">
+                    <option>London</option><option>Manchester</option><option>Birmingham</option><option>Edinburgh</option>
+                    <option>Dublin</option>
+                  </optgroup>
 
-              <div class="form-row">
-                <label for="flex_days">Flexible dates (optional)</label>
-                <select id="flex_days" name="flex_days">
-                  <option value="0" selected>No flexibility</option>
-                  <option value="1">± 1 day</option>
-                  <option value="2">± 2 days</option>
-                  <option value="3">± 3 days</option>
+                  <optgroup label="France">
+                    <option>Paris</option><option>Nice</option><option>Lyon</option><option>Marseille</option><option>Bordeaux</option>
+                  </optgroup>
+
+                  <optgroup label="Italy">
+                    <option>Rome</option><option>Milan</option><option>Venice</option><option>Florence</option><option>Naples</option>
+                  </optgroup>
+
+                  <optgroup label="Germany">
+                    <option>Berlin</option><option>Munich</option><option>Frankfurt</option><option>Hamburg</option><option>Cologne</option>
+                  </optgroup>
+
+                  <optgroup label="Netherlands & Belgium">
+                    <option>Amsterdam</option><option>Rotterdam</option><option>Brussels</option><option>Antwerp</option>
+                  </optgroup>
+
+                  <optgroup label="Switzerland & Austria">
+                    <option>Zurich</option><option>Geneva</option><option>Vienna</option><option>Salzburg</option>
+                  </optgroup>
+
+                  <optgroup label="Nordics">
+                    <option>Copenhagen</option><option>Stockholm</option><option>Oslo</option><option>Helsinki</option>
+                  </optgroup>
+
+                  <optgroup label="Central & Eastern Europe">
+                    <option>Prague</option><option>Budapest</option><option>Warsaw</option><option>Krakow</option>
+                    <option>Bucharest</option><option>Sofia</option><option>Athens</option>
+                  </optgroup>
+
+                  <option value="OTHER">Other (type…)</option>
                 </select>
+
+                <input
+                  id="fromOther"
+                  name="fromOther"
+                  type="text"
+                  placeholder="Type pick-up city / airport / hotel…"
+                  style="display:none; margin-top:.6rem;"
+                />
               </div>
 
+              <!-- TO (EUROPE CITIES DROPDOWN) -->
               <div class="form-row">
-                <label for="time_depart">Time (Departure)</label>
-                <!-- input nativo: funciona no Android/iOS -->
-                <input type="time" id="time_depart" name="time_depart" required step="900" />
-                <p style="margin:.5rem 0 0; color:var(--muted); font-size:.88rem;">
-                  Tip: 15-minute steps. If your phone shows a clock, choose the time and press OK.
+                <label for="toCity">Drop-off (To)</label>
+                <select id="toCity" name="toCity" required>
+                  <option value="" selected>Select…</option>
+
+                  <optgroup label="Portugal">
+                    <option>Lisbon</option><option>Porto</option><option>Faro</option><option>Braga</option>
+                    <option>Coimbra</option><option>Aveiro</option><option>Sintra</option><option>Cascais</option>
+                    <option>Madeira (Funchal)</option><option>Azores (Ponta Delgada)</option>
+                  </optgroup>
+
+                  <optgroup label="Spain">
+                    <option>Madrid</option><option>Barcelona</option><option>Seville</option><option>Valencia</option>
+                    <option>Malaga</option><option>Bilbao</option><option>Granada</option><option>Ibiza</option>
+                  </optgroup>
+
+                  <optgroup label="UK & Ireland">
+                    <option>London</option><option>Manchester</option><option>Birmingham</option><option>Edinburgh</option>
+                    <option>Dublin</option>
+                  </optgroup>
+
+                  <optgroup label="France">
+                    <option>Paris</option><option>Nice</option><option>Lyon</option><option>Marseille</option><option>Bordeaux</option>
+                  </optgroup>
+
+                  <optgroup label="Italy">
+                    <option>Rome</option><option>Milan</option><option>Venice</option><option>Florence</option><option>Naples</option>
+                  </optgroup>
+
+                  <optgroup label="Germany">
+                    <option>Berlin</option><option>Munich</option><option>Frankfurt</option><option>Hamburg</option><option>Cologne</option>
+                  </optgroup>
+
+                  <optgroup label="Netherlands & Belgium">
+                    <option>Amsterdam</option><option>Rotterdam</option><option>Brussels</option><option>Antwerp</option>
+                  </optgroup>
+
+                  <optgroup label="Switzerland & Austria">
+                    <option>Zurich</option><option>Geneva</option><option>Vienna</option><option>Salzburg</option>
+                  </optgroup>
+
+                  <optgroup label="Nordics">
+                    <option>Copenhagen</option><option>Stockholm</option><option>Oslo</option><option>Helsinki</option>
+                  </optgroup>
+
+                  <optgroup label="Central & Eastern Europe">
+                    <option>Prague</option><option>Budapest</option><option>Warsaw</option><option>Krakow</option>
+                    <option>Bucharest</option><option>Sofia</option><option>Athens</option>
+                  </optgroup>
+
+                  <option value="OTHER">Other (type…)</option>
+                </select>
+
+                <input
+                  id="toOther"
+                  name="toOther"
+                  type="text"
+                  placeholder="Type drop-off city / airport / hotel…"
+                  style="display:none; margin-top:.6rem;"
+                />
+              </div>
+
+              <!-- DATE -->
+              <div class="form-row">
+                <label for="date">Date</label>
+                <input id="date" name="date" type="date" required />
+              </div>
+
+              <!-- TIME (MUST BE SELECT — NO PHONE CLOCK) -->
+              <div class="form-row">
+                <label for="timeSelect">Time</label>
+                <select id="timeSelect" name="time" required>
+                  <option value="" selected>Select…</option>
+                </select>
+                <p style="margin:.45rem 0 0; color:var(--muted); font-size:.9rem;">
+                  Tip: 15-minute steps. No phone clock — always selectable.
                 </p>
               </div>
 
-              <!-- Return fields (only if Return selected) -->
-              <div id="returnFields">
+              <!-- RETURN -->
+              <div id="returnBlock" style="display:none;">
+                <p class="mini-title" style="margin-top:1.1rem;">Return</p>
+
                 <div class="form-row">
-                  <label for="return_from">Return pick-up (From)</label>
-                  <input
-                    type="text"
-                    id="return_from"
-                    name="return_from"
-                    placeholder="Porto, Hotel..."
-                    autocomplete="off"
-                  />
+                  <label for="returnDate">Return date</label>
+                  <input id="returnDate" name="returnDate" type="date" />
                 </div>
 
                 <div class="form-row">
-                  <label for="return_to">Return drop-off (To)</label>
-                  <input
-                    type="text"
-                    id="return_to"
-                    name="return_to"
-                    placeholder="Lisbon Airport, Hotel..."
-                    autocomplete="off"
-                  />
-                </div>
-
-                <div class="form-row">
-                  <label for="return_date">Return date</label>
-                  <input type="date" id="return_date" name="return_date" />
-                </div>
-
-                <div class="form-row">
-                  <label for="return_time">Return time</label>
-                  <input type="time" id="return_time" name="return_time" step="900" />
+                  <label for="returnTimeSelect">Return time</label>
+                  <select id="returnTimeSelect" name="returnTime">
+                    <option value="" selected>Select…</option>
+                  </select>
                 </div>
               </div>
 
-              <!-- Buttons -->
+              <!-- BUTTONS -->
               <div style="display:flex; gap:.8rem; flex-wrap:wrap; margin-top:1rem;">
                 <button type="submit" class="btn-primary">Continue booking</button>
                 <a class="btn-outline" href="contactos.html">Need help?</a>
               </div>
 
-              <p style="margin:1.2rem 0 0; color:var(--muted);">
+              <p style="margin:1rem 0 .2rem; color:var(--muted);">
                 Or contact us directly:
-                <a href="tel:+351962516005">+351 962 516 005</a>
-                ·
+                <a href="tel:+351962516005">+351 962 516 005</a> ·
                 <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
               </p>
 
-              <!-- QR WhatsApp -->
-              <div style="margin-top:1.2rem;">
+              <!-- WhatsApp QR -->
+              <div style="margin-top:1rem;">
                 <img
                   src="assets/images/qr-whatsapp.png"
                   alt="WhatsApp QR code"
-                  style="width:min(92vw,380px); margin:0 auto; border-radius:18px; border:1px solid rgba(201,165,98,.28); background:#fff;"
+                  style="width:min(92vw,380px); margin:0 auto; border-radius:18px; background:#fff; padding:10px;"
                   loading="lazy"
                 />
-                <p style="text-align:center; margin:.7rem 0 0; color:var(--muted); font-size:.9rem;">
+                <p style="text-align:center; margin:.6rem 0 0; color:var(--muted); font-size:.9rem;">
                   Scan to start a WhatsApp conversation and book quickly.
                 </p>
               </div>
             </form>
-
           </div>
         </div>
       </section>
@@ -270,22 +339,92 @@
       </div>
     </footer>
 
-    <!-- COOKIE BANNER -->
-    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie consent">
-      <div class="cookie-content">
-        <p>
-          We use cookies to improve your experience and measure performance. You can accept or decline non-essential cookies.
-        </p>
-        <div class="cookie-actions">
-          <button class="btn-primary small" id="cookieAccept" type="button">Accept</button>
-          <button class="btn-outline small" id="cookieDecline" type="button">Decline</button>
-        </div>
-      </div>
-    </div>
-
     <script src="assets/js/nav.js?v=910"></script>
-    <script src="assets/js/booking.js?v=910"></script>
-    <script src="assets/js/cookie.js?v=910"></script>
+
+    <script>
+      // Date limits (today .. +365)
+      (function setDateLimits(){
+        const date = document.getElementById("date");
+        const returnDate = document.getElementById("returnDate");
+
+        const today = new Date();
+        const pad = (n) => String(n).padStart(2, "0");
+        const toISO = (d) => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+
+        const min = toISO(today);
+        const maxDate = new Date(today);
+        maxDate.setDate(maxDate.getDate() + 365);
+        const max = toISO(maxDate);
+
+        date.min = min; date.max = max;
+        returnDate.min = min; returnDate.max = max;
+      })();
+
+      // Build time dropdowns (06:00..23:00, every 15min) => NO PHONE CLOCK
+      (function buildTimes(){
+        function fillSelect(sel){
+          const startHour = 6;
+          const endHour = 23;
+          for(let h=startHour; h<=endHour; h++){
+            for(let m=0; m<60; m+=15){
+              const hh = String(h).padStart(2,"0");
+              const mm = String(m).padStart(2,"0");
+              const v = `${hh}:${mm}`;
+              const opt = document.createElement("option");
+              opt.value = v;
+              opt.textContent = v;
+              sel.appendChild(opt);
+            }
+          }
+        }
+        fillSelect(document.getElementById("timeSelect"));
+        fillSelect(document.getElementById("returnTimeSelect"));
+      })();
+
+      // Return toggle
+      (function returnToggle(){
+        const tripType = document.getElementById("tripType");
+        const block = document.getElementById("returnBlock");
+        const rd = document.getElementById("returnDate");
+        const rt = document.getElementById("returnTimeSelect");
+
+        function apply(){
+          const isReturn = tripType.value === "return";
+          block.style.display = isReturn ? "block" : "none";
+          rd.required = isReturn;
+          rt.required = isReturn;
+          if(!isReturn){ rd.value = ""; rt.value = ""; }
+        }
+        tripType.addEventListener("change", apply);
+        apply();
+      })();
+
+      // Show "Other" text inputs for From/To
+      (function otherCityToggle(){
+        const fromCity = document.getElementById("fromCity");
+        const fromOther = document.getElementById("fromOther");
+        const toCity = document.getElementById("toCity");
+        const toOther = document.getElementById("toOther");
+
+        function setFrom(){
+          const isOther = fromCity.value === "OTHER";
+          fromOther.style.display = isOther ? "block" : "none";
+          fromOther.required = isOther;
+          if(!isOther) fromOther.value = "";
+        }
+
+        function setTo(){
+          const isOther = toCity.value === "OTHER";
+          toOther.style.display = isOther ? "block" : "none";
+          toOther.required = isOther;
+          if(!isOther) toOther.value = "";
+        }
+
+        fromCity.addEventListener("change", setFrom);
+        toCity.addEventListener("change", setTo);
+        setFrom(); setTo();
+      })();
+    </script>
 
     <!-- Google Translate -->
     <script>
