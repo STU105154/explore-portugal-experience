@@ -11,7 +11,7 @@
     />
     <link rel="canonical" href="https://www.exploreportugalexperience.com/" />
 
-    <link rel="stylesheet" href="assets/css/style.css?v=910" />
+    <link rel="stylesheet" href="assets/css/style.css?v=920" />
     <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png" />
 
     <!-- Google Analytics -->
@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <!-- HEADER (sem logotipo pequenino extra) -->
+    <!-- HEADER -->
     <header class="site-header">
       <div class="header-inner">
         <a href="index.html" class="home-star" aria-label="Home">
@@ -52,7 +52,6 @@
           <a href="pricing.html">Pricing</a>
           <a href="faq.html">FAQ</a>
           <a href="gallery.html">Gallery</a>
-          <a href="booking.html">Bookings</a>
           <a href="contactos.html">Contact</a>
         </nav>
 
@@ -78,28 +77,111 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn-primary" href="booking.html">Book now</a>
+            <a class="btn-primary" href="#book">Book now</a>
             <a class="btn-outline" href="https://wa.me/351962516005" target="_blank" rel="noopener">
               WhatsApp us
             </a>
           </div>
+        </div>
+      </section>
 
-          <!-- WhatsApp QR -->
-          <div class="qr-wrap">
-            <img
-              src="assets/images/qr-whatsapp.png"
-              alt="WhatsApp QR code"
-              class="qr-img"
-              loading="lazy"
-            />
-            <p class="qr-note">
-              Scan to start a WhatsApp conversation and book quickly.
+      <!-- BOOKING (dentro do index) -->
+      <section class="section" id="book">
+        <div class="section-inner narrow">
+          <div class="content-card">
+            <h2 class="section-title" style="margin-bottom:.4rem;">Book in 30 seconds</h2>
+            <p class="page-kicker" style="margin-bottom:1rem;">
+              Pick the basics now. You can add extras on the next step.
             </p>
+
+            <form class="quick-book" action="booking.html" method="GET">
+              <div class="quick-grid">
+                <div>
+                  <label for="service">Service</label>
+                  <select id="service" name="service" required>
+                    <option value="" selected>Select…</option>
+                    <option value="airport_transfer">Airport transfer</option>
+                    <option value="private_tour">Private tour</option>
+                    <option value="day_trip">Day trip</option>
+                    <option value="custom">Custom programme</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="pax">Guests</label>
+                  <select id="pax" name="pax" required>
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6+">6+</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="from">Pick-up (From)</label>
+                  <input id="from" name="from" type="text" placeholder="Lisbon Airport, Hotel, City…" required />
+                </div>
+
+                <div>
+                  <label for="to">Drop-off (To)</label>
+                  <input id="to" name="to" type="text" placeholder="Porto, Sintra, Hotel…" required />
+                </div>
+
+                <div>
+                  <label for="trip_type">Trip</label>
+                  <select id="trip_type" name="trip_type" required>
+                    <option value="one_way" selected>One way</option>
+                    <option value="return">Return</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="date_start">Date (Start)</label>
+                  <input id="date_start" name="date_start" type="date" required />
+                </div>
+
+                <div id="endDateWrap">
+                  <label for="date_end">Date (End)</label>
+                  <input id="date_end" name="date_end" type="date" />
+                </div>
+
+                <div>
+                  <label for="time_depart">Time (Departure)</label>
+                  <!-- IMPORTANT: type="time" resolve o “não dá para confirmar” que tu viste -->
+                  <input id="time_depart" name="time_depart" type="time" required />
+                </div>
+              </div>
+
+              <div class="quick-actions">
+                <button class="btn-primary" type="submit">Continue booking</button>
+                <a class="btn-outline" href="https://wa.me/351962516005" target="_blank" rel="noopener">Need help?</a>
+              </div>
+
+              <p class="quick-note">
+                Or contact us directly:
+                <a href="tel:+351962516005">+351 962 516 005</a>
+                ·
+                <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
+              </p>
+
+              <!-- QR menor e com limite -->
+              <div class="qr-wrap">
+                <img
+                  src="assets/images/qr-whatsapp.png"
+                  alt="WhatsApp QR code"
+                  class="qr-img"
+                  loading="lazy"
+                />
+                <p class="qr-note">Scan to start a WhatsApp conversation.</p>
+              </div>
+            </form>
           </div>
         </div>
       </section>
 
-      <!-- SMALL INTRO -->
+      <!-- LINKS curtos -->
       <section class="section">
         <div class="section-inner narrow">
           <div class="content-card">
@@ -108,7 +190,7 @@
               Chauffeur-driven tours and private transfers designed around your schedule — calm, safe and premium.
             </p>
 
-            <div style="display:flex; gap:.8rem; flex-wrap:wrap; margin-top:1rem;">
+            <div class="mini-links">
               <a class="btn-outline" href="services.html">View services</a>
               <a class="btn-outline" href="choose.html">Why choose us</a>
               <a class="btn-outline" href="pricing.html">See pricing</a>
@@ -155,7 +237,28 @@
       </div>
     </footer>
 
-    <script src="assets/js/nav.js?v=910"></script>
+    <script src="assets/js/nav.js?v=920"></script>
+
+    <!-- Fix: mostrar/esconder Data End conforme One way/Return -->
+    <script>
+      (function () {
+        const tripType = document.getElementById("trip_type");
+        const endWrap = document.getElementById("endDateWrap");
+        const endInput = document.getElementById("date_end");
+
+        function syncTrip() {
+          const isReturn = tripType.value === "return";
+          endWrap.style.display = isReturn ? "block" : "none";
+          endInput.required = isReturn;
+          if (!isReturn) endInput.value = "";
+        }
+
+        if (tripType && endWrap && endInput) {
+          syncTrip();
+          tripType.addEventListener("change", syncTrip);
+        }
+      })();
+    </script>
 
     <!-- Google Translate -->
     <script>
