@@ -38,11 +38,45 @@ main{ min-height:60vh; }
   display:flex;
   align-items:center;
   gap:.5rem;
-  padding:.25rem .9rem;
-  font-size:.82rem;
+  padding:.25rem .8rem;
+  font-size:.8rem;
   opacity:.92;
 }
-.translate-bar span{ color:var(--muted); }
+
+.translate-bar span{
+  color:var(--muted);
+  font-weight:500;
+}
+
+/* o widget do Google vem com HTML próprio — eu “forço” a ficar pequeno */
+.translate-bar .goog-te-gadget{
+  font-size:0 !important; /* esconde texto extra */
+}
+
+.translate-bar .goog-te-gadget select{
+  font-size:.78rem !important;
+  background:#0b0b0b;
+  color:var(--text);
+  border:1px solid #222;
+  border-radius:10px;
+  padding:.25rem .45rem;
+  outline:none;
+}
+
+/* esconder o branding feio do Google (o banner) */
+.goog-te-banner-frame.skiptranslate{ display:none !important; }
+body{ top:0 !important; }
+.skiptranslate{ color:inherit !important; }
+
+/* No telemóvel: meter translate mais discreto e não ocupar topo */
+@media (max-width:700px){
+  .translate-bar{
+    justify-content:flex-start;
+    padding:.18rem .6rem;
+    gap:.35rem;
+  }
+  .translate-bar span{ display:none; } /* some "Language:" no mobile */
+}
 
 /* ================== HEADER / NAV ================== */
 .site-header{
@@ -55,22 +89,24 @@ main{ min-height:60vh; }
 .header-inner{
   max-width:var(--max);
   margin:0 auto;
-  padding:.65rem 1.2rem;
+  padding:.6rem 1.1rem;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:.8rem;
 }
 
+/* estrela */
 .home-star{
   display:inline-flex;
   align-items:center;
   justify-content:center;
+  flex:0 0 auto;
 }
 
 .star-animated{
-  width:46px;
-  height:46px;
+  width:44px;
+  height:44px;
   filter:drop-shadow(0 0 10px rgba(201,165,98,.6));
   animation:star-spin 18s linear infinite;
   transform-origin:center;
@@ -84,9 +120,10 @@ main{ min-height:60vh; }
 /* remover logo pequeno do header em todas as páginas */
 .header-logo{ display:none !important; }
 
+/* nav desktop */
 .nav{
   display:flex;
-  gap:1.5rem;
+  gap:1.35rem;
   font-size:.95rem;
 }
 
@@ -106,7 +143,6 @@ main{ min-height:60vh; }
   background:var(--gold-soft);
   transition:width .2s ease;
 }
-
 .nav a:hover::after{ width:100%; }
 
 /* burger */
@@ -120,6 +156,7 @@ main{ min-height:60vh; }
   width:30px;
   height:26px;
   padding:0;
+  flex:0 0 auto;
 }
 
 .nav-toggle span{
@@ -140,7 +177,7 @@ main{ min-height:60vh; }
     display:none;
     flex-direction:column;
     background:rgba(0,0,0,.97);
-    padding:1rem 1.2rem 1.2rem;
+    padding:1rem 1.1rem 1.2rem;
     border-bottom:1px solid #111;
     gap:.9rem;
   }
@@ -154,14 +191,14 @@ body.nav-open .nav-toggle span:nth-child(2){ opacity:0; }
 body.nav-open .nav-toggle span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
 
 /* ================== LAYOUT ================== */
-.section{ padding:3.2rem 1.2rem; }
+.section{ padding:3rem 1.1rem; }
 .section-dark{ background:#050505; }
 
 .section-inner{ max-width:var(--max); margin:0 auto; }
 .section-inner.narrow{ max-width:820px; }
 
 .section-title{
-  font-size:1.55rem;
+  font-size:1.5rem;
   margin:0 0 .8rem;
   text-transform:uppercase;
   letter-spacing:.18em;
@@ -193,7 +230,6 @@ body.nav-open .nav-toggle span:nth-child(3){ transform: translateY(-6px) rotate(
   color:#1a1308;
   font-weight:650;
 }
-
 .btn-primary:hover{ transform:translateY(-1px); box-shadow:var(--shadow); }
 
 .btn-outline{
@@ -201,7 +237,6 @@ body.nav-open .nav-toggle span:nth-child(3){ transform: translateY(-6px) rotate(
   border-color:var(--gold-soft);
   color:var(--gold-soft);
 }
-
 .btn-outline:hover{
   background:var(--gold-soft);
   color:#1a1308;
@@ -212,47 +247,51 @@ body.nav-open .nav-toggle span:nth-child(3){ transform: translateY(-6px) rotate(
   border-color:#333;
   color:var(--text);
 }
-
 .btn-secondary:hover{ background:#1a1a1a; }
 
 /* ================== HOME HERO ================== */
 .home-hero{
-  padding:3.2rem 1.2rem 2.4rem;
-  min-height:calc(100vh - 120px);
+  padding:1.6rem 1rem 2rem;  /* menos altura = menos scroll */
+  min-height:auto;           /* IMPORTANTE: não forçar 100vh */
   display:flex;
-  align-items:center;
+  align-items:flex-start;
   justify-content:center;
   text-align:center;
 }
 
 .home-logo{
-  width:min(74vw, 330px);
+  width:min(82vw, 280px); /* menor no mobile */
   height:auto;
-  margin:0 0 1.2rem;
+  margin: .4rem 0 1rem;
+}
+
+/* no mobile, ainda mais pequeno */
+@media (max-width:600px){
+  .home-logo{ width:min(78vw, 240px); }
 }
 
 .hero-tagline{
-  max-width:640px;
-  margin:0 auto 1.25rem;
+  max-width:660px;
+  margin:0 auto 1rem;
   color:var(--muted);
-  font-size:1.02rem;
+  font-size:1rem;
 }
 
-/* QUICK BOOK */
+/* QUICK BOOK (prioridade no topo) */
 .quick-book{
-  margin:1.25rem auto 1.2rem;
+  margin:1rem auto 1rem;
   max-width:820px;
   background:linear-gradient(150deg,#141414,#070707);
   border:1px solid rgba(201,165,98,.35);
   border-radius:var(--radius);
   box-shadow:var(--shadow);
-  padding:1.1rem 1rem 1.25rem;
+  padding:1rem 1rem 1.15rem;
   text-align:left;
 }
 
 .quick-book h2{
   margin:0 0 .7rem;
-  font-size:1.05rem;
+  font-size:1rem;
   color:var(--gold-soft);
   letter-spacing:.12em;
   text-transform:uppercase;
@@ -261,14 +300,14 @@ body.nav-open .nav-toggle span:nth-child(3){ transform: translateY(-6px) rotate(
 .quick-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:.8rem;
+  gap:.75rem;
 }
 
 .quick-grid .full{ grid-column:1 / -1; }
 
 .quick-book label{
   display:block;
-  font-size:.78rem;
+  font-size:.76rem;
   color:var(--muted);
   margin:0 0 .25rem;
   letter-spacing:.08em;
@@ -277,7 +316,7 @@ body.nav-open .nav-toggle span:nth-child(3){ transform: translateY(-6px) rotate(
 
 .quick-book input, .quick-book select{
   width:100%;
-  padding:.72rem .85rem;
+  padding:.68rem .8rem;
   border-radius:12px;
   border:1px solid #333;
   background:#050505;
@@ -287,34 +326,40 @@ body.nav-open .nav-toggle span:nth-child(3){ transform: translateY(-6px) rotate(
 
 .quick-actions{
   display:flex;
-  gap:.7rem;
-  margin-top:.9rem;
+  gap:.65rem;
+  margin-top:.85rem;
   flex-wrap:wrap;
 }
 
 @media (max-width:700px){
   .quick-grid{ grid-template-columns:1fr; }
+  .quick-book{ padding:.95rem .9rem 1.05rem; }
 }
 
-/* QR */
+/* QR (CONTROLADO: nunca ocupa o ecrã todo) */
 .hero-qr-wrap{
-  margin-top:1.2rem;
+  margin-top:1rem;
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:.7rem;
+  gap:.65rem;
 }
+
 .home-qr{
-  width:min(86vw, 340px);
+  width:min(86vw, 260px);  /* <= isto resolve o “QR gigante” */
+  max-width:260px;
+  height:auto;
   border-radius:14px;
   background:#fff;
-  padding:10px;
+  padding:8px;
   box-shadow:var(--shadow);
 }
+
 .hero-qr-caption{
   color:var(--muted);
-  font-size:.92rem;
+  font-size:.9rem;
   max-width:520px;
+  margin:0;
 }
 
 /* ================== CARDS ================== */
@@ -357,7 +402,6 @@ body.nav-open .nav-toggle span:nth-child(3){ transform: translateY(-6px) rotate(
   padding:1.5rem 1.35rem;
 }
 
-/* premium contact block */
 .premium-contact .contact-heading{
   margin:0 0 1rem;
   color:var(--gold-soft);
@@ -365,6 +409,7 @@ body.nav-open .nav-toggle span:nth-child(3){ transform: translateY(-6px) rotate(
   text-transform:uppercase;
   font-size:1.05rem;
 }
+
 .contact-block{ margin-bottom:1.15rem; }
 .contact-block h3{
   margin:0 0 .25rem;
@@ -372,12 +417,13 @@ body.nav-open .nav-toggle span:nth-child(3){ transform: translateY(-6px) rotate(
   letter-spacing:.08em;
   font-size:.98rem;
 }
-.contact-block p{ margin:0; color:var(--text); }
+.contact-block p{ margin:0; }
+
 .contact-link{
   display:inline-block;
-  margin-top:.1rem;
+  margin-top:.05rem;
   font-size:1rem;
-  word-break:break-word;
+  word-break:break-word;  /* isto evita o email “colado” */
 }
 .contact-whatsapp{ font-weight:650; color:var(--gold-soft); }
 
@@ -433,7 +479,7 @@ body.nav-open .nav-toggle span:nth-child(3){ transform: translateY(-6px) rotate(
 .site-footer{
   background:#020202;
   border-top:1px solid #111;
-  padding:2.3rem 1.2rem 2rem;
+  padding:2.2rem 1.1rem 2rem;
   font-size:.9rem;
 }
 
