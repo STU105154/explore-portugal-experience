@@ -1,86 +1,33 @@
-// assets/js/cookie.js
-(() => {
-  const KEY = "epe_cookie_choice_v3"; // muda versão se quiseres forçar reaparecer
+(function () {
+  const banner = document.getElementById("cookieBanner");
+  const btnAccept = document.getElementById("cookieAccept");
+  const btnDecline = document.getElementById("cookieDecline");
 
-  const getLS = () => {
-    try { return localStorage.getItem(KEY) || ""; }
-    catch { return ""; }
-  };
+  if (!banner || !btnAccept || !btnDecline) return;
 
-  const setLS = (v) => {
-    try { localStorage.setItem(KEY, v); }
-    catch { /* ignore */ }
-  };
+  const KEY = "epx_cookie_choice"; // "accepted" | "declined"
 
-  const getCookie = (name) => {
-    const m = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
-    return m ? decodeURIComponent(m[2]) : "";
-  };
-
-  const setCookie = (name, value, days = 365) => {
-    const d = new Date();
-    d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
-    document.cookie =
-      `${name}=${encodeURIComponent(value)}; expires=${d.toUTCString()}; path=/; SameSite=Lax`;
-  };
-
-  const getSaved = () => getLS() || getCookie(KEY);
-  const saveChoice = (v) => { setLS(v); setCookie(KEY, v, 365); };
-
-  const qs = (id) => document.getElementById(id);
-
-  const show = (el) => {
-    if (!el) return;
-    el.classList.remove("hide");
-    el.setAttribute("aria-hidden", "false");
-  };
-
-  const hide = (el) => {
-    if (!el) return;
-    el.classList.add("hide");
-    el.setAttribute("aria-hidden", "true");
-  };
-
-  const bindClick = (btn, handler) => {
-    if (!btn) return;
-    btn.addEventListener("click", handler);
-    // alguns Androids “atrapalham-se” com overlays — isto ajuda:
-    btn.addEventListener("touchstart", handler, { passive: true });
-  };
-
-  const init = () => {
-    const banner = qs("cookieBanner");
-    const accept = qs("cookieAccept");
-    const decline = qs("cookieDecline");
-
-    // Se não existir HTML do banner, não faz nada
-    if (!banner || !accept || !decline) return;
-
-    const saved = getSaved();
-    if (saved) {
-      hide(banner);
-    } else {
-      show(banner);
-    }
-
-    bindClick(accept, (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      saveChoice("accepted");
-      hide(banner);
-    });
-
-    bindClick(decline, (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      saveChoice("declined");
-      hide(banner);
-    });
-  };
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
-    init();
+  function hide() {
+    banner.classList.add("hide");
+    banner.setAttribute("aria-hidden", "true");
   }
+
+  function show() {
+    banner.classList.remove("hide");
+    banner.setAttribute("aria-hidden", "false");
+  }
+
+  const saved = localStorage.getItem(KEY);
+  if (!saved) show();
+  else hide();
+
+  btnAccept.addEventListener("click", () => {
+    localStorage.setItem(KEY, "accepted");
+    hide();
+  });
+
+  btnDecline.addEventListener("click", () => {
+    localStorage.setItem(KEY, "declined");
+    hide();
+  });
 })();
