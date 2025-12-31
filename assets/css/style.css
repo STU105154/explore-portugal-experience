@@ -374,14 +374,15 @@ body { top:0 !important; }
 }
 
 /* =========================
-   COOKIE BANNER
+   COOKIE BANNER (CLICKABLE)
 ========================= */
 .cookie-banner{
   position: fixed;
   left: 14px;
   right: 14px;
   bottom: 14px;
-  z-index: 200;
+  z-index: 99999;              /* MUITO acima de tudo */
+  pointer-events: auto;        /* recebe cliques */
 }
 .cookie-banner.hide{ display:none; }
 
@@ -397,10 +398,17 @@ body { top:0 !important; }
   justify-content: space-between;
   gap: 12px;
   box-shadow: var(--shadow);
+  pointer-events: auto;        /* recebe cliques */
 }
+
 .cookie-text{ margin:0; color: var(--muted); }
-.cookie-actions{ display:flex; gap: 10px; flex-wrap: wrap; }
-.cookie-actions .btn{ min-width: 120px; padding: 10px 14px; }
+.cookie-actions{ display:flex; gap: 10px; flex-wrap: wrap; pointer-events:auto; }
+.cookie-actions .btn{
+  min-width: 120px;
+  padding: 10px 14px;
+  cursor: pointer;
+  pointer-events: auto;        /* recebe cliques */
+}
 
 @media (max-width: 720px){
   .cookie-inner{ flex-direction: column; align-items: stretch; }
