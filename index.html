@@ -10,11 +10,11 @@
     content="Premium private tours & transfers in Portugal with professional drivers. Comfort, elegance and discretion."
   />
 
-  <!-- CSS (CAMINHO CORRETO) -->
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <!-- CSS (RELATIVO - FUNCIONA EM GITHUB PAGES) -->
+  <link rel="stylesheet" href="assets/css/style.css?v=99" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/assets/icons/compass-gold-64.png" />
+  <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png" />
 
   <!-- Canonical -->
   <link rel="canonical" href="https://www.exploreportugalexperience.com/" />
@@ -46,13 +46,13 @@
 
       <a href="index.html" class="home-star" aria-label="Home">
         <img
-          src="/assets/icons/compass-gold-solid.svg"
+          src="assets/icons/compass-gold-solid.svg"
           alt="Explore Portugal Experience"
           class="star-animated"
         />
       </a>
 
-      <nav class="nav" id="mainNav">
+      <nav class="nav" id="mainNav" aria-label="Main navigation">
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="choose.html">Why us</a>
@@ -78,7 +78,7 @@
       <div class="section-inner narrow">
 
         <img
-          src="/assets/images/logo-explore-portugal-experience.png"
+          src="assets/images/logo-explore-portugal-experience.png"
           alt="Explore Portugal Experience"
           class="home-logo"
         />
@@ -94,45 +94,45 @@
           <div class="quick-grid">
 
             <div>
-              <label>Service</label>
-              <select name="service" required>
+              <label for="service">Service</label>
+              <select id="service" name="service" required>
                 <option value="">Select</option>
-                <option>Airport transfer</option>
-                <option>Private tour</option>
-                <option>Day trip</option>
-                <option>Custom programme</option>
+                <option value="Airport transfer">Airport transfer</option>
+                <option value="Private tour">Private tour</option>
+                <option value="Day trip">Day trip</option>
+                <option value="Custom programme">Custom programme</option>
               </select>
             </div>
 
             <div>
-              <label>Guests</label>
-              <select name="pax" required>
-                <option>1</option>
-                <option selected>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5+</option>
+              <label for="pax">Guests</label>
+              <select id="pax" name="pax" required>
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5+">5+</option>
               </select>
             </div>
 
             <div>
-              <label>Pick-up (From)</label>
-              <input type="text" name="from" placeholder="Lisbon Airport, Hotel..." required />
+              <label for="from">Pick-up (From)</label>
+              <input id="from" type="text" name="from" placeholder="Lisbon Airport, Hotel..." required />
             </div>
 
             <div>
-              <label>Drop-off (To)</label>
-              <input type="text" name="to" placeholder="Porto, Sintra, Hotel..." required />
+              <label for="to">Drop-off (To)</label>
+              <input id="to" type="text" name="to" placeholder="Porto, Sintra, Hotel..." required />
             </div>
 
             <div>
-              <label>Date</label>
-              <input type="date" name="date" required />
+              <label for="date">Date</label>
+              <input id="date" type="date" name="date" required />
             </div>
 
             <div>
-              <label>Time</label>
-              <input type="time" name="time" required />
+              <label for="time">Time</label>
+              <input id="time" type="time" name="time" required />
             </div>
 
             <div class="full">
@@ -141,6 +141,7 @@
                 <a
                   href="https://wa.me/351910784548"
                   target="_blank"
+                  rel="noopener"
                   class="btn-outline"
                 >WhatsApp</a>
               </div>
@@ -152,7 +153,7 @@
         <!-- QR WHATSAPP -->
         <div class="hero-qr-wrap">
           <img
-            src="/assets/images/qr-whatsapp.png"
+            src="assets/images/IMG-20251221-WA0018.jpg"
             alt="WhatsApp QR code"
             class="home-qr"
           />
@@ -180,17 +181,15 @@
           Phone (Portugal):
           <a href="tel:+351962516005">+351 962 516 005</a><br />
           Email:
-          <a href="mailto:info@exploreportugalexperience.com">
-            info@exploreportugalexperience.com
-          </a>
+          <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
         </p>
       </div>
 
       <div class="footer-col">
         <p class="footer-title">Follow</p>
         <p>
-          <a href="https://www.instagram.com/exploreportugal2025" target="_blank">Instagram</a><br />
-          <a href="https://www.tiktok.com/@explore.portugal24" target="_blank">TikTok</a>
+          <a href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener">Instagram</a><br />
+          <a href="https://www.tiktok.com/@explore.portugal24" target="_blank" rel="noopener">TikTok</a>
         </p>
       </div>
 
@@ -202,7 +201,7 @@
   </footer>
 
   <!-- JS -->
-  <script src="/assets/js/nav.js"></script>
+  <script src="assets/js/nav.js?v=99"></script>
 
   <!-- Google Translate -->
   <script>
