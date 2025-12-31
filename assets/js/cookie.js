@@ -1,32 +1,58 @@
+// assets/js/cookies.js
 (function () {
-  const key = "epe_cookie_choice";
-  const banner = document.getElementById("cookieBanner");
-  const accept = document.getElementById("cookieAccept");
-  const decline = document.getElementById("cookieDecline");
+  const STORAGE_KEY = "epe_cookie_choice_v1";
 
-  function hide() {
-    if (banner) banner.classList.add("hide");
+  function $(id) {
+    return document.getElementById(id);
   }
 
-  function show() {
-    if (banner) banner.classList.remove("hide");
+  function hide(banner) {
+    if (!banner) return;
+    banner.classList.add("hide");
+    banner.setAttribute("aria-hidden", "true");
   }
 
-  const saved = localStorage.getItem(key);
-  if (!saved) show();
-  else hide();
-
-  if (accept) {
-    accept.addEventListener("click", () => {
-      localStorage.setItem(key, "accepted");
-      hide();
-    });
+  function show(banner) {
+    if (!banner) return;
+    banner.classList.remove("hide");
+    banner.setAttribute("aria-hidden", "false");
   }
 
-  if (decline) {
-    decline.addEventListener("click", () => {
-      localStorage.setItem(key, "declined");
-      hide();
-    });
+  function init() {
+    const banner = $("cookieBanner");
+    const accept = $("cookieAccept");
+    const decline = $("cookieDecline");
+
+    // Se não existir banner nesta página, sai sem erro
+    if (!banner) return;
+
+    // Debug: se vires isto no Console, sabes que o JS está a correr
+    // console.log("[cookies] init ok");
+
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) hide(banner);
+    else show(banner);
+
+    // Remover listeners antigos (caso o browser esteja a fazer hot reload / cache estranho)
+    if (accept) {
+      accept.onclick = () => {
+        localStorage.setItem(STORAGE_KEY, "accepted");
+        hide(banner);
+      };
+    }
+
+    if (decline) {
+      decline.onclick = () => {
+        localStorage.setItem(STORAGE_KEY, "declined");
+        hide(banner);
+      };
+    }
+  }
+
+  // Garante que o DOM existe antes de tentar apanhar os botões
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
   }
 })();
