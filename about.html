@@ -1,167 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <title>About · Explore Portugal Experience</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="description" content="Explore Portugal Experience — premium tours & private transfers in Portugal. Learn about us and Agapito’s legacy." />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
 
-    <!-- CSS (mesmo do index) + cache-buster -->
-    <link rel="stylesheet" href="assets/css/style.css?v=101" />
-    <link rel="icon" type="image/png" href="assets/icons/apple-touch-icon.png" />
-    <link rel="canonical" href="https://www.exploreportugalexperience.com/about.html" />
+  <title>About · Explore Portugal Experience</title>
+  <meta name="description" content="Learn more about Explore Portugal Experience." />
+  <link rel="canonical" href="https://www.exploreportugalexperience.com/about.html">
 
-    <!-- GA -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){ dataLayer.push(arguments); }
-      gtag("js", new Date());
-      gtag("config", "G-Y30ME05MQY");
-    </script>
-  </head>
+  <link rel="stylesheet" href="assets/css/style.css?v=1" />
+  <link rel="icon" type="image/png" href="assets/icons/apple-touch-icon.png" />
 
-  <body>
-    <!-- Language bar (igual ao index) -->
-    <div class="translate-bar">
-      <span>Language:</span>
-      <div id="google_translate_element"></div>
-    </div>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-Y30ME05MQY");
+  </script>
+</head>
 
-    <!-- HEADER (igual ao index) -->
-    <header class="site-header">
-      <div class="header-inner">
-        <a href="index.html" class="home-star" aria-label="Home">
-          <img
-            src="assets/icons/compass-gold-solid.svg"
-            alt="Explore Portugal Experience"
-            class="star-animated"
-          />
-        </a>
+<body>
+  <!-- injected header -->
+  <div id="siteHeader"></div>
 
-        <nav class="nav" id="mainNav" aria-label="Main navigation">
-          <a href="about.html" aria-current="page">About</a>
-          <a href="services.html">Services</a>
-          <a href="choose.html">Why us</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="faq.html">FAQ</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="booking.html">Booking</a>
-          <a href="partners-drivers.html">Partners Drivers</a>
-          <a href="partners-hospitality.html">Commercial Partners</a>
-          <a href="contactos.html">Contact</a>
-        </nav>
+  <main>
+    <div class="container">
 
-        <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </header>
-
-    <main>
-      <!-- HERO -->
-      <section class="page-hero section-dark">
-        <div class="section-inner narrow">
-          <h1 class="page-hero-title">About</h1>
-          <p class="page-hero-subtitle">
-            A calm, professional, human way of driving — created to welcome every visitor to Portugal
-            with elegance, care and attention to detail.
-          </p>
-        </div>
-      </section>
-
-      <!-- ABOUT -->
-      <section class="section section-dark">
-        <div class="section-inner narrow">
-          <h2>Explore Portugal Experience</h2>
-          <p>
-            Explore Portugal Experience was created to offer premium tours and private transfers with a
-            service that feels human, calm and truly tailored.
-          </p>
-          <p>
-            Every journey is planned with you: comfortable schedules, clear meeting points, space for good
-            surprises, and attention to your preferences — itinerary, restaurants and photo stops.
-          </p>
-          <p>
-            The goal is simple: you feel safe, cared for, and free to enjoy the road — not worry about it.
-          </p>
-          <p>
-            We work with individuals, families, small groups and professional partners (hotels, companies and
-            operators) with the same base: total respect for your trust.
-          </p>
-        </div>
-      </section>
-
-      <!-- TRIBUTE -->
       <section class="section">
-        <div class="section-inner narrow">
-          <article class="contact-card about-agapito" aria-label="Agapito tribute">
-            <img
-              src="assets/images/agapito.jpg"
-              alt="Agapito, co-founder of Explore Portugal Experience"
-              class="agapito-photo"
-            />
-            <p class="tribute-heading">In memory</p>
-            <p class="tribute-name">Agapito</p>
-            <p class="tribute-subtitle">Co-founder · Professional driver · The soul of the road</p>
-            <div class="tribute-text">
-              <p>
-                Explore Portugal Experience was born from the dream and vision of someone extraordinary:
-                Agapito — co-founder, certified professional driver, and a man guided by love for the road.
-              </p>
-              <p>
-                His dedication, integrity and professionalism became the foundation of this company and define
-                what we are today: a service with soul, refinement and deep respect for every client.
-              </p>
-              <p>
-                Thank you, Agapito. Forever part of this home — forever on the road with us.
-              </p>
-            </div>
-            <p class="tribute-quote">“The road continues with you.”</p>
-          </article>
+        <div class="card">
+          <h1 class="h1">About</h1>
+          <p class="p">A calm, professional, human way of driving — created to welcome every visitor to Portugal with elegance, care and attention to detail.</p>
         </div>
       </section>
-    </main>
 
-    <!-- FOOTER (igual ao index) -->
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-col">
-          <p class="footer-title">Explore Portugal Experience</p>
-          <p>Premium Tours &amp; Private Transfers in Portugal — comfort, elegance and discretion.</p>
+      <section class="section">
+        <div class="card">
+          <h2 class="h2">Explore Portugal Experience</h2>
+          <p class="p">Explore Portugal Experience was created to offer premium tours and private transfers with a service that feels human, calm and truly tailored.</p>
+          <p class="p">Every journey is planned with you: comfortable schedules, clear meeting points, space for good surprises, and attention to your preferences — itinerary, restaurants and photo stops.</p>
+          <p class="p">The goal is simple: you feel safe, cared for, and free to enjoy the road — not worry about it.</p>
+          <p class="p">We work with individuals, families, small groups and professional partners (hotels, companies and operators) with the same base: total respect for your trust.</p>
         </div>
-        <div class="footer-col">
-          <p class="footer-title">Contact</p>
-          <p>Phone: <a href="tel:+351962516005">+351 962 516 005</a></p>
-          <p>Email: <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a></p>
-        </div>
-        <div class="footer-col">
-          <p class="footer-title">Social</p>
-          <p>
-            <a href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener">Instagram</a><br />
-            <a href="https://www.tiktok.com/@explore.portugal24" target="_blank" rel="noopener">TikTok</a>
-          </p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2018–2025 Explore Portugal Experience — Turismo em Portugal.</p>
-        <p>Powered by: MkDesign - London</p>
-      </div>
-    </footer>
+      </section>
 
-    <!-- JS (os mesmos do index) -->
-    <script src="assets/js/nav.js"></script>
-    <script src="assets/js/cookie.js"></script>
+      <!-- Se quiseres o tributo Agapito, mete o teu bloco aqui dentro numa .card -->
+      <!-- <section class="section"><div class="card">...</div></section> -->
 
-    <!-- Google Translate -->
-    <script>
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          { pageLanguage: "pt", includedLanguages: "en,pt,es,fr,de,it", autoDisplay: false },
-          "google_translate_element"
-        );
-      }
-    </script>
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  </body>
+    </div>
+  </main>
+
+  <!-- injected footer -->
+  <div id="siteFooter"></div>
+
+  <!-- JS (IMPORTANT: these two must exist on ALL pages) -->
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/cookie.js"></script>
+</body>
 </html>
