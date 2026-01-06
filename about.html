@@ -1,74 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
+  <title>About · Explore Portugal Experience</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#000000" />
 
-  <title>Sobre · Explore Portugal Experience</title>
-  <meta name="description" content="Saiba mais sobre a Explore Portugal Experience e o legado de Agapito, cofundador e motorista profissional que inspirou este projeto." />
-  <link rel="canonical" href="https://www.exploreportugalexperience.com/about.html" />
+  <meta
+    name="description"
+    content="Learn more about Explore Portugal Experience and the legacy of Agapito, co-founder and professional driver who inspired this project."
+  />
 
-  <!-- CSS principal (o mesmo do index) -->
-  <link rel="stylesheet" href="assets/css/style.css?v=311" />
+  <link rel="stylesheet" href="assets/css/style.css?v=400" />
   <link rel="icon" type="image/png" href="assets/icons/apple-touch-icon.png" />
-
-  <!-- Estilos locais só para o tributo (mantendo o resto igual ao index) -->
-  <style>
-    /* Caixa do tributo com aro dourado elegante */
-    .tribute-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(201,165,98,0.35);
-      border-radius: 22px;
-      padding: 22px;
-      box-shadow: 0 18px 60px rgba(0,0,0,.45);
-      text-align: center;
-    }
-    .tribute-heading {
-      margin: 6px 0 2px;
-      font-size: 0.9rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: rgba(201,165,98,0.95);
-    }
-    .tribute-name {
-      margin: 0;
-      font-size: 1.8rem;
-      color: rgba(201,165,98,1);
-      font-weight: 600;
-    }
-    .tribute-subtitle {
-      margin: 4px 0 14px;
-      color: rgba(247,243,232,0.8);
-    }
-    .agapito-photo {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      display: block;
-      margin: 0 auto 12px;
-      border: 3px solid rgba(201,165,98,0.85);
-      box-shadow: 0 0 22px rgba(201,165,98,0.25);
-      background: #000;
-    }
-    .tribute-text p {
-      margin: 0 0 12px;
-      color: rgba(247,243,232,0.86);
-      line-height: 1.6;
-    }
-    .tribute-quote {
-      margin: 12px 0 0;
-      font-style: italic;
-      color: rgba(201,165,98,0.95);
-    }
-  </style>
+  <link rel="canonical" href="https://www.exploreportugalexperience.com/about.html" />
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ dataLayer.push(arguments); }
     gtag("js", new Date());
     gtag("config", "G-Y30ME05MQY");
   </script>
@@ -76,165 +27,150 @@
 
 <body>
 
-  <!-- HEADER (igual ao index) -->
-  <header class="topbar">
-    <div class="topbar-inner">
+  <!-- HEADER injected by nav.js -->
+  <div id="siteHeader"></div>
 
-      <div class="brand">
-        <div class="star" aria-label="Explore star">
-          <img src="assets/icons/compass-gold-solid.svg" alt="Star">
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <h1 class="h1">About us</h1>
+          <p class="p">
+            A driving experience with soul, calm and professionalism — born from the dream of welcoming
+            each person in Portugal with elegance, care and attention to detail.
+          </p>
         </div>
       </div>
-
-      <div class="lang" aria-label="Language selector">
-        <label for="langSelect">Language</label>
-        <select id="langSelect">
-          <option value="en" selected>English</option>
-          <option value="pt">Português</option>
-          <option value="es">Español</option>
-          <option value="fr">Français</option>
-        </select>
-        <span class="chev">▾</span>
-      </div>
-
-      <nav class="nav" aria-label="Main navigation">
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="faq.html">FAQ</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
-    </div>
-
-    <div class="drawer" id="drawer">
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="faq.html">FAQ</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </header>
-
-  <!-- CONTEÚDO (igual ao que enviaste; não mexi no texto) -->
-  <main class="wrap">
-    <!-- HERO DA PÁGINA -->
-    <section class="section">
-      <div class="card">
-        <h1 class="h1">Sobre nós</h1>
-        <p class="p">
-          Uma experiência de condução com alma, calma e profissionalismo — nascida do
-          sonho de acolher cada pessoa em Portugal com elegância, cuidado e atenção ao
-          detalhe.
-        </p>
-      </div>
     </section>
 
-    <!-- BLOCO SOBRE A EMPRESA -->
     <section class="section">
-      <div class="card">
-        <h2 class="h2">Explore Portugal Experience</h2>
-        <p class="p">
-          A Explore Portugal Experience nasceu para oferecer um serviço de tours
-          e private transfers em Portugal que fosse, acima de tudo, humano,
-          tranquilo e verdadeiramente personalizado.
-        </p>
-        <p class="p">
-          Cada percurso é planeado consigo: horários confortáveis, pontos de
-          encontro claros, margens para imprevistos bons e atenção às suas
-          preferências — seja na escolha do itinerário, dos restaurantes ou das
-          paragens para fotografar.
-        </p>
-        <p class="p">
-          O objetivo é simples: que se sinta sempre bem acompanhado, em segurança
-          e com tempo para desfrutar do caminho, em vez de se preocupar com ele.
-        </p>
-        <p class="p">
-          Trabalhamos com clientes individuais, famílias, pequenos grupos e
-          parceiros profissionais (hotéis, empresas e operadores), sempre com a
-          mesma base: respeito absoluto por quem confia em nós.
-        </p>
-      </div>
-    </section>
+      <div class="container">
+        <div class="card">
+          <h2 class="h2">Explore Portugal Experience</h2>
 
-    <!-- TRIBUTO AO AGAPITO -->
-    <section class="section">
-      <article class="tribute-card" aria-label="Tributo a Agapito">
-        <img
-          src="assets/images/agapito.jpg"
-          alt="Fotografia de Agapito, cofundador da Explore Portugal Experience"
-          class="agapito-photo"
-        />
+          <p class="p">
+            Explore Portugal Experience was created to offer private tours and transfers in Portugal that are,
+            above all, human, calm and truly personalised.
+          </p>
 
-        <p class="tribute-heading">Em memória</p>
-        <p class="tribute-name">Agapito</p>
-        <p class="tribute-subtitle">Cofundador · Motorista profissional · Alma da estrada</p>
+          <p class="p">
+            Every journey is planned with you: comfortable timings, clear pick-up points, room for good surprises,
+            and real attention to your preferences — from itineraries and restaurants to photo stops.
+          </p>
 
-        <div class="tribute-text">
-          <p>
-            A Explore Portugal Experience nasceu do sonho e da visão de alguém
-            extraordinário: Agapito, cofundador deste projeto, motorista
-            profissional certificado e um homem guiado pela paixão pela estrada,
-            pela beleza do nosso país e pelo encontro com pessoas de todas as
-            partes do mundo.
+          <p class="p">
+            The goal is simple: you always feel safe, well looked after, and free to enjoy the journey instead of
+            worrying about it.
           </p>
-          <p>
-            Foi o Agapito que deu o primeiro passo, que acreditou antes de todos,
-            que sonhou alto e sem medo. A sua dedicação, integridade, generosidade
-            e profissionalismo tornaram-se a base desta empresa e definiram o que
-            somos hoje: um serviço com alma, requinte e respeito absoluto por quem
-            confia em nós.
-          </p>
-          <p>
-            Para ele, conduzir era amar. Era cuidar. Era transformar cada percurso
-            numa experiência humana, tranquila e inesquecível. Quem teve o
-            privilégio de viajar ao seu lado sabe que a sua presença iluminava
-            cada quilómetro e cada conversa.
-          </p>
-          <p>
-            O Agapito partiu demasiado cedo. Mas nunca partiu de verdade.
-            O seu legado vive nesta estrada que ele começou. Vive em cada cliente
-            que recebemos com atenção e elegância. Vive na forma como honramos o
-            detalhe, o silêncio, o conforto e a arte de guiar.
-          </p>
-          <p>
-            A cada viagem, continuamos o que ele começou. A cada destino alcançado,
-            levamo-lo connosco.
-          </p>
-          <p>
-            Obrigado, Agapito. Para sempre parte desta casa, para sempre
-            no volante das nossas memórias.
+
+          <p class="p">
+            We work with solo travellers, families, small groups and professional partners (hotels, companies and operators),
+            always with the same foundation: absolute respect for those who trust us.
           </p>
         </div>
-
-        <p class="tribute-quote">“A estrada continua consigo.”</p>
-      </article>
+      </div>
     </section>
 
-    <!-- FOOTER (igual ao index) -->
-    <footer>
-      <div>© 2018–2025 Explore Portugal Experience — Turismo em Portugal</div>
-      <div class="mk">Powered by: MkDesign</div>
-    </footer>
+    <!-- TRIBUTE: keep your content, styled by CSS -->
+    <section class="section">
+      <div class="container">
+        <div class="card about-agapito" aria-label="Tribute to Agapito">
+
+          <img
+            src="assets/images/agapito.jpg"
+            alt="Agapito, co-founder of Explore Portugal Experience"
+            class="agapito-photo"
+          />
+
+          <p class="tribute-heading">In memory</p>
+          <p class="tribute-name">Agapito</p>
+          <p class="tribute-subtitle">Co-founder · Professional driver · Soul of the road</p>
+
+          <div class="tribute-text">
+            <p>
+              Explore Portugal Experience was born from the dream and vision of someone extraordinary: Agapito,
+              co-founder of this project, a certified professional driver, and a man guided by his passion for the road,
+              the beauty of our country and meeting people from all over the world.
+            </p>
+            <p>
+              It was Agapito who took the first step, who believed before everyone, who dreamed high without fear.
+              His dedication, integrity, generosity and professionalism became the foundation of this company and defined
+              who we are today: a service with soul, refinement and absolute respect for those who trust us.
+            </p>
+            <p>
+              For him, driving was love. It was care. It was turning every journey into a human, calm and unforgettable experience.
+              Those who had the privilege of travelling by his side know how his presence lit up every kilometre and every conversation.
+            </p>
+            <p>
+              Agapito left too soon. But he never truly left.
+              His legacy lives on in the road he started. It lives in every guest we welcome with attention and elegance.
+              It lives in the way we honour detail, silence, comfort and the art of driving.
+            </p>
+            <p>
+              With every trip, we continue what he began. With every destination reached, we carry him with us.
+            </p>
+            <p>
+              Thank you, Agapito. Forever part of this home, forever at the wheel of our memories.
+            </p>
+          </div>
+
+          <p class="tribute-quote">“The road continues with you.”</p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- COOKIE BAR (same everywhere) -->
+    <div class="cookie-bar" id="cookieBar" aria-live="polite">
+      <div class="cookie-inner">
+        <div class="cookie-text">
+          We use cookies to improve your experience and measure traffic.
+        </div>
+        <div class="cookie-actions">
+          <button class="btn cookie-btn btn-ghost" type="button" id="cookieDecline">Decline</button>
+          <button class="btn cookie-btn btn-gold" type="button" id="cookieAccept">Accept</button>
+        </div>
+      </div>
+    </div>
+
   </main>
 
-  <!-- COOKIE BANNER (igual ao index) -->
-  <div class="cookie-banner" id="cookieBanner">
-    <div class="cookie-inner">
-      <div class="cookie-text">
-        We use cookies to improve your experience and measure traffic.
-      </div>
-      <div class="cookie-actions">
-        <button type="button" id="cookieDecline">Decline</button>
-        <button type="button" class="accept" id="cookieAccept">Accept</button>
-      </div>
-    </div>
-  </div>
+  <!-- FOOTER injected by nav.js -->
+  <div id="siteFooter"></div>
 
-  <!-- JS universal (menu + cookies) -->
-  <script src="assets/js/common.js"></script>
+  <!-- NAV (injects header + footer) -->
+  <script src="assets/js/nav.js?v=400"></script>
+
+  <!-- Cookies -->
+  <script>
+    (function(){
+      const KEY = "epe_cookie_consent";
+      const bar = document.getElementById("cookieBar");
+      const a = document.getElementById("cookieAccept");
+      const d = document.getElementById("cookieDecline");
+
+      if(!bar || !a || !d) return;
+
+      function showIfNeeded(){
+        try{
+          const v = localStorage.getItem(KEY);
+          if(!v) bar.classList.add("show");
+        }catch(e){
+          bar.classList.add("show");
+        }
+      }
+
+      function set(v){
+        try{ localStorage.setItem(KEY, v); }catch(e){}
+        bar.classList.remove("show");
+      }
+
+      a.addEventListener("click", () => set("accepted"));
+      d.addEventListener("click", () => set("declined"));
+
+      showIfNeeded();
+    })();
+  </script>
+
 </body>
 </html>
