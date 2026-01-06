@@ -4,6 +4,7 @@
   const headerTarget = qs("#siteHeader");
   const footerTarget = qs("#siteFooter");
 
+  // Links iguais em todo o site
   const links = [
     { href: "about.html", label: "About" },
     { href: "services.html", label: "Services" },
@@ -21,21 +22,22 @@
     <header class="site-header" role="banner">
       <div class="container header-row">
 
-        <a class="brand" href="index.html" aria-label="Home">
-          <span class="brand-badge" aria-hidden="true">
-            <img class="brand-compass" src="assets/icons/compass-gold-solid.svg" alt="">
-          </span>
-          <span class="brand-logo">
-            <img src="assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience">
-          </span>
+        <!-- Star -> HOME -->
+        <a class="brand-badge" href="index.html" aria-label="Home">
+          <img class="brand-compass" src="assets/icons/compass-gold-solid.svg" alt="">
         </a>
+
+        <div class="brand-title" aria-label="Explore Portugal Experience">
+          EXPLORE PORTUGAL EXPERIENCE
+        </div>
 
         <div class="header-spacer"></div>
 
+        <!-- Language selector (always visible) -->
         <div class="lang-wrap" aria-label="Language">
           <span class="lang-label">Language</span>
           <select class="lang-select" id="langSelect" aria-label="Select language">
-            <option value="">Select language</option>
+            <option value="">Select</option>
             <option value="en">English</option>
             <option value="pt">Português</option>
             <option value="es">Español</option>
@@ -44,14 +46,16 @@
             <option value="it">Italiano</option>
           </select>
 
-          <!-- Mantém no DOM mas SEMPRE escondido por CSS -->
+          <!-- Google Translate escondido (JS only) -->
           <div id="google_translate_element" class="gt-hidden" aria-hidden="true"></div>
         </div>
 
+        <!-- Desktop nav (only if there is space) -->
         <nav class="topnav" aria-label="Main navigation">
           ${links.map(l => `<a class="topnav-link" href="${l.href}">${l.label}</a>`).join("")}
         </nav>
 
+        <!-- Burger (mobile + small desktop) -->
         <button class="burger" id="burgerBtn" type="button" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -98,7 +102,7 @@
       </div>
 
       <div class="container footer-bottom">
-        <div>© 2018–2025 Explore Portugal Experience — Turismo em Portugal</div>
+        <div>© 2018–2026 Explore Portugal Experience — Turismo em Portugal</div>
         <div class="mkdesign">Powered by: <span>MkDesign</span> · London</div>
       </div>
     </footer>
@@ -114,23 +118,23 @@
   const drawerClose = qs("#drawerClose");
 
   function openDrawer() {
-    if (!drawer || !backdrop) return;
+    if (!drawer || !backdrop || !burgerBtn) return;
     drawer.classList.add("open");
     backdrop.classList.add("open");
+    document.documentElement.classList.add("no-scroll");
+    burgerBtn.setAttribute("aria-expanded", "true");
     drawer.setAttribute("aria-hidden", "false");
     backdrop.setAttribute("aria-hidden", "false");
-    if (burgerBtn) burgerBtn.setAttribute("aria-expanded", "true");
-    document.documentElement.classList.add("no-scroll");
   }
 
   function closeDrawer() {
-    if (!drawer || !backdrop) return;
+    if (!drawer || !backdrop || !burgerBtn) return;
     drawer.classList.remove("open");
     backdrop.classList.remove("open");
+    document.documentElement.classList.remove("no-scroll");
+    burgerBtn.setAttribute("aria-expanded", "false");
     drawer.setAttribute("aria-hidden", "true");
     backdrop.setAttribute("aria-hidden", "true");
-    if (burgerBtn) burgerBtn.setAttribute("aria-expanded", "false");
-    document.documentElement.classList.remove("no-scroll");
   }
 
   if (burgerBtn) burgerBtn.addEventListener("click", openDrawer);
@@ -139,7 +143,8 @@
 
   if (drawer) {
     drawer.addEventListener("click", (e) => {
-      if (e.target && e.target.tagName === "A") closeDrawer();
+      const t = e.target;
+      if (t && t.tagName === "A") closeDrawer();
     });
   }
 
@@ -147,7 +152,7 @@
     if (e.key === "Escape") closeDrawer();
   });
 
-  // --- Google Translate: COOKIE ONLY (widget hidden by CSS) ---
+  // ---------- Google Translate (clean + reliable) ----------
   function setCookie(name, value, days = 365) {
     const d = new Date();
     d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
@@ -158,14 +163,12 @@
     const from = "pt";
     const to = lang || "pt";
     setCookie("googtrans", `/${from}/${to}`);
-    // também em localStorage para lembrar
-    try { localStorage.setItem("epe_lang", lang || ""); } catch {}
+    try { localStorage.setItem("epe_lang", to); } catch (e) {}
     location.reload();
   }
 
   window.googleTranslateElementInit = function () {
     try {
-      // Cria o widget (precisa existir), mas CSS vai esconder SEMPRE
       new google.translate.TranslateElement(
         { pageLanguage: "pt", includedLanguages: "en,pt,es,fr,de,it", autoDisplay: false },
         "google_translate_element"
@@ -182,16 +185,22 @@
     document.head.appendChild(s);
   }
 
+  // Language select events
   const langSelect = qs("#langSelect");
   if (langSelect) {
+    // restore
     try {
       const saved = localStorage.getItem("epe_lang");
-      if (saved) langSelect.value = saved;
-    } catch {}
+      if (saved) langSelect.value = saved === "pt" ? "" : saved; // pt = default (empty)
+    } catch (e) {}
 
     langSelect.addEventListener("change", () => {
       const v = (langSelect.value || "").trim();
-      if (v) applyGoogleTranslateLang(v);
+      if (!v) {
+        applyGoogleTranslateLang("pt");
+      } else {
+        applyGoogleTranslateLang(v);
+      }
     });
   }
 })();
