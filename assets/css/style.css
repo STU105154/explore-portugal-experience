@@ -1,65 +1,92 @@
 /* =========================================================
-   Explore Portugal Experience — Master Styles
-   Applies consistently across all pages (mobile-first)
+   Explore Portugal Experience — MASTER CSS
+   Works with: #siteHeader + #siteFooter injected by nav.js
+   Goals: same header/footer everywhere, smooth star rotation,
+          clean languages, mobile Android/iOS, premium look.
 ========================================================= */
 
+/* ------------- RESET ------------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+button, select, input, textarea { font: inherit; color: inherit; }
+
+:focus-visible{
+  outline: 2px solid rgba(201,165,98,0.65);
+  outline-offset: 2px;
+}
+
+/* ------------- THEME ------------- */
 :root{
-  --bg:#000;
-  --bg2:#070707;
-  --panel: rgba(255,255,255,0.035);
-  --panel2: rgba(255,255,255,0.055);
-  --text: rgba(247,243,232,0.92);
-  --muted: rgba(247,243,232,0.70);
+  --bg: #000;
+  --bg2: #070707;
+
+  --text: rgba(247,243,232,0.94);
+  --muted: rgba(247,243,232,0.72);
+  --muted2: rgba(247,243,232,0.60);
+
   --gold: #c9a562;
-  --gold2: rgba(201,165,98,0.25);
+  --gold2: rgba(201,165,98,0.30);
+
   --border: rgba(201,165,98,0.22);
   --border2: rgba(255,255,255,0.08);
+
+  --panel: rgba(255,255,255,0.035);
+  --panel2: rgba(255,255,255,0.055);
+
   --shadow: 0 18px 60px rgba(0,0,0,.65);
+
   --radius: 26px;
   --radius2: 18px;
+
   --max: 1020px;
+
+  /* iOS safe areas */
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-*{ box-sizing:border-box; }
-html,body{ height:100%; }
+/* ------------- BASE ------------- */
 body{
-  margin:0;
-  background: radial-gradient(1200px 900px at 50% 0%, rgba(201,165,98,0.10), rgba(0,0,0,0) 55%),
-              linear-gradient(to bottom, var(--bg), var(--bg2));
+  margin: 0;
   color: var(--text);
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
-img{ max-width:100%; display:block; }
-a{ color:inherit; text-decoration:none; }
-a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible{
-  outline: 2px solid rgba(201,165,98,0.55);
-  outline-offset: 2px;
+  background:
+    radial-gradient(1200px 900px at 50% 0%, rgba(201,165,98,0.10), rgba(0,0,0,0) 55%),
+    linear-gradient(to bottom, var(--bg), var(--bg2));
+  overflow-x: hidden;
 }
 
 .container{
   width: min(var(--max), calc(100% - 28px));
-  margin-inline:auto;
+  margin-inline: auto;
 }
 
+/* Keep content below sticky header */
 main{
   padding: 18px 0 70px;
 }
 
-/* -------------------------
-   Header (injected)
-------------------------- */
+/* ------------- HEADER (injected) ------------- */
 .site-header{
   position: sticky;
   top: 0;
   z-index: 1000;
   padding-top: var(--safe-top);
+
   background: linear-gradient(to bottom, rgba(0,0,0,.88), rgba(0,0,0,.55));
   border-bottom: 1px solid rgba(255,255,255,0.06);
+
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -72,13 +99,15 @@ main{
   padding: 10px 0;
 }
 
+/* Left: star + optional logo */
 .brand-left{
   display:flex;
   align-items:center;
   gap: 10px;
-  min-width: 150px;
+  min-width: 120px;
 }
 
+/* Star home button */
 .home-star{
   width: 46px;
   height: 46px;
@@ -95,8 +124,11 @@ main{
   width: 26px;
   height: 26px;
   object-fit: contain;
-  transform-origin:center;
-  animation: starSpin 5.2s linear infinite;
+
+  /* smooth rotation */
+  transform-origin: center;
+  will-change: transform;
+  animation: starSpin 6.2s linear infinite;
 }
 
 @keyframes starSpin{
@@ -104,15 +136,16 @@ main{
   to{ transform: rotate(360deg); }
 }
 
+/* Optional small logo (nav.js has it) */
 .header-logo{
-  display:none; /* mostra só se quiseres; podes ligar no desktop */
+  display:none;
   align-items:center;
-  gap:10px;
+  gap: 10px;
 }
 .header-logo img{
   height: 26px;
   width:auto;
-  opacity: .90;
+  opacity: .92;
 }
 
 /* Language */
@@ -135,7 +168,7 @@ main{
 
 .lang-caret{
   position: relative;
-  width: min(320px, 100%);
+  width: min(360px, 100%);
 }
 
 .lang-select{
@@ -143,12 +176,19 @@ main{
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.10);
   color: var(--text);
+
   padding: 10px 42px 10px 14px;
   border-radius: 999px;
   font-size: 14px;
+}
+
+.lang-select:focus{
+  border-color: rgba(201,165,98,0.55);
+  box-shadow: 0 0 0 4px rgba(201,165,98,0.12);
 }
 
 .lang-caret::after{
@@ -161,10 +201,10 @@ main{
   pointer-events:none;
 }
 
-/* Desktop nav */
+/* Inline nav (desktop) */
 .nav-inline{
   display:none;
-  gap: 6px;
+  gap: 4px;
   align-items:center;
   justify-content:flex-end;
 }
@@ -174,23 +214,31 @@ main{
   border-radius: 14px;
   color: rgba(247,243,232,0.86);
   font-size: 14px;
-}
-.nav-inline a:hover{
-  background: rgba(255,255,255,0.04);
+  border: 1px solid transparent;
 }
 
-/* Burger */
+.nav-inline a:hover{
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.06);
+}
+
+.nav-inline a[aria-current="page"]{
+  border-color: rgba(201,165,98,0.35);
+  background: rgba(201,165,98,0.08);
+}
+
+/* Burger (mobile) */
 .burger{
   width: 46px;
   height: 46px;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.10);
   background: rgba(255,255,255,0.04);
-  color: var(--text);
   display:grid;
   place-items:center;
   cursor:pointer;
 }
+
 .burger span{
   width: 18px;
   height: 2px;
@@ -199,6 +247,7 @@ main{
   border-radius: 2px;
   position: relative;
 }
+
 .burger span::before,
 .burger span::after{
   content:"";
@@ -209,8 +258,9 @@ main{
   background: rgba(247,243,232,0.86);
   border-radius:2px;
 }
+
 .burger span::before{ top:-6px; }
-.burger span::after{ top:6px; }
+.burger span::after{ top: 6px; }
 
 /* Drawer */
 .drawer-backdrop{
@@ -233,13 +283,17 @@ main{
   right: 0;
   height: 100%;
   width: min(420px, 86vw);
+
   background: rgba(0,0,0,0.92);
+  border-left: 1px solid rgba(255,255,255,0.08);
+
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-left: 1px solid rgba(255,255,255,0.08);
+
   transform: translateX(100%);
   transition: transform .22s ease;
   z-index: 1200;
+
   padding: calc(14px + var(--safe-top)) 14px calc(14px + var(--safe-bottom));
   overflow:auto;
 }
@@ -252,6 +306,7 @@ main{
   letter-spacing: .08em;
   text-transform: uppercase;
 }
+
 .drawer a{
   display:block;
   padding: 12px 12px;
@@ -261,8 +316,10 @@ main{
   background: rgba(255,255,255,0.03);
   color: rgba(247,243,232,0.92);
 }
-.drawer a:hover{
-  background: rgba(255,255,255,0.05);
+.drawer a:hover{ background: rgba(255,255,255,0.05); }
+.drawer a[aria-current="page"]{
+  border-color: rgba(201,165,98,0.35);
+  background: rgba(201,165,98,0.10);
 }
 
 /* Desktop rules */
@@ -274,20 +331,8 @@ main{
   .header-logo{ display:flex; }
 }
 
-/* -------------------------
-   Panels / Cards / Sections
-------------------------- */
-.section{
-  padding: 18px 0;
-}
-.card{
-  background: var(--panel);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 18px;
-}
-.card.tight{ padding: 14px; }
+/* ------------- TYPOGRAPHY / SECTIONS ------------- */
+.section{ padding: 18px 0; }
 
 .h1{
   font-size: 34px;
@@ -305,190 +350,23 @@ main{
   font-size: 16px;
 }
 
-.grid{
-  display:grid;
-  gap: 16px;
-}
-@media (min-width: 860px){
-  .grid-2{ grid-template-columns: 1.1fr .9fr; }
-}
-
-/* Hero logo card */
-.logo-card{
-  background: radial-gradient(70% 70% at 50% 30%, rgba(201,165,98,0.14), rgba(0,0,0,0)),
-              rgba(255,255,255,0.02);
+/* ------------- CARD ------------- */
+.card{
+  background: var(--panel);
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: var(--radius);
-  padding: 14px;
   box-shadow: var(--shadow);
-}
-.logo-card img{
-  width: 100%;
-  max-height: 560px;
-  object-fit: contain;
-  border-radius: calc(var(--radius) - 10px);
-}
-
-/* -------------------------
-   Forms
-------------------------- */
-.field label{
-  display:block;
-  font-size: 13px;
-  color: rgba(247,243,232,0.70);
-  margin: 0 0 6px;
-}
-.control{
-  width:100%;
-  padding: 14px 14px;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.03);
-  color: var(--text);
-  font-size: 16px;
-  outline:none;
-}
-.control:focus{
-  border-color: rgba(201,165,98,0.55);
-  box-shadow: 0 0 0 4px rgba(201,165,98,0.12);
-}
-.form-grid{
-  display:grid;
-  gap: 12px;
-}
-.row-2{
-  display:grid;
-  gap: 12px;
-}
-@media (min-width: 720px){
-  .row-2{ grid-template-columns: 1fr 1fr; }
-}
-
-.hint{
-  margin-top: 8px;
-  color: rgba(247,243,232,0.60);
-  font-size: 14px;
-}
-
-/* Buttons */
-.btns{
-  display:grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  margin-top: 12px;
-}
-@media (min-width: 540px){
-  .btns{ grid-template-columns: 1fr 1fr; }
-}
-.btn{
-  border-radius: 999px;
-  padding: 14px 18px;
-  font-size: 18px;
-  border: 1px solid rgba(201,165,98,0.38);
-  cursor:pointer;
-  text-align:center;
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  gap:10px;
-  min-height: 54px;
-}
-.btn-primary{
-  background: linear-gradient(135deg, rgba(201,165,98,0.95), rgba(231,205,147,0.92));
-  color: #14110b;
-  font-weight: 700;
-}
-.btn-ghost{
-  background: rgba(0,0,0,0.10);
-  color: rgba(247,243,232,0.92);
-}
-.btn:hover{ filter: brightness(1.03); }
-
-/* -------------------------
-   Prices (make it pretty)
-------------------------- */
-.price-box{
-  border-radius: var(--radius);
-  border: 1px solid rgba(255,255,255,0.06);
-  background: radial-gradient(70% 80% at 20% 0%, rgba(201,165,98,0.10), rgba(0,0,0,0)),
-              rgba(255,255,255,0.03);
   padding: 18px;
 }
-.price-title{
-  font-size: 24px;
-  margin: 0 0 12px;
-}
-.price-list{
-  margin: 0;
-  padding: 0;
-  list-style:none;
-  display:grid;
-  gap: 10px;
-}
-.price-item{
-  display:flex;
-  justify-content: space-between;
-  align-items:center;
-  gap: 10px;
-  padding: 12px 14px;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,0.06);
-  background: rgba(255,255,255,0.03);
-}
-.price-item b{ font-size: 16px; }
-.price-item span{
-  color: rgba(247,243,232,0.78);
-  white-space: nowrap;
-}
-.price-note{
-  margin-top: 12px;
-  color: rgba(247,243,232,0.64);
-  line-height: 1.45;
-}
 
-/* -------------------------
-   Contact overflow fix
-------------------------- */
-.contact-block, .contact-block *{
-  overflow-wrap:anywhere;
-  word-break: break-word;
-}
-.contact-lines{
-  font-size: 18px;
-  line-height: 1.35;
-}
-.contact-lines a{
-  border-bottom: 1px solid rgba(201,165,98,0.25);
-}
-
-/* -------------------------
-   QR
-------------------------- */
-.qr-wrap{
-  margin-top: 10px;
-  padding: 12px;
-  border-radius: 22px;
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
-  display:flex;
-  justify-content:center;
-}
-.qr-wrap img{
-  width: min(380px, 92vw);
-  height: auto;
-  border-radius: 18px;
-  background: #fff;
-}
-
-/* -------------------------
-   Footer (injected)
-------------------------- */
+/* ------------- FOOTER (injected) ------------- */
 .site-footer{
   border-top: 1px solid rgba(255,255,255,0.06);
   padding: 18px 0 calc(18px + var(--safe-bottom));
   color: rgba(247,243,232,0.62);
   font-size: 14px;
 }
+
 .footer-row{
   display:flex;
   justify-content: space-between;
@@ -496,17 +374,17 @@ main{
   gap: 10px;
   flex-wrap: wrap;
 }
+
 .footer-right{
   white-space: nowrap;
 }
+
 .footer-right a{
   color: rgba(247,243,232,0.72);
   border-bottom: 1px solid rgba(201,165,98,0.25);
 }
 
-/* -------------------------
-   Cookie Banner
-------------------------- */
+/* ------------- COOKIE BANNER ------------- */
 .cookie-bar{
   position: fixed;
   left: 50%;
@@ -516,6 +394,7 @@ main{
   z-index: 9999;
   display:none;
 }
+
 .cookie-inner{
   background: rgba(0,0,0,0.78);
   border: 1px solid rgba(255,255,255,0.10);
@@ -530,6 +409,7 @@ main{
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
+
 .cookie-text{
   color: rgba(247,243,232,0.80);
   font-size: 14px;
@@ -537,10 +417,12 @@ main{
   flex: 1;
   min-width: 220px;
 }
+
 .cookie-actions{
   display:flex;
   gap: 10px;
 }
+
 .cookie-actions button{
   border-radius: 999px;
   padding: 10px 14px;
@@ -550,8 +432,16 @@ main{
   cursor:pointer;
   min-width: 110px;
 }
+
 .cookie-actions .cookie-accept{
   background: linear-gradient(135deg, rgba(201,165,98,0.95), rgba(231,205,147,0.92));
   color: #14110b;
   font-weight: 700;
 }
+
+/* ------------- SAFETY: kill random overlays ------------- */
+.brown-overlay,
+.overlay,
+.tint,
+.layer,
+.mask { display:none !important; }
