@@ -450,3 +450,843 @@ input:focus, select:focus, textarea:focus{
   .footer-grid{ grid-template-columns: 1fr; }
   .footer-bottom{ flex-direction: column; align-items: flex-start; }
 }
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+
+  <title>Explore Portugal Experience</title>
+  <meta name="description" content="Premium private tours & transfers in Portugal — professional drivers, comfort and discretion." />
+
+  <link rel="stylesheet" href="assets/css/style.css?v=310" />
+
+  <style>
+    /* ---------- QUICK FIXES (safe to keep here) ---------- */
+
+    :root{
+      --bg:#000;
+      --panel: rgba(255,255,255,0.04);
+      --panel-2: rgba(255,255,255,0.06);
+      --text: rgba(247,243,232,0.92);
+      --muted: rgba(247,243,232,0.70);
+      --gold: #c9a562;
+      --gold-2: rgba(201,165,98,0.25);
+      --border: rgba(201,165,98,0.22);
+      --shadow: 0 18px 60px rgba(0,0,0,.65);
+      --radius: 26px;
+      --radius2: 18px;
+      --max: 980px;
+    }
+
+    body{
+      margin:0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    a{ color:inherit; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px 14px 80px;
+    }
+
+    /* HEADER */
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: linear-gradient(to bottom, rgba(0,0,0,.86), rgba(0,0,0,.55));
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .topbar-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 10px 14px;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap:12px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width: 140px;
+    }
+
+    .brand .star{
+      width:42px;
+      height:42px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display:grid;
+      place-items:center;
+      box-shadow: 0 8px 30px rgba(0,0,0,.6);
+      overflow:hidden;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .brand .star img{
+      width:24px;
+      height:24px;
+      object-fit:contain;
+      animation: starSpin 5.2s linear infinite; /* rotação suave */
+      transform-origin:center;
+    }
+
+    @keyframes starSpin{
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    .lang{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex: 1;
+      justify-content: flex-start;
+    }
+    .lang label{
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(247,243,232,0.65);
+      white-space: nowrap;
+    }
+
+    /* Evita a “setinha a sobrepor” */
+    .lang select{
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: var(--text);
+      padding: 10px 42px 10px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      outline: none;
+      min-width: 190px;
+      max-width: 320px;
+      width: 100%;
+      position: relative;
+    }
+    .lang .chev{
+      position: relative;
+      margin-left: -34px;
+      pointer-events: none;
+      color: rgba(247,243,232,0.70);
+      font-size: 14px;
+    }
+
+    .menu-btn{
+      width:46px;
+      height:46px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+    }
+
+    .nav{
+      display:none;
+      gap: 16px;
+      align-items:center;
+      justify-content: flex-end;
+      flex: 1;
+    }
+
+    .nav a{
+      text-decoration:none;
+      font-size: 14px;
+      color: rgba(247,243,232,0.86);
+      padding: 10px 10px;
+      border-radius: 12px;
+    }
+    .nav a:hover{
+      background: rgba(255,255,255,0.04);
+    }
+
+    /* Mobile drawer */
+    .drawer{
+      display:none;
+      padding: 12px 14px 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .drawer a{
+      display:block;
+      padding: 12px 10px;
+      border-radius: 14px;
+      text-decoration:none;
+      color: rgba(247,243,232,0.90);
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.03);
+      margin-top:10px;
+    }
+
+    /* Desktop */
+    @media(min-width: 960px){
+      .menu-btn{ display:none; }
+      .nav{ display:flex; }
+      .lang{ justify-content:center; }
+      .lang select{ width: 260px; }
+    }
+
+    /* HERO */
+    .hero{
+      margin-top: 16px;
+      display:grid;
+      gap: 16px;
+    }
+
+    .logo-card{
+      background: radial-gradient(70% 70% at 50% 30%, rgba(201,165,98,0.14), rgba(0,0,0,0)) , rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .logo-card img{
+      width: 100%;
+      max-height: 560px;
+      object-fit: contain;
+      display:block;
+      border-radius: calc(var(--radius) - 10px);
+    }
+
+    .tagline{
+      font-size: 22px;
+      line-height: 1.25;
+      color: rgba(247,243,232,0.90);
+      margin: 0;
+    }
+
+    .sub{
+      margin: 10px 0 0;
+      color: rgba(247,243,232,0.70);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    /* CARDS */
+    .card{
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .h2{
+      margin: 0 0 10px;
+      font-size: 28px;
+      letter-spacing: .01em;
+    }
+    .p{
+      margin: 0 0 16px;
+      color: rgba(247,243,232,0.70);
+      line-height: 1.55;
+      font-size: 16px;
+    }
+
+    /* FORM */
+    .form-grid{
+      display:grid;
+      gap: 12px;
+    }
+
+    .row-2{
+      display:grid;
+      gap: 12px;
+    }
+    @media(min-width: 720px){
+      .row-2{ grid-template-columns: 1fr 1fr; }
+    }
+
+    .field label{
+      display:block;
+      font-size: 13px;
+      color: rgba(247,243,232,0.70);
+      margin: 0 0 6px;
+    }
+    .control{
+      width:100%;
+      padding: 14px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(201,165,98,0.22);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      outline: none;
+      font-size: 16px;
+    }
+
+    .control:focus{
+      border-color: rgba(201,165,98,0.50);
+      box-shadow: 0 0 0 4px rgba(201,165,98,0.10);
+    }
+
+    .hint{
+      margin-top: 8px;
+      color: rgba(247,243,232,0.60);
+      font-size: 14px;
+    }
+
+    .btns{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    @media(min-width: 540px){
+      .btns{ grid-template-columns: 1fr 1fr; }
+    }
+
+    .btn{
+      border-radius: 999px;
+      padding: 14px 18px;
+      font-size: 18px;
+      border: 1px solid rgba(201,165,98,0.38);
+      cursor:pointer;
+      text-align:center;
+      text-decoration:none;
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      gap:10px;
+      min-height: 54px;
+    }
+
+    .btn-primary{
+      background: linear-gradient(135deg, rgba(201,165,98,0.95), rgba(231,205,147,0.92));
+      color: #14110b;
+      font-weight: 700;
+    }
+    .btn-ghost{
+      background: rgba(0,0,0,0.10);
+      color: rgba(247,243,232,0.92);
+    }
+
+    /* PRICES */
+    .price-list{
+      margin: 10px 0 0;
+      padding: 0;
+      list-style:none;
+      display:grid;
+      gap: 10px;
+    }
+    .price-item{
+      display:flex;
+      justify-content: space-between;
+      align-items:center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.03);
+    }
+    .price-item b{ font-size: 16px; }
+    .price-item span{
+      color: rgba(247,243,232,0.78);
+      white-space: nowrap;
+    }
+
+    /* CONTACT FIX: no overflow */
+    .contact-block,
+    .contact-block *{
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .contact-lines{
+      font-size: 18px;
+      line-height: 1.35;
+      margin-top: 8px;
+    }
+    .contact-lines a{
+      text-decoration:none;
+      border-bottom: 1px solid rgba(201,165,98,0.25);
+    }
+
+    /* QR */
+    .qr-wrap{
+      margin-top: 10px;
+      padding: 12px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      display:flex;
+      justify-content:center;
+    }
+    .qr-wrap img{
+      width: min(380px, 92vw);
+      height: auto;
+      border-radius: 18px;
+      background: #fff;
+    }
+
+    /* FOOTER */
+    footer{
+      margin-top: 22px;
+      padding: 16px 6px;
+      color: rgba(247,243,232,0.60);
+      font-size: 14px;
+      display:flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .mk{
+      color: rgba(247,243,232,0.58);
+      white-space: nowrap;
+    }
+
+    /* COOKIE BANNER */
+    .cookie-banner{
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 14px;
+      width: min(980px, calc(100% - 18px));
+      z-index: 9999;
+      display:none;
+    }
+    .cookie-inner{
+      background: rgba(0,0,0,0.78);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 12px 12px;
+      display:flex;
+      gap: 12px;
+      align-items:center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .cookie-text{
+      color: rgba(247,243,232,0.80);
+      font-size: 14px;
+      line-height: 1.3;
+      flex: 1;
+      min-width: 220px;
+    }
+    .cookie-actions{
+      display:flex;
+      gap: 10px;
+    }
+    .cookie-actions button{
+      border-radius: 999px;
+      padding: 10px 14px;
+      border: 1px solid rgba(201,165,98,0.35);
+      background: rgba(255,255,255,0.03);
+      color: rgba(247,243,232,0.92);
+      cursor:pointer;
+      min-width: 110px;
+    }
+    .cookie-actions .accept{
+      background: linear-gradient(135deg, rgba(201,165,98,0.95), rgba(231,205,147,0.92));
+      color: #14110b;
+      font-weight: 700;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="topbar-inner">
+
+      <div class="brand">
+        <div class="star" aria-label="Explore star">
+          <!-- usa o teu ícone da estrela aqui -->
+          <img src="assets/icons/compass-gold-solid.svg" alt="Star" />
+        </div>
+      </div>
+
+      <div class="lang" aria-label="Language selector">
+        <label for="langSelect">Language</label>
+        <select id="langSelect">
+          <option value="en" selected>English</option>
+          <option value="pt">Português</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+        </select>
+        <span class="chev">▾</span>
+      </div>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        ☰
+      </button>
+
+    </div>
+
+    <div class="drawer" id="drawer">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="faq.html">FAQ</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero">
+      <div class="logo-card">
+        <!-- usa o teu logo grande -->
+        <img src="assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience logo" />
+      </div>
+
+      <div class="card">
+        <p class="tagline">Premium private tours & transfers in Portugal — professional drivers, comfort and discretion.</p>
+        <p class="sub">Book in under a minute. If you prefer, message us on WhatsApp and we confirm everything for you.</p>
+      </div>
+    </section>
+
+    <!-- BOOKING (INDEX) -->
+    <section class="card" aria-label="Booking" style="margin-top:16px;">
+      <h2 class="h2">Book in 30 seconds</h2>
+      <p class="p">Pick the basics now. You can add details after we confirm availability.</p>
+
+      <form id="bookingForm" class="form-grid">
+
+        <div class="row-2">
+          <div class="field">
+            <label for="service">Service</label>
+            <select id="service" class="control" required>
+              <option value="" selected disabled>Select…</option>
+              <option>Airport transfer</option>
+              <option>Private tour (half day)</option>
+              <option>Private tour (full day)</option>
+              <option>Custom programme</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="guests">Guests</label>
+            <select id="guests" class="control" required>
+              <option value="" selected disabled>Select…</option>
+              <option>1</option><option>2</option><option>3</option><option>4</option>
+              <option>5</option><option>6</option><option>7</option><option>8+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row-2">
+          <div class="field">
+            <label for="fromCity">Pick-up (From)</label>
+            <select id="fromCity" class="control" required>
+              <option value="" selected disabled>Select a city…</option>
+              <option>Lisbon</option>
+              <option>Porto</option>
+              <option>Faro</option>
+              <option>Madrid</option>
+              <option>Barcelona</option>
+              <option>Paris</option>
+              <option>London</option>
+              <option>Rome</option>
+              <option>Berlin</option>
+              <option>Amsterdam</option>
+              <option>Brussels</option>
+              <option>Zurich</option>
+              <option>Geneva</option>
+              <option>Vienna</option>
+              <option>Prague</option>
+              <option>Dublin</option>
+              <option>Edinburgh</option>
+              <option>Manchester</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="toCity">Drop-off (To)</label>
+            <select id="toCity" class="control" required>
+              <option value="" selected disabled>Select a city…</option>
+              <option>Lisbon</option>
+              <option>Porto</option>
+              <option>Sintra</option>
+              <option>Cascais</option>
+              <option>Faro</option>
+              <option>Madrid</option>
+              <option>Barcelona</option>
+              <option>Paris</option>
+              <option>London</option>
+              <option>Rome</option>
+              <option>Berlin</option>
+              <option>Amsterdam</option>
+              <option>Brussels</option>
+              <option>Zurich</option>
+              <option>Geneva</option>
+              <option>Vienna</option>
+              <option>Prague</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row-2">
+          <div class="field">
+            <label for="tripType">Trip</label>
+            <select id="tripType" class="control" required>
+              <option value="oneway" selected>One way</option>
+              <option value="return">Return (round trip)</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="flex">Flexible dates (optional)</label>
+            <select id="flex" class="control">
+              <option value="exact" selected>Exact dates</option>
+              <option value="+1">± 1 day</option>
+              <option value="+2">± 2 days</option>
+              <option value="+3">± 3 days</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row-2">
+          <div class="field">
+            <label for="startDate">Date (Start)</label>
+            <input id="startDate" class="control" type="date" required />
+          </div>
+
+          <div class="field" id="endDateWrap" style="display:none;">
+            <label for="endDate">Date (End)</label>
+            <input id="endDate" class="control" type="date" />
+          </div>
+        </div>
+
+        <div class="row-2">
+          <div class="field">
+            <label for="timeDepart">Time (Departure)</label>
+            <!-- IMPORTANT: dropdown (não relógio do telemóvel) -->
+            <select id="timeDepart" class="control" required>
+              <option value="" selected disabled>Select…</option>
+            </select>
+            <div class="hint">15-minute steps — always selectable (no phone clock issues).</div>
+          </div>
+
+          <div class="field" id="returnTimeWrap" style="display:none;">
+            <label for="timeReturn">Return time</label>
+            <select id="timeReturn" class="control">
+              <option value="" selected disabled>Select…</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="btns">
+          <button type="submit" class="btn btn-primary">Continue booking</button>
+          <a class="btn btn-ghost" href="https://wa.me/351962516005" target="_blank" rel="noopener">Need help?</a>
+        </div>
+
+      </form>
+    </section>
+
+    <!-- PRICES (PRETTY) -->
+    <section class="card" aria-label="Indicative prices" style="margin-top:16px;">
+      <h2 class="h2">Indicative prices</h2>
+      <p class="p">Prices vary by distance, duration and number of guests. Final quote confirmed after booking details.</p>
+
+      <ul class="price-list">
+        <li class="price-item"><b>Airport transfer</b><span>from €60</span></li>
+        <li class="price-item"><b>Private tour (half day)</b><span>from €220</span></li>
+        <li class="price-item"><b>Private tour (full day)</b><span>from €380</span></li>
+        <li class="price-item"><b>Custom programme</b><span>on request</span></li>
+      </ul>
+    </section>
+
+    <!-- CONTACT (END OF PAGE) -->
+    <section class="card" aria-label="Contact" style="margin-top:16px;">
+      <h2 class="h2">Contact</h2>
+      <p class="p">Fastest reply via WhatsApp. You can also call or email.</p>
+
+      <div class="contact-block">
+        <div class="contact-lines">
+          <a href="tel:+351962516005">+351 962 516 005</a><br />
+          <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- QR (END) -->
+    <section class="card" aria-label="WhatsApp QR" style="margin-top:16px;">
+      <h2 class="h2">WhatsApp QR</h2>
+      <p class="p">Scan to start a chat instantly.</p>
+
+      <div class="qr-wrap">
+        <!-- mete aqui o nome real do teu ficheiro -->
+        <img src="assets/images/qr-whatsapp.png" alt="WhatsApp QR code" />
+      </div>
+    </section>
+
+    <footer>
+      <div>© 2018–2025 Explore Portugal Experience — Turismo em Portugal</div>
+      <div class="mk">Powered by: MkDesign</div>
+    </footer>
+
+  </main>
+
+  <!-- COOKIE BANNER -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-inner">
+      <div class="cookie-text">
+        We use cookies to improve your experience and measure traffic.
+      </div>
+      <div class="cookie-actions">
+        <button type="button" id="cookieDecline">Decline</button>
+        <button type="button" class="accept" id="cookieAccept">Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ---------- MOBILE MENU ----------
+    (function(){
+      const btn = document.getElementById("menuBtn");
+      const drawer = document.getElementById("drawer");
+      if(!btn || !drawer) return;
+
+      btn.addEventListener("click", () => {
+        const open = drawer.style.display === "block";
+        drawer.style.display = open ? "none" : "block";
+        btn.setAttribute("aria-expanded", open ? "false" : "true");
+      });
+    })();
+
+    // ---------- TIME DROPDOWN (15-min steps) ----------
+    (function(){
+      function fillTimes(selectEl){
+        if(!selectEl) return;
+        const startMin = 0;
+        const endMin = 24 * 60;
+        const step = 15;
+
+        for(let m = startMin; m < endMin; m += step){
+          const hh = String(Math.floor(m/60)).padStart(2,"0");
+          const mm = String(m%60).padStart(2,"0");
+          const opt = document.createElement("option");
+          opt.value = `${hh}:${mm}`;
+          opt.textContent = `${hh}:${mm}`;
+          selectEl.appendChild(opt);
+        }
+      }
+
+      fillTimes(document.getElementById("timeDepart"));
+      fillTimes(document.getElementById("timeReturn"));
+    })();
+
+    // ---------- ONE WAY / RETURN TOGGLE ----------
+    (function(){
+      const trip = document.getElementById("tripType");
+      const endWrap = document.getElementById("endDateWrap");
+      const endDate = document.getElementById("endDate");
+      const returnWrap = document.getElementById("returnTimeWrap");
+      const timeReturn = document.getElementById("timeReturn");
+
+      function sync(){
+        const isReturn = trip.value === "return";
+        endWrap.style.display = isReturn ? "block" : "none";
+        returnWrap.style.display = isReturn ? "block" : "none";
+        if(!isReturn){
+          endDate.value = "";
+          timeReturn.value = "";
+        }
+      }
+
+      trip.addEventListener("change", sync);
+      sync();
+    })();
+
+    // ---------- BOOKING SUBMIT (WhatsApp prefill) ----------
+    (function(){
+      const form = document.getElementById("bookingForm");
+      if(!form) return;
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const service = document.getElementById("service").value;
+        const guests = document.getElementById("guests").value;
+        const fromCity = document.getElementById("fromCity").value;
+        const toCity = document.getElementById("toCity").value;
+        const tripType = document.getElementById("tripType").value;
+        const flex = document.getElementById("flex").value;
+        const startDate = document.getElementById("startDate").value;
+        const endDate = document.getElementById("endDate").value;
+        const timeDepart = document.getElementById("timeDepart").value;
+        const timeReturn = document.getElementById("timeReturn").value;
+
+        const lines = [
+          "Hello! I would like to book:",
+          `• Service: ${service}`,
+          `• Guests: ${guests}`,
+          `• From: ${fromCity}`,
+          `• To: ${toCity}`,
+          `• Trip: ${tripType === "return" ? "Return" : "One way"}`,
+          `• Flexible: ${flex}`,
+          `• Start: ${startDate} at ${timeDepart}`,
+        ];
+
+        if(tripType === "return"){
+          lines.push(`• End: ${endDate || "(not set)"} at ${timeReturn || "(not set)"}`);
+        }
+
+        const msg = encodeURIComponent(lines.join("\n"));
+        window.open(`https://wa.me/351962516005?text=${msg}`, "_blank", "noopener");
+      });
+    })();
+
+    // ---------- COOKIES ----------
+    (function(){
+      const KEY = "epe_cookie_consent";
+      const banner = document.getElementById("cookieBanner");
+      const btnA = document.getElementById("cookieAccept");
+      const btnD = document.getElementById("cookieDecline");
+
+      function showIfNeeded(){
+        const v = localStorage.getItem(KEY);
+        if(!v){
+          banner.style.display = "block";
+        }
+      }
+
+      function set(v){
+        localStorage.setItem(KEY, v);
+        banner.style.display = "none";
+      }
+
+      btnA.addEventListener("click", () => set("accepted"));
+      btnD.addEventListener("click", () => set("declined"));
+
+      showIfNeeded();
+    })();
+  </script>
+
+</body>
+</html>
