@@ -8,483 +8,282 @@
   <title>Explore Portugal Experience</title>
   <meta name="description" content="Premium private tours & transfers in Portugal — professional drivers, comfort and discretion." />
 
-  <link rel="stylesheet" href="assets/css/style.css?v=403" />
+  <link rel="stylesheet" href="assets/css/style.css?v=601" />
+  <link rel="icon" type="image/png" href="assets/icons/apple-touch-icon.png" />
+  <link rel="canonical" href="https://www.exploreportugalexperience.com/index.html" />
 
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-Y30ME05MQY");
+  </script>
+
+  <!-- Index-only sizing fixes (mobile logo + QR) -->
   <style>
-    :root{
-      --bg:#000;
-      --text: rgba(247,243,232,0.92);
-      --muted: rgba(247,243,232,0.70);
-      --gold: #c9a562;
-      --border: rgba(201,165,98,0.22);
-      --shadow: 0 18px 60px rgba(0,0,0,.65);
-      --radius: 26px;
-      --max: 980px;
-    }
-
-    html, body{ overflow-x: hidden; }
-
-    body{
-      margin:0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-    }
-
-    a{ color:inherit; }
-
-    .wrap{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 16px 14px 80px;
-    }
-
-    .hero{
-      margin-top: 16px;
-      display:grid;
-      gap: 16px;
-    }
-
-    .logo-card{
-      background:
-        radial-gradient(70% 70% at 50% 30%, rgba(201,165,98,0.14), rgba(0,0,0,0)) ,
-        rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: var(--radius);
-      padding: 14px;
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-
-    .logo-card img{
+    /* Mantém o teu visual do index mas controla tamanhos no mobile */
+    .index-hero-logo{
       width: 100%;
-      max-height: 460px;
+      height: auto;
+      display: block;
       object-fit: contain;
-      display:block;
-      border-radius: calc(var(--radius) - 10px);
+      /* desktop: pode ser grande */
+      max-height: 560px;
     }
 
-    .tagline{
-      font-size: 22px;
-      line-height: 1.25;
-      color: rgba(247,243,232,0.90);
-      margin: 0;
-    }
-
-    .sub{
-      margin: 10px 0 0;
-      color: rgba(247,243,232,0.70);
-      font-size: 16px;
-      line-height: 1.55;
-    }
-
+    /* Mobile: reduz logo */
     @media (max-width: 520px){
-      .wrap{ padding-top: 12px; }
-      .logo-card{ padding: 10px; border-radius: 22px; }
-      .logo-card img{ max-height: 240px; }
-      .tagline{ font-size: 20px; }
-      .sub{ font-size: 15px; }
+      .index-hero-logo{
+        max-height: 320px;
+      }
     }
 
-    .card{
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow);
+    /* Tablet: intermédio */
+    @media (min-width: 521px) and (max-width: 900px){
+      .index-hero-logo{
+        max-height: 420px;
+      }
     }
 
-    .h2{
-      margin: 0 0 10px;
-      font-size: 28px;
-      letter-spacing: .01em;
-    }
-    .p{
-      margin: 0 0 16px;
-      color: rgba(247,243,232,0.70);
-      line-height: 1.55;
-      font-size: 16px;
-    }
-
-    .form-grid{ display:grid; gap: 12px; }
-    .row-2{ display:grid; gap: 12px; }
-    @media(min-width: 720px){
-      .row-2{ grid-template-columns: 1fr 1fr; }
-    }
-
-    .field label{
-      display:block;
-      font-size: 13px;
-      color: rgba(247,243,232,0.70);
-      margin: 0 0 6px;
-    }
-    .control{
-      width:100%;
-      padding: 14px 14px;
-      border-radius: 20px;
-      border: 1px solid rgba(201,165,98,0.22);
-      background: rgba(255,255,255,0.03);
-      color: var(--text);
-      outline: none;
-      font-size: 16px;
-    }
-    .control:focus{
-      border-color: rgba(201,165,98,0.50);
-      box-shadow: 0 0 0 4px rgba(201,165,98,0.10);
-    }
-
-    .hint{
-      margin-top: 8px;
-      color: rgba(247,243,232,0.60);
-      font-size: 14px;
-    }
-
-    .btns{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin-top: 12px;
-    }
-    @media(min-width: 540px){
-      .btns{ grid-template-columns: 1fr 1fr; }
-    }
-
-    .btn{
-      border-radius: 999px;
-      padding: 14px 18px;
-      font-size: 18px;
-      border: 1px solid rgba(201,165,98,0.38);
-      cursor:pointer;
-      text-align:center;
-      text-decoration:none;
-      display:inline-flex;
-      justify-content:center;
-      align-items:center;
-      gap:10px;
-      min-height: 54px;
-    }
-
-    .btn-primary{
-      background: linear-gradient(135deg, rgba(201,165,98,0.95), rgba(231,205,147,0.92));
-      color: #14110b;
-      font-weight: 700;
-    }
-    .btn-ghost{
-      background: rgba(0,0,0,0.10);
-      color: rgba(247,243,232,0.92);
-    }
-
-    @media (max-width: 520px){
-      .control{ padding: 12px 12px; border-radius: 18px; }
-      .btn{ font-size: 17px; min-height: 50px; }
-    }
-
-    .price-list{
-      margin: 10px 0 0;
-      padding: 0;
-      list-style:none;
-      display:grid;
-      gap: 10px;
-    }
-    .price-item{
-      display:flex;
-      justify-content: space-between;
-      align-items:center;
-      gap: 10px;
-      padding: 12px 14px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.06);
-      background: rgba(255,255,255,0.03);
-    }
-    .price-item b{ font-size: 16px; }
-    .price-item span{
-      color: rgba(247,243,232,0.78);
-      white-space: nowrap;
-    }
-
-    .contact-block, .contact-block *{
-      overflow-wrap: anywhere;
-      word-break: break-word;
-    }
-    .contact-lines{
-      font-size: 18px;
-      line-height: 1.35;
-      margin-top: 8px;
-    }
-    .contact-lines a{
-      text-decoration:none;
-      border-bottom: 1px solid rgba(201,165,98,0.25);
-    }
-
-    .qr-wrap{
-      margin-top: 10px;
-      padding: 12px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.06);
-      display:flex;
-      justify-content:center;
-    }
-    .qr-wrap img{
-      width: min(340px, 88vw);
+    /* QR: desktop pode ser grande, mobile não */
+    .index-qr img{
+      width: min(380px, 92vw);
       height: auto;
       border-radius: 18px;
       background: #fff;
+      display: block;
     }
+
     @media (max-width: 520px){
-      .qr-wrap img{ width: min(260px, 78vw); }
-    }
-
-    /* ✅ COOKIE BAR (same style as about.html) */
-    .cookie-bar{
-      position: fixed;
-      left: 12px;
-      right: 12px;
-      bottom: 12px;
-      z-index: 9999;
-      display: none;
-    }
-    .cookie-bar.show{ display:block; }
-
-    .cookie-inner{
-      max-width: var(--max);
-      margin: 0 auto;
-      display:flex;
-      align-items:center;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-
-      background: rgba(0,0,0,0.78);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 22px;
-      box-shadow: var(--shadow);
-      padding: 12px 12px;
-
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .cookie-text{
-      color: rgba(247,243,232,0.82);
-      font-size: 14px;
-      line-height: 1.35;
-      flex: 1;
-      min-width: 240px;
-    }
-
-    .cookie-text a{
-      color: rgba(247,243,232,0.92);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(201,165,98,0.28);
-    }
-
-    .cookie-actions{
-      display:flex;
-      gap: 10px;
-    }
-
-    .cookie-btn{
-      border-radius: 999px;
-      padding: 10px 14px;
-      border: 1px solid rgba(201,165,98,0.35);
-      background: rgba(255,255,255,0.03);
-      color: rgba(247,243,232,0.92);
-      cursor:pointer;
-      min-width: 120px;
-    }
-
-    .btn-gold{
-      background: linear-gradient(135deg, rgba(201,165,98,0.95), rgba(231,205,147,0.92));
-      color: #14110b;
-      font-weight: 700;
+      .index-qr img{
+        width: min(260px, 86vw);
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- HEADER injected by nav.js -->
   <div id="siteHeader"></div>
 
-  <main class="wrap">
+  <main>
 
-    <section class="hero" aria-label="Hero">
-      <div class="logo-card">
-        <img src="assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience logo" />
+    <!-- HERO -->
+    <section class="section">
+      <div class="container">
+
+        <div class="card" style="padding:14px;">
+          <img
+            src="assets/images/logo-explore-portugal-experience.png"
+            alt="Explore Portugal Experience logo"
+            class="index-hero-logo"
+          />
+        </div>
+
+        <div style="height:16px;"></div>
+
+        <div class="card">
+          <p class="p" style="margin:0; font-size:22px; line-height:1.25; color: rgba(247,243,232,0.90);">
+            Premium private tours & transfers in Portugal — professional drivers, comfort and discretion.
+          </p>
+          <p class="p" style="margin:10px 0 0;">
+            Book in under a minute. If you prefer, message us on WhatsApp and we confirm everything for you.
+          </p>
+        </div>
+
       </div>
-
-      <div class="card">
-        <p class="tagline">Premium private tours & transfers in Portugal — professional drivers, comfort and discretion.</p>
-        <p class="sub">Book in under a minute. If you prefer, message us on WhatsApp and we confirm everything for you.</p>
-      </div>
     </section>
 
-    <section class="card" aria-label="Booking" style="margin-top:16px;">
-      <h2 class="h2">Book in 30 seconds</h2>
-      <p class="p">Pick the basics now. You can add details after we confirm availability.</p>
+    <!-- BOOKING (INDEX) -->
+    <section class="section">
+      <div class="container">
+        <div class="card" aria-label="Booking">
+          <h2 class="h2">Book in 30 seconds</h2>
+          <p class="p">Pick the basics now. You can add details after we confirm availability.</p>
 
-      <form id="bookingForm" class="form-grid">
+          <form id="bookingForm" class="form-grid">
 
-        <div class="row-2">
-          <div class="field">
-            <label for="service">Service</label>
-            <select id="service" class="control" required>
-              <option value="" selected disabled>Select…</option>
-              <option>Airport transfer</option>
-              <option>Private tour (half day)</option>
-              <option>Private tour (full day)</option>
-              <option>Custom programme</option>
-            </select>
-          </div>
+            <div class="row-2">
+              <div class="field">
+                <label for="service">Service</label>
+                <select id="service" class="control" required>
+                  <option value="" selected disabled>Select…</option>
+                  <option>Airport transfer</option>
+                  <option>Private tour (half day)</option>
+                  <option>Private tour (full day)</option>
+                  <option>Custom programme</option>
+                </select>
+              </div>
 
-          <div class="field">
-            <label for="guests">Guests</label>
-            <select id="guests" class="control" required>
-              <option value="" selected disabled>Select…</option>
-              <option>1</option><option>2</option><option>3</option><option>4</option>
-              <option>5</option><option>6</option><option>7</option><option>8+</option>
-            </select>
-          </div>
-        </div>
+              <div class="field">
+                <label for="guests">Guests</label>
+                <select id="guests" class="control" required>
+                  <option value="" selected disabled>Select…</option>
+                  <option>1</option><option>2</option><option>3</option><option>4</option>
+                  <option>5</option><option>6</option><option>7</option><option>8+</option>
+                </select>
+              </div>
+            </div>
 
-        <div class="row-2">
-          <div class="field">
-            <label for="fromCity">Pick-up (From)</label>
-            <select id="fromCity" class="control" required>
-              <option value="" selected disabled>Select a city…</option>
-              <option>Lisbon</option>
-              <option>Porto</option>
-              <option>Faro</option>
-              <option>Madrid</option>
-              <option>Barcelona</option>
-              <option>Paris</option>
-              <option>London</option>
-              <option>Rome</option>
-              <option>Berlin</option>
-              <option>Amsterdam</option>
-              <option>Brussels</option>
-              <option>Zurich</option>
-              <option>Geneva</option>
-              <option>Vienna</option>
-              <option>Prague</option>
-              <option>Dublin</option>
-              <option>Edinburgh</option>
-              <option>Manchester</option>
-            </select>
-          </div>
+            <div class="row-2">
+              <div class="field">
+                <label for="fromCity">Pick-up (From)</label>
+                <select id="fromCity" class="control" required>
+                  <option value="" selected disabled>Select a city…</option>
+                  <option>Lisbon</option>
+                  <option>Porto</option>
+                  <option>Faro</option>
+                  <option>Madrid</option>
+                  <option>Barcelona</option>
+                  <option>Paris</option>
+                  <option>London</option>
+                  <option>Rome</option>
+                  <option>Berlin</option>
+                  <option>Amsterdam</option>
+                  <option>Brussels</option>
+                  <option>Zurich</option>
+                  <option>Geneva</option>
+                  <option>Vienna</option>
+                  <option>Prague</option>
+                  <option>Dublin</option>
+                  <option>Edinburgh</option>
+                  <option>Manchester</option>
+                </select>
+              </div>
 
-          <div class="field">
-            <label for="toCity">Drop-off (To)</label>
-            <select id="toCity" class="control" required>
-              <option value="" selected disabled>Select a city…</option>
-              <option>Lisbon</option>
-              <option>Porto</option>
-              <option>Sintra</option>
-              <option>Cascais</option>
-              <option>Faro</option>
-              <option>Madrid</option>
-              <option>Barcelona</option>
-              <option>Paris</option>
-              <option>London</option>
-              <option>Rome</option>
-              <option>Berlin</option>
-              <option>Amsterdam</option>
-              <option>Brussels</option>
-              <option>Zurich</option>
-              <option>Geneva</option>
-              <option>Vienna</option>
-              <option>Prague</option>
-            </select>
-          </div>
-        </div>
+              <div class="field">
+                <label for="toCity">Drop-off (To)</label>
+                <select id="toCity" class="control" required>
+                  <option value="" selected disabled>Select a city…</option>
+                  <option>Lisbon</option>
+                  <option>Porto</option>
+                  <option>Sintra</option>
+                  <option>Cascais</option>
+                  <option>Faro</option>
+                  <option>Madrid</option>
+                  <option>Barcelona</option>
+                  <option>Paris</option>
+                  <option>London</option>
+                  <option>Rome</option>
+                  <option>Berlin</option>
+                  <option>Amsterdam</option>
+                  <option>Brussels</option>
+                  <option>Zurich</option>
+                  <option>Geneva</option>
+                  <option>Vienna</option>
+                  <option>Prague</option>
+                </select>
+              </div>
+            </div>
 
-        <div class="row-2">
-          <div class="field">
-            <label for="tripType">Trip</label>
-            <select id="tripType" class="control" required>
-              <option value="oneway" selected>One way</option>
-              <option value="return">Return (round trip)</option>
-            </select>
-          </div>
+            <div class="row-2">
+              <div class="field">
+                <label for="tripType">Trip</label>
+                <select id="tripType" class="control" required>
+                  <option value="oneway" selected>One way</option>
+                  <option value="return">Return (round trip)</option>
+                </select>
+              </div>
 
-          <div class="field">
-            <label for="flex">Flexible dates (optional)</label>
-            <select id="flex" class="control">
-              <option value="exact" selected>Exact dates</option>
-              <option value="+1">± 1 day</option>
-              <option value="+2">± 2 days</option>
-              <option value="+3">± 3 days</option>
-            </select>
-          </div>
-        </div>
+              <div class="field">
+                <label for="flex">Flexible dates (optional)</label>
+                <select id="flex" class="control">
+                  <option value="exact" selected>Exact dates</option>
+                  <option value="+1">± 1 day</option>
+                  <option value="+2">± 2 days</option>
+                  <option value="+3">± 3 days</option>
+                </select>
+              </div>
+            </div>
 
-        <div class="row-2">
-          <div class="field">
-            <label for="startDate">Date (Start)</label>
-            <input id="startDate" class="control" type="date" required />
-          </div>
+            <div class="row-2">
+              <div class="field">
+                <label for="startDate">Date (Start)</label>
+                <input id="startDate" class="control" type="date" required />
+              </div>
 
-          <div class="field" id="endDateWrap" style="display:none;">
-            <label for="endDate">Date (End)</label>
-            <input id="endDate" class="control" type="date" />
-          </div>
-        </div>
+              <div class="field" id="endDateWrap" style="display:none;">
+                <label for="endDate">Date (End)</label>
+                <input id="endDate" class="control" type="date" />
+              </div>
+            </div>
 
-        <div class="row-2">
-          <div class="field">
-            <label for="timeDepart">Time (Departure)</label>
-            <select id="timeDepart" class="control" required>
-              <option value="" selected disabled>Select…</option>
-            </select>
-            <div class="hint">15-minute steps — always selectable (no phone clock issues).</div>
-          </div>
+            <div class="row-2">
+              <div class="field">
+                <label for="timeDepart">Time (Departure)</label>
+                <select id="timeDepart" class="control" required>
+                  <option value="" selected disabled>Select…</option>
+                </select>
+                <div class="hint">15-minute steps — always selectable.</div>
+              </div>
 
-          <div class="field" id="returnTimeWrap" style="display:none;">
-            <label for="timeReturn">Return time</label>
-            <select id="timeReturn" class="control">
-              <option value="" selected disabled>Select…</option>
-            </select>
-          </div>
-        </div>
+              <div class="field" id="returnTimeWrap" style="display:none;">
+                <label for="timeReturn">Return time</label>
+                <select id="timeReturn" class="control">
+                  <option value="" selected disabled>Select…</option>
+                </select>
+              </div>
+            </div>
 
-        <div class="btns">
-          <button type="submit" class="btn btn-primary">Continue booking</button>
-          <a class="btn btn-ghost" href="https://wa.me/351962516005" target="_blank" rel="noopener">Need help?</a>
-        </div>
+            <div class="btns">
+              <button type="submit" class="btn btn-primary">Continue booking</button>
+              <a class="btn btn-ghost" href="https://wa.me/351962516005" target="_blank" rel="noopener">Need help?</a>
+            </div>
 
-      </form>
-    </section>
+          </form>
 
-    <section class="card" aria-label="Indicative prices" style="margin-top:16px;">
-      <h2 class="h2">Indicative prices</h2>
-      <p class="p">Prices vary by distance, duration and number of guests. Final quote confirmed after booking details.</p>
-
-      <ul class="price-list">
-        <li class="price-item"><b>Airport transfer</b><span>from €60</span></li>
-        <li class="price-item"><b>Private tour (half day)</b><span>from €220</span></li>
-        <li class="price-item"><b>Private tour (full day)</b><span>from €380</span></li>
-        <li class="price-item"><b>Custom programme</b><span>on request</span></li>
-      </ul>
-    </section>
-
-    <section class="card" aria-label="Contact" style="margin-top:16px;">
-      <h2 class="h2">Contact</h2>
-      <p class="p">Fastest reply via WhatsApp. You can also call or email.</p>
-
-      <div class="contact-block">
-        <div class="contact-lines">
-          <a href="tel:+351962516005">+351 962 516 005</a><br />
-          <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
         </div>
       </div>
     </section>
 
-    <section class="card" aria-label="WhatsApp QR" style="margin-top:16px;">
-      <h2 class="h2">WhatsApp QR</h2>
-      <p class="p">Scan to start a chat instantly.</p>
+    <!-- PRICES -->
+    <section class="section">
+      <div class="container">
+        <div class="card" aria-label="Indicative prices">
+          <h2 class="h2">Indicative prices</h2>
+          <p class="p">Prices vary by distance, duration and number of guests. Final quote confirmed after booking details.</p>
 
-      <div class="qr-wrap">
-        <img src="assets/images/qr-whatsapp.png" alt="WhatsApp QR code" />
+          <ul class="price-list">
+            <li class="price-item"><b>Airport transfer</b><span>from €60</span></li>
+            <li class="price-item"><b>Private tour (half day)</b><span>from €220</span></li>
+            <li class="price-item"><b>Private tour (full day)</b><span>from €380</span></li>
+            <li class="price-item"><b>Custom programme</b><span>on request</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section">
+      <div class="container">
+        <div class="card" aria-label="Contact">
+          <h2 class="h2">Contact</h2>
+          <p class="p">Fastest reply via WhatsApp. You can also call or email.</p>
+
+          <div class="contact-block">
+            <div class="contact-lines" style="font-size:18px; line-height:1.35; margin-top:8px;">
+              <a href="tel:+351962516005">+351 962 516 005</a><br />
+              <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QR -->
+    <section class="section">
+      <div class="container">
+        <div class="card index-qr" aria-label="WhatsApp QR">
+          <h2 class="h2">WhatsApp QR</h2>
+          <p class="p">Scan to start a chat instantly.</p>
+
+          <div class="qr-wrap" style="display:flex; justify-content:center; padding:12px;">
+            <img src="assets/images/qr-whatsapp.png" alt="WhatsApp QR code" />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -492,25 +291,26 @@
     <div class="cookie-bar" id="cookieBar" aria-live="polite">
       <div class="cookie-inner">
         <div class="cookie-text">
-          We use cookies to improve site performance, understand traffic and keep the experience reliable.
-          You can accept all cookies or continue with only essential cookies.
-          <a href="privacy.html">Learn more</a>
+          We use cookies to improve your experience, measure traffic, and remember preferences (like language).
+          You can accept or decline — the website still works.
         </div>
         <div class="cookie-actions">
-          <button class="cookie-btn" type="button" id="cookieDecline">Essential only</button>
-          <button class="cookie-btn btn-gold" type="button" id="cookieAccept">Accept all</button>
+          <button class="cookie-btn" type="button" id="cookieDecline">Decline</button>
+          <button class="cookie-btn" type="button" id="cookieAccept">Accept</button>
         </div>
       </div>
     </div>
 
   </main>
 
+  <!-- FOOTER injected by nav.js -->
   <div id="siteFooter"></div>
 
-  <script src="assets/js/nav.js?v=403"></script>
+  <!-- NAV (injects header + footer) -->
+  <script src="assets/js/nav.js?v=601"></script>
 
   <script>
-    // TIME DROPDOWN (15-min steps)
+    // ---------- TIME DROPDOWN (15-min steps) ----------
     (function(){
       function fillTimes(selectEl){
         if(!selectEl) return;
@@ -528,7 +328,7 @@
       fillTimes(document.getElementById("timeReturn"));
     })();
 
-    // ONE WAY / RETURN TOGGLE
+    // ---------- ONE WAY / RETURN TOGGLE ----------
     (function(){
       const trip = document.getElementById("tripType");
       const endWrap = document.getElementById("endDateWrap");
@@ -537,20 +337,22 @@
       const timeReturn = document.getElementById("timeReturn");
 
       function sync(){
-        const isReturn = trip && trip.value === "return";
-        if(endWrap) endWrap.style.display = isReturn ? "block" : "none";
-        if(returnWrap) returnWrap.style.display = isReturn ? "block" : "none";
+        const isReturn = trip.value === "return";
+        endWrap.style.display = isReturn ? "block" : "none";
+        returnWrap.style.display = isReturn ? "block" : "none";
         if(!isReturn){
-          if(endDate) endDate.value = "";
-          if(timeReturn) timeReturn.value = "";
+          endDate.value = "";
+          timeReturn.value = "";
         }
       }
 
-      if(trip) trip.addEventListener("change", sync);
-      sync();
+      if(trip){
+        trip.addEventListener("change", sync);
+        sync();
+      }
     })();
 
-    // BOOKING SUBMIT (WhatsApp prefill)
+    // ---------- BOOKING SUBMIT (WhatsApp prefill) ----------
     (function(){
       const form = document.getElementById("bookingForm");
       if(!form) return;
@@ -589,12 +391,13 @@
       });
     })();
 
-    // COOKIES (index)
+    // ---------- COOKIES ----------
     (function(){
       const KEY = "epe_cookie_consent";
       const bar = document.getElementById("cookieBar");
       const a = document.getElementById("cookieAccept");
       const d = document.getElementById("cookieDecline");
+
       if(!bar || !a || !d) return;
 
       function showIfNeeded(){
@@ -612,7 +415,7 @@
       }
 
       a.addEventListener("click", () => set("accepted"));
-      d.addEventListener("click", () => set("essential_only"));
+      d.addEventListener("click", () => set("declined"));
 
       showIfNeeded();
     })();
