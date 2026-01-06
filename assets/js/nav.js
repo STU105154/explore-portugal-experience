@@ -4,6 +4,7 @@
   const headerTarget = qs("#siteHeader");
   const footerTarget = qs("#siteFooter");
 
+  // Links (mantém aqui para ficar IGUAL em todo o site)
   const links = [
     { href: "about.html", label: "About" },
     { href: "services.html", label: "Services" },
@@ -17,18 +18,20 @@
     { href: "contactos.html", label: "Contact" },
   ];
 
+  // ✅ Inject CSS that fixes: (1) no mini logo (2) menu overflow on desktop
   function injectNavCSS() {
     const id = "epe-nav-css";
     if (document.getElementById(id)) return;
 
     const css = `
 /* =============================
-   EPE NAV FIX (Injected by nav.js)
+   EPE NAV (Injected by nav.js)
+   - No mini logo in header
+   - Desktop menu never overflows
 ============================= */
 
-html, body{ overflow-x:hidden; }
+html, body { overflow-x: hidden; }
 
-/* Header */
 .site-header{
   position: sticky !important;
   top: 0;
@@ -36,21 +39,22 @@ html, body{ overflow-x:hidden; }
   background: #000;
   border-bottom: 1px solid rgba(212,169,86,0.18);
 }
+
 .site-header .container{
-  width: min(1100px, calc(100% - 28px));
+  width: min(1200px, calc(100% - 28px));
   margin: 0 auto;
 }
 
-/* Row */
+/* Header row */
 .header-row{
   display:flex;
   align-items:center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 14px;
   padding: 10px 0;
 }
 
-/* Brand */
+/* Brand (NO mini logo image) */
 .brand{
   display:flex;
   align-items:center;
@@ -59,29 +63,37 @@ html, body{ overflow-x:hidden; }
   color: inherit;
   min-width: 0;
 }
-.brand-badge img{ width: 22px; height: 22px; display:block; }
-.brand-logo img{
+.brand-badge{
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(212,169,86,0.28);
+  background: rgba(255,255,255,0.04);
+  display:grid;
+  place-items:center;
+  box-shadow: 0 8px 30px rgba(0,0,0,.6);
+}
+.brand-badge img{
+  width: 22px;
+  height: 22px;
   display:block;
-  height: 40px;
-  width:auto;
-  max-width: 220px;
 }
 
-/* Desktop nav */
-.topnav{
-  display:flex;
-  gap: 14px;
-  align-items:center;
-  white-space:nowrap;
+/* Brand text (clean, premium) */
+.brand-name{
+  display:block;
+  font-size: 14px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .92;
+  line-height: 1.1;
+  white-space: nowrap;
 }
-.topnav-link{
-  text-decoration:none;
-  color:#f7f3ea;
-  opacity:.9;
-  font-size:14px;
+@media (max-width: 520px){
+  .brand-name{ font-size: 12px; letter-spacing: .12em; }
 }
 
-/* Language (desktop only) */
+/* Language (desktop/tablet) */
 .lang-wrap{
   display:flex;
   align-items:center;
@@ -93,12 +105,14 @@ html, body{ overflow-x:hidden; }
   text-transform: uppercase;
   font-size: 12px;
   opacity: .85;
+  white-space: nowrap;
 }
 .lang-select{
   height: 40px;
   border-radius: 999px;
   padding: 0 14px;
   width: 100%;
+  max-width: 260px; /* prevents it from pushing menu out */
   background: rgba(255,255,255,0.06);
   color: #f7f3ea;
   border: 1px solid rgba(212,169,86,0.28);
@@ -106,9 +120,29 @@ html, body{ overflow-x:hidden; }
 }
 .lang-select option{ color:#000; }
 
+/* Desktop top nav (ONLY on very large screens) */
+.topnav{
+  display:none;             /* default OFF */
+  gap: 12px;
+  align-items:center;
+  white-space: nowrap;
+}
+.topnav-link{
+  text-decoration:none;
+  color:#f7f3ea;
+  opacity:.9;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 12px;
+}
+.topnav-link:hover{
+  opacity: 1;
+  background: rgba(255,255,255,0.04);
+}
+
 /* Burger */
 .burger{
-  display:none;
+  display:flex;             /* default ON */
   width: 44px;
   height: 44px;
   border-radius: 14px;
@@ -141,7 +175,6 @@ html, body{ overflow-x:hidden; }
   opacity: 1;
   pointer-events: auto;
 }
-
 .drawer{
   position: fixed;
   top: 0;
@@ -179,7 +212,7 @@ html, body{ overflow-x:hidden; }
   cursor:pointer;
 }
 
-/* Drawer Language block */
+/* Drawer Language */
 .drawer-lang{
   display:flex;
   flex-direction:column;
@@ -221,17 +254,15 @@ html, body{ overflow-x:hidden; }
   border: 1px solid rgba(255,255,255,0.06);
 }
 
-/* ✅ MOBILE: compact header and move Language into drawer */
+/* ✅ Mobile: hide header language (keep it in drawer) */
 @media (max-width: 860px){
-  .topnav{ display:none; }
-  .burger{ display:flex; }
-
-  /* Hide language in header on mobile (this fixes the huge top) */
   .lang-wrap{ display:none; }
+}
 
-  /* Make brand smaller for mobile */
-  .brand-logo img{ height: 34px; max-width: 200px; }
-  .header-row{ padding: 8px 0; }
+/* ✅ Only show horizontal menu on very wide screens (prevents overflow) */
+@media (min-width: 1320px){
+  .topnav{ display:flex; }
+  .burger{ display:none; }
 }
     `;
 
@@ -248,14 +279,11 @@ html, body{ overflow-x:hidden; }
       <div class="container header-row">
         <a class="brand" href="index.html" aria-label="Home">
           <span class="brand-badge" aria-hidden="true">
-            <img class="brand-compass" src="assets/icons/compass-gold-solid.svg" alt="">
+            <img src="assets/icons/compass-gold-solid.svg" alt="">
           </span>
-          <span class="brand-logo">
-            <img src="assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience">
-          </span>
+          <span class="brand-name">Explore Portugal Experience</span>
         </a>
 
-        <!-- Desktop language (hidden on mobile via CSS) -->
         <div class="lang-wrap" aria-label="Language">
           <span class="lang-label">Language</span>
           <select class="lang-select" id="langSelect" aria-label="Select language">
@@ -267,6 +295,7 @@ html, body{ overflow-x:hidden; }
             <option value="de">Deutsch</option>
             <option value="it">Italiano</option>
           </select>
+
           <div id="google_translate_element" class="gt-hidden" aria-hidden="true"></div>
         </div>
 
@@ -287,7 +316,6 @@ html, body{ overflow-x:hidden; }
           <button class="drawer-close" id="drawerClose" type="button" aria-label="Close menu">✕</button>
         </div>
 
-        <!-- ✅ Mobile-first language lives here -->
         <div class="drawer-lang" aria-label="Language (menu)">
           <div class="drawer-lang-title">Language</div>
           <select id="langSelectDrawer" aria-label="Select language">
