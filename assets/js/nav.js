@@ -4,7 +4,6 @@
   const headerTarget = qs("#siteHeader");
   const footerTarget = qs("#siteFooter");
 
-  // Links (mantém aqui para ficar IGUAL em todo o site)
   const links = [
     { href: "about.html", label: "About" },
     { href: "services.html", label: "Services" },
@@ -18,7 +17,6 @@
     { href: "contactos.html", label: "Contact" },
   ];
 
-  // ✅ Inject hard mobile-safe CSS (this fixes your screenshot)
   function injectNavCSS() {
     const id = "epe-nav-css";
     if (document.getElementById(id)) return;
@@ -28,46 +26,62 @@
    EPE NAV FIX (Injected by nav.js)
 ============================= */
 
+html, body{ overflow-x:hidden; }
+
+/* Header */
 .site-header{
   position: sticky !important;
   top: 0;
   z-index: 9999;
   background: #000;
+  border-bottom: 1px solid rgba(212,169,86,0.18);
 }
-
 .site-header .container{
-  width: min(1100px, calc(100% - 32px));
+  width: min(1100px, calc(100% - 28px));
   margin: 0 auto;
 }
 
-/* Header row */
+/* Row */
 .header-row{
   display:flex;
   align-items:center;
-  gap: 14px;
-  padding: 14px 0;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
 }
 
 /* Brand */
 .brand{
   display:flex;
   align-items:center;
-  gap: 12px;
+  gap: 10px;
   text-decoration:none;
   color: inherit;
   min-width: 0;
 }
+.brand-badge img{ width: 22px; height: 22px; display:block; }
 .brand-logo img{
   display:block;
-  height: 44px;
-  width: auto;
+  height: 40px;
+  width:auto;
   max-width: 220px;
 }
 
-/* Spacer */
-.header-spacer{ flex: 1 1 auto; }
+/* Desktop nav */
+.topnav{
+  display:flex;
+  gap: 14px;
+  align-items:center;
+  white-space:nowrap;
+}
+.topnav-link{
+  text-decoration:none;
+  color:#f7f3ea;
+  opacity:.9;
+  font-size:14px;
+}
 
-/* Language block */
+/* Language (desktop only) */
 .lang-wrap{
   display:flex;
   align-items:center;
@@ -75,43 +89,28 @@
   min-width: 260px;
 }
 .lang-label{
-  letter-spacing: 0.18em;
+  letter-spacing: .18em;
   text-transform: uppercase;
   font-size: 12px;
-  opacity: 0.85;
+  opacity: .85;
 }
 .lang-select{
-  height: 42px;
+  height: 40px;
   border-radius: 999px;
   padding: 0 14px;
   width: 100%;
   background: rgba(255,255,255,0.06);
   color: #f7f3ea;
   border: 1px solid rgba(212,169,86,0.28);
-  outline: none;
+  outline:none;
 }
 .lang-select option{ color:#000; }
-
-/* Desktop top nav */
-.topnav{
-  display:flex;
-  gap: 14px;
-  align-items:center;
-  white-space: nowrap;
-}
-.topnav-link{
-  text-decoration:none;
-  color: #f7f3ea;
-  opacity: 0.9;
-  font-size: 14px;
-}
-.topnav-link:hover{ opacity: 1; }
 
 /* Burger */
 .burger{
   display:none;
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   border-radius: 14px;
   border: 1px solid rgba(212,169,86,0.28);
   background: rgba(255,255,255,0.06);
@@ -124,8 +123,8 @@
   width: 18px;
   height: 2px;
   margin: 3px 0;
-  background: #f7f3ea;
-  border-radius: 2px;
+  background:#f7f3ea;
+  border-radius:2px;
 }
 
 /* Drawer */
@@ -146,8 +145,8 @@
 .drawer{
   position: fixed;
   top: 0;
-  right: -320px;
-  width: 320px;
+  right: -340px;
+  width: 340px;
   max-width: calc(100% - 42px);
   height: 100vh;
   background: #050505;
@@ -180,11 +179,37 @@
   cursor:pointer;
 }
 
+/* Drawer Language block */
+.drawer-lang{
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+  padding: 10px 0 14px;
+  border-bottom: 1px solid rgba(212,169,86,0.18);
+  margin-bottom: 12px;
+}
+.drawer-lang .drawer-lang-title{
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: .85;
+}
+.drawer-lang select{
+  height: 44px;
+  border-radius: 999px;
+  padding: 0 14px;
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  color: #f7f3ea;
+  border: 1px solid rgba(212,169,86,0.28);
+  outline:none;
+}
+.drawer-lang select option{ color:#000; }
+
 .drawer-links{
   display:flex;
   flex-direction:column;
   gap: 6px;
-  padding-top: 6px;
 }
 .drawer-links a{
   display:block;
@@ -196,52 +221,17 @@
   border: 1px solid rgba(255,255,255,0.06);
 }
 
-/* Critical: prevent horizontal scroll on mobile due to header */
-html, body{ overflow-x: hidden; }
-
-/* ✅ MOBILE LAYOUT */
+/* ✅ MOBILE: compact header and move Language into drawer */
 @media (max-width: 860px){
-  .header-row{
-    flex-wrap: wrap;
-    gap: 12px;
-  }
+  .topnav{ display:none; }
+  .burger{ display:flex; }
 
-  .header-spacer{
-    display:none;
-  }
+  /* Hide language in header on mobile (this fixes the huge top) */
+  .lang-wrap{ display:none; }
 
-  /* Keep brand on top row */
-  .brand{
-    flex: 1 1 auto;
-  }
-  .brand-logo img{
-    height: 40px;
-    max-width: 200px;
-  }
-
-  /* Burger on top row, always clickable */
-  .burger{
-    display:flex;
-    flex: 0 0 auto;
-  }
-
-  /* Language takes full width on its own row (fixes your screenshot) */
-  .lang-wrap{
-    order: 3;
-    width: 100%;
-    min-width: 0;
-  }
-  .lang-label{
-    flex: 0 0 auto;
-  }
-  .lang-select{
-    flex: 1 1 auto;
-  }
-
-  /* Hide the desktop links, use drawer instead */
-  .topnav{
-    display:none;
-  }
+  /* Make brand smaller for mobile */
+  .brand-logo img{ height: 34px; max-width: 200px; }
+  .header-row{ padding: 8px 0; }
 }
     `;
 
@@ -265,12 +255,7 @@ html, body{ overflow-x: hidden; }
           </span>
         </a>
 
-        <div class="header-spacer"></div>
-
-        <button class="burger" id="burgerBtn" type="button" aria-label="Open menu">
-          <span></span><span></span><span></span>
-        </button>
-
+        <!-- Desktop language (hidden on mobile via CSS) -->
         <div class="lang-wrap" aria-label="Language">
           <span class="lang-label">Language</span>
           <select class="lang-select" id="langSelect" aria-label="Select language">
@@ -282,22 +267,40 @@ html, body{ overflow-x: hidden; }
             <option value="de">Deutsch</option>
             <option value="it">Italiano</option>
           </select>
-
-          <!-- Google Translate fica escondido e controlado por JS -->
           <div id="google_translate_element" class="gt-hidden" aria-hidden="true"></div>
         </div>
 
         <nav class="topnav" aria-label="Main navigation">
           ${links.map(l => `<a class="topnav-link" href="${l.href}">${l.label}</a>`).join("")}
         </nav>
+
+        <button class="burger" id="burgerBtn" type="button" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
 
       <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
       <nav class="drawer" id="drawer" aria-label="Menu">
         <div class="drawer-head">
           <div class="drawer-title">Menu</div>
           <button class="drawer-close" id="drawerClose" type="button" aria-label="Close menu">✕</button>
         </div>
+
+        <!-- ✅ Mobile-first language lives here -->
+        <div class="drawer-lang" aria-label="Language (menu)">
+          <div class="drawer-lang-title">Language</div>
+          <select id="langSelectDrawer" aria-label="Select language">
+            <option value="">Select language</option>
+            <option value="en">English</option>
+            <option value="pt">Português</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="it">Italiano</option>
+          </select>
+        </div>
+
         <div class="drawer-links">
           ${links.map(l => `<a href="${l.href}">${l.label}</a>`).join("")}
         </div>
@@ -403,17 +406,26 @@ html, body{ overflow-x: hidden; }
     document.head.appendChild(s);
   }
 
+  // Sync both selects (desktop + drawer)
   const langSelect = qs("#langSelect");
-  if (langSelect) {
-    try {
-      const saved = localStorage.getItem("epe_lang");
-      if (saved) langSelect.value = saved;
-    } catch {}
+  const langSelectDrawer = qs("#langSelectDrawer");
 
-    langSelect.addEventListener("change", () => {
-      const v = (langSelect.value || "").trim();
-      try { localStorage.setItem("epe_lang", v); } catch {}
-      if (v) applyGoogleTranslateLang(v);
-    });
+  function restoreSavedLanguage() {
+    try {
+      const saved = localStorage.getItem("epe_lang") || "";
+      if (langSelect) langSelect.value = saved;
+      if (langSelectDrawer) langSelectDrawer.value = saved;
+    } catch {}
   }
+
+  function onChangeLanguage(value) {
+    const v = (value || "").trim();
+    try { localStorage.setItem("epe_lang", v); } catch {}
+    if (v) applyGoogleTranslateLang(v);
+  }
+
+  if (langSelect) langSelect.addEventListener("change", () => onChangeLanguage(langSelect.value));
+  if (langSelectDrawer) langSelectDrawer.addEventListener("change", () => onChangeLanguage(langSelectDrawer.value));
+
+  restoreSavedLanguage();
 })();
