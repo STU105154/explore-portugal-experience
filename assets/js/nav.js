@@ -4,7 +4,7 @@
   const headerTarget = qs("#siteHeader");
   const footerTarget = qs("#siteFooter");
 
-  // Links (IGUAIS em todo o site)
+  // Links (mantém aqui para ficar IGUAL em todo o site)
   const links = [
     { href: "about.html", label: "About" },
     { href: "services.html", label: "Services" },
@@ -18,19 +18,272 @@
     { href: "contactos.html", label: "Contact" },
   ];
 
+  // ✅ Inject CSS that fixes: (1) no mini logo (2) menu overflow on desktop
+  function injectNavCSS() {
+    const id = "epe-nav-css";
+    if (document.getElementById(id)) return;
+
+    const css = `
+/* =============================
+   EPE NAV (Injected by nav.js)
+   - No mini logo in header
+   - Desktop menu never overflows
+============================= */
+
+html, body { overflow-x: hidden; }
+
+.site-header{
+  position: sticky !important;
+  top: 0;
+  z-index: 9999;
+  background: #000;
+  border-bottom: 1px solid rgba(212,169,86,0.18);
+}
+
+.site-header .container{
+  width: min(1200px, calc(100% - 28px));
+  margin: 0 auto;
+}
+
+/* Header row */
+.header-row{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 0;
+}
+
+/* Brand (NO mini logo image) */
+.brand{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  text-decoration:none;
+  color: inherit;
+  min-width: 0;
+}
+.brand-badge{
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(212,169,86,0.28);
+  background: rgba(255,255,255,0.04);
+  display:grid;
+  place-items:center;
+  box-shadow: 0 8px 30px rgba(0,0,0,.6);
+}
+.brand-badge img{
+  width: 22px;
+  height: 22px;
+  display:block;
+}
+
+/* Brand text (clean, premium) */
+.brand-name{
+  display:block;
+  font-size: 14px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .92;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+@media (max-width: 520px){
+  .brand-name{ font-size: 12px; letter-spacing: .12em; }
+}
+
+/* Language (desktop/tablet) */
+.lang-wrap{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  min-width: 260px;
+}
+.lang-label{
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: .85;
+  white-space: nowrap;
+}
+.lang-select{
+  height: 40px;
+  border-radius: 999px;
+  padding: 0 14px;
+  width: 100%;
+  max-width: 260px; /* prevents it from pushing menu out */
+  background: rgba(255,255,255,0.06);
+  color: #f7f3ea;
+  border: 1px solid rgba(212,169,86,0.28);
+  outline:none;
+}
+.lang-select option{ color:#000; }
+
+/* Desktop top nav (ONLY on very large screens) */
+.topnav{
+  display:none;             /* default OFF */
+  gap: 12px;
+  align-items:center;
+  white-space: nowrap;
+}
+.topnav-link{
+  text-decoration:none;
+  color:#f7f3ea;
+  opacity:.9;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 12px;
+}
+.topnav-link:hover{
+  opacity: 1;
+  background: rgba(255,255,255,0.04);
+}
+
+/* Burger */
+.burger{
+  display:flex;             /* default ON */
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid rgba(212,169,86,0.28);
+  background: rgba(255,255,255,0.06);
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+}
+.burger span{
+  display:block;
+  width: 18px;
+  height: 2px;
+  margin: 3px 0;
+  background:#f7f3ea;
+  border-radius:2px;
+}
+
+/* Drawer */
+.drawer-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .18s ease;
+  z-index: 9998;
+}
+.drawer-backdrop.open{
+  opacity: 1;
+  pointer-events: auto;
+}
+.drawer{
+  position: fixed;
+  top: 0;
+  right: -340px;
+  width: 340px;
+  max-width: calc(100% - 42px);
+  height: 100vh;
+  background: #050505;
+  border-left: 1px solid rgba(212,169,86,0.28);
+  transition: right .18s ease;
+  z-index: 9999;
+  padding: 14px;
+}
+.drawer.open{ right: 0; }
+
+.drawer-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  padding: 6px 2px 12px;
+}
+.drawer-title{
+  font-size: 16px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.drawer-close{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid rgba(212,169,86,0.28);
+  background: rgba(255,255,255,0.06);
+  color: #f7f3ea;
+  cursor:pointer;
+}
+
+/* Drawer Language */
+.drawer-lang{
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+  padding: 10px 0 14px;
+  border-bottom: 1px solid rgba(212,169,86,0.18);
+  margin-bottom: 12px;
+}
+.drawer-lang .drawer-lang-title{
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: .85;
+}
+.drawer-lang select{
+  height: 44px;
+  border-radius: 999px;
+  padding: 0 14px;
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  color: #f7f3ea;
+  border: 1px solid rgba(212,169,86,0.28);
+  outline:none;
+}
+.drawer-lang select option{ color:#000; }
+
+.drawer-links{
+  display:flex;
+  flex-direction:column;
+  gap: 6px;
+}
+.drawer-links a{
+  display:block;
+  padding: 12px 12px;
+  border-radius: 14px;
+  text-decoration:none;
+  color: #f7f3ea;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ✅ Mobile: hide header language (keep it in drawer) */
+@media (max-width: 860px){
+  .lang-wrap{ display:none; }
+}
+
+/* ✅ Only show horizontal menu on very wide screens (prevents overflow) */
+@media (min-width: 1320px){
+  .topnav{ display:flex; }
+  .burger{ display:none; }
+}
+    `;
+
+    const style = document.createElement("style");
+    style.id = id;
+    style.textContent = css;
+    document.head.appendChild(style);
+  }
+
+  injectNavCSS();
+
   const headerHTML = `
     <header class="site-header" role="banner">
       <div class="container header-row">
-
-        <!-- Brand (STAR goes HOME) -->
         <a class="brand" href="index.html" aria-label="Home">
           <span class="brand-badge" aria-hidden="true">
-            <img class="brand-compass" src="assets/icons/compass-gold-solid.svg" alt="">
+            <img src="assets/icons/compass-gold-solid.svg" alt="">
           </span>
-          <span class="brand-title">EXPLORE PORTUGAL EXPERIENCE</span>
+          <span class="brand-name">Explore Portugal Experience</span>
         </a>
 
-        <!-- Language stays visible on mobile (but compact) -->
         <div class="lang-wrap" aria-label="Language">
           <span class="lang-label">Language</span>
           <select class="lang-select" id="langSelect" aria-label="Select language">
@@ -42,21 +295,20 @@
             <option value="de">Deutsch</option>
             <option value="it">Italiano</option>
           </select>
+
           <div id="google_translate_element" class="gt-hidden" aria-hidden="true"></div>
         </div>
 
-        <!-- Desktop nav -->
         <nav class="topnav" aria-label="Main navigation">
           ${links.map(l => `<a class="topnav-link" href="${l.href}">${l.label}</a>`).join("")}
         </nav>
 
-        <!-- Burger -->
-        <button class="burger" id="burgerBtn" type="button" aria-label="Open menu" aria-expanded="false">
+        <button class="burger" id="burgerBtn" type="button" aria-label="Open menu">
           <span></span><span></span><span></span>
         </button>
       </div>
 
-      <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+      <div class="drawer-backdrop" id="drawerBackdrop"></div>
 
       <nav class="drawer" id="drawer" aria-label="Menu">
         <div class="drawer-head">
@@ -64,9 +316,9 @@
           <button class="drawer-close" id="drawerClose" type="button" aria-label="Close menu">✕</button>
         </div>
 
-        <div class="drawer-lang">
-          <div class="drawer-label">Language</div>
-          <select class="drawer-select" id="langSelectDrawer" aria-label="Select language">
+        <div class="drawer-lang" aria-label="Language (menu)">
+          <div class="drawer-lang-title">Language</div>
+          <select id="langSelectDrawer" aria-label="Select language">
             <option value="">Select language</option>
             <option value="en">English</option>
             <option value="pt">Português</option>
@@ -129,27 +381,23 @@
     if (!drawer || !backdrop) return;
     drawer.classList.add("open");
     backdrop.classList.add("open");
-    if (burgerBtn) burgerBtn.setAttribute("aria-expanded", "true");
     document.documentElement.classList.add("no-scroll");
   }
   function closeDrawer() {
     if (!drawer || !backdrop) return;
     drawer.classList.remove("open");
     backdrop.classList.remove("open");
-    if (burgerBtn) burgerBtn.setAttribute("aria-expanded", "false");
     document.documentElement.classList.remove("no-scroll");
   }
 
   if (burgerBtn) burgerBtn.addEventListener("click", openDrawer);
   if (backdrop) backdrop.addEventListener("click", closeDrawer);
   if (drawerClose) drawerClose.addEventListener("click", closeDrawer);
-
   if (drawer) {
     drawer.addEventListener("click", (e) => {
       if (e.target && e.target.tagName === "A") closeDrawer();
     });
   }
-
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeDrawer();
   });
@@ -164,7 +412,6 @@
   function applyGoogleTranslateLang(lang) {
     const from = "pt";
     const to = lang || "pt";
-    setCookie("googtrans", `/${from}/${to}`);
     setCookie("googtrans", `/${from}/${to}`);
     location.reload();
   }
@@ -187,84 +434,26 @@
     document.head.appendChild(s);
   }
 
+  // Sync both selects (desktop + drawer)
   const langSelect = qs("#langSelect");
   const langSelectDrawer = qs("#langSelectDrawer");
 
-  function syncLangSelects(value) {
-    if (langSelect) langSelect.value = value;
-    if (langSelectDrawer) langSelectDrawer.value = value;
-  }
-
-  function initLangSelect(selectEl) {
-    if (!selectEl) return;
-
+  function restoreSavedLanguage() {
     try {
-      const saved = localStorage.getItem("epe_lang");
-      if (saved) syncLangSelects(saved);
+      const saved = localStorage.getItem("epe_lang") || "";
+      if (langSelect) langSelect.value = saved;
+      if (langSelectDrawer) langSelectDrawer.value = saved;
     } catch {}
-
-    selectEl.addEventListener("change", () => {
-      const v = (selectEl.value || "").trim();
-      try { localStorage.setItem("epe_lang", v); } catch {}
-      syncLangSelects(v);
-      if (v) applyGoogleTranslateLang(v);
-    });
   }
 
-  initLangSelect(langSelect);
-  initLangSelect(langSelectDrawer);
+  function onChangeLanguage(value) {
+    const v = (value || "").trim();
+    try { localStorage.setItem("epe_lang", v); } catch {}
+    if (v) applyGoogleTranslateLang(v);
+  }
 
-  // --- Cookies (GLOBAL) ---
-  // If the page doesn't include the cookie bar, we create it automatically.
-  (function cookieGlobal(){
-    const KEY = "epe_cookie_consent";
+  if (langSelect) langSelect.addEventListener("change", () => onChangeLanguage(langSelect.value));
+  if (langSelectDrawer) langSelectDrawer.addEventListener("change", () => onChangeLanguage(langSelectDrawer.value));
 
-    let bar = document.getElementById("cookieBar");
-
-    if (!bar) {
-      bar = document.createElement("div");
-      bar.className = "cookie-bar";
-      bar.id = "cookieBar";
-      bar.setAttribute("aria-live", "polite");
-      bar.innerHTML = `
-        <div class="cookie-inner">
-          <div class="cookie-text">
-            We use cookies to improve site performance, understand traffic and keep the experience reliable.
-            You can accept all cookies or continue with only essential cookies.
-            <a href="privacy.html">Learn more</a>
-          </div>
-          <div class="cookie-actions">
-            <button class="btn cookie-btn btn-ghost" type="button" id="cookieDecline">Essential only</button>
-            <button class="btn cookie-btn btn-gold" type="button" id="cookieAccept">Accept all</button>
-          </div>
-        </div>
-      `;
-      document.body.appendChild(bar);
-    }
-
-    const a = document.getElementById("cookieAccept");
-    const d = document.getElementById("cookieDecline");
-
-    if (!bar || !a || !d) return;
-
-    function showIfNeeded(){
-      try{
-        const v = localStorage.getItem(KEY);
-        if(!v) bar.classList.add("show");
-      }catch(e){
-        bar.classList.add("show");
-      }
-    }
-
-    function set(v){
-      try{ localStorage.setItem(KEY, v); }catch(e){}
-      bar.classList.remove("show");
-    }
-
-    a.addEventListener("click", () => set("accepted"));
-    d.addEventListener("click", () => set("essential_only"));
-
-    showIfNeeded();
-  })();
-
+  restoreSavedLanguage();
 })();
