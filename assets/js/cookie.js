@@ -1,6 +1,13 @@
 (function () {
   const KEY = "epe_cookie_consent"; // "accept" | "decline"
 
+  function get() {
+    try { return localStorage.getItem(KEY); } catch { return null; }
+  }
+  function set(val) {
+    try { localStorage.setItem(KEY, val); } catch {}
+  }
+
   function buildBanner() {
     const bar = document.createElement("div");
     bar.className = "cookie-bar";
@@ -11,8 +18,8 @@
           We use cookies to improve your experience and measure traffic.
         </div>
         <div class="cookie-actions">
-          <button class="cookie-decline" id="cookieDecline" type="button">Decline</button>
-          <button class="cookie-accept" id="cookieAccept" type="button">Accept</button>
+          <button class="btn btn-ghost cookie-btn" id="cookieDecline" type="button">Decline</button>
+          <button class="btn btn-gold cookie-btn" id="cookieAccept" type="button">Accept</button>
         </div>
       </div>
     `;
@@ -20,15 +27,8 @@
     return bar;
   }
 
-  function show(bar) { bar.style.display = "block"; }
-  function hide(bar) { bar.style.display = "none"; }
-
-  function get() {
-    try { return localStorage.getItem(KEY); } catch { return null; }
-  }
-  function set(val) {
-    try { localStorage.setItem(KEY, val); } catch {}
-  }
+  function show(bar) { bar.classList.add("show"); }
+  function hide(bar) { bar.classList.remove("show"); }
 
   window.addEventListener("DOMContentLoaded", () => {
     let bar = document.getElementById("cookieBar");
@@ -40,7 +40,7 @@
     const btnA = document.getElementById("cookieAccept");
     const btnD = document.getElementById("cookieDecline");
 
-    btnA?.addEventListener("click", () => { set("accept"); hide(bar); });
-    btnD?.addEventListener("click", () => { set("decline"); hide(bar); });
+    if (btnA) btnA.addEventListener("click", () => { set("accept"); hide(bar); });
+    if (btnD) btnD.addEventListener("click", () => { set("decline"); hide(bar); });
   });
 })();
