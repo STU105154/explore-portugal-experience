@@ -1,12 +1,12 @@
 /* =============================
    Explore Portugal Experience
-   Global Styles (single source)
+   Global Styles (STABLE RESET)
 ============================= */
 
-/* --- Reset / Base --- */
+/* --- Base / Reset --- */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-html.no-scroll, html.no-scroll body { overflow: hidden; }
+html.no-scroll, html.no-scroll body { overflow: hidden; height: 100%; }
 
 :root{
   --bg: #000;
@@ -17,7 +17,6 @@ html.no-scroll, html.no-scroll body { overflow: hidden; }
   --panel2: rgba(255,255,255,0.06);
 
   --gold: #c9a562;
-  --gold-2: rgba(201,165,98,0.22);
   --stroke: rgba(201,165,98,0.20);
 
   --shadow: 0 18px 60px rgba(0,0,0,.65);
@@ -38,16 +37,14 @@ img{ max-width: 100%; display: block; }
 a{ color: inherit; text-decoration: none; }
 a:hover{ opacity: .96; }
 
-/* --- Layout helpers --- */
+/* ---------- Layout helpers ---------- */
 .container{
   max-width: var(--max);
   margin: 0 auto;
   padding: 0 var(--pad);
 }
 
-.section{
-  padding: 18px 0;
-}
+.section{ padding: 18px 0; }
 
 .card{
   background: var(--panel);
@@ -62,13 +59,11 @@ a:hover{ opacity: .96; }
   font-size: clamp(30px, 5vw, 54px);
   letter-spacing: .01em;
 }
-
 .h2{
   margin: 0 0 10px;
   font-size: clamp(22px, 3.6vw, 32px);
   letter-spacing: .01em;
 }
-
 .p{
   margin: 0 0 14px;
   color: var(--muted);
@@ -77,12 +72,12 @@ a:hover{ opacity: .96; }
 }
 
 /* =============================
-   HEADER (Injected)
+   HEADER (Injected by nav.js)
 ============================= */
 .site-header{
   position: sticky;
   top: 0;
-  z-index: 2000;
+  z-index: 4000;
   background: linear-gradient(to bottom, rgba(0,0,0,.88), rgba(0,0,0,.55));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -94,16 +89,15 @@ a:hover{ opacity: .96; }
   align-items: center;
   gap: 12px;
   padding: 10px 0;
+  min-height: 64px;
 }
 
-/* Brand: STAR + NAME (no mini logo in header) */
 .brand{
   display: inline-flex;
   align-items: center;
   gap: 12px;
   min-width: 0;
 }
-
 .brand-badge{
   width: 44px;
   height: 44px;
@@ -113,20 +107,13 @@ a:hover{ opacity: .96; }
   background: rgba(255,255,255,0.02);
   border: 1px solid var(--stroke);
   box-shadow: 0 10px 36px rgba(0,0,0,.6);
+  flex: 0 0 auto;
 }
-
 .brand-compass{
   width: 24px;
   height: 24px;
   object-fit: contain;
-  /* subtle rotation (can remove if you want) */
-  animation: epeSpin 6s linear infinite;
 }
-@keyframes epeSpin{
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 .brand-text{
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -136,13 +123,7 @@ a:hover{ opacity: .96; }
   text-overflow: ellipsis;
 }
 
-/* If you still have a logo span in HTML, we hide it */
-.brand-logo{ display: none !important; }
-
-.header-spacer{
-  flex: 1;
-  min-width: 10px;
-}
+.header-spacer{ flex: 1; min-width: 10px; }
 
 /* Language selector (always visible) */
 .lang-wrap{
@@ -150,8 +131,8 @@ a:hover{ opacity: .96; }
   align-items: center;
   gap: 10px;
   min-width: 0;
+  position: relative;
 }
-
 .lang-label{
   font-size: 12px;
   letter-spacing: .18em;
@@ -159,27 +140,19 @@ a:hover{ opacity: .96; }
   color: rgba(247,243,232,0.62);
   white-space: nowrap;
 }
-
 .lang-select{
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.10);
   color: var(--text);
-
   padding: 10px 40px 10px 14px;
   border-radius: 999px;
   font-size: 14px;
   outline: none;
-
-  width: clamp(160px, 22vw, 260px);
+  width: clamp(150px, 22vw, 260px);
   max-width: 260px;
-}
-
-.lang-wrap{
-  position: relative;
 }
 .lang-wrap::after{
   content: "▾";
@@ -196,7 +169,7 @@ a:hover{ opacity: .96; }
   display: none;
   align-items: center;
   gap: 8px;
-  max-width: 52vw;
+  max-width: 56vw;
   overflow-x: auto;
   white-space: nowrap;
   padding-bottom: 2px;
@@ -215,8 +188,12 @@ a:hover{ opacity: .96; }
   background: rgba(255,255,255,0.03);
   border-color: rgba(255,255,255,0.06);
 }
+.topnav-link.is-active{
+  border-color: rgba(201,165,98,0.30);
+  background: rgba(201,165,98,0.08);
+}
 
-/* Burger button */
+/* Burger button (mobile + small desktop) */
 .burger{
   width: 46px;
   height: 46px;
@@ -226,6 +203,7 @@ a:hover{ opacity: .96; }
   display: grid;
   place-items: center;
   cursor: pointer;
+  flex: 0 0 auto;
 }
 .burger span{
   width: 18px;
@@ -237,28 +215,27 @@ a:hover{ opacity: .96; }
 .burger span:nth-child(2){ width: 14px; opacity: .8; }
 .burger span:nth-child(3){ width: 18px; opacity: .9; }
 
-/* Desktop breakpoint */
+/* Desktop breakpoint: show topnav, hide burger */
 @media (min-width: 1100px){
   .topnav{ display: flex; }
   .burger{ display: none; }
-  .topnav{ max-width: 56vw; }
 }
 
-/* Tight mobile: hide brand text if needed */
+/* Tight mobile */
 @media (max-width: 430px){
   .brand-text{ display: none; }
   .lang-label{ display: none; }
-  .lang-select{ width: 170px; }
+  .lang-select{ width: 165px; }
 }
 
 /* =============================
-   Drawer (Burger Menu)
+   Drawer (Burger Menu) - SCROLL FIX
 ============================= */
 .drawer-backdrop{
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,.55);
-  z-index: 2100;
+  z-index: 4100;
   opacity: 0;
   pointer-events: none;
   transition: opacity .18s ease;
@@ -267,14 +244,13 @@ a:hover{ opacity: .96; }
   opacity: 1;
   pointer-events: auto;
 }
-
 .drawer{
   position: fixed;
   top: 0;
   right: 0;
-  height: 100vh;
+  height: 100dvh;
   width: min(92vw, 380px);
-  z-index: 2200;
+  z-index: 4200;
 
   background: rgba(0,0,0,.92);
   backdrop-filter: blur(12px);
@@ -296,14 +272,12 @@ a:hover{ opacity: .96; }
   padding: 14px 14px 10px;
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
-
 .drawer-title{
   font-size: 14px;
   letter-spacing: .18em;
   text-transform: uppercase;
   color: rgba(247,243,232,0.70);
 }
-
 .drawer-close{
   width: 44px;
   height: 44px;
@@ -313,26 +287,19 @@ a:hover{ opacity: .96; }
   color: rgba(247,243,232,0.92);
   cursor: pointer;
 }
-
 .drawer-body{
   padding: 12px 14px 16px;
-  overflow-y: auto;          /* <-- THIS makes scroll work */
+  overflow-y: auto;                 /* <-- scroll works */
   -webkit-overflow-scrolling: touch;
   flex: 1;
 }
-
-.drawer-section{
-  margin-bottom: 14px;
+.drawer-mini-title{
+  font-size: 12px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(247,243,232,0.62);
+  margin-bottom: 10px;
 }
-
-.drawer .lang-wrap{
-  width: 100%;
-}
-.drawer .lang-select{
-  width: 100%;
-  max-width: none;
-}
-
 .drawer-links a{
   display: block;
   padding: 12px 12px;
@@ -342,30 +309,72 @@ a:hover{ opacity: .96; }
   color: rgba(247,243,232,0.92);
   margin-top: 10px;
 }
+.drawer-links a.is-active{
+  border-color: rgba(201,165,98,0.35);
+  background: rgba(201,165,98,0.10);
+}
+
+/* =============================
+   Forms + selects (fix huge fields)
+============================= */
+input, select, textarea, button{
+  font: inherit;
+}
+input, select, textarea{
+  width: 100%;
+  max-width: 100%;
+  font-size: 16px; /* stops iOS zoom + keeps consistent */
+}
+button{
+  max-width: 100%;
+}
+
+/* If booking areas exist, keep them tidy */
+form{
+  max-width: 100%;
+}
+.card select,
+.card input{
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: var(--text);
+  border-radius: 18px;
+  padding: 12px 14px;
+}
 
 /* =============================
    Index logo / QR sizing fixes
 ============================= */
-
-/* Make any big logo image behave on mobile */
 .hero-logo,
 .logo-card img,
-.home-logo{
+.home-logo,
+#homeLogo,
+#qrCodeImg,
+.qr-wrap img{
   width: 100%;
   height: auto;
   object-fit: contain;
   border-radius: calc(var(--radius) - 10px);
 }
 
-/* Mobile: cap giant logo */
+/* cap giant logo on desktop + mobile */
+.logo-card img,
+.home-logo,
+#homeLogo{
+  max-height: 520px;
+  margin: 0 auto;
+}
+
+/* Mobile: stronger cap */
 @media (max-width: 700px){
   .logo-card img,
-  .home-logo{
+  .home-logo,
+  #homeLogo{
     max-height: 340px;
   }
 }
 
-/* QR container (works wherever) */
+/* QR container */
 .qr-wrap{
   margin-top: 10px;
   padding: 12px;
@@ -375,204 +384,18 @@ a:hover{ opacity: .96; }
   display: flex;
   justify-content: center;
 }
-.qr-wrap img{
-  width: min(320px, 86vw);  /* smaller on mobile */
+.qr-wrap img,
+#qrCodeImg{
+  width: min(320px, 86vw);
+  max-width: 320px;
   height: auto;
   border-radius: 18px;
   background: #fff;
 }
 
 /* =============================
-   Tribute (Agapito)
+   Tribute (Agapito) - RESTORE
 ============================= */
-.about-agapito{
-  text-align: center;
-  border: 1px solid rgba(201,165,98,0.22);
-  box-shadow: 0 24px 80px rgba(0,0,0,.72);
-}
-
-.agapito-photo{
-  width: 140px;
-  height: 140px;
-  border-radius: 999px;
-  object-fit: cover;
-  margin: 4px auto 12px;
-  border: 2px solid rgba(201,165,98,0.35);
-  box-shadow: 0 12px 40px rgba(0,0,0,.65);
-}
-
-.tribute-heading{
-  margin: 0;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  font-size: 12px;
-  color: rgba(247,243,232,0.62);
-}
-.tribute-name{
-  margin: 6px 0 0;
-  font-size: 30px;
-  letter-spacing: .04em;
-}
-.tribute-subtitle{
-  margin: 6px 0 14px;
-  color: rgba(247,243,232,0.70);
-}
-
-.tribute-text{
-  text-align: left;
-  border: 1px solid rgba(201,165,98,0.20);
-  border-radius: 18px;
-  padding: 14px;
-  background: rgba(255,255,255,0.02);
-}
-.tribute-text p{
-  margin: 0 0 12px;
-  color: rgba(247,243,232,0.78);
-  line-height: 1.65;
-}
-.tribute-text p:last-child{ margin-bottom: 0; }
-
-.tribute-quote{
-  margin: 14px 0 0;
-  color: rgba(247,243,232,0.78);
-  font-style: italic;
-}
-
-/* =============================
-   FOOTER (Injected)
-============================= */
-.site-footer{
-  margin-top: 18px;
-  padding: 26px 0 18px;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  background: rgba(0,0,0,0.35);
-}
-
-.footer-grid{
-  display: grid;
-  gap: 18px;
-}
-
-@media (min-width: 860px){
-  .footer-grid{
-    grid-template-columns: 1.3fr 1fr 1fr;
-    align-items: start;
-  }
-}
-
-.footer-title{
-  font-weight: 700;
-  letter-spacing: .02em;
-  margin-bottom: 8px;
-}
-
-.footer-text{
-  margin: 0;
-  color: rgba(247,243,232,0.70);
-  line-height: 1.6;
-  overflow-wrap: anywhere;
-}
-
-.footer-text a{
-  border-bottom: 1px solid rgba(201,165,98,0.24);
-}
-
-.footer-bottom{
-  margin-top: 18px;
-  padding-top: 14px;
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-  color: rgba(247,243,232,0.58);
-  font-size: 14px;
-}
-
-.mkdesign span{ color: rgba(247,243,232,0.72); }
-
-/* =============================
-   Cookie bar
-============================= */
-.cookie-bar{
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 14px;
-  width: min(var(--max), calc(100% - 18px));
-  z-index: 5000;
-
-  display: none;
-}
-.cookie-bar.show{ display: block; }
-
-.cookie-inner{
-  background: rgba(0,0,0,0.78);
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 22px;
-  box-shadow: var(--shadow);
-  padding: 12px 12px;
-
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.cookie-text{
-  color: rgba(247,243,232,0.82);
-  font-size: 14px;
-  line-height: 1.35;
-  flex: 1;
-  min-width: 220px;
-}
-
-.cookie-text a{
-  border-bottom: 1px solid rgba(201,165,98,0.24);
-}
-
-.cookie-actions{
-  display: flex;
-  gap: 10px;
-}
-
-.btn{
-  border-radius: 999px;
-  padding: 10px 14px;
-  border: 1px solid rgba(201,165,98,0.35);
-  background: rgba(255,255,255,0.03);
-  color: rgba(247,243,232,0.92);
-  cursor: pointer;
-  min-width: 120px;
-  font-weight: 600;
-}
-
-.btn-gold{
-  background: linear-gradient(135deg, rgba(201,165,98,0.95), rgba(231,205,147,0.92));
-  color: #14110b;
-  border-color: rgba(201,165,98,0.40);
-}
-
-.btn-ghost{
-  background: rgba(0,0,0,0.12);
-}
-
-/* =============================
-   Google Translate: hide UI widgets
-============================= */
-.gt-hidden{ display: none !important; }
-.goog-te-banner-frame,
-.goog-te-gadget,
-.goog-logo-link,
-.goog-te-gadget span{ display: none !important; }
-body{ top: 0 !important; }
-/* =========================================================
-   ABOUT — TRIBUTE AGAPITO (fix: photo + gold frame + layout)
-========================================================= */
-
 .about-agapito{
   text-align: center;
   padding: 22px 18px;
@@ -621,17 +444,15 @@ body{ top: 0 !important; }
   max-width: 900px;
   padding: 16px 16px;
   border-radius: 22px;
-  border: 1px solid rgba(201,165,98,0.32);
+  border: 1px solid rgba(201,165,98,0.32); /* gold frame */
   background: rgba(0,0,0,0.22);
 }
-
 .tribute-text p{
   margin: 0 0 12px;
   color: rgba(247,243,232,0.78);
   line-height: 1.65;
   font-size: 16px;
 }
-
 .tribute-text p:last-child{ margin-bottom: 0; }
 
 .tribute-quote{
@@ -641,10 +462,54 @@ body{ top: 0 !important; }
   font-size: 16px;
 }
 
-/* =========================================================
-   COOKIE BAR (fix: show class + mobile safe)
-========================================================= */
+/* =============================
+   FOOTER
+============================= */
+.site-footer{
+  margin-top: 18px;
+  padding: 26px 0 18px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: rgba(0,0,0,0.35);
+}
+.footer-grid{
+  display: grid;
+  gap: 18px;
+}
+@media (min-width: 860px){
+  .footer-grid{
+    grid-template-columns: 1.3fr 1fr 1fr;
+    align-items: start;
+  }
+}
+.footer-title{
+  font-weight: 700;
+  letter-spacing: .02em;
+  margin-bottom: 8px;
+}
+.footer-text{
+  margin: 0;
+  color: rgba(247,243,232,0.70);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.footer-text a{
+  border-bottom: 1px solid rgba(201,165,98,0.24);
+}
+.footer-bottom{
+  margin-top: 18px;
+  padding-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: rgba(247,243,232,0.58);
+  font-size: 14px;
+}
+.mkdesign span{ color: rgba(247,243,232,0.72); }
 
+/* =============================
+   Cookie bar
+============================= */
 .cookie-bar{
   position: fixed;
   left: 50%;
@@ -656,13 +521,11 @@ body{ top: 0 !important; }
   pointer-events: none;
   transition: opacity .25s ease, transform .25s ease;
 }
-
 .cookie-bar.show{
   opacity: 1;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);
 }
-
 .cookie-inner{
   display: flex;
   gap: 12px;
@@ -673,13 +536,12 @@ body{ top: 0 !important; }
   background: rgba(0,0,0,0.78);
   border: 1px solid rgba(255,255,255,0.10);
   border-radius: 22px;
-  box-shadow: 0 18px 60px rgba(0,0,0,.65);
+  box-shadow: var(--shadow);
   padding: 12px 12px;
 
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
-
 .cookie-text{
   color: rgba(247,243,232,0.82);
   font-size: 14px;
@@ -687,88 +549,27 @@ body{ top: 0 !important; }
   flex: 1;
   min-width: 220px;
 }
-
 .cookie-actions{
   display: flex;
   gap: 10px;
   align-items: center;
 }
-
-.cookie-btn{
+.btn{
   border-radius: 999px;
   padding: 10px 14px;
-  min-width: 120px;
-  cursor: pointer;
-}
-
-/* Se os teus .btn / .btn-ghost / .btn-gold existirem, isto já herda bem.
-   Se não existirem (ou estiverem estragados), força aqui um fallback: */
-.cookie-actions .btn-ghost{
-  background: rgba(255,255,255,0.03);
   border: 1px solid rgba(201,165,98,0.35);
+  background: rgba(255,255,255,0.03);
   color: rgba(247,243,232,0.92);
+  cursor: pointer;
+  min-width: 120px;
+  font-weight: 600;
 }
-
-.cookie-actions .btn-gold{
+.btn-gold{
   background: linear-gradient(135deg, rgba(201,165,98,0.95), rgba(231,205,147,0.92));
-  border: 1px solid rgba(201,165,98,0.55);
   color: #14110b;
+  border-color: rgba(201,165,98,0.40);
   font-weight: 800;
 }
-/* =========================================================
-   HOTFIX 07.01 — FIXES (dropdown, translate bar, burger all)
-   cola no FIM do ficheiro
-========================================================= */
-
-/* 1) Dropdown options ilegíveis (white on white) */
-.lang-select,
-.lang-select option{
-  background: #0b0b0b !important;
-  color: rgba(247,243,232,0.95) !important;
+.btn-ghost{
+  background: rgba(0,0,0,0.12);
 }
-.lang-select option{
-  padding: 10px !important;
-}
-
-/* 2) Matar o banner/top bar “Google Translated” (iframe) */
-.goog-te-banner-frame.skiptranslate,
-.goog-te-banner-frame,
-#goog-gt-tt,
-.goog-te-balloon-frame{
-  display: none !important;
-}
-body{ top: 0 !important; }
-
-/* 3) NÃO esconder o widget com display:none (senão não traduz)
-      Em vez disso, esconder fora do ecrã */
-.gt-hidden{
-  position: absolute !important;
-  left: -9999px !important;
-  top: -9999px !important;
-  width: 1px !important;
-  height: 1px !important;
-  overflow: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-}
-
-/* 4) Burger em MOBILE + DESKTOP (desliga topnav antigo) */
-.topnav{ display: none !important; }
-.burger{ display: grid !important; }
-
-/* 5) Garantir que o texto/brand não invade o burger */
-.brand{ min-width: 0 !important; max-width: 55vw !important; }
-.brand-text{
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  white-space: nowrap !important;
-}
-
-/* 6) Drawer sempre scrollável */
-.drawer-body{
-  overflow-y: auto !important;
-  -webkit-overflow-scrolling: touch !important;
-}
-
-/* 7) Garantir tributo aparece sempre */
-.about-agapito{ display: block !important; }
