@@ -36,25 +36,7 @@ body{
   margin: 0 auto;
 }
 
-main{
-  padding: 28px 0 48px;
-}
-
-/* ---------- Utility ---------- */
-.visually-hidden{
-  position: absolute !important;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
-  overflow: hidden; clip: rect(0,0,0,0);
-  white-space: nowrap; border: 0;
-}
-
-.card{
-  background: var(--panel);
-  border: 1px solid var(--stroke);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
+main{ padding: 28px 0 48px; }
 
 /* ---------- Header / Nav ---------- */
 .site-header{
@@ -81,17 +63,45 @@ main{
   min-width: 0;
 }
 
+.brand-mark{
+  position: relative;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+}
+
 .brand-logo{
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   object-fit: contain;
+}
+
+.brand-star{
+  position: absolute;
+  right: -6px;
+  top: -6px;
+  width: 18px;
+  height: 18px;
+  filter: drop-shadow(0 0 10px rgba(212,169,86,0.35));
+  animation: starTwinkle 2.8s ease-in-out infinite, starFloat 4.2s ease-in-out infinite;
+  transform-origin: 50% 50%;
+  opacity: 0.95;
+}
+
+@keyframes starTwinkle{
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.85; }
+  50% { transform: scale(1.18) rotate(8deg); opacity: 1; }
+}
+
+@keyframes starFloat{
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -2px; }
 }
 
 .brand-name{
   font-weight: 700;
   letter-spacing: 0.2px;
   font-size: 14px;
-  color: var(--text);
   opacity: 0.95;
   white-space: nowrap;
   overflow: hidden;
@@ -99,9 +109,7 @@ main{
   max-width: 46vw;
 }
 
-.nav{
-  justify-self: end;
-}
+.nav{ justify-self: end; }
 
 .nav-list{
   list-style: none;
@@ -176,18 +184,20 @@ main{
   justify-self: end;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 8px;
-  min-width: 140px;
+  min-width: 160px;
 }
-.translate-slot *{
-  max-width: 100%;
-}
+.translate-slot *{ max-width: 100%; }
 
-/* --- Google Translate interference control --- */
-/* Evita que o dropdown fique com tamanhos malucos */
+/* --- Translate interference control --- */
+.goog-te-banner-frame.skiptranslate{ display: none !important; }
+body{ top: 0 !important; }
+
+/* Mantém o widget contido */
 .translate-slot select{
   width: 100%;
-  max-width: 180px;
+  max-width: 190px;
   padding: 8px 10px;
   border-radius: 12px;
   border: 1px solid var(--stroke);
@@ -196,20 +206,8 @@ main{
   outline: none;
 }
 
-/* Quando o Google injecta coisas estranhas, isto ajuda a não rebentar o layout */
-.goog-te-gadget,
-.goog-te-gadget *{
-  font-family: inherit !important;
-  color: var(--text) !important;
-}
-
-.goog-te-banner-frame.skiptranslate { display: none !important; }
-body { top: 0 !important; } /* impede aquele empurrão vertical */
-
-/* Se o Chrome auto-translate estiver a mexer em tudo:
-   - eu marco blocos como "notranslate" no header/footer (data-nosnippet)
-   - e mantenho o widget contido */
-.site-header, .site-footer { translate: no; } /* browsers modernos */
+/* browsers modernos */
+.site-header, .site-footer { translate: no; }
 
 /* ---------- Footer ---------- */
 .site-footer{
@@ -231,13 +229,11 @@ body { top: 0 !important; } /* impede aquele empurrão vertical */
   font-weight: 800;
   letter-spacing: 0.2px;
 }
-
 .footer-sub{
   margin: 4px 0 0;
   color: var(--muted);
   font-size: 13px;
 }
-
 .footer-right{
   display: flex;
   gap: 10px;
@@ -245,7 +241,6 @@ body { top: 0 !important; } /* impede aquele empurrão vertical */
   color: var(--muted);
   font-size: 13px;
 }
-
 .footer-link:hover{ color: var(--text); }
 .footer-dot{ opacity: 0.5; }
 
@@ -267,34 +262,23 @@ body { top: 0 !important; } /* impede aquele empurrão vertical */
   letter-spacing: 0.2px;
   user-select: none;
 }
-
 .btn:hover{
   background: rgba(212,169,86,0.10);
   border-color: rgba(212,169,86,0.55);
 }
-
-.btn:active{
-  transform: translateY(1px);
-}
-
+.btn:active{ transform: translateY(1px); }
 .btn-primary{
   background: rgba(212,169,86,0.14);
   border-color: rgba(212,169,86,0.60);
 }
-
-.btn-row{
-  display: grid;
-  gap: 12px;
-}
+.btn-row{ display: grid; gap: 12px; }
 
 /* ---------- Index Layout (logo / QR / botões) ---------- */
-.hero{
-  padding: 18px 0 8px;
-}
+.hero{ padding: 18px 0 8px; }
 
 .hero-grid{
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.15fr 0.85fr;
   gap: 18px;
   align-items: stretch;
 }
@@ -312,7 +296,6 @@ body { top: 0 !important; } /* impede aquele empurrão vertical */
   font-size: clamp(22px, 2.5vw, 34px);
   letter-spacing: 0.2px;
 }
-
 .hero-text{
   margin: 0 0 16px;
   color: var(--muted);
@@ -327,7 +310,7 @@ body { top: 0 !important; } /* impede aquele empurrão vertical */
 }
 
 .brand-block img{
-  width: clamp(64px, 9vw, 120px);
+  width: clamp(68px, 10vw, 120px);
   height: auto;
   object-fit: contain;
 }
@@ -337,14 +320,12 @@ body { top: 0 !important; } /* impede aquele empurrão vertical */
   gap: 10px;
   align-content: start;
 }
-
 .qr-title{
   margin: 0;
   font-weight: 800;
   font-size: 14px;
   letter-spacing: 0.2px;
 }
-
 .qr-img{
   width: min(260px, 100%);
   aspect-ratio: 1 / 1;
@@ -354,21 +335,16 @@ body { top: 0 !important; } /* impede aquele empurrão vertical */
   background: rgba(0,0,0,0.35);
   padding: 10px;
 }
-
 .qr-hint{
   margin: 0;
   color: var(--muted);
   font-size: 13px;
 }
 
-.hero-actions{
-  margin-top: 16px;
-}
-
+.hero-actions{ margin-top: 16px; }
 .hero-actions .btn-row{
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-
 .hero-actions .btn{
   padding: 16px 14px;
   font-size: 15px;
@@ -376,7 +352,7 @@ body { top: 0 !important; } /* impede aquele empurrão vertical */
 
 /* ---------- Responsive ---------- */
 @media (max-width: 980px){
-  .brand-name{ max-width: 40vw; }
+  .brand-name{ max-width: 60vw; }
   .hero-grid{ grid-template-columns: 1fr; }
   .hero-actions .btn-row{ grid-template-columns: 1fr; }
 }
@@ -393,7 +369,7 @@ body { top: 0 !important; } /* impede aquele empurrão vertical */
   .brand{ grid-area: brand; }
   .nav-toggle{ grid-area: toggle; display: inline-flex; align-items: center; justify-content: center; }
   .nav{ grid-area: nav; display: none; }
-  .translate-slot{ grid-area: translate; justify-self: stretch; }
+  .translate-slot{ grid-area: translate; justify-self: stretch; justify-content: flex-start; }
 
   .nav-list{
     flex-direction: column;
