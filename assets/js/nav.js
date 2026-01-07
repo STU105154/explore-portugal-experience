@@ -1,9 +1,6 @@
 /* =========================================================
    Explore Portugal Experience - NAV inject (Header + Footer)
-   VIP / Premium
-   - Injects into #siteHeader/#siteFooter OR #site-header/#site-footer
-   - Desktop: one-line menu (CSS handles no-wrap)
-   - Mobile: hamburger toggle
+   VIP / Premium (Desktop: More dropdown | Mobile: hamburger + scroll panel)
 ========================================================= */
 
 (function () {
@@ -20,13 +17,17 @@
     { label: "Contactos", href: "/contactos.html" },
   ];
 
+  // Desktop: show first N items, rest goes into "More"
+  const DESKTOP_VISIBLE_COUNT = 7; // About..Booking visible, rest in More
+
   const INSTAGRAM_URL = "https://www.instagram.com/exploreportugal2025?igsh=dWlpa2hhYmIwYzho";
   const WHATSAPP_URL = "https://wa.me/"; // mete o número quando quiseres
 
-  const STAR_SRC = "/assets/icons/apple-touch-icon.png"; // estrela
-  const LOGO_SRC = "/assets/images/logo-explore-portugal-experience.png"; // logo pequeno (páginas internas)
+  const STAR_SRC = "/assets/icons/apple-touch-icon.png";
+  const LOGO_SRC = "/assets/images/logo-explore-portugal-experience.png";
 
   const path = (location.pathname || "/").toLowerCase();
+  const isHome = (path === "/" || path.endsWith("/index.html"));
 
   function isActive(href) {
     const h = href.toLowerCase();
@@ -34,13 +35,46 @@
     return path.endsWith(h);
   }
 
-  // show small brand mark on internal pages (not on index)
-  const isHome = (path === "/" || path.endsWith("/index.html"));
-  const brandMini = isHome ? "" : `
-    <div class="page-brand" aria-hidden="false">
-      <img src="${LOGO_SRC}" alt="Explore Portugal Experience">
-    </div>
-  `;
+  const primary = MENU.slice(0, DESKTOP_VISIBLE_COUNT);
+  const overflow = MENU.slice(DESKTOP_VISIBLE_COUNT);
+
+  const primaryLinksHTML = primary
+    .map(
+      (item) =>
+        `<li class="nav-item"><a class="nav-link ${isActive(item.href) ? "active" : ""}" href="${item.href}">${item.label}</a></li>`
+    )
+    .join("");
+
+  const overflowLinksHTML = overflow
+    .map(
+      (item) =>
+        `<li><a class="nav-dd-link ${isActive(item.href) ? "active" : ""}" href="${item.href}">${item.label}</a></li>`
+    )
+    .join("");
+
+  const moreHTML =
+    overflow.length > 0
+      ? `
+    <li class="nav-item nav-more" data-navmore>
+      <button class="nav-more-btn" type="button" aria-haspopup="true" aria-expanded="false">
+        More <span class="nav-more-caret" aria-hidden="true">▾</span>
+      </button>
+      <div class="nav-dd" role="menu" aria-label="More">
+        <ul class="nav-dd-list">
+          ${overflowLinksHTML}
+        </ul>
+      </div>
+    </li>
+  `
+      : "";
+
+  const brandMini = isHome
+    ? ""
+    : `
+      <div class="page-brand">
+        <img src="${LOGO_SRC}" alt="Explore Portugal Experience">
+      </div>
+    `;
 
   const headerHTML = `
     <header class="site-header">
@@ -55,10 +89,9 @@
           <span aria-hidden="true">☰</span>
         </button>
 
-        <ul class="nav-links">
-          ${MENU.map(item => `
-            <li><a class="nav-link ${isActive(item.href) ? "active" : ""}" href="${item.href}">${item.label}</a></li>
-          `).join("")}
+        <ul class="nav-links" data-navlinks>
+          ${primaryLinksHTML}
+          ${moreHTML}
         </ul>
       </nav>
       ${brandMini}
@@ -88,24 +121,21 @@
     </footer>
   `;
 
-  const headerSlot =
-    document.getElementById("siteHeader") ||
-    document.getElementById("site-header");
-
-  const footerSlot =
-    document.getElementById("siteFooter") ||
-    document.getElementById("site-footer");
+  // Support both ID styles
+  const headerSlot = document.getElementById("siteHeader") || document.getElementById("site-header");
+  const footerSlot = document.getElementById("siteFooter") || document.getElementById("site-footer");
 
   if (headerSlot) headerSlot.innerHTML = headerHTML;
   if (footerSlot) footerSlot.innerHTML = footerHTML;
 
-  // Mobile toggle
+  // Mobile toggle (panel with internal scroll)
   const toggle = document.querySelector(".nav-toggle");
-  const links = document.querySelector(".nav-links");
+  const links = document.querySelector("[data-navlinks]");
   if (toggle && links) {
     toggle.addEventListener("click", () => {
       const open = links.classList.toggle("open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      document.documentElement.classList.toggle("no-scroll", open);
     });
 
     links.addEventListener("click", (e) => {
@@ -113,7 +143,52 @@
       if (!a) return;
       links.classList.remove("open");
       toggle.setAttribute("aria-expanded", "false");
+      document.documentElement.classList.remove("no-scroll");
     });
+  }
+
+  // Desktop More dropdown behaviour
+  const more = document.querySelector("[data-navmore]");
+  if (more) {
+    const btn = more.querySelector(".nav-more-btn");
+    const dd = more.querySelector(".nav-dd");
+
+    function closeMore() {
+      more.classList.remove("open");
+      if (btn) btn.setAttribute("aria-expanded", "false");
+    }
+
+    function toggleMore() {
+      const open = more.classList.toggle("open");
+      if (btn) btn.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+
+    if (btn) {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMore();
+      });
+    }
+
+    // Close on outside click
+    document.addEventListener("click", (e) => {
+      if (!more.contains(e.target)) closeMore();
+    });
+
+    // Close on ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMore();
+    });
+
+    // If a dropdown link clicked, close
+    if (dd) {
+      dd.addEventListener("click", (e) => {
+        const a = e.target.closest("a");
+        if (!a) return;
+        closeMore();
+      });
+    }
   }
 
   // Back to top
