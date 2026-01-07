@@ -1,325 +1,355 @@
 <!DOCTYPE html>
-<html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Parceiros Comerciais · Explore Portugal Experience</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Parcerias com alojamentos – Explore Portugal Experience."
-    />
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Commercial Partners · Explore Portugal Experience</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png" />
+  <meta name="description" content="Commercial partnerships for hotels, hosts and accommodations — Explore Portugal Experience. Premium private transfers and tours for your guests." />
+  <link rel="canonical" href="https://www.exploreportugalexperience.com/commercial-partners.html" />
 
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-Y30ME05MQY");
-    </script>
-    <link rel="canonical" href="https://www.exploreportugalexperience.com/partners-hospitality.html">
+  <link rel="stylesheet" href="assets/css/style.css?v=1000" />
+  <link rel="icon" type="image/png" href="assets/icons/apple-touch-icon.png" />
 
-  </head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-Y30ME05MQY");
+  </script>
+</head>
 
-  <body>
-    <!-- Barra idioma -->
-    <div class="translate-bar">
-      <span>Idioma:</span>
-      <div id="google_translate_element"></div>
-    </div>
+<body>
+  <!-- ✅ Anchor for Back to top -->
+  <div id="top"></div>
 
-   <!-- HEADER -->
-<header class="site-header">
-  <div class="header-inner">
+  <!-- Header injected by nav.js -->
+  <div id="siteHeader"></div>
 
-    <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
-      <img
-        src="assets/icons/compass-gold-solid.svg"
-        alt="Explore Portugal Experience"
-        class="star-animated"
-      />
-    </a>
-
-    <a href="index.html" class="header-logo">
-      <img
-        src="assets/images/logo-explore-portugal-experience.png"
-        alt="Explore Portugal Experience"
-      />
-    </a>
-
-     <nav class="nav" id="mainNav" aria-label="Navegação principal">
-      <a href="about.html">Sobre</a>
-      <a href="services.html">Serviços</a>
-      <a href="choose.html">Porquê nós</a>
-      <a href="pricing.html">Preços</a>
-      <a href="faq.html">FAQ</a>
-      <a href="partners-drivers.html">Partners Drivers</a>
-      <a href="partners-hospitality.html">Parceiros Comerciais</a>
-      <a href="gallery.html" aria-current="page">Galeria</a>
-      <a href="booking.html">Reservas</a>
-      <a href="contactos.html">Contactos</a>
-    </nav>
-
-    <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menu">
-      <span></span><span></span><span></span>
-    </button>
-
-  </div>
-</header>
-
-    <main>
-      <!-- HERO -->
-      <section class="page-hero section-dark">
-        <div class="section-inner">
-         <h1>PARCEIROS COMERCIAIS</h1>
-          <p class="page-hero-subtitle">
-            Questionário para alojamentos e hotéis que pretendam trabalhar connosco em
-            transfers e tours privados para hóspedes.
+  <main class="page">
+    <!-- HERO -->
+    <section class="section">
+      <div class="wrap">
+        <div class="panel">
+          <h1 class="h1">Commercial Partners</h1>
+          <p class="p">
+            A short form for hotels, hosts and accommodations interested in a calm, reliable partner for guest transfers and private tours.
+            We work with a premium mindset: clarity, punctuality and care — always.
           </p>
-        </div>
-      </section>
 
-      <!-- CONTEÚDO + FORMULÁRIO -->
-      <section class="section contact-section">
-        <div class="section-inner contact-grid">
-          <!-- INTRO -->
-          <article class="contact-card">
-            <h2>Parcerias pensadas para o perfil do seu alojamento</h2>
-            <p>
-              Queremos criar parcerias estáveis com alojamentos que valorizam a experiência
-              dos hóspedes: comunicação clara, pontualidade e cuidado em cada detalhe do
-              transfer ou passeio.
+          <div class="actions" style="justify-content:flex-start; margin-top:14px;">
+            <a class="btn btn-gold" href="#form">Open the form</a>
+            <a class="btn btn-ghost" href="mailto:info@exploreportugalexperience.com">Email</a>
+            <a class="btn btn-ghost" href="https://wa.me/351910784548" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page-only styles (VIP + minimal) -->
+    <style>
+      .cp-grid{
+        display:grid;
+        grid-template-columns: 1fr 1.15fr;
+        gap: 12px;
+        align-items:start;
+      }
+      @media (max-width: 920px){
+        .cp-grid{ grid-template-columns: 1fr; }
+      }
+
+      .cp-list{
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: rgba(243,240,233,0.74);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      .cp-list li{ margin: 6px 0; }
+
+      .form{
+        display:grid;
+        gap: 10px;
+      }
+
+      .row-2{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      @media (max-width: 680px){
+        .row-2{ grid-template-columns: 1fr; }
+      }
+
+      .help{
+        margin-top: 4px;
+        color: rgba(243,240,233,0.60);
+        font-size: 12.8px;
+        line-height: 1.5;
+      }
+
+      .req{
+        color: rgba(212,169,86,0.95);
+        font-weight: 650;
+      }
+
+      .divider{
+        height: 1px;
+        background: rgba(212,169,86,0.16);
+        margin: 6px 0;
+      }
+
+      .input::placeholder{ color: rgba(243,240,233,0.45); }
+
+      .submit{
+        width: 100%;
+        border: 1px solid rgba(212,169,86,0.30);
+        border-radius: 999px;
+        padding: 12px 14px;
+        font-size: 13.2px;
+        font-weight: 650;
+        letter-spacing: 0.25px;
+        cursor: pointer;
+        background: linear-gradient(180deg, rgba(212,169,86,1), rgba(185,137,47,1));
+        color: #0a0a0a;
+        transition: transform .12s ease, filter .18s ease;
+      }
+      .submit:active{ transform: translateY(1px); }
+      .submit:hover{ filter: brightness(1.05); }
+
+      .note{
+        color: rgba(243,240,233,0.68);
+        font-size: 13.4px;
+        line-height: 1.55;
+      }
+
+      .success{
+        display:none;
+        margin-top: 10px;
+        border-radius: 16px;
+        border: 1px solid rgba(212,169,86,0.22);
+        background: rgba(212,169,86,0.08);
+        padding: 12px;
+        color: rgba(243,240,233,0.86);
+        font-size: 13.4px;
+      }
+      .success.show{ display:block; }
+    </style>
+
+    <!-- CONTENT + FORM -->
+    <section class="section">
+      <div class="wrap">
+        <div class="cp-grid">
+          <!-- LEFT: Intro -->
+          <article class="card">
+            <h2 class="h2">Partnerships designed for your guests</h2>
+            <p class="p">
+              We build stable partnerships with accommodations that value guest experience: clear communication,
+              punctuality and attention to detail in every transfer or tour.
             </p>
-            <p>
-              Este formulário ajuda a perceber se a Explore Portugal Experience é a melhor
-              solução para o perfil do seu alojamento. Os dados não são partilhados com
-              terceiros.
+
+            <div class="divider"></div>
+
+            <div class="label">What you can expect</div>
+            <ul class="cp-list">
+              <li>Fast, clear confirmations — in writing.</li>
+              <li>Professional, discreet service and premium pace.</li>
+              <li>Reliable availability planning (no chaos, no surprises).</li>
+              <li>Guest-first mindset: calm handling, luggage support, smooth arrivals.</li>
+            </ul>
+
+            <div class="divider"></div>
+
+            <p class="p" style="margin-bottom:0;">
+              This form helps us understand your needs and check if we are the right match.
+              We do not share your data with third parties.
             </p>
           </article>
 
-          <!-- FORMULÁRIO -->
-          <article class="contact-card">
-            <h2>Questionário para Hospitality</h2>
+          <!-- RIGHT: Form -->
+          <article class="card" id="form">
+            <h2 class="h2">Commercial partner form</h2>
+            <p class="p">Fields marked with <span class="req">*</span> are required.</p>
 
-            <form
-              class="contact-form"
-              method="post"
-              action="mailto:info@exploreportugalexperience.com"
-              enctype="text/plain"
-            >
-              <!-- 1. Dados principais -->
-              <div class="form-row">
-                <label for="alojamento">Nome do alojamento / empresa *</label>
-                <input
-                  type="text"
-                  id="alojamento"
-                  name="Nome do alojamento / empresa"
-                  required
-                />
+            <form class="form"
+                  id="commercialPartnerForm"
+                  method="post"
+                  action="mailto:info@exploreportugalexperience.com"
+                  enctype="text/plain">
+
+              <!-- Property name -->
+              <div class="field">
+                <label class="label" for="propertyName">Property / company name <span class="req">*</span></label>
+                <input class="input" type="text" id="propertyName" name="Property / company name" required
+                       placeholder="Hotel / Guesthouse / AL / Company name">
               </div>
 
-              <div class="form-row form-row-2">
-                <div>
-                  <label for="tipo-propriedade">Tipo de propriedade *</label>
-                  <input
-                    type="text"
-                    id="tipo-propriedade"
-                    name="Tipo de propriedade"
-                    placeholder="Ex.: Hotel, guest house, AL, boutique, etc."
-                    required
-                  />
+              <!-- Type + Location -->
+              <div class="row-2">
+                <div class="field">
+                  <label class="label" for="propertyType">Property type <span class="req">*</span></label>
+                  <input class="input" type="text" id="propertyType" name="Property type" required
+                         placeholder="Hotel, guest house, AL, boutique…">
                 </div>
 
-                <div>
-                  <label for="localizacao">Localização *</label>
-                  <input
-                    type="text"
-                    id="localizacao"
-                    name="Localização"
-                    placeholder="Cidade, zona, pontos de referência"
-                    required
-                  />
+                <div class="field">
+                  <label class="label" for="location">Location <span class="req">*</span></label>
+                  <input class="input" type="text" id="location" name="Location" required
+                         placeholder="City / area / reference points">
                 </div>
               </div>
 
-              <div class="form-row form-row-2">
-                <div>
-                  <label for="contacto">Pessoa de contacto *</label>
-                  <input
-                    type="text"
-                    id="contacto"
-                    name="Pessoa de contacto"
-                    required
-                  />
+              <!-- Contact person + Email -->
+              <div class="row-2">
+                <div class="field">
+                  <label class="label" for="contactPerson">Contact person <span class="req">*</span></label>
+                  <input class="input" type="text" id="contactPerson" name="Contact person" required
+                         placeholder="Name + role (optional)">
                 </div>
 
-                <div>
-                  <label for="email-hosp">Email *</label>
-                  <input type="email" id="email-hosp" name="Email" required />
+                <div class="field">
+                  <label class="label" for="email">Email <span class="req">*</span></label>
+                  <input class="input" type="email" id="email" name="Email" required
+                         placeholder="contact@email.com">
                 </div>
               </div>
 
-              <div class="form-row">
-                <label for="telefone-hosp">Telefone / WhatsApp *</label>
-                <input
-                  type="text"
-                  id="telefone-hosp"
-                  name="Telefone / WhatsApp"
-                  required
-                />
+              <!-- Phone -->
+              <div class="field">
+                <label class="label" for="phone">Phone / WhatsApp <span class="req">*</span></label>
+                <input class="input" type="tel" id="phone" name="Phone / WhatsApp" required
+                       placeholder="+351 …">
               </div>
 
-              <!-- 2. Perfil de hóspedes e necessidades -->
-              <div class="form-row">
-                <label for="perfil-hospedes">Perfil principal de hóspedes *</label>
-                <textarea
-                  id="perfil-hospedes"
-                  name="Perfil principal de hóspedes"
-                  rows="3"
-                  placeholder="Ex.: Lazer em casal, famílias, corporate, grupos pequenos, etc."
-                  required
-                ></textarea>
+              <div class="divider"></div>
+
+              <!-- Guest profile -->
+              <div class="field">
+                <label class="label" for="guestProfile">Main guest profile <span class="req">*</span></label>
+                <textarea class="input" id="guestProfile" name="Main guest profile" rows="3" required
+                          placeholder="Couples leisure, families, corporate, small groups…"></textarea>
               </div>
 
-              <div class="form-row">
-                <label for="necessidades"
-                  >Necessidades principais de transfers / tours *</label
-                >
-                <textarea
-                  id="necessidades"
-                  name="Necessidades principais de transfers / tours"
-                  rows="3"
-                  placeholder="Ex.: transfers aeroporto, city tours, day trips específicas, etc."
-                  required
-                ></textarea>
+              <!-- Needs -->
+              <div class="field">
+                <label class="label" for="needs">Transfers / tours needs <span class="req">*</span></label>
+                <textarea class="input" id="needs" name="Transfers / tours needs" rows="3" required
+                          placeholder="Airport transfers, city tours, specific day trips, recurring routes…"></textarea>
               </div>
 
-              <div class="form-row">
-                <label for="volume">Volume aproximado mensal de pedidos *</label>
-                <textarea
-                  id="volume"
-                  name="Volume aproximado mensal de pedidos"
-                  rows="2"
-                  placeholder="Ex.: Nº médio de pedidos de transfer por mês."
-                  required
-                ></textarea>
+              <!-- Volume -->
+              <div class="field">
+                <label class="label" for="volume">Approx. monthly request volume <span class="req">*</span></label>
+                <textarea class="input" id="volume" name="Approx. monthly volume" rows="2" required
+                          placeholder="Example: average number of transfer requests per month"></textarea>
+                <div class="help">A rough estimate is enough — it helps us plan availability.</div>
               </div>
 
-              <!-- 3. Como trabalha hoje, condições, notas -->
-              <div class="form-row">
-                <label for="como-trabalha"
-                  >Como trabalha atualmente estes serviços?</label
-                >
-                <textarea
-                  id="como-trabalha"
-                  name="Como trabalha atualmente"
-                  rows="3"
-                  placeholder="Ex.: Equipa interna, vários parceiros, plataformas online, etc."
-                ></textarea>
+              <div class="divider"></div>
+
+              <!-- Current setup -->
+              <div class="field">
+                <label class="label" for="currentSetup">How do you handle these services today? (optional)</label>
+                <textarea class="input" id="currentSetup" name="Current setup" rows="3"
+                          placeholder="Internal team, multiple partners, online platforms…"></textarea>
               </div>
 
-              <div class="form-row">
-                <label for="condicoes">Condições / pontos importantes para si *</label>
-                <textarea
-                  id="condicoes"
-                  name="Condições importantes"
-                  rows="3"
-                  placeholder="Ex.: Comissão, forma de faturação, tempos de resposta, idioma do contacto, etc."
-                  required
-                ></textarea>
+              <!-- Conditions -->
+              <div class="field">
+                <label class="label" for="conditions">Important conditions for you <span class="req">*</span></label>
+                <textarea class="input" id="conditions" name="Important conditions" rows="3" required
+                          placeholder="Commission, invoicing, response time, language, operating hours…"></textarea>
               </div>
 
-              <div class="form-row">
-                <label for="obs-hosp">Observações adicionais</label>
-                <textarea
-                  id="obs-hosp"
-                  name="Observações adicionais"
-                  rows="4"
-                  placeholder="Qualquer detalhe relevante sobre o alojamento ou funcionamento."
-                ></textarea>
+              <!-- Notes -->
+              <div class="field">
+                <label class="label" for="notes">Additional notes (optional)</label>
+                <textarea class="input" id="notes" name="Additional notes" rows="4"
+                          placeholder="Anything relevant about how your property operates."></textarea>
               </div>
 
-              <p class="form-note">
-                Após análise do perfil do alojamento, entraremos em contacto para
-                apresentar a proposta de parceria mais adequada.
+              <p class="note">
+                After reviewing your profile, we’ll contact you with the most suitable partnership approach for your guests.
               </p>
 
-              <button type="submit" class="btn-primary">Enviar questionário</button>
+              <button class="submit" type="submit">Send partnership request</button>
+
+              <div class="success" id="formHint">
+                If your email app did not open, copy the details and send them to:
+                <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
+              </div>
+
+              <input type="hidden" name="Subject" value="Commercial Partners — Partnership Request">
             </form>
           </article>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-col">
-          <p class="footer-title">Explore Portugal Experience</p>
-          <p>
-            Premium Tours &amp; Private Transfers em Portugal, com motorista profissional.
-            Conforto, elegância e discrição em cada percurso.
-          </p>
+    <!-- Cookie banner -->
+    <div class="cookie-bar" id="cookieBar" aria-live="polite" aria-label="Cookie banner">
+      <div class="cookie-inner">
+        <div class="cookie-text">
+          We use cookies to improve your experience. Read our <a href="privacy.html">Privacy Policy</a>.
         </div>
-
-        <div class="footer-col">
-          <p class="footer-title">Contactos</p>
-          <p>
-            Telemóvel / WhatsApp:
-            <a href="https://wa.me/351910784548" target="_blank">+351 910 784 548</a>
-          </p>
-          <p>
-            Email:
-            <a href="mailto:info@exploreportugalexperience.com"
-              >info@exploreportugalexperience.com</a
-            >
-          </p>
-        </div>
-
-        <div class="footer-col">
-          <p class="footer-title">Siga-nos</p>
-          <p>
-            <a href="https://www.instagram.com/exploreportugal2025" target="_blank"
-              >Instagram</a
-            ><br />
-            <a href="https://www.tiktok.com/@explore.portugal24" target="_blank"
-              >TikTok</a
-            >
-          </p>
+        <div class="cookie-actions">
+          <button class="cookie-btn" type="button" id="cookieDecline">Close</button>
+          <button class="cookie-btn btn-gold" type="button" id="cookieAccept">Accept</button>
         </div>
       </div>
+    </div>
+  </main>
 
-      <div class="footer-bottom">
-        <p>Powered by: MkDesign – London</p>
-      </div>
-    </footer>
+  <!-- Footer injected by nav.js -->
+  <div id="siteFooter"></div>
 
-    <script src="assets/js/nav.js"></script>
+  <script src="assets/js/nav.js?v=1000"></script>
 
-    <!-- Google Translate -->
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          {
-            pageLanguage: "pt",
-            includedLanguages: "en,pt,fr,es,de,it",
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-          },
-          "google_translate_element"
-        );
+  <script>
+    // Cookie banner (simple + clickable + persistent)
+    (function () {
+      const bar = document.getElementById('cookieBar');
+      const btnAccept = document.getElementById('cookieAccept');
+      const btnDecline = document.getElementById('cookieDecline');
+      if (!bar || !btnAccept || !btnDecline) return;
+
+      const KEY = 'epe_cookie_consent_v1';
+
+      function hide(){ bar.classList.remove('show'); }
+      function show(){ bar.classList.add('show'); }
+
+      try{
+        const saved = localStorage.getItem(KEY);
+        if (!saved) show();
+      }catch(e){
+        show();
       }
-    </script>
-    <script
-      type="text/javascript"
-      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    ></script>
-  </body>
+
+      btnAccept.addEventListener('click', function(){
+        try{ localStorage.setItem(KEY, 'accepted'); }catch(e){}
+        hide();
+      });
+
+      btnDecline.addEventListener('click', function(){
+        try{ localStorage.setItem(KEY, 'closed'); }catch(e){}
+        hide();
+      });
+    })();
+
+    // Form: small UX hint for mailto (some devices block / not configured)
+    (function(){
+      const form = document.getElementById('commercialPartnerForm');
+      const hint = document.getElementById('formHint');
+      if(!form) return;
+
+      form.addEventListener('submit', function(){
+        if(hint){
+          window.setTimeout(() => { hint.classList.add('show'); }, 900);
+        }
+      });
+    })();
+  </script>
+</body>
 </html>
