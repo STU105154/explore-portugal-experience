@@ -23,44 +23,79 @@
 </head>
 
 <body>
+  <!-- ✅ Anchor for Back to top (do NOT put id="top" on main) -->
+  <div id="top"></div>
+
+  <!-- Header injected by /assets/js/nav.js -->
   <div id="siteHeader"></div>
 
-  <main>
+  <main class="page">
+    <!-- Intro -->
     <section class="section">
-      <div class="container">
-        <div class="card">
+      <div class="wrap">
+        <div class="panel">
           <h1 class="h1">Contact</h1>
           <p class="p">
             Fastest reply via WhatsApp. You can also call or email — we usually respond quickly.
           </p>
+
+          <div class="actions" style="justify-content:flex-start; margin-top:14px;">
+            <a class="btn btn-gold" href="https://wa.me/351962516005" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-ghost" href="mailto:info@exploreportugalexperience.com">Email</a>
+            <a class="btn btn-ghost" href="tel:+351962516005">Call</a>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- WhatsApp -->
     <section class="section">
-      <div class="container">
-        <div class="card">
-          <h2 class="h2">WhatsApp</h2>
-          <p class="p">
-            Tap to message:
-            <a href="https://wa.me/351962516005" target="_blank" rel="noopener">+351 962 516 005</a>
-          </p>
-
-          <div class="qr-wrap">
-            <img src="assets/images/qr-whatsapp.png" alt="WhatsApp QR code" />
+      <div class="wrap">
+        <div class="grid-2">
+          <div class="card">
+            <h2 class="h2">WhatsApp</h2>
+            <p class="p">
+              Tap to message:
+              <a href="https://wa.me/351962516005" target="_blank" rel="noopener">+351 962 516 005</a>
+            </p>
+            <p class="p" style="margin-bottom:0;">
+              Quickest way to confirm availability, pricing and pick-up details.
+            </p>
           </div>
 
-          <p class="p" style="margin-top:12px; margin-bottom:0;">
-            Scan the QR to start a chat instantly.
-          </p>
+          <div class="card" aria-label="WhatsApp QR code">
+            <h2 class="h2">Scan QR</h2>
+            <p class="p">Scan to start a chat instantly.</p>
+
+            <div style="
+              display:flex;
+              justify-content:center;
+              align-items:center;
+              padding: 10px 0 2px;
+            ">
+              <img
+                src="assets/images/qr-whatsapp.png"
+                alt="WhatsApp QR code"
+                style="
+                  width: min(260px, 100%);
+                  height: auto;
+                  border-radius: 16px;
+                  border: 1px solid rgba(212,169,86,0.22);
+                  background: rgba(255,255,255,0.02);
+                  box-shadow: 0 18px 60px rgba(0,0,0,0.55);
+                "
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- Phone & Email -->
     <section class="section">
-      <div class="container">
-        <div class="card">
-          <h2 class="h2">Phone & Email</h2>
+      <div class="wrap">
+        <div class="panel">
+          <h2 class="h2">Phone &amp; Email</h2>
           <p class="p" style="margin-bottom:0;">
             Phone:
             <a href="tel:+351962516005">+351 962 516 005</a><br/>
@@ -71,128 +106,53 @@
       </div>
     </section>
 
-    <!-- COOKIE BAR (premium: Accept all / Essential only / Manage) -->
-    <div class="cookie-bar" id="cookieBar" aria-live="polite">
+    <!-- Cookie banner (simple + clickable + closes) -->
+    <div class="cookie-bar" id="cookieBar" aria-live="polite" aria-label="Cookie banner">
       <div class="cookie-inner">
         <div class="cookie-text">
-          We use cookies to improve site performance, understand traffic and keep the experience reliable.
-          You can accept all cookies, continue with only essential cookies, or manage preferences.
-          <a href="privacy.html">Learn more</a>
+          We use cookies to improve your experience. Read our <a href="privacy.html">Privacy Policy</a>.
         </div>
         <div class="cookie-actions">
-          <button class="btn cookie-btn btn-ghost" type="button" id="cookieEssential">Essential only</button>
-          <button class="btn cookie-btn" type="button" id="cookieManage">Manage</button>
-          <button class="btn cookie-btn btn-gold" type="button" id="cookieAccept">Accept all</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Cookie manage modal -->
-    <div class="epe-modal" id="cookieModal" aria-hidden="true">
-      <div class="epe-modal__backdrop" data-close="1"></div>
-
-      <div class="epe-modal__panel" role="dialog" aria-modal="true" aria-label="Cookie preferences">
-        <div class="epe-modal__head">
-          <div class="epe-modal__title">Cookie preferences</div>
-          <button class="epe-modal__close" type="button" data-close="1" aria-label="Close">✕</button>
-        </div>
-
-        <div class="epe-modal__body">
-          <p class="p" style="margin-top:0;">
-            Essential cookies keep the website working. Analytics cookies help us understand traffic and improve the experience.
-          </p>
-
-          <label class="epe-switch">
-            <input type="checkbox" checked disabled />
-            <span class="epe-switch__ui"></span>
-            <span class="epe-switch__text">Essential (always on)</span>
-          </label>
-
-          <label class="epe-switch">
-            <input type="checkbox" id="cookieAnalytics" />
-            <span class="epe-switch__ui"></span>
-            <span class="epe-switch__text">Analytics</span>
-          </label>
-
-          <p class="p" style="margin-bottom:0;">
-            You can change your choice anytime by opening this panel again.
-          </p>
-        </div>
-
-        <div class="epe-modal__foot">
-          <button class="btn btn-ghost" type="button" data-close="1">Cancel</button>
-          <button class="btn btn-gold" type="button" id="cookieSave">Save preferences</button>
+          <button class="cookie-btn" type="button" id="cookieDecline">Close</button>
+          <button class="cookie-btn btn-gold" type="button" id="cookieAccept">Accept</button>
         </div>
       </div>
     </div>
   </main>
 
+  <!-- Footer injected by /assets/js/nav.js -->
   <div id="siteFooter"></div>
 
   <script src="assets/js/nav.js?v=1000"></script>
 
   <script>
-    (function(){
-      const KEY = "epe_cookie_consent_v2";
-      const bar = document.getElementById("cookieBar");
+    (function () {
+      const bar = document.getElementById('cookieBar');
+      const btnAccept = document.getElementById('cookieAccept');
+      const btnDecline = document.getElementById('cookieDecline');
+      if (!bar || !btnAccept || !btnDecline) return;
 
-      const btnAccept = document.getElementById("cookieAccept");
-      const btnEssential = document.getElementById("cookieEssential");
-      const btnManage = document.getElementById("cookieManage");
+      const KEY = 'epe_cookie_consent_v1';
 
-      const modal = document.getElementById("cookieModal");
-      const analytics = document.getElementById("cookieAnalytics");
-      const btnSave = document.getElementById("cookieSave");
+      function hide(){ bar.classList.remove('show'); }
+      function show(){ bar.classList.add('show'); }
 
-      if(!bar || !btnAccept || !btnEssential || !btnManage || !modal || !analytics || !btnSave) return;
-
-      function get(){
-        try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch(e){ return null; }
+      try{
+        const saved = localStorage.getItem(KEY);
+        if (!saved) show();
+      }catch(e){
+        show();
       }
 
-      function set(value){
-        try { localStorage.setItem(KEY, JSON.stringify(value)); } catch(e){}
-        bar.classList.remove("show");
-      }
-
-      function showIfNeeded(){
-        const v = get();
-        if(!v) bar.classList.add("show");
-      }
-
-      function openModal(){
-        modal.classList.add("open");
-        modal.setAttribute("aria-hidden","false");
-        document.documentElement.classList.add("no-scroll");
-        const v = get();
-        analytics.checked = !!(v && v.analytics === true);
-      }
-
-      function closeModal(){
-        modal.classList.remove("open");
-        modal.setAttribute("aria-hidden","true");
-        document.documentElement.classList.remove("no-scroll");
-      }
-
-      btnAccept.addEventListener("click", () => set({ essential:true, analytics:true, choice:"accept_all" }));
-      btnEssential.addEventListener("click", () => set({ essential:true, analytics:false, choice:"essential_only" }));
-      btnManage.addEventListener("click", openModal);
-
-      modal.addEventListener("click", (e) => {
-        const close = e.target && e.target.getAttribute && e.target.getAttribute("data-close");
-        if(close) closeModal();
+      btnAccept.addEventListener('click', function(){
+        try{ localStorage.setItem(KEY, 'accepted'); }catch(e){}
+        hide();
       });
 
-      document.addEventListener("keydown", (e) => {
-        if(e.key === "Escape" && modal.classList.contains("open")) closeModal();
+      btnDecline.addEventListener('click', function(){
+        try{ localStorage.setItem(KEY, 'closed'); }catch(e){}
+        hide();
       });
-
-      btnSave.addEventListener("click", () => {
-        set({ essential:true, analytics: analytics.checked, choice:"custom" });
-        closeModal();
-      });
-
-      showIfNeeded();
     })();
   </script>
 </body>
