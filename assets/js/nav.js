@@ -1,24 +1,29 @@
 /* =========================================================
    Explore Portugal Experience - NAV inject (Header + Footer)
    VIP / Premium (Desktop: More dropdown | Mobile: hamburger + scroll panel)
+   MENU (final):
+   About, Services, Gallery, Booking, Partners Drivers, Commercial Partners, Contactos
+   More: Why us, Pricing, FAQ
 ========================================================= */
 
 (function () {
-  const MENU = [
+  const MENU_PRIMARY = [
     { label: "About", href: "/about.html" },
     { label: "Services", href: "/services.html" },
-    { label: "Why us", href: "/choose.html" },
-    { label: "Pricing", href: "/pricing.html" },
-    { label: "FAQ", href: "/faq.html" },
     { label: "Gallery", href: "/gallery.html" },
     { label: "Booking", href: "/booking.html" },
+
+    // ✅ IMPORTANT -> always visible (not inside More)
     { label: "Partners Drivers", href: "/partners-drivers.html" },
     { label: "Commercial Partners", href: "/commercial-partners.html" },
     { label: "Contactos", href: "/contactos.html" },
   ];
 
-  // Desktop: show first N items, rest goes into "More"
-  const DESKTOP_VISIBLE_COUNT = 7; // About..Booking visible, rest in More
+  const MENU_MORE = [
+    { label: "Why us", href: "/choose.html" },
+    { label: "Pricing", href: "/pricing.html" },
+    { label: "FAQ", href: "/faq.html" },
+  ];
 
   const INSTAGRAM_URL = "https://www.instagram.com/exploreportugal2025?igsh=dWlpa2hhYmIwYzho";
   const WHATSAPP_URL = "https://wa.me/"; // mete o número quando quiseres
@@ -35,38 +40,32 @@
     return path.endsWith(h);
   }
 
-  const primary = MENU.slice(0, DESKTOP_VISIBLE_COUNT);
-  const overflow = MENU.slice(DESKTOP_VISIBLE_COUNT);
-
-  const primaryLinksHTML = primary
+  const primaryLinksHTML = MENU_PRIMARY
     .map(
       (item) =>
         `<li class="nav-item"><a class="nav-link ${isActive(item.href) ? "active" : ""}" href="${item.href}">${item.label}</a></li>`
     )
     .join("");
 
-  const overflowLinksHTML = overflow
+  const moreLinksHTML = MENU_MORE
     .map(
       (item) =>
         `<li><a class="nav-dd-link ${isActive(item.href) ? "active" : ""}" href="${item.href}">${item.label}</a></li>`
     )
     .join("");
 
-  const moreHTML =
-    overflow.length > 0
-      ? `
+  const moreHTML = `
     <li class="nav-item nav-more" data-navmore>
       <button class="nav-more-btn" type="button" aria-haspopup="true" aria-expanded="false">
         More <span class="nav-more-caret" aria-hidden="true">▾</span>
       </button>
       <div class="nav-dd" role="menu" aria-label="More">
         <ul class="nav-dd-list">
-          ${overflowLinksHTML}
+          ${moreLinksHTML}
         </ul>
       </div>
     </li>
-  `
-      : "";
+  `;
 
   const brandMini = isHome
     ? ""
@@ -121,14 +120,13 @@
     </footer>
   `;
 
-  // Support both ID styles
   const headerSlot = document.getElementById("siteHeader") || document.getElementById("site-header");
   const footerSlot = document.getElementById("siteFooter") || document.getElementById("site-footer");
 
   if (headerSlot) headerSlot.innerHTML = headerHTML;
   if (footerSlot) footerSlot.innerHTML = footerHTML;
 
-  // Mobile toggle (panel with internal scroll)
+  // Mobile toggle
   const toggle = document.querySelector(".nav-toggle");
   const links = document.querySelector("[data-navlinks]");
   if (toggle && links) {
@@ -171,17 +169,14 @@
       });
     }
 
-    // Close on outside click
     document.addEventListener("click", (e) => {
       if (!more.contains(e.target)) closeMore();
     });
 
-    // Close on ESC
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeMore();
     });
 
-    // If a dropdown link clicked, close
     if (dd) {
       dd.addEventListener("click", (e) => {
         const a = e.target.closest("a");
