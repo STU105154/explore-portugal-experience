@@ -715,15 +715,17 @@ textarea.input{ resize: vertical; }
   a, .btn, .cselect-btn, .cselect-option, .nav-more-btn, .nav-dd-link{ transition:none; }
 }
 /* =====================================================
-   FIX: Index header spacing (match FAQ & others)
-   ===================================================== */
+   INDEX — header spacing fix (match FAQ exactly)
+===================================================== */
 
-/* Garante que o header do index usa o mesmo espaçamento */
-body .site-header .header-inner {
-  gap: 28px; /* igual às páginas internas */
+body.home .site-nav{
+  justify-content: flex-start;
 }
 
-/* Remove qualquer margem extra aplicada só no index */
-body .site-header .home-star {
-  margin-right: 0;
+body.home .nav-links{
+  flex: 0 0 auto;
+  justify-content: flex-start;
+  margin-left: 20px;
+}
+
 }
