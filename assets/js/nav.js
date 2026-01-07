@@ -1,7 +1,6 @@
 /* =========================================================
    Explore Portugal Experience - NAV inject (Header + Footer)
-   MATCH FAQ LAYOUT (same DOM structure/classes)
-   Desktop: More dropdown | Mobile: hamburger + panel scroll
+   VIP / Premium (Desktop: More dropdown | Mobile: hamburger + scroll panel)
    MENU (final):
    About, Services, Gallery, Booking, Partners Drivers, Commercial Partners, Contactos
    More: Why us, Pricing, FAQ
@@ -13,6 +12,8 @@
     { label: "Services", href: "/services.html" },
     { label: "Gallery", href: "/gallery.html" },
     { label: "Booking", href: "/booking.html" },
+
+    // ✅ IMPORTANT -> always visible (not inside More)
     { label: "Partners Drivers", href: "/partners-drivers.html" },
     { label: "Commercial Partners", href: "/commercial-partners.html" },
     { label: "Contactos", href: "/contactos.html" },
@@ -24,122 +25,131 @@
     { label: "FAQ", href: "/faq.html" },
   ];
 
-  const INSTAGRAM_URL =
-    "https://www.instagram.com/exploreportugal2025?igsh=dWlpa2hhYmIwYzho";
+  const INSTAGRAM_URL = "https://www.instagram.com/exploreportugal2025?igsh=dWlpa2hhYmIwYzho";
   const WHATSAPP_URL = "https://wa.me/"; // mete o número quando quiseres
 
   const STAR_SRC = "/assets/icons/apple-touch-icon.png";
+  const LOGO_SRC = "/assets/images/logo-explore-portugal-experience.png";
 
   const path = (location.pathname || "/").toLowerCase();
+  const isHome = (path === "/" || path.endsWith("/index.html"));
 
   function isActive(href) {
-    const h = (href || "").toLowerCase();
-    if (h === "/" || h === "/index.html") return path === "/" || path.endsWith("/index.html");
+    const h = href.toLowerCase();
+    if (h === "/index.html" || h === "/") return path === "/" || path.endsWith("/index.html");
     return path.endsWith(h);
   }
 
-  // Build primary links
   const primaryLinksHTML = MENU_PRIMARY
-    .map((item) => {
-      const active = isActive(item.href) ? ' aria-current="page"' : "";
-      return `<a href="${item.href}"${active}>${item.label}</a>`;
-    })
+    .map(
+      (item) =>
+        `<li class="nav-item"><a class="nav-link ${isActive(item.href) ? "active" : ""}" href="${item.href}">${item.label}</a></li>`
+    )
     .join("");
 
-  // Build more dropdown links
   const moreLinksHTML = MENU_MORE
-    .map((item) => {
-      const active = isActive(item.href) ? ' aria-current="page"' : "";
-      return `<a href="${item.href}"${active}>${item.label}</a>`;
-    })
+    .map(
+      (item) =>
+        `<li><a class="nav-dd-link ${isActive(item.href) ? "active" : ""}" href="${item.href}">${item.label}</a></li>`
+    )
     .join("");
 
-  // Header HTML (MATCH FAQ)
+  const moreHTML = `
+    <li class="nav-item nav-more" data-navmore>
+      <button class="nav-more-btn" type="button" aria-haspopup="true" aria-expanded="false">
+        More <span class="nav-more-caret" aria-hidden="true">▾</span>
+      </button>
+      <div class="nav-dd" role="menu" aria-label="More">
+        <ul class="nav-dd-list">
+          ${moreLinksHTML}
+        </ul>
+      </div>
+    </li>
+  `;
+
+  const brandMini = isHome
+    ? ""
+    : `
+      <div class="page-brand">
+        <img src="${LOGO_SRC}" alt="Explore Portugal Experience">
+      </div>
+    `;
+
   const headerHTML = `
-<header class="site-header">
-  <div class="header-inner">
+    <header class="site-header">
+      <nav class="site-nav">
+        <a class="nav-brand" href="/index.html" aria-label="Explore Portugal Experience home">
+          <span class="nav-star" aria-hidden="true">
+            <img src="${STAR_SRC}" alt="">
+          </span>
+        </a>
 
-    <a href="/index.html" class="home-star" aria-label="Home">
-      <img src="${STAR_SRC}" alt="Explore Portugal Experience" class="star-animated">
-    </a>
-
-    <nav class="nav" id="mainNav" aria-label="Main navigation">
-      ${primaryLinksHTML}
-      <div class="nav-more" data-navmore>
-        <button class="nav-more-btn" type="button" aria-haspopup="true" aria-expanded="false">
-          More <span class="nav-more-caret" aria-hidden="true">▾</span>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span aria-hidden="true">☰</span>
         </button>
-        <div class="nav-dd" role="menu" aria-label="More">
-          <div class="nav-dd-list">
-            ${moreLinksHTML}
+
+        <ul class="nav-links" data-navlinks>
+          ${primaryLinksHTML}
+          ${moreHTML}
+        </ul>
+      </nav>
+      ${brandMini}
+    </header>
+  `;
+
+  const footerHTML = `
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="footer-left">
+          <div class="footer-line">© 2018 Explore Portugal Experience — Tourism in Portugal</div>
+          <div class="footer-line muted">Powered by: MkDesign | London</div>
+        </div>
+
+        <div class="footer-right">
+          <div class="footer-links">
+            <a href="/contactos.html">Contact</a>
+            <span class="dot">•</span>
+            <a href="${INSTAGRAM_URL}" target="_blank" rel="noopener">Instagram</a>
+            <span class="dot">•</span>
+            <a href="${WHATSAPP_URL}" target="_blank" rel="noopener">WhatsApp</a>
+            <span class="dot">•</span>
+            <a href="#top" class="back-top">Back to top ↑</a>
           </div>
         </div>
       </div>
-    </nav>
+    </footer>
+  `;
 
-    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-
-  </div>
-</header>
-  `.trim();
-
-  // Footer HTML (keep yours)
-  const footerHTML = `
-<footer class="site-footer">
-  <div class="site-footer-inner">
-    <div class="footer-left">
-      <div class="footer-line">© 2018 Explore Portugal Experience — Tourism in Portugal</div>
-      <div class="footer-line muted">Powered by: MkDesign | London</div>
-    </div>
-
-    <div class="footer-right">
-      <div class="footer-links">
-        <a href="/contactos.html">Contact</a>
-        <span class="dot">•</span>
-        <a href="${INSTAGRAM_URL}" target="_blank" rel="noopener">Instagram</a>
-        <span class="dot">•</span>
-        <a href="${WHATSAPP_URL}" target="_blank" rel="noopener">WhatsApp</a>
-        <span class="dot">•</span>
-        <a href="#top" class="back-top">Back to top ↑</a>
-      </div>
-    </div>
-  </div>
-</footer>
-  `.trim();
-
-  // Inject
   const headerSlot = document.getElementById("siteHeader") || document.getElementById("site-header");
   const footerSlot = document.getElementById("siteFooter") || document.getElementById("site-footer");
 
   if (headerSlot) headerSlot.innerHTML = headerHTML;
   if (footerSlot) footerSlot.innerHTML = footerHTML;
 
-  // =============== MOBILE MENU ===============
-  const toggle = document.getElementById("navToggle");
-  const nav = document.getElementById("mainNav");
-
-  if (toggle && nav) {
+  // Mobile toggle
+  const toggle = document.querySelector(".nav-toggle");
+  const links = document.querySelector("[data-navlinks]");
+  if (toggle && links) {
     toggle.addEventListener("click", () => {
-      const open = nav.classList.toggle("open");
+      const open = links.classList.toggle("open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
       document.documentElement.classList.toggle("no-scroll", open);
     });
 
-    nav.addEventListener("click", (e) => {
+    links.addEventListener("click", (e) => {
       const a = e.target.closest("a");
       if (!a) return;
-      nav.classList.remove("open");
+      links.classList.remove("open");
       toggle.setAttribute("aria-expanded", "false");
       document.documentElement.classList.remove("no-scroll");
     });
   }
 
-  // =============== DESKTOP MORE DROPDOWN ===============
+  // Desktop More dropdown behaviour
   const more = document.querySelector("[data-navmore]");
   if (more) {
     const btn = more.querySelector(".nav-more-btn");
+    const dd = more.querySelector(".nav-dd");
 
     function closeMore() {
       more.classList.remove("open");
@@ -167,7 +177,6 @@
       if (e.key === "Escape") closeMore();
     });
 
-    const dd = more.querySelector(".nav-dd");
     if (dd) {
       dd.addEventListener("click", (e) => {
         const a = e.target.closest("a");
