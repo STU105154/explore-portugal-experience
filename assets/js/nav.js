@@ -4,17 +4,22 @@
 ========================================================= */
 
 (function () {
-  const MENU = [
+  const PRIMARY = [
+    { href: "index.html", label: "Home" },
     { href: "about.html", label: "About" },
     { href: "services.html", label: "Services" },
-    { href: "choose.html", label: "Why us" },
     { href: "pricing.html", label: "Pricing" },
+    { href: "booking.html", label: "Booking" },
+    { href: "contactos.html", label: "Contact" }
+  ];
+
+  // Less important links go inside "More"
+  const MORE = [
+    { href: "choose.html", label: "Why us" },
     { href: "faq.html", label: "FAQ" },
     { href: "gallery.html", label: "Gallery" },
-    { href: "booking.html", label: "Booking" },
     { href: "partners-drivers.html", label: "Partners Drivers" },
-    { href: "commercial-partners.html", label: "Commercial Partners" },
-    { href: "contactos.html", label: "Contact" }
+    { href: "commercial-partners.html", label: "Commercial Partners" }
   ];
 
   const INSTAGRAM_URL = "https://www.instagram.com/exploreportugal2025?igsh=dWlpa2hhYmIwYzho";
@@ -22,13 +27,29 @@
 
   const currentPath = (location.pathname.split("/").pop() || "index.html").toLowerCase();
 
+  function linkItem(item) {
+    const isActive = currentPath === item.href.toLowerCase();
+    return `<li class="nav-item">
+      <a class="nav-link ${isActive ? "is-active" : ""}" href="${item.href}">${item.label}</a>
+    </li>`;
+  }
+
+  function moreItem(item) {
+    const isActive = currentPath === item.href.toLowerCase();
+    return `<li>
+      <a class="nav-more-link ${isActive ? "is-active" : ""}" href="${item.href}">${item.label}</a>
+    </li>`;
+  }
+
   const headerHTML = `
   <header id="top" class="site-header notranslate" data-nosnippet>
     <div class="container header-inner">
 
-      <!-- Brand: logo only (no text) -->
+      <!-- Brand: star only (premium, small) -->
       <a class="brand" href="index.html" aria-label="Explore Portugal Experience - Home">
-        <img class="brand-logo" src="assets/icons/compass-gold-64.png" alt="Explore Portugal Experience" />
+        <span class="brand-star-wrap" aria-hidden="true">
+          <img class="brand-star" src="assets/icons/apple-touch-icon.png" alt="" />
+        </span>
       </a>
 
       <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
@@ -37,10 +58,16 @@
 
       <nav class="nav" aria-label="Main navigation">
         <ul class="nav-list">
-          <li><a class="nav-link ${currentPath === "index.html" ? "is-active" : ""}" href="index.html">Home</a></li>
-          ${MENU.map(m =>
-            `<li><a class="nav-link ${currentPath === m.href.toLowerCase() ? "is-active" : ""}" href="${m.href}">${m.label}</a></li>`
-          ).join("")}
+          ${PRIMARY.map(linkItem).join("")}
+
+          <li class="nav-item nav-more">
+            <details class="nav-more-details">
+              <summary class="nav-link nav-more-summary">More <span class="nav-caret">▾</span></summary>
+              <ul class="nav-more-menu">
+                ${MORE.map(moreItem).join("")}
+              </ul>
+            </details>
+          </li>
         </ul>
       </nav>
 
@@ -81,6 +108,7 @@
 
     bindNav();
     bindSmoothTop();
+    bindCloseMoreOnOutsideClick();
   }
 
   function bindNav() {
@@ -94,12 +122,20 @@
   }
 
   function bindSmoothTop() {
-    // Smooth scroll for the "Back to top" link
     document.addEventListener("click", (e) => {
       const a = e.target.closest('a[href="#top"]');
       if (!a) return;
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  function bindCloseMoreOnOutsideClick(){
+    document.addEventListener("click", (e) => {
+      const details = document.querySelector(".nav-more-details");
+      if (!details || !details.open) return;
+      if (e.target.closest(".nav-more-details")) return;
+      details.open = false;
     });
   }
 
