@@ -5,96 +5,89 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Explore Portugal Experience</title>
 
+  <meta name="description" content="Explore Portugal Experience — Premium private tours & transfers." />
+
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
   <link rel="icon" href="/assets/icons/apple-touch-icon.png">
-
   <link rel="stylesheet" href="/assets/css/style.css" />
-  <meta name="description" content="Explore Portugal Experience — Premium private tours & transfers." />
 </head>
 
-<body>
-  <!-- Header injected by nav.js -->
-  <div id="site-header"></div>
+<body class="home">
+
+  <!-- HEADER (injectado pelo nav.js — igual ao FAQ) -->
+  <div id="siteHeader"></div>
 
   <main class="page">
+
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
 
+        <!-- LOGO CENTRAL (único logo do index) -->
         <div class="brand">
-          <img class="brand-logo" src="/assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience">
+          <img
+            class="brand-logo"
+            src="/assets/images/logo-explore-portugal-experience.png"
+            alt="Explore Portugal Experience"
+          />
         </div>
 
         <p class="hero-subtitle">
           Premium private tours & transfers in Portugal — discreet, tailored, VIP.
         </p>
 
+        <!-- QUICK BOOKING -->
         <div class="panel" role="region" aria-label="Quick booking">
           <div class="grid-3">
 
             <div class="field">
               <label class="label" for="cs-service-btn">Service</label>
               <div class="cselect" data-name="service">
-                <button id="cs-service-btn" type="button" class="cselect-btn" aria-haspopup="listbox" aria-expanded="false">
+                <button id="cs-service-btn" type="button" class="cselect-btn">
                   <span class="cselect-value">Choose a service</span>
-                  <span class="cselect-chevron" aria-hidden="true">▾</span>
+                  <span class="cselect-chevron">▾</span>
                 </button>
-                <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="Service">
-                  <li class="cselect-option" role="option" tabindex="0" data-value="airport-transfer">Airport Transfer</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="city-transfer">City Transfer</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="chauffeur">Chauffeur (Hourly)</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="private-tour">Private Tour</li>
+                <ul class="cselect-list">
+                  <li class="cselect-option" data-value="airport-transfer">Airport Transfer</li>
+                  <li class="cselect-option" data-value="city-transfer">City Transfer</li>
+                  <li class="cselect-option" data-value="chauffeur">Chauffeur (Hourly)</li>
+                  <li class="cselect-option" data-value="private-tour">Private Tour</li>
                 </ul>
-                <input type="hidden" name="service" value="">
+                <input type="hidden" name="service">
               </div>
             </div>
 
             <div class="field">
               <label class="label" for="cs-from-btn">From</label>
               <div class="cselect" data-name="from">
-                <button id="cs-from-btn" type="button" class="cselect-btn" aria-haspopup="listbox" aria-expanded="false">
+                <button id="cs-from-btn" type="button" class="cselect-btn">
                   <span class="cselect-value">Select pickup</span>
-                  <span class="cselect-chevron" aria-hidden="true">▾</span>
+                  <span class="cselect-chevron">▾</span>
                 </button>
-                <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="From">
-                  <li class="cselect-sep" role="presentation">Portugal</li>
-                  <li class="cselect-option" role="option" tabindex="0" data-value="lisbon">Lisbon</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="porto">Porto</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="cascais">Cascais</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="sintra">Sintra</li>
-
-                  <li class="cselect-sep" role="presentation">Europe</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="london">London</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="paris">Paris</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="madrid">Madrid</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="barcelona">Barcelona</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="rome">Rome</li>
+                <ul class="cselect-list">
+                  <li class="cselect-option" data-value="lisbon">Lisbon</li>
+                  <li class="cselect-option" data-value="porto">Porto</li>
+                  <li class="cselect-option" data-value="cascais">Cascais</li>
+                  <li class="cselect-option" data-value="sintra">Sintra</li>
                 </ul>
-                <input type="hidden" name="from" value="">
+                <input type="hidden" name="from">
               </div>
             </div>
 
             <div class="field">
               <label class="label" for="cs-to-btn">To</label>
               <div class="cselect" data-name="to">
-                <button id="cs-to-btn" type="button" class="cselect-btn" aria-haspopup="listbox" aria-expanded="false">
+                <button id="cs-to-btn" type="button" class="cselect-btn">
                   <span class="cselect-value">Select destination</span>
-                  <span class="cselect-chevron" aria-hidden="true">▾</span>
+                  <span class="cselect-chevron">▾</span>
                 </button>
-                <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="To">
-                  <li class="cselect-sep" role="presentation">Portugal</li>
-                  <li class="cselect-option" role="option" tabindex="0" data-value="lisbon">Lisbon</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="porto">Porto</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="cascais">Cascais</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="sintra">Sintra</li>
-
-                  <li class="cselect-sep" role="presentation">Europe</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="london">London</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="paris">Paris</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="madrid">Madrid</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="barcelona">Barcelona</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="rome">Rome</li>
+                <ul class="cselect-list">
+                  <li class="cselect-option" data-value="lisbon">Lisbon</li>
+                  <li class="cselect-option" data-value="porto">Porto</li>
+                  <li class="cselect-option" data-value="cascais">Cascais</li>
+                  <li class="cselect-option" data-value="sintra">Sintra</li>
                 </ul>
-                <input type="hidden" name="to" value="">
+                <input type="hidden" name="to">
               </div>
             </div>
 
@@ -113,18 +106,21 @@
       </div>
     </section>
 
+    <!-- SECOND SECTION -->
     <section class="section">
       <div class="wrap">
         <h2 class="h2">Premium by design</h2>
-        <p class="p">A clean, quiet experience. No clutter, no noise — just Portugal, done properly.</p>
+        <p class="p">
+          A clean, quiet experience. No clutter, no noise — just Portugal, done properly.
+        </p>
       </div>
     </section>
 
-    <button class="to-top" type="button" aria-label="Back to top" title="Back to top">↑</button>
+    <button class="to-top" type="button" aria-label="Back to top">↑</button>
   </main>
 
-  <!-- Footer injected by nav.js -->
-  <div id="site-footer"></div>
+  <!-- FOOTER -->
+  <div id="siteFooter"></div>
 
   <script defer src="/assets/js/nav.js"></script>
   <script defer src="/assets/js/dropdowns.js"></script>
@@ -133,10 +129,12 @@
     (function () {
       const btn = document.querySelector('.to-top');
       if (!btn) return;
-      const toggle = () => btn.classList.toggle('show', (window.scrollY || 0) > 500);
-      window.addEventListener('scroll', toggle, { passive: true });
+      const toggle = () => btn.classList.toggle('show', window.scrollY > 500);
+      window.addEventListener('scroll', toggle);
       toggle();
-      btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      btn.addEventListener('click', () =>
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      );
     })();
   </script>
 </body>
