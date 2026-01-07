@@ -1,8 +1,8 @@
 /* =========================================================
    Explore Portugal Experience - NAV inject (Header + Footer)
-   Menu final:
-   About, Services, Why us, Pricing, FAQ, Gallery, Booking,
-   Partners Drivers, Commercial Partners, Contactos
+   Works with BOTH slot id styles:
+   - #siteHeader / #siteFooter   (legacy)
+   - #site-header / #site-footer (new)
 ========================================================= */
 
 (function () {
@@ -20,9 +20,9 @@
   ];
 
   const INSTAGRAM_URL = "https://www.instagram.com/exploreportugal2025?igsh=dWlpa2hhYmIwYzho";
-  const WHATSAPP_URL = "https://wa.me/"; // depois meto o número (ex: https://wa.me/3519XXXXXXXX)
+  const WHATSAPP_URL = "https://wa.me/"; // troca quando quiseres
 
-  // ✅ caminhos corretos no teu repo
+  // ✅ correct paths in your repo
   const STAR_SRC = "/assets/icons/apple-touch-icon.png";
 
   const path = (location.pathname || "/").toLowerCase();
@@ -46,7 +46,7 @@
           <span aria-hidden="true">☰</span>
         </button>
 
-        <ul class="nav-links">
+        <ul class="nav-links" id="mainNavLinks">
           ${MENU.map(item => `
             <li><a class="nav-link ${isActive(item.href) ? "active" : ""}" href="${item.href}">${item.label}</a></li>
           `).join("")}
@@ -78,8 +78,15 @@
     </footer>
   `;
 
-  const headerSlot = document.getElementById("site-header");
-  const footerSlot = document.getElementById("site-footer");
+  // ✅ Support both IDs
+  const headerSlot =
+    document.getElementById("siteHeader") ||
+    document.getElementById("site-header");
+
+  const footerSlot =
+    document.getElementById("siteFooter") ||
+    document.getElementById("site-footer");
+
   if (headerSlot) headerSlot.innerHTML = headerHTML;
   if (footerSlot) footerSlot.innerHTML = footerHTML;
 
