@@ -1,17 +1,20 @@
 <!doctype html>
-<html lang="en" id="top">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Booking — Explore Portugal Experience</title>
 
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/style.css?v=1000" />
 </head>
 
 <body>
-  <div id="site-header"></div>
+  <div id="top"></div>
+
+  <!-- ✅ Header injected by nav.js (same as FAQ) -->
+  <div id="siteHeader"></div>
 
   <main class="page">
     <section class="section">
@@ -233,7 +236,7 @@
 
             <div class="actions" style="justify-content:flex-start;">
               <button class="btn btn-gold" type="submit">Request quote</button>
-              <a class="btn btn-ghost" href="/contactos.html">Contact</a>
+              <a class="btn btn-ghost" href="contactos.html">Contact</a>
             </div>
 
             <p class="micro" style="text-align:left;">
@@ -247,10 +250,11 @@
     <button class="to-top" type="button" aria-label="Back to top" title="Back to top">↑</button>
   </main>
 
-  <div id="site-footer"></div>
+  <!-- ✅ Footer injected by nav.js (same as FAQ) -->
+  <div id="siteFooter"></div>
 
-  <script defer src="/assets/js/nav.js"></script>
-  <script defer src="/assets/js/dropdowns.js"></script>
+  <script defer src="assets/js/nav.js?v=1000"></script>
+  <script defer src="assets/js/dropdowns.js?v=1000"></script>
 
   <script>
     (function () {
