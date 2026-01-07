@@ -1,14 +1,25 @@
-
 /* =========================================================
    Custom Select Dropdowns (non-native)
    - Click to open/close
    - Click option to select
    - Close on outside click / ESC
    - Keyboard: Enter/Space select, Arrow keys navigate
+   - Supports separators: .cselect-sep (non-selectable)
 ========================================================= */
 
 (function () {
   const selects = Array.from(document.querySelectorAll('.cselect'));
+
+  function isSelectable(el) {
+    if (!el) return false;
+    if (el.classList.contains('cselect-sep')) return false;
+    if (el.getAttribute('data-disabled') === 'true') return false;
+    return el.classList.contains('cselect-option');
+  }
+
+  function getSelectableOptions(cs) {
+    return Array.from(cs.querySelectorAll('.cselect-option')).filter(isSelectable);
+  }
 
   function closeAll(except) {
     selects.forEach(cs => {
@@ -19,23 +30,23 @@
     });
   }
 
+  function focusOption(options, index) {
+    if (!options.length) return;
+    const i = Math.max(0, Math.min(index, options.length - 1));
+    options.forEach((opt, idx) => opt.tabIndex = (idx === i ? 0 : -1));
+    options[i].focus();
+  }
+
   function openSelect(cs) {
     closeAll(cs);
     cs.classList.add('open');
     const btn = cs.querySelector('.cselect-btn');
     if (btn) btn.setAttribute('aria-expanded', 'true');
 
-    // focus first option (or selected)
-    const list = cs.querySelector('.cselect-list');
-    const selected = cs.querySelector('.cselect-option[aria-selected="true"]');
-    const first = selected || cs.querySelector('.cselect-option');
-    if (list && first) {
-      // ensure tabindex
-      cs.querySelectorAll('.cselect-option').forEach((opt, i) => {
-        opt.tabIndex = (opt === first) ? 0 : -1;
-      });
-      first.focus();
-    }
+    const options = getSelectableOptions(cs);
+    const selected = options.find(o => o.getAttribute('aria-selected') === 'true');
+    const first = selected || options[0];
+    if (first) focusOption(options, options.indexOf(first));
   }
 
   function toggleSelect(cs) {
@@ -49,24 +60,21 @@
   }
 
   function setValue(cs, optionEl) {
+    if (!isSelectable(optionEl)) return;
+
     const value = optionEl.getAttribute('data-value') || optionEl.textContent.trim();
     const label = optionEl.textContent.trim();
 
-    // hidden input
     const input = cs.querySelector('input[type="hidden"]');
     if (input) input.value = value;
 
-    // visible label
     const valueEl = cs.querySelector('.cselect-value');
     if (valueEl) valueEl.textContent = label;
 
-    // aria selected
     cs.querySelectorAll('.cselect-option').forEach(opt => {
-      const isSelected = opt === optionEl;
-      opt.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+      opt.setAttribute('aria-selected', opt === optionEl ? 'true' : 'false');
     });
 
-    // close
     closeAll();
     const btn = cs.querySelector('.cselect-btn');
     if (btn) btn.focus();
@@ -76,13 +84,14 @@
   selects.forEach(cs => {
     const btn = cs.querySelector('.cselect-btn');
     const list = cs.querySelector('.cselect-list');
-    const options = Array.from(cs.querySelectorAll('.cselect-option'));
+    const options = getSelectableOptions(cs);
 
     // default aria-selected
-    options.forEach((opt, i) => {
+    options.forEach((opt) => {
       if (!opt.hasAttribute('aria-selected')) opt.setAttribute('aria-selected', 'false');
-      opt.tabIndex = (i === 0) ? 0 : -1;
+      opt.tabIndex = -1;
     });
+    if (options[0]) options[0].tabIndex = 0;
 
     if (btn) {
       btn.addEventListener('click', (e) => {
@@ -90,7 +99,6 @@
         toggleSelect(cs);
       });
 
-      // keyboard open
       btn.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
@@ -103,55 +111,57 @@
       });
     }
 
-    // option click
-    options.forEach(opt => {
-      opt.addEventListener('click', () => setValue(cs, opt));
-
-      opt.addEventListener('keydown', (e) => {
-        const currentIndex = options.indexOf(opt);
-
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          setValue(cs, opt);
-          return;
-        }
-
-        if (e.key === 'Escape') {
-          e.preventDefault();
-          closeAll();
-          const b = cs.querySelector('.cselect-btn');
-          if (b) b.focus();
-          return;
-        }
-
-        if (e.key === 'ArrowDown') {
-          e.preventDefault();
-          const next = options[Math.min(currentIndex + 1, options.length - 1)];
-          options.forEach(o => o.tabIndex = (o === next ? 0 : -1));
-          next.focus();
-          return;
-        }
-
-        if (e.key === 'ArrowUp') {
-          e.preventDefault();
-          const prev = options[Math.max(currentIndex - 1, 0)];
-          options.forEach(o => o.tabIndex = (o === prev ? 0 : -1));
-          prev.focus();
-          return;
-        }
-      });
+    // click select
+    cs.addEventListener('click', (e) => {
+      const opt = e.target.closest('.cselect-option');
+      if (!opt) return;
+      setValue(cs, opt);
     });
 
-    // click on list background does nothing (avoid bubbling surprises)
-    if (list) {
-      list.addEventListener('mousedown', (e) => e.preventDefault());
-    }
+    // keyboard in list
+    cs.addEventListener('keydown', (e) => {
+      if (!cs.classList.contains('open')) return;
+
+      const optionsNow = getSelectableOptions(cs);
+      const current = document.activeElement;
+      const idx = optionsNow.indexOf(current);
+
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeAll();
+        const b = cs.querySelector('.cselect-btn');
+        if (b) b.focus();
+        return;
+      }
+
+      if (e.key === 'Enter' || e.key === ' ') {
+        if (isSelectable(current)) {
+          e.preventDefault();
+          setValue(cs, current);
+        }
+        return;
+      }
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        focusOption(optionsNow, idx < 0 ? 0 : idx + 1);
+        return;
+      }
+
+      if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        focusOption(optionsNow, idx < 0 ? 0 : idx - 1);
+        return;
+      }
+    });
+
+    // avoid drag focus weirdness
+    if (list) list.addEventListener('mousedown', (e) => e.preventDefault());
   });
 
   // outside click closes
   document.addEventListener('click', (e) => {
-    const target = e.target;
-    const inside = target && target.closest && target.closest('.cselect');
+    const inside = e.target.closest && e.target.closest('.cselect');
     if (!inside) closeAll();
   });
 
