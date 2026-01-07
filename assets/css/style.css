@@ -56,6 +56,24 @@ a:focus-visible{
   margin: 0 auto;
 }
 .section{ padding: 44px 0; }
+/* Layout */
+.page{ min-height: 100vh; }
+
+main.page{
+  padding-bottom: 120px; /* space for injected footer (prevents overlap) */
+}
+
+.wrap, .container{
+  width: min(var(--max), calc(100% - 40px));
+  margin: 0 auto;
+}
+.section{ padding: 44px 0; }
+
+@media (max-width: 760px){
+  main.page{
+    padding-bottom: 160px;
+  }
+}
 
 /* Type */
 .h1{
