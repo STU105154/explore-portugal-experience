@@ -1,302 +1,291 @@
-<!DOCTYPE html>
-<html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Reservas · Explore Portugal Experience</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!doctype html>
+<html lang="en" id="top">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Booking — Explore Portugal Experience</title>
 
-    <meta
-      name="description"
-      content="Faça um pedido de reserva para transfers privados e tours em Portugal. Resposta personalizada e confirmação clara antes de qualquer pagamento."
-    />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
 
-    <link rel="stylesheet" href="assets/css/style.css" />
+<body>
+  <div id="site-header"></div>
 
-    <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png" />
+  <main class="page">
+    <section class="section">
+      <div class="wrap">
+        <h1 class="h1">Booking</h1>
+        <p class="p" style="margin-bottom:14px;">
+          Send the details — I reply with a discreet VIP quote and confirmation.
+        </p>
 
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-Y30ME05MQY");
-    </script>
-      <link rel="canonical" href="https://www.exploreportugalexperience.com/booking.html">
+        <div class="panel">
+          <form id="bookingForm">
 
-  </head>
-  <body>
-    <!-- Barra idioma -->
-    <div class="translate-bar">
-      <span>Idioma:</span>
-      <div id="google_translate_element"></div>
-    </div>
-
-   <!-- HEADER (igual ao index) -->
-<header class="site-header">
-  <div class="header-inner">
-
-    <!-- estrela / home -->
-    <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
-      <img
-        src="assets/icons/compass-gold-solid.svg"
-        class="star-animated"
-        alt="Explore Portugal Experience"
-      />
-    </a>
-
-    <!-- logo -->
-    <a href="index.html" class="header-logo">
-      <img
-        src="assets/images/logo-explore-portugal-experience.png"
-        alt="Explore Portugal Experience"
-      />
-    </a>
-
-  </div>
-</header>
-
-
-         <nav class="nav" id="mainNav" aria-label="Navegação principal">
-      <a href="about.html">Sobre</a>
-      <a href="services.html">Serviços</a>
-      <a href="choose.html">Porquê nós</a>
-      <a href="pricing.html">Preços</a>
-      <a href="faq.html">FAQ</a>
-      <a href="partners-drivers.html">Partners Drivers</a>
-      <a href="partners-hospitality.html">Parceiros Comerciais</a>
-      <a href="gallery.html" aria-current="page">Galeria</a>
-      <a href="booking.html">Reservas</a>
-      <a href="contactos.html">Contactos</a>
-    </nav>
-
-        <!-- menu mobile -->
-        <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </header>
-
-    <main>
-      <!-- HERO DA PÁGINA -->
-      <section class="page-hero section-dark">
-        <div class="section-inner">
-          <h1 class="page-hero-title">Reservas</h1>
-          <p class="page-hero-subtitle">
-            Envie o seu pedido de forma simples. Respondemos com uma proposta clara e
-            transparente, antes de qualquer pagamento.
-          </p>
-        </div>
-      </section>
-
-      <!-- FORMULÁRIO VIP -->
-      <section class="section contact-section">
-        <div class="section-inner">
-          <div class="contact-grid">
-            <!-- Formulário -->
-            <article class="contact-card">
-              <h2>Pedido de reserva</h2>
-
-              <form
-                class="contact-form"
-                action="mailto:info@exploreportugalexperience.com"
-                method="post"
-                enctype="text/plain"
-              >
-                <div class="form-row">
-                  <label for="nome">Nome completo</label>
-                  <input type="text" id="nome" name="Nome" required />
+            <div class="grid-3">
+              <div class="field">
+                <label class="label" for="cs-trip-btn">Trip</label>
+                <div class="cselect" data-name="trip">
+                  <button id="cs-trip-btn" type="button" class="cselect-btn" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="cselect-value">Select trip type</span>
+                    <span class="cselect-chevron" aria-hidden="true">▾</span>
+                  </button>
+                  <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="Trip type">
+                    <li class="cselect-option" role="option" tabindex="0" data-value="one-way">One-way</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="return">Return</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="hourly">Hourly Chauffeur</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="tour">Private Tour</li>
+                  </ul>
+                  <input type="hidden" name="trip" value="">
                 </div>
-
-                <div class="form-row">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="Email" required />
-                </div>
-
-                <div class="form-row">
-                  <label for="telefone">WhatsApp / Telefone</label>
-                  <input
-                    type="tel"
-                    id="telefone"
-                    name="Telefone"
-                    placeholder="+351 ..."
-                    required
-                  />
-                </div>
-
-                <div class="form-row form-row-2">
-                  <div>
-                    <label for="data">Data do serviço</label>
-                    <input type="date" id="data" name="Data" required />
-                  </div>
-
-                  <div>
-                    <label for="hora">Hora de início</label>
-                    <input type="time" id="hora" name="Hora" />
-                  </div>
-                </div>
-
-                <div class="form-row">
-                  <label for="origem">Origem</label>
-                  <input
-                    type="text"
-                    id="origem"
-                    name="Origem"
-                    placeholder="Ex.: Aeroporto de Lisboa"
-                    required
-                  />
-                </div>
-
-                <div class="form-row">
-                  <label for="destino">Destino</label>
-                  <input
-                    type="text"
-                    id="destino"
-                    name="Destino"
-                    placeholder="Cidade, hotel ou endereço"
-                    required
-                  />
-                </div>
-
-                <div class="form-row">
-                  <label for="pessoas">Número de pessoas</label>
-                  <input
-                    type="number"
-                    id="pessoas"
-                    name="Pessoas"
-                    min="1"
-                    max="8"
-                    required
-                  />
-                </div>
-
-                <div class="form-row">
-                  <label for="servico">Tipo de serviço</label>
-                  <select id="servico" name="Serviço">
-                    <option value="">Selecione uma opção</option>
-                    <option value="transfer-aeroporto">Transfer aeroporto</option>
-                    <option value="city-tour">City tour</option>
-                    <option value="day-trip">Day trip</option>
-                    <option value="tour-privado">Tour privado à medida</option>
-                    <option value="corporate">Evento corporativo</option>
-                    <option value="outro">Outro serviço</option>
-                  </select>
-                </div>
-
-                <div class="form-row">
-                  <label for="mensagem">Mensagem</label>
-                  <textarea
-                    id="mensagem"
-                    name="Mensagem"
-                    placeholder="Datas adicionais, paragens, cadeirinhas, bagagem especial, necessidades específicas..."
-                    required
-                  ></textarea>
-                </div>
-
-                <p class="form-note">
-                  Após recebermos o seu pedido, enviamos uma proposta detalhada com
-                  valores, condições e confirmação de disponibilidade.
-                </p>
-
-                <button type="submit" class="btn-primary">Enviar pedido</button>
-              </form>
-            </article>
-
-            <!-- CTA lateral -->
-            <article class="contact-card">
-              <h2>Resposta rápida</h2>
-              <p>
-                Se preferir falar diretamente, fale connosco por WhatsApp. Resposta o mais
-                breve possível.
-              </p>
-
-              <div class="social-row">
-                <a
-                  href="https://wa.me/351910784548"
-                  target="_blank"
-                  class="social-pill"
-                >
-                  WhatsApp · +351 910 784 548
-                </a>
               </div>
 
-              <p class="form-note">
-                Horário de atendimento: 08h00 – 22h00 (hora de Lisboa).  
-                Serviço disponível em todo o território de Portugal Continental.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-    </main>
+              <div class="field">
+                <label class="label" for="dateGo">Date</label>
+                <input id="dateGo" class="input" type="date" />
+              </div>
 
-    <!-- FOOTER (igual ao resto do site) -->
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-col">
-          <p class="footer-title">Explore Portugal Experience</p>
-          <p>
-            Premium Tours &amp; Private Transfers em Portugal, com motorista profissional.
-            Conforto, elegância e discrição em cada percurso.
-          </p>
-        </div>
+              <div class="field">
+                <label class="label" for="timeGo">Time</label>
+                <input id="timeGo" class="input" type="time" />
+              </div>
+            </div>
 
-        <div class="footer-col">
-          <p class="footer-title">Contactos</p>
-          <p>
-            Telemóvel / WhatsApp:
-            <a href="https://wa.me/351910784548" target="_blank">+351 910 784 548</a>
-          </p>
-          <p>
-            Email:
-            <a href="mailto:info@exploreportugalexperience.com"
-              >info@exploreportugalexperience.com</a
-            >
-          </p>
-        </div>
+            <div style="height:10px;"></div>
 
-        <div class="footer-col">
-          <p class="footer-title">Siga-nos</p>
-          <p>
-            <a href="https://www.instagram.com/exploreportugal2025" target="_blank"
-              >Instagram</a
-            ><br />
-            <a href="https://www.tiktok.com/@explore.portugal24" target="_blank"
-              >TikTok</a
-            >
-          </p>
+            <div class="grid-3">
+              <div class="field">
+                <label class="label" for="cs-from-btn">From (City / Airport)</label>
+                <div class="cselect" data-name="from">
+                  <button id="cs-from-btn" type="button" class="cselect-btn" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="cselect-value">Select pickup</span>
+                    <span class="cselect-chevron" aria-hidden="true">▾</span>
+                  </button>
+                  <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="From options">
+
+                    <li class="cselect-sep" role="presentation">Portugal — Cities</li>
+                    <li class="cselect-option" role="option" tabindex="0" data-value="pt-lisbon-city">Lisbon (City)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="pt-porto-city">Porto (City)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="pt-cascais">Cascais</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="pt-sintra">Sintra</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="pt-algarve">Algarve</li>
+
+                    <li class="cselect-sep" role="presentation">Portugal — Airports</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="LIS">Lisbon Airport (LIS)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="OPO">Porto Airport (OPO)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="FAO">Faro Airport (FAO)</li>
+
+                    <li class="cselect-sep" role="presentation">United Kingdom — Airports</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="LHR">London Heathrow (LHR)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="LGW">London Gatwick (LGW)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="STN">London Stansted (STN)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="MAN">Manchester (MAN)</li>
+
+                    <li class="cselect-sep" role="presentation">France — Airports</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="CDG">Paris Charles de Gaulle (CDG)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="ORY">Paris Orly (ORY)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="NCE">Nice (NCE)</li>
+
+                    <li class="cselect-sep" role="presentation">Spain — Airports</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="MAD">Madrid (MAD)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="BCN">Barcelona (BCN)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="AGP">Málaga (AGP)</li>
+
+                    <li class="cselect-sep" role="presentation">Italy — Airports</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="FCO">Rome Fiumicino (FCO)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="MXP">Milan Malpensa (MXP)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="VCE">Venice (VCE)</li>
+
+                    <li class="cselect-sep" role="presentation">Netherlands — Airports</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="AMS">Amsterdam Schiphol (AMS)</li>
+
+                    <li class="cselect-sep" role="presentation">Germany — Airports</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="FRA">Frankfurt (FRA)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="MUC">Munich (MUC)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="BER">Berlin (BER)</li>
+
+                    <li class="cselect-sep" role="presentation">Switzerland — Airports</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="ZRH">Zurich (ZRH)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="GVA">Geneva (GVA)</li>
+
+                    <li class="cselect-sep" role="presentation">Ireland — Airports</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="DUB">Dublin (DUB)</li>
+
+                    <li class="cselect-sep" role="presentation">Belgium — Airports</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="BRU">Brussels (BRU)</li>
+
+                  </ul>
+                  <input type="hidden" name="from" value="">
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label" for="cs-to-btn">To (City / Airport)</label>
+                <div class="cselect" data-name="to">
+                  <button id="cs-to-btn" type="button" class="cselect-btn" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="cselect-value">Select destination</span>
+                    <span class="cselect-chevron" aria-hidden="true">▾</span>
+                  </button>
+                  <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="To options">
+
+                    <li class="cselect-sep" role="presentation">Portugal — Cities</li>
+                    <li class="cselect-option" role="option" tabindex="0" data-value="pt-lisbon-city">Lisbon (City)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="pt-porto-city">Porto (City)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="pt-cascais">Cascais</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="pt-sintra">Sintra</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="pt-algarve">Algarve</li>
+
+                    <li class="cselect-sep" role="presentation">Portugal — Airports</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="LIS">Lisbon Airport (LIS)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="OPO">Porto Airport (OPO)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="FAO">Faro Airport (FAO)</li>
+
+                    <li class="cselect-sep" role="presentation">United Kingdom — Airports</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="LHR">London Heathrow (LHR)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="LGW">London Gatwick (LGW)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="STN">London Stansted (STN)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="MAN">Manchester (MAN)</li>
+
+                    <li class="cselect-sep" role="presentation">France — Airports</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="CDG">Paris Charles de Gaulle (CDG)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="ORY">Paris Orly (ORY)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="NCE">Nice (NCE)</li>
+
+                    <li class="cselect-sep" role="presentation">Spain — Airports</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="MAD">Madrid (MAD)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="BCN">Barcelona (BCN)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="AGP">Málaga (AGP)</li>
+
+                    <li class="cselect-sep" role="presentation">Italy — Airports</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="FCO">Rome Fiumicino (FCO)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="MXP">Milan Malpensa (MXP)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="VCE">Venice (VCE)</li>
+
+                    <li class="cselect-sep" role="presentation">Netherlands — Airports</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="AMS">Amsterdam Schiphol (AMS)</li>
+
+                    <li class="cselect-sep" role="presentation">Germany — Airports</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="FRA">Frankfurt (FRA)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="MUC">Munich (MUC)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="BER">Berlin (BER)</li>
+
+                    <li class="cselect-sep" role="presentation">Switzerland — Airports</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="ZRH">Zurich (ZRH)</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="GVA">Geneva (GVA)</li>
+
+                    <li class="cselect-sep" role="presentation">Ireland — Airports</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="DUB">Dublin (DUB)</li>
+
+                    <li class="cselect-sep" role="presentation">Belgium — Airports</li>
+                    <li class="cselect-option" role="option" tabindex="-1" data-value="BRU">Brussels (BRU)</li>
+
+                  </ul>
+                  <input type="hidden" name="to" value="">
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label" for="pickupDetails">Pickup details (hotel / terminal)</label>
+                <input id="pickupDetails" class="input" type="text" placeholder="e.g., Terminal 1, Hotel name, street..." />
+              </div>
+            </div>
+
+            <div style="height:10px;"></div>
+
+            <div class="grid-3">
+              <div class="field">
+                <label class="label" for="returnDate">Return date (if return)</label>
+                <input id="returnDate" class="input" type="date" />
+              </div>
+
+              <div class="field">
+                <label class="label" for="passengers">Passengers</label>
+                <input id="passengers" class="input" type="number" min="1" max="20" value="1" />
+              </div>
+
+              <div class="field">
+                <label class="label" for="luggage">Luggage (bags)</label>
+                <input id="luggage" class="input" type="number" min="0" max="30" value="0" />
+              </div>
+            </div>
+
+            <div style="height:10px;"></div>
+
+            <div class="grid-2">
+              <div class="field">
+                <label class="label" for="flight">Flight / Train (optional)</label>
+                <input id="flight" class="input" type="text" placeholder="e.g., TP1365" />
+              </div>
+              <div class="field">
+                <label class="label" for="contact">Your contact (email/phone)</label>
+                <input id="contact" class="input" type="text" placeholder="email or phone" />
+              </div>
+            </div>
+
+            <div style="height:10px;"></div>
+
+            <div class="field">
+              <label class="label" for="notes">Notes (child seat, stops, VIP requests)</label>
+              <textarea id="notes" class="input" rows="4" placeholder="Write anything important…"></textarea>
+            </div>
+
+            <div class="actions" style="justify-content:flex-start;">
+              <button class="btn btn-gold" type="submit">Request quote</button>
+              <a class="btn btn-ghost" href="/contactos.html">Contact</a>
+            </div>
+
+            <p class="micro" style="text-align:left;">
+              I reply with a discreet VIP quote and confirmation.
+            </p>
+          </form>
         </div>
       </div>
+    </section>
 
-      <div class="footer-bottom">
-        <p>Powered by: MkDesign – London</p>
-      </div>
-    </footer>
+    <button class="to-top" type="button" aria-label="Back to top" title="Back to top">↑</button>
+  </main>
 
-    <!-- JS menu -->
-    <script src="assets/js/nav.js"></script>
+  <div id="site-footer"></div>
 
-    <!-- Google Translate -->
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          {
-            pageLanguage: "pt",
-            includedLanguages: "en,pt,fr,es,de,it",
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-          },
-          "google_translate_element"
-        );
-      }
-    </script>
-    <script
-      type="text/javascript"
-      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    ></script>
-  </body>
+  <script defer src="/assets/js/nav.js"></script>
+  <script defer src="/assets/js/dropdowns.js"></script>
+
+  <script>
+    (function () {
+      // Back to top button
+      const btn = document.querySelector('.to-top');
+      if (!btn) return;
+      const toggle = () => btn.classList.toggle('show', (window.scrollY || 0) > 500);
+      window.addEventListener('scroll', toggle, { passive: true });
+      toggle();
+      btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      // Submit -> open WhatsApp compose (you can set number later in nav.js)
+      const form = document.getElementById('bookingForm');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const hidden = (name) => form.querySelector(`input[name="${name}"]`)?.value || '';
+        const get = (id) => document.getElementById(id)?.value?.trim() || '';
+
+        const text =
+          `EPE Booking Request%0A` +
+          `Trip: ${encodeURIComponent(hidden('trip'))}%0A` +
+          `Date: ${encodeURIComponent(get('dateGo'))}  Time: ${encodeURIComponent(get('timeGo'))}%0A` +
+          `From: ${encodeURIComponent(hidden('from'))}%0A` +
+          `To: ${encodeURIComponent(hidden('to'))}%0A` +
+          `Pickup details: ${encodeURIComponent(get('pickupDetails'))}%0A` +
+          `Return date: ${encodeURIComponent(get('returnDate'))}%0A` +
+          `Passengers: ${encodeURIComponent(get('passengers'))}  Luggage: ${encodeURIComponent(get('luggage'))}%0A` +
+          `Flight/Train: ${encodeURIComponent(get('flight'))}%0A` +
+          `Contact: ${encodeURIComponent(get('contact'))}%0A` +
+          `Notes: ${encodeURIComponent(get('notes'))}`;
+
+        window.open(`https://wa.me/?text=${text}`, '_blank', 'noopener');
+      });
+    })();
+  </script>
+</body>
 </html>
