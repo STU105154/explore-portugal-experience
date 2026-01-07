@@ -1,308 +1,361 @@
 <!DOCTYPE html>
-<html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Partners Drivers · Explore Portugal Experience</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Parcerias com motoristas parceiros – Explore Portugal Experience."
-    />
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Partners Drivers · Explore Portugal Experience</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png" />
+  <meta name="description" content="Partner with Explore Portugal Experience — application form for professional drivers with own vehicle for private transfers and tours in Portugal." />
+  <link rel="canonical" href="https://www.exploreportugalexperience.com/partners-drivers.html" />
 
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-Y30ME05MQY");
-    </script>
-    <link rel="canonical" href="https://www.exploreportugalexperience.com/partners-drivers.html">
+  <link rel="stylesheet" href="assets/css/style.css?v=1000" />
+  <link rel="icon" type="image/png" href="assets/icons/apple-touch-icon.png" />
 
-  </head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-Y30ME05MQY");
+  </script>
+</head>
 
-  <body>
-    <!-- Barra idioma -->
-    <div class="translate-bar">
-      <span>Idioma:</span>
-      <div id="google_translate_element"></div>
-    </div>
+<body>
+  <!-- ✅ Anchor for Back to top -->
+  <div id="top"></div>
 
-  <!-- HEADER -->
-<header class="site-header">
-  <div class="header-inner">
+  <!-- Header injected by nav.js -->
+  <div id="siteHeader"></div>
 
-    <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
-      <img
-        src="assets/icons/compass-gold-solid.svg"
-        alt="Explore Portugal Experience"
-        class="star-animated"
-      />
-    </a>
-
-    <a href="index.html" class="header-logo">
-      <img
-        src="assets/images/logo-explore-portugal-experience.png"
-        alt="Explore Portugal Experience"
-      />
-    </a>
-
-      <nav class="nav" id="mainNav" aria-label="Navegação principal">
-      <a href="about.html">Sobre</a>
-      <a href="services.html">Serviços</a>
-      <a href="choose.html">Porquê nós</a>
-      <a href="pricing.html">Preços</a>
-      <a href="faq.html">FAQ</a>
-      <a href="partners-drivers.html">Partners Drivers</a>
-      <a href="partners-hospitality.html">Parceiros Comerciais</a>
-      <a href="gallery.html" aria-current="page">Galeria</a>
-      <a href="booking.html">Reservas</a>
-      <a href="contactos.html">Contactos</a>
-    </nav>
-
-    <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menu">
-      <span></span><span></span><span></span>
-    </button>
-
-  </div>
-</header>
-
-    <main>
-      <!-- HERO -->
-      <section class="page-hero section-dark">
-        <div class="section-inner">
-          <h1 class="page-hero-title">Partners Drivers</h1>
-          <p class="page-hero-subtitle">
-            Questionário para motoristas profissionais com viatura própria que pretendam
-            colaborar connosco em transfers e tours privados.
+  <main class="page">
+    <!-- HERO -->
+    <section class="section">
+      <div class="wrap">
+        <div class="panel">
+          <h1 class="h1">Partners Drivers</h1>
+          <p class="p">
+            Application form for professional drivers with own vehicle who want to collaborate with us on private transfers and tours in Portugal.
+            We focus on calm communication, punctuality and a premium client experience.
           </p>
-        </div>
-      </section>
 
-      <!-- CONTEÚDO + FORMULÁRIO -->
-      <section class="section contact-section">
-        <div class="section-inner contact-grid">
-          <!-- TEXTO DE INTRODUÇÃO -->
-          <article class="contact-card">
-            <h2>Como trabalhamos com motoristas parceiros</h2>
-            <p>
-              Procuramos motoristas profissionais, com viatura própria e foco na
-              experiência do cliente. As parcerias são pensadas para garantir:
+          <div class="actions" style="justify-content:flex-start; margin-top:14px;">
+            <a class="btn btn-gold" href="#form">Open the form</a>
+            <a class="btn btn-ghost" href="mailto:info@exploreportugalexperience.com">Email</a>
+            <a class="btn btn-ghost" href="https://wa.me/351910784548" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page-only styles for the form (VIP + minimal, aligned with your CSS) -->
+    <style>
+      .pd-grid{
+        display:grid;
+        grid-template-columns: 1fr 1.15fr;
+        gap: 12px;
+        align-items:start;
+      }
+      @media (max-width: 920px){
+        .pd-grid{ grid-template-columns: 1fr; }
+      }
+
+      .pd-list{
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: rgba(243,240,233,0.74);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      .pd-list li{ margin: 6px 0; }
+
+      .form{
+        display:grid;
+        gap: 10px;
+      }
+
+      .row-2{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      @media (max-width: 680px){
+        .row-2{ grid-template-columns: 1fr; }
+      }
+
+      .help{
+        margin-top: 4px;
+        color: rgba(243,240,233,0.60);
+        font-size: 12.8px;
+        line-height: 1.5;
+      }
+
+      .req{
+        color: rgba(212,169,86,0.95);
+        font-weight: 650;
+      }
+
+      .divider{
+        height: 1px;
+        background: rgba(212,169,86,0.16);
+        margin: 6px 0;
+      }
+
+      /* Make your existing .input look consistent with selects, etc. */
+      .input::placeholder{ color: rgba(243,240,233,0.45); }
+
+      /* Premium submit button compatible with your design */
+      .submit{
+        width: 100%;
+        border: 1px solid rgba(212,169,86,0.30);
+        border-radius: 999px;
+        padding: 12px 14px;
+        font-size: 13.2px;
+        font-weight: 650;
+        letter-spacing: 0.25px;
+        cursor: pointer;
+        background: linear-gradient(180deg, rgba(212,169,86,1), rgba(185,137,47,1));
+        color: #0a0a0a;
+        transition: transform .12s ease, filter .18s ease;
+      }
+      .submit:active{ transform: translateY(1px); }
+      .submit:hover{ filter: brightness(1.05); }
+
+      .note{
+        color: rgba(243,240,233,0.68);
+        font-size: 13.4px;
+        line-height: 1.55;
+      }
+
+      .tiny{
+        color: rgba(243,240,233,0.58);
+        font-size: 12.6px;
+        line-height: 1.5;
+      }
+
+      .success{
+        display:none;
+        margin-top: 10px;
+        border-radius: 16px;
+        border: 1px solid rgba(212,169,86,0.22);
+        background: rgba(212,169,86,0.08);
+        padding: 12px;
+        color: rgba(243,240,233,0.86);
+        font-size: 13.4px;
+      }
+      .success.show{ display:block; }
+    </style>
+
+    <!-- CONTENT + FORM -->
+    <section class="section">
+      <div class="wrap">
+        <div class="pd-grid">
+          <!-- LEFT: Intro / criteria -->
+          <article class="card">
+            <h2 class="h2">How we work with partner drivers</h2>
+            <p class="p">
+              We collaborate with professional drivers who share our standard: calm presence, clear communication and a premium service pace.
             </p>
-            <ul>
-              <li>Comunicação clara e rápida em cada pedido.</li>
-              <li>Pontualidade absoluta em todos os serviços.</li>
-              <li>Conforto, discrição e elegância em cada percurso.</li>
+
+            <div class="divider"></div>
+
+            <div class="label">What we look for</div>
+            <ul class="pd-list">
+              <li>Professional conduct, punctuality and discreet client handling.</li>
+              <li>Own vehicle in excellent condition (clean, comfortable, safe).</li>
+              <li>Fast, clear communication for confirmations and service details.</li>
+              <li>Respect for pricing, service rules and client privacy.</li>
             </ul>
-            <p>
-              Este questionário serve apenas para avaliar o perfil e a compatibilidade com
-              a Explore Portugal Experience. Os dados não são partilhados com terceiros.
+
+            <div class="divider"></div>
+
+            <p class="p" style="margin-bottom:0;">
+              This form is used to evaluate fit and availability. We do not share your data with third parties.
+            </p>
+
+            <p class="tiny" style="margin-top:10px;">
+              Tip: for the best result, include vehicle model/year, pax capacity, and the zones you cover most often.
             </p>
           </article>
 
-          <!-- FORMULÁRIO -->
-          <article class="contact-card">
-            <h2>Questionário para Motoristas</h2>
+          <!-- RIGHT: Form -->
+          <article class="card" id="form">
+            <h2 class="h2">Driver application form</h2>
+            <p class="p">Fields marked with <span class="req">*</span> are required.</p>
 
-            <form
-              class="contact-form"
-              method="post"
-              action="mailto:info@exploreportugalexperience.com"
-              enctype="text/plain"
-            >
-              <!-- 1. Dados principais -->
-              <div class="form-row">
-                <label for="nome">Nome completo *</label>
-                <input type="text" id="nome" name="Nome completo" required />
+            <!--
+              NOTE: mailto is not ideal, but kept as requested.
+              We add a small "prepared" email subject and basic validation to avoid empty submissions.
+            -->
+            <form class="form"
+                  id="partnerDriverForm"
+                  method="post"
+                  action="mailto:info@exploreportugalexperience.com"
+                  enctype="text/plain">
+
+              <!-- Full name -->
+              <div class="field">
+                <label class="label" for="fullName">Full name <span class="req">*</span></label>
+                <input class="input" type="text" id="fullName" name="Full name" required placeholder="Your full name">
               </div>
 
-              <div class="form-row form-row-2">
-                <div>
-                  <label for="email">Email *</label>
-                  <input type="email" id="email" name="Email" required />
+              <!-- Email + WhatsApp -->
+              <div class="row-2">
+                <div class="field">
+                  <label class="label" for="email">Email <span class="req">*</span></label>
+                  <input class="input" type="email" id="email" name="Email" required placeholder="you@email.com">
                 </div>
 
-                <div>
-                  <label for="telefone">Telemóvel / WhatsApp *</label>
-                  <input
-                    type="text"
-                    id="telefone"
-                    name="Telemóvel / WhatsApp"
-                    required
-                  />
+                <div class="field">
+                  <label class="label" for="phone">Mobile / WhatsApp <span class="req">*</span></label>
+                  <input class="input" type="tel" id="phone" name="Mobile / WhatsApp" required placeholder="+351 …">
                 </div>
               </div>
 
-              <div class="form-row">
-                <label for="base">Base (cidade / zona principal de saída) *</label>
-                <input
-                  type="text"
-                  id="base"
-                  name="Base / zona principal"
-                  placeholder="Ex.: Lisboa, Cascais, Algarve…"
-                  required
-                />
+              <!-- Base -->
+              <div class="field">
+                <label class="label" for="base">Base (main city/area) <span class="req">*</span></label>
+                <input class="input" type="text" id="base" name="Base / main area" required placeholder="Lisbon, Cascais, Algarve…">
+                <div class="help">Where do you typically start services from?</div>
               </div>
 
-              <div class="form-row">
-                <label for="carta">Tipo de carta / certificados *</label>
-                <textarea
-                  id="carta"
-                  name="Tipo de carta / certificados"
-                  rows="2"
-                  placeholder="Ex.: Carta B, TVDE, CCM, outros."
-                ></textarea>
+              <!-- Licenses -->
+              <div class="field">
+                <label class="label" for="licenses">Driving license / certificates <span class="req">*</span></label>
+                <textarea class="input" id="licenses" name="Driving license / certificates" rows="2" required
+                          placeholder="Example: Category B, TVDE, CCP, Tourism license, others…"></textarea>
               </div>
 
-              <!-- 2. Viatura, idiomas, experiência -->
-              <div class="form-row">
-                <label for="viaturas">Tipo(s) de viatura disponível(veis) *</label>
-                <textarea
-                  id="viaturas"
-                  name="Tipos de viatura disponíveis"
-                  rows="3"
-                  placeholder="Ex.: Mercedes Classe E 1–3 pax; Minivan 7 pax; etc."
-                  required
-                ></textarea>
+              <div class="divider"></div>
+
+              <!-- Vehicles -->
+              <div class="field">
+                <label class="label" for="vehicles">Vehicle(s) available <span class="req">*</span></label>
+                <textarea class="input" id="vehicles" name="Vehicle(s)" rows="3" required
+                          placeholder="Example: Mercedes E-Class (1–3 pax); Minivan (up to 7 pax); year; luggage capacity…"></textarea>
               </div>
 
-              <div class="form-row">
-                <label for="idiomas">Idiomas que fala à vontade *</label>
-                <textarea
-                  id="idiomas"
-                  name="Idiomas"
-                  rows="2"
-                  placeholder="Ex.: Português, Inglês, Espanhol…"
-                ></textarea>
+              <!-- Languages -->
+              <div class="field">
+                <label class="label" for="languages">Languages you speak comfortably <span class="req">*</span></label>
+                <textarea class="input" id="languages" name="Languages" rows="2" required
+                          placeholder="Example: Portuguese, English, Spanish…"></textarea>
               </div>
 
-              <div class="form-row">
-                <label for="experiencia"
-                  >Breve resumo da experiência em transfers / tours *</label
-                >
-                <textarea
-                  id="experiencia"
-                  name="Experiência em transfers / tours"
-                  rows="4"
-                  placeholder="Ex.: anos de experiência, zonas onde trabalha, tipo de serviços, etc."
-                  required
-                ></textarea>
+              <!-- Experience -->
+              <div class="field">
+                <label class="label" for="experience">Experience in transfers / tours <span class="req">*</span></label>
+                <textarea class="input" id="experience" name="Experience" rows="4" required
+                          placeholder="Years of experience, typical services, regions covered, corporate clients, etc."></textarea>
               </div>
 
-              <!-- 3. Disponibilidade, zonas, notas -->
-              <div class="form-row">
-                <label for="disponibilidade">Disponibilidade *</label>
-                <textarea
-                  id="disponibilidade"
-                  name="Disponibilidade"
-                  rows="3"
-                  placeholder="Ex.: Full-time, fins-de-semana, noites, épocas específicas, etc."
-                  required
-                ></textarea>
+              <div class="divider"></div>
+
+              <!-- Availability -->
+              <div class="field">
+                <label class="label" for="availability">Availability <span class="req">*</span></label>
+                <textarea class="input" id="availability" name="Availability" rows="3" required
+                          placeholder="Full-time, weekends, nights, seasonal availability…"></textarea>
               </div>
 
-              <div class="form-row">
-                <label for="zonas">Zonas onde trabalha com mais frequência *</label>
-                <textarea
-                  id="zonas"
-                  name="Zonas onde trabalha"
-                  rows="3"
-                  placeholder="Ex.: Lisboa, Sintra, Cascais, Algarve, etc."
-                  required
-                ></textarea>
+              <!-- Zones -->
+              <div class="field">
+                <label class="label" for="zones">Zones you work most often <span class="req">*</span></label>
+                <textarea class="input" id="zones" name="Main zones" rows="3" required
+                          placeholder="Lisbon, Sintra, Cascais, Porto, Algarve, Alentejo…"></textarea>
               </div>
 
-              <div class="form-row">
-                <label for="observacoes">Observações / informação relevante</label>
-                <textarea
-                  id="observacoes"
-                  name="Observações"
-                  rows="4"
-                  placeholder="Qualquer nota adicional que considere importante."
-                ></textarea>
+              <!-- Notes -->
+              <div class="field">
+                <label class="label" for="notes">Notes (optional)</label>
+                <textarea class="input" id="notes" name="Notes" rows="4"
+                          placeholder="Anything relevant: insurance, water on board, Wi-Fi, invoice/receipt capability, etc."></textarea>
               </div>
 
-              <p class="form-note">
-                Entraremos em contacto apenas se o seu perfil estiver alinhado com o tipo
-                de serviço que prestamos. Obrigado pelo interesse em trabalhar connosco.
+              <p class="note">
+                We’ll contact you only if your profile matches the level and type of service we provide.
+                Thank you for your interest in collaborating with Explore Portugal Experience.
               </p>
 
-              <button type="submit" class="btn-primary">Enviar questionário</button>
+              <button class="submit" type="submit">Send application</button>
+
+              <div class="success" id="formHint">
+                If your email app did not open, copy the details and send them to:
+                <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
+              </div>
+
+              <!-- Helps mail clients show a clean subject (some ignore, but harmless) -->
+              <input type="hidden" name="Subject" value="Partners Drivers — Application">
             </form>
           </article>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-col">
-          <p class="footer-title">Explore Portugal Experience</p>
-          <p>
-            Premium Tours &amp; Private Transfers em Portugal, com motorista profissional.
-            Conforto, elegância e discrição em cada percurso.
-          </p>
+    <!-- Cookie banner -->
+    <div class="cookie-bar" id="cookieBar" aria-live="polite" aria-label="Cookie banner">
+      <div class="cookie-inner">
+        <div class="cookie-text">
+          We use cookies to improve your experience. Read our <a href="privacy.html">Privacy Policy</a>.
         </div>
-
-        <div class="footer-col">
-          <p class="footer-title">Contactos</p>
-          <p>
-            Telemóvel / WhatsApp:
-            <a href="https://wa.me/351910784548" target="_blank">+351 910 784 548</a>
-          </p>
-          <p>
-            Email:
-            <a href="mailto:info@exploreportugalexperience.com"
-              >info@exploreportugalexperience.com</a
-            >
-          </p>
-        </div>
-
-        <div class="footer-col">
-          <p class="footer-title">Siga-nos</p>
-          <p>
-            <a href="https://www.instagram.com/exploreportugal2025" target="_blank"
-              >Instagram</a
-            ><br />
-            <a href="https://www.tiktok.com/@explore.portugal24" target="_blank"
-              >TikTok</a
-            >
-          </p>
+        <div class="cookie-actions">
+          <button class="cookie-btn" type="button" id="cookieDecline">Close</button>
+          <button class="cookie-btn btn-gold" type="button" id="cookieAccept">Accept</button>
         </div>
       </div>
+    </div>
+  </main>
 
-      <div class="footer-bottom">
-        <p>Powered by: MkDesign – London</p>
-      </div>
-    </footer>
+  <!-- Footer injected by nav.js -->
+  <div id="siteFooter"></div>
 
-    <script src="assets/js/nav.js"></script>
+  <script src="assets/js/nav.js?v=1000"></script>
 
-    <!-- Google Translate -->
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          {
-            pageLanguage: "pt",
-            includedLanguages: "en,pt,fr,es,de,it",
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-          },
-          "google_translate_element"
-        );
+  <script>
+    // Cookie banner (simple + clickable + persistent)
+    (function () {
+      const bar = document.getElementById('cookieBar');
+      const btnAccept = document.getElementById('cookieAccept');
+      const btnDecline = document.getElementById('cookieDecline');
+      if (!bar || !btnAccept || !btnDecline) return;
+
+      const KEY = 'epe_cookie_consent_v1';
+
+      function hide(){ bar.classList.remove('show'); }
+      function show(){ bar.classList.add('show'); }
+
+      try{
+        const saved = localStorage.getItem(KEY);
+        if (!saved) show();
+      }catch(e){
+        show();
       }
-    </script>
-    <script
-      type="text/javascript"
-      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    ></script>
-  </body>
+
+      btnAccept.addEventListener('click', function(){
+        try{ localStorage.setItem(KEY, 'accepted'); }catch(e){}
+        hide();
+      });
+
+      btnDecline.addEventListener('click', function(){
+        try{ localStorage.setItem(KEY, 'closed'); }catch(e){}
+        hide();
+      });
+    })();
+
+    // Form: basic polish for mailto (prevent empty, show hint if mail client blocks)
+    (function(){
+      const form = document.getElementById('partnerDriverForm');
+      const hint = document.getElementById('formHint');
+      if(!form) return;
+
+      form.addEventListener('submit', function(){
+        // Small UX hint — some browsers block mailto or users have no mail app configured
+        // This doesn't stop submit; it just helps.
+        if(hint){
+          window.setTimeout(() => { hint.classList.add('show'); }, 900);
+        }
+      });
+    })();
+  </script>
+</body>
 </html>
