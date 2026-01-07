@@ -52,20 +52,25 @@
   const footerHTML = `
     <footer class="site-footer">
       <div class="site-footer-inner">
-        <div class="footer-line">
-          © 2018 Explore Portugal Experience — Tourism in Portugal
+        <div class="footer-left">
+          <div class="footer-line">
+            © 2018 Explore Portugal Experience — Tourism in Portugal
+          </div>
+          <div class="footer-line muted">
+            Powered by: MkDesign | London
+          </div>
         </div>
-        <div class="footer-line muted">
-          Powered by: MkDesign | London
-        </div>
-        <div class="footer-links">
-          <a href="/contactos.html">Contact</a>
-          <span class="dot">•</span>
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
-          <span class="dot">•</span>
-          <a href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
-          <span class="dot">•</span>
-          <a href="#top" class="back-top">Back to top ↑</a>
+
+        <div class="footer-right">
+          <div class="footer-links">
+            <a href="/contactos.html">Contact</a>
+            <span class="dot">•</span>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+            <span class="dot">•</span>
+            <a href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
+            <span class="dot">•</span>
+            <a href="#top" class="back-top">Back to top ↑</a>
+          </div>
         </div>
       </div>
     </footer>
@@ -85,7 +90,6 @@
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
 
-    // Close on link click (mobile)
     links.addEventListener("click", (e) => {
       const a = e.target.closest("a");
       if (!a) return;
