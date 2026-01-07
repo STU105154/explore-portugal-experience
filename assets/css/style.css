@@ -715,3 +715,60 @@ body{ top: 0 !important; }
   color: #14110b;
   font-weight: 800;
 }
+/* =========================================================
+   HOTFIX 07.01 — FIXES (dropdown, translate bar, burger all)
+   cola no FIM do ficheiro
+========================================================= */
+
+/* 1) Dropdown options ilegíveis (white on white) */
+.lang-select,
+.lang-select option{
+  background: #0b0b0b !important;
+  color: rgba(247,243,232,0.95) !important;
+}
+.lang-select option{
+  padding: 10px !important;
+}
+
+/* 2) Matar o banner/top bar “Google Translated” (iframe) */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame{
+  display: none !important;
+}
+body{ top: 0 !important; }
+
+/* 3) NÃO esconder o widget com display:none (senão não traduz)
+      Em vez disso, esconder fora do ecrã */
+.gt-hidden{
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* 4) Burger em MOBILE + DESKTOP (desliga topnav antigo) */
+.topnav{ display: none !important; }
+.burger{ display: grid !important; }
+
+/* 5) Garantir que o texto/brand não invade o burger */
+.brand{ min-width: 0 !important; max-width: 55vw !important; }
+.brand-text{
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+/* 6) Drawer sempre scrollável */
+.drawer-body{
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+/* 7) Garantir tributo aparece sempre */
+.about-agapito{ display: block !important; }
