@@ -22,8 +22,11 @@
   const headerHTML = `
   <header class="site-header" data-nosnippet>
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Explore Portugal Experience - Home">
-        <img class="brand-logo" src="assets/img/logo.png" alt="Explore Portugal Experience logo" />
+      <a class="brand notranslate" href="index.html" aria-label="Explore Portugal Experience - Home">
+        <span class="brand-mark" aria-hidden="true">
+          <img class="brand-logo" src="assets/images/logo-explore-portugal-experience.png" alt="" />
+          <img class="brand-star" src="assets/icons/star-full.svg" alt="" />
+        </span>
         <span class="brand-name">Explore Portugal Experience</span>
       </a>
 
@@ -41,9 +44,8 @@
         </ul>
       </nav>
 
-      <!-- Translate placeholder: se tiveres o teu widget, coloca-o DENTRO desta div -->
       <div class="translate-slot" aria-label="Language selector">
-        <!-- Example (se usares): <div id="google_translate_element"></div> -->
+        <!-- se usares: <div id="google_translate_element"></div> -->
       </div>
     </div>
   </header>
@@ -52,7 +54,7 @@
   const footerHTML = `
   <footer class="site-footer" data-nosnippet>
     <div class="container footer-inner">
-      <div class="footer-left">
+      <div class="footer-left notranslate">
         <p class="footer-title">Explore Portugal Experience</p>
         <p class="footer-sub">Private tours • Transfers • Tailor-made experiences</p>
       </div>
@@ -69,32 +71,12 @@
   `;
 
   function inject() {
-    const headerMount = document.querySelector('[data-nav="header"]') || document.body;
-    const footerMount = document.querySelector('[data-nav="footer"]') || document.body;
-
-    // Header
     if (!document.querySelector(".site-header")) {
-      const wrap = document.createElement("div");
-      wrap.innerHTML = headerHTML.trim();
-      // se houver mount específico, inject no início dele
-      if (headerMount === document.body) {
-        document.body.insertAdjacentElement("afterbegin", wrap.firstElementChild);
-      } else {
-        headerMount.replaceWith(wrap.firstElementChild);
-      }
+      document.body.insertAdjacentHTML("afterbegin", headerHTML.trim());
     }
-
-    // Footer
     if (!document.querySelector(".site-footer")) {
-      const wrap2 = document.createElement("div");
-      wrap2.innerHTML = footerHTML.trim();
-      if (footerMount === document.body) {
-        document.body.insertAdjacentElement("beforeend", wrap2.firstElementChild);
-      } else {
-        footerMount.replaceWith(wrap2.firstElementChild);
-      }
+      document.body.insertAdjacentHTML("beforeend", footerHTML.trim());
     }
-
     bindNav();
   }
 
@@ -113,13 +95,11 @@
       toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
 
-    // fecha ao clicar num link
     nav.addEventListener("click", (e) => {
       const a = e.target.closest("a");
       if (a) close();
     });
 
-    // fecha com ESC
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") close();
     });
