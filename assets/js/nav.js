@@ -1,212 +1,201 @@
 /* =========================================================
    Explore Portugal Experience - NAV inject (Header + Footer)
-   Stable burger drawer (mobile + desktop) + scroll lock
+   VIP / Premium (Desktop: More dropdown | Mobile: hamburger + scroll panel)
 ========================================================= */
 
 (function () {
-  const headerMount = document.getElementById("siteHeader");
-  const footerMount = document.getElementById("siteFooter");
-  if (!headerMount || !footerMount) return;
-
-  const current = (location.pathname.split("/").pop() || "index.html").toLowerCase();
-
-  const links = [
-    { href: "about.html", label: "About" },
-    { href: "services.html", label: "Services" },
-    { href: "whyus.html", label: "Why us" },
-    { href: "pricing.html", label: "Pricing" },
-    { href: "faq.html", label: "FAQ" },
-    { href: "gallery.html", label: "Gallery" },
-    { href: "booking.html", label: "Booking" },
-    { href: "partners-drivers.html", label: "Partners Drivers" },
-    { href: "commercial-partners.html", label: "Commercial Partners" },
-    { href: "contact.html", label: "Contact" },
+  const MENU = [
+    { label: "About", href: "/about.html" },
+    { label: "Services", href: "/services.html" },
+    { label: "Why us", href: "/choose.html" },
+    { label: "Pricing", href: "/pricing.html" },
+    { label: "FAQ", href: "/faq.html" },
+    { label: "Gallery", href: "/gallery.html" },
+    { label: "Booking", href: "/booking.html" },
+    { label: "Partners Drivers", href: "/partners-drivers.html" },
+    { label: "Commercial Partners", href: "/commercial-partners.html" },
+    { label: "Contactos", href: "/contactos.html" },
   ];
 
-  const topNavHtml = links
-    .map((l) => {
-      const isActive = current === l.href.toLowerCase();
-      return `<a class="topnav-link${isActive ? " is-active" : ""}" href="${l.href}">${l.label}</a>`;
-    })
+  // Desktop: show first N items, rest goes into "More"
+  const DESKTOP_VISIBLE_COUNT = 7; // About..Booking visible, rest in More
+
+  const INSTAGRAM_URL = "https://www.instagram.com/exploreportugal2025?igsh=dWlpa2hhYmIwYzho";
+  const WHATSAPP_URL = "https://wa.me/"; // mete o número quando quiseres
+
+  const STAR_SRC = "/assets/icons/apple-touch-icon.png";
+  const LOGO_SRC = "/assets/images/logo-explore-portugal-experience.png";
+
+  const path = (location.pathname || "/").toLowerCase();
+  const isHome = (path === "/" || path.endsWith("/index.html"));
+
+  function isActive(href) {
+    const h = href.toLowerCase();
+    if (h === "/index.html" || h === "/") return path === "/" || path.endsWith("/index.html");
+    return path.endsWith(h);
+  }
+
+  const primary = MENU.slice(0, DESKTOP_VISIBLE_COUNT);
+  const overflow = MENU.slice(DESKTOP_VISIBLE_COUNT);
+
+  const primaryLinksHTML = primary
+    .map(
+      (item) =>
+        `<li class="nav-item"><a class="nav-link ${isActive(item.href) ? "active" : ""}" href="${item.href}">${item.label}</a></li>`
+    )
     .join("");
 
-  const drawerLinksHtml = links
-    .map((l) => {
-      const isActive = current === l.href.toLowerCase();
-      return `<a class="${isActive ? "is-active" : ""}" href="${l.href}">${l.label}</a>`;
-    })
+  const overflowLinksHTML = overflow
+    .map(
+      (item) =>
+        `<li><a class="nav-dd-link ${isActive(item.href) ? "active" : ""}" href="${item.href}">${item.label}</a></li>`
+    )
     .join("");
 
-  // NOTE: NO Google Translate widget here (it breaks layout).
-  // Language selector is just UI for now (stable). We can later map to /pt/, /en/, etc.
-  const headerHtml = `
-<header class="site-header" role="banner">
-  <div class="container">
-    <div class="header-row">
-
-      <a class="brand" href="index.html" aria-label="Explore Portugal Experience home">
-        <span class="brand-badge" aria-hidden="true">
-          <img class="brand-compass" src="assets/icons/compass-gold.png" alt="">
-        </span>
-        <span class="brand-text">EXPLORE PORTUGAL EXPERIENCE</span>
-      </a>
-
-      <div class="header-spacer"></div>
-
-      <div class="lang-wrap" aria-label="Language selector">
-        <span class="lang-label">LANGUAGE</span>
-        <select class="lang-select" id="langSelect">
-          <option value="en" selected>English</option>
-          <option value="pt">Português</option>
-          <option value="es">Español</option>
-          <option value="fr">Français</option>
-          <option value="de">Deutsch</option>
-          <option value="it">Italiano</option>
-        </select>
-      </div>
-
-      <nav class="topnav" aria-label="Primary">
-        ${topNavHtml}
-      </nav>
-
-      <button class="burger" id="burgerBtn" type="button" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
-        <span></span><span></span><span></span>
+  const moreHTML =
+    overflow.length > 0
+      ? `
+    <li class="nav-item nav-more" data-navmore>
+      <button class="nav-more-btn" type="button" aria-haspopup="true" aria-expanded="false">
+        More <span class="nav-more-caret" aria-hidden="true">▾</span>
       </button>
-
-    </div>
-  </div>
-</header>
-
-<div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
-
-<aside class="drawer" id="drawer" aria-label="Menu">
-  <div class="drawer-head">
-    <div class="drawer-title">Menu</div>
-    <button class="drawer-close" id="drawerClose" type="button" aria-label="Close menu">✕</button>
-  </div>
-  <div class="drawer-body">
-    <div class="drawer-section">
-      <div class="drawer-mini-title">Language</div>
-      <div class="drawer-lang">
-        <select class="lang-select" id="langSelectDrawer">
-          <option value="en" selected>English</option>
-          <option value="pt">Português</option>
-          <option value="es">Español</option>
-          <option value="fr">Français</option>
-          <option value="de">Deutsch</option>
-          <option value="it">Italiano</option>
-        </select>
+      <div class="nav-dd" role="menu" aria-label="More">
+        <ul class="nav-dd-list">
+          ${overflowLinksHTML}
+        </ul>
       </div>
-    </div>
+    </li>
+  `
+      : "";
 
-    <div class="drawer-links" aria-label="Menu links">
-      ${drawerLinksHtml}
-    </div>
-  </div>
-</aside>
-`;
-
-  const footerHtml = `
-<footer class="site-footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-title">Explore Portugal Experience</div>
-        <p class="footer-text">
-          Premium private tours & transfers in Portugal — professional drivers, comfort and discretion.
-        </p>
+  const brandMini = isHome
+    ? ""
+    : `
+      <div class="page-brand">
+        <img src="${LOGO_SRC}" alt="Explore Portugal Experience">
       </div>
+    `;
 
-      <div>
-        <div class="footer-title">Contact</div>
-        <p class="footer-text">
-          WhatsApp: <a href="https://wa.me/351000000000" target="_blank" rel="noopener">+351 000 000 000</a><br>
-          Email: <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
-        </p>
+  const headerHTML = `
+    <header class="site-header">
+      <nav class="site-nav">
+        <a class="nav-brand" href="/index.html" aria-label="Explore Portugal Experience home">
+          <span class="nav-star" aria-hidden="true">
+            <img src="${STAR_SRC}" alt="">
+          </span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span aria-hidden="true">☰</span>
+        </button>
+
+        <ul class="nav-links" data-navlinks>
+          ${primaryLinksHTML}
+          ${moreHTML}
+        </ul>
+      </nav>
+      ${brandMini}
+    </header>
+  `;
+
+  const footerHTML = `
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="footer-left">
+          <div class="footer-line">© 2018 Explore Portugal Experience — Tourism in Portugal</div>
+          <div class="footer-line muted">Powered by: MkDesign | London</div>
+        </div>
+
+        <div class="footer-right">
+          <div class="footer-links">
+            <a href="/contactos.html">Contact</a>
+            <span class="dot">•</span>
+            <a href="${INSTAGRAM_URL}" target="_blank" rel="noopener">Instagram</a>
+            <span class="dot">•</span>
+            <a href="${WHATSAPP_URL}" target="_blank" rel="noopener">WhatsApp</a>
+            <span class="dot">•</span>
+            <a href="#top" class="back-top">Back to top ↑</a>
+          </div>
+        </div>
       </div>
+    </footer>
+  `;
 
-      <div>
-        <div class="footer-title">Links</div>
-        <p class="footer-text">
-          <a href="booking.html">Booking</a><br>
-          <a href="pricing.html">Pricing</a><br>
-          <a href="faq.html">FAQ</a>
-        </p>
-      </div>
-    </div>
+  // Support both ID styles
+  const headerSlot = document.getElementById("siteHeader") || document.getElementById("site-header");
+  const footerSlot = document.getElementById("siteFooter") || document.getElementById("site-footer");
 
-    <div class="footer-bottom">
-      <div>© ${new Date().getFullYear()} Explore Portugal Experience</div>
-      <div class="mkdesign">Made with <span>care</span></div>
-    </div>
-  </div>
-</footer>
-`;
+  if (headerSlot) headerSlot.innerHTML = headerHTML;
+  if (footerSlot) footerSlot.innerHTML = footerHTML;
 
-  headerMount.innerHTML = headerHtml;
-  footerMount.innerHTML = footerHtml;
+  // Mobile toggle (panel with internal scroll)
+  const toggle = document.querySelector(".nav-toggle");
+  const links = document.querySelector("[data-navlinks]");
+  if (toggle && links) {
+    toggle.addEventListener("click", () => {
+      const open = links.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      document.documentElement.classList.toggle("no-scroll", open);
+    });
 
-  // -------- burger drawer behavior --------
-  const html = document.documentElement;
-  const burgerBtn = document.getElementById("burgerBtn");
-  const drawer = document.getElementById("drawer");
-  const backdrop = document.getElementById("drawerBackdrop");
-  const closeBtn = document.getElementById("drawerClose");
-
-  function openDrawer() {
-    drawer.classList.add("open");
-    backdrop.classList.add("open");
-    burgerBtn?.setAttribute("aria-expanded", "true");
-    html.classList.add("no-scroll");
+    links.addEventListener("click", (e) => {
+      const a = e.target.closest("a");
+      if (!a) return;
+      links.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+      document.documentElement.classList.remove("no-scroll");
+    });
   }
 
-  function closeDrawer() {
-    drawer.classList.remove("open");
-    backdrop.classList.remove("open");
-    burgerBtn?.setAttribute("aria-expanded", "false");
-    html.classList.remove("no-scroll");
+  // Desktop More dropdown behaviour
+  const more = document.querySelector("[data-navmore]");
+  if (more) {
+    const btn = more.querySelector(".nav-more-btn");
+    const dd = more.querySelector(".nav-dd");
+
+    function closeMore() {
+      more.classList.remove("open");
+      if (btn) btn.setAttribute("aria-expanded", "false");
+    }
+
+    function toggleMore() {
+      const open = more.classList.toggle("open");
+      if (btn) btn.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+
+    if (btn) {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMore();
+      });
+    }
+
+    // Close on outside click
+    document.addEventListener("click", (e) => {
+      if (!more.contains(e.target)) closeMore();
+    });
+
+    // Close on ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMore();
+    });
+
+    // If a dropdown link clicked, close
+    if (dd) {
+      dd.addEventListener("click", (e) => {
+        const a = e.target.closest("a");
+        if (!a) return;
+        closeMore();
+      });
+    }
   }
 
-  burgerBtn?.addEventListener("click", openDrawer);
-  closeBtn?.addEventListener("click", closeDrawer);
-  backdrop?.addEventListener("click", closeDrawer);
-
-  // close on ESC
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeDrawer();
+  // Back to top
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a.back-top");
+    if (!a) return;
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
-
-  // close when clicking a link inside drawer
-  drawer?.addEventListener("click", (e) => {
-    const a = e.target.closest("a");
-    if (a) closeDrawer();
-  });
-
-  // -------- language selector (UI only for now) --------
-  const langTop = document.getElementById("langSelect");
-  const langDrawer = document.getElementById("langSelectDrawer");
-
-  function syncLang(value) {
-    if (langTop) langTop.value = value;
-    if (langDrawer) langDrawer.value = value;
-  }
-
-  function onLangChange(e) {
-    const v = e.target.value;
-    syncLang(v);
-
-    // For now: keep site stable; no translate widget.
-    // Later we map these to real translated pages:
-    // e.g., /pt/index.html, /en/index.html, etc.
-    try { localStorage.setItem("epe_lang", v); } catch (_) {}
-  }
-
-  langTop?.addEventListener("change", onLangChange);
-  langDrawer?.addEventListener("change", onLangChange);
-
-  // Restore saved language selection
-  try {
-    const saved = localStorage.getItem("epe_lang");
-    if (saved) syncLang(saved);
-  } catch (_) {}
 })();
