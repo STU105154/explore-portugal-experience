@@ -1,108 +1,318 @@
 <!DOCTYPE html>
-<html lang="en" translate="no">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pricing — Explore Portugal Experience</title>
-  <meta name="description" content="Indicative prices for transfers and private tours in Portugal." />
+  <title>Pricing · Explore Portugal Experience</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-  <link rel="icon" type="image/png" href="assets/icons/compass-gold-64.png" />
-  <link rel="stylesheet" href="assets/css/style.css?v=200" />
+  <meta name="description" content="Indicative prices for private transfers and tours in Portugal with Explore Portugal Experience. Final quote confirmed after route details." />
+  <link rel="canonical" href="https://www.exploreportugalexperience.com/pricing.html" />
 
-  <!-- Google Translate -->
+  <link rel="stylesheet" href="assets/css/style.css?v=1000" />
+  <link rel="icon" type="image/png" href="assets/icons/apple-touch-icon.png" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
   <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        { pageLanguage: 'en', autoDisplay: false },
-        'google_translate_element'
-      );
-    }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-Y30ME05MQY");
   </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 
-<body class="page">
+<body>
+  <!-- ✅ Anchor for Back to top -->
+  <div id="top"></div>
 
-  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
-    <div class="cookie-inner">
-      <p class="cookie-text">We use cookies to improve your experience and measure traffic.</p>
-      <div class="cookie-actions">
-        <button class="btn btn-ghost" id="cookieDecline" type="button">Decline</button>
-        <button class="btn btn-gold" id="cookieAccept" type="button">Accept</button>
-      </div>
-    </div>
-  </div>
+  <!-- Header injected by nav.js -->
+  <div id="siteHeader"></div>
 
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <div class="lang notranslate" translate="no">
-        <span class="lang-label">Language</span>
-        <div class="lang-select">
-          <div id="google_translate_element"></div>
-          <span class="lang-chevron" aria-hidden="true">▾</span>
-        </div>
-      </div>
-    </div>
-  </div>
+  <main class="page">
+    <!-- HERO -->
+    <section class="section">
+      <div class="wrap">
+        <div class="panel">
+          <h1 class="h1">Indicative pricing</h1>
+          <p class="p">
+            Prices vary by distance, total duration, season and number of guests. We confirm the final quote
+            after we receive your route details — always in writing, with no surprises.
+          </p>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="home-star" aria-label="Home">
-        <img src="assets/icons/compass-gold-solid.svg" class="star-animated" alt="Home" />
-      </a>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav class="nav" id="mainNav" aria-label="Main navigation">
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a class="active" href="pricing.html">Pricing</a>
-        <a href="faq.html">FAQ</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contactos.html">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="section section-dark">
-      <div class="container narrow">
-        <h1 class="h1">Indicative prices</h1>
-        <p class="muted">
-          Prices vary by distance, duration, season and number of guests. Final quote confirmed after details.
-        </p>
-
-        <div class="card">
-          <ul class="price-list">
-            <li><strong>Airport transfer:</strong> from €60</li>
-            <li><strong>Private tour (Half day):</strong> from €220</li>
-            <li><strong>Private tour (Full day):</strong> from €380</li>
-            <li><strong>Custom programme:</strong> on request</li>
-          </ul>
-
-          <div class="price-note">
-            Need a quick quote? WhatsApp: <strong>+351 910 784 548</strong> · Mobile: <strong>+351 962 516 005</strong>
+          <div class="actions" style="justify-content:flex-start; margin-top:14px;">
+            <a class="btn btn-gold" href="booking.html">Request a quote</a>
+            <a class="btn btn-ghost" href="https://wa.me/351910784548" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-ghost" href="contactos.html">Contact</a>
           </div>
         </div>
       </div>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <p>© 2018–2025 Explore Portugal Experience</p>
-        <p class="muted small">Turismo em Portugal</p>
+    <!-- Page-only styles (VIP + minimal) -->
+    <style>
+      .price-grid{
+        display:grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 12px;
+        align-items:start;
+      }
+      @media (max-width: 920px){
+        .price-grid{ grid-template-columns: 1fr; }
+      }
+
+      .price-list{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display:grid;
+        gap: 10px;
+      }
+
+      .price-item{
+        border-radius: 18px;
+        border: 1px solid rgba(212,169,86,0.18);
+        background: rgba(255,255,255,0.03);
+        padding: 14px;
+      }
+
+      .price-top{
+        display:flex;
+        align-items:flex-start;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .price-name{
+        margin: 0;
+        font-size: 14px;
+        font-weight: 650;
+        color: rgba(243,240,233,0.92);
+        letter-spacing: 0.2px;
+      }
+      .price-desc{
+        margin: 6px 0 0;
+        color: rgba(243,240,233,0.70);
+        font-size: 13.6px;
+        line-height: 1.55;
+        max-width: 70ch;
+      }
+
+      .price-tag{
+        flex: 0 0 auto;
+        padding: 7px 10px;
+        border-radius: 999px;
+        background: rgba(212,169,86,0.12);
+        border: 1px solid rgba(212,169,86,0.20);
+        color: rgba(243,240,233,0.92);
+        font-size: 12.6px;
+        font-weight: 650;
+        white-space: nowrap;
+      }
+
+      .fine{
+        color: rgba(243,240,233,0.65);
+        font-size: 13.2px;
+        line-height: 1.6;
+      }
+
+      .kpi{
+        display:grid;
+        gap: 10px;
+      }
+      .kpi .card{
+        padding: 16px;
+      }
+      .kpi-line{
+        display:flex;
+        align-items:center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(212,169,86,0.14);
+      }
+      .kpi-line:last-child{ border-bottom: none; }
+      .kpi-label{
+        color: rgba(243,240,233,0.72);
+        font-size: 13.4px;
+      }
+      .kpi-value{
+        color: rgba(243,240,233,0.92);
+        font-weight: 650;
+        font-size: 13.4px;
+      }
+
+      .mini-actions{
+        display:flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 12px;
+      }
+      .mini-actions .btn{ width: auto; }
+
+      .divider{
+        height: 1px;
+        background: rgba(212,169,86,0.16);
+        margin: 10px 0;
+      }
+    </style>
+
+    <!-- MAIN CONTENT -->
+    <section class="section">
+      <div class="wrap">
+        <div class="price-grid">
+          <!-- LEFT: price blocks -->
+          <article class="card">
+            <h2 class="h2">Typical services</h2>
+            <p class="p">
+              These are indicative “from” prices. Every quote is confirmed after details (pick-up, drop-off, timing, luggage, special requests).
+            </p>
+
+            <ul class="price-list">
+              <li class="price-item">
+                <div class="price-top">
+                  <div>
+                    <p class="price-name">Airport transfer</p>
+                    <p class="price-desc">Pick-up or drop-off with clear meeting point and calm coordination.</p>
+                  </div>
+                  <div class="price-tag">from €60</div>
+                </div>
+              </li>
+
+              <li class="price-item">
+                <div class="price-top">
+                  <div>
+                    <p class="price-name">Private tour · Half day</p>
+                    <p class="price-desc">A focused route with premium pacing and flexibility.</p>
+                  </div>
+                  <div class="price-tag">from €220</div>
+                </div>
+              </li>
+
+              <li class="price-item">
+                <div class="price-top">
+                  <div>
+                    <p class="price-name">Private tour · Full day</p>
+                    <p class="price-desc">Full-day service with realistic timing and optional stops.</p>
+                  </div>
+                  <div class="price-tag">from €380</div>
+                </div>
+              </li>
+
+              <li class="price-item">
+                <div class="price-top">
+                  <div>
+                    <p class="price-name">Custom programme</p>
+                    <p class="price-desc">Multi-day routes, special requests, events, corporate schedules — tailored.</p>
+                  </div>
+                  <div class="price-tag">on request</div>
+                </div>
+              </li>
+            </ul>
+
+            <div class="divider"></div>
+
+            <p class="fine" style="margin:0;">
+              Final pricing depends on distance, service duration, seasonality and number of guests.
+              If something changes, we discuss it before the service — no last-minute extras.
+            </p>
+          </article>
+
+          <!-- RIGHT: contact / quick quote -->
+          <aside class="kpi">
+            <div class="card">
+              <h2 class="h2" style="margin-bottom:6px;">Quick quote</h2>
+              <p class="p">Fastest response via WhatsApp. You can also email — we reply quickly.</p>
+
+              <div class="kpi-line">
+                <div class="kpi-label">WhatsApp</div>
+                <div class="kpi-value">
+                  <a href="https://wa.me/351910784548" target="_blank" rel="noopener">+351 910 784 548</a>
+                </div>
+              </div>
+
+              <div class="kpi-line">
+                <div class="kpi-label">Mobile</div>
+                <div class="kpi-value">
+                  <a href="tel:+351962516005">+351 962 516 005</a>
+                </div>
+              </div>
+
+              <div class="kpi-line">
+                <div class="kpi-label">Email</div>
+                <div class="kpi-value">
+                  <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
+                </div>
+              </div>
+
+              <div class="mini-actions">
+                <a class="btn btn-gold" href="booking.html">Booking form</a>
+                <a class="btn btn-ghost" href="choose.html">Why us</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <h2 class="h2" style="margin-bottom:6px;">What to send (copy/paste)</h2>
+              <p class="fine" style="margin:0;">
+                • Date + approximate time<br>
+                • Pick-up + drop-off locations<br>
+                • Number of guests + luggage<br>
+                • Any special needs (child seat, stops, etc.)
+              </p>
+            </div>
+          </aside>
+        </div>
       </div>
-      <div class="footer-right">
-        <p class="powered-by">Powered by <span>MkDesign</span></p>
+    </section>
+
+    <!-- Cookie banner -->
+    <div class="cookie-bar" id="cookieBar" aria-live="polite" aria-label="Cookie banner">
+      <div class="cookie-inner">
+        <div class="cookie-text">
+          We use cookies to improve your experience. Read our <a href="privacy.html">Privacy Policy</a>.
+        </div>
+        <div class="cookie-actions">
+          <button class="cookie-btn" type="button" id="cookieDecline">Close</button>
+          <button class="cookie-btn btn-gold" type="button" id="cookieAccept">Accept</button>
+        </div>
       </div>
     </div>
-  </footer>
+  </main>
 
-  <script src="assets/js/cookies.js"></script>
-  <script src="assets/js/main.js"></script>
+  <!-- Footer injected by nav.js -->
+  <div id="siteFooter"></div>
+
+  <script src="assets/js/nav.js?v=1000"></script>
+
+  <script>
+    // Cookie banner (simple + clickable + persistent)
+    (function () {
+      const bar = document.getElementById('cookieBar');
+      const btnAccept = document.getElementById('cookieAccept');
+      const btnDecline = document.getElementById('cookieDecline');
+      if (!bar || !btnAccept || !btnDecline) return;
+
+      const KEY = 'epe_cookie_consent_v1';
+
+      function hide(){ bar.classList.remove('show'); }
+      function show(){ bar.classList.add('show'); }
+
+      try{
+        const saved = localStorage.getItem(KEY);
+        if (!saved) show();
+      }catch(e){
+        show();
+      }
+
+      btnAccept.addEventListener('click', function(){
+        try{ localStorage.setItem(KEY, 'accepted'); }catch(e){}
+        hide();
+      });
+
+      btnDecline.addEventListener('click', function(){
+        try{ localStorage.setItem(KEY, 'closed'); }catch(e){}
+        hide();
+      });
+    })();
+  </script>
 </body>
 </html>
