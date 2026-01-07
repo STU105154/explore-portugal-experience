@@ -1,147 +1,104 @@
 /* =========================================================
    Explore Portugal Experience - NAV inject (Header + Footer)
-   File: assets/js/nav.js
+   Menu final:
+   About, Services, Why us, Pricing, FAQ, Gallery, Booking,
+   Partners Drivers, Commercial Partners, Contactos
 ========================================================= */
 
 (function () {
-  const PRIMARY = [
-    { href: "index.html", label: "Home" },
-    { href: "about.html", label: "About" },
-    { href: "services.html", label: "Services" },
-    { href: "pricing.html", label: "Pricing" },
-    { href: "booking.html", label: "Booking" },
-    { href: "contactos.html", label: "Contact" }
+  const MENU = [
+    { label: "About", href: "/about.html" },
+    { label: "Services", href: "/services.html" },
+    { label: "Why us", href: "/choose.html" },
+    { label: "Pricing", href: "/pricing.html" },
+    { label: "FAQ", href: "/faq.html" },
+    { label: "Gallery", href: "/gallery.html" },
+    { label: "Booking", href: "/booking.html" },
+    { label: "Partners Drivers", href: "/partners-drivers.html" },
+    { label: "Commercial Partners", href: "/commercial-partners.html" },
+    { label: "Contactos", href: "/contactos.html" },
   ];
 
-  // Less important links go inside "More"
-  const MORE = [
-    { href: "choose.html", label: "Why us" },
-    { href: "faq.html", label: "FAQ" },
-    { href: "gallery.html", label: "Gallery" },
-    { href: "partners-drivers.html", label: "Partners Drivers" },
-    { href: "commercial-partners.html", label: "Commercial Partners" }
-  ];
+  const path = (location.pathname || "/").toLowerCase();
 
-  const INSTAGRAM_URL = "https://www.instagram.com/exploreportugal2025?igsh=dWlpa2hhYmIwYzho";
-  const WHATSAPP_URL = "https://wa.me/351962516005";
-
-  const currentPath = (location.pathname.split("/").pop() || "index.html").toLowerCase();
-
-  function linkItem(item) {
-    const isActive = currentPath === item.href.toLowerCase();
-    return `<li class="nav-item">
-      <a class="nav-link ${isActive ? "is-active" : ""}" href="${item.href}">${item.label}</a>
-    </li>`;
-  }
-
-  function moreItem(item) {
-    const isActive = currentPath === item.href.toLowerCase();
-    return `<li>
-      <a class="nav-more-link ${isActive ? "is-active" : ""}" href="${item.href}">${item.label}</a>
-    </li>`;
+  function isActive(href) {
+    const h = href.toLowerCase();
+    if (h === "/index.html" || h === "/") return path === "/" || path.endsWith("/index.html");
+    return path.endsWith(h);
   }
 
   const headerHTML = `
-  <header id="top" class="site-header notranslate" data-nosnippet>
-    <div class="container header-inner">
+    <header class="site-header">
+      <nav class="site-nav">
+        <a class="nav-brand" href="/index.html" aria-label="Explore Portugal Experience home">
+          <span class="nav-star" aria-hidden="true">
+            <img src="/apple-touch-icon.png" alt="">
+          </span>
+        </a>
 
-      <!-- Brand: star only (premium, small) -->
-      <a class="brand" href="index.html" aria-label="Explore Portugal Experience - Home">
-        <span class="brand-star-wrap" aria-hidden="true">
-          <img class="brand-star" src="assets/icons/apple-touch-icon.png" alt="" />
-        </span>
-      </a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span aria-hidden="true">☰</span>
+        </button>
 
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
-        <span class="nav-toggle-lines" aria-hidden="true"></span>
-      </button>
-
-      <nav class="nav" aria-label="Main navigation">
-        <ul class="nav-list">
-          ${PRIMARY.map(linkItem).join("")}
-
-          <li class="nav-item nav-more">
-            <details class="nav-more-details">
-              <summary class="nav-link nav-more-summary">More <span class="nav-caret">▾</span></summary>
-              <ul class="nav-more-menu">
-                ${MORE.map(moreItem).join("")}
-              </ul>
-            </details>
-          </li>
+        <ul class="nav-links">
+          ${MENU.map(item => `
+            <li><a class="nav-link ${isActive(item.href) ? "active" : ""}" href="${item.href}">${item.label}</a></li>
+          `).join("")}
         </ul>
       </nav>
-
-    </div>
-  </header>
+    </header>
   `;
 
   const footerHTML = `
-  <footer class="site-footer notranslate" data-nosnippet>
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <div>© 2018 Explore Portugal Experience — Tourism in Portugal</div>
-        <div class="mk">Powered by: MkDesign | London</div>
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="footer-line">
+          © 2018 Explore Portugal Experience — Tourism in Portugal
+        </div>
+        <div class="footer-line muted">
+          Powered by: MkDesign | London
+        </div>
+        <div class="footer-links">
+          <a href="/contactos.html">Contact</a>
+          <span class="dot">•</span>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+          <span class="dot">•</span>
+          <a href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
+          <span class="dot">•</span>
+          <a href="#top" class="back-top">Back to top ↑</a>
+        </div>
       </div>
-
-      <div class="footer-right">
-        <a class="footer-link" href="contactos.html">Contact</a>
-        <span class="footer-dot">•</span>
-        <a class="footer-link" href="${INSTAGRAM_URL}" target="_blank" rel="noopener">Instagram</a>
-        <span class="footer-dot">•</span>
-        <a class="footer-link" href="${WHATSAPP_URL}" target="_blank" rel="noopener">WhatsApp</a>
-        <span class="footer-dot">•</span>
-        <a class="footer-link footer-top" href="#top">Back to top ↑</a>
-      </div>
-    </div>
-  </footer>
+    </footer>
   `;
 
-  function inject() {
-    const h = document.getElementById("siteHeader");
-    const f = document.getElementById("siteFooter");
+  const headerSlot = document.getElementById("site-header");
+  const footerSlot = document.getElementById("site-footer");
+  if (headerSlot) headerSlot.innerHTML = headerHTML;
+  if (footerSlot) footerSlot.innerHTML = footerHTML;
 
-    if (h) h.outerHTML = headerHTML.trim();
-    else if (!document.querySelector(".site-header")) document.body.insertAdjacentHTML("afterbegin", headerHTML.trim());
-
-    if (f) f.outerHTML = footerHTML.trim();
-    else if (!document.querySelector(".site-footer")) document.body.insertAdjacentHTML("beforeend", footerHTML.trim());
-
-    bindNav();
-    bindSmoothTop();
-    bindCloseMoreOnOutsideClick();
-  }
-
-  function bindNav() {
-    const toggle = document.querySelector(".nav-toggle");
-    if (!toggle) return;
-
+  // Mobile toggle
+  const toggle = document.querySelector(".nav-toggle");
+  const links = document.querySelector(".nav-links");
+  if (toggle && links) {
     toggle.addEventListener("click", () => {
-      const isOpen = document.documentElement.classList.toggle("nav-open");
-      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      const open = links.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
-  }
 
-  function bindSmoothTop() {
-    document.addEventListener("click", (e) => {
-      const a = e.target.closest('a[href="#top"]');
+    // Close on link click (mobile)
+    links.addEventListener("click", (e) => {
+      const a = e.target.closest("a");
       if (!a) return;
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      links.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
     });
   }
 
-  function bindCloseMoreOnOutsideClick(){
-    document.addEventListener("click", (e) => {
-      const details = document.querySelector(".nav-more-details");
-      if (!details || !details.open) return;
-      if (e.target.closest(".nav-more-details")) return;
-      details.open = false;
-    });
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", inject);
-  } else {
-    inject();
-  }
+  // Back to top
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a.back-top");
+    if (!a) return;
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 })();
