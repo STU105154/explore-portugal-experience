@@ -27,91 +27,80 @@
           Premium private tours & transfers in Portugal — discreet, tailored, VIP.
         </p>
 
-        <div class="hero-panel" role="region" aria-label="Quick booking">
+        <div class="panel" role="region" aria-label="Quick booking">
           <div class="grid-3">
 
-            <!-- SERVICE -->
             <div class="field">
               <label class="label" for="cs-service-btn">Service</label>
               <div class="cselect" data-name="service">
                 <button id="cs-service-btn" type="button" class="cselect-btn" aria-haspopup="listbox" aria-expanded="false">
-                  <span class="cselect-value" data-placeholder="Choose a service">Choose a service</span>
+                  <span class="cselect-value">Choose a service</span>
                   <span class="cselect-chevron" aria-hidden="true">▾</span>
                 </button>
-
-                <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="Service options">
+                <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="Service">
                   <li class="cselect-option" role="option" tabindex="0" data-value="airport-transfer">Airport Transfer</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="private-tour">Private Tour</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="city-transfer">City Transfer</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="chauffeur">Chauffeur (Hourly)</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="europe-transfer">Europe Transfers</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="private-tour">Private Tour</li>
                 </ul>
-
                 <input type="hidden" name="service" value="">
               </div>
             </div>
 
-            <!-- FROM (Portugal + Europe back) -->
             <div class="field">
               <label class="label" for="cs-from-btn">From</label>
               <div class="cselect" data-name="from">
                 <button id="cs-from-btn" type="button" class="cselect-btn" aria-haspopup="listbox" aria-expanded="false">
-                  <span class="cselect-value" data-placeholder="Select pickup">Select pickup</span>
+                  <span class="cselect-value">Select pickup</span>
                   <span class="cselect-chevron" aria-hidden="true">▾</span>
                 </button>
-
-                <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="Pickup options">
-                  <!-- Portugal -->
+                <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="From">
+                  <li class="cselect-sep" role="presentation">Portugal</li>
                   <li class="cselect-option" role="option" tabindex="0" data-value="lisbon">Lisbon</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="porto">Porto</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="cascais">Cascais</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="sintra">Sintra</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="algarve">Algarve</li>
 
-                  <!-- Europe (back) -->
+                  <li class="cselect-sep" role="presentation">Europe</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="london">London</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="paris">Paris</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="madrid">Madrid</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="barcelona">Barcelona</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="rome">Rome</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="amsterdam">Amsterdam</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="berlin">Berlin</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="geneva">Geneva</li>
                 </ul>
-
                 <input type="hidden" name="from" value="">
               </div>
             </div>
 
-            <!-- TO -->
             <div class="field">
               <label class="label" for="cs-to-btn">To</label>
               <div class="cselect" data-name="to">
                 <button id="cs-to-btn" type="button" class="cselect-btn" aria-haspopup="listbox" aria-expanded="false">
-                  <span class="cselect-value" data-placeholder="Select destination">Select destination</span>
+                  <span class="cselect-value">Select destination</span>
                   <span class="cselect-chevron" aria-hidden="true">▾</span>
                 </button>
-
-                <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="Destination options">
+                <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="To">
+                  <li class="cselect-sep" role="presentation">Portugal</li>
                   <li class="cselect-option" role="option" tabindex="0" data-value="lisbon">Lisbon</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="porto">Porto</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="cascais">Cascais</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="sintra">Sintra</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="algarve">Algarve</li>
 
+                  <li class="cselect-sep" role="presentation">Europe</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="london">London</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="paris">Paris</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="madrid">Madrid</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="barcelona">Barcelona</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="rome">Rome</li>
                 </ul>
-
                 <input type="hidden" name="to" value="">
               </div>
             </div>
 
           </div>
 
-          <div class="hero-actions">
+          <div class="actions">
             <a class="btn btn-gold" href="/booking.html">Book now</a>
             <a class="btn btn-ghost" href="/choose.html">Why us</a>
           </div>
@@ -127,9 +116,7 @@
     <section class="section">
       <div class="wrap">
         <h2 class="h2">Premium by design</h2>
-        <p class="p">
-          A clean, quiet experience. No clutter, no noise — just Portugal, done properly.
-        </p>
+        <p class="p">A clean, quiet experience. No clutter, no noise — just Portugal, done properly.</p>
       </div>
     </section>
 
