@@ -20,14 +20,13 @@
   const currentPath = (location.pathname.split("/").pop() || "index.html").toLowerCase();
 
   const headerHTML = `
-  <header class="site-header" data-nosnippet>
+  <header class="site-header notranslate" data-nosnippet>
     <div class="container header-inner">
-      <a class="brand notranslate" href="index.html" aria-label="Explore Portugal Experience - Home">
-        <span class="brand-mark" aria-hidden="true">
-          <img class="brand-logo" src="assets/images/logo-explore-portugal-experience.png" alt="" />
-          <img class="brand-star" src="assets/icons/star-full.svg" alt="" />
-        </span>
+
+      <!-- Brand: SEM mini logo -->
+      <a class="brand" href="index.html" aria-label="Explore Portugal Experience - Home">
         <span class="brand-name">Explore Portugal Experience</span>
+        <img class="brand-compass" src="assets/icons/compass-gold-128.png" alt="" aria-hidden="true" />
       </a>
 
       <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
@@ -44,39 +43,44 @@
         </ul>
       </nav>
 
+      <!-- Translate slot (se tiveres widget, fica aqui) -->
       <div class="translate-slot" aria-label="Language selector">
-        <!-- se usares: <div id="google_translate_element"></div> -->
+        <!-- <div id="google_translate_element"></div> -->
       </div>
+
     </div>
   </header>
   `;
 
+  // Footer EXACTO como pediste
   const footerHTML = `
-  <footer class="site-footer" data-nosnippet>
-    <div class="container footer-inner">
-      <div class="footer-left notranslate">
-        <p class="footer-title">Explore Portugal Experience</p>
-        <p class="footer-sub">Private tours • Transfers • Tailor-made experiences</p>
-      </div>
-
-      <div class="footer-right">
-        <a class="footer-link" href="privacy.html">Privacy</a>
-        <span class="footer-dot">•</span>
-        <a class="footer-link" href="faq.html">FAQ</a>
-        <span class="footer-dot">•</span>
-        <a class="footer-link" href="contactos.html">Contactos</a>
-      </div>
+  <footer class="site-footer notranslate" data-nosnippet>
+    <div class="container footer-simple">
+      <div>© 2018–2025 Explore Portugal Experience — Turismo em Portugal</div>
+      <div class="mk">Powered by: MkDesign | London</div>
     </div>
   </footer>
   `;
 
   function inject() {
+    // remove mounts antigos se existirem
+    const oldHeaderMount = document.getElementById("siteHeader");
+    const oldFooterMount = document.getElementById("siteFooter");
+    if (oldHeaderMount) oldHeaderMount.remove();
+    if (oldFooterMount) oldFooterMount.remove();
+
+    // remove footer hardcoded antigo se existir (para evitar duplicados)
+    const existingPlainFooter = document.querySelector("body > footer:not(.site-footer)");
+    if (existingPlainFooter) existingPlainFooter.remove();
+
+    // inject header/footer (se ainda não existirem)
     if (!document.querySelector(".site-header")) {
       document.body.insertAdjacentHTML("afterbegin", headerHTML.trim());
     }
     if (!document.querySelector(".site-footer")) {
       document.body.insertAdjacentHTML("beforeend", footerHTML.trim());
     }
+
     bindNav();
   }
 
