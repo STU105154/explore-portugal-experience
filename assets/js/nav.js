@@ -23,16 +23,15 @@
   const currentPath = (location.pathname.split("/").pop() || "index.html").toLowerCase();
 
   const headerHTML = `
-  <header class="site-header notranslate" data-nosnippet>
+  <header id="top" class="site-header notranslate" data-nosnippet>
     <div class="container header-inner">
+
+      <!-- Brand: logo only (no text) -->
       <a class="brand" href="index.html" aria-label="Explore Portugal Experience - Home">
-        <span class="brand-star-wrap" aria-hidden="true">
-          <img class="brand-star" src="assets/icons/apple-touch-icon.png" alt="" />
-        </span>
-        <span class="brand-name">Explore Portugal Experience</span>
+        <img class="brand-logo" src="assets/icons/compass-gold-64.png" alt="Explore Portugal Experience" />
       </a>
 
-      <button class="nav-toggle" type="button" aria-label="Open menu">
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
         <span class="nav-toggle-lines" aria-hidden="true"></span>
       </button>
 
@@ -40,10 +39,11 @@
         <ul class="nav-list">
           <li><a class="nav-link ${currentPath === "index.html" ? "is-active" : ""}" href="index.html">Home</a></li>
           ${MENU.map(m =>
-            `<li><a class="nav-link ${currentPath === m.href ? "is-active" : ""}" href="${m.href}">${m.label}</a></li>`
+            `<li><a class="nav-link ${currentPath === m.href.toLowerCase() ? "is-active" : ""}" href="${m.href}">${m.label}</a></li>`
           ).join("")}
         </ul>
       </nav>
+
     </div>
   </header>
   `;
@@ -62,6 +62,8 @@
         <a class="footer-link" href="${INSTAGRAM_URL}" target="_blank" rel="noopener">Instagram</a>
         <span class="footer-dot">•</span>
         <a class="footer-link" href="${WHATSAPP_URL}" target="_blank" rel="noopener">WhatsApp</a>
+        <span class="footer-dot">•</span>
+        <a class="footer-link footer-top" href="#top">Back to top ↑</a>
       </div>
     </div>
   </footer>
@@ -77,16 +79,33 @@
     if (f) f.outerHTML = footerHTML.trim();
     else if (!document.querySelector(".site-footer")) document.body.insertAdjacentHTML("beforeend", footerHTML.trim());
 
-    bind();
+    bindNav();
+    bindSmoothTop();
   }
 
-  function bind() {
-    const btn = document.querySelector(".nav-toggle");
-    if (!btn) return;
-    btn.addEventListener("click", () => document.documentElement.classList.toggle("nav-open"));
+  function bindNav() {
+    const toggle = document.querySelector(".nav-toggle");
+    if (!toggle) return;
+
+    toggle.addEventListener("click", () => {
+      const isOpen = document.documentElement.classList.toggle("nav-open");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
   }
 
-  document.readyState === "loading"
-    ? document.addEventListener("DOMContentLoaded", inject)
-    : inject();
+  function bindSmoothTop() {
+    // Smooth scroll for the "Back to top" link
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest('a[href="#top"]');
+      if (!a) return;
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", inject);
+  } else {
+    inject();
+  }
 })();
