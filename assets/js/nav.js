@@ -4,7 +4,7 @@
   const headerTarget = qs("#siteHeader");
   const footerTarget = qs("#siteFooter");
 
-  // Links iguais em todo o site
+  // Links (IGUAIS em todo o site)
   const links = [
     { href: "about.html", label: "About" },
     { href: "services.html", label: "Services" },
@@ -18,44 +18,36 @@
     { href: "contactos.html", label: "Contact" },
   ];
 
+  // Header HTML (estrela vai para home + sem mini-logo)
   const headerHTML = `
     <header class="site-header" role="banner">
       <div class="container header-row">
-
-        <!-- Star -> HOME -->
-        <a class="brand-badge" href="index.html" aria-label="Home">
-          <img class="brand-compass" src="assets/icons/compass-gold-solid.svg" alt="">
+        <a class="brand" href="index.html" aria-label="Home">
+          <span class="brand-badge" aria-hidden="true">
+            <img class="brand-compass" src="assets/icons/compass-gold-solid.svg" alt="">
+          </span>
+          <span class="brand-text">Explore Portugal Experience</span>
         </a>
-
-        <div class="brand-title" aria-label="Explore Portugal Experience">
-          EXPLORE PORTUGAL EXPERIENCE
-        </div>
 
         <div class="header-spacer"></div>
 
-        <!-- Language selector (always visible) -->
         <div class="lang-wrap" aria-label="Language">
           <span class="lang-label">Language</span>
           <select class="lang-select" id="langSelect" aria-label="Select language">
-            <option value="">Select</option>
+            <option value="pt">Português (original)</option>
             <option value="en">English</option>
-            <option value="pt">Português</option>
             <option value="es">Español</option>
             <option value="fr">Français</option>
             <option value="de">Deutsch</option>
             <option value="it">Italiano</option>
           </select>
-
-          <!-- Google Translate escondido (JS only) -->
           <div id="google_translate_element" class="gt-hidden" aria-hidden="true"></div>
         </div>
 
-        <!-- Desktop nav (only if there is space) -->
         <nav class="topnav" aria-label="Main navigation">
           ${links.map(l => `<a class="topnav-link" href="${l.href}">${l.label}</a>`).join("")}
         </nav>
 
-        <!-- Burger (mobile + small desktop) -->
         <button class="burger" id="burgerBtn" type="button" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -63,14 +55,30 @@
 
       <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
 
-      <nav class="drawer" id="drawer" aria-label="Menu" aria-hidden="true">
+      <nav class="drawer" id="drawer" aria-label="Menu">
         <div class="drawer-head">
           <div class="drawer-title">Menu</div>
           <button class="drawer-close" id="drawerClose" type="button" aria-label="Close menu">✕</button>
         </div>
 
-        <div class="drawer-links">
-          ${links.map(l => `<a href="${l.href}">${l.label}</a>`).join("")}
+        <div class="drawer-body">
+          <div class="drawer-section">
+            <div class="drawer-title" style="margin-bottom:10px;">Language</div>
+            <div class="lang-wrap" style="width:100%;">
+              <select class="lang-select" id="langSelectDrawer" aria-label="Select language (drawer)">
+                <option value="pt">Português (original)</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="it">Italiano</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="drawer-links">
+            ${links.map(l => `<a href="${l.href}">${l.label}</a>`).join("")}
+          </div>
         </div>
       </nav>
     </header>
@@ -102,7 +110,7 @@
       </div>
 
       <div class="container footer-bottom">
-        <div>© 2018–2026 Explore Portugal Experience — Turismo em Portugal</div>
+        <div>© 2018–2025 Explore Portugal Experience — Turismo em Portugal</div>
         <div class="mkdesign">Powered by: <span>MkDesign</span> · London</div>
       </div>
     </footer>
@@ -111,30 +119,26 @@
   if (headerTarget) headerTarget.innerHTML = headerHTML;
   if (footerTarget) footerTarget.innerHTML = footerHTML;
 
-  // Drawer open/close
+  // Drawer open/close (with scroll support)
   const burgerBtn = qs("#burgerBtn");
   const drawer = qs("#drawer");
   const backdrop = qs("#drawerBackdrop");
   const drawerClose = qs("#drawerClose");
 
   function openDrawer() {
-    if (!drawer || !backdrop || !burgerBtn) return;
+    if (!drawer || !backdrop) return;
     drawer.classList.add("open");
     backdrop.classList.add("open");
     document.documentElement.classList.add("no-scroll");
-    burgerBtn.setAttribute("aria-expanded", "true");
-    drawer.setAttribute("aria-hidden", "false");
-    backdrop.setAttribute("aria-hidden", "false");
+    if (burgerBtn) burgerBtn.setAttribute("aria-expanded", "true");
   }
 
   function closeDrawer() {
-    if (!drawer || !backdrop || !burgerBtn) return;
+    if (!drawer || !backdrop) return;
     drawer.classList.remove("open");
     backdrop.classList.remove("open");
     document.documentElement.classList.remove("no-scroll");
-    burgerBtn.setAttribute("aria-expanded", "false");
-    drawer.setAttribute("aria-hidden", "true");
-    backdrop.setAttribute("aria-hidden", "true");
+    if (burgerBtn) burgerBtn.setAttribute("aria-expanded", "false");
   }
 
   if (burgerBtn) burgerBtn.addEventListener("click", openDrawer);
@@ -143,16 +147,15 @@
 
   if (drawer) {
     drawer.addEventListener("click", (e) => {
-      const t = e.target;
-      if (t && t.tagName === "A") closeDrawer();
+      if (e.target && e.target.tagName === "A") closeDrawer();
     });
   }
-
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeDrawer();
   });
 
-  // ---------- Google Translate (clean + reliable) ----------
+  // --- Google Translate (stable) ---
+  // We set googtrans cookie and reload
   function setCookie(name, value, days = 365) {
     const d = new Date();
     d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
@@ -162,15 +165,17 @@
   function applyGoogleTranslateLang(lang) {
     const from = "pt";
     const to = lang || "pt";
+    // Google expects "/from/to"
     setCookie("googtrans", `/${from}/${to}`);
-    try { localStorage.setItem("epe_lang", to); } catch (e) {}
+    try { localStorage.setItem("epe_lang", to); } catch(e) {}
     location.reload();
   }
 
+  // Load GT script once
   window.googleTranslateElementInit = function () {
     try {
       new google.translate.TranslateElement(
-        { pageLanguage: "pt", includedLanguages: "en,pt,es,fr,de,it", autoDisplay: false },
+        { pageLanguage: "pt", includedLanguages: "pt,en,es,fr,de,it", autoDisplay: false },
         "google_translate_element"
       );
     } catch (e) {}
@@ -185,22 +190,33 @@
     document.head.appendChild(s);
   }
 
-  // Language select events
+  // Sync selects (header + drawer)
   const langSelect = qs("#langSelect");
-  if (langSelect) {
-    // restore
-    try {
-      const saved = localStorage.getItem("epe_lang");
-      if (saved) langSelect.value = saved === "pt" ? "" : saved; // pt = default (empty)
-    } catch (e) {}
+  const langSelectDrawer = qs("#langSelectDrawer");
 
-    langSelect.addEventListener("change", () => {
-      const v = (langSelect.value || "").trim();
-      if (!v) {
-        applyGoogleTranslateLang("pt");
-      } else {
-        applyGoogleTranslateLang(v);
-      }
-    });
+  function setSelectValue(v){
+    if (langSelect) langSelect.value = v;
+    if (langSelectDrawer) langSelectDrawer.value = v;
+  }
+
+  // Restore saved language
+  let saved = "pt";
+  try {
+    const v = localStorage.getItem("epe_lang");
+    if (v) saved = v;
+  } catch (e) {}
+  setSelectValue(saved);
+
+  function onLangChange(v){
+    const lang = (v || "").trim();
+    if (!lang) return;
+    applyGoogleTranslateLang(lang);
+  }
+
+  if (langSelect) {
+    langSelect.addEventListener("change", () => onLangChange(langSelect.value));
+  }
+  if (langSelectDrawer) {
+    langSelectDrawer.addEventListener("change", () => onLangChange(langSelectDrawer.value));
   }
 })();
