@@ -8,288 +8,212 @@
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="assets/icons/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/style.css?v=1000" />
+
+  <style>
+    .vip-split{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}
+    @media(max-width:980px){.vip-split{grid-template-columns:1fr}}
+    .vip-card{border:1px solid rgba(212,169,86,.28);background:rgba(255,255,255,.04);border-radius:16px;padding:14px}
+    .vip-row{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    .vip-badge{border:1px solid rgba(212,169,86,.22);border-radius:999px;padding:6px 10px;font-size:12px}
+    .vip-estimate{font-size:18px;margin:6px 0}
+    .vip-muted{font-size:12px;opacity:.85;line-height:1.35}
+    .vip-check{display:flex;gap:10px;margin-top:10px}
+    .vip-pay-grid{display:grid;gap:10px;margin-top:10px}
+    .vip-radio{display:flex;gap:10px;padding:10px;border-radius:14px;border:1px solid rgba(255,255,255,.1);cursor:pointer}
+    .vip-radio:hover{border-color:rgba(212,169,86,.35)}
+    .vip-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .vip-hidden{display:none}
+    .vip-ref{font-family:monospace;font-size:12px;padding:6px 10px;border:1px solid rgba(255,255,255,.15);border-radius:12px}
+  </style>
 </head>
 
 <body>
-  <div id="top"></div>
+<div id="siteHeader"></div>
 
-  <!-- ✅ Header injected by nav.js (same as FAQ) -->
-  <div id="siteHeader"></div>
+<main class="page">
+<section class="section">
+<div class="wrap">
+<h1 class="h1">Booking</h1>
+<p class="p">Select your details. If you agree with the estimated VIP range, pay immediately and send the request.</p>
 
-  <main class="page">
-    <section class="section">
-      <div class="wrap">
-        <h1 class="h1">Booking</h1>
-        <p class="p" style="margin-bottom:14px;">
-          Send the details — I reply with a discreet VIP quote and confirmation.
-        </p>
+<div class="panel">
+<div class="vip-split">
 
-        <div class="panel">
-          <form id="bookingForm">
+<form id="bookingForm">
 
-            <div class="grid-3">
-              <div class="field">
-                <label class="label" for="cs-trip-btn">Trip</label>
-                <div class="cselect" data-name="trip">
-                  <button id="cs-trip-btn" type="button" class="cselect-btn" aria-haspopup="listbox" aria-expanded="false">
-                    <span class="cselect-value">Select trip type</span>
-                    <span class="cselect-chevron" aria-hidden="true">▾</span>
-                  </button>
-                  <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="Trip type">
-                    <li class="cselect-option" role="option" tabindex="0" data-value="one-way">One-way</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="return">Return</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="hourly">Hourly Chauffeur</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="tour">Private Tour</li>
-                  </ul>
-                  <input type="hidden" name="trip" value="">
-                </div>
-              </div>
+<!-- ESTIMATE -->
+<div class="vip-card">
+  <div class="vip-row">
+    <span class="vip-badge">Estimated VIP range</span>
+    <span class="vip-badge">Payment required to confirm</span>
+  </div>
+  <div id="estimateLine" class="vip-estimate">€ —</div>
+  <div id="estimateNote" class="vip-muted">Select trip + route to calculate.</div>
+  <div class="vip-check">
+    <input type="checkbox" id="agreeEstimate">
+    <label for="agreeEstimate" class="vip-muted">I agree with this estimated range and will pay now.</label>
+  </div>
+</div>
 
-              <div class="field">
-                <label class="label" for="dateGo">Date</label>
-                <input id="dateGo" class="input" type="date" />
-              </div>
+<div style="height:12px"></div>
 
-              <div class="field">
-                <label class="label" for="timeGo">Time</label>
-                <input id="timeGo" class="input" type="time" />
-              </div>
-            </div>
+<!-- FORM -->
+<div class="grid-3">
+  <div class="field">
+    <label class="label">Trip</label>
+    <div class="cselect" data-name="trip">
+      <button type="button" class="cselect-btn"><span class="cselect-value">Select</span>▾</button>
+      <ul class="cselect-list">
+        <li class="cselect-option" data-value="one-way">One-way</li>
+        <li class="cselect-option" data-value="return">Return</li>
+        <li class="cselect-option" data-value="hourly">Hourly</li>
+        <li class="cselect-option" data-value="tour">Private Tour</li>
+      </ul>
+      <input type="hidden" name="trip">
+    </div>
+  </div>
+  <div class="field"><label class="label">Date</label><input id="dateGo" class="input" type="date"></div>
+  <div class="field"><label class="label">Time</label><input id="timeGo" class="input" type="time"></div>
+</div>
 
-            <div style="height:10px;"></div>
+<div style="height:10px"></div>
 
-            <div class="grid-3">
-              <div class="field">
-                <label class="label" for="cs-from-btn">From (City / Airport)</label>
-                <div class="cselect" data-name="from">
-                  <button id="cs-from-btn" type="button" class="cselect-btn" aria-haspopup="listbox" aria-expanded="false">
-                    <span class="cselect-value">Select pickup</span>
-                    <span class="cselect-chevron" aria-hidden="true">▾</span>
-                  </button>
-                  <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="From options">
+<div class="grid-3">
+  <div class="field"><label class="label">From</label>
+    <div class="cselect" data-name="from">
+      <button type="button" class="cselect-btn"><span class="cselect-value">Select</span>▾</button>
+      <ul class="cselect-list">
+        <li class="cselect-option" data-value="LIS">Lisbon Airport</li>
+        <li class="cselect-option" data-value="pt-lisbon-city">Lisbon City</li>
+        <li class="cselect-option" data-value="pt-cascais">Cascais</li>
+        <li class="cselect-option" data-value="pt-sintra">Sintra</li>
+        <li class="cselect-option" data-value="OPO">Porto Airport</li>
+      </ul>
+      <input type="hidden" name="from">
+    </div>
+  </div>
 
-                    <li class="cselect-sep" role="presentation">Portugal — Cities</li>
-                    <li class="cselect-option" role="option" tabindex="0" data-value="pt-lisbon-city">Lisbon (City)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="pt-porto-city">Porto (City)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="pt-cascais">Cascais</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="pt-sintra">Sintra</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="pt-algarve">Algarve</li>
+  <div class="field"><label class="label">To</label>
+    <div class="cselect" data-name="to">
+      <button type="button" class="cselect-btn"><span class="cselect-value">Select</span>▾</button>
+      <ul class="cselect-list">
+        <li class="cselect-option" data-value="pt-lisbon-city">Lisbon City</li>
+        <li class="cselect-option" data-value="pt-cascais">Cascais</li>
+        <li class="cselect-option" data-value="pt-sintra">Sintra</li>
+        <li class="cselect-option" data-value="LIS">Lisbon Airport</li>
+      </ul>
+      <input type="hidden" name="to">
+    </div>
+  </div>
 
-                    <li class="cselect-sep" role="presentation">Portugal — Airports</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="LIS">Lisbon Airport (LIS)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="OPO">Porto Airport (OPO)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="FAO">Faro Airport (FAO)</li>
+  <div class="field"><label class="label">Passengers</label><input id="passengers" class="input" type="number" min="1" value="1"></div>
+</div>
 
-                    <li class="cselect-sep" role="presentation">United Kingdom — Airports</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="LHR">London Heathrow (LHR)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="LGW">London Gatwick (LGW)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="STN">London Stansted (STN)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="MAN">Manchester (MAN)</li>
+<div style="height:12px"></div>
 
-                    <li class="cselect-sep" role="presentation">France — Airports</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="CDG">Paris Charles de Gaulle (CDG)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="ORY">Paris Orly (ORY)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="NCE">Nice (NCE)</li>
+<div class="vip-card">
+  <h3 class="label">Payment confirmation</h3>
+  <div class="vip-row">
+    <div class="vip-ref" id="refCode">REF: —</div>
+  </div>
 
-                    <li class="cselect-sep" role="presentation">Spain — Airports</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="MAD">Madrid (MAD)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="BCN">Barcelona (BCN)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="AGP">Málaga (AGP)</li>
+  <div class="vip-check">
+    <input type="checkbox" id="paymentDone">
+    <label for="paymentDone" class="vip-muted">I have initiated/completed the payment.</label>
+  </div>
+</div>
 
-                    <li class="cselect-sep" role="presentation">Italy — Airports</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="FCO">Rome Fiumicino (FCO)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="MXP">Milan Malpensa (MXP)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="VCE">Venice (VCE)</li>
+<div class="actions" style="margin-top:14px">
+  <button id="submitBtn" class="btn btn-gold" type="submit" disabled>Pay & send via WhatsApp</button>
+</div>
 
-                    <li class="cselect-sep" role="presentation">Netherlands — Airports</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="AMS">Amsterdam Schiphol (AMS)</li>
+</form>
 
-                    <li class="cselect-sep" role="presentation">Germany — Airports</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="FRA">Frankfurt (FRA)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="MUC">Munich (MUC)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="BER">Berlin (BER)</li>
+<!-- PAY METHODS -->
+<aside class="vip-card">
+  <h3 class="label">Pay now</h3>
 
-                    <li class="cselect-sep" role="presentation">Switzerland — Airports</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="ZRH">Zurich (ZRH)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="GVA">Geneva (GVA)</li>
+  <div class="vip-pay-grid">
+    <label class="vip-radio"><input type="radio" name="pay" value="MB Way"><strong>MB Way</strong></label>
+    <label class="vip-radio"><input type="radio" name="pay" value="Revolut"><strong>Revolut</strong></label>
+    <label class="vip-radio"><input type="radio" name="pay" value="PayPal"><strong>PayPal</strong></label>
+  </div>
 
-                    <li class="cselect-sep" role="presentation">Ireland — Airports</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="DUB">Dublin (DUB)</li>
+  <div class="vip-actions">
+    <a id="payNowBtn" class="btn btn-gold vip-hidden" target="_blank">Pay now</a>
+  </div>
+</aside>
 
-                    <li class="cselect-sep" role="presentation">Belgium — Airports</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="BRU">Brussels (BRU)</li>
+</div>
+</div>
+</div>
+</section>
+</main>
 
-                  </ul>
-                  <input type="hidden" name="from" value="">
-                </div>
-              </div>
+<div id="siteFooter"></div>
 
-              <div class="field">
-                <label class="label" for="cs-to-btn">To (City / Airport)</label>
-                <div class="cselect" data-name="to">
-                  <button id="cs-to-btn" type="button" class="cselect-btn" aria-haspopup="listbox" aria-expanded="false">
-                    <span class="cselect-value">Select destination</span>
-                    <span class="cselect-chevron" aria-hidden="true">▾</span>
-                  </button>
-                  <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="To options">
+<script src="assets/js/nav.js?v=1000" defer></script>
+<script src="assets/js/dropdowns.js?v=1000" defer></script>
 
-                    <li class="cselect-sep" role="presentation">Portugal — Cities</li>
-                    <li class="cselect-option" role="option" tabindex="0" data-value="pt-lisbon-city">Lisbon (City)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="pt-porto-city">Porto (City)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="pt-cascais">Cascais</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="pt-sintra">Sintra</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="pt-algarve">Algarve</li>
+<script>
+(function(){
+const form=document.getElementById('bookingForm');
+const estimateLine=document.getElementById('estimateLine');
+const estimateNote=document.getElementById('estimateNote');
+const submitBtn=document.getElementById('submitBtn');
+const agree=document.getElementById('agreeEstimate');
+const paid=document.getElementById('paymentDone');
+const refEl=document.getElementById('refCode');
+const payBtn=document.getElementById('payNowBtn');
 
-                    <li class="cselect-sep" role="presentation">Portugal — Airports</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="LIS">Lisbon Airport (LIS)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="OPO">Porto Airport (OPO)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="FAO">Faro Airport (FAO)</li>
+function hidden(n){return form.querySelector(`input[name="${n}"]`)?.value||''}
+function ref(){return 'EPE-'+Math.random().toString(36).substring(2,8).toUpperCase()}
+const REF=ref(); refEl.textContent='REF: '+REF;
 
-                    <li class="cselect-sep" role="presentation">United Kingdom — Airports</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="LHR">London Heathrow (LHR)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="LGW">London Gatwick (LGW)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="STN">London Stansted (STN)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="MAN">Manchester (MAN)</li>
+function getSitePhone(){
+  const tel=document.querySelector('a[href^="tel:"]');
+  if(tel)return tel.getAttribute('href').replace('tel:','').trim();
+  const wa=document.querySelector('a[href*="wa.me/"]');
+  if(wa){const m=wa.href.match(/wa\.me\/(\d+)/);if(m)return '+'+m[1]}
+  return '+351000000000';
+}
 
-                    <li class="cselect-sep" role="presentation">France — Airports</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="CDG">Paris Charles de Gaulle (CDG)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="ORY">Paris Orly (ORY)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="NCE">Nice (NCE)</li>
+const PAY_LINKS={
+  'MB Way':'mbway:'+getSitePhone(),
+  'Revolut':'https://revolut.me/dalilav7js',
+  'PayPal':'https://paypal.me/yourpaypal'
+};
 
-                    <li class="cselect-sep" role="presentation">Spain — Airports</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="MAD">Madrid (MAD)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="BCN">Barcelona (BCN)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="AGP">Málaga (AGP)</li>
+document.querySelectorAll('input[name="pay"]').forEach(r=>{
+  r.addEventListener('change',()=>{
+    payBtn.href=PAY_LINKS[r.value];
+    payBtn.classList.remove('vip-hidden');
+    gate();
+  });
+});
 
-                    <li class="cselect-sep" role="presentation">Italy — Airports</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="FCO">Rome Fiumicino (FCO)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="MXP">Milan Malpensa (MXP)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="VCE">Venice (VCE)</li>
+function estimate(){
+  const trip=hidden('trip'),from=hidden('from'),to=hidden('to');
+  if(!trip||!from||!to){estimateLine.textContent='€ —';return}
+  let min=60,max=120;
+  if(trip==='hourly'){min=45;max=75;estimateLine.textContent=`€${min}–€${max}/h`;return}
+  if(trip==='tour'){min=220;max=420}
+  estimateLine.textContent=`€${min}–€${max}`;
+}
 
-                    <li class="cselect-sep" role="presentation">Netherlands — Airports</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="AMS">Amsterdam Schiphol (AMS)</li>
+function gate(){
+  submitBtn.disabled=!(agree.checked && paid.checked && !payBtn.classList.contains('vip-hidden'));
+}
 
-                    <li class="cselect-sep" role="presentation">Germany — Airports</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="FRA">Frankfurt (FRA)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="MUC">Munich (MUC)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="BER">Berlin (BER)</li>
+setInterval(()=>{estimate();gate()},300);
 
-                    <li class="cselect-sep" role="presentation">Switzerland — Airports</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="ZRH">Zurich (ZRH)</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="GVA">Geneva (GVA)</li>
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  const txt=`EPE BOOKING%0AREF:${REF}%0AESTIMATE:${estimateLine.textContent}%0APAYMENT CONFIRMED`;
+  window.open('https://wa.me/?text='+txt,'_blank');
+});
+})();
+</script>
 
-                    <li class="cselect-sep" role="presentation">Ireland — Airports</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="DUB">Dublin (DUB)</li>
-
-                    <li class="cselect-sep" role="presentation">Belgium — Airports</li>
-                    <li class="cselect-option" role="option" tabindex="-1" data-value="BRU">Brussels (BRU)</li>
-
-                  </ul>
-                  <input type="hidden" name="to" value="">
-                </div>
-              </div>
-
-              <div class="field">
-                <label class="label" for="pickupDetails">Pickup details (hotel / terminal)</label>
-                <input id="pickupDetails" class="input" type="text" placeholder="e.g., Terminal 1, Hotel name, street..." />
-              </div>
-            </div>
-
-            <div style="height:10px;"></div>
-
-            <div class="grid-3">
-              <div class="field">
-                <label class="label" for="returnDate">Return date (if return)</label>
-                <input id="returnDate" class="input" type="date" />
-              </div>
-
-              <div class="field">
-                <label class="label" for="passengers">Passengers</label>
-                <input id="passengers" class="input" type="number" min="1" max="20" value="1" />
-              </div>
-
-              <div class="field">
-                <label class="label" for="luggage">Luggage (bags)</label>
-                <input id="luggage" class="input" type="number" min="0" max="30" value="0" />
-              </div>
-            </div>
-
-            <div style="height:10px;"></div>
-
-            <div class="grid-2">
-              <div class="field">
-                <label class="label" for="flight">Flight / Train (optional)</label>
-                <input id="flight" class="input" type="text" placeholder="e.g., TP1365" />
-              </div>
-              <div class="field">
-                <label class="label" for="contact">Your contact (email/phone)</label>
-                <input id="contact" class="input" type="text" placeholder="email or phone" />
-              </div>
-            </div>
-
-            <div style="height:10px;"></div>
-
-            <div class="field">
-              <label class="label" for="notes">Notes (child seat, stops, VIP requests)</label>
-              <textarea id="notes" class="input" rows="4" placeholder="Write anything important…"></textarea>
-            </div>
-
-            <div class="actions" style="justify-content:flex-start;">
-              <button class="btn btn-gold" type="submit">Request quote</button>
-              <a class="btn btn-ghost" href="contactos.html">Contact</a>
-            </div>
-
-            <p class="micro" style="text-align:left;">
-              I reply with a discreet VIP quote and confirmation.
-            </p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <button class="to-top" type="button" aria-label="Back to top" title="Back to top">↑</button>
-  </main>
-
-  <!-- ✅ Footer injected by nav.js (same as FAQ) -->
-  <div id="siteFooter"></div>
-
-  <script defer src="assets/js/nav.js?v=1000"></script>
-  <script defer src="assets/js/dropdowns.js?v=1000"></script>
-
-  <script>
-    (function () {
-      // Back to top button
-      const btn = document.querySelector('.to-top');
-      if (!btn) return;
-      const toggle = () => btn.classList.toggle('show', (window.scrollY || 0) > 500);
-      window.addEventListener('scroll', toggle, { passive: true });
-      toggle();
-      btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-      // Submit -> open WhatsApp compose (you can set number later in nav.js)
-      const form = document.getElementById('bookingForm');
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const hidden = (name) => form.querySelector(`input[name="${name}"]`)?.value || '';
-        const get = (id) => document.getElementById(id)?.value?.trim() || '';
-
-        const text =
-          `EPE Booking Request%0A` +
-          `Trip: ${encodeURIComponent(hidden('trip'))}%0A` +
-          `Date: ${encodeURIComponent(get('dateGo'))}  Time: ${encodeURIComponent(get('timeGo'))}%0A` +
-          `From: ${encodeURIComponent(hidden('from'))}%0A` +
-          `To: ${encodeURIComponent(hidden('to'))}%0A` +
-          `Pickup details: ${encodeURIComponent(get('pickupDetails'))}%0A` +
-          `Return date: ${encodeURIComponent(get('returnDate'))}%0A` +
-          `Passengers: ${encodeURIComponent(get('passengers'))}  Luggage: ${encodeURIComponent(get('luggage'))}%0A` +
-          `Flight/Train: ${encodeURIComponent(get('flight'))}%0A` +
-          `Contact: ${encodeURIComponent(get('contact'))}%0A` +
-          `Notes: ${encodeURIComponent(get('notes'))}`;
-
-        window.open(`https://wa.me/?text=${text}`, '_blank', 'noopener');
-      });
-    })();
-  </script>
 </body>
 </html>
