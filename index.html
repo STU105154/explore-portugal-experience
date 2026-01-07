@@ -1,49 +1,36 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id="top">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Explore Portugal Experience</title>
 
-  <!-- Icons -->
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" href="/favicon.ico">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/style.css" />
-
-  <!-- (Opcional) SEO básico -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
   <meta name="description" content="Explore Portugal Experience — Premium private tours & transfers." />
 </head>
 
 <body>
-  <!-- NAV inject (header) -->
   <div id="site-header"></div>
 
   <main class="page">
-
-    <!-- HERO (preto premium, sem castanho) -->
     <section class="hero">
-      <!-- estrela sempre à esquerda -->
-      <div class="hero-star" aria-hidden="true">
-        <img src="apple-touch-icon.png" alt="">
-      </div>
-
       <div class="hero-inner">
-        <!-- REMOVIDO: texto no topo (como pediste). Só logo, menor e clean -->
+
         <div class="brand">
-          <img class="brand-logo" src="assets/img/logo.png" alt="Explore Portugal Experience">
+          <img class="brand-logo" src="/assets/img/logo.png" alt="Explore Portugal Experience">
         </div>
 
         <p class="hero-subtitle">
           Premium private tours & transfers in Portugal — discreet, tailored, VIP.
         </p>
 
-        <!-- FORM / FILTERS: dropdowns custom (não-nativos) -->
         <div class="hero-panel" role="region" aria-label="Quick booking">
           <div class="grid-3">
 
-            <!-- CUSTOM SELECT 1 -->
+            <!-- SERVICE -->
             <div class="field">
               <label class="label" for="cs-service-btn">Service</label>
               <div class="cselect" data-name="service">
@@ -56,13 +43,14 @@
                   <li class="cselect-option" role="option" tabindex="0" data-value="airport-transfer">Airport Transfer</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="private-tour">Private Tour</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="chauffeur">Chauffeur (Hourly)</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="europe-transfer">Europe Transfers</li>
                 </ul>
 
                 <input type="hidden" name="service" value="">
               </div>
             </div>
 
-            <!-- CUSTOM SELECT 2 -->
+            <!-- FROM (Portugal + Europe back) -->
             <div class="field">
               <label class="label" for="cs-from-btn">From</label>
               <div class="cselect" data-name="from">
@@ -72,17 +60,29 @@
                 </button>
 
                 <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="Pickup options">
+                  <!-- Portugal -->
                   <li class="cselect-option" role="option" tabindex="0" data-value="lisbon">Lisbon</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="porto">Porto</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="cascais">Cascais</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="sintra">Sintra</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="porto">Porto</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="algarve">Algarve</li>
+
+                  <!-- Europe (back) -->
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="london">London</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="paris">Paris</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="madrid">Madrid</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="barcelona">Barcelona</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="rome">Rome</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="amsterdam">Amsterdam</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="berlin">Berlin</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="geneva">Geneva</li>
                 </ul>
 
                 <input type="hidden" name="from" value="">
               </div>
             </div>
 
-            <!-- CUSTOM SELECT 3 -->
+            <!-- TO -->
             <div class="field">
               <label class="label" for="cs-to-btn">To</label>
               <div class="cselect" data-name="to">
@@ -93,9 +93,16 @@
 
                 <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="Destination options">
                   <li class="cselect-option" role="option" tabindex="0" data-value="lisbon">Lisbon</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="porto">Porto</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="cascais">Cascais</li>
                   <li class="cselect-option" role="option" tabindex="-1" data-value="sintra">Sintra</li>
-                  <li class="cselect-option" role="option" tabindex="-1" data-value="porto">Porto</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="algarve">Algarve</li>
+
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="london">London</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="paris">Paris</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="madrid">Madrid</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="barcelona">Barcelona</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="rome">Rome</li>
                 </ul>
 
                 <input type="hidden" name="to" value="">
@@ -105,18 +112,18 @@
           </div>
 
           <div class="hero-actions">
-            <a class="btn btn-gold" href="booking.html">Book now</a>
-            <a class="btn btn-ghost" href="choose.html">Why us</a>
+            <a class="btn btn-gold" href="/booking.html">Book now</a>
+            <a class="btn btn-ghost" href="/choose.html">Why us</a>
           </div>
 
           <p class="micro">
             VIP response time • Professional drivers • Premium vehicles • Discreet service
           </p>
         </div>
+
       </div>
     </section>
 
-    <!-- Conteúdo extra (exemplo minimal) -->
     <section class="section">
       <div class="wrap">
         <h2 class="h2">Premium by design</h2>
@@ -126,33 +133,22 @@
       </div>
     </section>
 
-    <!-- BOTÃO “voltar ao topo” (fixo e elegante) -->
     <button class="to-top" type="button" aria-label="Back to top" title="Back to top">↑</button>
   </main>
 
-  <!-- NAV inject (footer) -->
   <div id="site-footer"></div>
 
-  <!-- Scripts -->
-  <script defer src="assets/js/nav.js"></script>
-  <script defer src="assets/js/dropdowns.js"></script>
+  <script defer src="/assets/js/nav.js"></script>
+  <script defer src="/assets/js/dropdowns.js"></script>
 
   <script>
-    // Back to top (suave)
     (function () {
       const btn = document.querySelector('.to-top');
       if (!btn) return;
-
-      const toggle = () => {
-        const y = window.scrollY || document.documentElement.scrollTop;
-        btn.classList.toggle('show', y > 500);
-      };
+      const toggle = () => btn.classList.toggle('show', (window.scrollY || 0) > 500);
       window.addEventListener('scroll', toggle, { passive: true });
       toggle();
-
-      btn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
+      btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     })();
   </script>
 </body>
