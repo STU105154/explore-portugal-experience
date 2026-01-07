@@ -2,327 +2,157 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#000000" />
-
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Explore Portugal Experience</title>
-  <meta name="description" content="Premium private tours & transfers in Portugal — professional drivers, comfort and discretion." />
 
-  <link rel="stylesheet" href="assets/css/style.css?v=700" />
-  <link rel="icon" href="assets/icons/favicon.ico" />
-  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+  <!-- Icons -->
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="favicon.ico">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- (Opcional) SEO básico -->
+  <meta name="description" content="Explore Portugal Experience — Premium private tours & transfers." />
 </head>
 
 <body>
-  <div id="siteHeader"></div>
+  <!-- NAV inject (header) -->
+  <div id="site-header"></div>
 
-  <main class="wrap">
+  <main class="page">
 
-    <section class="hero" aria-label="Hero">
-      <div class="logo-card">
-        <img class="index-logo" src="assets/images/logo-explore-portugal-experience.png" alt="Explore Portugal Experience logo" />
+    <!-- HERO (preto premium, sem castanho) -->
+    <section class="hero">
+      <!-- estrela sempre à esquerda -->
+      <div class="hero-star" aria-hidden="true">
+        <img src="apple-touch-icon.png" alt="">
       </div>
 
-      <div class="card">
-        <p class="tagline">Premium private tours & transfers in Portugal — professional drivers, comfort and discretion.</p>
-        <p class="sub">Book in under a minute. If you prefer, message us on WhatsApp and we confirm everything for you.</p>
-      </div>
-    </section>
-
-    <section class="card" aria-label="Booking" style="margin-top:16px;">
-      <h2 class="h2">Book in 30 seconds</h2>
-      <p class="p">Pick the basics now. You can add details after we confirm availability.</p>
-
-      <form id="bookingForm" class="form-grid">
-
-        <div class="row-2">
-          <div class="field">
-            <label for="service">Service</label>
-            <select id="service" class="control" required>
-              <option value="" selected disabled>Select…</option>
-              <option>Airport transfer</option>
-              <option>Private tour (half day)</option>
-              <option>Private tour (full day)</option>
-              <option>Custom programme</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="guests">Guests</label>
-            <select id="guests" class="control" required>
-              <option value="" selected disabled>Select…</option>
-              <option>1</option><option>2</option><option>3</option><option>4</option>
-              <option>5</option><option>6</option><option>7</option><option>8+</option>
-            </select>
-          </div>
+      <div class="hero-inner">
+        <!-- REMOVIDO: texto no topo (como pediste). Só logo, menor e clean -->
+        <div class="brand">
+          <img class="brand-logo" src="assets/img/logo.png" alt="Explore Portugal Experience">
         </div>
 
-        <div class="row-2">
-          <div class="field">
-            <label for="fromCity">Pick-up (From)</label>
-            <select id="fromCity" class="control" required>
-              <option value="" selected disabled>Select a city…</option>
-              <option>Lisbon</option>
-              <option>Porto</option>
-              <option>Faro</option>
-              <option>Madrid</option>
-              <option>Barcelona</option>
-              <option>Paris</option>
-              <option>London</option>
-              <option>Rome</option>
-              <option>Berlin</option>
-              <option>Amsterdam</option>
-              <option>Brussels</option>
-              <option>Zurich</option>
-              <option>Geneva</option>
-              <option>Vienna</option>
-              <option>Prague</option>
-              <option>Dublin</option>
-              <option>Edinburgh</option>
-              <option>Manchester</option>
-            </select>
+        <p class="hero-subtitle">
+          Premium private tours & transfers in Portugal — discreet, tailored, VIP.
+        </p>
+
+        <!-- FORM / FILTERS: dropdowns custom (não-nativos) -->
+        <div class="hero-panel" role="region" aria-label="Quick booking">
+          <div class="grid-3">
+
+            <!-- CUSTOM SELECT 1 -->
+            <div class="field">
+              <label class="label" for="cs-service-btn">Service</label>
+              <div class="cselect" data-name="service">
+                <button id="cs-service-btn" type="button" class="cselect-btn" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="cselect-value" data-placeholder="Choose a service">Choose a service</span>
+                  <span class="cselect-chevron" aria-hidden="true">▾</span>
+                </button>
+
+                <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="Service options">
+                  <li class="cselect-option" role="option" tabindex="0" data-value="airport-transfer">Airport Transfer</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="private-tour">Private Tour</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="chauffeur">Chauffeur (Hourly)</li>
+                </ul>
+
+                <input type="hidden" name="service" value="">
+              </div>
+            </div>
+
+            <!-- CUSTOM SELECT 2 -->
+            <div class="field">
+              <label class="label" for="cs-from-btn">From</label>
+              <div class="cselect" data-name="from">
+                <button id="cs-from-btn" type="button" class="cselect-btn" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="cselect-value" data-placeholder="Select pickup">Select pickup</span>
+                  <span class="cselect-chevron" aria-hidden="true">▾</span>
+                </button>
+
+                <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="Pickup options">
+                  <li class="cselect-option" role="option" tabindex="0" data-value="lisbon">Lisbon</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="cascais">Cascais</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="sintra">Sintra</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="porto">Porto</li>
+                </ul>
+
+                <input type="hidden" name="from" value="">
+              </div>
+            </div>
+
+            <!-- CUSTOM SELECT 3 -->
+            <div class="field">
+              <label class="label" for="cs-to-btn">To</label>
+              <div class="cselect" data-name="to">
+                <button id="cs-to-btn" type="button" class="cselect-btn" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="cselect-value" data-placeholder="Select destination">Select destination</span>
+                  <span class="cselect-chevron" aria-hidden="true">▾</span>
+                </button>
+
+                <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="Destination options">
+                  <li class="cselect-option" role="option" tabindex="0" data-value="lisbon">Lisbon</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="cascais">Cascais</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="sintra">Sintra</li>
+                  <li class="cselect-option" role="option" tabindex="-1" data-value="porto">Porto</li>
+                </ul>
+
+                <input type="hidden" name="to" value="">
+              </div>
+            </div>
+
           </div>
 
-          <div class="field">
-            <label for="toCity">Drop-off (To)</label>
-            <select id="toCity" class="control" required>
-              <option value="" selected disabled>Select a city…</option>
-              <option>Lisbon</option>
-              <option>Porto</option>
-              <option>Sintra</option>
-              <option>Cascais</option>
-              <option>Faro</option>
-              <option>Madrid</option>
-              <option>Barcelona</option>
-              <option>Paris</option>
-              <option>London</option>
-              <option>Rome</option>
-              <option>Berlin</option>
-              <option>Amsterdam</option>
-              <option>Brussels</option>
-              <option>Zurich</option>
-              <option>Geneva</option>
-              <option>Vienna</option>
-              <option>Prague</option>
-            </select>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="booking.html">Book now</a>
+            <a class="btn btn-ghost" href="choose.html">Why us</a>
           </div>
+
+          <p class="micro">
+            VIP response time • Professional drivers • Premium vehicles • Discreet service
+          </p>
         </div>
-
-        <div class="row-2">
-          <div class="field">
-            <label for="tripType">Trip</label>
-            <select id="tripType" class="control" required>
-              <option value="oneway" selected>One way</option>
-              <option value="return">Return (round trip)</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="flex">Flexible dates (optional)</label>
-            <select id="flex" class="control">
-              <option value="exact" selected>Exact dates</option>
-              <option value="+1">± 1 day</option>
-              <option value="+2">± 2 days</option>
-              <option value="+3">± 3 days</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="row-2">
-          <div class="field">
-            <label for="startDate">Date (Start)</label>
-            <input id="startDate" class="control" type="date" required />
-          </div>
-
-          <div class="field" id="endDateWrap" style="display:none;">
-            <label for="endDate">Date (End)</label>
-            <input id="endDate" class="control" type="date" />
-          </div>
-        </div>
-
-        <div class="row-2">
-          <div class="field">
-            <label for="timeDepart">Time (Departure)</label>
-            <select id="timeDepart" class="control" required>
-              <option value="" selected disabled>Select…</option>
-            </select>
-            <div class="hint">15-minute steps — always selectable.</div>
-          </div>
-
-          <div class="field" id="returnTimeWrap" style="display:none;">
-            <label for="timeReturn">Return time</label>
-            <select id="timeReturn" class="control">
-              <option value="" selected disabled>Select…</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="btns">
-          <button type="submit" class="btn btn-primary">Continue booking</button>
-          <a class="btn btn-ghost" href="https://wa.me/351962516005" target="_blank" rel="noopener">Need help?</a>
-        </div>
-
-      </form>
-    </section>
-
-    <section class="card" aria-label="Indicative prices" style="margin-top:16px;">
-      <h2 class="h2">Indicative prices</h2>
-      <p class="p">Prices vary by distance, duration and number of guests. Final quote confirmed after booking details.</p>
-
-      <ul class="price-list">
-        <li class="price-item"><b>Airport transfer</b><span>from €60</span></li>
-        <li class="price-item"><b>Private tour (half day)</b><span>from €220</span></li>
-        <li class="price-item"><b>Private tour (full day)</b><span>from €380</span></li>
-        <li class="price-item"><b>Custom programme</b><span>on request</span></li>
-      </ul>
-    </section>
-
-    <section class="card" aria-label="Contact" style="margin-top:16px;">
-      <h2 class="h2">Contact</h2>
-      <p class="p">Fastest reply via WhatsApp. You can also call or email.</p>
-
-      <div class="contact-lines">
-        <a href="tel:+351962516005">+351 962 516 005</a><br />
-        <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
       </div>
     </section>
 
-    <section class="card" aria-label="WhatsApp QR" style="margin-top:16px;">
-      <h2 class="h2">WhatsApp QR</h2>
-      <p class="p">Scan to start a chat instantly.</p>
-
-      <div class="qr-wrap">
-        <img src="assets/images/qr-whatsapp.png" alt="WhatsApp QR code" />
+    <!-- Conteúdo extra (exemplo minimal) -->
+    <section class="section">
+      <div class="wrap">
+        <h2 class="h2">Premium by design</h2>
+        <p class="p">
+          A clean, quiet experience. No clutter, no noise — just Portugal, done properly.
+        </p>
       </div>
     </section>
 
-    <div class="cookie-bar" id="cookieBar" aria-live="polite">
-      <div class="cookie-inner">
-        <div class="cookie-text">
-          We use cookies to improve site performance and measure traffic.
-          <a href="privacy.html">Learn more</a>
-        </div>
-        <div class="cookie-actions">
-          <button class="cookie-btn" type="button" id="cookieDecline">Essential only</button>
-          <button class="cookie-btn btn-gold" type="button" id="cookieAccept">Accept all</button>
-        </div>
-      </div>
-    </div>
-
+    <!-- BOTÃO “voltar ao topo” (fixo e elegante) -->
+    <button class="to-top" type="button" aria-label="Back to top" title="Back to top">↑</button>
   </main>
 
-  <div id="siteFooter"></div>
+  <!-- NAV inject (footer) -->
+  <div id="site-footer"></div>
 
-  <script src="assets/js/nav.js?v=700"></script>
+  <!-- Scripts -->
+  <script defer src="assets/js/nav.js"></script>
+  <script defer src="assets/js/dropdowns.js"></script>
 
   <script>
-    // TIME DROPDOWN (15-min steps)
-    (function(){
-      function fillTimes(selectEl){
-        if(!selectEl) return;
-        const step = 15;
-        for(let m = 0; m < 24 * 60; m += step){
-          const hh = String(Math.floor(m/60)).padStart(2,"0");
-          const mm = String(m%60).padStart(2,"0");
-          const opt = document.createElement("option");
-          opt.value = `${hh}:${mm}`;
-          opt.textContent = `${hh}:${mm}`;
-          selectEl.appendChild(opt);
-        }
-      }
-      fillTimes(document.getElementById("timeDepart"));
-      fillTimes(document.getElementById("timeReturn"));
-    })();
+    // Back to top (suave)
+    (function () {
+      const btn = document.querySelector('.to-top');
+      if (!btn) return;
 
-    // ONE WAY / RETURN TOGGLE
-    (function(){
-      const trip = document.getElementById("tripType");
-      const endWrap = document.getElementById("endDateWrap");
-      const endDate = document.getElementById("endDate");
-      const returnWrap = document.getElementById("returnTimeWrap");
-      const timeReturn = document.getElementById("timeReturn");
+      const toggle = () => {
+        const y = window.scrollY || document.documentElement.scrollTop;
+        btn.classList.toggle('show', y > 500);
+      };
+      window.addEventListener('scroll', toggle, { passive: true });
+      toggle();
 
-      function sync(){
-        const isReturn = trip && trip.value === "return";
-        if(endWrap) endWrap.style.display = isReturn ? "block" : "none";
-        if(returnWrap) returnWrap.style.display = isReturn ? "block" : "none";
-        if(!isReturn){
-          if(endDate) endDate.value = "";
-          if(timeReturn) timeReturn.value = "";
-        }
-      }
-
-      if(trip) trip.addEventListener("change", sync);
-      sync();
-    })();
-
-    // BOOKING SUBMIT (WhatsApp prefill)
-    (function(){
-      const form = document.getElementById("bookingForm");
-      if(!form) return;
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        const get = (id) => (document.getElementById(id)?.value || "").trim();
-
-        const service = get("service");
-        const guests = get("guests");
-        const fromCity = get("fromCity");
-        const toCity = get("toCity");
-        const tripType = get("tripType");
-        const flex = get("flex");
-        const startDate = get("startDate");
-        const endDate = get("endDate");
-        const timeDepart = get("timeDepart");
-        const timeReturn = get("timeReturn");
-
-        const lines = [
-          "Hello! I would like to book:",
-          `• Service: ${service}`,
-          `• Guests: ${guests}`,
-          `• From: ${fromCity}`,
-          `• To: ${toCity}`,
-          `• Trip: ${tripType === "return" ? "Return" : "One way"}`,
-          `• Flexible: ${flex}`,
-          `• Start: ${startDate} at ${timeDepart}`,
-        ];
-
-        if(tripType === "return"){
-          lines.push(`• End: ${endDate || "(not set)"} at ${timeReturn || "(not set)"}`);
-        }
-
-        const msg = encodeURIComponent(lines.join("\n"));
-        window.open(`https://wa.me/351962516005?text=${msg}`, "_blank", "noopener");
+      btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
-    })();
-
-    // COOKIES
-    (function(){
-      const KEY = "epe_cookie_consent";
-      const bar = document.getElementById("cookieBar");
-      const a = document.getElementById("cookieAccept");
-      const d = document.getElementById("cookieDecline");
-      if(!bar || !a || !d) return;
-
-      function showIfNeeded(){
-        try{
-          const v = localStorage.getItem(KEY);
-          if(!v) bar.classList.add("show");
-        }catch(e){
-          bar.classList.add("show");
-        }
-      }
-
-      function set(v){
-        try{ localStorage.setItem(KEY, v); }catch(e){}
-        bar.classList.remove("show");
-      }
-
-      a.addEventListener("click", () => set("accepted"));
-      d.addEventListener("click", () => set("essential_only"));
-
-      showIfNeeded();
     })();
   </script>
 </body>
