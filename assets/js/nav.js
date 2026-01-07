@@ -20,7 +20,10 @@
   ];
 
   const INSTAGRAM_URL = "https://www.instagram.com/exploreportugal2025?igsh=dWlpa2hhYmIwYzho";
-  const WHATSAPP_URL = "https://wa.me/"; // mete aqui o teu número depois: https://wa.me/3519XXXXXXXX
+  const WHATSAPP_URL = "https://wa.me/"; // depois meto o número (ex: https://wa.me/3519XXXXXXXX)
+
+  // ✅ caminhos corretos no teu repo
+  const STAR_SRC = "/assets/icons/apple-touch-icon.png";
 
   const path = (location.pathname || "/").toLowerCase();
 
@@ -35,7 +38,7 @@
       <nav class="site-nav">
         <a class="nav-brand" href="/index.html" aria-label="Explore Portugal Experience home">
           <span class="nav-star" aria-hidden="true">
-            <img src="/apple-touch-icon.png" alt="">
+            <img src="${STAR_SRC}" alt="">
           </span>
         </a>
 
@@ -56,12 +59,8 @@
     <footer class="site-footer">
       <div class="site-footer-inner">
         <div class="footer-left">
-          <div class="footer-line">
-            © 2018 Explore Portugal Experience — Tourism in Portugal
-          </div>
-          <div class="footer-line muted">
-            Powered by: MkDesign | London
-          </div>
+          <div class="footer-line">© 2018 Explore Portugal Experience — Tourism in Portugal</div>
+          <div class="footer-line muted">Powered by: MkDesign | London</div>
         </div>
 
         <div class="footer-right">
