@@ -1,139 +1,196 @@
-(() => {
-  function el(html) {
-    const d = document.createElement("div");
-    d.innerHTML = html.trim();
-    return d.firstElementChild;
+/* =========================================================
+   Explore Portugal Experience - NAV inject (Header + Footer)
+   VIP / Premium (Desktop: More dropdown | Mobile: hamburger + scroll panel)
+   MENU (final):
+   About, Services, Gallery, Booking, Partners Drivers, Commercial Partners, Contactos
+   More: Why us, Pricing, FAQ
+========================================================= */
+
+(function () {
+  const MENU_PRIMARY = [
+    { label: "About", href: "/about.html" },
+    { label: "Services", href: "/services.html" },
+    { label: "Gallery", href: "/gallery.html" },
+    { label: "Booking", href: "/booking.html" },
+
+    // ✅ IMPORTANT -> always visible (not inside More)
+    { label: "Partners Drivers", href: "/partners-drivers.html" },
+    { label: "Commercial Partners", href: "/commercial-partners.html" },
+    { label: "Contactos", href: "/contactos.html" },
+  ];
+
+  const MENU_MORE = [
+    { label: "Why us", href: "/choose.html" },
+    { label: "Pricing", href: "/pricing.html" },
+    { label: "FAQ", href: "/faq.html" },
+  ];
+
+  const INSTAGRAM_URL = "https://www.instagram.com/exploreportugal2025?igsh=dWlpa2hhYmIwYzho";
+  const WHATSAPP_URL = "https://wa.me/"; // mete o número quando quiseres
+
+  const STAR_SRC = "/assets/icons/apple-touch-icon.png";
+  const LOGO_SRC = "/assets/images/logo-explore-portugal-experience.png";
+
+  const path = (location.pathname || "/").toLowerCase();
+  const isHome = (path === "/" || path.endsWith("/index.html"));
+
+  function isActive(href) {
+    const h = href.toLowerCase();
+    if (h === "/index.html" || h === "/") return path === "/" || path.endsWith("/index.html");
+    return path.endsWith(h);
   }
 
-  function buildHeader() {
-    return el(`
-      <header class="site-header">
-        <div class="nav-wrap">
-          <a class="brand" href="/index.html" aria-label="Explore Portugal Experience">
-            <img class="brand-logo" src="/assets/img/logo-explore.png" alt="Explore Portugal Experience logo">
-          </a>
+  const primaryLinksHTML = MENU_PRIMARY
+    .map(
+      (item) =>
+        `<li class="nav-item"><a class="nav-link ${isActive(item.href) ? "active" : ""}" href="${item.href}">${item.label}</a></li>`
+    )
+    .join("");
 
-          <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false">
-            <span></span><span></span><span></span>
-          </button>
+  const moreLinksHTML = MENU_MORE
+    .map(
+      (item) =>
+        `<li><a class="nav-dd-link ${isActive(item.href) ? "active" : ""}" href="${item.href}">${item.label}</a></li>`
+    )
+    .join("");
 
-          <nav class="nav">
-            <a class="nav-link" href="/index.html">Home</a>
-            <a class="nav-link" href="/services.html">Services</a>
-            <a class="nav-link" href="/choose.html">Choose Portugal</a>
-            <a class="nav-link" href="/gallery.html">Gallery</a>
-            <a class="nav-link" href="/about.html">About</a>
+  const moreHTML = `
+    <li class="nav-item nav-more" data-navmore>
+      <button class="nav-more-btn" type="button" aria-haspopup="true" aria-expanded="false">
+        More <span class="nav-more-caret" aria-hidden="true">▾</span>
+      </button>
+      <div class="nav-dd" role="menu" aria-label="More">
+        <ul class="nav-dd-list">
+          ${moreLinksHTML}
+        </ul>
+      </div>
+    </li>
+  `;
 
-            <!-- TOP 3 fora do More -->
-            <a class="nav-link nav-gold" href="/why-us.html">Why Us</a>
-            <a class="nav-link nav-gold" href="/pricing.html">Pricing</a>
-            <a class="nav-link nav-gold" href="/faq.html">FAQ</a>
+  const brandMini = isHome
+    ? ""
+    : `
+      <div class="page-brand">
+        <img src="${LOGO_SRC}" alt="Explore Portugal Experience">
+      </div>
+    `;
 
-            <div class="nav-dropdown">
-              <button class="nav-dropbtn" type="button" aria-expanded="false">More</button>
-              <div class="nav-dropmenu">
-                <a class="nav-link" href="/contactos.html">Contact</a>
-                <div class="nav-sep"></div>
-                <a class="nav-link" href="/privacy.html">Privacy</a>
-                <a class="nav-link" href="/terms.html">Terms</a>
-              </div>
-            </div>
+  const headerHTML = `
+    <header class="site-header">
+      <nav class="site-nav">
+        <a class="nav-brand" href="/index.html" aria-label="Explore Portugal Experience home">
+          <span class="nav-star" aria-hidden="true">
+            <img src="${STAR_SRC}" alt="">
+          </span>
+        </a>
 
-            <!-- BOOKING SEMPRE VISÍVEL -->
-            <a class="nav-cta" href="/booking.html">Book now</a>
-          </nav>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span aria-hidden="true">☰</span>
+        </button>
+
+        <ul class="nav-links" data-navlinks>
+          ${primaryLinksHTML}
+          ${moreHTML}
+        </ul>
+      </nav>
+      ${brandMini}
+    </header>
+  `;
+
+  const footerHTML = `
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="footer-left">
+          <div class="footer-line">© 2018 Explore Portugal Experience — Tourism in Portugal</div>
+          <div class="footer-line muted">Powered by: MkDesign | London</div>
         </div>
-      </header>
-    `);
-  }
 
-  function buildFooter() {
-    return el(`
-      <footer class="site-footer">
-        <div class="footer-wrap">
-          <div class="footer-left">
-            <div class="footer-brand">Explore Portugal Experience</div>
-            <div class="footer-note">Premium Tours • Private Transfers • Local Expertise</div>
-          </div>
-
-          <div class="footer-right">
-            <a class="footer-link" href="/privacy.html">Privacy</a>
-            <a class="footer-link" href="/terms.html">Terms</a>
-            <a class="footer-link" href="/contactos.html">Contact</a>
-            <button class="to-top" type="button">Back to top</button>
+        <div class="footer-right">
+          <div class="footer-links">
+            <a href="/contactos.html">Contact</a>
+            <span class="dot">•</span>
+            <a href="${INSTAGRAM_URL}" target="_blank" rel="noopener">Instagram</a>
+            <span class="dot">•</span>
+            <a href="${WHATSAPP_URL}" target="_blank" rel="noopener">WhatsApp</a>
+            <span class="dot">•</span>
+            <a href="#top" class="back-top">Back to top ↑</a>
           </div>
         </div>
-        <div class="footer-bottom">© ${new Date().getFullYear()} Explore Portugal Experience</div>
-      </footer>
-    `);
-  }
+      </div>
+    </footer>
+  `;
 
-  function initBurger() {
-    const burger = document.querySelector(".nav-burger");
-    const nav = document.querySelector(".nav");
-    if (!burger || !nav) return;
+  const headerSlot = document.getElementById("siteHeader") || document.getElementById("site-header");
+  const footerSlot = document.getElementById("siteFooter") || document.getElementById("site-footer");
 
-    const root = document.documentElement;
+  if (headerSlot) headerSlot.innerHTML = headerHTML;
+  if (footerSlot) footerSlot.innerHTML = footerHTML;
 
-    function close() {
-      burger.setAttribute("aria-expanded","false");
-      nav.classList.remove("is-open");
-      root.classList.remove("no-scroll");
-    }
-    function open() {
-      burger.setAttribute("aria-expanded","true");
-      nav.classList.add("is-open");
-      root.classList.add("no-scroll");
-    }
-
-    burger.addEventListener("click", () => {
-      const expanded = burger.getAttribute("aria-expanded") === "true";
-      expanded ? close() : open();
+  // Mobile toggle
+  const toggle = document.querySelector(".nav-toggle");
+  const links = document.querySelector("[data-navlinks]");
+  if (toggle && links) {
+    toggle.addEventListener("click", () => {
+      const open = links.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      document.documentElement.classList.toggle("no-scroll", open);
     });
 
+    links.addEventListener("click", (e) => {
+      const a = e.target.closest("a");
+      if (!a) return;
+      links.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+      document.documentElement.classList.remove("no-scroll");
+    });
+  }
+
+  // Desktop More dropdown behaviour
+  const more = document.querySelector("[data-navmore]");
+  if (more) {
+    const btn = more.querySelector(".nav-more-btn");
+    const dd = more.querySelector(".nav-dd");
+
+    function closeMore() {
+      more.classList.remove("open");
+      if (btn) btn.setAttribute("aria-expanded", "false");
+    }
+
+    function toggleMore() {
+      const open = more.classList.toggle("open");
+      if (btn) btn.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+
+    if (btn) {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMore();
+      });
+    }
+
     document.addEventListener("click", (e) => {
-      if (!nav.classList.contains("is-open")) return;
-      if (!nav.contains(e.target) && !burger.contains(e.target)) close();
+      if (!more.contains(e.target)) closeMore();
     });
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") close();
-    });
-  }
-
-  function initDropdown() {
-    const btn = document.querySelector(".nav-dropbtn");
-    const menu = document.querySelector(".nav-dropmenu");
-    if (!btn || !menu) return;
-
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const open = menu.classList.toggle("is-open");
-      btn.setAttribute("aria-expanded", open);
+      if (e.key === "Escape") closeMore();
     });
 
-    document.addEventListener("click", () => {
-      menu.classList.remove("is-open");
-      btn.setAttribute("aria-expanded","false");
-    });
+    if (dd) {
+      dd.addEventListener("click", (e) => {
+        const a = e.target.closest("a");
+        if (!a) return;
+        closeMore();
+      });
+    }
   }
 
-  function initToTop() {
-    const btn = document.querySelector(".to-top");
-    if (!btn) return;
-    btn.addEventListener("click", () =>
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    );
-  }
-
-  function inject() {
-    document.body.prepend(buildHeader());
-    document.body.appendChild(buildFooter());
-
-    initBurger();
-    initDropdown();
-    initToTop();
-  }
-
-  document.addEventListener("DOMContentLoaded", inject);
+  // Back to top
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a.back-top");
+    if (!a) return;
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 })();
