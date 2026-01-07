@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="top">
 <head>
   <meta charset="UTF-8" />
   <title>About · Explore Portugal Experience</title>
@@ -11,8 +11,10 @@
     content="Learn more about Explore Portugal Experience and the legacy of Agapito, co-founder and professional driver who inspired this project."
   />
 
-  <link rel="stylesheet" href="assets/css/style.css?v=403" />
-  <link rel="icon" type="image/png" href="assets/icons/apple-touch-icon.png" />
+  <!-- ✅ absolute paths = no surprises -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=403" />
+  <link rel="icon" type="image/png" href="/assets/icons/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
   <link rel="canonical" href="https://www.exploreportugalexperience.com/about.html" />
 
   <!-- Google Analytics -->
@@ -30,8 +32,7 @@
   <!-- HEADER injected by nav.js -->
   <div id="siteHeader"></div>
 
-  <main class="container" style="padding:16px 0 80px;">
-
+  <main class="container" style="padding:16px 0 120px;">
     <section class="card" style="margin-top:16px;">
       <h1 class="h2" style="margin-bottom:10px;">About us</h1>
       <p class="p">
@@ -58,53 +59,30 @@
         worrying about it.
       </p>
 
-      <p class="p">
+      <p class="p" style="margin-bottom:0;">
         We work with solo travellers, families, small groups and professional partners (hotels, companies and operators),
         always with the same foundation: absolute respect for those who trust us.
       </p>
     </section>
 
     <!-- TRIBUTE: Agapito -->
-    <section class="card" aria-label="Tribute to Agapito" style="margin-top:16px; border: 1px solid rgba(201,165,98,0.32);">
-      <div style="display:grid; gap:14px; justify-items:center; text-align:center; padding-top:6px;">
+    <section class="card tribute-card" aria-label="Tribute to Agapito" style="margin-top:16px;">
+      <div class="tribute-inner">
 
-        <!-- Photo circle with gold frame -->
-        <div style="
-          width: 150px; height: 150px;
-          border-radius: 999px;
-          padding: 6px;
-          background: radial-gradient(circle at 30% 20%, rgba(231,205,147,0.45), rgba(201,165,98,0.16), rgba(0,0,0,0));
-          border: 1px solid rgba(201,165,98,0.60);
-          box-shadow: 0 18px 60px rgba(0,0,0,.55);
-        ">
+        <div class="tribute-photo">
           <img
-            src="assets/images/agapito.jpg"
+            src="/assets/images/agapito.jpg"
             alt="Agapito, co-founder of Explore Portugal Experience"
-            style="width:100%; height:100%; border-radius:999px; object-fit:cover; border: 1px solid rgba(201,165,98,0.25);"
           />
         </div>
 
-        <div>
-          <p style="margin:0; color: rgba(247,243,232,0.70); letter-spacing:.18em; text-transform: uppercase; font-size: 12px;">
-            In memory
-          </p>
-          <p style="margin:6px 0 0; font-size: 34px; font-weight: 800; letter-spacing: .01em;">
-            Agapito
-          </p>
-          <p style="margin:6px 0 0; color: rgba(247,243,232,0.75); font-size: 14px;">
-            Co-founder · Professional driver · Soul of the road
-          </p>
+        <div class="tribute-title">
+          <p class="tribute-kicker">In memory</p>
+          <p class="tribute-name">Agapito</p>
+          <p class="tribute-sub">Co-founder · Professional driver · Soul of the road</p>
         </div>
 
-        <!-- Tribute text in gold frame -->
-        <div style="
-          width: min(820px, 100%);
-          text-align: left;
-          border: 1px solid rgba(201,165,98,0.32);
-          border-radius: 22px;
-          padding: 14px 14px;
-          background: rgba(255,255,255,0.02);
-        ">
+        <div class="tribute-text">
           <p class="p">
             Explore Portugal Experience was born from the dream and vision of someone extraordinary: Agapito,
             co-founder of this project, a certified professional driver, and a man guided by his passion for the road,
@@ -132,15 +110,7 @@
           </p>
         </div>
 
-        <p style="
-          margin: 2px 0 0;
-          color: rgba(201,165,98,0.95);
-          font-style: italic;
-          font-size: 14px;
-        ">
-          “The road continues with you.”
-        </p>
-
+        <p class="tribute-quote">“The road continues with you.”</p>
       </div>
     </section>
 
@@ -149,7 +119,7 @@
       <div class="cookie-inner">
         <div class="cookie-text">
           We use cookies to improve your experience and measure traffic.
-          <a href="privacy.html">Learn more</a>
+          <a href="/privacy.html">Learn more</a>
         </div>
         <div class="cookie-actions">
           <button class="cookie-btn" type="button" id="cookieDecline">Essential only</button>
@@ -164,7 +134,7 @@
   <div id="siteFooter"></div>
 
   <!-- NAV (injects header + footer) -->
-  <script src="assets/js/nav.js?v=403"></script>
+  <script defer src="/assets/js/nav.js?v=403"></script>
 
   <!-- Cookies -->
   <script>
