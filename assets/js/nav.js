@@ -1,6 +1,7 @@
 /* =========================================================
    Explore Portugal Experience - NAV inject (Header + Footer)
-   ========================================================= */
+   File: assets/js/nav.js
+========================================================= */
 
 (function () {
   const MENU = [
@@ -22,21 +23,20 @@
   const currentPath = (location.pathname.split("/").pop() || "index.html").toLowerCase();
 
   const headerHTML = `
-  <header class="site-header notranslate">
+  <header class="site-header notranslate" data-nosnippet>
     <div class="container header-inner">
-
-      <a class="brand" href="index.html" aria-label="Explore Portugal Experience">
-        <span class="brand-star-wrap">
-          <img src="assets/icons/apple-touch-icon.png" class="brand-star" alt="" />
+      <a class="brand" href="index.html" aria-label="Explore Portugal Experience - Home">
+        <span class="brand-star-wrap" aria-hidden="true">
+          <img class="brand-star" src="assets/icons/apple-touch-icon.png" alt="" />
         </span>
         <span class="brand-name">Explore Portugal Experience</span>
       </a>
 
-      <button class="nav-toggle" aria-label="Open menu">
-        <span class="nav-toggle-lines"></span>
+      <button class="nav-toggle" type="button" aria-label="Open menu">
+        <span class="nav-toggle-lines" aria-hidden="true"></span>
       </button>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="Main navigation">
         <ul class="nav-list">
           <li><a class="nav-link ${currentPath === "index.html" ? "is-active" : ""}" href="index.html">Home</a></li>
           ${MENU.map(m =>
@@ -44,13 +44,12 @@
           ).join("")}
         </ul>
       </nav>
-
     </div>
   </header>
   `;
 
   const footerHTML = `
-  <footer class="site-footer notranslate">
+  <footer class="site-footer notranslate" data-nosnippet>
     <div class="container footer-inner">
       <div class="footer-left">
         <div>© 2018 Explore Portugal Experience — Tourism in Portugal</div>
@@ -58,11 +57,11 @@
       </div>
 
       <div class="footer-right">
-        <a href="contactos.html">Contact</a>
-        <span>•</span>
-        <a href="${INSTAGRAM_URL}" target="_blank">Instagram</a>
-        <span>•</span>
-        <a href="${WHATSAPP_URL}" target="_blank">WhatsApp</a>
+        <a class="footer-link" href="contactos.html">Contact</a>
+        <span class="footer-dot">•</span>
+        <a class="footer-link" href="${INSTAGRAM_URL}" target="_blank" rel="noopener">Instagram</a>
+        <span class="footer-dot">•</span>
+        <a class="footer-link" href="${WHATSAPP_URL}" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </footer>
@@ -72,24 +71,19 @@
     const h = document.getElementById("siteHeader");
     const f = document.getElementById("siteFooter");
 
-    if (h) h.outerHTML = headerHTML;
-    else document.body.insertAdjacentHTML("afterbegin", headerHTML);
+    if (h) h.outerHTML = headerHTML.trim();
+    else if (!document.querySelector(".site-header")) document.body.insertAdjacentHTML("afterbegin", headerHTML.trim());
 
-    if (f) f.outerHTML = footerHTML;
-    else document.body.insertAdjacentHTML("beforeend", footerHTML);
+    if (f) f.outerHTML = footerHTML.trim();
+    else if (!document.querySelector(".site-footer")) document.body.insertAdjacentHTML("beforeend", footerHTML.trim());
 
     bind();
   }
 
   function bind() {
     const btn = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".nav");
-
-    if (!btn || !nav) return;
-
-    btn.onclick = () => {
-      document.documentElement.classList.toggle("nav-open");
-    };
+    if (!btn) return;
+    btn.addEventListener("click", () => document.documentElement.classList.toggle("nav-open"));
   }
 
   document.readyState === "loading"
