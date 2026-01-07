@@ -19,6 +19,9 @@
     { label: "Contactos", href: "/contactos.html" },
   ];
 
+  const INSTAGRAM_URL = "https://www.instagram.com/exploreportugal2025?igsh=dWlpa2hhYmIwYzho";
+  const WHATSAPP_URL = "https://wa.me/"; // mete aqui o teu número depois: https://wa.me/3519XXXXXXXX
+
   const path = (location.pathname || "/").toLowerCase();
 
   function isActive(href) {
@@ -65,9 +68,9 @@
           <div class="footer-links">
             <a href="/contactos.html">Contact</a>
             <span class="dot">•</span>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+            <a href="${INSTAGRAM_URL}" target="_blank" rel="noopener">Instagram</a>
             <span class="dot">•</span>
-            <a href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="${WHATSAPP_URL}" target="_blank" rel="noopener">WhatsApp</a>
             <span class="dot">•</span>
             <a href="#top" class="back-top">Back to top ↑</a>
           </div>
