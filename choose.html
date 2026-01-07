@@ -8,7 +8,7 @@
   <meta name="description" content="Why choose Explore Portugal Experience — calm, professional, discreet and tailored private transfers and tours in Portugal.">
   <link rel="canonical" href="https://www.exploreportugalexperience.com/choose.html">
 
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
@@ -21,7 +21,7 @@
 </head>
 
 <body>
-  <!-- NAV inject slot -->
+  <!-- ✅ REQUIRED slot for nav.js (Header) -->
   <div id="siteHeader"></div>
 
   <main class="page" id="top">
@@ -41,11 +41,13 @@
               <p class="p" style="margin-top:6px;">★★★★★</p>
               <p class="p">Private premium service mindset.</p>
             </div>
+
             <div class="card">
               <div class="label">Clarity</div>
               <p class="p" style="margin-top:6px;">No surprises.</p>
               <p class="p">Price and plan confirmed in writing before the day.</p>
             </div>
+
             <div class="card">
               <div class="label">Pace</div>
               <p class="p" style="margin-top:6px;">Your rhythm.</p>
@@ -54,7 +56,7 @@
           </div>
 
           <div class="actions" style="margin-top:16px;">
-            <a class="btn btn-gold" href="/booking.html">Book / Request a quote</a>
+            <a class="btn btn-gold" href="booking.html">Book / Request a quote</a>
             <a class="btn btn-ghost" href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener">See Instagram</a>
           </div>
         </div>
@@ -136,78 +138,6 @@
       </div>
     </section>
 
-    <!-- HOW WE WELCOME YOU -->
-    <section class="section">
-      <div class="wrap">
-        <div class="panel">
-          <h2 class="h2">How we welcome you</h2>
-          <p class="p">
-            The goal is simple: the moment you get into the car, the hardest part of your day is over.
-            From there, you can relax — we handle the rest.
-          </p>
-
-          <div class="grid-3" style="margin-top:12px;">
-            <article class="card">
-              <div class="label">Before the day</div>
-              <p class="p" style="margin-top:8px;">
-                We collect essentials (flight times, luggage, pick-up/drop-off points, special needs),
-                clarify doubts and confirm pricing and conditions in writing.
-              </p>
-            </article>
-
-            <article class="card">
-              <div class="label">On the day</div>
-              <p class="p" style="margin-top:8px;">
-                We arrive early, keep direct contact via WhatsApp/phone, help with luggage and calmly confirm
-                the plan — with room for small adjustments if needed.
-              </p>
-            </article>
-
-            <article class="card">
-              <div class="label">After the journey</div>
-              <p class="p" style="margin-top:8px;">
-                We remain available for timing changes, route suggestions and, when it makes sense,
-                help you plan the rest of your trip with honest recommendations.
-              </p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHO THIS IS FOR -->
-    <section class="section">
-      <div class="wrap">
-        <h2 class="h2">Who this service is for</h2>
-        <p class="p">
-          Designed for travellers who value clear communication, punctuality and a calm environment.
-        </p>
-
-        <div class="grid-3" style="margin-top:12px;">
-          <article class="card">
-            <div class="label">Families &amp; couples</div>
-            <p class="p" style="margin-top:8px;">
-              Travel comfortably without depending on public transport or renting a car — and let someone else handle logistics.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="label">Business travel</div>
-            <p class="p" style="margin-top:8px;">
-              Tight schedules, meetings, airports — arrive on time and keep your head clear without traffic and parking stress.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="label">Frequent visitors</div>
-            <p class="p" style="margin-top:8px;">
-              Returning to Portugal? Have a trusted contact who understands your habits, timings and route preferences.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <!-- DIFFERENTIATORS -->
     <section class="section">
       <div class="wrap">
@@ -253,7 +183,7 @@
     <div class="cookie-bar" id="cookieBar" aria-live="polite" aria-label="Cookie banner">
       <div class="cookie-inner">
         <div class="cookie-text">
-          We use cookies to improve your experience. Read our <a href="/privacy.html">Privacy Policy</a>.
+          We use cookies to improve your experience. Read our <a href="privacy.html">Privacy Policy</a>.
         </div>
         <div class="cookie-actions">
           <button class="cookie-btn" type="button" id="cookieDecline">Close</button>
@@ -263,15 +193,14 @@
     </div>
   </main>
 
-  <!-- FOOTER inject slot -->
+  <!-- ✅ REQUIRED slot for nav.js (Footer) -->
   <div id="siteFooter"></div>
 
-  <!-- JS -->
-  <script src="/assets/js/nav.js"></script>
+  <!-- ✅ nav.js must load AFTER the slots exist -->
+  <script src="assets/js/nav.js"></script>
 
   <script>
     (function () {
-      // Cookie banner (always clickable + persistent)
       const bar = document.getElementById('cookieBar');
       const btnAccept = document.getElementById('cookieAccept');
       const btnDecline = document.getElementById('cookieDecline');
