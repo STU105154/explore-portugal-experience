@@ -21,18 +21,21 @@
 </head>
 
 <body>
-  <!-- ✅ REQUIRED slot for nav.js (Header) -->
+  <!-- ✅ Anchor for "Back to top" (must NOT be the <main>) -->
+  <div id="top"></div>
+
+  <!-- ✅ NAV inject slot -->
   <div id="siteHeader"></div>
 
-  <main class="page" id="top">
+  <main class="page">
     <!-- HERO -->
     <section class="section">
       <div class="wrap">
         <div class="panel">
           <h1 class="h1">Why choose Explore Portugal Experience</h1>
           <p class="p">
-            Because travellers deserve calm, clarity and respect for their time. Every journey is prepared with
-            genuine attention to people — not just kilometres.
+            Because travellers deserve calm, clarity and respect for their time. Every journey is prepared
+            with genuine attention to people — not just kilometres.
           </p>
 
           <div class="grid-3" style="margin-top:14px;">
@@ -77,7 +80,7 @@
             <p class="p" style="margin-top:8px;">★★★★★</p>
             <p class="p">
               “We arrived exhausted after a long flight and the moment we saw our name on the sign,
-              we immediately felt at home. Calm, unhurried, crystal-clear communication and genuine care — especially with the kids.”
+              we immediately felt at home. Calm, unhurried, crystal-clear communication and genuine care.”
             </p>
           </article>
 
@@ -86,7 +89,7 @@
             <p class="p" style="margin-top:8px;">★★★★★</p>
             <p class="p">
               “We booked two days between Lisbon, Sintra and Cascais. Professional, discreet and incredibly kind.
-              It felt like travelling with someone from the family, but with all the comfort of a premium service.”
+              Premium without stress.”
             </p>
           </article>
 
@@ -95,7 +98,7 @@
             <p class="p" style="margin-top:8px;">★★★★★</p>
             <p class="p">
               “Tight schedule, multiple meetings and flights on the same day. Everything ran with rare serenity.
-              WhatsApp before, during and after — always with alternatives when needed. Truly tailored service.”
+              Always with alternatives when needed.”
             </p>
           </article>
         </div>
@@ -106,16 +109,14 @@
     <section class="section">
       <div class="wrap">
         <h2 class="h2">Our pillars</h2>
-        <p class="p">
-          Three values guide the experience: serenity, professionalism and attention to detail.
-        </p>
+        <p class="p">Three values guide the experience: serenity, professionalism and attention to detail.</p>
 
         <div class="grid-3" style="margin-top:12px;">
           <article class="card">
             <h3 class="h2" style="margin-bottom:6px;">Serenity</h3>
             <p class="p">
               Realistic planning, comfortable margins and clear communication before and during the service.
-              It’s not about rushing — it’s about arriving with time and zero unnecessary stress.
+              It’s about arriving with time and zero unnecessary stress.
             </p>
           </article>
 
@@ -123,7 +124,7 @@
             <h3 class="h2" style="margin-bottom:6px;">Professionalism</h3>
             <p class="p">
               Prepared vehicle, safety-first mindset, privacy and discreet presence.
-              The focus is to do things properly — without taking over your day.
+              Proper service — without taking over your day.
             </p>
           </article>
 
@@ -131,7 +132,7 @@
             <h3 class="h2" style="margin-bottom:6px;">Attention to detail</h3>
             <p class="p">
               From written confirmation with the final price to thoughtful suggestions for stops or dining:
-              everything is designed to keep the journey smooth and well supported.
+              smooth, light and well supported.
             </p>
           </article>
         </div>
@@ -159,7 +160,7 @@
             <article class="card">
               <div class="label">A pace that matches you</div>
               <p class="p" style="margin-top:8px;">
-                Some days you talk, others silence is better. Driving, communication and stops adapt to your energy — calmly.
+                Some days you talk, others silence feels better. Driving, communication and stops adapt to your energy — calmly.
               </p>
             </article>
 
@@ -193,10 +194,10 @@
     </div>
   </main>
 
-  <!-- ✅ REQUIRED slot for nav.js (Footer) -->
+  <!-- ✅ FOOTER inject slot -->
   <div id="siteFooter"></div>
 
-  <!-- ✅ nav.js must load AFTER the slots exist -->
+  <!-- JS -->
   <script src="assets/js/nav.js"></script>
 
   <script>
@@ -208,23 +209,23 @@
 
       const KEY = 'epe_cookie_consent_v1';
 
-      function hide() { bar.classList.remove('show'); }
-      function show() { bar.classList.add('show'); }
+      function hide(){ bar.classList.remove('show'); }
+      function show(){ bar.classList.add('show'); }
 
-      try {
+      try{
         const saved = localStorage.getItem(KEY);
         if (!saved) show();
-      } catch (e) {
+      }catch(e){
         show();
       }
 
-      btnAccept.addEventListener('click', function () {
-        try { localStorage.setItem(KEY, 'accepted'); } catch (e) {}
+      btnAccept.addEventListener('click', function(){
+        try{ localStorage.setItem(KEY, 'accepted'); }catch(e){}
         hide();
       });
 
-      btnDecline.addEventListener('click', function () {
-        try { localStorage.setItem(KEY, 'closed'); } catch (e) {}
+      btnDecline.addEventListener('click', function(){
+        try{ localStorage.setItem(KEY, 'closed'); }catch(e){}
         hide();
       });
     })();
