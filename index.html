@@ -9,34 +9,30 @@
 
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
   <link rel="icon" href="/assets/icons/apple-touch-icon.png">
-  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- cache bust -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=1001" />
 </head>
 
 <body class="home">
 
-  <!-- HEADER (injectado pelo nav.js — igual ao FAQ) -->
+  <!-- HEADER (inject nav.js like FAQ) -->
   <div id="siteHeader"></div>
 
   <main class="page">
-
-    <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
 
-        <!-- LOGO CENTRAL (único logo do index) -->
         <div class="brand">
-          <img
-            class="brand-logo"
-            src="/assets/images/logo-explore-portugal-experience.png"
-            alt="Explore Portugal Experience"
-          />
+          <img class="brand-logo"
+               src="/assets/images/logo-explore-portugal-experience.png"
+               alt="Explore Portugal Experience">
         </div>
 
         <p class="hero-subtitle">
           Premium private tours & transfers in Portugal — discreet, tailored, VIP.
         </p>
 
-        <!-- QUICK BOOKING -->
         <div class="panel" role="region" aria-label="Quick booking">
           <div class="grid-3">
 
@@ -106,35 +102,31 @@
       </div>
     </section>
 
-    <!-- SECOND SECTION -->
     <section class="section">
       <div class="wrap">
         <h2 class="h2">Premium by design</h2>
-        <p class="p">
-          A clean, quiet experience. No clutter, no noise — just Portugal, done properly.
-        </p>
+        <p class="p">A clean, quiet experience. No clutter, no noise — just Portugal, done properly.</p>
       </div>
     </section>
 
     <button class="to-top" type="button" aria-label="Back to top">↑</button>
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (inject nav.js like FAQ) -->
   <div id="siteFooter"></div>
 
-  <script defer src="/assets/js/nav.js"></script>
-  <script defer src="/assets/js/dropdowns.js"></script>
+  <!-- cache bust -->
+  <script defer src="/assets/js/nav.js?v=1001"></script>
+  <script defer src="/assets/js/dropdowns.js?v=1001"></script>
 
   <script>
     (function () {
       const btn = document.querySelector('.to-top');
       if (!btn) return;
       const toggle = () => btn.classList.toggle('show', window.scrollY > 500);
-      window.addEventListener('scroll', toggle);
+      window.addEventListener('scroll', toggle, { passive: true });
       toggle();
-      btn.addEventListener('click', () =>
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-      );
+      btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     })();
   </script>
 </body>
