@@ -1,8 +1,9 @@
 /* =========================================================
    Explore Portugal Experience - NAV inject (Header + Footer)
-   Works with BOTH slot id styles:
-   - #siteHeader / #siteFooter   (legacy)
-   - #site-header / #site-footer (new)
+   VIP / Premium
+   - Injects into #siteHeader/#siteFooter OR #site-header/#site-footer
+   - Desktop: one-line menu (CSS handles no-wrap)
+   - Mobile: hamburger toggle
 ========================================================= */
 
 (function () {
@@ -20,10 +21,10 @@
   ];
 
   const INSTAGRAM_URL = "https://www.instagram.com/exploreportugal2025?igsh=dWlpa2hhYmIwYzho";
-  const WHATSAPP_URL = "https://wa.me/"; // troca quando quiseres
+  const WHATSAPP_URL = "https://wa.me/"; // mete o número quando quiseres
 
-  // ✅ correct paths in your repo
-  const STAR_SRC = "/assets/icons/apple-touch-icon.png";
+  const STAR_SRC = "/assets/icons/apple-touch-icon.png"; // estrela
+  const LOGO_SRC = "/assets/images/logo-explore-portugal-experience.png"; // logo pequeno (páginas internas)
 
   const path = (location.pathname || "/").toLowerCase();
 
@@ -32,6 +33,14 @@
     if (h === "/index.html" || h === "/") return path === "/" || path.endsWith("/index.html");
     return path.endsWith(h);
   }
+
+  // show small brand mark on internal pages (not on index)
+  const isHome = (path === "/" || path.endsWith("/index.html"));
+  const brandMini = isHome ? "" : `
+    <div class="page-brand" aria-hidden="false">
+      <img src="${LOGO_SRC}" alt="Explore Portugal Experience">
+    </div>
+  `;
 
   const headerHTML = `
     <header class="site-header">
@@ -46,12 +55,13 @@
           <span aria-hidden="true">☰</span>
         </button>
 
-        <ul class="nav-links" id="mainNavLinks">
+        <ul class="nav-links">
           ${MENU.map(item => `
             <li><a class="nav-link ${isActive(item.href) ? "active" : ""}" href="${item.href}">${item.label}</a></li>
           `).join("")}
         </ul>
       </nav>
+      ${brandMini}
     </header>
   `;
 
@@ -78,7 +88,6 @@
     </footer>
   `;
 
-  // ✅ Support both IDs
   const headerSlot =
     document.getElementById("siteHeader") ||
     document.getElementById("site-header");
