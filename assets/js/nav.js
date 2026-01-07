@@ -1,7 +1,6 @@
 /* =========================================================
    Explore Portugal Experience - NAV inject (Header + Footer)
-   File: assets/js/nav.js
-========================================================= */
+   ========================================================= */
 
 (function () {
   const MENU = [
@@ -17,47 +16,41 @@
     { href: "contactos.html", label: "Contact" }
   ];
 
+  const INSTAGRAM_URL = "https://www.instagram.com/exploreportugal2025?igsh=dWlpa2hhYmIwYzho";
+  const WHATSAPP_URL = "https://wa.me/351962516005";
+
   const currentPath = (location.pathname.split("/").pop() || "index.html").toLowerCase();
 
-  // NOTE: Pediste para retirar mini logo do header -> não há logo aqui.
-  // Estrela animada: assets/icons/apple-touch-icon.png (como pediste)
   const headerHTML = `
-  <header class="site-header notranslate" data-nosnippet>
+  <header class="site-header notranslate">
     <div class="container header-inner">
 
-      <a class="brand" href="index.html" aria-label="Explore Portugal Experience - Home">
-        <span class="brand-star-wrap" aria-hidden="true">
-          <img class="brand-star" src="assets/icons/apple-touch-icon.png" alt="" />
+      <a class="brand" href="index.html" aria-label="Explore Portugal Experience">
+        <span class="brand-star-wrap">
+          <img src="assets/icons/apple-touch-icon.png" class="brand-star" alt="" />
         </span>
         <span class="brand-name">Explore Portugal Experience</span>
       </a>
 
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
-        <span class="nav-toggle-lines" aria-hidden="true"></span>
+      <button class="nav-toggle" aria-label="Open menu">
+        <span class="nav-toggle-lines"></span>
       </button>
 
-      <nav id="site-nav" class="nav" aria-label="Main navigation">
+      <nav class="nav">
         <ul class="nav-list">
-          <li class="nav-item"><a class="nav-link ${currentPath === "index.html" ? "is-active" : ""}" href="index.html">Home</a></li>
-          ${MENU.map(item => {
-            const isActive = currentPath === item.href.toLowerCase();
-            return `<li class="nav-item"><a class="nav-link ${isActive ? "is-active" : ""}" href="${item.href}">${item.label}</a></li>`;
-          }).join("")}
+          <li><a class="nav-link ${currentPath === "index.html" ? "is-active" : ""}" href="index.html">Home</a></li>
+          ${MENU.map(m =>
+            `<li><a class="nav-link ${currentPath === m.href ? "is-active" : ""}" href="${m.href}">${m.label}</a></li>`
+          ).join("")}
         </ul>
       </nav>
-
-      <!-- Opcional: se voltares a usar Google Translate, coloca o widget aqui -->
-      <div class="translate-slot" aria-label="Language selector">
-        <!-- <div id="google_translate_element"></div> -->
-      </div>
 
     </div>
   </header>
   `;
 
-  // Footer: exatamente como pediste + links (Contact / Instagram / WhatsApp)
   const footerHTML = `
-  <footer class="site-footer notranslate" data-nosnippet>
+  <footer class="site-footer notranslate">
     <div class="container footer-inner">
       <div class="footer-left">
         <div>© 2018 Explore Portugal Experience — Tourism in Portugal</div>
@@ -65,64 +58,41 @@
       </div>
 
       <div class="footer-right">
-        <a class="footer-link" href="contactos.html">Contact</a>
-        <span class="footer-dot">•</span>
-        <a class="footer-link" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
-        <span class="footer-dot">•</span>
-        <a class="footer-link" href="https://wa.me/351962516005" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="contactos.html">Contact</a>
+        <span>•</span>
+        <a href="${INSTAGRAM_URL}" target="_blank">Instagram</a>
+        <span>•</span>
+        <a href="${WHATSAPP_URL}" target="_blank">WhatsApp</a>
       </div>
     </div>
   </footer>
   `;
 
   function inject() {
-    // suporte para as tuas divs antigas #siteHeader/#siteFooter
-    const oldHeaderMount = document.getElementById("siteHeader");
-    const oldFooterMount = document.getElementById("siteFooter");
+    const h = document.getElementById("siteHeader");
+    const f = document.getElementById("siteFooter");
 
-    if (oldHeaderMount) {
-      oldHeaderMount.outerHTML = headerHTML.trim();
-    } else if (!document.querySelector(".site-header")) {
-      document.body.insertAdjacentHTML("afterbegin", headerHTML.trim());
-    }
+    if (h) h.outerHTML = headerHTML;
+    else document.body.insertAdjacentHTML("afterbegin", headerHTML);
 
-    if (oldFooterMount) {
-      oldFooterMount.outerHTML = footerHTML.trim();
-    } else if (!document.querySelector(".site-footer")) {
-      document.body.insertAdjacentHTML("beforeend", footerHTML.trim());
-    }
+    if (f) f.outerHTML = footerHTML;
+    else document.body.insertAdjacentHTML("beforeend", footerHTML);
 
-    bindNav();
+    bind();
   }
 
-  function bindNav() {
-    const toggle = document.querySelector(".nav-toggle");
-    const nav = document.querySelector("#site-nav");
-    if (!toggle || !nav) return;
+  function bind() {
+    const btn = document.querySelector(".nav-toggle");
+    const nav = document.querySelector(".nav");
 
-    const close = () => {
-      document.documentElement.classList.remove("nav-open");
-      toggle.setAttribute("aria-expanded", "false");
+    if (!btn || !nav) return;
+
+    btn.onclick = () => {
+      document.documentElement.classList.toggle("nav-open");
     };
-
-    toggle.addEventListener("click", () => {
-      const isOpen = document.documentElement.classList.toggle("nav-open");
-      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-
-    nav.addEventListener("click", (e) => {
-      const a = e.target.closest("a");
-      if (a) close();
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") close();
-    });
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", inject);
-  } else {
-    inject();
-  }
+  document.readyState === "loading"
+    ? document.addEventListener("DOMContentLoaded", inject)
+    : inject();
 })();
