@@ -1,214 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Contact – Explore Portugal Experience</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Contact Explore Portugal Experience – premium tours and private transfers in Portugal."
-    />
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact · Explore Portugal Experience</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
 
-    <link rel="stylesheet" href="./assets/css/style.css?v=200" />
-    <link rel="icon" type="image/png" href="./assets/icons/compass-gold-64.png" />
-    <link rel="canonical" href="https://www.exploreportugalexperience.com/contactos.html" />
+  <meta name="description" content="Contact Explore Portugal Experience — WhatsApp, phone and email for premium tours and transfers in Portugal." />
+  <link rel="canonical" href="https://www.exploreportugalexperience.com/contactos.html" />
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag("js", new Date());
-      gtag("config", "G-Y30ME05MQY");
-    </script>
-  </head>
+  <link rel="stylesheet" href="assets/css/style.css?v=1000" />
+  <link rel="icon" type="image/png" href="assets/icons/apple-touch-icon.png" />
 
-  <body>
-    <!-- Translate bar -->
-    <div class="translate-bar" role="navigation" aria-label="Language selector">
-      <span class="translate-label">Language</span>
-      <div id="google_translate_element"></div>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-Y30ME05MQY");
+  </script>
+</head>
+
+<body>
+  <div id="siteHeader"></div>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <h1 class="h1">Contact</h1>
+          <p class="p">
+            Fastest reply via WhatsApp. You can also call or email — we usually respond quickly.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <h2 class="h2">WhatsApp</h2>
+          <p class="p">
+            Tap to message:
+            <a href="https://wa.me/351962516005" target="_blank" rel="noopener">+351 962 516 005</a>
+          </p>
+
+          <div class="qr-wrap">
+            <img src="assets/images/qr-whatsapp.png" alt="WhatsApp QR code" />
+          </div>
+
+          <p class="p" style="margin-top:12px; margin-bottom:0;">
+            Scan the QR to start a chat instantly.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <h2 class="h2">Phone & Email</h2>
+          <p class="p" style="margin-bottom:0;">
+            Phone:
+            <a href="tel:+351962516005">+351 962 516 005</a><br/>
+            Email:
+            <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COOKIE BAR (premium: Accept all / Essential only / Manage) -->
+    <div class="cookie-bar" id="cookieBar" aria-live="polite">
+      <div class="cookie-inner">
+        <div class="cookie-text">
+          We use cookies to improve site performance, understand traffic and keep the experience reliable.
+          You can accept all cookies, continue with only essential cookies, or manage preferences.
+          <a href="privacy.html">Learn more</a>
+        </div>
+        <div class="cookie-actions">
+          <button class="btn cookie-btn btn-ghost" type="button" id="cookieEssential">Essential only</button>
+          <button class="btn cookie-btn" type="button" id="cookieManage">Manage</button>
+          <button class="btn cookie-btn btn-gold" type="button" id="cookieAccept">Accept all</button>
+        </div>
+      </div>
     </div>
 
-    <!-- HEADER (sem logo pequenino) -->
-    <header class="site-header">
-      <div class="header-inner">
-        <a href="index.html" class="home-star" aria-label="Home">
-          <img
-            src="./assets/icons/compass-gold-solid.svg"
-            alt="Explore Portugal Experience"
-            class="star-animated"
-          />
-        </a>
+    <!-- Cookie manage modal -->
+    <div class="epe-modal" id="cookieModal" aria-hidden="true">
+      <div class="epe-modal__backdrop" data-close="1"></div>
 
-        <nav class="nav" id="mainNav" aria-label="Main navigation">
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="choose.html">Why us</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="faq.html">FAQ</a>
-          <a href="partners-drivers.html">Driver partners</a>
-          <a href="partners-hospitality.html">Hospitality partners</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="booking.html">Bookings</a>
-          <a href="contactos.html" aria-current="page">Contact</a>
-        </nav>
+      <div class="epe-modal__panel" role="dialog" aria-modal="true" aria-label="Cookie preferences">
+        <div class="epe-modal__head">
+          <div class="epe-modal__title">Cookie preferences</div>
+          <button class="epe-modal__close" type="button" data-close="1" aria-label="Close">✕</button>
+        </div>
 
-        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </header>
-
-    <main>
-      <section class="section contact-hero">
-        <div class="section-inner">
-          <h1 class="section-title">Contact</h1>
-          <p class="section-lead">
-            For bookings, special requests or partnerships. Fast reply, premium service.
+        <div class="epe-modal__body">
+          <p class="p" style="margin-top:0;">
+            Essential cookies keep the website working. Analytics cookies help us understand traffic and improve the experience.
           </p>
 
-          <div class="contact-grid">
-            <!-- BLOCO PREMIUM -->
-            <div class="contact-card premium-contact">
-              <h2>Direct contacts</h2>
+          <label class="epe-switch">
+            <input type="checkbox" checked disabled />
+            <span class="epe-switch__ui"></span>
+            <span class="epe-switch__text">Essential (always on)</span>
+          </label>
 
-              <div class="contact-block">
-                <h3>Phone – Portugal (calls)</h3>
-                <p><a href="tel:+351962516005">+351 962 516 005</a></p>
-              </div>
+          <label class="epe-switch">
+            <input type="checkbox" id="cookieAnalytics" />
+            <span class="epe-switch__ui"></span>
+            <span class="epe-switch__text">Analytics</span>
+          </label>
 
-              <div class="contact-block">
-                <h3>Phone – UK (calls)</h3>
-                <p><a href="tel:+447462801601">+44 746 280 1601</a></p>
-              </div>
-
-              <div class="contact-block">
-                <h3>Email</h3>
-                <p class="contact-email">
-                  <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
-                </p>
-              </div>
-
-              <div class="contact-block">
-                <h3>Availability</h3>
-                <p>08:00 – 22:00 (Lisbon time)</p>
-              </div>
-
-              <div class="contact-block">
-                <h3>Service area</h3>
-                <p>Mainland Portugal. Tailor-made programmes on request.</p>
-              </div>
-
-              <div class="contact-block">
-                <h3>Follow us</h3>
-                <p>
-                  <a href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener">Instagram</a>
-                  ·
-                  <a href="https://www.tiktok.com/@explore.portugal24" target="_blank" rel="noopener">TikTok</a>
-                </p>
-              </div>
-
-              <div class="contact-cta-row">
-                <a class="btn-primary" href="booking.html">Go to bookings</a>
-                <a class="btn-outline" href="index.html">Back to home</a>
-              </div>
-            </div>
-
-            <!-- FORM -->
-            <div class="contact-card">
-              <h2>Send a message</h2>
-              <p class="form-note">
-                Tip: add date, pick-up, drop-off, number of guests and any special requests.
-              </p>
-
-              <form
-                class="contact-form"
-                action="mailto:info@exploreportugalexperience.com"
-                method="post"
-                enctype="text/plain"
-              >
-                <div class="form-row">
-                  <label for="name">Name</label>
-                  <input type="text" id="name" name="Name" placeholder="Your name" required />
-                </div>
-
-                <div class="form-row">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="Email" placeholder="Your email" required />
-                </div>
-
-                <div class="form-row">
-                  <label for="phone">Phone (optional)</label>
-                  <input type="tel" id="phone" name="Phone" placeholder="+351..." />
-                </div>
-
-                <div class="form-row">
-                  <label for="message">Message</label>
-                  <textarea
-                    id="message"
-                    name="Message"
-                    placeholder="Dates, service, pick-up, drop-off, guests…"
-                    required
-                  ></textarea>
-                </div>
-
-                <button type="submit" class="btn-primary">Send</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- FOOTER (sem WhatsApp, só telemóvel PT) -->
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-col">
-          <p class="footer-title">Explore Portugal Experience</p>
-          <p>Premium private tours &amp; transfers in Portugal.</p>
-        </div>
-
-        <div class="footer-col">
-          <p class="footer-title">Contact</p>
-          <p>
-            Phone (Portugal): <a href="tel:+351962516005">+351 962 516 005</a><br />
-            Email: <a href="mailto:info@exploreportugalexperience.com">info@exploreportugalexperience.com</a>
+          <p class="p" style="margin-bottom:0;">
+            You can change your choice anytime by opening this panel again.
           </p>
         </div>
 
-        <div class="footer-col">
-          <p class="footer-title">Follow</p>
-          <p>
-            <a href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener">Instagram</a><br />
-            <a href="https://www.tiktok.com/@explore.portugal24" target="_blank" rel="noopener">TikTok</a>
-          </p>
+        <div class="epe-modal__foot">
+          <button class="btn btn-ghost" type="button" data-close="1">Cancel</button>
+          <button class="btn btn-gold" type="button" id="cookieSave">Save preferences</button>
         </div>
       </div>
+    </div>
+  </main>
 
-      <div class="footer-bottom">
-        <p>Powered by: MkDesign – London</p>
-      </div>
-    </footer>
+  <div id="siteFooter"></div>
 
-    <script src="./assets/js/nav.js?v=200"></script>
+  <script src="assets/js/nav.js?v=1000"></script>
 
-    <!-- Google Translate -->
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          {
-            pageLanguage: "en",
-            includedLanguages: "en,pt,fr,es,de,it",
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-          },
-          "google_translate_element"
-        );
+  <script>
+    (function(){
+      const KEY = "epe_cookie_consent_v2";
+      const bar = document.getElementById("cookieBar");
+
+      const btnAccept = document.getElementById("cookieAccept");
+      const btnEssential = document.getElementById("cookieEssential");
+      const btnManage = document.getElementById("cookieManage");
+
+      const modal = document.getElementById("cookieModal");
+      const analytics = document.getElementById("cookieAnalytics");
+      const btnSave = document.getElementById("cookieSave");
+
+      if(!bar || !btnAccept || !btnEssential || !btnManage || !modal || !analytics || !btnSave) return;
+
+      function get(){
+        try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch(e){ return null; }
       }
-    </script>
-    <script
-      type="text/javascript"
-      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    ></script>
-  </body>
+
+      function set(value){
+        try { localStorage.setItem(KEY, JSON.stringify(value)); } catch(e){}
+        bar.classList.remove("show");
+      }
+
+      function showIfNeeded(){
+        const v = get();
+        if(!v) bar.classList.add("show");
+      }
+
+      function openModal(){
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden","false");
+        document.documentElement.classList.add("no-scroll");
+        const v = get();
+        analytics.checked = !!(v && v.analytics === true);
+      }
+
+      function closeModal(){
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden","true");
+        document.documentElement.classList.remove("no-scroll");
+      }
+
+      btnAccept.addEventListener("click", () => set({ essential:true, analytics:true, choice:"accept_all" }));
+      btnEssential.addEventListener("click", () => set({ essential:true, analytics:false, choice:"essential_only" }));
+      btnManage.addEventListener("click", openModal);
+
+      modal.addEventListener("click", (e) => {
+        const close = e.target && e.target.getAttribute && e.target.getAttribute("data-close");
+        if(close) closeModal();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if(e.key === "Escape" && modal.classList.contains("open")) closeModal();
+      });
+
+      btnSave.addEventListener("click", () => {
+        set({ essential:true, analytics: analytics.checked, choice:"custom" });
+        closeModal();
+      });
+
+      showIfNeeded();
+    })();
+  </script>
+</body>
 </html>
