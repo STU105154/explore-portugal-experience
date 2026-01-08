@@ -9,211 +9,976 @@
   <link rel="icon" type="image/png" href="assets/icons/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/style.css?v=1000" />
 
+  <!-- Page-only premium tweaks (no need to touch style.css) -->
   <style>
-    .vip-split{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}
-    @media(max-width:980px){.vip-split{grid-template-columns:1fr}}
-    .vip-card{border:1px solid rgba(212,169,86,.28);background:rgba(255,255,255,.04);border-radius:16px;padding:14px}
-    .vip-row{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
-    .vip-badge{border:1px solid rgba(212,169,86,.22);border-radius:999px;padding:6px 10px;font-size:12px}
-    .vip-estimate{font-size:18px;margin:6px 0}
-    .vip-muted{font-size:12px;opacity:.85;line-height:1.35}
-    .vip-check{display:flex;gap:10px;margin-top:10px}
-    .vip-pay-grid{display:grid;gap:10px;margin-top:10px}
-    .vip-radio{display:flex;gap:10px;padding:10px;border-radius:14px;border:1px solid rgba(255,255,255,.1);cursor:pointer}
-    .vip-radio:hover{border-color:rgba(212,169,86,.35)}
-    .vip-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    .vip-hidden{display:none}
-    .vip-ref{font-family:monospace;font-size:12px;padding:6px 10px;border:1px solid rgba(255,255,255,.15);border-radius:12px}
+    .vip-note { margin: 10px 0 0; opacity: .92; }
+    .vip-split { display:grid; grid-template-columns: 1.1fr .9fr; gap: 14px; align-items:start; }
+    @media (max-width: 980px){ .vip-split { grid-template-columns: 1fr; } }
+
+    .vip-card {
+      border: 1px solid rgba(212,169,86,.28);
+      background: rgba(255,255,255,.04);
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.25);
+    }
+
+    .vip-card h2 { margin: 0 0 8px; font-size: 16px; letter-spacing: .2px; }
+    .vip-row { display:flex; gap: 10px; flex-wrap: wrap; align-items:center; justify-content:space-between; }
+    .vip-badge {
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(212,169,86,.22);
+      background: rgba(0,0,0,.25);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .vip-estimate { font-size: 18px; margin: 6px 0 2px; letter-spacing: .2px; }
+    .vip-estimate small { font-size: 12px; opacity: .85; display:block; margin-top: 6px; line-height: 1.35; }
+
+    .vip-pay-grid { display:grid; gap: 10px; margin-top: 10px; }
+    .vip-radio {
+      display:flex; gap:10px; align-items:flex-start;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      cursor: pointer;
+      user-select:none;
+    }
+    .vip-radio:hover { border-color: rgba(212,169,86,.28); }
+    .vip-radio input { margin-top: 3px; }
+    .vip-radio strong { font-weight: 600; }
+    .vip-muted { opacity:.85; font-size: 12px; line-height: 1.35; }
+
+    .vip-actions { display:flex; gap:10px; flex-wrap: wrap; margin-top: 10px; }
+    .vip-actions .btn { text-decoration:none; }
+
+    .vip-divider { height: 10px; }
+    .vip-check {
+      display:flex; gap:10px; align-items:flex-start;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px dashed rgba(212,169,86,.28);
+      background: rgba(0,0,0,.22);
+    }
+    .vip-check input { margin-top: 3px; }
+
+    .vip-hidden { display:none !important; }
+
+    .vip-mini { font-size: 12px; opacity: .85; margin: 10px 0 0; line-height: 1.35; }
+
+    .vip-inline { display:flex; gap: 10px; flex-wrap: wrap; align-items:center; }
+
+    .vip-ref {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 12px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.25);
+      opacity: .92;
+    }
+
+    .vip-amount {
+      font-size: 16px;
+      margin-top: 8px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.22);
+    }
   </style>
 </head>
 
 <body>
-<div id="siteHeader"></div>
+  <div id="top"></div>
 
-<main class="page">
-<section class="section">
-<div class="wrap">
-<h1 class="h1">Booking</h1>
-<p class="p">Select your details. If you agree with the estimated VIP range, pay immediately and send the request.</p>
+  <!-- ✅ Header injected by nav.js -->
+  <div id="siteHeader"></div>
 
-<div class="panel">
-<div class="vip-split">
+  <main class="page">
+    <section class="section">
+      <div class="wrap">
+        <h1 class="h1">Booking</h1>
+        <p class="p" style="margin-bottom:14px;">
+          Fill in the details. You’ll see an estimated VIP range and a required deposit amount (never zero) to confirm the reservation.
+        </p>
 
-<form id="bookingForm">
+        <div class="panel">
+          <div class="vip-split">
 
-<!-- ESTIMATE -->
-<div class="vip-card">
-  <div class="vip-row">
-    <span class="vip-badge">Estimated VIP range</span>
-    <span class="vip-badge">Payment required to confirm</span>
-  </div>
-  <div id="estimateLine" class="vip-estimate">€ —</div>
-  <div id="estimateNote" class="vip-muted">Select trip + route to calculate.</div>
-  <div class="vip-check">
-    <input type="checkbox" id="agreeEstimate">
-    <label for="agreeEstimate" class="vip-muted">I agree with this estimated range and will pay now.</label>
-  </div>
-</div>
+            <!-- LEFT: FORM -->
+            <form id="bookingForm" novalidate>
 
-<div style="height:12px"></div>
+              <!-- VIP ESTIMATE -->
+              <div class="vip-card" style="margin-bottom:14px;">
+                <div class="vip-row">
+                  <div class="vip-badge" title="Live estimate based on your selections">
+                    <span aria-hidden="true">✦</span>
+                    <span>Estimated VIP range</span>
+                  </div>
 
-<!-- FORM -->
-<div class="grid-3">
-  <div class="field">
-    <label class="label">Trip</label>
-    <div class="cselect" data-name="trip">
-      <button type="button" class="cselect-btn"><span class="cselect-value">Select</span>▾</button>
-      <ul class="cselect-list">
-        <li class="cselect-option" data-value="one-way">One-way</li>
-        <li class="cselect-option" data-value="return">Return</li>
-        <li class="cselect-option" data-value="hourly">Hourly</li>
-        <li class="cselect-option" data-value="tour">Private Tour</li>
-      </ul>
-      <input type="hidden" name="trip">
-    </div>
-  </div>
-  <div class="field"><label class="label">Date</label><input id="dateGo" class="input" type="date"></div>
-  <div class="field"><label class="label">Time</label><input id="timeGo" class="input" type="time"></div>
-</div>
+                  <div class="vip-badge" title="Deposit required to confirm the reservation slot">
+                    <span aria-hidden="true">🔒</span>
+                    <span>Deposit required</span>
+                  </div>
+                </div>
 
-<div style="height:10px"></div>
+                <div id="estimateLine" class="vip-estimate">—</div>
+                <div id="estimateNote" class="vip-muted">
+                  Choose Trip + From + To to see an estimate.
+                </div>
 
-<div class="grid-3">
-  <div class="field"><label class="label">From</label>
-    <div class="cselect" data-name="from">
-      <button type="button" class="cselect-btn"><span class="cselect-value">Select</span>▾</button>
-      <ul class="cselect-list">
-        <li class="cselect-option" data-value="LIS">Lisbon Airport</li>
-        <li class="cselect-option" data-value="pt-lisbon-city">Lisbon City</li>
-        <li class="cselect-option" data-value="pt-cascais">Cascais</li>
-        <li class="cselect-option" data-value="pt-sintra">Sintra</li>
-        <li class="cselect-option" data-value="OPO">Porto Airport</li>
-      </ul>
-      <input type="hidden" name="from">
-    </div>
-  </div>
+                <div class="vip-divider"></div>
 
-  <div class="field"><label class="label">To</label>
-    <div class="cselect" data-name="to">
-      <button type="button" class="cselect-btn"><span class="cselect-value">Select</span>▾</button>
-      <ul class="cselect-list">
-        <li class="cselect-option" data-value="pt-lisbon-city">Lisbon City</li>
-        <li class="cselect-option" data-value="pt-cascais">Cascais</li>
-        <li class="cselect-option" data-value="pt-sintra">Sintra</li>
-        <li class="cselect-option" data-value="LIS">Lisbon Airport</li>
-      </ul>
-      <input type="hidden" name="to">
-    </div>
-  </div>
+                <div class="grid-3">
+                  <div class="field">
+                    <label class="label" for="currency">Currency</label>
+                    <select id="currency" class="input">
+                      <option value="EUR" selected>EUR (€)</option>
+                      <option value="GBP">GBP (£)</option>
+                      <option value="OTHER">Other</option>
+                    </select>
+                  </div>
 
-  <div class="field"><label class="label">Passengers</label><input id="passengers" class="input" type="number" min="1" value="1"></div>
-</div>
+                  <div class="field" id="otherCurrencyWrap" style="display:none;">
+                    <label class="label" for="otherCurrency">Other currency code</label>
+                    <input id="otherCurrency" class="input" type="text" placeholder="e.g., USD" maxlength="6" />
+                  </div>
 
-<div style="height:12px"></div>
+                  <div class="field" id="fxRateWrap" style="display:none;">
+                    <label class="label" for="fxRate">FX rate vs EUR</label>
+                    <input id="fxRate" class="input" type="number" step="0.0001" placeholder="e.g., 0.86" />
+                  </div>
+                </div>
 
-<div class="vip-card">
-  <h3 class="label">Payment confirmation</h3>
-  <div class="vip-row">
-    <div class="vip-ref" id="refCode">REF: —</div>
-  </div>
+                <div class="vip-amount">
+                  <div class="vip-muted">Deposit to pay now</div>
+                  <div id="depositLine" style="margin-top:6px; font-size:18px;">—</div>
+                  <div class="vip-muted" id="depositNote" style="margin-top:6px;">
+                    Deposit is used to secure the time slot. Final balance is confirmed after WhatsApp details.
+                  </div>
+                </div>
 
-  <div class="vip-check">
-    <input type="checkbox" id="paymentDone">
-    <label for="paymentDone" class="vip-muted">I have initiated/completed the payment.</label>
-  </div>
-</div>
+                <div class="vip-check">
+                  <input id="agreeEstimate" type="checkbox" />
+                  <label for="agreeEstimate" class="vip-muted" style="margin:0;">
+                    I agree with the estimated range and the deposit amount shown above.
+                  </label>
+                </div>
+              </div>
 
-<div class="actions" style="margin-top:14px">
-  <button id="submitBtn" class="btn btn-gold" type="submit" disabled>Pay & send via WhatsApp</button>
-</div>
+              <!-- FORM -->
+              <div class="grid-3">
+                <div class="field">
+                  <label class="label" for="cs-trip-btn">Trip</label>
+                  <div class="cselect" data-name="trip">
+                    <button id="cs-trip-btn" type="button" class="cselect-btn" aria-haspopup="listbox" aria-expanded="false">
+                      <span class="cselect-value">Select trip type</span>
+                      <span class="cselect-chevron" aria-hidden="true">▾</span>
+                    </button>
+                    <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="Trip type">
+                      <li class="cselect-option" role="option" tabindex="0" data-value="one-way">One-way</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="return">Return</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="hourly">Hourly Chauffeur</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="tour">Private Tour</li>
+                    </ul>
+                    <input type="hidden" name="trip" value="">
+                  </div>
+                </div>
 
-</form>
+                <div class="field">
+                  <label class="label" for="dateGo">Date</label>
+                  <input id="dateGo" class="input" type="date" />
+                </div>
 
-<!-- PAY METHODS -->
-<aside class="vip-card">
-  <h3 class="label">Pay now</h3>
+                <div class="field">
+                  <label class="label" for="timeGo">Time</label>
+                  <input id="timeGo" class="input" type="time" />
+                </div>
+              </div>
 
-  <div class="vip-pay-grid">
-    <label class="vip-radio"><input type="radio" name="pay" value="MB Way"><strong>MB Way</strong></label>
-    <label class="vip-radio"><input type="radio" name="pay" value="Revolut"><strong>Revolut</strong></label>
-    <label class="vip-radio"><input type="radio" name="pay" value="PayPal"><strong>PayPal</strong></label>
-  </div>
+              <div style="height:10px;"></div>
 
-  <div class="vip-actions">
-    <a id="payNowBtn" class="btn btn-gold vip-hidden" target="_blank">Pay now</a>
-  </div>
-</aside>
+              <div class="grid-3">
+                <div class="field">
+                  <label class="label" for="cs-from-btn">From (City / Airport)</label>
+                  <div class="cselect" data-name="from">
+                    <button id="cs-from-btn" type="button" class="cselect-btn" aria-haspopup="listbox" aria-expanded="false">
+                      <span class="cselect-value">Select pickup</span>
+                      <span class="cselect-chevron" aria-hidden="true">▾</span>
+                    </button>
+                    <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="From options">
 
-</div>
-</div>
-</div>
-</section>
-</main>
+                      <li class="cselect-sep" role="presentation">Portugal — Cities</li>
+                      <li class="cselect-option" role="option" tabindex="0" data-value="pt-lisbon-city">Lisbon (City)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="pt-porto-city">Porto (City)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="pt-cascais">Cascais</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="pt-sintra">Sintra</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="pt-algarve">Algarve</li>
 
-<div id="siteFooter"></div>
+                      <li class="cselect-sep" role="presentation">Portugal — Airports</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="LIS">Lisbon Airport (LIS)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="OPO">Porto Airport (OPO)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="FAO">Faro Airport (FAO)</li>
 
-<script src="assets/js/nav.js?v=1000" defer></script>
-<script src="assets/js/dropdowns.js?v=1000" defer></script>
+                      <li class="cselect-sep" role="presentation">United Kingdom — Airports</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="LHR">London Heathrow (LHR)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="LGW">London Gatwick (LGW)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="STN">London Stansted (STN)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="MAN">Manchester (MAN)</li>
 
-<script>
-(function(){
-const form=document.getElementById('bookingForm');
-const estimateLine=document.getElementById('estimateLine');
-const estimateNote=document.getElementById('estimateNote');
-const submitBtn=document.getElementById('submitBtn');
-const agree=document.getElementById('agreeEstimate');
-const paid=document.getElementById('paymentDone');
-const refEl=document.getElementById('refCode');
-const payBtn=document.getElementById('payNowBtn');
+                      <li class="cselect-sep" role="presentation">France — Airports</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="CDG">Paris Charles de Gaulle (CDG)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="ORY">Paris Orly (ORY)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="NCE">Nice (NCE)</li>
 
-function hidden(n){return form.querySelector(`input[name="${n}"]`)?.value||''}
-function ref(){return 'EPE-'+Math.random().toString(36).substring(2,8).toUpperCase()}
-const REF=ref(); refEl.textContent='REF: '+REF;
+                      <li class="cselect-sep" role="presentation">Spain — Airports</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="MAD">Madrid (MAD)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="BCN">Barcelona (BCN)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="AGP">Málaga (AGP)</li>
 
-function getSitePhone(){
-  const tel=document.querySelector('a[href^="tel:"]');
-  if(tel)return tel.getAttribute('href').replace('tel:','').trim();
-  const wa=document.querySelector('a[href*="wa.me/"]');
-  if(wa){const m=wa.href.match(/wa\.me\/(\d+)/);if(m)return '+'+m[1]}
-  return '+351000000000';
-}
+                      <li class="cselect-sep" role="presentation">Italy — Airports</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="FCO">Rome Fiumicino (FCO)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="MXP">Milan Malpensa (MXP)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="VCE">Venice (VCE)</li>
 
-const PAY_LINKS={
-  'MB Way':'mbway:'+getSitePhone(),
-  'Revolut':'https://revolut.me/dalilav7js',
-  'PayPal':'https://paypal.me/yourpaypal'
-};
+                      <li class="cselect-sep" role="presentation">Netherlands — Airports</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="AMS">Amsterdam Schiphol (AMS)</li>
 
-document.querySelectorAll('input[name="pay"]').forEach(r=>{
-  r.addEventListener('change',()=>{
-    payBtn.href=PAY_LINKS[r.value];
-    payBtn.classList.remove('vip-hidden');
-    gate();
-  });
-});
+                      <li class="cselect-sep" role="presentation">Germany — Airports</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="FRA">Frankfurt (FRA)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="MUC">Munich (MUC)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="BER">Berlin (BER)</li>
 
-function estimate(){
-  const trip=hidden('trip'),from=hidden('from'),to=hidden('to');
-  if(!trip||!from||!to){estimateLine.textContent='€ —';return}
-  let min=60,max=120;
-  if(trip==='hourly'){min=45;max=75;estimateLine.textContent=`€${min}–€${max}/h`;return}
-  if(trip==='tour'){min=220;max=420}
-  estimateLine.textContent=`€${min}–€${max}`;
-}
+                      <li class="cselect-sep" role="presentation">Switzerland — Airports</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="ZRH">Zurich (ZRH)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="GVA">Geneva (GVA)</li>
 
-function gate(){
-  submitBtn.disabled=!(agree.checked && paid.checked && !payBtn.classList.contains('vip-hidden'));
-}
+                      <li class="cselect-sep" role="presentation">Ireland — Airports</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="DUB">Dublin (DUB)</li>
 
-setInterval(()=>{estimate();gate()},300);
+                      <li class="cselect-sep" role="presentation">Belgium — Airports</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="BRU">Brussels (BRU)</li>
 
-form.addEventListener('submit',e=>{
-  e.preventDefault();
-  const txt=`EPE BOOKING%0AREF:${REF}%0AESTIMATE:${estimateLine.textContent}%0APAYMENT CONFIRMED`;
-  window.open('https://wa.me/?text='+txt,'_blank');
-});
-})();
-</script>
+                    </ul>
+                    <input type="hidden" name="from" value="">
+                  </div>
+                </div>
 
+                <div class="field">
+                  <label class="label" for="cs-to-btn">To (City / Airport)</label>
+                  <div class="cselect" data-name="to">
+                    <button id="cs-to-btn" type="button" class="cselect-btn" aria-haspopup="listbox" aria-expanded="false">
+                      <span class="cselect-value">Select destination</span>
+                      <span class="cselect-chevron" aria-hidden="true">▾</span>
+                    </button>
+                    <ul class="cselect-list" role="listbox" tabindex="-1" aria-label="To options">
+
+                      <li class="cselect-sep" role="presentation">Portugal — Cities</li>
+                      <li class="cselect-option" role="option" tabindex="0" data-value="pt-lisbon-city">Lisbon (City)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="pt-porto-city">Porto (City)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="pt-cascais">Cascais</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="pt-sintra">Sintra</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="pt-algarve">Algarve</li>
+
+                      <li class="cselect-sep" role="presentation">Portugal — Airports</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="LIS">Lisbon Airport (LIS)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="OPO">Porto Airport (OPO)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="FAO">Faro Airport (FAO)</li>
+
+                      <li class="cselect-sep" role="presentation">United Kingdom — Airports</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="LHR">London Heathrow (LHR)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="LGW">London Gatwick (LGW)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="STN">London Stansted (STN)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="MAN">Manchester (MAN)</li>
+
+                      <li class="cselect-sep" role="presentation">France — Airports</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="CDG">Paris Charles de Gaulle (CDG)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="ORY">Paris Orly (ORY)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="NCE">Nice (NCE)</li>
+
+                      <li class="cselect-sep" role="presentation">Spain — Airports</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="MAD">Madrid (MAD)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="BCN">Barcelona (BCN)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="AGP">Málaga (AGP)</li>
+
+                      <li class="cselect-sep" role="presentation">Italy — Airports</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="FCO">Rome Fiumicino (FCO)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="MXP">Milan Malpensa (MXP)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="VCE">Venice (VCE)</li>
+
+                      <li class="cselect-sep" role="presentation">Netherlands — Airports</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="AMS">Amsterdam Schiphol (AMS)</li>
+
+                      <li class="cselect-sep" role="presentation">Germany — Airports</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="FRA">Frankfurt (FRA)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="MUC">Munich (MUC)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="BER">Berlin (BER)</li>
+
+                      <li class="cselect-sep" role="presentation">Switzerland — Airports</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="ZRH">Zurich (ZRH)</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="GVA">Geneva (GVA)</li>
+
+                      <li class="cselect-sep" role="presentation">Ireland — Airports</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="DUB">Dublin (DUB)</li>
+
+                      <li class="cselect-sep" role="presentation">Belgium — Airports</li>
+                      <li class="cselect-option" role="option" tabindex="-1" data-value="BRU">Brussels (BRU)</li>
+
+                    </ul>
+                    <input type="hidden" name="to" value="">
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label" for="pickupDetails">Pickup details (hotel / terminal)</label>
+                  <input id="pickupDetails" class="input" type="text" placeholder="e.g., Terminal 1, Hotel name, street..." />
+                </div>
+              </div>
+
+              <div style="height:10px;"></div>
+
+              <div class="grid-3">
+                <div class="field">
+                  <label class="label" for="returnDate">Return date (if return)</label>
+                  <input id="returnDate" class="input" type="date" />
+                </div>
+
+                <div class="field">
+                  <label class="label" for="passengers">Passengers</label>
+                  <input id="passengers" class="input" type="number" min="1" max="20" value="1" />
+                </div>
+
+                <div class="field">
+                  <label class="label" for="luggage">Luggage (bags)</label>
+                  <input id="luggage" class="input" type="number" min="0" max="30" value="0" />
+                </div>
+              </div>
+
+              <div style="height:10px;"></div>
+
+              <!-- PERSONAL DETAILS (RESTORED) -->
+              <div class="vip-card" style="margin: 4px 0 14px;">
+                <h2>Client details</h2>
+                <div class="grid-3">
+                  <div class="field">
+                    <label class="label" for="fullName">Full name</label>
+                    <input id="fullName" class="input" type="text" placeholder="Your name" />
+                  </div>
+                  <div class="field">
+                    <label class="label" for="country">Country</label>
+                    <input id="country" class="input" type="text" placeholder="e.g., UK / Portugal" />
+                  </div>
+                  <div class="field">
+                    <label class="label" for="phone">Phone / WhatsApp</label>
+                    <input id="phone" class="input" type="text" placeholder="+44... / +351..." />
+                  </div>
+                </div>
+
+                <div class="grid-2" style="margin-top:10px;">
+                  <div class="field">
+                    <label class="label" for="email">Email</label>
+                    <input id="email" class="input" type="email" placeholder="name@email.com" />
+                  </div>
+                  <div class="field">
+                    <label class="label" for="contact">Preferred contact (optional)</label>
+                    <input id="contact" class="input" type="text" placeholder="email or phone" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid-2">
+                <div class="field">
+                  <label class="label" for="flight">Flight / Train (optional)</label>
+                  <input id="flight" class="input" type="text" placeholder="e.g., TP1365" />
+                </div>
+                <div class="field">
+                  <label class="label" for="paymentRef">Payment reference / last 4 digits (optional)</label>
+                  <input id="paymentRef" class="input" type="text" placeholder="e.g., MBWay 4821 / PayPal TXN..." />
+                </div>
+              </div>
+
+              <div style="height:10px;"></div>
+
+              <div class="field">
+                <label class="label" for="notes">Notes (child seat, stops, VIP requests)</label>
+                <textarea id="notes" class="input" rows="4" placeholder="Write anything important…"></textarea>
+              </div>
+
+              <!-- PAYMENT CONFIRMATION -->
+              <div class="vip-card" style="margin-top:14px;">
+                <h2>Payment confirmation</h2>
+
+                <div class="vip-inline">
+                  <div class="vip-badge"><span aria-hidden="true">#</span><span>Reference</span></div>
+                  <div class="vip-ref" id="refCode">REF: —</div>
+                </div>
+
+                <div class="vip-check">
+                  <input id="paymentDone" type="checkbox" />
+                  <label for="paymentDone" class="vip-muted" style="margin:0;">
+                    I have initiated payment for the deposit shown above.
+                  </label>
+                </div>
+
+                <p class="vip-mini">
+                  If the time slot is unavailable, I’ll propose the closest alternative immediately.
+                </p>
+              </div>
+
+              <div class="actions" style="justify-content:flex-start; margin-top:14px;">
+                <button id="submitBtn" class="btn btn-gold" type="submit" disabled>Pay deposit & send via WhatsApp</button>
+                <a class="btn btn-ghost" href="contactos.html">Contact</a>
+              </div>
+
+              <p class="micro" style="text-align:left;">
+                WhatsApp message will include: estimate range, deposit amount, currency, method, and full client details.
+              </p>
+            </form>
+
+            <!-- RIGHT: PAYMENT METHODS -->
+            <aside class="vip-card">
+              <h2>Pay now</h2>
+              <div class="vip-pay-grid" role="radiogroup" aria-label="Payment methods">
+                <label class="vip-radio">
+                  <input type="radio" name="pay" value="MB Way" />
+                  <div>
+                    <strong>MB Way</strong>
+                    <div class="vip-muted">Uses the phone number already on the site. Add REF in the note/message.</div>
+                  </div>
+                </label>
+
+                <label class="vip-radio">
+                  <input type="radio" name="pay" value="Revolut" />
+                  <div>
+                    <strong>Revolut</strong>
+                    <div class="vip-muted">Opens your Revolut link. Send the deposit amount and add REF in the note.</div>
+                  </div>
+                </label>
+
+                <label class="vip-radio">
+                  <input type="radio" name="pay" value="PayPal" />
+                  <div>
+                    <strong>PayPal</strong>
+                    <div class="vip-muted">Opens PayPal with the deposit amount (if PayPal link is configured).</div>
+                  </div>
+                </label>
+              </div>
+
+              <div class="vip-divider"></div>
+
+              <div id="payInfo" class="vip-card" style="border-color: rgba(255,255,255,.10);">
+                <div class="vip-muted" id="payInfoText">
+                  Select a method to see the “Pay now” button.
+                </div>
+
+                <div class="vip-amount" style="margin-top:10px;">
+                  <div class="vip-muted">Deposit amount</div>
+                  <div id="payAmountLine" style="margin-top:6px; font-size:18px;">—</div>
+                </div>
+
+                <div class="vip-actions" style="margin-top:10px;">
+                  <a id="payNowBtn" class="btn btn-gold vip-hidden" href="#" target="_blank" rel="noopener">Pay now</a>
+                  <button id="copyRefBtn" class="btn btn-ghost" type="button">Copy REF</button>
+                </div>
+
+                <p class="vip-mini" id="payMini">
+                  Keep it discreet: add only the REF in the payment note.
+                </p>
+              </div>
+
+              <p class="vip-mini">
+                Exact final price can change with stops, late-night hours, special vehicles, or VIP requests.
+              </p>
+            </aside>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <button class="to-top" type="button" aria-label="Back to top" title="Back to top">↑</button>
+  </main>
+
+  <!-- ✅ Footer injected by nav.js -->
+  <div id="siteFooter"></div>
+
+  <script defer src="assets/js/nav.js?v=1000"></script>
+  <script defer src="assets/js/dropdowns.js?v=1000"></script>
+
+  <script>
+    (function () {
+      // Back to top button
+      const topBtn = document.querySelector('.to-top');
+      if (topBtn) {
+        const toggle = () => topBtn.classList.toggle('show', (window.scrollY || 0) > 500);
+        window.addEventListener('scroll', toggle, { passive: true });
+        toggle();
+        topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      }
+
+      const form = document.getElementById('bookingForm');
+      const submitBtn = document.getElementById('submitBtn');
+
+      const agreeEstimate = document.getElementById('agreeEstimate');
+      const paymentDone = document.getElementById('paymentDone');
+
+      const estimateLine = document.getElementById('estimateLine');
+      const estimateNote = document.getElementById('estimateNote');
+
+      const depositLine = document.getElementById('depositLine');
+      const depositNote = document.getElementById('depositNote');
+
+      const payInfoText = document.getElementById('payInfoText');
+      const payNowBtn = document.getElementById('payNowBtn');
+      const payAmountLine = document.getElementById('payAmountLine');
+
+      const copyRefBtn = document.getElementById('copyRefBtn');
+
+      const currencySel = document.getElementById('currency');
+      const otherCurrencyWrap = document.getElementById('otherCurrencyWrap');
+      const fxRateWrap = document.getElementById('fxRateWrap');
+      const otherCurrency = document.getElementById('otherCurrency');
+      const fxRate = document.getElementById('fxRate');
+
+      const refCodeEl = document.getElementById('refCode');
+
+      // Helpers
+      const hidden = (name) => form.querySelector(`input[name="${name}"]`)?.value || '';
+      const get = (id) => document.getElementById(id)?.value?.trim() || '';
+
+      function genRef() {
+        const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+        let s = '';
+        for (let i = 0; i < 6; i++) s += chars[Math.floor(Math.random() * chars.length)];
+        return `EPE-${s}`;
+      }
+
+      const REF = genRef();
+      refCodeEl.textContent = `REF: ${REF}`;
+
+      copyRefBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(REF);
+          copyRefBtn.textContent = 'Copied';
+          setTimeout(() => (copyRefBtn.textContent = 'Copy REF'), 900);
+        } catch {
+          const ta = document.createElement('textarea');
+          ta.value = REF;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          copyRefBtn.textContent = 'Copied';
+          setTimeout(() => (copyRefBtn.textContent = 'Copy REF'), 900);
+        }
+      });
+
+      // Currency UI
+      function updateCurrencyUI() {
+        const cur = currencySel.value;
+        const showFX = (cur !== 'EUR');
+        fxRateWrap.style.display = showFX ? '' : 'none';
+        otherCurrencyWrap.style.display = (cur === 'OTHER') ? '' : 'none';
+
+        if (cur === 'GBP' && !fxRate.value) {
+          // editable default (user can change)
+          fxRate.value = '0.86';
+        }
+        if (cur === 'OTHER' && !fxRate.value) fxRate.value = '';
+      }
+      currencySel.addEventListener('change', () => {
+        updateCurrencyUI();
+        updateAll();
+      });
+      otherCurrency.addEventListener('input', updateAll);
+      fxRate.addEventListener('input', updateAll);
+
+      updateCurrencyUI();
+
+      // Phone from site for MB Way
+      function getSitePhoneE164() {
+        const telA = document.querySelector('a[href^="tel:"]');
+        if (telA) {
+          const raw = (telA.getAttribute('href') || '').replace('tel:', '').trim();
+          return raw.replace(/\s+/g, '');
+        }
+        const waA = document.querySelector('a[href*="wa.me/"]');
+        if (waA) {
+          const href = waA.getAttribute('href') || '';
+          const m = href.match(/wa\.me\/(\d+)/);
+          if (m && m[1]) return `+${m[1]}`;
+        }
+        return '';
+      }
+
+      // Payment links
+      const PAY_BASE = {
+        // MB Way uses site phone
+        'MB Way': () => {
+          const phone = getSitePhoneE164();
+          return phone ? `mbway:${phone}` : 'mbway:+351000000000';
+        },
+        // Revolut fixed link (yours ✅)
+        'Revolut': () => 'https://revolut.me/dalilav7js',
+        // PayPal placeholder (you can change later)
+        'PayPal': () => 'https://paypal.me/yourpaypal'
+      };
+
+      // Estimator (EUR base)
+      const routes = {
+        'LIS|pt-lisbon-city': [35, 70],
+        'pt-lisbon-city|LIS': [35, 70],
+        'LIS|pt-cascais': [65, 120],
+        'pt-cascais|LIS': [65, 120],
+        'LIS|pt-sintra': [60, 110],
+        'pt-sintra|LIS': [60, 110],
+        'pt-lisbon-city|pt-cascais': [55, 95],
+        'pt-cascais|pt-lisbon-city': [55, 95],
+        'pt-lisbon-city|pt-sintra': [55, 95],
+        'pt-sintra|pt-lisbon-city': [55, 95],
+
+        'OPO|pt-porto-city': [30, 65],
+        'pt-porto-city|OPO': [30, 65],
+
+        'pt-lisbon-city|pt-porto-city': [220, 420],
+        'pt-porto-city|pt-lisbon-city': [220, 420],
+        'pt-lisbon-city|pt-algarve': [260, 520],
+        'pt-algarve|pt-lisbon-city': [260, 520],
+        'FAO|pt-algarve': [35, 85],
+        'pt-algarve|FAO': [35, 85],
+      };
+
+      function isPortugal(value) {
+        if (!value) return false;
+        if (value.startsWith('pt-')) return true;
+        if (value === 'LIS' || value === 'OPO' || value === 'FAO') return true;
+        return false;
+      }
+
+      function estimateRangeEUR(trip, from, to, pax) {
+        const passengers = Math.max(1, parseInt(pax || '1', 10));
+        let min = 0, max = 0;
+        let note = '';
+        let mode = 'ride';
+
+        if (!trip) return { min: 0, max: 0, note: 'Choose a Trip type to calculate an estimate.', mode };
+
+        if (trip === 'hourly') {
+          min = 45; max = 75;
+          note = 'Hourly estimate per hour. Minimum booking usually applies.';
+          mode = 'hour';
+          return { min, max, note, mode };
+        }
+
+        if (trip === 'tour') {
+          min = 220; max = 420;
+          note = 'Tour estimate varies by itinerary and hours.';
+          mode = 'tour';
+          // pax uplift gentle
+          let uplift = 1;
+          if (passengers >= 4 && passengers <= 6) uplift = 1.10;
+          if (passengers >= 7) uplift = 1.20;
+          return { min: Math.round(min * uplift), max: Math.round(max * uplift), note, mode };
+        }
+
+        if (!from || !to) return { min: 0, max: 0, note: 'Select From + To to calculate an estimate.', mode };
+
+        const key = `${from}|${to}`;
+        const r = routes[key];
+
+        if (r) {
+          min = r[0]; max = r[1];
+          note = 'Estimated VIP range based on typical distance and service level.';
+        } else {
+          if (isPortugal(from) && isPortugal(to)) {
+            min = 90; max = 240;
+            note = 'Portugal route not listed — showing a standard VIP estimate.';
+          } else {
+            min = 250; max = 900;
+            note = 'International/special route — estimate is indicative. Final price confirmed after details.';
+          }
+        }
+
+        // pax uplift (gentle)
+        let uplift = 1;
+        if (passengers >= 4 && passengers <= 6) uplift = 1.10;
+        if (passengers >= 7) uplift = 1.20;
+
+        min = Math.round(min * uplift);
+        max = Math.round(max * uplift);
+
+        if (trip === 'return') {
+          min = Math.round(min * 1.85);
+          max = Math.round(max * 1.95);
+          note = 'Return estimate includes both legs; waiting time can adjust final price.';
+        }
+
+        return { min, max, note, mode };
+      }
+
+      function curCode() {
+        const c = currencySel.value;
+        if (c === 'EUR') return 'EUR';
+        if (c === 'GBP') return 'GBP';
+        if (c === 'OTHER') {
+          const oc = (otherCurrency.value || '').trim().toUpperCase();
+          return oc || 'OTHER';
+        }
+        return 'EUR';
+      }
+
+      function curSymbol(code) {
+        if (code === 'EUR') return '€';
+        if (code === 'GBP') return '£';
+        return '';
+      }
+
+      function fx() {
+        // FX is "target currency per 1 EUR"
+        const c = currencySel.value;
+        if (c === 'EUR') return 1;
+        const v = parseFloat(fxRate.value);
+        if (!isFinite(v) || v <= 0) return 0;
+        return v;
+      }
+
+      function fmtMoney(amount, code) {
+        const sym = curSymbol(code);
+        const n = Math.round(amount * 100) / 100;
+        // show 2 decimals always for clarity
+        return sym ? `${sym}${n.toFixed(2)} ${code}` : `${n.toFixed(2)} ${code}`;
+      }
+
+      // Deposit logic: 30% of the MID estimate, with a minimum of 50 EUR (or equivalent) and never zero.
+      function calcDepositEUR(min, max, mode) {
+        // special: hourly/tour still requires deposit
+        let base = 0;
+        if (min > 0 && max > 0) base = (min + max) / 2;
+        if (mode === 'hour') base = Math.max(base, 60); // typical 1h+ buffer
+        if (mode === 'tour') base = Math.max(base, 260);
+
+        let deposit = base * 0.30;
+        deposit = Math.max(deposit, 50); // minimum deposit in EUR
+        // round to nearest 5 for premium feel
+        deposit = Math.round(deposit / 5) * 5;
+        return deposit;
+      }
+
+      let selectedPayMethod = '';
+
+      function updatePayInfo(method, depositStr, depositValue, code) {
+        if (!method) {
+          payInfoText.textContent = 'Select a method to see the “Pay now” button.';
+          payNowBtn.classList.add('vip-hidden');
+          payNowBtn.href = '#';
+          return;
+        }
+
+        const refText = `REF ${REF}`;
+        if (method === 'MB Way') {
+          payInfoText.textContent = `MB Way: send ${depositStr}. Add ${refText} in the note/message.`;
+        } else if (method === 'Revolut') {
+          payInfoText.textContent = `Revolut: send ${depositStr}. Add ${refText} in the note.`;
+        } else {
+          payInfoText.textContent = `PayPal: send ${depositStr}. Add ${refText} in the note.`;
+        }
+
+        // Build pay link
+        let link = PAY_BASE[method] ? PAY_BASE[method]() : '#';
+
+        // PayPal.me can include amount (best UX)
+        // Format: https://paypal.me/username/AMOUNT?currency=EUR
+        if (method === 'PayPal' && link && link.includes('paypal.me/')) {
+          const amt = (Math.round(depositValue * 100) / 100).toFixed(2);
+          const cur = code;
+          // avoid double slashes
+          link = link.replace(/\/+$/,'') + '/' + encodeURIComponent(amt) + '?currency=' + encodeURIComponent(cur);
+        }
+
+        payNowBtn.classList.remove('vip-hidden');
+        payNowBtn.href = link;
+      }
+
+      function updateSubmitState() {
+        const can =
+          agreeEstimate.checked &&
+          paymentDone.checked &&
+          !!selectedPayMethod &&
+          (depositLine.textContent || '').trim() !== '—';
+
+        submitBtn.disabled = !can;
+      }
+
+      document.querySelectorAll('input[name="pay"]').forEach(r => {
+        r.addEventListener('change', () => {
+          selectedPayMethod = r.value;
+          updateAll();
+        });
+      });
+
+      agreeEstimate.addEventListener('change', updateSubmitState);
+      paymentDone.addEventListener('change', updateSubmitState);
+
+      function updateAll() {
+        const trip = hidden('trip');
+        const from = hidden('from');
+        const to = hidden('to');
+        const pax = get('passengers');
+
+        const e = estimateRangeEUR(trip, from, to, pax);
+
+        const code = curCode();
+        const rate = fx();
+
+        // FX note handling
+        const needsFx = (currencySel.value !== 'EUR');
+        let fxOk = true;
+        if (needsFx && rate <= 0) fxOk = false;
+
+        if (!e.min && !e.max) {
+          estimateLine.textContent = '—';
+          estimateNote.textContent = e.note || 'Choose Trip + From + To to see an estimate.';
+          depositLine.textContent = '—';
+          payAmountLine.textContent = '—';
+          depositNote.textContent = 'Deposit will appear after selecting Trip + From + To.';
+          updatePayInfo(selectedPayMethod, '—', 0, code);
+          updateSubmitState();
+          return;
+        }
+
+        // Convert range
+        const minTarget = fxOk ? (e.min * rate) : 0;
+        const maxTarget = fxOk ? (e.max * rate) : 0;
+
+        if (!fxOk && needsFx) {
+          estimateLine.textContent = `€${e.min}–€${e.max} EUR (needs FX rate)`;
+          estimateNote.textContent = 'Please enter FX rate to show the estimate in your selected currency.';
+          depositLine.textContent = 'Enter FX rate';
+          payAmountLine.textContent = '—';
+          depositNote.textContent = 'FX rate is required to calculate the deposit in your currency.';
+          updatePayInfo(selectedPayMethod, '—', 0, code);
+          updateSubmitState();
+          return;
+        }
+
+        // Estimate display
+        if (e.mode === 'hour') {
+          estimateLine.textContent = `${fmtMoney(minTarget, code)}–${fmtMoney(maxTarget, code)} / hour`;
+        } else if (e.mode === 'tour') {
+          estimateLine.textContent = `${fmtMoney(minTarget, code)}–${fmtMoney(maxTarget, code)} (tour)`;
+        } else {
+          estimateLine.textContent = `${fmtMoney(minTarget, code)}–${fmtMoney(maxTarget, code)}`;
+        }
+        estimateNote.textContent = e.note || 'Estimated VIP range. Final confirmation depends on details.';
+
+        // Deposit calc in EUR then convert
+        const depositEUR = calcDepositEUR(e.min, e.max, e.mode);
+        const depositTarget = depositEUR * rate;
+
+        // Never zero guarantee
+        const safeDeposit = Math.max(depositTarget, 1);
+
+        const depStr = fmtMoney(safeDeposit, code);
+        depositLine.textContent = depStr;
+        payAmountLine.textContent = depStr;
+
+        // Deposit note (clear)
+        if (e.mode === 'hour') {
+          depositNote.textContent = 'Deposit secures the time slot. Final hourly total is confirmed after WhatsApp details.';
+        } else if (e.mode === 'tour') {
+          depositNote.textContent = 'Deposit secures the tour date. Final itinerary and balance confirmed after WhatsApp details.';
+        } else {
+          depositNote.textContent = 'Deposit secures the reservation. Final balance confirmed after WhatsApp details.';
+        }
+
+        // Payment info + link
+        updatePayInfo(selectedPayMethod, depStr, safeDeposit, code);
+
+        updateSubmitState();
+      }
+
+      // Poll hidden inputs because dropdowns.js writes to them
+      let lastSig = '';
+      setInterval(() => {
+        const sig = [
+          hidden('trip'),
+          hidden('from'),
+          hidden('to'),
+          get('passengers'),
+          currencySel.value,
+          otherCurrency.value,
+          fxRate.value,
+          selectedPayMethod,
+          agreeEstimate.checked,
+          paymentDone.checked
+        ].join('|');
+
+        if (sig !== lastSig) {
+          lastSig = sig;
+          updateAll();
+        }
+      }, 250);
+
+      // Submit -> WhatsApp compose (full details + deposit exact)
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (submitBtn.disabled) return;
+
+        const trip = hidden('trip');
+        const from = hidden('from');
+        const to = hidden('to');
+
+        const code = curCode();
+        const rate = fx();
+
+        const pax = get('passengers');
+        const eEUR = estimateRangeEUR(trip, from, to, pax);
+        const depEUR = calcDepositEUR(eEUR.min, eEUR.max, eEUR.mode);
+        const dep = depEUR * rate;
+
+        const estimateText = estimateLine.textContent || '—';
+        const depositText = depositLine.textContent || '—';
+
+        const text =
+          `EPE Booking — VIP Confirmation%0A` +
+          `REF: ${encodeURIComponent(REF)}%0A` +
+          `Currency: ${encodeURIComponent(code)}%0A` +
+          `Estimate: ${encodeURIComponent(estimateText)}%0A` +
+          `Deposit to pay now: ${encodeURIComponent(depositText)}%0A` +
+          `Payment method: ${encodeURIComponent(selectedPayMethod)}%0A` +
+          `Payment reference (optional): ${encodeURIComponent(get('paymentRef'))}%0A` +
+          `---%0A` +
+          `Trip: ${encodeURIComponent(trip)}%0A` +
+          `Date: ${encodeURIComponent(get('dateGo'))}  Time: ${encodeURIComponent(get('timeGo'))}%0A` +
+          `From: ${encodeURIComponent(from)}%0A` +
+          `To: ${encodeURIComponent(to)}%0A` +
+          `Pickup details: ${encodeURIComponent(get('pickupDetails'))}%0A` +
+          `Return date: ${encodeURIComponent(get('returnDate'))}%0A` +
+          `Passengers: ${encodeURIComponent(get('passengers'))}  Luggage: ${encodeURIComponent(get('luggage'))}%0A` +
+          `Flight/Train: ${encodeURIComponent(get('flight'))}%0A` +
+          `---%0A` +
+          `Client:%0A` +
+          `Name: ${encodeURIComponent(get('fullName'))}%0A` +
+          `Country: ${encodeURIComponent(get('country'))}%0A` +
+          `Phone/WhatsApp: ${encodeURIComponent(get('phone'))}%0A` +
+          `Email: ${encodeURIComponent(get('email'))}%0A` +
+          `Preferred contact: ${encodeURIComponent(get('contact'))}%0A` +
+          `---%0A` +
+          `Notes: ${encodeURIComponent(get('notes'))}%0A` +
+          `Please confirm availability + final price.`;
+
+        window.open(`https://wa.me/?text=${text}`, '_blank', 'noopener');
+      });
+
+      // initial
+      updateAll();
+    })();
+  </script>
 </body>
 </html>
