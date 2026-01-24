@@ -63,58 +63,28 @@
       </div>
     </section>
 
-    <!-- TESTIMONIALS (static examples) -->
-    <section class="section">
-      <div class="wrap">
-        <h2 class="h2">What our clients say</h2>
-        <p class="p">
-          A few comments from travellers who trusted Explore Portugal Experience for transfers and full-day private tours.
-        </p>
-
-        <div class="grid-3" style="margin-top:12px;">
-          <article class="card">
-            <div class="label">Marta &amp; João · Lisbon</div>
-            <p class="p" style="margin-top:8px;">★★★★★</p>
-            <p class="p">
-              “We arrived exhausted after a long flight and the moment we saw our name on the sign,
-              we immediately felt at home. Calm, unhurried, crystal-clear communication and genuine care.”
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="label">Sarah &amp; David · UK</div>
-            <p class="p" style="margin-top:8px;">★★★★★</p>
-            <p class="p">
-              “We booked two days between Lisbon, Sintra and Cascais. Professional, discreet and incredibly kind.
-              Premium without stress.”
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="label">Ana · Corporate guest</div>
-            <p class="p" style="margin-top:8px;">★★★★★</p>
-            <p class="p">
-              “Tight schedule, multiple meetings and flights on the same day. Everything ran with rare serenity.
-              Always with alternatives when needed.”
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- LEAVE A REVIEW (local save for now; ready to connect later) -->
-    <section class="section" id="leave-review">
+    <!-- PUBLIC REVIEWS + FORM -->
+    <section class="section" id="reviews">
       <div class="wrap">
         <div class="panel">
-          <h2 class="h2">Leave a review</h2>
-          <p class="p">
-            Short is perfect. Your feedback helps Explore Portugal Experience grow — discreetly.
-          </p>
+          <h2 class="h2">Reviews</h2>
+          <p class="p">Real feedback from travellers. Thank you for supporting Explore Portugal Experience.</p>
 
           <div class="grid-3" style="margin-top:12px;">
-            <!-- FORM -->
+            <!-- LIST -->
             <div class="card" style="grid-column: span 2;">
-              <div class="label">Your review</div>
+              <div class="label">Recent reviews</div>
+              <div class="actions" style="margin-top:10px;">
+                <button class="btn btn-ghost" type="button" id="epeRefreshBtn">Refresh</button>
+              </div>
+
+              <div id="epeReviewsList" style="margin-top:12px;"></div>
+              <p class="micro" id="epeEmpty" style="display:none; margin-top:10px;">No reviews yet. Be the first.</p>
+            </div>
+
+            <!-- FORM -->
+            <div class="card">
+              <div class="label">Leave a review</div>
 
               <div class="epe-stars" style="margin-top:10px;">
                 <button type="button" class="epe-star" data-star="1" aria-label="1 star">★</button>
@@ -125,47 +95,26 @@
                 <span class="micro" id="epeRatingText" style="margin-left:8px;">Select a rating</span>
               </div>
 
-              <div class="grid-3" style="margin-top:12px;">
-                <div class="field">
-                  <label class="label" for="epeReviewName">Name (optional)</label>
-                  <input id="epeReviewName" class="epe-input" type="text" maxlength="40" placeholder="Your name">
-                </div>
+              <div class="field" style="margin-top:12px;">
+                <label class="label" for="epeReviewName">Name (optional)</label>
+                <input id="epeReviewName" class="epe-input" type="text" maxlength="40" placeholder="Your name">
+              </div>
 
-                <div class="field" style="grid-column: span 2;">
-                  <label class="label" for="epeReviewText">Review</label>
-                  <textarea id="epeReviewText" class="epe-input" rows="5" maxlength="800" placeholder="What did you like most?"></textarea>
-                  <div class="micro" id="epeCharHint" style="margin-top:6px;">0 / 800</div>
-                </div>
+              <div class="field" style="margin-top:12px;">
+                <label class="label" for="epeReviewText">Review</label>
+                <textarea id="epeReviewText" class="epe-input" rows="6" maxlength="800" placeholder="What did you like most?"></textarea>
+                <div class="micro" id="epeCharHint" style="margin-top:6px;">0 / 800</div>
               </div>
 
               <div class="actions" style="margin-top:14px;">
-                <button class="btn btn-gold" type="button" id="epeSaveBtn">Save review</button>
-                <button class="btn btn-ghost" type="button" id="epeCopyBtn">Copy text</button>
-                <a class="btn btn-ghost" href="https://g.page/r/CUhLGcsClbSWEBM/review" target="_blank" rel="noopener">Open Google Reviews</a>
+                <button class="btn btn-gold" type="button" id="epeSubmitBtn">Post review</button>
+                <a class="btn btn-ghost" href="https://g.page/r/CUhLGcsClbSWEBM/review" target="_blank" rel="noopener">Google Reviews</a>
               </div>
 
               <p class="micro" id="epeStatus" style="margin-top:10px;"></p>
-
-              <div class="card" id="epeSavedBox" style="display:none; margin-top:12px;">
-                <div class="label">Saved on this device</div>
-                <p class="p" id="epeSavedText" style="margin-top:8px; white-space:pre-wrap;"></p>
-                <p class="micro">
-                  Next step: I connect this to your hosting so reviews become public for everyone.
-                </p>
-              </div>
-            </div>
-
-            <!-- SIDE -->
-            <div class="card">
-              <div class="label">Tip</div>
-              <p class="p" style="margin-top:8px;">
-                Prefer Google? Click “Open Google Reviews”. You can also copy your text and paste it there.
-              </p>
-              <p class="p" style="margin-top:8px;">
-                Thank you for supporting a calm, premium experience.
-              </p>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -190,162 +139,141 @@
     })();
   </script>
 
-  <!-- Review JS (local save only for now) -->
   <script>
-    (function () {
-      const STORAGE_KEY = 'epe_reviews_pending_v1';
+    (function(){
+      const API_LIST = "/api/reviews.php?action=list";
+      const API_ADD  = "/api/reviews.php?action=add";
 
-      const starBtns = Array.from(document.querySelectorAll('.epe-star'));
-      const ratingText = document.getElementById('epeRatingText');
-      const nameEl = document.getElementById('epeReviewName');
-      const textEl = document.getElementById('epeReviewText');
-      const charHint = document.getElementById('epeCharHint');
+      const listEl = document.getElementById("epeReviewsList");
+      const emptyEl = document.getElementById("epeEmpty");
+      const refreshBtn = document.getElementById("epeRefreshBtn");
 
-      const saveBtn = document.getElementById('epeSaveBtn');
-      const copyBtn = document.getElementById('epeCopyBtn');
-      const statusEl = document.getElementById('epeStatus');
-
-      const savedBox = document.getElementById('epeSavedBox');
-      const savedText = document.getElementById('epeSavedText');
+      const starBtns = Array.from(document.querySelectorAll(".epe-star"));
+      const ratingText = document.getElementById("epeRatingText");
+      const nameEl = document.getElementById("epeReviewName");
+      const textEl = document.getElementById("epeReviewText");
+      const charHint = document.getElementById("epeCharHint");
+      const submitBtn = document.getElementById("epeSubmitBtn");
+      const statusEl = document.getElementById("epeStatus");
 
       let rating = 0;
 
-      function setStatus(msg){ statusEl.textContent = msg || ''; }
-
+      function escapeHtml(s){
+        return String(s).replace(/[&<>"']/g, c => ({
+          "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+        }[c]));
+      }
+      function starsString(n){
+        const r = Math.max(0, Math.min(5, n|0));
+        return "★".repeat(r) + "☆".repeat(5-r);
+      }
+      function formatDate(iso){
+        try{
+          const d = new Date(iso);
+          return d.toLocaleDateString(undefined, { year:"numeric", month:"short", day:"2-digit" });
+        }catch{ return ""; }
+      }
+      function setStatus(msg){ statusEl.textContent = msg || ""; }
       function setRating(n){
         rating = n;
         starBtns.forEach(btn => {
-          const s = parseInt(btn.getAttribute('data-star'), 10);
-          btn.classList.toggle('is-on', s <= rating);
+          const s = parseInt(btn.getAttribute("data-star"), 10);
+          btn.classList.toggle("is-on", s <= rating);
         });
-        ratingText.textContent = rating ? (rating + ' / 5') : 'Select a rating';
+        ratingText.textContent = rating ? (rating + " / 5") : "Select a rating";
       }
-
       function updateChars(){
-        const len = (textEl.value || '').length;
-        if (charHint) charHint.textContent = len + ' / 800';
+        const len = (textEl.value || "").length;
+        charHint.textContent = len + " / 800";
       }
 
-      function safeText(s, max){
-        const t = String(s || '').trim();
-        if (!t) return '';
-        return t.length > max ? t.slice(0, max) + '…' : t;
-      }
-
-      function getStored(){
-        try{
-          const raw = localStorage.getItem(STORAGE_KEY);
-          const arr = raw ? JSON.parse(raw) : [];
-          return Array.isArray(arr) ? arr : [];
-        }catch{
-          return [];
-        }
-      }
-
-      function storeReview(r){
-        const arr = getStored();
-        arr.push(r);
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
-      }
-
-      function starsString(n){
-        const r = Math.max(0, Math.min(5, n|0));
-        return '★'.repeat(r) + '☆'.repeat(5-r);
-      }
-
-      function formatReview(r){
-        const lines = [
-          'Review — Explore Portugal Experience',
-          '------------------------------',
-          'Rating: ' + starsString(r.rating) + ' (' + r.rating + '/5)',
-          'Name: ' + (r.name ? r.name : 'Anonymous'),
-          '',
-          r.message,
-          '',
-          'Saved: ' + new Date(r.createdAt).toLocaleString()
-        ];
-        return lines.join('\n');
-      }
-
-      async function copyToClipboard(text){
-        try{
-          await navigator.clipboard.writeText(text);
-          return true;
-        }catch{
-          const ta = document.createElement('textarea');
-          ta.value = text;
-          document.body.appendChild(ta);
-          ta.select();
-          const ok = document.execCommand('copy');
-          ta.remove();
-          return ok;
-        }
-      }
-
-      // Bind stars
-      starBtns.forEach(btn => {
-        btn.addEventListener('click', () => setRating(parseInt(btn.getAttribute('data-star'), 10)));
-      });
-
-      if (textEl) textEl.addEventListener('input', updateChars);
+      starBtns.forEach(btn => btn.addEventListener("click", () => setRating(parseInt(btn.getAttribute("data-star"), 10))));
+      textEl.addEventListener("input", updateChars);
       updateChars();
 
-      // Save
-      if (saveBtn) {
-        saveBtn.addEventListener('click', () => {
-          setStatus('');
+      async function loadReviews(){
+        setStatus("");
+        listEl.innerHTML = "";
+        emptyEl.style.display = "none";
 
-          const name = safeText(nameEl.value, 40);
-          const message = safeText(textEl.value, 800);
+        try{
+          const res = await fetch(API_LIST, { cache: "no-store" });
+          const data = await res.json();
+          if (!data.ok) throw new Error(data.error || "Failed");
 
-          if (!rating){
-            setStatus('Please select a rating.');
+          const reviews = Array.isArray(data.reviews) ? data.reviews : [];
+          if (!reviews.length){
+            emptyEl.style.display = "";
             return;
           }
-          if (!message){
-            setStatus('Please write a short review.');
-            return;
-          }
 
-          const review = {
-            id: (crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now() + '_' + Math.random().toString(16).slice(2)),
-            createdAt: new Date().toISOString(),
-            name: name,
-            rating: rating,
-            message: message
-          };
+          const html = reviews.map(r => {
+            const name = escapeHtml(r.name || "Anonymous");
+            const date = escapeHtml(formatDate(r.createdAt || ""));
+            const stars = starsString(Number(r.rating || 0));
+            const msg = escapeHtml(r.message || "");
+            return `
+              <article class="card" style="margin-bottom:10px;">
+                <div class="label">${name}${date ? " · " + date : ""}</div>
+                <p class="p" style="margin-top:8px;">${stars}</p>
+                <p class="p">${msg}</p>
+              </article>
+            `;
+          }).join("");
 
-          storeReview(review);
+          listEl.innerHTML = html;
 
-          if (savedText) savedText.textContent = formatReview(review);
-          if (savedBox) savedBox.style.display = '';
+        }catch(err){
+          emptyEl.style.display = "";
+          setStatus("Reviews are not loading yet. Check if /api/reviews.php exists on the server.");
+        }
+      }
 
-          nameEl.value = '';
-          textEl.value = '';
+      async function submitReview(){
+        setStatus("");
+
+        const name = (nameEl.value || "").trim();
+        const message = (textEl.value || "").trim();
+
+        if (!rating){ setStatus("Please select a rating."); return; }
+        if (!message){ setStatus("Please write a short review."); return; }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Posting…";
+
+        try{
+          const res = await fetch(API_ADD, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, rating, message })
+          });
+
+          const data = await res.json();
+          if (!data.ok) throw new Error(data.error || "Failed");
+
+          nameEl.value = "";
+          textEl.value = "";
           updateChars();
           setRating(0);
 
-          setStatus('Saved on this device ✅');
-        });
+          setStatus("Posted ✅ Thank you!");
+          await loadReviews();
+
+        }catch(err){
+          setStatus("Could not post. Please try again.");
+        }finally{
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Post review";
+        }
       }
 
-      // Copy
-      if (copyBtn) {
-        copyBtn.addEventListener('click', async () => {
-          setStatus('');
-          const last = getStored().slice(-1)[0];
-          if (!last){
-            setStatus('Save a review first.');
-            return;
-          }
-          const ok = await copyToClipboard(formatReview(last));
-          setStatus(ok ? 'Copied ✅' : 'Could not copy.');
-        });
-      }
+      refreshBtn.addEventListener("click", loadReviews);
+      submitBtn.addEventListener("click", submitReview);
+
+      loadReviews();
     })();
   </script>
 
-  <!-- Scoped CSS for the review inputs (does not touch global layout) -->
   <style>
     .epe-stars{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
     .epe-star{
