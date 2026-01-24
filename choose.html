@@ -21,7 +21,7 @@
 
   <main class="page">
 
-    <!-- WHY US (keeps your style system) -->
+    <!-- WHY US -->
     <section class="section">
       <div class="wrap">
         <div class="panel">
@@ -55,11 +55,15 @@
             <a class="btn btn-gold" href="/booking.html">Book / Request a quote</a>
             <a class="btn btn-ghost" href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener">See Instagram</a>
           </div>
+
+          <p class="micro" style="margin-top:12px;">
+            VIP response time • Professional drivers • Premium vehicles • Discreet service
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- TESTIMONIALS -->
+    <!-- TESTIMONIALS (static examples) -->
     <section class="section">
       <div class="wrap">
         <h2 class="h2">What our clients say</h2>
@@ -98,41 +102,7 @@
       </div>
     </section>
 
-    <!-- PILLARS -->
-    <section class="section">
-      <div class="wrap">
-        <h2 class="h2">Our pillars</h2>
-        <p class="p">Three values guide the experience: serenity, professionalism and attention to detail.</p>
-
-        <div class="grid-3" style="margin-top:12px;">
-          <article class="card">
-            <h3 class="h2" style="margin-bottom:6px;">Serenity</h3>
-            <p class="p">
-              Realistic planning, comfortable margins and clear communication before and during the service.
-              It’s about arriving with time and zero unnecessary stress.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="h2" style="margin-bottom:6px;">Professionalism</h3>
-            <p class="p">
-              Prepared vehicle, safety-first mindset, privacy and discreet presence.
-              Proper service — without taking over your day.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="h2" style="margin-bottom:6px;">Attention to detail</h3>
-            <p class="p">
-              From written confirmation with the final price to thoughtful suggestions for stops or dining:
-              smooth, light and well supported.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ✅ NEW: LEAVE A REVIEW (uses existing classes; adds tiny scoped CSS only) -->
+    <!-- LEAVE A REVIEW (local save for now; ready to connect later) -->
     <section class="section" id="leave-review">
       <div class="wrap">
         <div class="panel">
@@ -146,7 +116,6 @@
             <div class="card" style="grid-column: span 2;">
               <div class="label">Your review</div>
 
-              <!-- Stars -->
               <div class="epe-stars" style="margin-top:10px;">
                 <button type="button" class="epe-star" data-star="1" aria-label="1 star">★</button>
                 <button type="button" class="epe-star" data-star="2" aria-label="2 stars">★</button>
@@ -156,7 +125,6 @@
                 <span class="micro" id="epeRatingText" style="margin-left:8px;">Select a rating</span>
               </div>
 
-              <!-- Fields -->
               <div class="grid-3" style="margin-top:12px;">
                 <div class="field">
                   <label class="label" for="epeReviewName">Name (optional)</label>
@@ -170,7 +138,6 @@
                 </div>
               </div>
 
-              <!-- Actions -->
               <div class="actions" style="margin-top:14px;">
                 <button class="btn btn-gold" type="button" id="epeSaveBtn">Save review</button>
                 <button class="btn btn-ghost" type="button" id="epeCopyBtn">Copy text</button>
@@ -188,57 +155,16 @@
               </div>
             </div>
 
-            <!-- SIDE (simple, VIP) -->
+            <!-- SIDE -->
             <div class="card">
               <div class="label">Tip</div>
               <p class="p" style="margin-top:8px;">
-                If you prefer, copy your review and paste it into Google Reviews using the button.
+                Prefer Google? Click “Open Google Reviews”. You can also copy your text and paste it there.
               </p>
               <p class="p" style="margin-top:8px;">
                 Thank you for supporting a calm, premium experience.
               </p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DIFFERENTIATORS -->
-    <section class="section">
-      <div class="wrap">
-        <div class="panel">
-          <h2 class="h2">What makes us different</h2>
-          <p class="p">
-            We don’t promise “everything”. We promise what we control: preparation, presence and respect for the people who choose us.
-          </p>
-
-          <div class="grid-3" style="margin-top:12px;">
-            <article class="card">
-              <div class="label">No price surprises</div>
-              <p class="p" style="margin-top:8px;">
-                The final price is agreed before the service, clearly and all-inclusive.
-                If something changes, it’s explained in advance.
-              </p>
-            </article>
-
-            <article class="card">
-              <div class="label">A pace that matches you</div>
-              <p class="p" style="margin-top:8px;">
-                Some days you talk, others silence feels better. Driving, communication and stops adapt to your energy — calmly.
-              </p>
-            </article>
-
-            <article class="card">
-              <div class="label">Trusted partner network</div>
-              <p class="p" style="margin-top:8px;">
-                When needed, we work with aligned drivers and partners — so the service keeps the same level of care and quality.
-              </p>
-            </article>
-          </div>
-
-          <div class="actions" style="margin-top:16px;">
-            <a class="btn btn-gold" href="https://wa.me/351910784548" target="_blank" rel="noopener">WhatsApp: +351 910 784 548</a>
-            <a class="btn btn-ghost" href="mailto:info@exploreportugalexperience.com">Email: info@exploreportugalexperience.com</a>
           </div>
         </div>
       </div>
@@ -253,7 +179,6 @@
   <!-- cache bust -->
   <script defer src="/assets/js/nav.js?v=1001"></script>
 
-  <!-- Small JS only for this page -->
   <script>
     (function () {
       const btn = document.querySelector('.to-top');
@@ -265,6 +190,7 @@
     })();
   </script>
 
+  <!-- Review JS (local save only for now) -->
   <script>
     (function () {
       const STORAGE_KEY = 'epe_reviews_pending_v1';
@@ -297,7 +223,7 @@
 
       function updateChars(){
         const len = (textEl.value || '').length;
-        charHint.textContent = len + ' / 800';
+        if (charHint) charHint.textContent = len + ' / 800';
       }
 
       function safeText(s, max){
@@ -356,6 +282,7 @@
         }
       }
 
+      // Bind stars
       starBtns.forEach(btn => {
         btn.addEventListener('click', () => setRating(parseInt(btn.getAttribute('data-star'), 10)));
       });
@@ -363,56 +290,62 @@
       if (textEl) textEl.addEventListener('input', updateChars);
       updateChars();
 
-      saveBtn.addEventListener('click', () => {
-        setStatus('');
+      // Save
+      if (saveBtn) {
+        saveBtn.addEventListener('click', () => {
+          setStatus('');
 
-        const name = safeText(nameEl.value, 40);
-        const message = safeText(textEl.value, 800);
+          const name = safeText(nameEl.value, 40);
+          const message = safeText(textEl.value, 800);
 
-        if (!rating){
-          setStatus('Please select a rating.');
-          return;
-        }
-        if (!message){
-          setStatus('Please write a short review.');
-          return;
-        }
+          if (!rating){
+            setStatus('Please select a rating.');
+            return;
+          }
+          if (!message){
+            setStatus('Please write a short review.');
+            return;
+          }
 
-        const review = {
-          id: (crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now() + '_' + Math.random().toString(16).slice(2)),
-          createdAt: new Date().toISOString(),
-          name: name,
-          rating: rating,
-          message: message
-        };
+          const review = {
+            id: (crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now() + '_' + Math.random().toString(16).slice(2)),
+            createdAt: new Date().toISOString(),
+            name: name,
+            rating: rating,
+            message: message
+          };
 
-        storeReview(review);
+          storeReview(review);
 
-        savedText.textContent = formatReview(review);
-        savedBox.style.display = '';
+          if (savedText) savedText.textContent = formatReview(review);
+          if (savedBox) savedBox.style.display = '';
 
-        nameEl.value = '';
-        textEl.value = '';
-        updateChars();
-        setRating(0);
+          nameEl.value = '';
+          textEl.value = '';
+          updateChars();
+          setRating(0);
 
-        setStatus('Saved on this device ✅');
-      });
+          setStatus('Saved on this device ✅');
+        });
+      }
 
-      copyBtn.addEventListener('click', async () => {
-        setStatus('');
-        const last = getStored().slice(-1)[0];
-        if (!last){
-          setStatus('Save a review first.');
-          return;
-        }
-        const ok = await copyToClipboard(formatReview(last));
-        setStatus(ok ? 'Copied ✅' : 'Could not copy.');
-      });
+      // Copy
+      if (copyBtn) {
+        copyBtn.addEventListener('click', async () => {
+          setStatus('');
+          const last = getStored().slice(-1)[0];
+          if (!last){
+            setStatus('Save a review first.');
+            return;
+          }
+          const ok = await copyToClipboard(formatReview(last));
+          setStatus(ok ? 'Copied ✅' : 'Could not copy.');
+        });
+      }
     })();
   </script>
 
-  <!-- Page-only minimal star styling (scoped) -->
+  <!-- Scoped CSS for the review inputs (does not touch global layout) -->
   <style>
     .epe-stars{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
     .epe-star{
