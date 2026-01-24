@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Porquê nós · Explore Portugal Experience</title>
+  <title>Why us · Explore Portugal Experience</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="description" content="Porquê escolher a Explore Portugal Experience — serviço sereno, profissional, discreto e à medida, para transfers e tours privados em Portugal.">
+  <meta name="description" content="Why choose Explore Portugal Experience — calm, professional, discreet and tailored private transfers and tours in Portugal.">
+  <link rel="canonical" href="https://www.exploreportugalexperience.com/choose.html">
 
   <link rel="stylesheet" href="assets/css/style.css">
 
@@ -17,419 +18,453 @@
     gtag('js', new Date());
     gtag('config', 'G-Y30ME05MQY');
   </script>
-    <link rel="canonical" href="https://www.exploreportugalexperience.com/choose.html">
 
+  <!-- Page-only styles (VIP review block) -->
+  <style>
+    /* VIP Review block (isolated, won't affect your site) */
+    .epe-review { margin-top: 12px; }
+    .epe-review .panel { overflow: hidden; }
+
+    .epe-review__head {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .epe-review__kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color: rgba(255,255,255,.70);
+    }
+    .epe-review__dot{
+      width:6px;height:6px;border-radius:999px;
+      background: rgba(212,175,55,.95);
+      box-shadow: 0 0 0 6px rgba(212,175,55,.14);
+    }
+
+    .epe-review__stars {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .epe-star {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      color: rgba(255,255,255,.62);
+      transition: transform .08s ease, border-color .15s ease, background .15s ease;
+    }
+    .epe-star:hover {
+      transform: translateY(-1px);
+      border-color: rgba(212,175,55,.40);
+      background: rgba(212,175,55,.08);
+    }
+    .epe-star.is-on{
+      color: rgba(212,175,55,.95);
+      border-color: rgba(212,175,55,.55);
+      background: rgba(212,175,55,.12);
+    }
+    .epe-review__hint {
+      font-size: 12px;
+      color: rgba(255,255,255,.66);
+      line-height: 1.5;
+    }
+
+    .epe-review__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .epe-review__span2 { grid-column: span 2; }
+
+    .epe-review__field .label { margin-bottom: 6px; }
+
+    .epe-review__input,
+    .epe-review__textarea {
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: rgba(255,255,255,.92);
+      outline: none;
+      font: inherit;
+    }
+    .epe-review__textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .epe-review__input:focus,
+    .epe-review__textarea:focus {
+      border-color: rgba(212,175,55,.42);
+      box-shadow: 0 0 0 6px rgba(212,175,55,.10);
+    }
+
+    .epe-review__actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 14px;
+    }
+
+    .epe-review__status {
+      font-size: 12px;
+      color: rgba(255,255,255,.70);
+    }
+
+    .epe-review__saved {
+      margin-top: 14px;
+      border: 1px solid rgba(212,175,55,.30);
+      background: rgba(212,175,55,.10);
+      border-radius: 14px;
+      padding: 12px;
+    }
+    .epe-review__savedTitle{
+      font-weight: 800;
+      color: rgba(255,255,255,.92);
+      margin-bottom: 8px;
+    }
+    .epe-review__savedText{
+      color: rgba(255,255,255,.72);
+      font-size: 12px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+
+    @media (max-width: 900px){
+      .epe-review__grid { grid-template-columns: 1fr; }
+      .epe-review__span2 { grid-column: span 1; }
+    }
+  </style>
 </head>
+
 <body>
-  <!-- Barra de idioma -->
-  <div class="translate-bar">
-    <span>Idioma:</span>
-    <div id="google_translate_element"></div>
-  </div>
+  <!-- ✅ Anchor for "Back to top" (must NOT be the <main>) -->
+  <div id="top"></div>
 
- <!-- HEADER GLOBAL -->
-<header class="site-header">
-  <div class="header-inner">
+  <!-- ✅ NAV inject slot -->
+  <div id="siteHeader"></div>
 
-    <a href="index.html" class="home-star" aria-label="Voltar à página inicial">
-      <img 
-        src="assets/icons/compass-gold-solid.svg" 
-        alt="Explore Portugal Experience" 
-        class="star-animated"
-      >
-    </a>
-
-    <a href="index.html" class="header-logo">
-      <img 
-        src="assets/images/logo-explore-portugal-experience.png" 
-        alt="Explore Portugal Experience"
-      >
-    </a>
-
-    <nav class="nav" id="mainNav" aria-label="Navegação principal">
-      <a href="about.html">Sobre nós</a>
-      <a href="services.html">Serviços</a>
-      <a href="choose.html" class="active">Porquê nós</a>
-      <a href="pricing.html">Preços</a>
-      <a href="faq.html">FAQ</a>
-      <a href="partners-drivers.html">Partners Drivers</a>
-     <a href="partners-hospitality.html">Parceiros Comerciais</a>
-      <a href="gallery.html">Galeria</a>
-      <a href="booking.html">Reservas</a>
-      <a href="contactos.html">Contactos</a>
-    </nav>
-
-    <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menu">
-      <span></span><span></span><span></span>
-    </button>
-
-  </div>
-</header>
-
-
-  <main>
+  <main class="page">
     <!-- HERO -->
-    <section class="page-hero section-dark">
-      <h1 class="page-hero-title">Porquê escolher a Explore Portugal</h1>
-      <p class="page-hero-subtitle">
-        Porque quem viaja merece calma, clareza e respeito pelo tempo. Cada percurso é preparado
-        com atenção verdadeira às pessoas, e não apenas aos quilómetros.
-      </p>
-    </section>
+    <section class="section">
+      <div class="wrap">
+        <div class="panel">
+          <h1 class="h1">Why choose Explore Portugal Experience</h1>
+          <p class="p">
+            Because travellers deserve calm, clarity and respect for their time. Every journey is prepared
+            with genuine attention to people — not just kilometres.
+          </p>
 
-    <!-- STRIP VISITED / REVIEWS NO TOPO -->
-    <section class="section section-dark reviews-strip">
-      <div class="section-inner narrow reviews-strip-inner">
-        <div class="reviews-strip-main">
-          <p class="reviews-strip-label">Visitado &amp; recomendado</p>
-          <div class="reviews-strip-stars" aria-label="Classificação média 5 em 5 estrelas">
-            <span>★★★★★</span>
+          <div class="grid-3" style="margin-top:14px;">
+            <div class="card">
+              <div class="label">Rating</div>
+              <p class="p" style="margin-top:6px;">★★★★★</p>
+              <p class="p">Private premium service mindset.</p>
+            </div>
+
+            <div class="card">
+              <div class="label">Clarity</div>
+              <p class="p" style="margin-top:6px;">No surprises.</p>
+              <p class="p">Price and plan confirmed in writing before the day.</p>
+            </div>
+
+            <div class="card">
+              <div class="label">Pace</div>
+              <p class="p" style="margin-top:6px;">Your rhythm.</p>
+              <p class="p">Quiet or chatty — we adapt with discretion.</p>
+            </div>
           </div>
-          <p class="reviews-strip-score">5.0 · serviço privado premium</p>
-        </div>
 
-        <div class="reviews-strip-logos">
-          <a href="https://www.google.com/maps" target="_blank" rel="noopener" class="reviews-logo">
-            <span class="reviews-logo-badge">G</span>
-            <span>Google Reviews</span>
-          </a>
-          <a href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener" class="reviews-logo">
-            <span class="reviews-logo-badge">IG</span>
-            <span>Instagram</span>
-          </a>
+          <div class="actions" style="margin-top:16px;">
+            <a class="btn btn-gold" href="booking.html">Book / Request a quote</a>
+            <a class="btn btn-ghost" href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener">See Instagram</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- TESTEMUNHOS EM CARTÕES -->
+    <!-- TESTIMONIALS -->
     <section class="section">
-      <div class="section-inner narrow">
-        <h2 class="section-title">O que dizem os nossos clientes</h2>
-        <p class="section-lead">
-          Alguns dos comentários de quem já confiou na Explore Portugal Experience para transfers
-          e dias inteiros em Portugal.
+      <div class="wrap">
+        <h2 class="h2">What our clients say</h2>
+        <p class="p">
+          A few comments from travellers who trusted Explore Portugal Experience for transfers and full-day private tours.
         </p>
 
-        <div class="cards-3 reviews-grid">
-          <article class="card review-card">
-            <p class="review-name">Marta &amp; João · Lisboa</p>
-            <p class="review-stars">★★★★★</p>
-            <p class="review-text">
-              “Chegámos cansados depois de um voo longo e, a partir do momento em que vimos a placa
-              com o nosso nome, sentimo-nos imediatamente em casa. Tudo calmo, sem pressas, com
-              explicações claras e um cuidado enorme com as crianças.”
+        <div class="grid-3" style="margin-top:12px;">
+          <article class="card">
+            <div class="label">Marta &amp; João · Lisbon</div>
+            <p class="p" style="margin-top:8px;">★★★★★</p>
+            <p class="p">
+              “We arrived exhausted after a long flight and the moment we saw our name on the sign,
+              we immediately felt at home. Calm, unhurried, crystal-clear communication and genuine care.”
             </p>
           </article>
 
-          <article class="card review-card">
-            <p class="review-name">Sarah &amp; David · UK</p>
-            <p class="review-stars">★★★★★</p>
-            <p class="review-text">
-              “We booked two days between Lisbon, Sintra and Cascais. Professional, discreet and
-              incredibly kind. It felt like travelling with someone from the family, but with all
-              the comfort of a premium service.”
+          <article class="card">
+            <div class="label">Sarah &amp; David · UK</div>
+            <p class="p" style="margin-top:8px;">★★★★★</p>
+            <p class="p">
+              “We booked two days between Lisbon, Sintra and Cascais. Professional, discreet and incredibly kind.
+              Premium without stress.”
             </p>
           </article>
 
-          <article class="card review-card">
-            <p class="review-name">Ana · Corporate guest</p>
-            <p class="review-stars">★★★★★</p>
-            <p class="review-text">
-              “Agenda apertada, várias reuniões e voos diferentes no mesmo dia. Tudo correu com
-              uma serenidade rara. WhatsApp antes, durante e depois, sempre com alternativas quando
-              necessário. Serviço realmente à medida.”
+          <article class="card">
+            <div class="label">Ana · Corporate guest</div>
+            <p class="p" style="margin-top:8px;">★★★★★</p>
+            <p class="p">
+              “Tight schedule, multiple meetings and flights on the same day. Everything ran with rare serenity.
+              Always with alternatives when needed.”
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- PILARES -->
-    <section class="section">
-      <div class="section-inner">
-        <h2 class="section-title">Os nossos pilares</h2>
-        <p class="section-lead">
-          Há três ideias simples que orientam o trabalho: <strong>serenidade</strong>,
-          <strong>profissionalismo</strong> e <strong>atenção ao detalhe</strong>.
-        </p>
+    <!-- ✅ NEW: LEAVE A REVIEW (VIP, discreet) -->
+    <section class="section epe-review" id="leave-review">
+      <div class="wrap">
+        <div class="panel">
+          <div class="epe-review__head">
+            <div>
+              <div class="epe-review__kicker"><span class="epe-review__dot"></span> Explore Portugal Experience</div>
+              <h2 class="h2" style="margin-top:10px;">Leave a review</h2>
+              <p class="p" style="margin-top:6px;">
+                Short is perfect. Your feedback helps us grow — calmly and with discretion.
+              </p>
+            </div>
 
-        <div class="cards-3">
-          <article class="card">
-            <h3>Serenidade</h3>
-            <p>
-              Horas marcadas com margem, percursos pensados de forma realista e comunicação
-              antes e durante o serviço. Não se trata de “correr para chegar”, mas de chegar
-              com tempo, sem stress desnecessário.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Profissionalismo</h3>
-            <p>
-              Motorista profissional, veículo preparado, atenção à segurança, respeito
-              pela privacidade e atitude discreta. O foco está em fazer bem, sem se impor
-              ao dia de quem viaja.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Atenção ao detalhe</h3>
-            <p>
-              Desde a confirmação escrita com valor final até às pequenas sugestões de
-              paragens, restauração ou miradouros: tudo é pensado para que o percurso
-              seja leve e bem acompanhado.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- COMO RECEBEMOS -->
-    <section class="section section-dark">
-      <div class="section-inner">
-        <h2 class="section-title">Como recebemos quem viaja</h2>
-        <p class="section-lead">
-          O objetivo é que, ao entrar no carro, sinta que o mais difícil do dia já passou.
-          A partir daí, é deixar o resto connosco.
-        </p>
-
-        <div class="cards-3">
-          <article class="card">
-            <h3>Antes do dia</h3>
-            <p>
-              Recolha de dados essenciais (horário de voo, bagagem, pontos de recolha
-              e entrega, necessidades especiais), esclarecimento de dúvidas e envio de
-              informação clara sobre valores e condições.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>No dia do serviço</h3>
-            <p>
-              Chegada com antecedência, contacto direto por WhatsApp ou telefone, ajuda
-              com bagagem e confirmação tranquila do plano de percurso, com espaço para
-              pequenos ajustes.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Depois do percurso</h3>
-            <p>
-              Disponibilidade para ajustar horários futuros, sugerir novas rotas e,
-              se fizer sentido, ajudar a planear o resto da viagem em Portugal com
-              recomendações honestas.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- PERFIL DE CLIENTES -->
-    <section class="section">
-      <div class="section-inner">
-        <h2 class="section-title">Para quem é este serviço</h2>
-        <p class="section-lead">
-          A Explore Portugal Experience é especialmente pensada para quem valoriza
-          comunicação clara, pontualidade e um ambiente sereno.
-        </p>
-
-        <div class="cards-3">
-          <article class="card">
-            <h3>Famílias &amp; casais</h3>
-            <p>
-              Para quem quer viajar com conforto, sem depender de transporte público
-              ou de aluguer de carro, e prefere alguém que cuide da logística para
-              poder aproveitar o tempo juntos.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Viagens de trabalho</h3>
-            <p>
-              Profissionais com agendas apertadas, que precisam de chegar a horas e
-              manter a cabeça livre para reuniões e decisões importantes, sem estar
-              a gerir trânsito e estacionamento.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Visitantes frequentes</h3>
-            <p>
-              Quem regressa a Portugal e prefere ter um ponto de contacto de confiança,
-              que conheça os seus hábitos, horários típicos e preferências de percurso.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- DIFERENCIAÇÃO -->
-    <section class="section section-dark">
-      <div class="section-inner">
-        <h2 class="section-title">O que nos diferencia</h2>
-        <p class="section-lead">
-          Não prometemos “tudo e mais alguma coisa”. Prometemos apenas aquilo que
-          controlamos: preparação, presença e respeito por quem nos escolhe.
-        </p>
-
-        <div class="cards-3">
-          <article class="card">
-            <h3>Sem surpresas no valor</h3>
-            <p>
-              O valor é combinado antes do serviço, com tudo incluído de forma clara.
-              Não há “extras” inesperados à última hora — se alguma condição mudar,
-              explica-se antes.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Ritmo ajustado a si</h3>
-            <p>
-              Há dias em que apetece falar e outros em que o silêncio sabe melhor.
-              A condução, a comunicação e o ritmo das paragens são ajustados à energia
-              de quem viaja nesse dia.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Rede de parceiros de confiança</h3>
-            <p>
-              Quando necessário, trabalham-se serviços em parceria com outros motoristas
-              e projetos alinhados na mesma forma de estar, para manter o mesmo nível de
-              qualidade e cuidado.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CALL TO ACTION -->
-    <section class="section section-reservas">
-      <div class="section-inner">
-        <h2 class="section-title">Quer saber se somos a escolha certa para si?</h2>
-        <p class="section-lead">
-          Envie uma mensagem simples com datas, número de pessoas e o que tem em mente.
-          A partir daí, ajudamos a perceber se faz sentido avançar connosco.
-        </p>
-
-        <div class="reservas-grid">
-          <article class="reservas-card">
-            <h3>Falar por WhatsApp</h3>
-            <p class="reservas-phone">+351 910 784 548</p>
-            <a href="https://wa.me/351910784548" class="btn-secondary" target="_blank" rel="noopener">
-              Iniciar conversa
+            <a class="btn btn-ghost" href="https://g.page/r/CUhLGcsClbSWEBM/review" target="_blank" rel="noopener">
+              Google Reviews
             </a>
+          </div>
+
+          <form id="epeReviewForm" novalidate>
+            <div class="label">Rating</div>
+            <div class="epe-review__stars" role="radiogroup" aria-label="Select rating">
+              <button type="button" class="epe-star" data-star="1" aria-label="1 star">★</button>
+              <button type="button" class="epe-star" data-star="2" aria-label="2 stars">★</button>
+              <button type="button" class="epe-star" data-star="3" aria-label="3 stars">★</button>
+              <button type="button" class="epe-star" data-star="4" aria-label="4 stars">★</button>
+              <button type="button" class="epe-star" data-star="5" aria-label="5 stars">★</button>
+              <span class="epe-review__hint" id="epeRatingText">Select a rating</span>
+            </div>
+
+            <div class="epe-review__grid">
+              <div class="epe-review__field">
+                <div class="label">Name (optional)</div>
+                <input id="epeReviewName" class="epe-review__input" type="text" maxlength="40" placeholder="Your name">
+              </div>
+
+              <div class="epe-review__field">
+                <div class="label">Service / location (optional)</div>
+                <input id="epeReviewTrip" class="epe-review__input" type="text" maxlength="60" placeholder="Lisbon / Sintra / Transfer…">
+              </div>
+
+              <div class="epe-review__field epe-review__span2">
+                <div class="label">Your review</div>
+                <textarea id="epeReviewText" class="epe-review__textarea" maxlength="800" placeholder="What did you like most?"></textarea>
+                <div class="epe-review__hint" id="epeCharHint">0 / 800</div>
+              </div>
+            </div>
+
+            <div class="actions epe-review__actions">
+              <button class="btn btn-gold" type="submit" id="epeSubmitBtn">Save review</button>
+              <button class="btn btn-ghost" type="button" id="epeCopyBtn">Copy text</button>
+              <button class="btn btn-ghost" type="button" id="epeOpenGoogleBtn">Save + open Google</button>
+              <span class="epe-review__status" id="epeStatus"></span>
+            </div>
+
+            <div class="epe-review__saved" id="epeSavedBox" style="display:none;">
+              <div class="epe-review__savedTitle">Saved on this device</div>
+              <div class="epe-review__savedText" id="epeSavedText"></div>
+              <div class="epe-review__hint" style="margin-top:8px;">
+                Next step: I connect this form to your hosting (cPanel) so reviews become public for everyone.
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- PILLARS -->
+    <section class="section">
+      <div class="wrap">
+        <h2 class="h2">Our pillars</h2>
+        <p class="p">Three values guide the experience: serenity, professionalism and attention to detail.</p>
+
+        <div class="grid-3" style="margin-top:12px;">
+          <article class="card">
+            <h3 class="h2" style="margin-bottom:6px;">Serenity</h3>
+            <p class="p">
+              Realistic planning, comfortable margins and clear communication before and during the service.
+              It’s about arriving with time and zero unnecessary stress.
+            </p>
           </article>
 
-          <article class="reservas-card">
-            <h3>Pedir proposta por email</h3>
-            <p>
-              Se preferir tudo por escrito, envie-nos os detalhes do percurso
-              e respondemos com uma proposta clara e sem compromisso.
+          <article class="card">
+            <h3 class="h2" style="margin-bottom:6px;">Professionalism</h3>
+            <p class="p">
+              Prepared vehicle, safety-first mindset, privacy and discreet presence.
+              Proper service — without taking over your day.
             </p>
-            <a href="mailto:info@exploreportugalexperience.com" class="btn-outline">
-              Escrever email
-            </a>
+          </article>
+
+          <article class="card">
+            <h3 class="h2" style="margin-bottom:6px;">Attention to detail</h3>
+            <p class="p">
+              From written confirmation with the final price to thoughtful suggestions for stops or dining:
+              smooth, light and well supported.
+            </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- WIDGET FLOANTE DE REVIEWS (DIREITA) -->
-    <div class="review-widget" id="reviewWidget" aria-label="Caixa de reviews">
-      <button class="review-widget-close" id="reviewWidgetClose" aria-label="Fechar reviews">×</button>
-      <p class="review-widget-title">★★★★★</p>
-      <p class="review-widget-text">
-        Gostou do serviço? Deixe uma review e ajude outras pessoas a escolher com confiança.
-      </p>
-      <div class="review-widget-actions">
-        <a href="https://www.google.com/maps" target="_blank" rel="noopener" class="btn-primary btn-small">
-          Review no Google
-        </a>
-        <a href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener" class="btn-outline btn-small">
-          Ver stories
-        </a>
+    <!-- DIFFERENTIATORS -->
+    <section class="section">
+      <div class="wrap">
+        <div class="panel">
+          <h2 class="h2">What makes us different</h2>
+          <p class="p">
+            We don’t promise “everything”. We promise what we control: preparation, presence and respect for the people who choose us.
+          </p>
+
+          <div class="grid-3" style="margin-top:12px;">
+            <article class="card">
+              <div class="label">No price surprises</div>
+              <p class="p" style="margin-top:8px;">
+                The final price is agreed before the service, clearly and all-inclusive.
+                If something changes, it’s explained in advance.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="label">A pace that matches you</div>
+              <p class="p" style="margin-top:8px;">
+                Some days you talk, others silence feels better. Driving, communication and stops adapt to your energy — calmly.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="label">Trusted partner network</div>
+              <p class="p" style="margin-top:8px;">
+                When needed, we work with aligned drivers and partners — so the service keeps the same level of care and quality.
+              </p>
+            </article>
+          </div>
+
+          <div class="actions" style="margin-top:16px;">
+            <a class="btn btn-gold" href="https://wa.me/351910784548" target="_blank" rel="noopener">WhatsApp: +351 910 784 548</a>
+            <a class="btn btn-ghost" href="mailto:info@exploreportugalexperience.com">Email: info@exploreportugalexperience.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COOKIE BAR -->
+    <div class="cookie-bar" id="cookieBar" aria-live="polite" aria-label="Cookie banner">
+      <div class="cookie-inner">
+        <div class="cookie-text">
+          We use cookies to improve your experience. Read our <a href="privacy.html">Privacy Policy</a>.
+        </div>
+        <div class="cookie-actions">
+          <button class="cookie-btn" type="button" id="cookieDecline">Close</button>
+          <button class="cookie-btn btn-gold" type="button" id="cookieAccept">Accept</button>
+        </div>
       </div>
     </div>
-
-    <!-- ÍCONE MINI QUANDO A CAIXA ESTÁ FECHADA -->
-    <button class="review-widget-toggle" id="reviewWidgetToggle" aria-label="Abrir reviews">
-      ★ Reviews
-    </button>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="section footer">
-    <div class="section-inner footer-inner">
-      <div class="footer-cols">
-        <div class="footer-col">
-          <h3>Contactos</h3>
-          <p>
-            Email:
-            <a href="mailto:info@exploreportugalexperience.com">
-              info@exploreportugalexperience.com
-            </a><br>
-            Telemóvel / WhatsApp: +351 910 784 548
-          </p>
-          <p>
-            Explore Portugal Experience<br>
-            Lisboa · Portugal
-          </p>
-        </div>
-
-        <div class="footer-col">
-          <h3>Redes sociais</h3>
-          <p>
-            <a href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener">
-              Instagram · @exploreportugal2025
-            </a><br>
-            <a href="https://www.tiktok.com/@explore.portugal24?_r=1&_t=ZG-91YeXliOakD" target="_blank" rel="noopener">
-              TikTok · @explore.portugal24
-            </a>
-          </p>
-        </div>
-
-        <div class="footer-col">
-          <h3>Reservas</h3>
-          <p>
-            WhatsApp direto:
-            <a href="https://wa.me/351910784548" target="_blank" rel="noopener">
-              +351 910 784 548
-            </a><br>
-            Formulário online em
-            <a href="booking.html">Reservas</a>.
-          </p>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="footer-copy">
-          © 2018–2025 Explore Portugal Experience — Turismo em Portugal.
-        </p>
-        <p class="footer-credit">
-          Powered by: MkDesign - London
-        </p>
-      </div>
-    </div>
-  </footer>
+  <!-- ✅ FOOTER inject slot -->
+  <div id="siteFooter"></div>
 
   <!-- JS -->
   <script src="assets/js/nav.js"></script>
-  <script src="assets/js/lightbox.js"></script>
 
-  <!-- Google Translate -->
   <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        {
-          pageLanguage: 'pt',
-          includedLanguages: 'en,pt,es,fr,de',
-          autoDisplay: false
-        },
-        'google_translate_element'
-      );
-    }
+    (function () {
+      const bar = document.getElementById('cookieBar');
+      const btnAccept = document.getElementById('cookieAccept');
+      const btnDecline = document.getElementById('cookieDecline');
+      if (!bar || !btnAccept || !btnDecline) return;
+
+      const KEY = 'epe_cookie_consent_v1';
+
+      function hide(){ bar.classList.remove('show'); }
+      function show(){ bar.classList.add('show'); }
+
+      try{
+        const saved = localStorage.getItem(KEY);
+        if (!saved) show();
+      }catch(e){
+        show();
+      }
+
+      btnAccept.addEventListener('click', function(){
+        try{ localStorage.setItem(KEY, 'accepted'); }catch(e){}
+        hide();
+      });
+
+      btnDecline.addEventListener('click', function(){
+        try{ localStorage.setItem(KEY, 'closed'); }catch(e){}
+        hide();
+      });
+    })();
   </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</body>
-</html>
+
+  <!-- ✅ Review form JS (local save for now; ready to connect later) -->
+  <script>
+    (function () {
+      const STORAGE_KEY = 'epe_reviews_pending_v1';
+      const GOOGLE_REVIEW_URL = 'https://g.page/r/CUhLGcsClbSWEBM/review';
+
+      const form = document.getElementById('epeReviewForm');
+      const starBtns = Array.from(document.querySelectorAll('.epe-star'));
+      const ratingText = document.getElementById('epeRatingText');
+      const nameEl = document.getElementById('epeReviewName');
+      const tripEl = document.getElementById('epeReviewTrip');
+      const textEl = document.getElementById('epeReviewText');
+      const charHint = document.getElementById('epeCharHint');
+
+      const submitBtn = document.getElementById('epeSubmitBtn');
+      const copyBtn = document.getElementById('epeCopyBtn');
+      const openGoogleBtn = document.getElementById('epeOpenGoogleBtn');
+      const statusEl = document.getElementById('epeStatus');
+
+      const savedBox = document.getElementById('epeSavedBox');
+      const savedText = document.getElementById('epeSavedText');
+
+      let rating = 0;
+
+      function setStatus(msg){ statusEl.textContent = msg || ''; }
+
+      function setRating(n){
+        rating = n;
+        starBtns.forEach(btn => {
+          const s = parseInt(btn.getAttribute('data-star'), 10);
+          btn.classList.toggle('is-on', s <= rating);
+        });
+        ratingText.textContent = rating ? (rating + ' / 5') : 'Select a rating';
+      }
+
+      starBtns.forEach(btn =>
