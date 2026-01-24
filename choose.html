@@ -33,21 +33,21 @@
 
           <div class="grid-3" style="margin-top:14px;">
             <div class="card">
-              <div class="label">Rating</div>
-              <p class="p" style="margin-top:6px;">★★★★★</p>
-              <p class="p">Private premium service mindset.</p>
+              <div class="label">Calm</div>
+              <p class="p" style="margin-top:6px;">Discreet, unhurried.</p>
+              <p class="p">Your pace, your space — always.</p>
             </div>
 
             <div class="card">
               <div class="label">Clarity</div>
               <p class="p" style="margin-top:6px;">No surprises.</p>
-              <p class="p">Price and plan confirmed in writing before the day.</p>
+              <p class="p">Plan and price confirmed before the day.</p>
             </div>
 
             <div class="card">
-              <div class="label">Pace</div>
-              <p class="p" style="margin-top:6px;">Your rhythm.</p>
-              <p class="p">Quiet or chatty — we adapt with discretion.</p>
+              <div class="label">Care</div>
+              <p class="p" style="margin-top:6px;">Details matter.</p>
+              <p class="p">Prepared routes, timing margins, smooth execution.</p>
             </div>
           </div>
 
@@ -63,19 +63,23 @@
       </div>
     </section>
 
-    <!-- PUBLIC REVIEWS + FORM -->
+    <!-- REVIEWS (PUBLIC) + FORM -->
     <section class="section" id="reviews">
       <div class="wrap">
         <div class="panel">
           <h2 class="h2">Reviews</h2>
-          <p class="p">Real feedback from travellers. Thank you for supporting Explore Portugal Experience.</p>
+          <p class="p">
+            Real feedback from travellers. Thank you for supporting Explore Portugal Experience.
+          </p>
 
           <div class="grid-3" style="margin-top:12px;">
             <!-- LIST -->
             <div class="card" style="grid-column: span 2;">
               <div class="label">Recent reviews</div>
+
               <div class="actions" style="margin-top:10px;">
                 <button class="btn btn-ghost" type="button" id="epeRefreshBtn">Refresh</button>
+                <a class="btn btn-ghost" href="https://g.page/r/CUhLGcsClbSWEBM/review" target="_blank" rel="noopener">Google Reviews</a>
               </div>
 
               <div id="epeReviewsList" style="margin-top:12px;"></div>
@@ -108,7 +112,6 @@
 
               <div class="actions" style="margin-top:14px;">
                 <button class="btn btn-gold" type="button" id="epeSubmitBtn">Post review</button>
-                <a class="btn btn-ghost" href="https://g.page/r/CUhLGcsClbSWEBM/review" target="_blank" rel="noopener">Google Reviews</a>
               </div>
 
               <p class="micro" id="epeStatus" style="margin-top:10px;"></p>
@@ -125,8 +128,8 @@
   <!-- FOOTER (inject nav.js like FAQ) -->
   <div id="siteFooter"></div>
 
-  <!-- cache bust -->
-  <script defer src="/assets/js/nav.js?v=1001"></script>
+  <!-- cache bust (bump if Android caches) -->
+  <script defer src="/assets/js/nav.js?v=1003"></script>
 
   <script>
     (function () {
@@ -163,17 +166,21 @@
           "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
         }[c]));
       }
+
       function starsString(n){
         const r = Math.max(0, Math.min(5, n|0));
         return "★".repeat(r) + "☆".repeat(5-r);
       }
+
       function formatDate(iso){
         try{
           const d = new Date(iso);
           return d.toLocaleDateString(undefined, { year:"numeric", month:"short", day:"2-digit" });
         }catch{ return ""; }
       }
+
       function setStatus(msg){ statusEl.textContent = msg || ""; }
+
       function setRating(n){
         rating = n;
         starBtns.forEach(btn => {
@@ -182,6 +189,7 @@
         });
         ratingText.textContent = rating ? (rating + " / 5") : "Select a rating";
       }
+
       function updateChars(){
         const len = (textEl.value || "").length;
         charHint.textContent = len + " / 800";
@@ -224,8 +232,8 @@
           listEl.innerHTML = html;
 
         }catch(err){
+          // ✅ VIP: silent fail (no ugly technical message)
           emptyEl.style.display = "";
-          setStatus("Reviews are not loading yet. Check if /api/reviews.php exists on the server.");
         }
       }
 
@@ -260,6 +268,7 @@
           await loadReviews();
 
         }catch(err){
+          // VIP: short, non-technical
           setStatus("Could not post. Please try again.");
         }finally{
           submitBtn.disabled = false;
@@ -274,19 +283,40 @@
     })();
   </script>
 
+  <!-- VIP: brighter stars + same input style, scoped only to this page -->
   <style>
     .epe-stars{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+
+    /* default stars (not selected) — visible, not "dead" */
     .epe-star{
       width:40px;height:40px;border-radius:12px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.06);
       cursor:pointer;
       display:grid;place-items:center;
-      font-size:18px;color:rgba(255,255,255,.62);
-      transition:transform .08s ease, border-color .15s ease, background .15s ease;
+
+      font-size:20px;
+      color:rgba(255,255,255,.88);
+      text-shadow:0 0 10px rgba(0,0,0,.35);
+
+      transition:transform .08s ease, border-color .15s ease, background .15s ease, color .15s ease;
     }
-    .epe-star:hover{transform:translateY(-1px);border-color:rgba(212,175,55,.40);background:rgba(212,175,55,.08)}
-    .epe-star.is-on{color:rgba(212,175,55,.95);border-color:rgba(212,175,55,.55);background:rgba(212,175,55,.12)}
+
+    .epe-star:hover{
+      transform:translateY(-1px);
+      border-color:rgba(212,175,55,.45);
+      background:rgba(212,175,55,.10);
+      color:rgba(255,255,255,.96);
+    }
+
+    /* selected stars */
+    .epe-star.is-on{
+      color:rgba(212,175,55,.98);
+      border-color:rgba(212,175,55,.65);
+      background:rgba(212,175,55,.14);
+      text-shadow:0 0 14px rgba(212,175,55,.25);
+    }
+
     .epe-input{
       width:100%;
       padding:12px 12px;
@@ -298,6 +328,7 @@
       font: inherit;
       box-sizing: border-box;
     }
+
     .epe-input:focus{
       border-color:rgba(212,175,55,.42);
       box-shadow:0 0 0 6px rgba(212,175,55,.10);
