@@ -1,34 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" id="top">
 <head>
-  <meta charset="UTF-8">
-  <title>Why us · Explore Portugal Experience</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Explore Portugal Experience</title>
 
-  <meta name="description" content="Why choose Explore Portugal Experience — calm, professional, discreet and tailored private transfers and tours in Portugal.">
-  <link rel="canonical" href="https://www.exploreportugalexperience.com/choose.html">
+  <meta name="description" content="Explore Portugal Experience — Premium private tours & transfers." />
 
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="icon" href="/assets/icons/apple-touch-icon.png">
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y30ME05MQY"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-Y30ME05MQY');
-  </script>
+  <!-- cache bust -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=1001" />
 </head>
 
-<body>
-  <!-- ✅ Anchor for "Back to top" (must NOT be the <main>) -->
-  <div id="top"></div>
+<body class="home">
 
-  <!-- ✅ NAV inject slot -->
+  <!-- HEADER (inject nav.js like FAQ) -->
   <div id="siteHeader"></div>
 
   <main class="page">
-    <!-- HERO -->
+
+    <!-- WHY US -->
     <section class="section">
       <div class="wrap">
         <div class="panel">
@@ -59,176 +52,256 @@
           </div>
 
           <div class="actions" style="margin-top:16px;">
-            <a class="btn btn-gold" href="booking.html">Book / Request a quote</a>
+            <a class="btn btn-gold" href="/booking.html">Book / Request a quote</a>
             <a class="btn btn-ghost" href="https://www.instagram.com/exploreportugal2025" target="_blank" rel="noopener">See Instagram</a>
           </div>
+
+          <p class="micro" style="margin-top:12px;">
+            VIP response time • Professional drivers • Premium vehicles • Discreet service
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="section">
-      <div class="wrap">
-        <h2 class="h2">What our clients say</h2>
-        <p class="p">
-          A few comments from travellers who trusted Explore Portugal Experience for transfers and full-day private tours.
-        </p>
-
-        <div class="grid-3" style="margin-top:12px;">
-          <article class="card">
-            <div class="label">Marta &amp; João · Lisbon</div>
-            <p class="p" style="margin-top:8px;">★★★★★</p>
-            <p class="p">
-              “We arrived exhausted after a long flight and the moment we saw our name on the sign,
-              we immediately felt at home. Calm, unhurried, crystal-clear communication and genuine care.”
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="label">Sarah &amp; David · UK</div>
-            <p class="p" style="margin-top:8px;">★★★★★</p>
-            <p class="p">
-              “We booked two days between Lisbon, Sintra and Cascais. Professional, discreet and incredibly kind.
-              Premium without stress.”
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="label">Ana · Corporate guest</div>
-            <p class="p" style="margin-top:8px;">★★★★★</p>
-            <p class="p">
-              “Tight schedule, multiple meetings and flights on the same day. Everything ran with rare serenity.
-              Always with alternatives when needed.”
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- PILLARS -->
-    <section class="section">
-      <div class="wrap">
-        <h2 class="h2">Our pillars</h2>
-        <p class="p">Three values guide the experience: serenity, professionalism and attention to detail.</p>
-
-        <div class="grid-3" style="margin-top:12px;">
-          <article class="card">
-            <h3 class="h2" style="margin-bottom:6px;">Serenity</h3>
-            <p class="p">
-              Realistic planning, comfortable margins and clear communication before and during the service.
-              It’s about arriving with time and zero unnecessary stress.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="h2" style="margin-bottom:6px;">Professionalism</h3>
-            <p class="p">
-              Prepared vehicle, safety-first mindset, privacy and discreet presence.
-              Proper service — without taking over your day.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="h2" style="margin-bottom:6px;">Attention to detail</h3>
-            <p class="p">
-              From written confirmation with the final price to thoughtful suggestions for stops or dining:
-              smooth, light and well supported.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- DIFFERENTIATORS -->
-    <section class="section">
+    <!-- PUBLIC REVIEWS + FORM -->
+    <section class="section" id="reviews">
       <div class="wrap">
         <div class="panel">
-          <h2 class="h2">What makes us different</h2>
-          <p class="p">
-            We don’t promise “everything”. We promise what we control: preparation, presence and respect for the people who choose us.
-          </p>
+          <h2 class="h2">Reviews</h2>
+          <p class="p">Real feedback from travellers. Thank you for supporting Explore Portugal Experience.</p>
 
           <div class="grid-3" style="margin-top:12px;">
-            <article class="card">
-              <div class="label">No price surprises</div>
-              <p class="p" style="margin-top:8px;">
-                The final price is agreed before the service, clearly and all-inclusive.
-                If something changes, it’s explained in advance.
-              </p>
-            </article>
+            <!-- LIST -->
+            <div class="card" style="grid-column: span 2;">
+              <div class="label">Recent reviews</div>
+              <div class="actions" style="margin-top:10px;">
+                <button class="btn btn-ghost" type="button" id="epeRefreshBtn">Refresh</button>
+              </div>
 
-            <article class="card">
-              <div class="label">A pace that matches you</div>
-              <p class="p" style="margin-top:8px;">
-                Some days you talk, others silence feels better. Driving, communication and stops adapt to your energy — calmly.
-              </p>
-            </article>
+              <div id="epeReviewsList" style="margin-top:12px;"></div>
+              <p class="micro" id="epeEmpty" style="display:none; margin-top:10px;">No reviews yet. Be the first.</p>
+            </div>
 
-            <article class="card">
-              <div class="label">Trusted partner network</div>
-              <p class="p" style="margin-top:8px;">
-                When needed, we work with aligned drivers and partners — so the service keeps the same level of care and quality.
-              </p>
-            </article>
+            <!-- FORM -->
+            <div class="card">
+              <div class="label">Leave a review</div>
+
+              <div class="epe-stars" style="margin-top:10px;">
+                <button type="button" class="epe-star" data-star="1" aria-label="1 star">★</button>
+                <button type="button" class="epe-star" data-star="2" aria-label="2 stars">★</button>
+                <button type="button" class="epe-star" data-star="3" aria-label="3 stars">★</button>
+                <button type="button" class="epe-star" data-star="4" aria-label="4 stars">★</button>
+                <button type="button" class="epe-star" data-star="5" aria-label="5 stars">★</button>
+                <span class="micro" id="epeRatingText" style="margin-left:8px;">Select a rating</span>
+              </div>
+
+              <div class="field" style="margin-top:12px;">
+                <label class="label" for="epeReviewName">Name (optional)</label>
+                <input id="epeReviewName" class="epe-input" type="text" maxlength="40" placeholder="Your name">
+              </div>
+
+              <div class="field" style="margin-top:12px;">
+                <label class="label" for="epeReviewText">Review</label>
+                <textarea id="epeReviewText" class="epe-input" rows="6" maxlength="800" placeholder="What did you like most?"></textarea>
+                <div class="micro" id="epeCharHint" style="margin-top:6px;">0 / 800</div>
+              </div>
+
+              <div class="actions" style="margin-top:14px;">
+                <button class="btn btn-gold" type="button" id="epeSubmitBtn">Post review</button>
+                <a class="btn btn-ghost" href="https://g.page/r/CUhLGcsClbSWEBM/review" target="_blank" rel="noopener">Google Reviews</a>
+              </div>
+
+              <p class="micro" id="epeStatus" style="margin-top:10px;"></p>
+            </div>
           </div>
 
-          <div class="actions" style="margin-top:16px;">
-            <a class="btn btn-gold" href="https://wa.me/351910784548" target="_blank" rel="noopener">WhatsApp: +351 910 784 548</a>
-            <a class="btn btn-ghost" href="mailto:info@exploreportugalexperience.com">Email: info@exploreportugalexperience.com</a>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- COOKIE BAR -->
-    <div class="cookie-bar" id="cookieBar" aria-live="polite" aria-label="Cookie banner">
-      <div class="cookie-inner">
-        <div class="cookie-text">
-          We use cookies to improve your experience. Read our <a href="privacy.html">Privacy Policy</a>.
-        </div>
-        <div class="cookie-actions">
-          <button class="cookie-btn" type="button" id="cookieDecline">Close</button>
-          <button class="cookie-btn btn-gold" type="button" id="cookieAccept">Accept</button>
-        </div>
-      </div>
-    </div>
+    <button class="to-top" type="button" aria-label="Back to top">↑</button>
   </main>
 
-  <!-- ✅ FOOTER inject slot -->
+  <!-- FOOTER (inject nav.js like FAQ) -->
   <div id="siteFooter"></div>
 
-  <!-- JS -->
-  <script src="assets/js/nav.js"></script>
+  <!-- cache bust -->
+  <script defer src="/assets/js/nav.js?v=1001"></script>
 
   <script>
     (function () {
-      const bar = document.getElementById('cookieBar');
-      const btnAccept = document.getElementById('cookieAccept');
-      const btnDecline = document.getElementById('cookieDecline');
-      if (!bar || !btnAccept || !btnDecline) return;
-
-      const KEY = 'epe_cookie_consent_v1';
-
-      function hide(){ bar.classList.remove('show'); }
-      function show(){ bar.classList.add('show'); }
-
-      try{
-        const saved = localStorage.getItem(KEY);
-        if (!saved) show();
-      }catch(e){
-        show();
-      }
-
-      btnAccept.addEventListener('click', function(){
-        try{ localStorage.setItem(KEY, 'accepted'); }catch(e){}
-        hide();
-      });
-
-      btnDecline.addEventListener('click', function(){
-        try{ localStorage.setItem(KEY, 'closed'); }catch(e){}
-        hide();
-      });
+      const btn = document.querySelector('.to-top');
+      if (!btn) return;
+      const toggle = () => btn.classList.toggle('show', window.scrollY > 500);
+      window.addEventListener('scroll', toggle, { passive: true });
+      toggle();
+      btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     })();
   </script>
+
+  <script>
+    (function(){
+      const API_LIST = "/api/reviews.php?action=list";
+      const API_ADD  = "/api/reviews.php?action=add";
+
+      const listEl = document.getElementById("epeReviewsList");
+      const emptyEl = document.getElementById("epeEmpty");
+      const refreshBtn = document.getElementById("epeRefreshBtn");
+
+      const starBtns = Array.from(document.querySelectorAll(".epe-star"));
+      const ratingText = document.getElementById("epeRatingText");
+      const nameEl = document.getElementById("epeReviewName");
+      const textEl = document.getElementById("epeReviewText");
+      const charHint = document.getElementById("epeCharHint");
+      const submitBtn = document.getElementById("epeSubmitBtn");
+      const statusEl = document.getElementById("epeStatus");
+
+      let rating = 0;
+
+      function escapeHtml(s){
+        return String(s).replace(/[&<>"']/g, c => ({
+          "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+        }[c]));
+      }
+      function starsString(n){
+        const r = Math.max(0, Math.min(5, n|0));
+        return "★".repeat(r) + "☆".repeat(5-r);
+      }
+      function formatDate(iso){
+        try{
+          const d = new Date(iso);
+          return d.toLocaleDateString(undefined, { year:"numeric", month:"short", day:"2-digit" });
+        }catch{ return ""; }
+      }
+      function setStatus(msg){ statusEl.textContent = msg || ""; }
+      function setRating(n){
+        rating = n;
+        starBtns.forEach(btn => {
+          const s = parseInt(btn.getAttribute("data-star"), 10);
+          btn.classList.toggle("is-on", s <= rating);
+        });
+        ratingText.textContent = rating ? (rating + " / 5") : "Select a rating";
+      }
+      function updateChars(){
+        const len = (textEl.value || "").length;
+        charHint.textContent = len + " / 800";
+      }
+
+      starBtns.forEach(btn => btn.addEventListener("click", () => setRating(parseInt(btn.getAttribute("data-star"), 10))));
+      textEl.addEventListener("input", updateChars);
+      updateChars();
+
+      async function loadReviews(){
+        setStatus("");
+        listEl.innerHTML = "";
+        emptyEl.style.display = "none";
+
+        try{
+          const res = await fetch(API_LIST, { cache: "no-store" });
+          const data = await res.json();
+          if (!data.ok) throw new Error(data.error || "Failed");
+
+          const reviews = Array.isArray(data.reviews) ? data.reviews : [];
+          if (!reviews.length){
+            emptyEl.style.display = "";
+            return;
+          }
+
+          const html = reviews.map(r => {
+            const name = escapeHtml(r.name || "Anonymous");
+            const date = escapeHtml(formatDate(r.createdAt || ""));
+            const stars = starsString(Number(r.rating || 0));
+            const msg = escapeHtml(r.message || "");
+            return `
+              <article class="card" style="margin-bottom:10px;">
+                <div class="label">${name}${date ? " · " + date : ""}</div>
+                <p class="p" style="margin-top:8px;">${stars}</p>
+                <p class="p">${msg}</p>
+              </article>
+            `;
+          }).join("");
+
+          listEl.innerHTML = html;
+
+        }catch(err){
+          emptyEl.style.display = "";
+          setStatus("Reviews are not loading yet. Check if /api/reviews.php exists on the server.");
+        }
+      }
+
+      async function submitReview(){
+        setStatus("");
+
+        const name = (nameEl.value || "").trim();
+        const message = (textEl.value || "").trim();
+
+        if (!rating){ setStatus("Please select a rating."); return; }
+        if (!message){ setStatus("Please write a short review."); return; }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Posting…";
+
+        try{
+          const res = await fetch(API_ADD, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, rating, message })
+          });
+
+          const data = await res.json();
+          if (!data.ok) throw new Error(data.error || "Failed");
+
+          nameEl.value = "";
+          textEl.value = "";
+          updateChars();
+          setRating(0);
+
+          setStatus("Posted ✅ Thank you!");
+          await loadReviews();
+
+        }catch(err){
+          setStatus("Could not post. Please try again.");
+        }finally{
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Post review";
+        }
+      }
+
+      refreshBtn.addEventListener("click", loadReviews);
+      submitBtn.addEventListener("click", submitReview);
+
+      loadReviews();
+    })();
+  </script>
+
+  <style>
+    .epe-stars{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+    .epe-star{
+      width:40px;height:40px;border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      cursor:pointer;
+      display:grid;place-items:center;
+      font-size:18px;color:rgba(255,255,255,.62);
+      transition:transform .08s ease, border-color .15s ease, background .15s ease;
+    }
+    .epe-star:hover{transform:translateY(-1px);border-color:rgba(212,175,55,.40);background:rgba(212,175,55,.08)}
+    .epe-star.is-on{color:rgba(212,175,55,.95);border-color:rgba(212,175,55,.55);background:rgba(212,175,55,.12)}
+    .epe-input{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      color:rgba(255,255,255,.92);
+      outline:none;
+      font: inherit;
+      box-sizing: border-box;
+    }
+    .epe-input:focus{
+      border-color:rgba(212,175,55,.42);
+      box-shadow:0 0 0 6px rgba(212,175,55,.10);
+    }
+  </style>
 </body>
 </html>
